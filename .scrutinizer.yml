@@ -1,0 +1,6 @@
+checks:
+    javascript: true
+
+filter:
+    excluded_paths:
+        - e2e/*
