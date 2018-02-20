@@ -14,6 +14,7 @@ branches:
     - master
 
 before_script:
+  - google-chrome --version
   - npm install -g @angular/cli
   - npm install webdriver-manager -g
   - webdriver-manager update
