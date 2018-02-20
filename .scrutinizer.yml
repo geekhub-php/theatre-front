@@ -4,3 +4,7 @@ checks:
 filter:
     excluded_paths:
         - e2e/*
+
+tools:
+    external_code_coverage:
+        timeout: 600
