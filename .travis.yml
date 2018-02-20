@@ -23,7 +23,7 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 script:
-#  - ng build --prod
+  - ng build --prod
   - ng test --watch=false --browser=ChromeHeadlessNoSandbox
   - ng e2e
 
