@@ -36,5 +36,6 @@ after_failure:
   - cat ./webdriver.log
 
 after_script:
+  - cat coverage/clover.xml
   - npm install ocular.js
   - $(npm bin)/ocular coverage/clover.xml
