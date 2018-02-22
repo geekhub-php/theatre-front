@@ -11,6 +11,7 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {NewsComponent} from './news/news.component';
 import {AboutComponent} from './about/about.component';
 import {ScheduleComponent} from './schedule/schedule.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomePageComponent},
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     {path: 'persons', component: TeamListComponent},
     {path: 'persons/:slug', component: TeamComponent},
     {path: 'contacts', component: ContactsComponent},
+    {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

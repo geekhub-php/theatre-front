@@ -15,6 +15,7 @@ import { TeamListComponent } from './team-list/team-list.component';
 import { TeamComponent } from './team/team.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppRoutingModule } from './app-routing.module';
     AboutComponent,
     TeamListComponent,
     TeamComponent,
-    ContactsComponent
+    ContactsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
