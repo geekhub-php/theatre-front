@@ -13,6 +13,7 @@ import {NewsComponent} from './news/news.component';
 import {AboutComponent} from './about/about.component';
 import {ScheduleComponent} from './schedule/schedule.component';
 import {APP_BASE_HREF} from '@angular/common';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -28,7 +29,8 @@ describe('AppComponent', () => {
         AboutComponent,
         TeamListComponent,
         TeamComponent,
-        ContactsComponent
+        ContactsComponent,
+        PageNotFoundComponent
       ],
       providers: [
           {provide: APP_BASE_HREF, useValue: '/'}
