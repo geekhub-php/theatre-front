@@ -1,0 +1,19 @@
+nav {
+  background: linear-gradient(to right,rgba(236,83,42,1) 0,rgba(196,36,46,1) 100%);
+  font-size: 85%;
+}
+nav li a:hover {
+  background: #FFF;
+  color: #23527c;
+}
+.menu-container, .navbar-collapse {
+  align-items: stretch;
+}
+a.nav-link {
+  padding: 30.5px 11px;
+  white-space: nowrap;
+}
+nav .menu-container a.active {
+  border-top: 3px solid white;
+  padding-top: 27.5px;
+}
