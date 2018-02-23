@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { PerformanceListComponent } from './performance-list/performance-list.component';
-import {RouterModule, Routes} from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { ScheduleComponent } from './schedule/schedule.component';
@@ -35,7 +35,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,28 @@
-<nav>
-  <a routerLink="" routerLinkActive="active">Home</a>
-  <a routerLink="/poster" routerLinkActive="active">Poster</a>
-  <a routerLink="/repertoire" routerLinkActive="active">Repertoire</a>
-  <a routerLink="/news" routerLinkActive="active">News</a>
-  <a routerLink="/about" routerLinkActive="active">About Us</a>
-  <a routerLink="/persons" routerLinkActive="active">Persons</a>
-  <a routerLink="/contacts" routerLinkActive="active">Contacts</a>
+<nav class="navbar navbar-expand-lg navbar-dark mb-4">
+  <div class="container menu-container">
+    <div id="header-logo">
+      <a routerLink="/">
+        <img src="assets/logo.png">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" *ngFor="let item of navs">
+          <a class="nav-link"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="item.url === '' ? { exact: true } : {}"
+             i18n="@@{{ item.title }}"
+             [routerLink]="item.url">
+            {{ item.title | uppercase }}
+          </a>
+        </li>
+      </ul>
+      <div class="navbar-nav float-right">
+        <a class="nav-link" href="#">UA</a>
+      </div>
+    </div>
+  </div>
 </nav>
