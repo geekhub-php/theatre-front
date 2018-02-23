@@ -11,7 +11,8 @@ export class MainMenu {
 
   navigateTo(text) {
     const link = this.getLink(text);
-    expect(link.isPresent).toBeTruthy();
+    expect(link.isPresent()).toBe(true);
+    expect(link.isDisplayed()).toBe(true);
     link.click();
   }
 
