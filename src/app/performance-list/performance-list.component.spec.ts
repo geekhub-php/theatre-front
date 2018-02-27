@@ -4,6 +4,7 @@ import { PerformanceListComponent } from './performance-list.component';
 import {PerformanceRepositoryService} from '../Repository/performance-repository.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {of} from 'rxjs/observable/of';
+import {LazyLoadImageModule} from 'ng-lazyload-image';
 
 describe('PerformanceListComponent', () => {
   let component: PerformanceListComponent;
@@ -28,7 +29,10 @@ describe('PerformanceListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PerformanceListComponent ],
-      imports: [ HttpClientTestingModule ],
+      imports: [
+          HttpClientTestingModule,
+          LazyLoadImageModule,
+      ],
       providers: [
           {provide: PerformanceRepositoryService, useValue: performanceRepositoryServiceStub}
       ]

@@ -14,6 +14,7 @@ import {AboutComponent} from './about/about.component';
 import {ScheduleComponent} from './schedule/schedule.component';
 import {APP_BASE_HREF} from '@angular/common';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {LazyLoadImageModule} from 'ng-lazyload-image';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -36,7 +37,8 @@ describe('AppComponent', () => {
           {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
-          AppRoutingModule
+          AppRoutingModule,
+          LazyLoadImageModule,
       ]
     }).compileComponents();
   }));
