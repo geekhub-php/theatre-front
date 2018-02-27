@@ -1,3 +1,42 @@
-<p>
-  performance-list works!
-</p>
+<h1>Repertoire</h1>
+<div class="card-columns" *ngIf="!performances">
+  <div class="card" *ngFor="let i of [1,2,3,4,5,6]">
+    <div class="placeholder">
+      <div
+          #img
+          class="stub"
+          [style.width.%]="100"
+          [style.height.px]="img.offsetWidth * 1.2"
+      ></div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title card-title-stub stub"></h5>
+      <div class="card-text card-text-stub text-stub1 stub"></div>
+      <div class="card-text card-text-stub text-stub2 stub"></div>
+      <div class="card-text card-text-stub text-stub3 stub"></div>
+    </div>
+  </div>
+</div>
+<div class="card-columns" *ngIf="performances">
+  <div #appPerfCard class="card" *ngFor="let performance of performances">
+    <div class="placeholder">
+      <div
+              class="stub"
+              [style.width.%]="100"
+              [style.height.px]="performance.mainPicture.performance_big.properties.height * appPerfCard.offsetWidth / performance.mainPicture.performance_big.properties.width"
+      >
+        <img
+                #img
+                width="100%"
+                [lazyLoad]="performance.mainPicture.reference.url"
+                (onLoad)="onLoad($event, img.parentElement)"
+                [offset]=400
+                >
+      </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{performance.title}}</h5>
+      <div [innerHTML]="performance.description | slice:0:100" class="card-text"></div>
+    </div>
+  </div>
+</div>
