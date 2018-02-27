@@ -16,6 +16,8 @@ import { TeamComponent } from './team/team.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {HttpClientModule} from '@angular/common/http';
+import {LazyLoadImageModule} from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
+    LazyLoadImageModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
