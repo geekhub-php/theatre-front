@@ -25,7 +25,7 @@ describe('theatre-front App', () => {
   it('shold navigate to Repertoire', () => {
     page.navigateTo();
     mainMenu.navigateTo('REPERTOIRE');
-    expect(element(by.css('p')).getText()).toContain('performance-list works');
+    expect(element(by.css('h1')).getText()).toContain('Repertoire');
   });
 
   it('shold navigate to News', () => {

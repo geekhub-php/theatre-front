@@ -16,6 +16,7 @@ import {ContactsComponent} from '../contacts/contacts.component';
 import {PageNotFoundComponent} from '../page-not-found/page-not-found.component';
 import {AppComponent} from '../app.component';
 import {APP_BASE_HREF} from '@angular/common';
+import {LazyLoadImageModule} from 'ng-lazyload-image';
 
 describe('MainMenuComponent', () => {
   let component: MainMenuComponent;
@@ -23,7 +24,11 @@ describe('MainMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterModule, AppRoutingModule],
+      imports: [
+          RouterModule,
+          AppRoutingModule,
+          LazyLoadImageModule,
+      ],
       declarations: [
           AppComponent,
           MainMenuComponent,
