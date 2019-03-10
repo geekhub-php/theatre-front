@@ -1,20 +1,22 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {MainMenuComponent} from './main-menu/main-menu.component';
-import {AppRoutingModule} from './app-routing.module';
-import {PerformanceListComponent} from './performance-list/performance-list.component';
-import {ContactsComponent} from './contacts/contacts.component';
-import {TeamComponent} from './team/team.component';
-import {NewsListComponent} from './news-list/news-list.component';
-import {TeamListComponent} from './team-list/team-list.component';
-import {PerformanceComponent} from './performance/performance.component';
-import {HomePageComponent} from './home-page/home-page.component';
-import {NewsComponent} from './news/news.component';
-import {AboutComponent} from './about/about.component';
-import {ScheduleComponent} from './schedule/schedule.component';
-import {APP_BASE_HREF} from '@angular/common';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {LazyLoadImageModule} from 'ng-lazyload-image';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PerformanceListComponent } from './performance-list/performance-list.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { TeamComponent } from './team/team.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { TeamListComponent } from './team-list/team-list.component';
+import { PerformanceComponent } from './performance/performance.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { NewsComponent } from './news/news.component';
+import { AboutComponent } from './about/about.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({

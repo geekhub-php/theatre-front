@@ -1,5 +1,5 @@
 import { AppPage, MainMenu } from './app.po';
-import {by, element} from 'protractor';
+import { by, element } from 'protractor';
 
 describe('theatre-front App', () => {
   let page: AppPage;

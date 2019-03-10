@@ -1,8 +1,9 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
 import { PerformanceRepositoryService } from './performance-repository.service';
-import {HttpClient} from '@angular/common/http';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+
 
 describe('PerformanceRepositoryService', () => {
   let httpClient: HttpClient;

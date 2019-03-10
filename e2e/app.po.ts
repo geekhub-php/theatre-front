@@ -1,4 +1,5 @@
-import {browser, by, element, ElementFinder} from 'protractor';
+/* tslint:disable:max-classes-per-file */
+import { browser, by, element } from 'protractor';
 
 export class AppPage {
   navigateTo() {

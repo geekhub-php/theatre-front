@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Nav} from './Nav';
+import { NavModel } from './nav.model';
 
 @Component({
   selector: 'app-main-menu',
@@ -7,8 +7,7 @@ import {Nav} from './Nav';
   styleUrls: ['./main-menu.component.scss']
 })
 export class MainMenuComponent implements OnInit {
-
-  public navs: Nav[];
+  navs: Array<NavModel>;
 
   constructor() { }
 

@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PerformanceListComponent } from './performance-list.component';
-import {PerformanceRepositoryService} from '../Repository/performance-repository.service';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {of} from 'rxjs/observable/of';
-import {LazyLoadImageModule} from 'ng-lazyload-image';
+import { PerformanceRepositoryService } from '../repository/performance-repository.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { of } from 'rxjs/observable/of';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 describe('PerformanceListComponent', () => {
   let component: PerformanceListComponent;

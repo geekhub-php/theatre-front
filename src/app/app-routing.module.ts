@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import {PerformanceListComponent} from './performance-list/performance-list.component';
-import {ContactsComponent} from './contacts/contacts.component';
-import {TeamComponent} from './team/team.component';
-import {NewsListComponent} from './news-list/news-list.component';
-import {TeamListComponent} from './team-list/team-list.component';
-import {PerformanceComponent} from './performance/performance.component';
-import {HomePageComponent} from './home-page/home-page.component';
-import {NewsComponent} from './news/news.component';
-import {AboutComponent} from './about/about.component';
-import {ScheduleComponent} from './schedule/schedule.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PerformanceListComponent } from './performance-list/performance-list.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { TeamComponent } from './team/team.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { TeamListComponent } from './team-list/team-list.component';
+import { PerformanceComponent } from './performance/performance.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { NewsComponent } from './news/news.component';
+import { AboutComponent } from './about/about.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomePageComponent},

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PerformanceRepositoryService} from '../Repository/performance-repository.service';
-import {Performance} from '../models';
+import { PerformanceRepositoryService } from '../repository/performance-repository.service';
+import { Performance } from '../models';
 
 @Component({
   selector: 'app-performance-list',
@@ -11,7 +11,7 @@ import {Performance} from '../models';
   ]
 })
 export class PerformanceListComponent implements OnInit {
-  public performances: Performance[];
+  performances: Array<Performance>;
   constructor(private performanceRepository: PerformanceRepositoryService) { }
 
   ngOnInit() {
@@ -22,10 +22,9 @@ export class PerformanceListComponent implements OnInit {
     if (isSuccess) {
         div.style.height = '100%';
         div.classList.remove('stub');
-        console.dir(div);
     } else {
       // ToDo: add fallback image to src
-      console.log('Error while loading image');
+      console.error('Error while loading image');
     }
   }
 }

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { PerformanceListComponent } from './performance-list/performance-list.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { ScheduleComponent } from './schedule/schedule.component';
@@ -16,8 +16,8 @@ import { TeamComponent } from './team/team.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {HttpClientModule} from '@angular/common/http';
-import {LazyLoadImageModule} from 'ng-lazyload-image';
+import { HttpClientModule } from '@angular/common/http';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
