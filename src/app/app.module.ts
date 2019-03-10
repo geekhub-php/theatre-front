@@ -38,7 +38,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot(),
+    NgbModule,
     LazyLoadImageModule,
     HttpClientModule,
   ],

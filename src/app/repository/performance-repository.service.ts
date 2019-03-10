@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PerformanceListResponse } from '../models';
-import { Observable } from 'rxjs/Observable';
+
+import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
+
+import { PerformanceListResponse } from '../models';
+
 
 @Injectable()
 export class PerformanceRepositoryService {
