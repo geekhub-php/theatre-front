@@ -4,11 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { PerformanceListResponse } from '../models';
+import { PerformanceListResponse } from '../../models';
 
 
-@Injectable()
-export class PerformanceRepositoryService {
+@Injectable({
+  providedIn: 'root'
+})
+export class PerformanceService {
   readonly performanceListUrl = 'http://api.theatre.pp.ua/performances.json';
 
   constructor(private http: HttpClient) { }
