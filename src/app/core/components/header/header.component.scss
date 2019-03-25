@@ -3,21 +3,23 @@ $navLinkActiveBorderTop: 3px;
 
 nav {
   background: linear-gradient(to right,rgba(236,83,42,1) 0,rgba(196,36,46,1) 100%);
-  font-size: 85%;
-
+  font-size: 12px;
+  font-family: 'Roboto-Light' , sans-serif;
   li a:hover {
     background: #FFF;
-    color: #23527c;
+    color: #2a2a2a;
   }
   .menu-container a.active {
     border-top: $navLinkActiveBorderTop solid white;
     padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
   }
+
 }
 .menu-container, .navbar-collapse {
   align-items: stretch;
 }
 a.nav-link {
+  color: #fff;
   padding: $navLinkPaddingTop 11px;
   white-space: nowrap;
 }

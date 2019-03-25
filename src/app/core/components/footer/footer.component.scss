@@ -1,0 +1,29 @@
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height:70px;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 4px;
+  background-image: -webkit-linear-gradient(left, #f1592a 20%, #bf1e2e 100%);
+
+  .nav__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    &__item {
+      transition: 0.3s;
+      font-family: 'Roboto-Light' , sans-serif;;
+      font-size: 12px;
+      margin:  0 10px ;
+      text-align: left;
+      color:#898989;
+      &:hover {
+        color :#cd2e2d
+      }
+    }
+  }
+
+}
