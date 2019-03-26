@@ -34,7 +34,7 @@ import { NewsComponent } from './news/news.component';
     ContactsComponent,
     ArticleComponent,
     PersonComponent,
-    NewsComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

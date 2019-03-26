@@ -8,12 +8,9 @@ ul {
   margin-left: -45px;
 
   li {
-    .first {
-      outline: 1px solid #000;
-    }
-
     a {
       color: #363a3b;
+      cursor: pointer;
 
       &:hover {
         text-decoration: none;
@@ -21,4 +18,11 @@ ul {
       }
     }
   }
+}
+
+@media (max-width: 992px) {
+  ul{
+
+  }
+
 }

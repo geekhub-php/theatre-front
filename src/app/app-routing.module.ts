@@ -15,6 +15,9 @@ import { PerformanceComponent } from './performance/performance.component';
 import { NewsComponent } from './news/news.component';
 import { ArticleComponent } from './article/article.component';
 
+import { PartnersComponent } from './home-page/partners/partners.component';
+import { BoardTrusteesComponent } from './home-page/board-trustees/board-trustees.component';
+
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 
@@ -29,6 +32,8 @@ const appRoutes: Routes = [
     {path: 'persons', component: TeamComponent},
     {path: 'persons/:slug', component: PersonComponent},
     {path: 'contacts', component: ContactsComponent},
+    {path: 'partners', component: PartnersComponent},
+    {path: 'board-trustees', component: BoardTrusteesComponent},
     {path: '**', component: PageNotFoundComponent}
 ];
 

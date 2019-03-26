@@ -1,4 +1,4 @@
-h3{
+h3 {
   margin-bottom: 27px;
   margin-top: 32px;
   color: #df4a2b;
@@ -6,7 +6,14 @@ h3{
   font-family: 'Roboto', sans-serif;
 }
 
-p{
+p {
   color: #484c4d;
   font-size: 14px;
+}
+
+@media (max-width: 992px) {
+  h3{
+
+  }
+
 }
