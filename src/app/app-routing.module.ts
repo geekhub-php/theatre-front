@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutComponent } from './about/about.component';
-import { CalendarComponent } from './schedule/calendar/calendar.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { TeamComponent } from './team/team.component';
 import { PersonComponent } from './person/person.component';
@@ -20,7 +20,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 
 const appRoutes: Routes = [
     {path: '', component: HomePageComponent},
-    {path: 'poster', component: CalendarComponent},
+    {path: 'poster', component: ScheduleComponent},
     {path: 'repertoire', component: PerformanceListComponent},
     {path: 'performance/:slug', component: PerformanceComponent},
     {path: 'news', component: NewsComponent},
