@@ -7,9 +7,11 @@
   font-family: Roboto-Regular;
   src: url(../../../assets/fonts/Roboto-Regular.ttf);
 }
+
 img{
   height: 739px;
   position: relative;
+
 }
 
 .carousel-indicators {
@@ -33,7 +35,7 @@ img{
       width: 553px;
       background-image: url("../../../assets/images/item-active-1.png");
     }
-
+    
     .ticket_p {
       list-style-type: none;
       color: #7d7c7c;
@@ -46,7 +48,6 @@ img{
     .ticket_p_day {
       margin: 0px 0px 11px 37px;
       font-size: 15px;
-
     }
 
     .ticket_p_date {
@@ -59,7 +60,6 @@ img{
       margin-left: 15px;
       padding-left: 8px;
       margin-top: -25px;
-
     }
   }
 }
@@ -93,6 +93,3 @@ img{
     background-size: contain;
   }
 }
-
-
-
