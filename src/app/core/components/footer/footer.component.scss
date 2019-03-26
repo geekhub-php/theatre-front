@@ -2,27 +2,55 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height:70px;
+  height: 70px;
   background-repeat: no-repeat;
   -webkit-background-size: 100% 4px;
   background-image: -webkit-linear-gradient(left, #f1592a 20%, #bf1e2e 100%);
-
-  //плохая идея  не адаптивно для мобильной версии
+position: relative;
   .nav__list {
     list-style: none;
     display: flex;
     justify-content: center;
-
     &__item {
       transition: 0.3s;
-      font-family: 'Roboto-Light' , sans-serif;;
+      font-family: 'Roboto-Light', sans-serif;;
       font-size: 12px;
-      margin:  0 10px ;
+      margin: 0 10px;
       text-align: left;
-      color:#898989;
+      color: #363a3b;
       &:hover {
-        color :#cd2e2d
+        color: #df4a2b;
       }
     }
+  }
+  .scrollToTop {
+    font-size: 0;
+    position: absolute;
+    bottom: 94%;
+    right: 5%;
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    transition: 0.3s;
+    background-color: #cd2e2d;
+    background-image: url("../../../../assets/arrow.png");
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    border: none;
+    &:hover {
+      bottom:89%;
+    }
+    &:active {
+      bottom:98%;
+    }
+  }
+
+
+  @media (max-width: 991.98px) {
+    .nav__list {
+      display: none;
+    }
+
+
   }
 }

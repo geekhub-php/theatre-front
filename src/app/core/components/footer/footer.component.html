@@ -1,17 +1,21 @@
+
 <footer class="footer">
-  <nav class="navbar navbar-expand-lg navbar-dark mb-6">
+  <nav class="navbar">
     <div class="container menu-container">
       <ul class="nav__list">
         <li class="nav__list__item"><a routerlink="">ГОЛОВНА</a></li>
-        <li class="nav__list__item"><a routerlink="">АФІША</a></li>
-        <li class="nav__list__item"><a routerlink="">РЕПЕРТУАР</a></li>
-        <li class="nav__list__item"><a routerlink="">НОВИНИ</a></li>
-        <li class="nav__list__item"><a routerlink="">ПРО ТЕАТР</a></li>
-        <li class="nav__list__item"><a routerlink="">ПЕРСОНАЛІЇ</a></li>
-        <li class="nav__list__item"><a routerlink="">КОНТАКТИ</a></li>
+        <li class="nav__list__item"><a routerlink="poster">АФІША</a></li>
+        <li class="nav__list__item"><a routerlink="repertoire">РЕПЕРТУАР</a></li>
+        <li class="nav__list__item"><a routerlink="news">НОВИНИ</a></li>
+        <li class="nav__list__item"><a routerlink="about">ПРО ТЕАТР</a></li>
+        <li class="nav__list__item"><a routerlink="persons">ПЕРСОНАЛІЇ</a></li>
+        <li class="nav__list__item"><a routerlink="contacts">КОНТАКТИ</a></li>
         <li class="nav__list__item"><a routerlink="">ФЕСТИВАЛІ</a></li>
         <li class="nav__list__item"><a routerlink="">ФОРУМ</a></li>
       </ul>
     </div>
   </nav>
+
+  <button class="scrollToTop" (click)="scrollToTop()">scrollToTop</button>
+
 </footer>
