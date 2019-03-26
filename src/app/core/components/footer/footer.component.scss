@@ -6,7 +6,8 @@
   background-repeat: no-repeat;
   -webkit-background-size: 100% 4px;
   background-image: -webkit-linear-gradient(left, #f1592a 20%, #bf1e2e 100%);
-position: relative;
+  position: relative;
+  cursor: pointer;
   .nav__list {
     list-style: none;
     display: flex;
@@ -33,24 +34,22 @@ position: relative;
     border-radius: 4px;
     transition: 0.3s;
     background-color: #cd2e2d;
-    background-image: url("../../../../assets/arrow.png");
-    background-repeat:no-repeat;
+    background-image: url("/../../../../assets/images/arrow.png");
+    background-repeat: no-repeat;
     background-position: 50% 50%;
     border: none;
     &:hover {
-      bottom:89%;
+      bottom: 89%;
     }
     &:active {
-      bottom:98%;
+      bottom: 98%;
     }
   }
-
 
   @media (max-width: 991.98px) {
     .nav__list {
       display: none;
     }
-
 
   }
 }
