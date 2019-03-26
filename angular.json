@@ -71,7 +71,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "assets": [
               "src/assets",

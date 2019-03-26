@@ -14,6 +14,9 @@ import { PerformanceListComponent } from './performance-list/performance-list.co
 import { PerformanceComponent } from './performance/performance.component';
 
 import { ScheduleComponent } from './schedule/schedule.component';
+import { CalendarComponent } from './schedule/calendar/calendar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
@@ -21,6 +24,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ArticleComponent } from './article/article.component';
 import { PersonComponent } from './person/person.component';
 import { NewsComponent } from './news/news.component';
+
 
 
 @NgModule({
@@ -35,6 +39,7 @@ import { NewsComponent } from './news/news.component';
     ArticleComponent,
     PersonComponent,
     NewsComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,11 @@ import { NewsComponent } from './news/news.component';
     HttpClientModule,
     CoreModule,
     HomePageModule,
-    NewsListModule
+    NewsListModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
