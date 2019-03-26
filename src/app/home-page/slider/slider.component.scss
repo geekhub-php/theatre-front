@@ -10,14 +10,12 @@
 img{
   height: 739px;
   position: relative;
-
 }
 
 .carousel-indicators {
   margin: 0 auto;
   padding-bottom: 18px;
   width: 900px;
-
 
   .ticket {
     width: 92px;
@@ -35,6 +33,7 @@ img{
       width: 553px;
       background-image: url("../../../assets/images/item-active-1.png");
     }
+
     .ticket_p {
       list-style-type: none;
       color: #7d7c7c;
@@ -76,7 +75,6 @@ img{
     background-color: #e54b2b;
   }
 }
-
 
 .carousel-control-next {
   margin-left: 3px;
