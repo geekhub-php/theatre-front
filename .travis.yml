@@ -12,6 +12,7 @@ addons:
 branches:
   only:
     - master
+    - develop
 
 before_script:
   - google-chrome --version
