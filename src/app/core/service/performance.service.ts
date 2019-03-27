@@ -5,18 +5,20 @@ import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../../models';
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class PerformanceService {
-  readonly performanceListUrl = 'http://api.theatre.pp.ua/performances.json';
+export class GatewayService {
+  readonly performanceListUrl = '/performances.json';
+  readonly baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
-  getList(): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(this.performanceListUrl, { params: {limit: '100'} })
+  getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, { params: {limit: '100'} })
       .pipe(
           catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
