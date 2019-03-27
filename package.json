@@ -26,7 +26,10 @@
     "rxjs": "^6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "^0.8.29",
-    "rxjs-compat": "^6.0.0-rc.0"
+    "rxjs-compat": "^6.0.0-rc.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.1.0",
+    "angular-calendar": "^0.27.0",
+    "date-fns": "^1.30.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.6",
