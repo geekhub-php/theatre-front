@@ -21,7 +21,7 @@ before_script:
   - webdriver-manager start > ./webdriver.log 2>&1 &
 
 script:
-  - ng test --watch=false --browser=ChromeHeadlessNoSandbox --code-coverage=true
+  - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
   - ng e2e
 
 notifications:
