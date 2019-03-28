@@ -18,6 +18,13 @@ ul {
         text-decoration: none;
         color: $hover-color;
       }
+
+      .icon {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        fill: black;
+      }
     }
   }
 }
@@ -31,6 +38,22 @@ ul {
 
     li {
       margin-left: -1.875rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+    li {
+      margin-left: -1.875rem;
+
+      span {
+        display: none;
+      }
     }
   }
 }
