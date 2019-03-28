@@ -17,13 +17,10 @@ ul {
       &:hover {
         text-decoration: none;
         color: $hover-color;
+        fill: $hover-color;
       }
-
-      .icon {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        fill: black;
+      svg {
+        margin-right: 8px;
       }
     }
   }
@@ -53,6 +50,11 @@ ul {
 
       span {
         display: none;
+      }
+
+      svg {
+        width: 1.5625rem;
+        height: 1.5625rem;
       }
     }
   }
