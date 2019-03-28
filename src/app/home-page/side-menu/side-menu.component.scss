@@ -1,28 +1,36 @@
+@import "../../../assets/variables";
+
 ul {
   list-style-type: none;
   text-transform: uppercase;
-  font-size: 18px;
-  line-height: 38px;
-  margin-top: 32px;
-  font-family: 'Roboto', sans-serif;
-  margin-left: -45px;
+  font-size: 1.125rem;
+  line-height: 2.375rem;
+  margin-top: 2rem;
+  font-family: $main-font;
+  margin-left: -2.8125rem;
 
   li {
     a {
-      color: #363a3b;
+      color: $primary-color;
       cursor: pointer;
 
       &:hover {
         text-decoration: none;
-        color: #df4a2b;
+        color: $hover-color;
       }
     }
   }
 }
 
+
 @media (max-width: 992px) {
-  ul{
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
 
+    li {
+      margin-left: -1.875rem;
+    }
   }
-
 }

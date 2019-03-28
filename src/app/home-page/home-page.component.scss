@@ -1,19 +1,21 @@
+@import "../../assets/variables";
+
 h3 {
-  margin-bottom: 27px;
-  margin-top: 32px;
-  color: #df4a2b;
-  font-size: 30px;
-  font-family: 'Roboto', sans-serif;
+  font-size: 1.875rem;
+  font-family: $main-font;
+  color: $hover-color;
+
+  margin-bottom: 1.6875rem;
+  margin-top: 2rem;
 }
 
 p {
-  color: #484c4d;
-  font-size: 14px;
+  color: $primary-color;
+  font-size: 0.875rem;
 }
 
 @media (max-width: 992px) {
-  h3{
-
+  h3 {
+    margin-top: 0.5rem;
   }
-
 }
