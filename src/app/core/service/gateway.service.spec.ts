@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 
-import { PerformanceService } from './performance.service';
+import { GatewayService } from './gateway.service';
 
 
 describe('PerformanceRepositoryService', () => {
@@ -11,14 +11,14 @@ describe('PerformanceRepositoryService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PerformanceService],
+      providers: [GatewayService],
       imports: [ HttpClientTestingModule ]
     });
     httpClient = TestBed.get(HttpClient);
     httpTestingController = TestBed.get(HttpTestingController);
   });
 
-  it('should be created', inject([PerformanceService], (service: PerformanceService) => {
+  it('should be created', inject([GatewayService], (service: GatewayService) => {
     expect(service).toBeTruthy();
   }));
 });
