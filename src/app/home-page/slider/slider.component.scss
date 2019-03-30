@@ -47,21 +47,27 @@ ul, li {
       margin-top: -12px;
     }
 
-    .ticket_p_day {
+    .ticket_day {
       margin: 0px 0px 11px 37px;
       font-size: 15px;
     }
 
-    .ticket_p_date {
+    .ticket_date {
       width: 60px;
       height: 60px;
       border-bottom: 1px solid #ffffff;
       font-size: 44px;
-      color: #ffffff;     font-family: Roboto-Thin;
+      color: #ffffff;
+      font-family: Roboto-Thin;
       margin-left: 15px;
       padding-left: 8px;
       margin-top: -25px;
     }
+
+    .ticket_month{
+      text-transform: uppercase;
+    }
+
     .block{
       display: none;
     }
@@ -145,12 +151,12 @@ ul, li {
     margin-top: -12px;
   }
 
-  .ticket_p_day {
+  .ticket_day {
     margin: 0px 0px 11px 37px;
     font-size: 15px;
   }
 
-  .ticket_p_date {
+  .ticket_date {
     width: 60px;
     height: 60px;
     border-bottom: 1px solid #ffffff;
@@ -162,7 +168,7 @@ ul, li {
     margin-top: -25px;
   }
 
-  .ticket_p_month{
+  .ticket_month{
     text-transform: uppercase;
   }
 }
