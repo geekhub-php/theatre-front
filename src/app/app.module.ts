@@ -22,6 +22,8 @@ import { ArticleComponent } from './article/article.component';
 import { PersonComponent } from './person/person.component';
 import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PartnersComponent } from './partners/partners.component';
+import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { HomePageComponent } from './home-page/home-page.component';
     ArticleComponent,
     PersonComponent,
     NewsComponent,
-    HomePageComponent
+    HomePageComponent,
+    PartnersComponent,
+    BoardTrusteesComponent
   ],
   imports: [
     BrowserModule,

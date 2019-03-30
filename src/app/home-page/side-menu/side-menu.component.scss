@@ -3,11 +3,11 @@
 ul {
   list-style-type: none;
   text-transform: uppercase;
-  font-size: 1.125rem;
-  line-height: 2.375rem;
-  margin-top: 2rem;
+  font-size: 18px;
+  line-height: 38px;
+  margin-top: 32px;
   font-family: $main-font;
-  margin-left: -2.8125rem;
+  margin-left: -45px;
 
   li {
     a {
@@ -34,7 +34,7 @@ ul {
     flex-direction: row;
 
     li {
-      margin-left: -1.875rem;
+      margin-left: -30px;
     }
   }
 }
@@ -46,15 +46,15 @@ ul {
     flex-direction: row;
 
     li {
-      margin-left: -1.875rem;
+      margin-left: -30px;
 
       span {
         display: none;
       }
 
       svg {
-        width: 1.5625rem;
-        height: 1.5625rem;
+        width: 25px;
+        height: 25px;
       }
     }
   }

@@ -1,21 +1,21 @@
 @import "../../assets/variables";
 
 h3 {
-  font-size: 1.875rem;
+  font-size: 30px;
   font-family: $main-font;
   color: $hover-color;
 
-  margin-bottom: 1.6875rem;
-  margin-top: 2rem;
+  margin-bottom: 27px;
+  margin-top: 32px;
 }
 
 p {
   color: $primary-color;
-  font-size: 0.875rem;
+  font-size: 14px;
 }
 
 @media (max-width: 992px) {
   h3 {
-    margin-top: 0.5rem;
+    margin-top: 8px;
   }
 }

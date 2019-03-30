@@ -17,6 +17,8 @@ import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { NewsListModule } from './news-list/news-list.module';
 import { RouterTestingModule } from '@angular/router/testing';
+import { PartnersComponent } from './partners/partners.component';
+import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 
 
 describe('AppComponent', () => {
@@ -35,7 +37,9 @@ describe('AppComponent', () => {
         ArticleComponent,
         TeamComponent,
         ContactsComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        PartnersComponent,
+        BoardTrusteesComponent
       ],
       providers: [
           {provide: APP_BASE_HREF, useValue: '/'}

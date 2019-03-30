@@ -15,8 +15,8 @@ import { PerformanceComponent } from './performance/performance.component';
 import { NewsComponent } from './news/news.component';
 import { ArticleComponent } from './article/article.component';
 
-import { PartnersComponent } from './home-page/partners/partners.component';
-import { BoardTrusteesComponent } from './home-page/board-trustees/board-trustees.component';
+import { PartnersComponent } from './partners/partners.component';
+import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 

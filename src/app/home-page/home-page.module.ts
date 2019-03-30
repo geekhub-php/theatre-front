@@ -4,16 +4,12 @@ import { RouterModule } from '@angular/router';
 
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
-import { PartnersComponent } from './partners/partners.component';
-import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { NewsListModule } from '../news-list/news-list.module';
 
 @NgModule({
   declarations: [
     SideMenuComponent,
-    SliderComponent,
-    PartnersComponent,
-    BoardTrusteesComponent
+    SliderComponent
   ],
   imports: [
     CommonModule,
