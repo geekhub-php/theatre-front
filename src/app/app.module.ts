@@ -21,6 +21,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ArticleComponent } from './article/article.component';
 import { PersonComponent } from './person/person.component';
 import { NewsComponent } from './news/news.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { NewsComponent } from './news/news.component';
     ContactsComponent,
     ArticleComponent,
     PersonComponent,
-    NewsComponent
+    NewsComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
