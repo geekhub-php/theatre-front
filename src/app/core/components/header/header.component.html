@@ -1,7 +1,7 @@
 <header class="header">
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <h1 class="header-logo">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <h1 class="header-logo col-3">
         <a routerLink="/">
           <img src="assets/images/logo.png" alt="logo">
         </a>
@@ -11,23 +11,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li><a class="nav-link active" routerLink="">Головна</a></li>
-          <li><a class="nav-link" routerLink="poster">Афіша</a></li>
-          <li><a class="nav-link" routerLink="repertoire">Репертуар</a></li>
-          <li><a class="nav-link" routerLink="news">Новини</a></li>
-          <li><a class="nav-link" routerLink="about"> Про театр </a></li>
-          <li><a class="nav-link" routerLink="persons">Персоналії</a></li>
-          <li><a class="nav-link" routerLink="contacts">Контакти</a></li>
-          <li><a class="nav-link" routerLink="">Фестивалі</a></li>
-          <li><a class="nav-link show__mobile" routerlink="">Фотоархів</a></li>
-          <li><a class="nav-link show__mobile" routerlink="">Відеоархів</a></li>
-          <li><a class="nav-link show__mobile" routerlink="">Піклувальна рада</a></li>
-          <li><a class="nav-link show__mobile" routerlink="">Партнери</a></li>
-          <li><a class="nav-link hide__header" href="#">Форум</a></li>
-        </ul>
+        <app-main-nav  class="collapse navbar-collapse"></app-main-nav>
+
+          <select name="language" class="language">
+            <option value="UK">УКР</option>
+            <option value="RU">РУС</option>
+            <option value="EN">ENG</option>
+          </select>
+
       </div>
-      <a class="nav-link" href="#">UA</a>
     </nav>
   </div>
 </header>

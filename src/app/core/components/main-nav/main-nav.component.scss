@@ -1,14 +1,46 @@
 @import "../../../../assets/variables";
 
-.nav-link {
-  list-style: none;
+$navLinkPaddingTop: 30.5px;
+$navLinkActiveBorderTop: 3px;
+
+.navbar-nav {
   font-size: 12px;
   font-family: $main-font;
   text-transform: uppercase;
 }
 
-.show__mobile {
-  display: none;
+.header-menu {
+color: #fff;
+  font-weight: 300;
+  .nav-link:hover {
+    background: #FFF;
+    color: $primary-color;
+  }
+  .header-menu-link .active {
+    border-top: $navLinkActiveBorderTop solid #fff;
+    padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
+  }
+  a.header-menu-link {
+    color: #fff;
+    padding: $navLinkPaddingTop 11px;
+    white-space: nowrap;
+  }
+
+  .show__mobile-header {
+    display: none;
+  }
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .show__mobile-header {
+    display: none;
+  }
+
+
 }
 
 

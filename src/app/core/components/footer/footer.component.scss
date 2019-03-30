@@ -7,24 +7,17 @@
   -webkit-background-size: 100% 4px;
   background-image: -webkit-linear-gradient(left, #f1592a 20%, #bf1e2e 100%);
   position: relative;
-  .nav {
+  .navbar-nav {
     width: 80%;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    font-family: $main-font;
-    text-transform: uppercase;
-     .nav-link{
-       color: $primary-color;
-       &:hover {
-         color: $hover-color;
-       }
-     }
+
+    .footer-menu-link {
+      color: $primary-color;
+      &:hover {
+        color: $hover-color;
+      }
     }
-
-
+  }
   .scrollToTop {
     font-size: 0;
     position: absolute;

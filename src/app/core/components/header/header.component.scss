@@ -3,6 +3,7 @@
 $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
+
 .header {
   background: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
   font-size: 12px;
@@ -12,28 +13,17 @@ $navLinkActiveBorderTop: 3px;
       margin: 4px 57px 4px 5px;
     }
 
-    .menu-container, .navbar-collapse {
+    .menu-container, .navbar-collapse, .language{
       align-items: stretch;
     }
 
-
-    li a:hover {
-      background: #FFF;
-      border-top: $navLinkActiveBorderTop solid #fff;
-      color: $primary-color;
-    }
-     a.active {
-      border-top: $navLinkActiveBorderTop solid #fff;
-      padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
-    }
-    a.nav-link {
-      color: #fff;
-      padding: $navLinkPaddingTop 11px;
-      white-space: nowrap;
-    }
-
-    .show__mobile {
-      display: none;
+    .language{
+      color: #c3c3c3;
+      background: transparent;
+      height: 20px;
+      width: 50px;
+      margin: auto;
+      border: none;
     }
   }
 }
