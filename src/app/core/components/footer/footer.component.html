@@ -1,20 +1,17 @@
 <footer class="footer">
-  <nav class="navbar">
-    <div class="container menu-container">
-      <ul class="nav__list">
-        <li class="nav__list__item"><a routerlink="">ГОЛОВНА</a></li>
-        <li class="nav__list__item"><a routerlink="/poster">АФІША</a></li>
-        <li class="nav__list__item"><a routerlink="/repertoire">РЕПЕРТУАР</a></li>
-        <li class="nav__list__item"><a routerlink="/news">НОВИНИ</a></li>
-        <li class="nav__list__item"><a routerlink="about">ПРО ТЕАТР</a></li>
-        <li class="nav__list__item"><a routerlink="persons">ПЕРСОНАЛІЇ</a></li>
-        <li class="nav__list__item"><a routerlink="contacts">КОНТАКТИ</a></li>
-        <li class="nav__list__item"><a routerlink="">ФЕСТИВАЛІ</a></li>
-        <li class="nav__list__item"><a routerlink="">ФОРУМ</a></li>
-      </ul>
-    </div>
-  </nav>
+    <ul class="nav">
+      <li><a class="nav-link active" routerLink="">Головна</a></li>
+      <li><a class="nav-link" routerLink="poster">Афіша</a></li>
+      <li><a class="nav-link" routerLink="repertoire">Репертуар</a></li>
+      <li><a class="nav-link" routerLink="news">Новини</a></li>
+      <li><a class="nav-link" routerLink="about"> Про театр </a></li>
+      <li><a class="nav-link" routerLink="persons">Персоналії</a></li>
+      <li><a class="nav-link" routerLink="contacts">Контакти</a></li>
+      <li><a class="nav-link" routerLink="">Фестивалі</a></li>
 
+      <li><a class="nav-link hide__header" href="#">Форум</a></li>
+    </ul>
   <button class="scrollToTop" (click)="scrollToTop()">scrollToTop</button>
 
 </footer>
+

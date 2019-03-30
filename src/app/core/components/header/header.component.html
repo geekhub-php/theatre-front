@@ -1,29 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-dark mb-4">
-  <div class="container menu-container">
-    <div id="header-logo">
-      <a routerLink="/">
-        <img src="assets/images/logo.png">
-      </a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav__list__item"><a class="nav-link" routerLink="">ГОЛОВНА</a></li>
-        <li class="nav__list__item"><a class="nav-link" routerLink="">АФІША</a></li>
-        <li class="nav__list__item"><a class="nav-link" routerLink="">РЕПЕРТУАР</a></li>
-        <li class="nav__list__item"><a class="nav-link" routerLink="">НОВИНИ</a></li>
-        <li class="nav__list__item"><a class="nav-link" routerLink="">ПРО ТЕАТР</a></li>
-        <li class="nav__list__item"><a class="nav-link" routerLink="">ПЕРСОНАЛІЇ</a></li>
-        <li class="nav__list__item"><a class="nav-link" routerLink="">КОНТАКТИ</a></li>
-        <li class="nav__list__item"><a class="nav-link" routerLink="">ФЕСТИВАЛІ</a></li>
-
-        <li class="nav__list__item"> <a class="nav-link" href="#">UA</a> </li>
-      </ul>
-    </div>
+<header class="header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <h1 class="header-logo">
+        <a routerLink="/">
+          <img src="assets/images/logo.png" alt="logo">
+        </a>
+      </h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li><a class="nav-link active" routerLink="">Головна</a></li>
+          <li><a class="nav-link" routerLink="poster">Афіша</a></li>
+          <li><a class="nav-link" routerLink="repertoire">Репертуар</a></li>
+          <li><a class="nav-link" routerLink="news">Новини</a></li>
+          <li><a class="nav-link" routerLink="about"> Про театр </a></li>
+          <li><a class="nav-link" routerLink="persons">Персоналії</a></li>
+          <li><a class="nav-link" routerLink="contacts">Контакти</a></li>
+          <li><a class="nav-link" routerLink="">Фестивалі</a></li>
+          <li><a class="nav-link show__mobile" routerlink="">Фотоархів</a></li>
+          <li><a class="nav-link show__mobile" routerlink="">Відеоархів</a></li>
+          <li><a class="nav-link show__mobile" routerlink="">Піклувальна рада</a></li>
+          <li><a class="nav-link show__mobile" routerlink="">Партнери</a></li>
+          <li><a class="nav-link hide__header" href="#">Форум</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="#">UA</a>
+    </nav>
   </div>
-</nav>
+</header>

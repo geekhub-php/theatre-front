@@ -1,0 +1,14 @@
+@import "../../../../assets/variables";
+
+.nav-link {
+  list-style: none;
+  font-size: 12px;
+  font-family: $main-font;
+  text-transform: uppercase;
+}
+
+.show__mobile {
+  display: none;
+}
+
+
