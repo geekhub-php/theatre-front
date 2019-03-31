@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class HttpService {
 
-  url = 'http://api.theatre.pp.ua/employees.json';
+  url = 'http://apistaging.theatre.pp.ua/employees.json';
 
   httpOptions = {
     headers: new HttpHeaders(),

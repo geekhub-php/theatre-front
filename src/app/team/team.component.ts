@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
 import { HttpResponse } from '@angular/common/http';
-import { Employee } from './employee';
+import { EmployeeListResponse } from './employee';
 
 @Component({
   selector: 'app-team',
@@ -16,7 +16,7 @@ export class TeamComponent implements OnInit {
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-    this.httpService.getEmployees().subscribe((res: HttpResponse<Array<Employee>>) => {
+    this.httpService.getEmployees().subscribe((res: HttpResponse<EmployeeListResponse>) => {
       console.log(res.body);
       this.employees = res.body.employees;
     });

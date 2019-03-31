@@ -11,3 +11,12 @@ export class Employee {
   slug: string;
   updated_at: string;
 }
+
+abstract class ListResponse {
+  total_count: number;
+  page: number;
+  count: number;
+}
+export class EmployeeListResponse extends ListResponse {
+  employees: Array<Employee>;
+}
