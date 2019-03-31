@@ -7,6 +7,7 @@
 .page-title {
   color: #e54b2b;
   font-size: 24px;
+  font-weight: 600;
   text-align: center;
   margin: 20px 0;
 }
@@ -58,19 +59,4 @@
     color: inherit;
     margin-left: 5px;
   }
-}
-
-.contact-phone-img {
-  @extend .contact-item-pic;
-  background: url("../../assets/images/contact-phone-image.png") no-repeat;
-}
-
-.contact-mail-img {
-  @extend .contact-item-pic;
-  background: url("../../assets/images/contact-mail-image.png") no-repeat;
-}
-
-.contact-map-pin-img {
-  @extend .contact-item-pic;
-  background: url("../../assets/images/contact-map-pin-image.png") no-repeat;
 }
