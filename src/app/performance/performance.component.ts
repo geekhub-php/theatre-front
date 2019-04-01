@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-performance',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./performance.component.scss']
 })
 export class PerformanceComponent implements OnInit {
+
+  response: any;
 
   constructor() { }
 
