@@ -41,21 +41,7 @@ ul {
 
 @media (max-width: 576px) {
   ul {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-
-    li {
-      margin-left: -30px;
-
-      span {
-        display: none;
-      }
-
-      svg {
-        width: 25px;
-        height: 25px;
-      }
-    }
+    display: none;
   }
 }
+
