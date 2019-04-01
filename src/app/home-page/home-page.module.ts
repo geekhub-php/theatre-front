@@ -17,7 +17,6 @@ import { NewsListModule } from '../news-list/news-list.module';
     NewsListModule
   ],
   exports: [
-    NewsListModule,
     SliderComponent,
     SideMenuComponent
   ]
