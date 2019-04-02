@@ -1,1 +1,21 @@
-<div class="container"></div>
+<div class="container-my">
+  <h2 class="heading">Про Театер</h2>
+  <nav class="list">
+    <div class="list-item" *ngFor="let item of listHistories">
+      <body class="histories__list-body">
+        <a class="histories__list-body_link" href="/about#">
+          <header class="histories__list-header">
+            <h2 class="histories__list-header_heading">{{item.title}}</h2>
+          </header>
+          <main class="histories__list-main">
+            <img class="histories__list-main_img" [src]='item.mainPicture.history_big.url' alt="picture">
+            <div class="histories__list-main_text" [innerHTML]='item.text'></div>
+          </main>
+        </a>
+      </body>
+      <footer class="histories__list-footer">
+        <span class="year">{{item.year}}</span>
+      </footer>
+    </div>
+  </nav>
+</div>

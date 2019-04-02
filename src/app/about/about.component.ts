@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GatewayService } from '../core/service/gateway.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  listHistories: [];
+
+  constructor(private getway: GatewayService) { }
 
   ngOnInit() {
+    this.getway.getHistoriesList().subscribe(res => {
+      this.listHistories = res.history;
+    });
   }
-
 }

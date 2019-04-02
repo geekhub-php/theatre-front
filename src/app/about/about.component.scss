@@ -1,0 +1,143 @@
+.container-my {
+    box-sizing: border-box;
+    max-width: 62.5em;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.heading {
+    margin: 1.25em 0;
+    font-size: 1.5em;
+    text-align: center;
+    color: #e54b2b;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 0px;
+    padding-bottom: 2.5em;
+    
+
+    .list-item {
+        position: relative;
+        padding: 1.25em 0 0 0;
+        flex-basis: 50%;
+        border-right: 3px solid #eee;
+
+        .histories__list-body {
+            position: relative;
+            max-width: 26.875em;
+            height: 435px;
+            border: 1px solid #d4d4d4;
+            border-radius: 2px;
+            padding: 12px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+            margin-right: 16px;
+            margin-left: 0px;
+            margin: 0 1em 0 0;
+            
+            &::after {
+                position: absolute;
+                content: "";
+                width: 20px;
+                height: 20px;
+                top: 36px;
+                right: -10px;
+                border: 1px solid #d4d4d4;
+                background-color: #fff;
+                transform: rotate(45deg);
+                border-top: 1px solid #d4d4d4;
+                border-left: 1px solid transparent;
+                border-right: 1px solid #d4d4d4;
+                border-bottom: 1px solid transparent; 
+            }
+
+            .histories__list-body_link {
+                text-decoration: none;
+            }
+
+            .histories__list-header {
+                .histories__list-header_heading {
+                    color: #474b4d;
+                    font-size: 1.125em;
+                    font-weight: 900;
+                }
+            }
+
+            .histories__list-main {
+                max-height: 22.5em;
+                overflow: hidden;
+
+                .histories__list-main_text {
+                    color: #868b8c;
+                    font-size: 0.875em;
+                }
+
+                .histories__list-main_img {
+                    display: inline-block;
+                    margin: 5px 0;
+                    width: 100%;
+                    height: 17em;
+                }
+            }
+        }
+
+        .histories__list-footer {
+            position: absolute;
+            content: "";
+            border-radius: 50%;
+            width: 3.125em;
+            height: 3.125em;
+            background-color: #df442b;
+            top: 2.625em;
+            right: -1.6875em;
+
+            .year {
+                display: block;
+                margin-top: 0.68em;
+                font-size: 1.125em;
+                font-weight: 900;
+                color: #fff;
+                text-align: center;
+            }
+            
+        }
+
+        &:nth-child(2n) {
+            position: relative;
+            border-right: none; 
+
+            .histories__list-body {
+                float: right;
+                transform: translateY(6.25em);
+                margin: 0 0 0 1em;
+
+                &::after {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 36px;
+                    left: -10px;
+                    border: 1px solid #d4d4d4;
+                    background-color: #fff;
+                    transform: rotate(45deg);
+                    border-top: 1px solid  transparent;
+                    border-left: 1px solid #d4d4d4;
+                    border-right: 1px solid transparent;
+                    border-bottom: 1px solid #d4d4d4; 
+                }
+            }
+
+            .histories__list-footer {
+                position: absolute;
+                top: 9em;
+                left: -1.6875em;
+            }
+        }
+    }
+}
+
+

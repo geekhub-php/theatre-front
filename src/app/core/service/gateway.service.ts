@@ -13,6 +13,7 @@ import { environment } from '../../../environments/environment';
 })
 export class GatewayService {
   readonly performanceListUrl = '/performances.json';
+  readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
@@ -22,6 +23,12 @@ export class GatewayService {
       .pipe(
           catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
+  }
+
+  getHistoriesList(limit: string = '5', page: string = '1', locale: string = 'uk') {
+    return this.http.get(`${this.baseUrl}/${this.historiesListUrl}`, {
+      params: { limit: limit, page: page, locale: locale }
+    });
   }
 
   /* tslint:disable:no-console */
