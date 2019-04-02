@@ -1,0 +1,28 @@
+@import "../../../assets/variables";
+
+h1 {
+  color: $hover-color;
+}
+.title {
+  margin: 60px auto 0;
+  text-align: center;
+}
+.btn-switch {
+  margin: 110px 60px 0;
+}
+.view-switch {
+  margin: 110px 100px 0;
+}
+.btn {
+  color: $hover-color;
+  border: 1px solid $hover-color;
+}
+.btn:hover {
+  color: white;
+  background-color: $hover-color;
+}
+.row {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 30px;
+}

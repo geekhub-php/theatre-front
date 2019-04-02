@@ -1,18 +1,11 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { addDays, addHours, endOfDay, endOfMonth,
-  isSameDay, isSameMonth, startOfDay, subDays } from 'date-fns';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarView, CalendarEvent } from 'angular-calendar';
-
-const colors: any = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
-  }
-};
+import {ChangeDetectionStrategy, Component, TemplateRef, ViewChild} from '@angular/core';
+import {addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays} from 'date-fns';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {CalendarEvent, CalendarView} from 'angular-calendar';
 
 @Component({
   selector: 'mwl-demo-component',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
@@ -30,8 +23,30 @@ export class CalendarComponent {
     event: CalendarEvent;
   };
 
-  constructor() { }
+  activeDayIsOpen: boolean = true;
 
+  constructor(private modal: NgbModal) {}
 
+  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+    if (isSameMonth(date, this.viewDate)) {
+      this.viewDate = date;
+      if (
+        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+        events.length === 0
+      ) {
+        this.activeDayIsOpen = false;
+      } else {
+        this.activeDayIsOpen = true;
+      }
+    }
+  }
+
+  setView(view: CalendarView) {
+    this.view = view;
+  }
+
+  closeOpenMonthViewDay() {
+    this.activeDayIsOpen = false;
+  }
 
 }
