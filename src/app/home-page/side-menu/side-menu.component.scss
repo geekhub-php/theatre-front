@@ -1,0 +1,47 @@
+@import "../../../assets/variables";
+
+ul {
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 38px;
+  margin-top: 32px;
+  font-family: $main-font;
+  margin-left: -45px;
+
+  li {
+    a {
+      color: $primary-color;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+        color: $hover-color;
+        fill: $hover-color;
+      }
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+    li {
+      margin-left: -30px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  ul {
+    display: none;
+  }
+}
+
