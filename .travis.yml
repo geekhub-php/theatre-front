@@ -22,6 +22,8 @@ before_script:
   - webdriver-manager start > ./webdriver.log 2>&1 &
 
 script:
+  - npm run lint
+  - npm run lint-css
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
 #  - ng e2e
 
