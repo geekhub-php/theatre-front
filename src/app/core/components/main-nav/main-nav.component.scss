@@ -10,7 +10,7 @@ $navLinkActiveBorderTop: 3px;
 }
 
 .navbar-nav {
-color: #fff;
+  color: #fff;
   font-weight: 300;
   .nav-link:hover {
     background: #FFF;
@@ -26,20 +26,17 @@ color: #fff;
     white-space: nowrap;
   }
 
-  .show__mobile-header {
+  .hide {
     display: none;
   }
+
+
+  @media (max-width: 992px) {
+    a.nav-link {
+      padding: 5px;
+      text-align: center;
+      border-radius: 5px;
+    }
+  }
 }
-
-//.navbar-nav{
-//  display: flex;
-//  justify-content: center;
-//  align-items: center;
-//  color: $primary-color;
-//  .show__mobile-header {
-//    display: none;
-//  }
-//
-//}
-
 

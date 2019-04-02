@@ -10,14 +10,20 @@
 //      display: none;
 //    }
 //}
+/*
+https://blog.angular-university.io/angular-host-context/
+*/
 
 .footer {
+  margin-top: 50px;
   width: 100%;
   height: 70px;
   background-repeat: no-repeat;
   -webkit-background-size: 100% 4px;
   background-image: -webkit-linear-gradient(left, #f1592a 20%, #bf1e2e 100%);
   position: relative;
+  text-transform: uppercase;
+  font-size: 12px;
   .footer-menu {
     display: flex;
     justify-content: center;

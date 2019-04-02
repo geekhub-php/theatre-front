@@ -3,25 +3,22 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <h1 class="header-logo">
         <a routerLink="/">
-          <img src="assets/images/logo.png" alt="logo">
+          <img src="../assets/images/logo.png" alt="logo">
         </a>
       </h1>
 
-      <button class="navbar-toggler" type="button" (click)="show"
-              data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" (click)="showMenu()">
+         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class=" navbar-collapse collapse" id="navbarNav">
-
+      <div class="collapse navbar-collapse" id="mobileMenu" >
         <app-main-nav></app-main-nav>
 
-          <select name="language" class="language">
-            <option value="UK">УКР</option>
-            <option value="RU">РУС</option>
-            <option value="EN">ENG</option>
-          </select>
+        <!--<select name="language" class="language">-->
+          <!--<option value="UK">УКР</option>-->
+          <!--<option value="RU">РУС</option>-->
+          <!--<option value="EN">ENG</option>-->
+        <!--</select>-->
 
       </div>
     </nav>

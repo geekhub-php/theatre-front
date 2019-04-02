@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isNavbarCollapsed = true;
-
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  showMenu() {
+    document.getElementById('mobileMenu').classList.toggle('collapse');
+/*  убрать  в main-nav класс hide*/
+    document.getElementById('mobile1').classList.toggle('hide');
+    document.getElementById('mobile2').classList.toggle('hide');
+    document.getElementById('mobile3').classList.toggle('hide');
   }
 
 }
