@@ -1,14 +1,17 @@
+@import "../../../../assets/variables";
+
 $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
 
+<<<<<<<<< Temporary merge branch 1
 .header {
   background: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
   font-size: 12px;
   .container {
 
     .header-logo {
-      margin: 4px 5px;
+      margin: 4px 57px 4px 5px;
     }
 
     .menu-container, .navbar-collapse, .language{
@@ -26,25 +29,23 @@ $navLinkActiveBorderTop: 3px;
   }
 }
 
+//   li a:hover {
+//     background: #fff;
+//     color: #23527c;
+//   }
 
+//   .menu-container a.active {
+//     border-top: $navLinkActiveBorderTop solid #fff;
+//     padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
+//   }
+// }
 
+// .menu-container, .navbar-collapse {
+//   align-items: stretch;
+// }
 
-  li a:hover {
-    background: #fff;
-    color: #23527c;
-  }
+// a.nav-link {
+//   padding: $navLinkPaddingTop 11px;
+//   white-space: nowrap;
+// }
 
-  .menu-container a.active {
-    border-top: $navLinkActiveBorderTop solid #fff;
-    padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
-  }
-}
-
-.menu-container, .navbar-collapse {
-  align-items: stretch;
-}
-
-a.nav-link {
-  padding: $navLinkPaddingTop 11px;
-  white-space: nowrap;
-}
