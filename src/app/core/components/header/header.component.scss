@@ -6,21 +6,21 @@ nav {
   font-size: 85%;
 
   li a:hover {
-    background: #FFF;
+    background: #fff;
     color: #23527c;
   }
+
   .menu-container a.active {
-    border-top: $navLinkActiveBorderTop solid white;
+    border-top: $navLinkActiveBorderTop solid #fff;
     padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
   }
 }
+
 .menu-container, .navbar-collapse {
   align-items: stretch;
 }
+
 a.nav-link {
   padding: $navLinkPaddingTop 11px;
   white-space: nowrap;
-}
-#header-logo {
-  margin: 0.25rem 0.75rem 0.25rem 0;
 }

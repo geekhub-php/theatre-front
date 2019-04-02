@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { PerformanceListComponent } from './performance-list/performance-list.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { TeamComponent } from './team/team.component';
-import { NewsListComponent } from './news-list/news-list.component';
 import { PersonComponent } from './person/person.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -15,6 +14,11 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { ArticleComponent } from './article/article.component';
+import { HomePageModule } from './home-page/home-page.module';
+import { NewsListModule } from './news-list/news-list.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PartnersComponent } from './partners/partners.component';
+import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 
 
 describe('AppComponent', () => {
@@ -27,20 +31,24 @@ describe('AppComponent', () => {
         HomePageComponent,
         PerformanceComponent,
         ScheduleComponent,
-        NewsListComponent,
         NewsComponent,
         AboutComponent,
         PersonComponent,
         ArticleComponent,
         TeamComponent,
         ContactsComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        PartnersComponent,
+        BoardTrusteesComponent
       ],
       providers: [
           {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
           AppRoutingModule,
+          HomePageModule,
+          NewsListModule,
+          RouterTestingModule
       ]
     }).compileComponents();
   }));
