@@ -1,17 +1,21 @@
 <header class="header">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <h1 class="header-logo col-3">
+      <h1 class="header-logo">
         <a routerLink="/">
           <img src="assets/images/logo.png" alt="logo">
         </a>
       </h1>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+
+      <button class="navbar-toggler" type="button" (click)="show"
+              data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <app-main-nav  class="collapse navbar-collapse"></app-main-nav>
+
+      <div class=" navbar-collapse collapse" id="navbarNav">
+
+        <app-main-nav></app-main-nav>
 
           <select name="language" class="language">
             <option value="UK">УКР</option>

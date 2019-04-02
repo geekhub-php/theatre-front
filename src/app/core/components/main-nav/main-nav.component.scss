@@ -9,18 +9,18 @@ $navLinkActiveBorderTop: 3px;
   text-transform: uppercase;
 }
 
-.header-menu {
+.navbar-nav {
 color: #fff;
   font-weight: 300;
   .nav-link:hover {
     background: #FFF;
     color: $primary-color;
   }
-  .header-menu-link .active {
+  .nav-link .active {
     border-top: $navLinkActiveBorderTop solid #fff;
     padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
   }
-  a.header-menu-link {
+  a.nav-link {
     color: #fff;
     padding: $navLinkPaddingTop 11px;
     white-space: nowrap;
@@ -31,16 +31,15 @@ color: #fff;
   }
 }
 
-.footer-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .show__mobile-header {
-    display: none;
-  }
-
-
-}
+//.navbar-nav{
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  color: $primary-color;
+//  .show__mobile-header {
+//    display: none;
+//  }
+//
+//}
 
 
