@@ -33,6 +33,26 @@
   </div>
 </div>
 <br />
+<div class="col-md-4">
+  <div class="btn-group">
+    <div
+      class="btn btn-outline-danger"
+      (click)="setView(CalendarView.Month)"
+      [class.active]="view === CalendarView.Month"
+    >
+      Month
+    </div>
+    <div
+      class="btn btn-outline-danger"
+      (click)="setView(CalendarView.Week)"
+      [class.active]="view === CalendarView.Week"
+    >
+      Week
+    </div>
+  </div>
+</div>
+</div>
+<br />
 <div [ngSwitch]="view">
   <mwl-calendar-month-view
     *ngSwitchCase="CalendarView.Month"
@@ -54,13 +74,5 @@
     (eventTimesChanged)="eventTimesChanged($event)"
   >
   </mwl-calendar-week-view>
-  <mwl-calendar-day-view
-    *ngSwitchCase="CalendarView.Day"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)"
-  >
-  </mwl-calendar-day-view>
 </div>
+
