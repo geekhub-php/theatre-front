@@ -1,5 +1,7 @@
+import { ImageCollection } from './ImageCollection';
+
 export class Employee {
-  avatar: any;
+  avatar: ImageCollection;
   biography: string;
   created_at: string;
   dob: string;
@@ -10,13 +12,4 @@ export class Employee {
   position: string;
   slug: string;
   updated_at: string;
-}
-
-abstract class ListResponse {
-  total_count: number;
-  page: number;
-  count: number;
-}
-export class EmployeeListResponse extends ListResponse {
-  employees: Array<Employee>;
 }
