@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./performance-list.component.scss']
 })
 export class PerformanceListComponent implements OnInit {
+  serverResponse: any;
 
   constructor() { }
 

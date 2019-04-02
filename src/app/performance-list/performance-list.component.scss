@@ -1,4 +1,15 @@
-.card-title-stub {
+.container {
+  text-align: center;
+
+  .page-title {
+    color: #e54b2b;
+    size: 24px;
+    padding: 15px 0;
+  }
+}
+
+
+/*.card-title-stub {
   width: 70%;
   height: 1.5rem;
 }
@@ -43,3 +54,4 @@
   50% {background-position: 100% 50%}
   100% {background-position: 0% 50%}
 }
+*/
