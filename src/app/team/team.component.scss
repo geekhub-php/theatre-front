@@ -13,35 +13,40 @@ h3 {
   margin-top: 20px;
 }
 
-.person {
-  width: 242px;
-  height: 68px;
-  border: 1px solid #c9c9c9;
-  background-color: #F8F5F5;
+.persons-list {
+  margin-left: -11px;
 
-  font-size: 12px;
+  .person {
+    width: 224px;
+    height: 68px;
+    border: 1px solid #c9c9c9;
+    background-color: #F8F5F5;
 
-  position: relative;
+    font-size: 12px;
 
-  img {
-    width: 45px;
-    height: 100%;
-  }
-  h4 {
-    font-size: 18px;
-    font-weight: 400;
-    margin-left: 50px;
+    position: relative;
+    margin: 0 0 6px 11px;
 
-    position: absolute;
-    top: 2px;
-    left: 4px;
-  }
-  a {
-    text-decoration: underline;
+    img {
+      width: 45px;
+      height: 100%;
+    }
+    h4 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-left: 50px;
 
-    position: absolute;
-    right: 0;
-    bottom: 18px;
-    right: 5px;
+      position: absolute;
+      top: 2px;
+      left: 4px;
+    }
+    a {
+      text-decoration: underline;
+
+      position: absolute;
+      right: 0;
+      bottom: 18px;
+      right: 5px;
+    }
   }
 }

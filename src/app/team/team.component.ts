@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from './http.service';
-import { HttpResponse } from '@angular/common/http';
-import { EmployeeListResponse } from './employee';
+import { GatewayService } from '../core/service/gateway.service';
+import { Employee } from '../core/model/Employee';
 
 @Component({
   selector: 'app-team',
@@ -13,13 +12,15 @@ export class TeamComponent implements OnInit {
   employee: Employee;
   employees: Array<Employee>;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpGatewayService: GatewayService) { }
 
   ngOnInit() {
-    this.httpService.getEmployees().subscribe((res: HttpResponse<EmployeeListResponse>) => {
-      console.log(res.body);
+    this.getEmployees();
+  }
+
+  getEmployees() {
+    this.httpGatewayService.getEmployees().subscribe((res) => {
       this.employees = res.body.employees;
     });
   }
-
 }
