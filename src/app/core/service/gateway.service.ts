@@ -25,7 +25,7 @@ export class GatewayService {
       );
   }
 
-  getHistoriesList(limit: string = '5', page: string = '1', locale: string = 'uk') {
+  getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk') {
     return this.http.get(`${this.baseUrl}/${this.historiesListUrl}`, {
       params: { limit: limit, page: page, locale: locale }
     });
