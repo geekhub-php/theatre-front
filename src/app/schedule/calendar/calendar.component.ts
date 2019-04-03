@@ -25,9 +25,11 @@ export class CalendarComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal) {
 
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+  }
+
+  dayClicked({ date, events }: { date: Date; events: CalendarEvent[]}): void {
     if (isSameMonth(date, this.viewDate)) {
       this.viewDate = date;
       if (
@@ -35,18 +37,24 @@ export class CalendarComponent {
         events.length === 0
       ) {
         this.activeDayIsOpen = false;
+
       } else {
         this.activeDayIsOpen = true;
+
       }
+
     }
+
   }
 
   setView(view: CalendarView) {
     this.view = view;
+
   }
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
+
   }
 
 }
