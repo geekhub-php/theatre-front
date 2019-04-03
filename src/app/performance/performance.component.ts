@@ -7,8 +7,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./performance.component.scss']
 })
 export class PerformanceComponent implements OnInit {
+  visibilityActors = false;
+  visibilityPerformance = true;
+  visibilityPress = true;
 
-  response: any;
+  actors() {
+    this.visibilityActors = false;
+    this.visibilityPerformance = true;
+    this.visibilityPress = true;
+  }
+
+  performance() {
+    this.visibilityActors = true;
+    this.visibilityPerformance = false;
+    this.visibilityPress = true;
+  }
+
+  press() {
+    this.visibilityActors = true;
+    this.visibilityPerformance = true;
+    this.visibilityPress = false;
+  }
 
   constructor() { }
 

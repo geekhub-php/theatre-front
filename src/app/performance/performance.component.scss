@@ -34,6 +34,7 @@
       border: 1px solid #ccc;
       border-bottom: none;
       background-color: #fff;
+      cursor: pointer;
     }
 
     .hidden-item {
@@ -45,6 +46,7 @@
     padding: 10px;
     text-align: center;
     border: 1px solid #ccc;
+    border-bottom: none;
 
     .item {
       width: 250px;
@@ -59,5 +61,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #ccc;
+    border-top: none;
   }
+
+  .performances {
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid #ccc;
+    border-bottom: none;
+  }
+
+  .press {
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid #ccc;
+    border-bottom: none;
+  }
+}
+
+.hidden {
+  display: none;
 }

@@ -17,11 +17,11 @@
 
   <section class="info">
     <div class="nav-info">
-      <span class="nav-item">Актори</span>
-      <span class="nav-item hidden-item">Про спектакль</span>
-      <span class="nav-item hidden-item">Преса</span>
+      <span class="nav-item" (click)="actors()" [ngClass]="{'hidden-item': visibilityActors}">Актори</span>
+      <span class="nav-item hidden-item" (click)="performance()" [ngClass]="{'hidden-item': visibilityPerformance}">Про спектакль</span>
+      <span class="nav-item hidden-item" (click)="press()" [ngClass]="{'hidden-item': visibilityPress}">Преса</span>
     </div>
-    <div class="actors">  <!-- Future *ngFor -->
+    <div class="actors" [ngClass]="{hidden: visibilityActors}">  <!-- Future *ngFor -->
       <div class="item">
         <img src="" alt="">
         <span>Info about actor</span>
@@ -54,15 +54,35 @@
         <img src="" alt="">
         <span>Info about actor</span>
       </div>
-      <nav aria-label="Performance navigation" class="performance-pagination">  <!-- Future pagination -->
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
     </div>
+
+    <div class="performances hidden" [ngClass]="{hidden: visibilityPerformance}">
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequatur distinctio eos excepturi hic ipsum
+        nam nihil optio perferendis quam qui reiciendis, sint? Alias architecto doloremque dolores id, ipsum iusto
+        labore laudantium magni, maxime neque nulla praesentium repellendus, vitae! At culpa, exercitationem facilis
+        nihil obcaecati quo rem sapiente! Illo, nisi?
+      </span>
+    </div>
+
+    <div class="press hidden" [ngClass]="{hidden: visibilityPress}">
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequatur distinctio eos excepturi hic ipsum
+        nam nihil optio perferendis quam qui reiciendis, sint? Alias architecto doloremque dolores id, ipsum iusto
+        labore laudantium magni, maxime neque nulla praesentium repellendus, vitae! At culpa, exercitationem facilis
+        nihil obcaecati quo rem sapiente! Illo, nisi?
+      </span>
+    </div>
+
+    <nav aria-label="Performance navigation" class="performance-pagination">  <!-- Future pagination -->
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+
   </section>
 </div>
