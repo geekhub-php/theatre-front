@@ -2,13 +2,62 @@
   color: #e54b2b;
   font-size: 24px;
   text-align: center;
-  margin: 15px;
+  margin: 30px;
 }
 
-.play-img {
-  max-width: 240px;
-}
-
-.col, .col-5 {
+.preview {
   text-align: center;
+  height: 320px;
+
+  .col, .col-5 {
+    text-align: center;
+  }
+
+  .future-img, .future-list, .future-slider {
+    border: 1px solid red;
+    height: 300px;
+  }
+}
+
+.info {
+  margin-bottom: 100px;
+
+  .nav-info {
+    margin-top: 20px;
+    margin-bottom: -2px;
+    box-sizing: border-box;
+
+    .nav-item {
+      display: inline-block;
+      padding: 5px 40px;
+      margin: 15px 0 0 0;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      background-color: #fff;
+    }
+
+    .hidden-item {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  .actors {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+
+    .item {
+      width: 250px;
+      height: 250px;
+      border: 1px solid #ccc;
+      display: inline-block;
+      margin: 10px 10px 10px 10px;
+    }
+  }
+
+  .performance-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
