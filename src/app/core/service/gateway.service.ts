@@ -33,7 +33,7 @@ export class GatewayService {
 
   getEmployees(): Observable<HttpResponse<EmployeesListResponse>> {
     return this.http.get<HttpResponse<EmployeesListResponse>>(
-      this.baseUrl + '/employees.json', this.httpOptions
+      `${this.baseUrl}/employees.json`, this.httpOptions
     );
   }
 
