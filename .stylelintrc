@@ -13,7 +13,7 @@
 
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
-    "unit-whitelist": ["px", "%"],
+    "unit-whitelist": ["px", "%", "deg"],
 
     "color-hex-case": "lower",
     "color-named": "never",
