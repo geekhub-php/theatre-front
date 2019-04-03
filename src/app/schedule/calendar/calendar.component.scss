@@ -18,11 +18,32 @@ h1 {
   border: 1px solid $hover-color;
 }
 .btn:hover {
-  color: white;
+  color: #fff;
   background-color: $hover-color;
 }
 .row {
-  max-width: 1200px;
   width: 100%;
   margin: 0 auto 30px;
+}
+:host ::ng-deep {
+  .cal-month-view .cal-day-cell.cal-today {
+    background-color: rgba(255, 74, 43, 0.08);
+  }
+  .cal-month-view .cal-header {
+    font-weight: normal;
+  }
+  .cal-month-view .cal-header .cal-cell {
+    background-color: $hover-color;
+    color: #fff;
+  }
+  .cal-week-view .cal-day-headers {
+    background-color: rgba(255, 74, 43, 0.08);
+  }
+  .cal-week-view .cal-day-headers .cal-header:hover, .cal-week-view .cal-header.cal-today {
+    background-color: $hover-color;
+    color: #fff;
+  }
+  .cal-week-view .cal-day-headers b, .cal-week-view .cal-day-headers span {
+    font-weight: normal;
+  }
 }
