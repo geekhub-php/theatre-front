@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
   constructor(private getway: GatewayService) { }
 
   ngOnInit() {
-    this.getway.getHistoriesList().subscribe(res => {
+    this.getway.getHistoriesList().subscribe((res: {history} ) => {
       this.listHistories = res.history;
     });
   }
