@@ -1,19 +1,5 @@
 @import "../../../../assets/variables";
 
-
-//:host-context(.navbar-nav) {
-//    display: flex;
-//    justify-content: center;
-//    align-items: center;
-//    color: $primary-color;
-//    .show__mobile-header {
-//      display: none;
-//    }
-//}
-/*
-https://blog.angular-university.io/angular-host-context/
-*/
-
 .footer {
   margin-top: 50px;
   width: 100%;
@@ -21,46 +7,51 @@ https://blog.angular-university.io/angular-host-context/
   background-repeat: no-repeat;
   -webkit-background-size: 100% 4px;
   background-image: -webkit-linear-gradient(left, #f1592a 20%, #bf1e2e 100%);
-  position: relative;
-  text-transform: uppercase;
-  font-size: 12px;
-  .footer-menu {
-    display: flex;
+}
+
+:host ::ng-deep {
+  .navbar-nav {
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    list-style: none;
+    text-transform: uppercase;
+    font-size: 12px;
     .nav-link {
+      padding: 15px;
       color: $primary-color;
       &:hover {
         color: $hover-color;
       }
     }
-  }
-  .scrollToTop {
-    font-size: 0;
-    position: absolute;
-    bottom: 67px;
-    right: 35px;
-    width: 42px;
-    height: 42px;
-    border-radius: 4px;
-    transition: 0.3s;
-    background-color: #cd2e2d;
-    background-image: url("/../../../../assets/images/arrow.png");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    border: none;
-    &:hover {
-      bottom: 60px;
-    }
-    &:active {
-      bottom: 70px;
-    }
-  }
-
-  @media (max-width: 991.98px) {
-    .footer-menu {
+    .hide,
+    .language {
       display: none;
     }
+  }
+  @media (max-width: 991.98px) {
+    .navbar-nav {
+      display: none;
+    }
+  }
+}
+
+.scrollToTop {
+  font-size: 0;
+  position: absolute;
+  bottom: 67px;
+  right: 35px;
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  transition: 0.3s;
+  background-color: #cd2e2d;
+  background-image: url("/../../../../assets/images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: none;
+  &:hover {
+    bottom: 60px;
+  }
+  &:active {
+    bottom: 70px;
   }
 }

@@ -21,7 +21,57 @@ $navLinkActiveBorderTop: 3px;
   }
 
 }
+:host ::ng-deep {
 
+  $navLinkPaddingTop: 30.5px;
+  $navLinkActiveBorderTop: 3px;
+
+  .navbar-nav {
+    font-size: 12px;
+    font-family: $main-font;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+    .nav-link:hover {
+      background: #FFF;
+      color: $primary-color;
+    }
+    .nav-link .active {
+      border-top: $navLinkActiveBorderTop solid #fff;
+      padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
+    }
+    a.nav-link {
+      color: #fff;
+      padding: $navLinkPaddingTop 11px;
+      white-space: nowrap;
+    }
+
+    .language {
+      margin-left: 50px;
+      padding: 30.5px 11px;
+      display: block;
+      text-decoration: none;
+      color: #c8c8c8;
+      &:hover{
+        color: #fff;
+      }
+    }
+
+    .hide {
+      display: none;
+    }
+
+    @media (max-width: 992px) {
+      a.nav-link,
+      .language {
+        padding: 5px;
+        text-align: right;
+        border-radius: 5px;
+      }
+
+    }
+  }
+}
 //   li a:hover {
 //     background: #fff;
 //     color: #23527c;
