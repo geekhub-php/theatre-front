@@ -4,7 +4,7 @@
   <h3>Творчий склад</h3>
   <section class="persons-list row">
     <div class="person" *ngFor="let person of employees">
-      <img src="../../assets/persons.jpg" alt="photo">
+      <img src="{{ person.avatar.employee_small.url }}" alt="photo">
       <h4>{{ person.first_name }} {{ person.last_name }}</h4>
       <a href="#">Детальніше</a>
     </div>
