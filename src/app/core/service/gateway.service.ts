@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class GatewayService {
-  readonly performanceListUrl = '/performances.json';
+  readonly performanceListUrl = 'performances.json';
   readonly baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
