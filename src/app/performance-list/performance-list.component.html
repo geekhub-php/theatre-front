@@ -1,11 +1,13 @@
 <div class="container">
   <h2 class="page-title">Репертуар</h2>
-  <button (click)="getArray()"></button>
- <!-- <ul>
-    <li *ngFor="let item of serverResponse"></li>
-  </ul>-->
-  <!--<button (click)="previousPeriod">Back</button>
-  {{ 'сезон 2014-2015' }}
-  <button (click)="nextPeriod">Forward</button>-->
+  <ul class="perfomances">
+    <li class="perfomance-item" *ngFor="let item of perfomances">
+      <img [src]="item.mainPicture.performance_small.url"
+           [height]="item.mainPicture.performance_small.properties.height"
+           [width]="item.mainPicture.performance_small.properties.width"
+           [alt]="item.mainPicture.performance_small.properties.alt">
+      <div class="perfomance-title">{{item.title}}</div>
+    </li>
+  </ul>
 </div>
 
