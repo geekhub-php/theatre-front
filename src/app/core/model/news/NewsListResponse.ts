@@ -1,6 +1,7 @@
 import { AbstractListResponse } from '../AbstractListResponse';
-import { News } from './News';
+import { NewsItem } from './NewsItem';
 
-export class NewsListResponse extends AbstractListResponse{
-  news: Array<News>;
+export class NewsListResponse extends AbstractListResponse {
+  posts: any;
+  listPost: Array<NewsItem>;
 }

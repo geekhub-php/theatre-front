@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GatewayService } from '../../core/service/gateway.service';
+import { NewsItem } from '../../core/model/news/NewsItem';
 
 @Component({
   selector: 'app-news-item',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news-item.component.scss']
 })
 export class NewsItemComponent implements OnInit {
-
-  constructor() { }
+  listPost: Array<NewsItem>;
+  constructor(private gatewayService: GatewayService) { }
 
   ngOnInit() {
+    this.gatewayService.getNews().subscribe((res: { posts }) => {
+      this.listPost = res.posts;
+    });
   }
 
 }

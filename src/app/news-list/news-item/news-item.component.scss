@@ -1,0 +1,24 @@
+@import "../../../assets/variables";
+.card {
+  max-width: 70%;
+  font-family: $main-font;
+  color: $primary-color;
+  font-weight: 600;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .list-group-item {
+    text-align: right;
+    font-size: 14px;
+  }
+ }
+
+@media (max-width: 992px) {
+  .card {
+    max-width: 100%;
+  }
+}

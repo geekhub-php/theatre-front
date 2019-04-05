@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { environment } from '../../../environments/environment';
+import { NewsListResponse } from '../model/news/NewsListResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -25,11 +26,17 @@ export class GatewayService {
   }
 
 
-  getNews(limit: string = '10', page: string = '1', locale: string = 'uk') {
-    return this.http.get(`${this.baseUrl}/${this.newsListUrl}`, {
-      params: { limit: limit, page: page, locale: locale }
+ // getNews(limit: string = '10', page: string = '1', locale: string = 'uk') {
+ //   return this.http.get(`${this.baseUrl}/${this.newsListUrl}`, {
+ //     params: { limit: limit, page: page, locale: locale }
+ //   });
+ // }
+  getNews(limit: string = '3', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
+    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
+      params: {limit: limit, page: page, locale: locale}
     });
   }
+
 
   /* tslint:disable:no-console */
 

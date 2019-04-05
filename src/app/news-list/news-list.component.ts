@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GatewayService } from '../core/service/gateway.service';
-import { News } from '../core/model/news/News';
 
 @Component({
   selector: 'app-news-list',
@@ -8,17 +6,10 @@ import { News } from '../core/model/news/News';
   styleUrls: ['./news-list.component.scss']
 })
 export class NewsListComponent implements OnInit {
-  new: News;
-  news: Array<News>;
-  constructor(private gatewayService: GatewayService) { }
+
+  constructor() { }
 
   ngOnInit() {
-    this.gatewayService.getNews().subscribe((res: { post }) => {
-      this.new = res.post;
-    });
-   //this.gatewayService.getNews()
-   //.subscribe((data: News) => {
-   //  console.log(News);
-   //});
-  }
+ }
 }
+

@@ -28,7 +28,7 @@ describe('theatre-front App', () => {
     expect(element(by.css('h1')).getText()).toContain('Repertoire');
   });
 
-  it('shold navigate to News', () => {
+  it('shold navigate to NewsItem', () => {
     page.navigateTo();
     mainMenu.navigateTo('NEWS');
     expect(element(by.css('p')).getText()).toContain('news-list works');
