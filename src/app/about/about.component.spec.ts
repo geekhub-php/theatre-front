@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StripHtmlPipe } from '../core/pipes/stripHtml/stripHtml.pipe';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -9,8 +10,8 @@ describe('AboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent ],
-      imports: [HttpClientModule],
+      declarations: [ AboutComponent, StripHtmlPipe ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   }));
