@@ -1,10 +1,3 @@
-.container-my {
-    box-sizing: border-box;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
 .heading {
     margin: 20px 0;
     font-size: 24px;
@@ -16,8 +9,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: 0px;
-    padding-bottom: 40px;
 
     .list-item {
         position: relative;
@@ -25,17 +16,23 @@
         flex-basis: 50%;
         border-right: 3px solid #eee;
 
+        &:last-child {
+            padding-bottom: 20px;
+        }
+
+        .histories__list-body_link {
+            text-decoration: none;
+        }
+
         .histories__list-body {
             position: relative;
-            width: 430px;
+            max-width: 430px;
             height: 435px;
             border: 1px solid #d4d4d4;
             border-radius: 2px;
             padding: 12px;
             box-shadow: 0 1px 6px rgba(0,0,0,0.175);
-            margin-right: 16px;
-            margin-left: 0px;
-            margin: 0 16px 0 0;
+            margin: 0 18px 0 0;
             
             &::after {
                 position: absolute;
@@ -53,20 +50,14 @@
                 border-bottom: 1px solid transparent; 
             }
 
-            .histories__list-body_link {
-                text-decoration: none;
-            }
-
-            .histories__list-header {
-                .histories__list-header_heading {
-                    color: #474b4d;
-                    font-size: 18px;
-                    font-weight: 900;
-                }
+            .histories__list-heading {
+                color: #474b4d;
+                font-size: 18px;
+                font-weight: 900;
             }
 
             .histories__list-main {
-                max-height: 360px;
+                max-height: 90.5%;
                 overflow: hidden;
 
                 .histories__list-main_text {
@@ -77,7 +68,6 @@
                 .histories__list-main_img {
                     display: block;
                     margin: 5px auto;
-                    width: 100%;
                     max-height: 272px;
                 }
             }
@@ -95,7 +85,7 @@
 
             .year {
                 display: block;
-                margin-top: 10.8px;
+                margin-top: 12px;
                 font-size: 18px;
                 font-weight: 900;
                 color: #fff;
@@ -111,15 +101,10 @@
 
             .histories__list-body {
                 float: right;
-                transform: translateY(100px);
-                margin: 0 0 0 16px;
+                transform: translateY(102px);
+                margin: 0 0 0 18px;
 
                 &::after {
-                    content: "";
-                    width: 20px;
-                    height: 20px;
-                    position: absolute;
-                    top: 36px;
                     left: -10px;
                     border: 1px solid #d4d4d4;
                     background-color: #fff;
@@ -140,3 +125,76 @@
     }
 }
 
+@media screen and (max-width: 991px) {
+    .list {
+        padding-left: 24px;
+        justify-content: flex-start;
+        flex-direction: column;
+        max-width: 510px;
+        margin: 0 auto;
+    
+        .list-item {
+            padding: 20px 0 0 0;
+            border-left: 3px solid #eee;
+            border-right: none;
+    
+            .histories__list-body {
+                float: right;
+                margin: 0 0 0 40px;
+                
+                &::after {
+                    left: -10px;
+                    border-top: 1px solid transparent;
+                    border-left: 1px solid #d4d4d4;
+                    border-right: 1px solid transparent;
+                    border-bottom: 1px solid #d4d4d4; 
+                }
+    
+                .histories__list-main {
+                    max-height: 80.5%;
+                    overflow: hidden;
+                }
+            }
+    
+            .histories__list-footer {
+                left: -27px;                
+            }
+
+            &:nth-child(2n) {
+                padding: 20px 0 0 0px;
+    
+                .histories__list-body {
+                    transform: translateY(0px);
+                    margin: 0 0 0 40px;
+                }
+    
+                .histories__list-footer {
+                    top: 42px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 413px) {
+    .list {
+        .list-item {
+            .histories__list-body {
+                height: 315px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .list {
+        .list-item {
+            .histories__list-body {
+                .histories__list-main {
+                    max-height: 68%;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
