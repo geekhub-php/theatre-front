@@ -5,8 +5,8 @@ import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
+import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
-
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +25,13 @@ export class GatewayService {
       );
   }
 
-  getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk') {
-    return this.http.get(`${this.baseUrl}/${this.historiesListUrl}`, {
+  getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
+    return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.historiesListUrl}`, {
       params: { limit: limit, page: page, locale: locale }
-    });
+    })
+    .pipe(
+      catchError(this.handleError('get list of Histories', new HistoryListResponse()))
+    );
   }
 
   /* tslint:disable:no-console */
