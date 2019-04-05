@@ -1,9 +1,6 @@
-import { ListResponseInterface } from '../ListResponseInterface';
 import { History } from './History';
+import { AbstractListResponse } from '../AbstractListResponse';
 
-export class HestoryListResponse implements ListResponseInterface {
-  total_count: number;
-  count: number;
+export class HestoryListResponse extends AbstractListResponse {
   history: Array<History>;
-  page: number;
 }
