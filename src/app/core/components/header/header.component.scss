@@ -30,7 +30,7 @@ $navLinkActiveBorderTop: 3px;
     font-size: 12px;
     font-family: $main-font;
     text-transform: uppercase;
-    color: #fff;
+    color: #FFF;
     font-weight: 300;
     .nav-link:hover {
       background: #FFF;
@@ -41,7 +41,7 @@ $navLinkActiveBorderTop: 3px;
       padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
     }
     a.nav-link {
-      color: #fff;
+      color:#FFF;
       padding: $navLinkPaddingTop 11px;
       white-space: nowrap;
     }
@@ -51,13 +51,14 @@ $navLinkActiveBorderTop: 3px;
       padding: 30.5px 11px;
       display: block;
       text-decoration: none;
-      color: #c8c8c8;
+      color: #FFF;
       &:hover{
-        color: #fff;
+        color: $primary-color;
       }
     }
 
-    .hide {
+    .hide,
+    .fa-icon{
       display: none;
     }
 

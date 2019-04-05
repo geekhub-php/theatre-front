@@ -7,6 +7,20 @@
   background-repeat: no-repeat;
   -webkit-background-size: 100% 4px;
   background-image: -webkit-linear-gradient(left, #f1592a 20%, #bf1e2e 100%);
+  font-size: 12px;
+  .copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    .text::after {
+      content: " ";
+      white-space: pre;
+    }
+    a {
+      color: $hover-color;
+    }
+  }
 }
 
 :host ::ng-deep {
@@ -26,10 +40,27 @@
     .language {
       display: none;
     }
+    .fa-icon {
+      width: 20px;
+      height: 20px;
+      display: block;
+      margin-left: 50px;
+      margin-top: 12px;
+      color: #0000ff;
+      transition: 0.3s;
+      border: none;
+      opacity: 0.8;
+      &:hover {
+        opacity:1;
+      }
+    }
   }
   @media (max-width: 991.98px) {
     .navbar-nav {
       display: none;
+    }
+    .copy {
+      padding-top: 15px;
     }
   }
 }
@@ -49,9 +80,9 @@
   background-position: 50% 50%;
   border: none;
   &:hover {
-    bottom: 60px;
+    bottom: 70px;
   }
   &:active {
-    bottom: 70px;
+    bottom: 60px;
   }
 }
