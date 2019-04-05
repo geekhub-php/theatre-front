@@ -57,9 +57,6 @@
             }
 
             .histories__list-main {
-                max-height: 90.5%;
-                overflow: hidden;
-
                 .histories__list-main_text {
                     color: #868b8c;
                     font-size: 14px;
@@ -68,7 +65,7 @@
                 .histories__list-main_img {
                     display: block;
                     margin: 5px auto;
-                    max-height: 272px;
+                    max-height: 300px;
                 }
             }
         }
@@ -149,11 +146,6 @@
                     border-right: 1px solid transparent;
                     border-bottom: 1px solid #d4d4d4; 
                 }
-    
-                .histories__list-main {
-                    max-height: 80.5%;
-                    overflow: hidden;
-                }
             }
     
             .histories__list-footer {
@@ -180,19 +172,12 @@
     .list {
         .list-item {
             .histories__list-body {
-                height: 315px;
-            }
-        }
-    }
-}
+                height: 320px;
 
-@media screen and (max-width: 340px) {
-    .list {
-        .list-item {
-            .histories__list-body {
                 .histories__list-main {
-                    max-height: 68%;
-                    overflow: hidden;
+                    .histories__list-main_img {
+                        max-height: 128px;
+                    }
                 }
             }
         }
