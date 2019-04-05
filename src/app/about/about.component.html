@@ -7,7 +7,7 @@
           <h2 class="histories__list-heading">{{item.title}}</h2>
           <main class="histories__list-main">
             <img class="histories__list-main_img" [src]='item.mainPicture.history_big.url' alt="picture">
-            <div class="histories__list-main_text" [innerHTML]='item.text'></div>
+            <div class="histories__list-main_text" [innerHTML]='item.text | striphtml:[150, "..."]'></div>
           </main>
         </a>
       </section>
