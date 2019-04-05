@@ -8,6 +8,7 @@ import { HomePageModule } from './home-page/home-page.module';
 import { NewsListModule } from './news-list/news-list.module';
 
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -50,7 +51,8 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
     CoreModule,
     BrowserAnimationsModule,
     HomePageModule,
-    NewsListModule
+    NewsListModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
