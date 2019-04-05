@@ -37,6 +37,9 @@
 //@import "../node_modules/bootstrap/scss/print";
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
+body,html{
+  height: 100%;
+}
 
 .mr-auto,
 .mx-auto {

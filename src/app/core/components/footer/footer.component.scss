@@ -40,6 +40,10 @@
     .language {
       display: none;
     }
+    #mobile1 {
+      display: block;
+    }
+
     .fa-icon {
       width: 20px;
       height: 20px;
@@ -51,9 +55,10 @@
       border: none;
       opacity: 0.8;
       &:hover {
-        opacity:1;
+        opacity: 1;
       }
     }
+
   }
   @media (max-width: 991.98px) {
     .navbar-nav {
