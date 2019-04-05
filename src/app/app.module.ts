@@ -27,6 +27,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
+import { PerformanceSliderComponent } from './performance/performance-slider/performance-slider.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
     HomePageComponent,
     PartnersComponent,
     BoardTrusteesComponent,
-    StripHtmlPipe
+    StripHtmlPipe,
+    PerformanceSliderComponent
   ],
   imports: [
     BrowserModule,
