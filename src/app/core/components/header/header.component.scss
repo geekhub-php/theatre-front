@@ -20,17 +20,10 @@ $navLinkActiveBorderTop: 3px;
     }
   }
 }
+
 :host ::ng-deep {
-
-  $navLinkPaddingTop: 30.5px;
-  $navLinkActiveBorderTop: 3px;
-
   .navbar-nav {
-    font-size: 12px;
-    font-family: $main-font;
-    text-transform: uppercase;
     color: #FFF;
-    font-weight: 300;
     .nav-link:hover {
       background: #FFF;
       color: $primary-color;
@@ -40,31 +33,32 @@ $navLinkActiveBorderTop: 3px;
       padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
     }
     a.nav-link {
-      color:#FFF;
+      color: #FFF;
       padding: $navLinkPaddingTop 11px;
       white-space: nowrap;
     }
+    //.language {
+    //  margin-left: auto;
+    //}
 
-    .language {
+    #language {
+      //margin-left: auto;    //не сработало
       margin-left: 50px;
-      padding: 30.5px 11px;
+      padding: 30.5px;
       display: block;
       text-decoration: none;
       color: #FFF;
-      &:hover{
+      &:hover {
         color: $primary-color;
       }
     }
-
-    .hide,
-    .forum,
-    .fa-icon{
+    .hide {
       display: none;
     }
 
     @media (max-width: 992px) {
       a.nav-link,
-      .language {
+      #language {
         padding: 5px;
         text-align: right;
         border-radius: 5px;

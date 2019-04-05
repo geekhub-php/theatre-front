@@ -1,14 +1,36 @@
 @import "../../../../assets/variables";
 
 .footer {
+  font-size: 12px;
   margin-top: 50px;
   width: 100%;
   height: 70px;
   background-repeat: no-repeat;
   background-size: 100% 4px;
-  -webkit-background-size: 100% 4px;
   background-image: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
-  font-size: 12px;
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    .social {
+      list-style: none;
+      padding-top: 15px;
+      .fa-icon {
+        width: 20px;
+        height: 20px;
+        display: block;
+        color: #0000ff;
+        border: none;
+        opacity: 0.8;
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+
   .copy {
     display: flex;
     justify-content: center;
@@ -22,14 +44,21 @@
       color: $hover-color;
     }
   }
+
+  @media (max-width: 991.98px) {
+    .container {
+      display: none;
+    }
+    .copy {
+      padding-top: 15px;
+    }
+  }
 }
 
 :host ::ng-deep {
   .navbar-nav {
     flex-direction: row;
     justify-content: center;
-    text-transform: uppercase;
-    font-size: 12px;
     .nav-link {
       padding: 15px;
       color: $primary-color;
@@ -37,33 +66,12 @@
         color: $hover-color;
       }
     }
-    .hide,
-    .language {
+    .hide {
       display: none;
     }
-
-    .fa-icon {
-      width: 20px;
-      height: 20px;
-      display: block;
-      margin-left: 50px;
-      margin-top: 12px;
-      color: #0000ff;
-      border: none;
-      opacity: 0.8;
-      &:hover {
-        opacity: 1;
-      }
-    }
-
   }
-  @media (max-width: 991.98px) {
-    .navbar-nav {
-      display: none;
-    }
-    .copy {
-      padding-top: 15px;
-    }
+  #forum {
+    display: block;
   }
 }
 
