@@ -15,10 +15,9 @@ export class HeaderComponent implements OnInit {
   showMenu() {
     document.getElementById('mobileMenu').classList.toggle('collapse');
 /*  убрать  в main-nav класс hide*/
-  //  document.getElementsByClassName('hide').
     document.getElementById('forum').classList.toggle('hide');
+    document.getElementById('mobile1').classList.toggle('hide');
     document.getElementById('mobile2').classList.toggle('hide');
-    document.getElementById('mobile3').classList.toggle('hide');
   }
 
 }
