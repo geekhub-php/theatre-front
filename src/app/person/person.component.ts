@@ -24,13 +24,9 @@ export class PersonComponent implements OnInit {
 
   get() {
     const slug = this.router.snapshot.paramMap.get('slug');
-    console.log(slug);
     this.gatewayService.getEmployees(slug).subscribe((res) => {
       this.person = res.body.employees.find(employee => employee.slug === slug);
-      console.log(this.person);
       this.gallery = this.person.gallery;
-      console.log(res.body);
-      console.log(this.gallery);
     });
   }
 
