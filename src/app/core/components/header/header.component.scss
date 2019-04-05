@@ -4,10 +4,6 @@ $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
 .header {
-  //background-image: -moz-linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
-  //background-image: -webkit-linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
-  //background-image: -o-linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
-  //background-image: -ms-linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
   background: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
   font-size: 12px;
   .container {
@@ -23,7 +19,6 @@ $navLinkActiveBorderTop: 3px;
       margin-left: 25px;
     }
   }
-
 }
 :host ::ng-deep {
 
