@@ -5,8 +5,8 @@
   width: 100%;
   height: 70px;
   background-repeat: no-repeat;
-  -webkit-background-size: 100% 4px;
-  background-image: -webkit-linear-gradient(left, #f1592a 20%, #bf1e2e 100%);
+  background-size: 100% 4px;
+  background: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
   font-size: 12px;
   .copy {
     display: flex;
@@ -40,7 +40,7 @@
     .language {
       display: none;
     }
-    .mobile1 {
+    #forum {
       display: block;
     }
 
