@@ -8,19 +8,17 @@
   src: url('../../../assets/fonts/Roboto-Regular.ttf');
 }
 
-
-$big_width: 100%; 			//Slider width - large display
-$big_height: 40%; 		//Slider height - large display
-
-$small_width: 100%; 	//Slider width - small display
-$small_height: 55%; 	//Slider height - small display
-
+$big_width: 100%;
+$big_height: 40%;
+$small_width: 100%;
+$small_height: 55%;
 
 .slider {
   margin: 0 auto;
   position: relative;
   width: $big_width;
-  height: 739px;
+  height: 0;
+  padding-bottom: $big_height;
   user-select: none;
   background-color: #1c1c1c;
 
@@ -35,17 +33,15 @@ $small_height: 55%; 	//Slider height - small display
     z-index: -1;
 
     img {
+      position: absolute;
       width: inherit;
       height: inherit;
-      position: absolute;
     }
     a{
       width: 100%;
       height: 100%;
       position: absolute;
     }
-
-
   }
 
   #nav_slide {
@@ -69,7 +65,6 @@ $small_height: 55%; 	//Slider height - small display
     animation: scroll 1s ease-in-out;
   }
 
-
   @keyframes scroll {
     0% {
       opacity: .4;
@@ -78,7 +73,6 @@ $small_height: 55%; 	//Slider height - small display
       opacity: 1;
     }
   }
-
 
   .dots {
     top: -5px;
@@ -240,10 +234,7 @@ $small_height: 55%; 	//Slider height - small display
   }
 }
 @media (max-width: 992px) {
-  .slider{
-    width: 100%;
-    height: 500px;
-  }
+
   #nav_slide {
     display: none;
     .dots-active{
@@ -258,41 +249,3 @@ $small_height: 55%; 	//Slider height - small display
   }
 }
 
-
-@media (max-width: 768px) {
-  .slider{
-    width: 100%;
-    height: 300px;
-  }
-  #nav_slide {
-    display: none;
-    .dots-active{
-      display: none;
-    }
-    .dots{
-      display: none;
-    }
-    .content-active{
-      display: none;
-    }
-  }
-
-}
-@media (max-width: 425px) {
-  .slider{
-    width: 100%;
-    height: 200px;
-  }
-  #nav_slide {
-    display: none;
-    .dots-active{
-      display: none;
-    }
-    .dots{
-      display: none;
-    }
-    .content-active{
-      display: none;
-    }
-  }
-}
