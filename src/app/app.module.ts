@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { NewsListModule } from './news-list/news-list.module';
 
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -52,12 +54,14 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
+    BrowserAnimationsModule,
     HomePageModule,
     NewsListModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    })
+    }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
