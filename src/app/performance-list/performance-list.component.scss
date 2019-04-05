@@ -1,10 +1,23 @@
 .container {
   text-align: center;
+  width: 1200px!important;
 
   .page-title {
     color: #e54b2b;
     size: 24px;
     padding: 15px 0;
+  }
+
+  .perfomances {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+
+    .perfomance-item {
+      height: 230px;
+      width: 163px;
+    }
   }
 }
 
