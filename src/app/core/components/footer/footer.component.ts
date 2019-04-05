@@ -10,6 +10,7 @@ export class FooterComponent implements OnInit {
   }
 
   scrollToTop() {
+    // tslint:disable-next-line:only-arrow-functions
     (function smoothscroll() {
       const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
       const temp = 25;
