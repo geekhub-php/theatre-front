@@ -1,9 +1,9 @@
 <div class="row calendar-nav">
-  <div class="col-4 col-md-4 title">
+  <div class="col-8 col-md-8 title">
     <h1>Poster for</h1>
     <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
   </div>
-  <div class="col-4 col-md-4">
+  <div class="col-8 col-md-8 content">
     <div class="btn-group btn-switch">
       <div
         class="btn"
@@ -42,7 +42,6 @@
         [activeDayIsOpen]="activeDayIsOpen"
         (dayClicked)="dayClicked($event.day)"
         (eventClicked)="handleEvent('Clicked', $event.event)"
-        (eventTimesChanged)="eventTimesChanged($event)"
       >
       </mwl-calendar-month-view>
     </div>

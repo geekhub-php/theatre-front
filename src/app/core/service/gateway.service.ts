@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { environment } from '../../../environments/environment';
+import {ScheduleListResponse} from "../model/schedule/ScheduleListResponse";
 
 
 @Injectable({
@@ -13,6 +14,7 @@ import { environment } from '../../../environments/environment';
 })
 export class GatewayService {
   readonly performanceListUrl = '/performances.json';
+  readonly scheduleListUrl = 'schedule.json';
   readonly baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
@@ -22,6 +24,10 @@ export class GatewayService {
       .pipe(
           catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
+  }
+
+  getSchedulesList(limit: string = 'all', locale: string = 'uk'): Observable<ScheduleListResponse> {
+    return this.http.get<ScheduleListResponse>(`${this.baseUrl}/${this.scheduleListUrl}`)
   }
 
   /* tslint:disable:no-console */

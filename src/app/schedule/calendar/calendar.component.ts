@@ -1,8 +1,13 @@
-import {ChangeDetectionStrategy, Component, TemplateRef, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, TemplateRef, ViewChild, OnInit} from '@angular/core';
 import {addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays} from 'date-fns';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CalendarEvent, CalendarEventAction, CalendarView } from 'angular-calendar';
 import { Subject } from 'rxjs';
+import { GatewayService } from '../../core/service/gateway.service';
+import { Schedule } from '../../core/model/schedule/Schedule';
+import { ScheduleListResponse } from '../../core/model/schedule/ScheduleListResponse';
+
+
 
 @Component({
   selector: 'mwl-demo-component',
@@ -10,7 +15,7 @@ import { Subject } from 'rxjs';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit {
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Month;
@@ -52,9 +57,13 @@ export class CalendarComponent {
 
   activeDayIsOpen: boolean = false;
 
-  constructor(private modal: NgbModal) {}
+  scheduleList: Array<Schedule>;
 
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+  constructor(private gateway: GatewayService, private modal: NgbModal) {
+  }
+
+
+  dayClicked({date, events}: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       this.viewDate = date;
       if (
@@ -68,10 +77,14 @@ export class CalendarComponent {
     }
   }
 
-
   handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
+    this.modalData = {event, action};
+    this.modal.open(this.modalContent, {size: 'lg'});
   }
 
+  ngOnInit() {
+    this.gateway.getSchedulesList().subscribe((res: ScheduleListResponse) => {
+      this.scheduleList = res.schedule;
+    })
+  }
 }
