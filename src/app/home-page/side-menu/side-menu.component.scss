@@ -29,13 +29,7 @@ ul {
 
 @media (max-width: 992px) {
   ul {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-
-    li {
-      margin-left: -30px;
-    }
+    display: none;
   }
 }
 

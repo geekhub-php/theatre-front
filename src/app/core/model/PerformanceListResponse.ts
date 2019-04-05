@@ -1,9 +1,6 @@
-import { ListResponseInterface } from './ListResponseInterface';
 import { Performance } from './Performance';
+import { AbstractListResponse } from './AbstractListResponse';
 
-export class PerformanceListResponse implements ListResponseInterface {
-  total_count: number;
-  count: number;
+export class PerformanceListResponse extends AbstractListResponse {
   performances: Array<Performance>;
-  page: number;
 }
