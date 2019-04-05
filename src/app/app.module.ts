@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { NewsListModule } from './news-list/news-list.module';
 
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -24,8 +26,7 @@ import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
 
 @NgModule({
   declarations: [
@@ -41,16 +42,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent
+    BoardTrusteesComponent,
+    StripHtmlPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
+    BrowserAnimationsModule,
     HomePageModule,
     NewsListModule,
-    ReactiveFormsModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
