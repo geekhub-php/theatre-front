@@ -24,6 +24,7 @@ import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
     HttpClientModule,
     CoreModule,
     HomePageModule,
-    NewsListModule
+    NewsListModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
