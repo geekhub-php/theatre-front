@@ -2,15 +2,14 @@
   <h2>Персоналії</h2>
   <img src="../../assets/persons.jpg" alt="">
   <h3>Творчий склад</h3>
-  <section class="persons-list row">
+  <section class="persons-list">
     <div class="person" *ngFor="let person of employees">
-      <img src="{{ person.avatar.employee_small.url }}" alt="photo">
+      <img src="{{ person.avatar.employee_big.url }}" alt="photo">
       <h4>{{ person.first_name }} {{ person.last_name }}</h4>
       <a href="#">Детальніше</a>
     </div>
   </section>
-  <ngb-pagination class="d-flex justify-content-center"
-                  [collectionSize]="collectionSize"
+  <ngb-pagination [collectionSize]="collectionSize"
                   [(page)]="page" [boundaryLinks]="true"
                   (pageChange)="getEmployees($event)" size="sm">
     <ng-template ngbPaginationFirst>&#171;</ng-template>

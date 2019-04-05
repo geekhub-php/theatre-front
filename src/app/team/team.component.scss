@@ -1,65 +1,82 @@
 @import "../../assets/variables";
 
-h2 {
-  font-family: $main-font;
-  font-size: 30px;
-  font-weight: 100;
-  color: $hover-color;
-}
-h3 {
-  font-family: $main-font;
-  font-size: 19px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  margin-top: 20px;
-}
+  h2 {
+    font-family: $main-font;
+    font-size: 24px;
+    font-weight: bold;
+    color: $hover-color;
 
-.persons-list {
-  margin-left: -11px;
+    margin: 20px 0 20px 0;
+  }
+  h3 {
+    font-family: $main-font;
+    font-size: 19px;
 
-  .person {
-    width: 224px;
-    height: 68px;
-    border: 1px solid #c9c9c9;
-    background-color: #F8F5F5;
+    margin: 20px 0 20px 0;
+  }
 
-    font-size: 12px;
+  .persons-list {
+    width: 900px;
 
-    position: relative;
-    margin: 0 0 6px 11px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    img {
-      width: 45px;
-      height: 100%;
-    }
-    h4 {
-      font-size: 18px;
-      font-weight: 400;
-      margin-left: 50px;
+    .person {
+      width: 146px;
+      height: 300px;
+      border: 1px solid #c9c9c9;
+      background-color: #F8F5F5;
 
-      position: absolute;
-      top: 2px;
-      left: 4px;
-    }
-    a {
-      text-decoration: underline;
+      font-size: 12px;
+      text-align: center;
 
-      position: absolute;
-      right: 0;
-      bottom: 18px;
-      right: 5px;
+      margin: 0 0 6px 11px;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 200px;
+      }
+      h4 {
+        font-size: 18px;
+        font-weight: 400;
+
+        padding: 5px;
+      }
+      a {
+        text-decoration: underline;
+
+        position: absolute;
+        bottom: 8px;
+      }
     }
   }
-}
 
-ngb-pagination ::ng-deep ul {
-  li a {
-    color: #000;
-  }
-  li.active a {
-    background-color: $hover-color !important;
+  ngb-pagination ::ng-deep ul {
+    margin: 25px 0 25px 0;
 
-    span {
-      display: none;
+    li a {
+      color: #000;
+      border: 1px solid #000;
+      height: 28px;
+      line-height: 17px;
+    }
+    li.active a {
+      background-color: $hover-color !important;
+      border: 1px solid #000;
+
+      span {
+        display: none;
+      }
     }
   }
 }
