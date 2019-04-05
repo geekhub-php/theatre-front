@@ -3,6 +3,9 @@
 h1 {
   color: $hover-color;
 }
+.calendar-nav {
+  flex-direction: column;
+}
 .title {
   margin: 60px auto 0;
   text-align: center;
@@ -30,20 +33,16 @@ h1 {
     background-color: rgba(255, 74, 43, 0.08);
   }
   .cal-month-view .cal-header {
-    font-weight: normal;
+    font-weight: 400;
   }
   .cal-month-view .cal-header .cal-cell {
     background-color: $hover-color;
     color: #fff;
   }
-  .cal-week-view .cal-day-headers {
+  .cal-month-view .cal-event, .cal-month-view .cal-day-badge {
+    display: none;
+  }
+  .cal-month-view .cal-cell-row .cal-cell:hover, .cal-month-view .cal-cell.cal-has-events.cal-open {
     background-color: rgba(255, 74, 43, 0.08);
-  }
-  .cal-week-view .cal-day-headers .cal-header:hover, .cal-week-view .cal-header.cal-today {
-    background-color: $hover-color;
-    color: #fff;
-  }
-  .cal-week-view .cal-day-headers b, .cal-week-view .cal-day-headers span {
-    font-weight: normal;
   }
 }

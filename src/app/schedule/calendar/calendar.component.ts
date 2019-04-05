@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component, TemplateRef, ViewChild} from '@angular/core';
 import {addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays} from 'date-fns';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {CalendarEvent, CalendarView} from 'angular-calendar';
+import {CalendarEvent, CalendarEventAction, CalendarView } from 'angular-calendar';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'mwl-demo-component',
@@ -23,13 +24,37 @@ export class CalendarComponent {
     event: CalendarEvent;
   };
 
-  activeDayIsOpen: boolean = true;
+  refresh: Subject<any> = new Subject();
 
-  constructor(private modal: NgbModal) {
+  events: CalendarEvent[] = [
+    {
+      start: subDays(startOfDay(new Date()), 1),
+      end: addDays(new Date(), 1),
+      title: 'Performance title and time',
+      allDay: true
+    },
+    {
+      start: startOfDay(new Date()),
+      title: 'Performance title and time',
+    },
+    {
+      start: subDays(endOfMonth(new Date()), 2),
+      end: addDays(endOfMonth(new Date()), 2),
+      title: 'Performance title and time',
+      allDay: true
+    },
+    {
+      start: addHours(startOfDay(new Date()), 1),
+      end: new Date(),
+      title: '',
+    }
+  ];
 
-  }
+  activeDayIsOpen: boolean = false;
 
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[]}): void {
+  constructor(private modal: NgbModal) {}
+
+  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       this.viewDate = date;
       if (
@@ -37,24 +62,16 @@ export class CalendarComponent {
         events.length === 0
       ) {
         this.activeDayIsOpen = false;
-
       } else {
         this.activeDayIsOpen = true;
-
       }
-
     }
-
   }
 
-  setView(view: CalendarView) {
-    this.view = view;
 
-  }
-
-  closeOpenMonthViewDay() {
-    this.activeDayIsOpen = false;
-
+  handleEvent(action: string, event: CalendarEvent): void {
+    this.modalData = { event, action };
+    this.modal.open(this.modalContent, { size: 'lg' });
   }
 
 }
