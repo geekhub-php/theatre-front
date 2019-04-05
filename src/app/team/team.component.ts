@@ -11,16 +11,21 @@ export class TeamComponent implements OnInit {
 
   employee: Employee;
   employees: Array<Employee>;
+  page: number;
+  collectionSize: number;
 
-  constructor(private httpGatewayService: GatewayService) { }
-
-  ngOnInit() {
-    this.getEmployees();
+  constructor(private httpGatewayService: GatewayService) {
   }
 
-  getEmployees() {
-    this.httpGatewayService.getEmployees().subscribe((res) => {
+  ngOnInit() {
+    this.getEmployees(this.page);
+  }
+
+  getEmployees(page) {
+    this.httpGatewayService.getEmployees(page).subscribe((res) => {
       this.employees = res.body.employees;
+      this.collectionSize = res.body.total_count;
+      this.page = res.body.page;
     });
   }
 }

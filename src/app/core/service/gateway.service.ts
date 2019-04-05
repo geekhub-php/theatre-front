@@ -31,9 +31,9 @@ export class GatewayService {
       );
   }
 
-  getEmployees(): Observable<HttpResponse<EmployeesListResponse>> {
+  getEmployees(page): Observable<HttpResponse<EmployeesListResponse>> {
     return this.http.get<HttpResponse<EmployeesListResponse>>(
-      `${this.baseUrl}/employees.json`, this.httpOptions
+      `${this.baseUrl}/employees?locale=uk&limit=10&page=${page}`, this.httpOptions
     );
   }
 

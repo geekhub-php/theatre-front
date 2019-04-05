@@ -50,3 +50,16 @@ h3 {
     }
   }
 }
+
+ngb-pagination ::ng-deep ul {
+  li a {
+    color: #000;
+  }
+  li.active a {
+    background-color: $hover-color !important;
+
+    span {
+      display: none;
+    }
+  }
+}
