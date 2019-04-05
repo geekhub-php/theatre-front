@@ -6,7 +6,7 @@
     <div class="person" *ngFor="let person of employees">
       <img src="{{ person.avatar.employee_big.url }}" alt="photo">
       <h4>{{ person.first_name }} {{ person.last_name }}</h4>
-      <a href="#">Детальніше</a>
+      <a routerLink="{{ person.slug }}">Детальніше</a>
     </div>
   </section>
   <ngb-pagination [collectionSize]="collectionSize"

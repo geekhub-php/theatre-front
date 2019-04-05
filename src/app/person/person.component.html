@@ -1,1 +1,18 @@
-<div class="container"></div>
+<div class="container" *ngIf="person">
+  <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+  <section>
+    <img src="{{ person.avatar.employee_big.url }}" alt="">
+    <div class="about">
+      <p>Посада: {{ person.position }}</p>
+      <!-- <p>Біографія: {{ person.biography }}</p> -->
+      <p>
+        Біографія: <span [innerHtml]="person.biography"></span>
+      </p>
+    </div>
+  </section>
+  <ul class="gallery">
+    <li *ngFor="let photo of gallery">
+      <img src="{{ photo.images.performance_small.url }}" alt="">
+    </li>
+  </ul>
+</div>
