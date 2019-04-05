@@ -7,12 +7,12 @@ import { catchError } from 'rxjs/operators';
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { environment } from '../../../environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
   readonly performanceListUrl = '/performances.json';
+  readonly newsListUrl = 'posts.json';
   readonly baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
@@ -22,6 +22,13 @@ export class GatewayService {
       .pipe(
           catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
+  }
+
+
+  getNews(limit: string = '10', page: string = '1', locale: string = 'uk') {
+    return this.http.get(`${this.baseUrl}/${this.newsListUrl}`, {
+      params: { limit: limit, page: page, locale: locale }
+    });
   }
 
   /* tslint:disable:no-console */
