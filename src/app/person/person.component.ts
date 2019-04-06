@@ -19,15 +19,14 @@ export class PersonComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.get();
+    this.getPerson();
   }
 
-  get() {
+  getPerson() {
     const slug = this.router.snapshot.paramMap.get('slug');
-    this.gatewayService.getEmployees(slug).subscribe((res) => {
-      this.person = res.body.employees.find(employee => employee.slug === slug);
-      this.gallery = this.person.gallery;
+    this.gatewayService.getEmployeeBySlug(slug).subscribe((res) => {
+      this.person = res.body;
+      this.gallery = res.body.gallery;
     });
   }
-
 }

@@ -7,6 +7,7 @@ import { catchError } from 'rxjs/operators';
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { environment } from '../../../environments/environment';
 import { EmployeesListResponse } from '../model/EmployeesListResponse';
+import { Employee } from '../model/Employee';
 
 
 @Injectable({
@@ -34,6 +35,12 @@ export class GatewayService {
   getEmployees(page): Observable<HttpResponse<EmployeesListResponse>> {
     return this.http.get<HttpResponse<EmployeesListResponse>>(
       `${this.baseUrl}/employees?locale=uk&limit=10&page=${page}`, this.httpOptions
+    );
+  }
+
+  getEmployeeBySlug(slug): Observable<HttpResponse<Employee>> {
+    return this.http.get<HttpResponse<Employee>>(
+      `${this.baseUrl}/employees/${slug}`, this.httpOptions
     );
   }
 
