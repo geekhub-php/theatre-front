@@ -4,9 +4,6 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CalendarEvent, CalendarEventAction, CalendarView } from 'angular-calendar';
 import { Subject } from 'rxjs';
 import { GatewayService } from '../../core/service/gateway.service';
-import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
-import { ScheduleListResponse } from '../../core/model/schedule/ScheduleListResponse';
-
 
 
 @Component({
@@ -21,7 +18,6 @@ export class CalendarComponent implements OnInit {
   view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
-  scheduleList: Array<PerformanceEvent>;
 
   viewDate: Date = new Date();
 
@@ -58,8 +54,9 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = false;
 
-  constructor(private gateway: GatewayService, private modal: NgbModal) {
-  }
+  loading = true;
+
+  constructor(private gateway: GatewayService, private modal: NgbModal) { }
 
 
   dayClicked({date, events}: { date: Date; events: CalendarEvent[] }): void {
@@ -81,16 +78,5 @@ export class CalendarComponent implements OnInit {
     this.modal.open(this.modalContent, {size: 'lg'});
   }
 
-  ngOnInit() {
-    const [from, to] = this.getDates(2019, 4);
-    this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
-      this.scheduleList = res.performance_events;
-      console.log(this.scheduleList.length);
-    });
-  }
-
-  getDates(year: number, month: number) {
-    // black magic
-    return ['31-03-2019', '04-05-2019'];
-  }
+  ngOnInit() { }
 }
