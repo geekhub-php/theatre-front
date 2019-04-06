@@ -1,3 +1,4 @@
+// @import "../../assets/variables";
 @import "../../assets/variables";
 
 .container {
@@ -6,15 +7,14 @@
   align-items: center;
 
   h2 {
-    font-family: $main-font;
+    font-family: $main-font_light;
     font-size: 24px;
-    font-weight: 700;
     color: $hover-color;
 
     margin: 20px 0 20px 0;
   }
   h3 {
-    font-family: $main-font;
+    font-family: $main-font_light;
     font-size: 19px;
 
     margin: 20px 0 20px 0;

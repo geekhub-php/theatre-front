@@ -4,10 +4,8 @@
     <img src="{{ person.avatar.employee_big.url }}" alt="">
     <div class="about">
       <p>Посада: {{ person.position }}</p>
-      <!-- <p>Біографія: {{ person.biography }}</p> -->
-      <p>
-        Біографія: <span [innerHtml]="person.biography"></span>
-      </p>
+      <p>Біографія:</p>
+      <div class="biography" [innerHtml]="person.biography"></div>
     </div>
   </section>
   <ul class="gallery">

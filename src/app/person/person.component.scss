@@ -8,9 +8,8 @@
   align-items: flex-start;
 
   h2 {
-    font-family: $main-font;
+    font-family: $main-font_light;
     font-size: 24px;
-    font-weight: 700;
     color: $hover-color;
 
     margin: 20px 0 20px 400px;
@@ -26,9 +25,10 @@
     }
     .about {
       font-size: 14px;
-    }
-    span {
-      color: #797777;
+
+      .biography {
+        color: #797777;
+      }
     }
   }
   .gallery {
