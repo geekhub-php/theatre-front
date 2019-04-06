@@ -37,7 +37,7 @@
       <mwl-calendar-month-view
         *ngSwitchCase="CalendarView.Month"
         [viewDate]="viewDate"
-        [events]="events"
+        [events]="scheduleList"
         [refresh]="refresh"
         [activeDayIsOpen]="activeDayIsOpen"
         (dayClicked)="dayClicked($event.day)"
@@ -48,7 +48,6 @@
   </div>
 </div>
 <p>Here will be some debug:</p>
-<p>Shedule list length: {{scheduleList.length}}</p>
 <ng-template [ngIf]="scheduleList.length">
   <p>Its available</p>
   <div *ngFor="let event of scheduleList">
@@ -56,7 +55,7 @@
         <li>What: {{event.performance.title}}</li>
         <li>When: {{event.year}}-{{event.month}}-{{event.day}} {{event.time}}</li>
         <li>Where: {{event.venue}}</li>
-        <li>Img: <img src="{{event.performance.mainPicture.performance_small}}"></li>
+        <li>Img: <img src="{{event.performance.mainPicture.performance_small.url}}"></li>
       </ul>
   </div>
 </ng-template>

@@ -85,7 +85,10 @@ export class CalendarComponent implements OnInit {
     const [from, to] = this.getDates(2019, 4);
     this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
       this.scheduleList = res.performance_events;
-      console.log(this.scheduleList.length);
+
+      console.log(res);
+      console.log(new ScheduleListResponse());
+
     });
   }
 
