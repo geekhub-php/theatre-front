@@ -1,6 +1,6 @@
 import { AbstractListResponse } from '../AbstractListResponse';
-import { Schedule } from './Schedule';
+import { PerformanceEvent } from './PerformanceEvent';
 
 export class ScheduleListResponse extends  AbstractListResponse{
-  schedule: Array<Schedule>;
+  performance_events: Array<PerformanceEvent>;
 }

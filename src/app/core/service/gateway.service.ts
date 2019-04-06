@@ -6,7 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { environment } from '../../../environments/environment';
-import {ScheduleListResponse} from "../model/schedule/ScheduleListResponse";
+import { ScheduleListResponse } from '../model/schedule/ScheduleListResponse';
 
 
 @Injectable({
@@ -14,20 +14,30 @@ import {ScheduleListResponse} from "../model/schedule/ScheduleListResponse";
 })
 export class GatewayService {
   readonly performanceListUrl = '/performances.json';
-  readonly scheduleListUrl = 'schedule.json';
+  readonly scheduleListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, { params: {limit: '100'} })
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
       .pipe(
-          catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
+        catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
   }
 
-  getSchedulesList(limit: string = 'all', locale: string = 'uk'): Observable<ScheduleListResponse> {
-    return this.http.get<ScheduleListResponse>(`${this.baseUrl}/${this.scheduleListUrl}`)
+  getSchedulesList(from: string, to: string, locale: string = 'uk'): Observable<ScheduleListResponse> {
+    return this.http.get<ScheduleListResponse>(
+      `${this.baseUrl}/${this.scheduleListUrl}`,
+      {
+        params: {
+          limit: 'all',
+          from,
+          to
+        }
+      }
+    );
   }
 
   /* tslint:disable:no-console */
