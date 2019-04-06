@@ -2,11 +2,11 @@
   <h2 class="page-title">Репертуар</h2>
   <ul class="perfomances">
     <li class="perfomance-item" *ngFor="let item of perfomances">
-      <img [src]="item.mainPicture.performance_small.url"
-           [height]="item.mainPicture.performance_small.properties.height"
-           [width]="item.mainPicture.performance_small.properties.width"
+      <img class="image" [src]="item.mainPicture.performance_big.url"
+           height="auto"
+           width="163px"
            [alt]="item.mainPicture.performance_small.properties.alt">
-      <div class="perfomance-title">{{item.title}}</div>
+      <h3 class="perfomance-title">{{item.title}}</h3>
     </li>
   </ul>
 </div>
