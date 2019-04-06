@@ -26,8 +26,11 @@ export class ScheduleComponent implements OnInit {
 
       console.log(res);
       console.log(plainToClass(ScheduleListResponse, res));
-
     });
+  }
 
+  getDates(year: number, month: number) {
+    // black magic
+    return ['31-03-2019', '04-05-2019'];
   }
 }

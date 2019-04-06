@@ -15,9 +15,7 @@ export class PerformanceEvent implements CalendarEvent {
   get start() {
     return new Date(`${this.year}-${this.month}-${this.day} ${this.time}`);
   }
-  get end() {
-    const start = this.start;
-  }
+
   get title() {
     return this.performance.title;
   }
