@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SliderComponent implements OnInit {
 
+  activeSlide = 0;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  setActiveSlide(idx: number) {
+    this.activeSlide = idx;
+  }
 }

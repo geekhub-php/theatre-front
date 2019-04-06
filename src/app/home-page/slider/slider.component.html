@@ -1,37 +1,32 @@
 <div class="slider">
-  <input type="radio" id="i1" name="images" checked/>
-  <input type="radio" id="i2" name="images" />
-  <input type="radio" id="i3" name="images" />
-  <input type="radio" id="i4" name="images"  />
-  <input type="radio" id="i5" name="images"  />
-  <div class="slide_img" id="one">
+  <div class="slide_img" [class.active-slide-img]="activeSlide === 0">
     <img src="../../../assets/images/slide1.jpg">
     <a href="http://theatre-shevchenko.ck.ua/uk/performance/oliena-nie-priishla-dodomu"></a>
-    <label class="prev" for="i5"><span></span></label>
-    <label class="next" for="i2"><span></span></label>
+    <div class="prev"><span></span></div>
+    <div class="next"><span></span></div>
   </div>
-  <div class="slide_img" id="two">
-    <img src="../../../assets/images/slide2.jpeg " >
-    <label class="prev" for="i1"><span></span></label>
-    <label class="next" for="i3"><span></span></label>
+  <div class="slide_img">
+    <img src="../../../assets/images/slide2.jpeg" >
+    <div class="prev"><span></span></div>
+    <div class="next"><span></span></div>
   </div>
-  <div class="slide_img" id="three">
+  <div class="slide_img" [class.active-slide-img]="activeSlide === 2">
     <img src="../../../assets/images/slide4.jpeg">
-    <label class="prev" for="i2"><span></span></label>
-    <label class="next" for="i4"><span></span></label>
+    <div class="prev"><span></span></div>
+    <div class="next"><span></span></div>
   </div>
-  <div class="slide_img" id="four">
+  <div class="slide_img" [class.active-slide-img]="activeSlide === 3">
     <img src="../../../assets/images/slide5.jpeg">
-    <label class="prev" for="i3"><span></span></label>
-    <label class="next" for="i5"><span></span></label>
+    <div class="prev"><span></span></div>
+    <div class="next"><span></span></div>
   </div>
-  <div class="slide_img" id="five">
+  <div class="slide_img">
     <img src="../../../assets/images/slide6.jpeg">
-    <label class="prev" for="i4"><span></span></label>
-    <label class="next" for="i1"><span></span></label>
+    <div class="prev"><span></span></div>
+    <div class="next"><span></span></div>
   </div>
   <div id="nav_slide">
-    <label for="i1" class="dots" id="dot1">
+    <div class="dots" id="dot1">
       <div class="content-active">
         <p class="ticket_p ticket_day">Нд</p>
         <p class="ticket_p ticket_date">24</p>
@@ -47,8 +42,8 @@
           <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
         </div>
       </div>
-    </label>
-    <label for="i2" class="dots-active" id="dot2">
+    </div>
+    <div class="dots-active" id="dot2">
       <div class="content-active">
         <p class="ticket_p ticket_day">Нд</p>
         <p class="ticket_p ticket_date">24</p>
@@ -64,8 +59,8 @@
           <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
         </div>
       </div>
-    </label>
-    <label for="i3" class="dots" id="dot3">
+    </div>
+    <div class="dots" (click)="setActiveSlide(2)" id="dot3">
       <div class="content-active">
         <p class="ticket_p ticket_day">Нд</p>
         <p class="ticket_p ticket_date">24</p>
@@ -81,8 +76,8 @@
           <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
         </div>
       </div>
-    </label>
-    <label for="i4" class="dots" id="dot4">
+    </div>
+    <div class="dots" (click)="setActiveSlide(3)" id="dot4">
       <div class="content-active">
         <p class="ticket_p ticket_day">Нд</p>
         <p class="ticket_p ticket_date">24</p>
@@ -98,8 +93,8 @@
           <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
         </div>
       </div>
-    </label>
-    <label for="i5" class="dots" id="dot5">
+    </div>
+    <div class="dots" id="dot5">
       <div class="content-active">
         <p class="ticket_p ticket_day">Нд</p>
         <p class="ticket_p ticket_date">24</p>
@@ -115,7 +110,7 @@
           <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
         </div>
       </div>
-    </label>
+    </div>
   </div>
 </div>
 
