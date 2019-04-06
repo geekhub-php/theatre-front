@@ -1,1 +1,10 @@
-<div class="container"></div>
+<div class="container" >
+  <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+  <section>
+    <img src="{{ person.avatar.employee_big.url }}" alt="">
+    <div class="about">
+      <p>Посада: {{ person.position }}</p>
+      <p>Біографія:</p>
+    </div>
+  </section>
+</div>
