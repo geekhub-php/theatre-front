@@ -1,6 +1,7 @@
 import { ImageCollection } from '../ImageCollection';
 import { Performance } from '../Performance';
 import { CalendarEvent } from 'angular-calendar';
+import { Type } from 'class-transformer';
 
 export class PerformanceEvent implements CalendarEvent {
   year: number;
@@ -8,11 +9,16 @@ export class PerformanceEvent implements CalendarEvent {
   day: number;
   time: string;
   venue: string;
+
+  @Type(() => Performance)
   performance: Performance;
   get start() {
     return new Date(`${this.year}-${this.month}-${this.day} ${this.time}`);
   }
   get end() {
     const start = this.start;
+  }
+  get title() {
+    return this.performance.title;
   }
 }

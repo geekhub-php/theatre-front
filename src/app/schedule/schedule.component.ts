@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ScheduleListResponse } from '../core/model/schedule/ScheduleListResponse';
 import { GatewayService } from '../core/service/gateway.service';
 import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
+import { plainToClass } from 'class-transformer';
 
 @Component({
   selector: 'app-schedule',
@@ -12,10 +13,10 @@ export class ScheduleComponent implements OnInit {
   scheduleList: Array<PerformanceEvent>;
 
   constructor(private gateway: GatewayService) {
-    const [from, to] = this.getDates(2019, 4);
-    this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
-      this.scheduleList = res.performance_events;
-    });
+    // const [from, to] = this.getDates(2019, 4);
+    // this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
+    //   this.scheduleList = res.performance_events;
+    // });
   }
 
   ngOnInit() {
@@ -24,9 +25,10 @@ export class ScheduleComponent implements OnInit {
       this.scheduleList = res.performance_events;
 
       console.log(res);
-      console.log(new ScheduleListResponse());
+      console.log(plainToClass(ScheduleListResponse, res));
 
     });
+
   }
 
   getDates(year: number, month: number) {
