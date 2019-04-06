@@ -30,14 +30,4 @@ export class ScheduleComponent implements OnInit {
     });
 
   }
-
-  getDates(year: number, month: number) {
-    // black magic
-    return ['31-03-2019', '04-05-2019'];
-  }
-
-  getDates(year: number, month: number) {
-    // black magic
-    return ['31-03-2019', '04-05-2019'];
-  }
 }

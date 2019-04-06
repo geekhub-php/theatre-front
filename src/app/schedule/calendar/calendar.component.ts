@@ -1,9 +1,12 @@
-import {ChangeDetectionStrategy, Component, TemplateRef, ViewChild, OnInit} from '@angular/core';
-import {addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays} from 'date-fns';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {CalendarEvent, CalendarEventAction, CalendarView } from 'angular-calendar';
+import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild, OnInit } from '@angular/core';
+import { addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays } from 'date-fns';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarEvent, CalendarEventAction, CalendarView } from 'angular-calendar';
 import { Subject } from 'rxjs';
 import { GatewayService } from '../../core/service/gateway.service';
+import { ScheduleListResponse } from '../../core/model/schedule/ScheduleListResponse';
+import { plainToClass } from 'class-transformer';
+import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
 
 
 @Component({
@@ -18,6 +21,7 @@ export class CalendarComponent implements OnInit {
   view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
+  scheduleList: Array<PerformanceEvent>;
 
   viewDate: Date = new Date();
 
@@ -56,8 +60,12 @@ export class CalendarComponent implements OnInit {
 
   loading = true;
 
-  constructor(private gateway: GatewayService, private modal: NgbModal) { }
+  constructor(private gateway: GatewayService, private modal: NgbModal) {
+  }
 
+  closeOpenMonthViewDay() {
+
+  }
 
   dayClicked({date, events}: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -78,4 +86,20 @@ export class CalendarComponent implements OnInit {
     this.modal.open(this.modalContent, {size: 'lg'});
   }
 
+  ngOnInit() {
+    const [from, to] = this.getDates(2019, 4);
+    this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
+      this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
+
+      console.log(res);
+      console.log(this.scheduleList);
+
+    });
+
+  }
+
+  getDates(year: number, month: number) {
+    // black magic
+    return ['31-03-2019', '04-05-2019'];
+  }
 }

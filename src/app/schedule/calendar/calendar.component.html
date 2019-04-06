@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-12">
+  <div class="col-lg-12" *ngIf="scheduleList">
     <div [ngSwitch]="view">
       <mwl-calendar-month-view
         *ngSwitchCase="CalendarView.Month"
