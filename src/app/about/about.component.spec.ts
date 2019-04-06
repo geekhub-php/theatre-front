@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StripHtmlPipe } from '../shared/pipes/strip-html/stripHtml.pipe';
 import { StripHtmlModule } from '../shared/pipes/strip-html/strip-html.module';
 
 describe('AboutComponent', () => {

@@ -27,13 +27,12 @@
         .histories__list-body {
             position: relative;
             max-width: 430px;
-            height: 435px;
             border: 1px solid #d4d4d4;
             border-radius: 2px;
             padding: 12px;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
             margin: 0 18px 0 0;
-            
+
             &::after {
                 position: absolute;
                 content: "";
@@ -47,13 +46,12 @@
                 border-top: 1px solid #d4d4d4;
                 border-left: 1px solid transparent;
                 border-right: 1px solid #d4d4d4;
-                border-bottom: 1px solid transparent; 
+                border-bottom: 1px solid transparent;
             }
 
             .histories__list-heading {
                 color: #474b4d;
                 font-size: 18px;
-                font-weight: 900;
             }
 
             .histories__list-main {
@@ -88,7 +86,6 @@
                 color: #fff;
                 text-align: center;
             }
-            
         }
 
         &:nth-child(2n) {
@@ -106,10 +103,10 @@
                     border: 1px solid #d4d4d4;
                     background-color: #fff;
                     transform: rotate(45deg);
-                    border-top: 1px solid  transparent;
+                    border-top: 1px solid transparent;
                     border-left: 1px solid #d4d4d4;
                     border-right: 1px solid transparent;
-                    border-bottom: 1px solid #d4d4d4; 
+                    border-bottom: 1px solid #d4d4d4;
                 }
             }
 
@@ -129,37 +126,37 @@
         flex-direction: column;
         max-width: 510px;
         margin: 0 auto;
-    
+
         .list-item {
             padding: 20px 0 0 0;
             border-left: 3px solid #eee;
             border-right: none;
-    
+
             .histories__list-body {
                 float: right;
                 margin: 0 0 0 40px;
-                
+
                 &::after {
                     left: -10px;
                     border-top: 1px solid transparent;
                     border-left: 1px solid #d4d4d4;
                     border-right: 1px solid transparent;
-                    border-bottom: 1px solid #d4d4d4; 
+                    border-bottom: 1px solid #d4d4d4;
                 }
             }
-    
+
             .histories__list-footer {
-                left: -27px;                
+                left: -27px;
             }
 
             &:nth-child(2n) {
                 padding: 20px 0 0 0px;
-    
+
                 .histories__list-body {
                     transform: translateY(0px);
                     margin: 0 0 0 40px;
                 }
-    
+
                 .histories__list-footer {
                     top: 42px;
                 }
@@ -168,16 +165,12 @@
     }
 }
 
-@media screen and (max-width: 413px) {
+@media screen and (max-width: 416px) {
     .list {
         .list-item {
             .histories__list-body {
-                height: 320px;
-
-                .histories__list-main {
-                    .histories__list-main_img {
-                        max-height: 128px;
-                    }
+                .histories__list-heading {
+                    font-size: 16px;
                 }
             }
         }
