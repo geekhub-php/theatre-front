@@ -66,11 +66,12 @@
         color: $hover-color;
       }
     }
-    .hide {
+    .hide,
+    .language {
       display: none;
     }
   }
-  #forum {
+  .forum {
     display: block;
   }
 }

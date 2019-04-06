@@ -40,8 +40,8 @@ $navLinkActiveBorderTop: 3px;
 
     .language {
       //margin-left: auto;    //не сработало
-      margin-left: 50px;
-      padding: 30.5px;
+      margin-left: 75px;
+      padding: 30.5px 0;
       display: block;
       text-decoration: none;
       color: #FFF;
@@ -49,7 +49,8 @@ $navLinkActiveBorderTop: 3px;
         color: $primary-color;
       }
     }
-    .hide {
+    .hide,
+    .forum {
       display: none;
     }
 
