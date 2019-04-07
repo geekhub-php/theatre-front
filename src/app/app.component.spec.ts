@@ -1,6 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './core/components/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PerformanceListComponent } from './performance-list/performance-list.component';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -12,7 +11,6 @@ import { NewsComponent } from './news/news.component';
 import { AboutComponent } from './about/about.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { NewsListModule } from './news-list/news-list.module';
@@ -20,6 +18,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
+import { CoreModule } from './core/core.module';
 
 
 describe('AppComponent', () => {
@@ -27,7 +26,6 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        HeaderComponent,
         PerformanceListComponent,
         HomePageComponent,
         PerformanceComponent,
@@ -38,7 +36,6 @@ describe('AppComponent', () => {
         ArticleComponent,
         TeamComponent,
         ContactsComponent,
-        PageNotFoundComponent,
         PartnersComponent,
         BoardTrusteesComponent
       ],
@@ -47,6 +44,7 @@ describe('AppComponent', () => {
       ],
       imports: [
           AppRoutingModule,
+          CoreModule,
           HomePageModule,
           NewsListModule,
           RouterTestingModule,
