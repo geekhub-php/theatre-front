@@ -39,12 +39,14 @@ after_failure:
 #  - npm install ocular.js
 #  - "$(npm bin)/ocular coverage/clover.xml"
 after_success:
+  - npm install codecov -g
+  - codecov
   - openssl aes-256-cbc -K $encrypted_9a6207bd2a44_key -iv $encrypted_9a6207bd2a44_iv -in geekhub-deployment.enc -out geekhub-deployment -d
   - rm geekhub-deployment.enc # Don't need it anymore
-  - chmod 600 geekhub-deployment
   - mv geekhub-deployment ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
   - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; else BRANCH=$TRAVIS_BRANCH; fi
-  - ssh -o StrictHostKeyChecking=no deploy@104.248.253.61 "pwd"
+  - ssh -o StrictHostKeyChecking=no deploy@104.248.253.61 "pwd" -vvv
   - ng build --prod
   - tar -czf dist.tar.gz dist
   - scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa dist.tar.gz deploy@104.248.253.61:~/theatre-front
