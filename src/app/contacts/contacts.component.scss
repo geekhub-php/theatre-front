@@ -1,5 +1,23 @@
 @import "../../assets/variables";
 
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+
+  .contacts-items-wrapper {
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #c8c8c8;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      width: 100%;
+    }
+  }
+}
+
 .container {
   font-family: $main-font;
   font-size: 14px;
