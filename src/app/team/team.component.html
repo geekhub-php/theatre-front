@@ -3,7 +3,29 @@
   <img src="../../assets/persons.jpg" alt="">
   <h3>Творчий склад</h3>
   <section class="persons-list">
-    <div class="person" *ngFor="let person of employees">
+    <div class="person" *ngFor="let person of employees"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="1500"
+    (scrolled)="getSecondPage()">
+      <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+      <h4>{{ person.first_name }} {{ person.last_name }}</h4>
+      <a routerLink="{{ person.slug }}">Детальніше</a>
+    </div>
+
+    <!-- SECOND PAGE -->
+    <div class="person" *ngFor="let person of secondPage"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="1500"
+    (scrolled)="getThirdPage()">
+      <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+      <h4>{{ person.first_name }} {{ person.last_name }}</h4>
+      <a routerLink="{{ person.slug }}">Детальніше</a>
+    </div>
+
+    <!-- THIRD PAGE -->
+    <div class="person" *ngFor="let person of thirdPage">
       <img src="{{ person.avatar.employee_big.url }}" alt="photo">
       <h4>{{ person.first_name }} {{ person.last_name }}</h4>
       <a routerLink="{{ person.slug }}">Детальніше</a>
