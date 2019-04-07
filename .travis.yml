@@ -13,36 +13,35 @@ branches:
     - master
     - develop
 
-#before_script:
-#  - google-chrome --version
-#  - npm install -g @angular/cli
-#  - npm install webdriver-manager -g
-#  - webdriver-manager update
-#  - webdriver-manager start > ./webdriver.log 2>&1 &
+before_script:
+  - google-chrome --version
+  - npm install -g @angular/cli
+  - npm install webdriver-manager -g
+  - webdriver-manager update
+  - webdriver-manager start > ./webdriver.log 2>&1 &
 
 script:
-#  - npm run lint
-#  - npm run lint-css
-#  - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
-#  - ng e2e
+  - npm run lint
+  - npm run lint-css
+  - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
+  - ng e2e
   - echo "Test"
 
-#notifications:
-#  email:
-#    on_failure: change
-#    on_success: change
+notifications:
+  email:
+    on_failure: change
+    on_success: change
 
 after_failure:
   - cat ./webdriver.log
 
-#after_script:
-#  - npm install ocular.js
-#  - "$(npm bin)/ocular coverage/clover.xml"
+after_script:
+  - npm install ocular.js
+  - "$(npm bin)/ocular coverage/clover.xml"
+
 after_success:
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_PULL_REQUEST_BRANCH
-  - npm install codecov -g
-  - codecov
   - openssl aes-256-cbc -K $encrypted_9a6207bd2a44_key -iv $encrypted_9a6207bd2a44_iv -in geekhub-deployment.enc -out geekhub-deployment -d
   - rm geekhub-deployment.enc # Don't need it anymore
   - mv geekhub-deployment ~/.ssh/id_rsa
