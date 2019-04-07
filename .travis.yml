@@ -44,6 +44,7 @@ after_success:
   - chmod 600 geekhub-deployment
   - mv geekhub-deployment ~/.ssh/id_rsa
   - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; else BRANCH=$TRAVIS_BRANCH; fi
+  - ssh -o StrictHostKeyChecking=no deploy@104.248.253.61 "pwd"
   - ng build --prod
   - tar -czf dist.tar.gz dist
   - scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa dist.tar.gz deploy@104.248.253.61:~/theatre-front
