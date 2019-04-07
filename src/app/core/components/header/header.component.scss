@@ -57,9 +57,9 @@ $navLinkActiveBorderTop: 3px;
       white-space: nowrap;
     }
 
-    .language {
+    .mobile-language {
       //margin-left: auto;    //не сработало
-      margin-left: 75px;
+      //margin-left: 75px;
       padding: 30.5px 0;
       display: block;
       text-decoration: none;
@@ -75,7 +75,7 @@ $navLinkActiveBorderTop: 3px;
 
     @media (max-width: 992px) {
       a.nav-link,
-      .language {
+      .mobile-language {
         margin-left: auto;
         width: 25%;
         padding: 5px;
