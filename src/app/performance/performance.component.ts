@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-performance',
@@ -8,27 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./performance.component.scss']
 })
 export class PerformanceComponent implements OnInit {
-  visibilityActors = false;
-  visibilityPerformance = true;
-  visibilityPress = true;
-
-  actors() {
-    this.visibilityActors = false;
-    this.visibilityPerformance = true;
-    this.visibilityPress = true;
-  }
-
-  performance() {
-    this.visibilityActors = true;
-    this.visibilityPerformance = false;
-    this.visibilityPress = true;
-  }
-
-  press() {
-    this.visibilityActors = true;
-    this.visibilityPerformance = true;
-    this.visibilityPress = false;
-  }
+  showNavigationArrows = true;
+  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 
   constructor() { }
 

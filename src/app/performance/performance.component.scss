@@ -1,3 +1,17 @@
+::ng-deep .carousel-control-prev .sr-only, ::ng-deep .carousel-control-next .sr-only {
+  display: none;
+}
+
+::ng-deep .tab-pane {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+}
+
+::ng-deep .nav-link {
+  color: #ccc
+}
+
 .page-title {
   color: #e54b2b;
   font-size: 24px;
