@@ -1,6 +1,6 @@
 <button class="scrollToTop" (click)="scrollToTop()">scrollToTop</button>
 <footer class="footer">
-  <div class="container">
+  <div class="container" [ngClass]="collapse ? 'collapse' : ''">
     <app-main-nav></app-main-nav>
     <ul class="social">
       <li><a class="fa-icon" href="#">

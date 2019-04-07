@@ -65,7 +65,11 @@
       &:hover {
         color: $hover-color;
       }
+
     }
+    //.active {
+    //     color: $hover-color;
+    //   }
     .hide,
     .language {
       display: none;

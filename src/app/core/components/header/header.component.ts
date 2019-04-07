@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  collapse = true;
+
   constructor() {
   }
 
@@ -13,11 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   showMenu() {
-    document.getElementById('mobileMenu').classList.toggle('collapse');
-/*  убрать  в main-nav класс hide*/
-    document.getElementById('forum').classList.toggle('hide');
-    document.getElementById('mobile1').classList.toggle('hide');
-    document.getElementById('mobile2').classList.toggle('hide');
+    this.collapse = !this.collapse;
   }
 
 }
