@@ -5,7 +5,6 @@ h3 {
   font-size: 30px;
   color: $hover-color;
   font-family: $main-font;
-
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -22,12 +21,12 @@ h3 {
     font-size: 20px;
     font-family: $main-font;
     color: $primary-color;
-
     margin-top: 20px;
   }
 }
 
 @media (max-width: 576px) {
+
   h3 {
     font-size: 24px;
   }
