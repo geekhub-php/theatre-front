@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { NewsListModule } from './news-list/news-list.module';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -54,8 +53,7 @@ import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
     BrowserAnimationsModule,
     HomePageModule,
     NewsListModule,
-    NgbModule,
-    InfiniteScrollModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

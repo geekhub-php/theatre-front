@@ -19,7 +19,6 @@ import { NewsListModule } from './news-list/news-list.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 describe('AppComponent', () => {
@@ -49,8 +48,7 @@ describe('AppComponent', () => {
           AppRoutingModule,
           HomePageModule,
           NewsListModule,
-          RouterTestingModule,
-          InfiniteScrollModule
+          RouterTestingModule
       ]
     }).compileComponents();
   }));

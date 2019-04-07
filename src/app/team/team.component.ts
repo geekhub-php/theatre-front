@@ -30,18 +30,4 @@ export class TeamComponent implements OnInit {
       this.page = res.body.page;
     });
   }
-
-  getSecondPage() {
-    const page = 2;
-    this.httpGatewayService.getEmployees(page).subscribe((res) => {
-      this.secondPage = res.body.employees;
-    });
-  }
-
-  getThirdPage() {
-    const page = 3;
-    this.httpGatewayService.getEmployees(page).subscribe((res) => {
-      this.thirdPage = res.body.employees;
-    });
-  }
 }

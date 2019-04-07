@@ -10,7 +10,7 @@
   </section>
   <ul class="gallery">
     <li *ngFor="let photo of gallery">
-      <img src="{{ photo.images.performance_small.url }}" alt="">
+      <img src="{{ photo.images.performance_small?.url }}" alt="">
     </li>
   </ul>
 </div>
