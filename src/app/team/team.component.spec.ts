@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TeamComponent } from './team.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('TeamComponent', () => {
   let component: TeamComponent;
@@ -10,7 +12,11 @@ describe('TeamComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ TeamComponent ],
-      imports: [ HttpClientModule ]
+      imports: [
+          HttpClientModule,
+          InfiniteScrollModule,
+          RouterTestingModule
+      ]
     })
     .compileComponents();
   }));
