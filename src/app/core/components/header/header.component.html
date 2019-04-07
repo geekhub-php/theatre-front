@@ -3,16 +3,19 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <h1 class="header-logo">
         <a routerLink="/">
-          <img src="../assets/images/logo.png" alt="logo">
+          <img src="assets/images/logo.png" alt="logo">
         </a>
       </h1>
 
       <button class="navbar-toggler" type="button" (click)="showMenu()">
-         <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="mobileMenu" >
+      <div class="navbar-collapse" id="mobileMenu" [ngClass]="collapse ? 'collapse' : ''">
         <app-main-nav></app-main-nav>
+      </div>
+      <div class="float-right">
+        <a class="language" href="#">Укр</a>
       </div>
     </nav>
   </div>
