@@ -18,4 +18,7 @@ export class HeaderComponent implements OnInit {
     this.collapse = !this.collapse;
   }
 
+  hideMenu() {
+    this.collapse = !this.collapse;
+  }
 }
