@@ -49,7 +49,7 @@ after_success:
   - chmod 600 ~/.ssh/id_rsa
   - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
   - ssh -o StrictHostKeyChecking=no deploybot@104.248.253.61 "pwd"
-  - ng build --prod --deploy-url=http://develop.pamono.pp.ua/$BRANCH
+  - ng build --prod --deploy-url=http://develop.pamono.pp.ua/$BRANCH/
   - cd dist/ && tar -zcvf ../dist.tar.gz * && cd -
   - scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa dist.tar.gz deploybot@104.248.253.61:~/theatre-front/$BRANCH.tar.gz
   - ssh deploybot@104.248.253.61 "rm -rf ~/theatre-front/$BRANCH && mkdir ~/theatre-front/$BRANCH"
