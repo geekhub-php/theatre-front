@@ -2,31 +2,31 @@
   <div class="slide_img" [class.active-slide-img]="activeSlide === 0">
     <img src="../../../assets/images/slide1.jpg">
     <a href="http://theatre-shevchenko.ck.ua/uk/performance/oliena-nie-priishla-dodomu"></a>
-    <div class="prev"><span></span></div>
-    <div class="next"><span></span></div>
+    <div class="prev" (click)="setActiveSlide(4)"><span></span></div>
+    <div class="next" (click)="setActiveSlide(1)"><span></span></div>
   </div>
-  <div class="slide_img">
-    <img src="../../../assets/images/slide2.jpeg" >
-    <div class="prev"><span></span></div>
-    <div class="next"><span></span></div>
+  <div class="slide_img" [class.active-slide-img]="activeSlide === 1">
+    <img src="../../../assets/images/slide2.jpeg">
+    <div class="prev" (click)="setActiveSlide(0)"><span></span></div>
+    <div class="next" (click)="setActiveSlide(2)"><span></span></div>
   </div>
   <div class="slide_img" [class.active-slide-img]="activeSlide === 2">
     <img src="../../../assets/images/slide4.jpeg">
-    <div class="prev"><span></span></div>
-    <div class="next"><span></span></div>
+    <div class="prev" (click)="setActiveSlide(1)"><span></span></div>
+    <div class="next" (click)="setActiveSlide(3)"><span></span></div>
   </div>
   <div class="slide_img" [class.active-slide-img]="activeSlide === 3">
     <img src="../../../assets/images/slide5.jpeg">
-    <div class="prev"><span></span></div>
-    <div class="next"><span></span></div>
+    <div class="prev" (click)="setActiveSlide(2)"><span></span></div>
+    <div class="next" (click)="setActiveSlide(4)"><span></span></div>
   </div>
-  <div class="slide_img">
+  <div class="slide_img" [class.active-slide-img]="activeSlide === 4">
     <img src="../../../assets/images/slide6.jpeg">
-    <div class="prev"><span></span></div>
-    <div class="next"><span></span></div>
+    <div class="prev" (click)="setActiveSlide(3)"><span></span></div>
+    <div class="next" (click)="setActiveSlide(0)"><span></span></div>
   </div>
   <div id="nav_slide">
-    <div class="dots" id="dot1">
+    <div class="dots" (click)="setActiveSlide(0)" id="dot1">
       <div class="content-active">
         <p class="ticket_p ticket_day">Нд</p>
         <p class="ticket_p ticket_date">24</p>
@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-    <div class="dots-active" id="dot2">
+    <div class="dots-active" (click)="setActiveSlide(1)" id="dot2">
       <div class="content-active">
         <p class="ticket_p ticket_day">Нд</p>
         <p class="ticket_p ticket_date">24</p>
@@ -94,7 +94,7 @@
         </div>
       </div>
     </div>
-    <div class="dots" id="dot5">
+    <div class="dots" (click)="setActiveSlide(4)" id="dot5">
       <div class="content-active">
         <p class="ticket_p ticket_day">Нд</p>
         <p class="ticket_p ticket_date">24</p>
@@ -113,5 +113,7 @@
     </div>
   </div>
 </div>
+
+
 
 
