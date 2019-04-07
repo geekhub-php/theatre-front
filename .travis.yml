@@ -54,4 +54,5 @@ after_success:
   - scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa dist.tar.gz deploybot@104.248.253.61:~/theatre-front/$BRANCH.tar.gz
   - ssh deploybot@104.248.253.61 "rm -rf ~/theatre-front/$BRANCH && mkdir ~/theatre-front/$BRANCH"
   - ssh deploybot@104.248.253.61 "tar -xf ~/theatre-front/$BRANCH.tar.gz -C ~/theatre-front/$BRANCH"
+  - sed -e "s/{{branch}}/$BRANCH/g" ~/theatre-front/$BRANCH/deploy/branch.conf > ~/nginxconf/$BRANCH.conf
 
