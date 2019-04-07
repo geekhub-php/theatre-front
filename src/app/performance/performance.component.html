@@ -2,36 +2,62 @@
   <h2 class="page-title">Спектакль</h2>
 
   <section class="preview">
-    <div class="row">
-      <div class="col">
-        <div class="future-img">Future image</div>
-      </div>
-      <div class="col-6">
-        <div class="slider">
+    <div class="performance-poster">
+      <div class="future-img">Future image</div>
+    </div>
+    <div class="slider">
+      <div class="slider1">
 
-          <ngb-carousel *ngIf="images">
-            <ng-template ngbSlide *ngFor="let image of images">
-              <img [src]="image" alt="Random slide">
-            </ng-template>
-          </ngb-carousel>
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide *ngFor="let image of images">
+            <img [src]="image" alt="Random slide">
+          </ng-template>
+        </ngb-carousel>
 
-        </div>
       </div>
-      <div class="col">
-        <div class="future-list">Future list</div>
-      </div>
+    </div>
+    <div class="performance-list">
+      <div class="future-list">Future list</div>
     </div>
   </section>
 
   <section class="info">
 
     <ngb-tabset>
-      <ngb-tab title="Актори та постановка">
+      <ngb-tab title="Актори">
         <ng-template ngbTabContent>
-          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-            master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-            dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-            iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+          <div class="item">
+            <img src="" alt="">
+            <span>Info about actor</span>
+          </div>
+          <div class="item">
+            <img src="" alt="">
+            <span>Info about actor</span>
+          </div>
+          <div class="item">
+            <img src="" alt="">
+            <span>Info about actor</span>
+          </div>
+          <div class="item">
+            <img src="" alt="">
+            <span>Info about actor</span>
+          </div>
+          <div class="item">
+            <img src="" alt="">
+            <span>Info about actor</span>
+          </div>
+          <div class="item">
+            <img src="" alt="">
+            <span>Info about actor</span>
+          </div>
+          <div class="item">
+            <img src="" alt="">
+            <span>Info about actor</span>
+          </div>
+          <div class="item">
+            <img src="" alt="">
+            <span>Info about actor</span>
+          </div>
         </ng-template>
       </ngb-tab>
       <ngb-tab>
@@ -57,59 +83,6 @@
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
-
-    <!--<div class="actors">  &lt;!&ndash; Future *ngFor &ndash;&gt;
-      <div class="item">
-        <img src="" alt="">
-        <span>Info about actor</span>
-      </div>
-      <div class="item">
-        <img src="" alt="">
-        <span>Info about actor</span>
-      </div>
-      <div class="item">
-        <img src="" alt="">
-        <span>Info about actor</span>
-      </div>
-      <div class="item">
-        <img src="" alt="">
-        <span>Info about actor</span>
-      </div>
-      <div class="item">
-        <img src="" alt="">
-        <span>Info about actor</span>
-      </div>
-      <div class="item">
-        <img src="" alt="">
-        <span>Info about actor</span>
-      </div>
-      <div class="item">
-        <img src="" alt="">
-        <span>Info about actor</span>
-      </div>
-      <div class="item">
-        <img src="" alt="">
-        <span>Info about actor</span>
-      </div>
-    </div>
-
-    <div class="performances">
-      <span>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequatur distinctio eos excepturi hic ipsum
-        nam nihil optio perferendis quam qui reiciendis, sint? Alias architecto doloremque dolores id, ipsum iusto
-        labore laudantium magni, maxime neque nulla praesentium repellendus, vitae! At culpa, exercitationem facilis
-        nihil obcaecati quo rem sapiente! Illo, nisi?
-      </span>
-    </div>
-
-    <div class="press">
-      <span>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequatur distinctio eos excepturi hic ipsum
-        nam nihil optio perferendis quam qui reiciendis, sint? Alias architecto doloremque dolores id, ipsum iusto
-        labore laudantium magni, maxime neque nulla praesentium repellendus, vitae! At culpa, exercitationem facilis
-        nihil obcaecati quo rem sapiente! Illo, nisi?
-      </span>
-    </div>-->
 
     <nav aria-label="Performance navigation" class="performance-pagination">  <!--Future pagination-->
       <ul class="pagination">
