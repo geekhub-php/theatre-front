@@ -3,11 +3,8 @@
   <ul class="perfomances">
     <li class="perfomance-item" *ngFor="let item of perfomances">
       <img class="image" [src]="item.mainPicture.performance_big.url"
-
            [alt]="item.mainPicture.performance_small.properties.alt">
       <a [href]="item.slug">Slug</a>
       <h3 class="perfomance-title">{{item.title}}</h3>
     </li>
   </ul>
-</div>
-
