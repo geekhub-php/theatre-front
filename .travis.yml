@@ -47,7 +47,7 @@ after_success:
   - rm geekhub-deployment.enc # Don't need it anymore
   - mv geekhub-deployment ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
-  - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; else BRANCH=$TRAVIS_BRANCH; fi
+  - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
   - ssh -o StrictHostKeyChecking=no deploybot@104.248.253.61 "pwd"
   - ng build --prod
   - tar -czf dist.tar.gz dist
