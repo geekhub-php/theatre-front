@@ -25,6 +25,10 @@ export class CalendarComponent implements OnInit {
 
   viewDate: Date = new Date();
 
+  closeOpenMonthViewDay() {
+    this.activeDayIsOpen = false;
+  }
+
   modalData: {
     action: string;
     event: CalendarEvent;
@@ -32,39 +36,11 @@ export class CalendarComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'Performance title and time',
-      allDay: true
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'Performance title and time',
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 2),
-      end: addDays(endOfMonth(new Date()), 2),
-      title: 'Performance title and time',
-      allDay: true
-    },
-    {
-      start: addHours(startOfDay(new Date()), 1),
-      end: new Date(),
-      title: '',
-    }
-  ];
-
   activeDayIsOpen: boolean = false;
 
   loading = true;
 
   constructor(private gateway: GatewayService, private modal: NgbModal) {
-  }
-
-  closeOpenMonthViewDay() {
-
   }
 
   dayClicked({date, events}: { date: Date; events: CalendarEvent[] }): void {
@@ -90,7 +66,6 @@ export class CalendarComponent implements OnInit {
     const [from, to] = this.getDates(2019, 4);
     this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
       this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
-
       console.log(res);
       console.log(this.scheduleList);
 
