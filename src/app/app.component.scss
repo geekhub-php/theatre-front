@@ -1,11 +1,10 @@
-:host(app-root) {
+:host {
   display: block;
   position: relative;
   min-height: 100%;
-}
-.main {
   padding-bottom: 120px;    /* Footer height */
 }
+
 .footer {
   position: absolute;
   bottom: 0;

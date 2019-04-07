@@ -6,86 +6,82 @@ $navLinkActiveBorderTop: 3px;
 .header {
   background: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
   font-size: 12px;
-  .container {
 
-    .header-logo {
-      margin: 4px 5px;
-    }
-
-    .menu-container, .navbar-collapse, .language {
-      align-items: stretch;
-    }
-    .navbar-collapse {
-      margin-left: 25px;
-    }
+  .header-logo {
+    margin: 4px 5px;
   }
-  .float-right {
-    .language {
-      cursor: pointer;
-      padding: 30.5px 0;
-      display: block;
-      text-decoration: none;
-      color: #FFF;
-      &:hover {
-        color: $primary-color;
-      }
-    }
-  }
-  @media (max-width: 992px) {
-    .float-right {
-      display: none;
-    }
 
+  .menu-container, .navbar-collapse, .language {
+    align-items: stretch;
+  }
+
+  .navbar-collapse {
+    margin-left: 25px;
+  }
+
+  .language {
+    cursor: pointer;
+    padding: 30.5px 0;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 }
 
 :host ::ng-deep {
+
   .navbar-nav {
-    color: #FFF;
-    .nav-link:hover {
-      //border-top: $navLinkActiveBorderTop solid #fff;
-      background: #FFF;
-      color: $primary-color;
-    }
-    // .active {
-    //  border-top: $navLinkActiveBorderTop solid #fff;
-    //  padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
-    //}
-    a.nav-link {
-      color: #FFF;
-      padding: $navLinkPaddingTop 11px;
+    color: #fff;
+
+    .nav-link {
       white-space: nowrap;
     }
 
     .mobile-language {
-      //margin-left: auto;    //не сработало
-      //margin-left: 75px;
-      padding: 30.5px 0;
-      display: block;
       text-decoration: none;
-      color: #FFF;
+    }
+
+    .nav-link,
+    .mobile-language {
+      padding: $navLinkPaddingTop 11px;
+      color: #fff;
+
       &:hover {
+        background: #fff;
         color: $primary-color;
       }
+
+      &.active {
+        border-top: $navLinkActiveBorderTop solid #fff;
+        padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
+      }
     }
-    .hide,
+
     .forum {
       display: none;
     }
 
     @media (max-width: 992px) {
-      a.nav-link,
+
+      .nav-link,
       .mobile-language {
+        display: inline-block;
+        width: auto;
+        float: right;
         margin-left: auto;
-        width: 50%;
-        padding: 5px;
-        text-align: right;
-      }
-      .active {
         padding: 5px;
       }
-      .forum,
-      .hide {
+
+      .nav-link.active {
+        padding: 5px 5px 5px - $navLinkActiveBorderTop;
+        border-top: none;
+        border-bottom: $navLinkActiveBorderTop solid #fff;
+      }
+
+      .forum {
         display: block;
       }
     }

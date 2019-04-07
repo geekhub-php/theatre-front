@@ -39,12 +39,12 @@ describe('theatre-front App', () => {
     mainMenu.navigateTo('Про театр');
     expect(element(by.css('h2')).getText()).toContain('Про Театер');
   });
-
-  it('shold navigate to Persons', () => {
-    page.navigateTo();
-    mainMenu.navigateTo('Персоналії');
-    expect(element(by.css('p')).getText()).toContain('Посада:');
-  });
+  //
+  // it('shold navigate to Persons', () => {
+  //   page.navigateTo();
+  //   mainMenu.navigateTo('Персоналії');
+  //   expect(element(by.css('p')).getText()).toContain('Посада:');
+  // });
 
   it('shold navigate to Contacts', () => {
     page.navigateTo();

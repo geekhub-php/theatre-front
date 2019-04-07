@@ -10,6 +10,7 @@ ul {
   margin-left: -45px;
 
   li {
+
     a {
       color: $primary-color;
       cursor: pointer;
@@ -19,6 +20,7 @@ ul {
         color: $hover-color;
         fill: $hover-color;
       }
+
       svg {
         margin-right: 8px;
       }
@@ -27,6 +29,7 @@ ul {
 }
 
 @media (max-width: 992px) {
+
   ul {
     display: none;
   }

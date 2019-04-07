@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { MainNavComponent } from '../main-nav/main-nav.component';
 import { HeaderComponent } from '../header/header.component';
@@ -16,7 +17,10 @@ describe('FooterComponent', () => {
         FooterComponent,
         HeaderComponent
       ],
-      imports: [HomePageModule]
+      imports: [
+        HomePageModule,
+        RouterTestingModule
+      ]
     })
       .compileComponents();
   }));
