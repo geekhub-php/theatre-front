@@ -24,7 +24,7 @@ script:
   - npm run lint
   - npm run lint-css
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
-  - ng e2e
+#  - ng e2e
   - echo "Test"
 
 notifications:
