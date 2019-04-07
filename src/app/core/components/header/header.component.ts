@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
+
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  collapse = true;
 
-  constructor() { }
+  constructor(private router: Router) {
+    router.events
+      .pipe(filter(event => event instanceof NavigationStart))
+      .subscribe(() => this.collapse = true);
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
+
+  toogleMenu() {
+    this.collapse = !this.collapse;
+  }
 }
