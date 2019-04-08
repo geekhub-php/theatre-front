@@ -54,17 +54,15 @@
                 font-size: 18px;
             }
 
-            .histories__list-main {
-                .histories__list-main_text {
-                    color: #868b8c;
-                    font-size: 14px;
-                }
+            .histories__list-main .histories__list-main_text {
+                color: #868b8c;
+                font-size: 14px;
+            }
 
-                .histories__list-main_img {
-                    display: block;
-                    margin: 5px auto;
-                    max-height: 300px;
-                }
+            .histories__list-main .histories__list-main_img {
+                display: block;
+                margin: 5px auto;
+                max-height: 300px;
             }
         }
 
@@ -77,15 +75,15 @@
             background-color: #df442b;
             top: 42px;
             right: -27px;
+        }
 
-            .year {
-                display: block;
-                margin-top: 12px;
-                font-size: 18px;
-                font-weight: 900;
-                color: #fff;
-                text-align: center;
-            }
+        .histories__list-footer .year {
+            display: block;
+            margin-top: 12px;
+            font-size: 18px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
         }
 
         &:nth-child(2n) {
@@ -97,17 +95,17 @@
                 float: right;
                 transform: translateY(102px);
                 margin: 0 0 0 18px;
+            }
 
-                &::after {
-                    left: -10px;
-                    border: 1px solid #d4d4d4;
-                    background-color: #fff;
-                    transform: rotate(45deg);
-                    border-top: 1px solid transparent;
-                    border-left: 1px solid #d4d4d4;
-                    border-right: 1px solid transparent;
-                    border-bottom: 1px solid #d4d4d4;
-                }
+            .histories__list-body::after {
+                left: -10px;
+                border: 1px solid #d4d4d4;
+                background-color: #fff;
+                transform: rotate(45deg);
+                border-top: 1px solid transparent;
+                border-left: 1px solid #d4d4d4;
+                border-right: 1px solid transparent;
+                border-bottom: 1px solid #d4d4d4;
             }
 
             .histories__list-footer {
@@ -135,14 +133,14 @@
             .histories__list-body {
                 float: right;
                 margin: 0 0 0 40px;
+            }
 
-                &::after {
-                    left: -10px;
-                    border-top: 1px solid transparent;
-                    border-left: 1px solid #d4d4d4;
-                    border-right: 1px solid transparent;
-                    border-bottom: 1px solid #d4d4d4;
-                }
+            .histories__list-body::after {
+                left: -10px;
+                border-top: 1px solid transparent;
+                border-left: 1px solid #d4d4d4;
+                border-right: 1px solid transparent;
+                border-bottom: 1px solid #d4d4d4;
             }
 
             .histories__list-footer {
@@ -166,13 +164,7 @@
 }
 
 @media screen and (max-width: 416px) {
-    .list {
-        .list-item {
-            .histories__list-body {
-                .histories__list-heading {
-                    font-size: 16px;
-                }
-            }
-        }
+    .list .list-item .histories__list-body .histories__list-heading {
+        font-size: 16px;
     }
 }
