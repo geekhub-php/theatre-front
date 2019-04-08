@@ -16,5 +16,4 @@ export class NewsItemComponent implements OnInit {
       this.listPost = res.posts;
     });
   }
-
 }
