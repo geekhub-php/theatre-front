@@ -45,18 +45,30 @@
 }
 
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   .container {
-    width: 360px;
+    width: 490px;
 
     h2 {
       margin: 10px 0 10px 0;
     }
     section img {
       width: 170px;
-      height: 275px;
+      height: 265px;
 
       margin-right: 12px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 479px) {
+  .container {
+    width: 320px !important;
+
+    section img {
+      width: 150px;
+      height: 225px;
     }
   }
 }

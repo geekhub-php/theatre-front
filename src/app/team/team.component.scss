@@ -81,7 +81,7 @@
 }
 
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   .container {
     width: 360px !important;
 
@@ -96,8 +96,7 @@
     }
     .persons-list {
       width: 345px !important;
-      justify-content: flex-start !important;
-      margin-left: 1px;
+      margin-left: -10px;
 
       .person {
         width: 100px !important;
@@ -113,6 +112,16 @@
           right: 16px;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    width: 320px !important;
+
+    .persons-list {
+      width: 330px !important;
     }
   }
 }
