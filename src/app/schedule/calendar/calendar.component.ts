@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild, OnInit } from '@angular/core';
-import { addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays } from 'date-fns';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarEvent, CalendarEventAction, CalendarView } from 'angular-calendar';
-import { Subject } from 'rxjs';
-import { GatewayService } from '../../core/service/gateway.service';
-import { ScheduleListResponse } from '../../core/model/schedule/ScheduleListResponse';
-import { plainToClass } from 'class-transformer';
-import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
+import {ChangeDetectionStrategy, Component, TemplateRef, ViewChild, OnInit} from '@angular/core';
+import {addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays} from 'date-fns';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {CalendarEvent, CalendarView} from 'angular-calendar';
+import {Subject} from 'rxjs';
+import {GatewayService} from '../../core/service/gateway.service';
+import {ScheduleListResponse} from '../../core/model/schedule/ScheduleListResponse';
+import {plainToClass} from 'class-transformer';
+import {PerformanceEvent} from '../../core/model/schedule/PerformanceEvent';
 
 
 @Component({
@@ -15,21 +15,23 @@ import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
+
 export class CalendarComponent implements OnInit {
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
-
-
-  getDates(year: number, month: number) {
-    // black magic
-    return ['31-03-2019', '04-05-2019'];
-  }
 
   view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
+
   scheduleList: Array<PerformanceEvent>;
 
   viewDate: Date = new Date();
+
+  refresh: Subject<any> = new Subject();
+
+  activeDayIsOpen: boolean = false;
+
+  loading = true;
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
@@ -40,16 +42,10 @@ export class CalendarComponent implements OnInit {
     event: CalendarEvent;
   };
 
-  refresh: Subject<any> = new Subject();
-
-  activeDayIsOpen: boolean = false;
-
-  loading = true;
-
   constructor(private gateway: GatewayService, private modal: NgbModal) {
   }
 
-  dayClicked({date, events}: { date: Date; events:  Array<PerformanceEvent> }): void {
+  dayClicked({date, events}: { date: Date; events: Array<PerformanceEvent> }): void {
     if (isSameMonth(date, this.viewDate)) {
       this.viewDate = date;
       if (
@@ -72,11 +68,12 @@ export class CalendarComponent implements OnInit {
     const [from, to] = this.getDates(2019, 4);
     this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
       this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
-      console.log(res);
-      console.log(this.scheduleList);
-
     });
+  }
 
+  getDates(year: number, month: number) {
+    // black magic
+    return ['31-03-2019', '04-05-2019'];
   }
 
 }
