@@ -18,6 +18,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { CoreModule } from './core/core.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 describe('AppComponent', () => {
@@ -46,7 +47,8 @@ describe('AppComponent', () => {
           CoreModule,
           HomePageModule,
           NewsListModule,
-          RouterTestingModule
+          RouterTestingModule,
+        NgbModule.forRoot()
       ]
     }).compileComponents();
   }));
