@@ -1,5 +1,5 @@
 <div class="card bg-primary" *ngFor="let item of listPost">
-  <img [src]='item.mainPicture.post_big.url' class="card-img-top" alt="news picture">
+  <img *ngIf="item.mainPicture.post_big.url" [src]='item.mainPicture.post_big.url' class="card-img-top" alt="news picture">
   <div class="card-body">
     <h2>{{item.title}}</h2>
     <p class="card-text">{{item.short_description}}</p>
