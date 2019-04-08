@@ -1,11 +1,10 @@
-import { ImageCollection } from '../ImageCollection';
-
+import { NewsItemImage } from './NewsItemImage';
 
 export class NewsItem {
   title: string;
   text: string;
   slug: string;
-  mainPicture: ImageCollection;
+  mainPicture: NewsItemImage;
   short_description: string;
   updated_at: string;
 }

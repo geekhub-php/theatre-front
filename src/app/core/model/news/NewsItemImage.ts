@@ -1,6 +1,6 @@
 import { Image } from '../Image';
 
-export class ImageCollection {
+export class NewsItemImage {
   reference: Image;
   post_big: Image;
 }
