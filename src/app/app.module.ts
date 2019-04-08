@@ -58,10 +58,7 @@ import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
     BrowserAnimationsModule,
     HomePageModule,
     NewsListModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory
-    }),
+    CalendarModule,
     NgbModule
   ],
   providers: [],
