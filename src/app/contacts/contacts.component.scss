@@ -5,24 +5,23 @@
   .contacts-items-wrapper {
 
     li {
-      justify-content: flex-end;
-      flex-wrap: wrap;
-
-      .contact-item-pic {
-        order: 1;
-      }
-
-      .contact-item-name {
-        order: 2;
-        width: 85%;
-      }
-
-      .contact-item-content {
-        order: 3;
-        justify-content: flex-end;
-      }
+      flex-direction: column;
+      //justify-content: flex-end;
+      background-color: #3ea143;
     }
   }
+  //.contact-item-pic {
+  //  order: 1;
+  //  //align-items: left;
+  //}
+  //
+  //.contact-item-name {
+  //  order: 2;
+  //}
+  //
+  //.contact-item-content {
+  //  order: 3;
+  //}
 }
 
 .container {
