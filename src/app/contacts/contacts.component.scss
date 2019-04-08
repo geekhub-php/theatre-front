@@ -2,26 +2,21 @@
 
 @media screen and (max-device-width: 768px) {
 
-  .contacts-items-wrapper {
+  ul.contacts-items-wrapper {
 
     li {
       flex-direction: column;
-      //justify-content: flex-end;
-      background-color: #3ea143;
+      align-items: flex-end;
+
+      .contact-item-content {
+        justify-content: flex-end;
+      }
+
+      .contact-item-pic {
+        align-self: flex-start;
+      }
     }
   }
-  //.contact-item-pic {
-  //  order: 1;
-  //  //align-items: left;
-  //}
-  //
-  //.contact-item-name {
-  //  order: 2;
-  //}
-  //
-  //.contact-item-content {
-  //  order: 3;
-  //}
 }
 
 .container {
