@@ -1,12 +1,12 @@
-import {ChangeDetectionStrategy, Component, TemplateRef, ViewChild, OnInit} from '@angular/core';
-import {addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays} from 'date-fns';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {CalendarEvent, CalendarView} from 'angular-calendar';
-import {Subject} from 'rxjs';
-import {GatewayService} from '../../core/service/gateway.service';
-import {ScheduleListResponse} from '../../core/model/schedule/ScheduleListResponse';
-import {plainToClass} from 'class-transformer';
-import {PerformanceEvent} from '../../core/model/schedule/PerformanceEvent';
+import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild, OnInit } from '@angular/core';
+import { addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays } from 'date-fns';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarEvent, CalendarView } from 'angular-calendar';
+import { Subject } from 'rxjs';
+import { GatewayService } from '../../core/service/gateway.service';
+import { ScheduleListResponse } from '../../core/model/schedule/ScheduleListResponse';
+import { plainToClass } from 'class-transformer';
+import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
 
 
 @Component({

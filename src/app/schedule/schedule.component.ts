@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ScheduleListResponse} from '../core/model/schedule/ScheduleListResponse';
-import {GatewayService} from '../core/service/gateway.service';
-import {PerformanceEvent} from '../core/model/schedule/PerformanceEvent';
-import {plainToClass} from 'class-transformer';
+import { Component, OnInit } from '@angular/core';
+import { ScheduleListResponse } from '../core/model/schedule/ScheduleListResponse';
+import { GatewayService } from '../core/service/gateway.service';
+import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
+import { plainToClass } from 'class-transformer';
 
 @Component({
   selector: 'app-schedule',
