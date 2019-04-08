@@ -21,7 +21,7 @@ h1 {
   border: 1px solid $hover-color;
 }
 .btn:hover {
-  color: #fff;
+  color: $white-color;
   background-color: $hover-color;
 }
 .row {
@@ -30,24 +30,24 @@ h1 {
 }
 :host ::ng-deep {
   .cal-month-view .cal-day-cell.cal-today {
-    background-color: rgba(255, 74, 43, 0.08);
+    background-color: $light-hover-color;
   }
   .cal-month-view .cal-header {
     font-weight: 400;
   }
   .cal-month-view .cal-header .cal-cell {
     background-color: $hover-color;
-    color: #fff;
+    color: $white-color;
   }
   .cal-month-view .cal-event, .cal-month-view .cal-day-badge {
     display: none;
   }
   .cal-month-view .cal-cell-row .cal-cell:hover,
   .cal-month-view .cal-cell.cal-has-events.cal-open {
-    background-color: rgba(255, 74, 43, 0.08);
+    background-color: $light-hover-color;
   }
   .cal-month-view .cal-open-day-events {
-    color: #fff;
+    color: $white-color;
     background-color: $hover-color;
     box-shadow: inset 0 0 15px 0 rgba(28, 28, 28, 0.29);
     }
