@@ -12,7 +12,7 @@ export class NewsItemComponent implements OnInit {
   constructor(private gatewayService: GatewayService) { }
 
   ngOnInit() {
-    this.gatewayService.getNews(3, 1, 'uk').subscribe((res: { posts }) => {
+    this.gatewayService.getNews('3', '1', 'uk').subscribe((res: { posts }) => {
       this.listPost = res.posts;
     });
   }

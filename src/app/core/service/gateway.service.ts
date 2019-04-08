@@ -25,13 +25,7 @@ export class GatewayService {
       );
   }
 
-
- // getNews(limit: string = '10', page: string = '1', locale: string = 'uk') {
- //   return this.http.get(`${this.baseUrl}/${this.newsListUrl}`, {
- //     params: { limit: limit, page: page, locale: locale }
- //   });
- // }
-  getNews(limit: string = 10, page: string = 1, locale: string = 'uk'): Observable<NewsListResponse> {
+  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
     return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
       params: {limit: limit, page: page, locale: locale}
     });
