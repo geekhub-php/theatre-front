@@ -9,12 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class PerformanceComponent implements OnInit {
   showNavigationArrows = true;
-   // images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
-
+   images = ['http://api.theatre.pp.ua/uploads/slider/0001/01/thumb_248_slider_slider.jpeg',
+     'http://api.theatre.pp.ua/uploads/slider/0001/01/thumb_248_slider_slider.jpeg'];
   constructor() {
   }
 
   ngOnInit() {
+    console.dir ('http://api.theatre.pp.ua/performances/dorogha-do-sontsia.json?locale=uk');
   }
 
 }

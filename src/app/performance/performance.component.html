@@ -3,7 +3,10 @@
 
   <section class="preview">
     <div class="performance-poster">
-      <div class="future-img">Future image</div>
+      <div class="future-img">
+        <img src="http://api.theatre.pp.ua/uploads/performance/0001/01/644cae607f7f0265d1725abfc82b07d145f409bd.jpeg">
+        Future image
+      </div>
     </div>
     <div class="slider">
       <div class="slider1">
@@ -17,7 +20,7 @@
       </div>
     </div>
     <div class="performance-list">
-      <div class="future-list">Future list</div>
+      <div class="future-list">performances widget</div>
     </div>
   </section>
 
@@ -25,74 +28,81 @@
 
     <ngb-tabset>
       <ngb-tab title="Актори">
-        <ng-template ngbTabContent>
+        <ng-template ngbTabContent>  <!--  *ngfor  Autor arrya --->
           <div class="item">
-            <img src="" alt="">
-            <span>Info about actor</span>
+            <img src="http://api.theatre.pp.ua/uploads/employee/0001/01/thumb_138_employee_big.jpeg" alt="">
+            <a> <!-- переход на страницу про актера -->
+              <span>Гидке каченя - Надія  Корбут</span>
+            </a>
           </div>
-          <div class="item">
-            <img src="" alt="">
-            <span>Info about actor</span>
-          </div>
-          <div class="item">
-            <img src="" alt="">
-            <span>Info about actor</span>
-          </div>
-          <div class="item">
-            <img src="" alt="">
-            <span>Info about actor</span>
-          </div>
-          <div class="item">
-            <img src="" alt="">
-            <span>Info about actor</span>
-          </div>
-          <div class="item">
-            <img src="" alt="">
-            <span>Info about actor</span>
-          </div>
-          <div class="item">
-            <img src="" alt="">
-            <span>Info about actor</span>
-          </div>
-          <div class="item">
-            <img src="" alt="">
-            <span>Info about actor</span>
-          </div>
+          <!--<div class="item">-->
+          <!--<img src="" alt="">-->
+          <!--<span>Info about actor</span>-->
+          <!--</div>-->
+          <!--<div class="item">-->
+          <!--<img src="" alt="">-->
+          <!--<span>Info about actor</span>-->
+          <!--</div>-->
+          <!--<div class="item">-->
+          <!--<img src="" alt="">-->
+          <!--<span>Info about actor</span>-->
+          <!--</div>-->
+          <!--<div class="item">-->
+          <!--<img src="" alt="">-->
+          <!--<span>Info about actor</span>-->
+          <!--</div>-->
+          <!--<div class="item">-->
+          <!--<img src="" alt="">-->
+          <!--<span>Info about actor</span>-->
+          <!--</div>-->
+          <!--<div class="item">-->
+          <!--<img src="" alt="">-->
+          <!--<span>Info about actor</span>-->
+          <!--</div>-->
+          <!--<div class="item">-->
+          <!--<img src="" alt="">-->
+          <!--<span>Info about actor</span>-->
+          <!--</div>-->
         </ng-template>
       </ngb-tab>
       <ngb-tab>
         <ng-template ngbTabTitle>Про спекталь</ng-template>
-        <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
-          <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
-            craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
-            cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
-            yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
-            shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
-            sint qui sapiente accusamus tattooed echo park.</p>
+        <ng-template ngbTabContent>
+
+
+          pipe stripHtml
+
+          <p>Режисер – нар. арт. України Алім Ситник</p>
+
+          <p>Художник – засл. художник України Надія Нікіфорова</p>
+
+          <p>Балетмейстер – засл. арт. України Володимир Татарінов</p>
+
+          <p>Помічник режисера – нар. арт. України Юрій Берлінський</p>
+
+          <br><br><br>
+
+
         </ng-template>
       </ngb-tab>
       <ngb-tab>
         <ng-template ngbTabTitle>Преса</ng-template>
-        <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
-          <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
-            craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
-            cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
-            yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
-            shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
-            sint qui sapiente accusamus tattooed echo park.</p>
+        <ng-template ngbTabContent>
+          Если нет контенка есть смысл скрывать
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
 
-    <nav aria-label="Performance navigation" class="performance-pagination">  <!--Future pagination-->
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
+    <!-- если актеров больше 8 то тогда  показывать  -->
+    <!--<nav aria-label="Performance navigation" class="performance-pagination">  &lt;!&ndash;Future pagination&ndash;&gt;-->
+      <!--<ul class="pagination">-->
+        <!--<li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+        <!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
+        <!--<li class="page-item"><a class="page-link" href="#">2</a></li>-->
+        <!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
+        <!--<li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+      <!--</ul>-->
+    <!--</nav>-->
 
   </section>
 </div>
