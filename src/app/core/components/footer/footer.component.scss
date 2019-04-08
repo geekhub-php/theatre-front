@@ -1,0 +1,111 @@
+@import "../../../../assets/variables";
+
+.footer {
+  font-size: 12px;
+  margin-top: 50px;
+  width: 100%;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+  background-image: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .social {
+      list-style: none;
+      padding-top: 15px;
+
+      .fa-icon {
+        width: 20px;
+        height: 20px;
+        display: block;
+        color: #00f;
+        border: none;
+        opacity: .8;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .5;
+
+    .text::after {
+      content: " ";
+      white-space: pre;
+    }
+
+    a {
+      color: $hover-color;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .container {
+      display: none;
+    }
+
+    .copy {
+      padding-top: 15px;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+
+    .nav-link {
+      padding: 15px;
+      color: $primary-color;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+
+    .active {
+      color: $hover-color;
+    }
+  }
+
+  .forum {
+    display: block !important;
+  }
+}
+
+.scrollToTop {
+  font-size: 0;
+  position: absolute;
+  bottom: 67px;
+  right: 35px;
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  background-color: #cd2e2d;
+  background-image: url("assets/images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: none;
+  outline: none;
+
+  &:hover {
+    bottom: 70px;
+    cursor: pointer;
+  }
+
+  &:active {
+    bottom: 60px;
+  }
+}

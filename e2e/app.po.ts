@@ -8,7 +8,7 @@ export class AppPage {
 }
 
 export class MainMenu {
-  navEl = element(by.css('app-root app-main-menu nav'));
+  navEl = element(by.css('app-root .navbar-nav'));
 
   navigateTo(text) {
     const link = this.getLink(text);
