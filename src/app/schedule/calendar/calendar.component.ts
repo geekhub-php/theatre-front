@@ -18,6 +18,12 @@ import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
 export class CalendarComponent implements OnInit {
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
+
+  getDates(year: number, month: number) {
+    // black magic
+    return ['31-03-2019', '04-05-2019'];
+  }
+
   view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
@@ -43,7 +49,7 @@ export class CalendarComponent implements OnInit {
   constructor(private gateway: GatewayService, private modal: NgbModal) {
   }
 
-  dayClicked({date, events}: { date: Date; events: CalendarEvent[] }): void {
+  dayClicked({date, events}: { date: Date; events:  Array<PerformanceEvent> }): void {
     if (isSameMonth(date, this.viewDate)) {
       this.viewDate = date;
       if (
@@ -73,8 +79,4 @@ export class CalendarComponent implements OnInit {
 
   }
 
-  getDates(year: number, month: number) {
-    // black magic
-    return ['31-03-2019', '04-05-2019'];
-  }
 }
