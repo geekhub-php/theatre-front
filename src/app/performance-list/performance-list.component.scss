@@ -22,17 +22,38 @@
       padding-right: 1px;
       margin-bottom: 20px;
       position: relative;
+      cursor: pointer;
+
+      .image {
+        width: 100%;
+        max-height: 230px;
+      }
+
+      .image-high {
+        height: 230px;
+      }
 
       .perfomance-title {
         position: absolute;
         bottom: 0;
-        hight: 112px;
+        width: 162px;
+        height: 67px;
         font-size: 16px;
-        background-color: #000;
+        background-color: #2a2a2a;
         font-weight: 100;
-        color: #FFF;
+        color: #fff;
         margin: auto;
         text-align: center;
+        display: flex;
+
+        a {
+          color: #fff;
+          margin: auto;
+        }
+
+        a:hover {
+          text-decoration: none;
+        }
       }
     }
   }
