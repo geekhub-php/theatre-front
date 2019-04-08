@@ -19,13 +19,15 @@ before_script:
   - npm install webdriver-manager -g
   - webdriver-manager update
   - webdriver-manager start > ./webdriver.log 2>&1 &
+  - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
 
 script:
   - npm run lint
   - npm run lint-css
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
-#  - ng e2e
-  - echo "Test"
+  - ng e2e
+  - ng build --configuration=staging --deploy-url=http://develop.theatre.pp.ua/$BRANCH/ --base-href=/$BRANCH/
+  - cp ./deploy/branch.conf ./dist/
 
 notifications:
   email:
@@ -46,9 +48,8 @@ after_success:
   - rm geekhub-deployment.enc # Don't need it anymore
   - mv geekhub-deployment ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
-  - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
   - ssh -o StrictHostKeyChecking=no deploybot@104.248.253.61 "pwd"
-  - ng build --configuration=staging --deploy-url=http://develop.theatre.pp.ua/$BRANCH/ --base-href=/$BRANCH/
+
   - cp ./deploy/branch.conf ./dist/
   - cd dist/ && tar -zcvf ../dist.tar.gz * && cd -
   - scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa dist.tar.gz deploybot@104.248.253.61:~/theatre-front/$BRANCH.tar.gz
