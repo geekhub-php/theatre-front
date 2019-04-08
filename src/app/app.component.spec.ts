@@ -13,7 +13,6 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
-import { NewsListModule } from './news-list/news-list.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
@@ -45,7 +44,6 @@ describe('AppComponent', () => {
           AppRoutingModule,
           CoreModule,
           HomePageModule,
-          NewsListModule,
           RouterTestingModule
       ]
     }).compileComponents();

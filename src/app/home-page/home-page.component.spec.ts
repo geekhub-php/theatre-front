@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomePageComponent } from './home-page.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
-import { NewsListModule } from '../news-list/news-list.module';
 import { NewsItemComponent } from '../news-item/news-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -15,7 +15,8 @@ describe('HomePageComponent', () => {
       declarations: [ HomePageComponent,
         SideMenuComponent,
         SliderComponent,
-        NewsItemComponent]
+        NewsItemComponent],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   }));
