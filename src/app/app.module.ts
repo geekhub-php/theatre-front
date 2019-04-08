@@ -26,7 +26,7 @@ import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
-import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
+import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 
 @NgModule({
   declarations: [
@@ -42,8 +42,7 @@ import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent,
-    StripHtmlPipe
+    BoardTrusteesComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +52,8 @@ import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
     BrowserAnimationsModule,
     HomePageModule,
     NewsListModule,
-    NgbModule
+    NgbModule,
+    StripHtmlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
