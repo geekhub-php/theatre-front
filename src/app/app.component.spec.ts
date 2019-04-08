@@ -16,6 +16,7 @@ import { HomePageModule } from './home-page/home-page.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
+import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
 
 
@@ -44,7 +45,9 @@ describe('AppComponent', () => {
           AppRoutingModule,
           CoreModule,
           HomePageModule,
-          RouterTestingModule
+          RouterTestingModule,
+          RouterTestingModule,
+          StripHtmlModule
       ]
     }).compileComponents();
   }));

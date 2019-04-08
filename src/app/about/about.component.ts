@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GatewayService } from '../core/service/gateway.service';
+import { History } from '../core/model/history/History';
+import { HistoryListResponse } from '../core/model/history/HistoryListResponse';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  listHistories: Array<History>;
+
+  constructor(private getway: GatewayService) { }
 
   ngOnInit() {
+    this.getway.getHistoriesList().subscribe((res: HistoryListResponse) => {
+      this.listHistories = res.history;
+    });
   }
-
 }
