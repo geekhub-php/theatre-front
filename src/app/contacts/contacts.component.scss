@@ -1,19 +1,26 @@
 @import "../../assets/variables";
 
-/* #### Tablets Portrait or Landscape #### */
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+@media screen and (max-device-width: 768px) {
 
   .contacts-items-wrapper {
+
     li {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 16px;
-      border-bottom: 1px solid #c8c8c8;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      width: 100%;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+
+      .contact-item-pic {
+        order: 1;
+      }
+
+      .contact-item-name {
+        order: 2;
+        width: 85%;
+      }
+
+      .contact-item-content {
+        order: 3;
+        justify-content: flex-end;
+      }
     }
   }
 }
@@ -60,7 +67,6 @@
 .contact-item-pic {
   margin: 0 5px;
   fill: $hover-color;
-  text-align: center;
 }
 
 .contact-item-content {
