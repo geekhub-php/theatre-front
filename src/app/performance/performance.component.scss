@@ -1,20 +1,29 @@
+@import "../../assets/variables";
+
 ::ng-deep .carousel-control-prev .sr-only, ::ng-deep .carousel-control-next .sr-only {
   display: none;
 }
 
 ::ng-deep .tab-pane {
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-left: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
   padding: 10px;
   text-align: center;
 }
 
-::ng-deep .nav-link {
-  color: #ccc
+::ng-deep .info .nav-link {
+  color: $dark-grayish-red;
+  border-color: $light-gray;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+::ng-deep .info .nav-tabs, ::ng-deep .info .nav-tabs .nav-link.active {
+  border-color: $light-gray;
 }
 
 .page-title {
-  color: #e54b2b;
+  color: $hover-color;
   font-size: 24px;
   text-align: center;
   margin: 30px;
@@ -27,7 +36,7 @@
   margin-bottom: 20px;
 
   .performance-poster, .performance-list {
-    border: 1px solid #e54b2b;
+    border: 1px solid $hover-color;
     height: 250px;
     width: 25%;
     box-sizing: border-box;
@@ -52,21 +61,21 @@
       display: inline-block;
       padding: 5px 40px;
       margin: 15px 0 0;
-      border: 1px solid #ccc;
+      border: 1px solid $light-gray;
       border-bottom: none;
       background-color: #fff;
       cursor: pointer;
     }
 
     .hidden-item {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid $light-gray;
     }
   }
 
   .item {
     width: 200px;
     height: 200px;
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
     display: inline-block;
     margin: 10px;
     text-align: center;
@@ -76,21 +85,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
     border-top: none;
   }
 
   .performances {
     padding: 10px;
     text-align: justify;
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
     border-bottom: none;
   }
 
   .press {
     padding: 10px;
     text-align: justify;
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
     border-bottom: none;
   }
 }
