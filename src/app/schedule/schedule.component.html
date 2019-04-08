@@ -2,17 +2,3 @@
   <mwl-demo-component>Loading...</mwl-demo-component>
 </div>
 
-<p>Here will be some debug:</p>
-<ng-template [ngIf]="!loading">
-  <p>Its available</p>
-  <div *ngFor="let event of scheduleList">
-    <ul>
-      <li>What: {{event.performance.title}}</li>
-      <li>When: {{event.year}}-{{event.month}}-{{event.day}} {{event.time}}</li>
-      <li>Where: {{event.venue}}</li>
-      <li>Img: <img src="{{event.performance.mainPicture.performance_small}}"></li>
-    </ul>
-  </div>
-</ng-template>
-<p>End of debug</p>
-

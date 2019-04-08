@@ -1,10 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-dark mb-4">
-  <div class="container menu-container">
-    <div id="header-logo">
-      <a routerLink="/">
-        <img src="assets/logo.png">
-      </a>
-    </div>
+<header class="header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <h1 class="header-logo" aria-label="Театр імені Т.Г. Шевченка">
+        <a routerLink="/">
+          <img src="assets/images/logo.png" alt="logo">
+        </a>
+      </h1>
 
+      <button class="navbar-toggler" aria-label="Меню"
+              type="button" (click)="toogleMenu()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngClass]="collapse ? 'collapse' : ''">
+        <app-main-nav></app-main-nav>
+      </div>
+
+      <a class="language d-none d-lg-block" href="#">Укр</a>
+    </nav>
   </div>
-</nav>
+</header>
