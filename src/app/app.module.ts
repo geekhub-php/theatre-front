@@ -25,7 +25,7 @@ import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
-
+import { StripHtmlPipe } from './core/pipes/stripHtml/stripHtml.pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent
+    BoardTrusteesComponent,
+    StripHtmlPipe
   ],
   imports: [
     BrowserModule,
