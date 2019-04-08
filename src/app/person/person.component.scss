@@ -43,3 +43,20 @@
     }
   }
 }
+
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 360px;
+
+    h2 {
+      margin: 10px 0 10px 0;
+    }
+    section img {
+      width: 170px;
+      height: 275px;
+
+      margin-right: 12px;
+    }
+  }
+}

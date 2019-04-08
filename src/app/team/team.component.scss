@@ -79,3 +79,40 @@
   //   }
   // }
 }
+
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 360px !important;
+
+    h2 {
+      margin: 10px 0 10px 0;
+    }
+    img {
+      width: 350px !important;
+    }
+    h3 {
+      margin: 10px 0 10px 0;
+    }
+    .persons-list {
+      width: 345px !important;
+      justify-content: flex-start !important;
+      margin-left: 1px;
+
+      .person {
+        width: 100px !important;
+        height: 220px !important;
+
+        h4 {
+          font-size: 15.5px !important;
+        }
+        img {
+          height: 142px !important;
+        }
+        a {
+          right: 16px;
+        }
+      }
+    }
+  }
+}
