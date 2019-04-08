@@ -5,6 +5,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
 import { NewsItemComponent } from '../news-item/news-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -16,7 +17,9 @@ describe('HomePageComponent', () => {
         SideMenuComponent,
         SliderComponent,
         NewsItemComponent],
-      imports: [HttpClientModule]
+      imports: [
+        HttpClientModule,
+        RouterTestingModule]
     })
     .compileComponents();
   }));

@@ -6,6 +6,11 @@
   font-weight: 600;
   margin-bottom: 40px;
 
+  a {
+    text-decoration: none;
+    color: $primary-color;
+
+
   h2 {
     font-size: 20px;
     font-weight: 600;
@@ -16,6 +21,7 @@
     font-size: 14px;
   }
  }
+}
 
 @media (max-width: 992px) {
   .card {

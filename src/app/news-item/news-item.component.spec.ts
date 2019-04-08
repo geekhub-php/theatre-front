@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsItemComponent } from './news-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 describe('NewsItemComponent', () => {
   let component: NewsItemComponent;
@@ -10,7 +11,9 @@ describe('NewsItemComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NewsItemComponent ],
-      imports: [HttpClientModule]
+      imports: [
+        HttpClientModule,
+        RouterModule]
     })
     .compileComponents();
   }));
