@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   h2 {
     font-family: $main-font_light;
@@ -19,11 +20,11 @@
   }
 
   .persons-list {
-    width: 900px;
+    width: 800px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    margin-left: -9px;
 
     .person {
       width: 146px;
@@ -31,8 +32,9 @@
       border: 1px solid $light-gray;
       background-color: $light-grayish-red;
       font-size: 12px;
+      font-family: $main-font;
       text-align: center;
-      margin: 0 0 6px 11px;
+      margin: 0 0 6px 9px;
       border-radius: 5px;
       overflow: hidden;
       position: relative;
@@ -41,39 +43,20 @@
         width: 100%;
         height: 200px;
       }
-
       h4 {
         font-size: 18px;
         font-weight: 400;
         padding: 5px;
       }
-
       a {
+        font-size: 12.5px;
         text-decoration: underline;
         position: absolute;
         bottom: 8px;
+        right: 8px;
       }
     }
   }
-
-  // ngb-pagination ::ng-deep ul {
-  //   margin: 25px 0 25px 0;
-
-  //   li a {
-  //     color: #000;
-  //     border: 1px solid #000;
-  //     height: 28px;
-  //     line-height: 17px;
-  //   }
-  //   li.active a {
-  //     background-color: $hover-color !important;
-  //     border: 1px solid #000;
-
-  //     span {
-  //       display: none;
-  //     }
-  //   }
-  // }
 }
 
 
@@ -85,33 +68,29 @@
     h2 {
       margin: 10px 0;
     }
-
     img {
       width: 350px !important;
     }
-
     h3 {
       margin: 10px 0;
     }
 
     .persons-list {
-      width: 345px !important;
-      margin-left: -10px;
+      width: 255px !important;
 
       .person {
-        width: 100px !important;
-        height: 220px !important;
+        width: 115px !important;
+        height: 235px !important;
+        font-size: 10px;
 
         h4 {
           font-size: 15.5px !important;
         }
-
         img {
-          height: 142px !important;
+          height: 157px !important;
         }
-
         a {
-          right: 16px;
+          right: 23px;
         }
       }
     }
@@ -124,7 +103,7 @@
     width: 320px !important;
 
     .persons-list {
-      width: 330px !important;
+      width: 248px !important;
     }
   }
 }
