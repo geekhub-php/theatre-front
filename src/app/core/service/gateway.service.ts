@@ -37,7 +37,7 @@ export class GatewayService {
           from,
           to
         }
-      })
+      });
   }
 
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -16,9 +16,7 @@ import { PerformanceListComponent } from './performance-list/performance-list.co
 import { PerformanceComponent } from './performance/performance.component';
 
 import { ScheduleComponent } from './schedule/schedule.component';
-import { CalendarComponent } from './schedule/calendar/calendar.component';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarrModule } from './schedule/calendar/calendarr.module';
 
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
@@ -44,7 +42,6 @@ import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
     ArticleComponent,
     PersonComponent,
     NewsComponent,
-    CalendarComponent,
     HomePageComponent,
     PartnersComponent,
     BoardTrusteesComponent
@@ -57,17 +54,11 @@ import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
     BrowserAnimationsModule,
     HomePageModule,
     NewsListModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory
-    }),
     NgbModule,
+    CalendarrModule,
     StripHtmlModule
   ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
