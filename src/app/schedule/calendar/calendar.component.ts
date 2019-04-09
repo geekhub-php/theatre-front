@@ -9,8 +9,9 @@ import { plainToClass } from 'class-transformer';
 import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
 
 
+
 @Component({
-  selector: 'mwl-demo-component',
+  selector: 'mwl-calendar-component',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']

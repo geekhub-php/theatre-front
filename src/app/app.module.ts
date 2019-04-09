@@ -16,7 +16,7 @@ import { PerformanceListComponent } from './performance-list/performance-list.co
 import { PerformanceComponent } from './performance/performance.component';
 
 import { ScheduleComponent } from './schedule/schedule.component';
-import { CalendarrModule } from './schedule/calendar/calendarr.module';
+import { CalendarrModule } from './schedule/calendarr.module';
 
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
