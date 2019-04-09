@@ -2,29 +2,15 @@
   <h2>Персоналії</h2>
   <img src="assets/images/persons.jpg" alt="">
   <h3>Творчий склад</h3>
-  <section class="persons-list">
-    <div class="person" *ngFor="let person of employees"
-      infiniteScroll
-      [infiniteScrollDistance]="2"
-      [infiniteScrollThrottle]="1500"
-      (scrolled)="onScroll()">
-      <img src="{{ person.avatar.employee_big.url }}" alt="photo">
-      <h4>{{ person.first_name }} {{ person.last_name }}</h4>
-      <a routerLink="{{ person.slug }}">Детальніше</a>
-    </div>
-    <div class="person" *ngFor="let person of nextPage">
+  <section class="persons-list"
+           infiniteScroll
+           [infiniteScrollDistance]="2"
+           [infiniteScrollThrottle]="1500"
+           (scrolled)="onScroll()">
+    <div class="person" *ngFor="let person of employees">
       <img src="{{ person.avatar.employee_big.url }}" alt="photo">
       <h4>{{ person.first_name }} {{ person.last_name }}</h4>
       <a routerLink="{{ person.slug }}">Детальніше</a>
     </div>
   </section>
-
-  <!-- <ngb-pagination [collectionSize]="collectionSize"
-                  [(page)]="page" [boundaryLinks]="true"
-                  (pageChange)="getEmployees($event)" size="sm">
-    <ng-template ngbPaginationFirst>&#171;</ng-template>
-    <ng-template ngbPaginationPrevious>&#8249;</ng-template>
-    <ng-template ngbPaginationNext>&#8250;</ng-template>
-    <ng-template ngbPaginationLast>&#187;</ng-template>
-  </ngb-pagination> -->
 </div>

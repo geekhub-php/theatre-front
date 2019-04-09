@@ -8,15 +8,11 @@ import { Employee } from '../core/model/Employee';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {
-
-  employee: Employee;
-  employees: Array<Employee>;
+  employees: Array<Employee> = [];
   page: number;
   collectionSize: number;
-  nextPage: Array<Employee>;
 
-  constructor(private httpGatewayService: GatewayService) {
-  }
+  constructor(private httpGatewayService: GatewayService) {}
 
   ngOnInit() {
     this.getEmployees(this.page);
@@ -24,17 +20,13 @@ export class TeamComponent implements OnInit {
 
   getEmployees(page) {
     this.httpGatewayService.getEmployees(page).subscribe((res) => {
-      this.employees = res.body.employees;
+      this.employees = this.employees.concat(res.body.employees);
       this.collectionSize = res.body.total_count;
       this.page = res.body.page;
     });
   }
 
   onScroll() {
-    let page = 2;
-    this.httpGatewayService.getEmployees(page).subscribe((res) => {
-      this.nextPage = res.body.employees;
-    });
-    page++;
+    if (this.employees.length < this.collectionSize) this.getEmployees(this.page + 1);
   }
 }

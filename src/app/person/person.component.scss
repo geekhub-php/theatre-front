@@ -2,7 +2,6 @@
 
 .container {
   width: 1000px;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -11,9 +10,9 @@
     font-family: $main-font_light;
     font-size: 24px;
     color: $hover-color;
-
     margin: 20px 0 20px 400px;
   }
+
   section {
     display: flex;
     flex-direction: row;
@@ -23,6 +22,7 @@
       height: 450px;
       margin-right: 42px;
     }
+
     .about {
       font-size: 14px;
 
@@ -31,11 +31,10 @@
       }
     }
   }
+
   .gallery {
     display: flex;
-
     list-style: none;
-
     margin: 25px 0 25px -45px;
 
     li {
@@ -46,16 +45,17 @@
 
 
 @media screen and (max-width: 768px) {
+
   .container {
     width: 490px;
 
     h2 {
-      margin: 10px 0 10px 0;
+      margin: 10px 0;
     }
+
     section img {
       width: 170px;
       height: 265px;
-
       margin-right: 12px;
     }
   }
@@ -63,6 +63,7 @@
 
 
 @media screen and (max-width: 479px) {
+
   .container {
     width: 320px !important;
 
