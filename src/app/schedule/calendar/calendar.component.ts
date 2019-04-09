@@ -33,6 +33,7 @@ export class CalendarComponent implements OnInit {
 
   loading = true;
 
+
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
