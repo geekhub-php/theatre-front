@@ -1,10 +1,12 @@
 <div class="container">
   <h2 class="page-title">Спектакль</h2>
-
+<!--  title: "Дорога до сонця"
+type: "казка" -->
   <section class="preview">
     <div class="performance-poster">
       <div class="future-img">
-        <img src="http://api.theatre.pp.ua/uploads/performance/0001/01/644cae607f7f0265d1725abfc82b07d145f409bd.jpeg">
+        <!--mainPicture -->
+        <img src="http://api.theatre.pp.ua/uploads/performance/0001/01/thumb_247_performance_big.jpeg">
         Future image
       </div>
     </div>
@@ -13,7 +15,8 @@
 
         <ngb-carousel *ngIf="images">
           <ng-template ngbSlide *ngFor="let image of images">
-            <img [src]="image" alt="Random slide">
+            <img [src]="image" >
+                 <!--alt="Random slide"     ghb[jlbn -->
           </ng-template>
         </ngb-carousel>
 
@@ -28,7 +31,9 @@
 
     <ngb-tabset>
       <ngb-tab title="Актори">
-        <ng-template ngbTabContent>  <!--  *ngfor  Autor arrya --->
+        <ng-template ngbTabContent>
+          <!--  *ngfor  Autor arrya   нужно делать запрос на GET /performances/{slug}/roles.{_format} --->
+          <!--  свою модель для актеров надо написать -->
           <div class="item">
             <img src="http://api.theatre.pp.ua/uploads/employee/0001/01/thumb_138_employee_big.jpeg" alt="">
             <a> <!-- переход на страницу про актера -->
@@ -69,18 +74,6 @@
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
 
-
-          pipe stripHtml
-
-          <p>Режисер – нар. арт. України Алім Ситник</p>
-
-          <p>Художник – засл. художник України Надія Нікіфорова</p>
-
-          <p>Балетмейстер – засл. арт. України Володимир Татарінов</p>
-
-          <p>Помічник режисера – нар. арт. України Юрій Берлінський</p>
-
-          <br><br><br>
 
 
         </ng-template>
