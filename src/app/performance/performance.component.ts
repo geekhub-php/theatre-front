@@ -27,7 +27,7 @@ export class PerformanceComponent implements OnInit {
 
   ngOnInit() {
     this.getway.getPerformanceSlug().subscribe((res: PerformanceListResponse) => {
-      this.listPerfomance = res;
+      // this.listPerfomance = res;
       console.dir(this.listPerfomance);
     });
     //  без модели ни куда

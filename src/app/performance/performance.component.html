@@ -32,7 +32,7 @@ type: "казка" -->
     <ngb-tabset>
       <ngb-tab title="Актори">
         <ng-template ngbTabContent>
-          <!--  *ngfor  Autor arrya   нужно делать запрос на GET /performances/{slug}/roles.{_format} --->
+          <!--  *ngfor  Author array   нужно делать запрос на GET /performances/{slug}/roles.{_format} --->
           <!--  свою модель для актеров надо написать -->
           <div class="item">
             <img src="http://api.theatre.pp.ua/uploads/employee/0001/01/thumb_138_employee_big.jpeg" alt="">
@@ -68,34 +68,34 @@ type: "казка" -->
           <!--<img src="" alt="">-->
           <!--<span>Info about actor</span>-->
           <!--</div>-->
+
+          <!-- если актеров больше 8 то тогда  показывать  (*ngIf)  -->
+         <!-- <nav aria-label="Performance navigation" class="performance-pagination">  &lt;!&ndash;Future pagination&ndash;&gt;
+          <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+          </nav>-->
         </ng-template>
       </ngb-tab>
       <ngb-tab>
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
 
-
-
         </ng-template>
       </ngb-tab>
       <ngb-tab>
         <ng-template ngbTabTitle>Преса</ng-template>
         <ng-template ngbTabContent>
-          Если нет контенка есть смысл скрывать
+          Если нет контента есть смысл скрывать (*ngIf)
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
 
-    <!-- если актеров больше 8 то тогда  показывать  -->
-    <!--<nav aria-label="Performance navigation" class="performance-pagination">  &lt;!&ndash;Future pagination&ndash;&gt;-->
-      <!--<ul class="pagination">-->
-        <!--<li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
-        <!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
-        <!--<li class="page-item"><a class="page-link" href="#">2</a></li>-->
-        <!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
-        <!--<li class="page-item"><a class="page-link" href="#">Next</a></li>-->
-      <!--</ul>-->
-    <!--</nav>-->
+
 
   </section>
 </div>
