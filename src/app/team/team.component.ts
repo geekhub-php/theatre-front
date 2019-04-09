@@ -13,8 +13,7 @@ export class TeamComponent implements OnInit {
   employees: Array<Employee>;
   page: number;
   collectionSize: number;
-  secondPage: Array<Employee>;
-  thirdPage: Array<Employee>;
+  nextPage: Array<Employee>;
 
   constructor(private httpGatewayService: GatewayService) {
   }
@@ -29,5 +28,14 @@ export class TeamComponent implements OnInit {
       this.collectionSize = res.body.total_count;
       this.page = res.body.page;
     });
+  }
+
+  onScroll() {
+    console.log(123);
+    let page = 2;
+    this.httpGatewayService.getEmployees(page).subscribe((res) => {
+      this.nextPage = res.body.employees;
+    });
+    page++;
   }
 }
