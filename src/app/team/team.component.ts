@@ -31,7 +31,6 @@ export class TeamComponent implements OnInit {
   }
 
   onScroll() {
-    console.log(123);
     let page = 2;
     this.httpGatewayService.getEmployees(page).subscribe((res) => {
       this.nextPage = res.body.employees;
