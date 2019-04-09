@@ -49,7 +49,7 @@ describe('AppComponent', () => {
           HomePageModule,
           NewsListModule,
           RouterTestingModule,
-        NgbModule.forRoot()
+        NgbModule.forRoot(),
           StripHtmlModule
       ]
     }).compileComponents();
