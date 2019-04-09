@@ -1,7 +1,11 @@
 @import "../../../assets/variables";
 
-h1 {
+h2 {
   color: $hover-color;
+  font-family: robotothin,sans-serif;
+}
+h3 {
+  font-family: robotothin,sans-serif;
 }
 .calendar-nav {
   flex-direction: column;
@@ -19,10 +23,14 @@ h1 {
 .btn {
   color: $hover-color;
   border: 1px solid $hover-color;
+  background-color: $white-color;
 }
 .btn:hover {
   color: $white-color;
   background-color: $hover-color;
+}
+.btn:focus {
+  box-shadow: none;
 }
 .row {
   width: 100%;
@@ -50,5 +58,5 @@ h1 {
     color: $white-color;
     background-color: $hover-color;
     box-shadow: inset 0 0 15px 0 rgba(28, 28, 28, 0.29);
-    }
+  }
 }
