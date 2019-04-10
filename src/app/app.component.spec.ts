@@ -10,6 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NewsComponent } from './news/news.component';
 import { AboutComponent } from './about/about.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { CalendarrModule } from './schedule/calendarr.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
@@ -50,7 +51,8 @@ describe('AppComponent', () => {
           NewsListModule,
           RouterTestingModule,
           StripHtmlModule,
-          InfiniteScrollModule
+          InfiniteScrollModule,
+        CalendarrModule
       ]
     }).compileComponents();
   }));

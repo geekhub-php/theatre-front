@@ -8,8 +8,6 @@ import { ScheduleListResponse } from '../../core/model/schedule/ScheduleListResp
 import { plainToClass } from 'class-transformer';
 import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
 
-
-
 @Component({
   selector: 'mwl-calendar-component',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,17 +32,21 @@ export class CalendarComponent implements OnInit {
 
   loading = true;
 
-
-  closeOpenMonthViewDay() {
-    this.activeDayIsOpen = false;
-  }
-
   modalData: {
     action: string;
     event: CalendarEvent;
   };
 
   constructor(private gateway: GatewayService, private modal: NgbModal) {
+  }
+
+  closeOpenMonthViewDay() {
+    this.activeDayIsOpen = false;
+  }
+
+  getDates(year: number, month: number) {
+    // black magic
+    return ['31-03-2019', '04-05-2019'];
   }
 
   dayClicked({date, events}: { date: Date; events: Array<PerformanceEvent> }): void {
@@ -73,9 +75,5 @@ export class CalendarComponent implements OnInit {
     });
   }
 
-  getDates(year: number, month: number) {
-    // black magic
-    return ['31-03-2019', '04-05-2019'];
-  }
 
 }

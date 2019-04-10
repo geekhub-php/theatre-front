@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { ScheduleComponent } from './schedule.component';
 
 describe('ScheduleComponent', () => {
@@ -8,7 +8,8 @@ describe('ScheduleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScheduleComponent ]
+      declarations: [ ScheduleComponent ],
+      imports: [ HttpClientModule ],
     })
     .compileComponents();
   }));
@@ -20,6 +21,8 @@ describe('ScheduleComponent', () => {
   });
 
   it('should create', () => {
+    fixture = TestBed.createComponent(ScheduleComponent);
+    component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });
