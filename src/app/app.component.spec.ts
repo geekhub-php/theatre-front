@@ -10,7 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NewsComponent } from './news/news.component';
 import { AboutComponent } from './about/about.component';
 import { ScheduleComponent } from './schedule/schedule.component';
-import { APP_BASE_HREF } f,rom '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { NewsListModule } from './news-list/news-list.module';
