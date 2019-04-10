@@ -20,7 +20,7 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -51,6 +51,7 @@ describe('AppComponent', () => {
           RouterTestingModule,
         NgbModule.forRoot(),
           StripHtmlModule
+          InfiniteScrollModule
       ]
     }).compileComponents();
   }));
