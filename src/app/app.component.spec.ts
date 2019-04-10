@@ -19,6 +19,7 @@ import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 describe('AppComponent', () => {
@@ -48,7 +49,8 @@ describe('AppComponent', () => {
           HomePageModule,
           NewsListModule,
           RouterTestingModule,
-          StripHtmlModule
+          StripHtmlModule,
+          InfiniteScrollModule
       ]
     }).compileComponents();
   }));
