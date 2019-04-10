@@ -1,170 +1,172 @@
 .heading {
-    margin: 20px 0;
-    font-size: 24px;
-    text-align: center;
-    color: #e54b2b;
+  margin: 20px 0;
+  font-size: 24px;
+  text-align: center;
+  color: #e54b2b;
 }
 
 .list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-    .list-item {
-        position: relative;
-        padding: 20px 22px 0 0;
-        flex-basis: 50%;
-        border-right: 3px solid #eee;
+  .list-item {
+    position: relative;
+    padding: 20px 22px 0 0;
+    flex-basis: 50%;
+    border-right: 3px solid #eee;
 
-        &:last-child {
-            padding-bottom: 20px;
-        }
-
-        .histories__list-body_link {
-            text-decoration: none;
-        }
-
-        .histories__list-body {
-            position: relative;
-            max-width: 430px;
-            border: 1px solid #d4d4d4;
-            border-radius: 2px;
-            padding: 12px;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-            margin: 0 18px 0 0;
-
-            &::after {
-                position: absolute;
-                content: "";
-                width: 20px;
-                height: 20px;
-                top: 36px;
-                right: -10px;
-                border: 1px solid #d4d4d4;
-                background-color: #fff;
-                transform: rotate(45deg);
-                border-top: 1px solid #d4d4d4;
-                border-left: 1px solid transparent;
-                border-right: 1px solid #d4d4d4;
-                border-bottom: 1px solid transparent;
-            }
-
-            .histories__list-heading {
-                color: #474b4d;
-                font-size: 18px;
-            }
-
-            .histories__list-main .histories__list-main_text {
-                color: #868b8c;
-                font-size: 14px;
-            }
-
-            .histories__list-main .histories__list-main_img {
-                display: block;
-                margin: 5px auto;
-                max-height: 300px;
-            }
-        }
-
-        .histories__list-footer {
-            position: absolute;
-            content: "";
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            background-color: #df442b;
-            top: 42px;
-            right: -27px;
-        }
-
-        .histories__list-footer .year {
-            display: block;
-            margin-top: 12px;
-            font-size: 18px;
-            font-weight: 900;
-            color: #fff;
-            text-align: center;
-        }
-
-        &:nth-child(2n) {
-            position: relative;
-            border-right: none;
-            padding: 20px 0 0 22px;
-
-            .histories__list-body {
-                float: right;
-                transform: translateY(102px);
-                margin: 0 0 0 18px;
-            }
-
-            .histories__list-body::after {
-                left: -10px;
-                border: 1px solid #d4d4d4;
-                background-color: #fff;
-                transform: rotate(45deg);
-                border-top: 1px solid transparent;
-                border-left: 1px solid #d4d4d4;
-                border-right: 1px solid transparent;
-                border-bottom: 1px solid #d4d4d4;
-            }
-
-            .histories__list-footer {
-                position: absolute;
-                top: 144px;
-                left: -27px;
-            }
-        }
+    &:last-child {
+      padding-bottom: 20px;
     }
+
+    .histories__list-body_link {
+      text-decoration: none;
+    }
+
+    .histories__list-body {
+      position: relative;
+      max-width: 430px;
+      border: 1px solid #d4d4d4;
+      border-radius: 2px;
+      padding: 12px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
+      margin: 0 18px 0 0;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        top: 36px;
+        right: -10px;
+        border: 1px solid #d4d4d4;
+        background-color: #fff;
+        transform: rotate(45deg);
+        border-top: 1px solid #d4d4d4;
+        border-left: 1px solid transparent;
+        border-right: 1px solid #d4d4d4;
+        border-bottom: 1px solid transparent;
+      }
+
+      .histories__list-heading {
+        color: #474b4d;
+        font-size: 18px;
+      }
+
+      .histories__list-main .histories__list-main_text {
+        color: #868b8c;
+        font-size: 14px;
+      }
+
+      .histories__list-main .histories__list-main_img {
+        display: block;
+        margin: 5px auto;
+        max-height: 300px;
+      }
+    }
+
+    .histories__list-footer {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background-color: #df442b;
+      top: 42px;
+      right: -27px;
+    }
+
+    .histories__list-footer .year {
+      display: block;
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+    }
+
+    &:nth-child(2n) {
+      position: relative;
+      border-right: none;
+      padding: 20px 0 0 22px;
+
+      .histories__list-body {
+        float: right;
+        transform: translateY(102px);
+        margin: 0 0 0 18px;
+      }
+
+      .histories__list-body::after {
+        left: -10px;
+        border: 1px solid #d4d4d4;
+        background-color: #fff;
+        transform: rotate(45deg);
+        border-top: 1px solid transparent;
+        border-left: 1px solid #d4d4d4;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid #d4d4d4;
+      }
+
+      .histories__list-footer {
+        position: absolute;
+        top: 144px;
+        left: -27px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 991px) {
-    .list {
-        padding-left: 24px;
-        justify-content: flex-start;
-        flex-direction: column;
-        max-width: 510px;
-        margin: 0 auto;
 
-        .list-item {
-            padding: 20px 0 0 0;
-            border-left: 3px solid #eee;
-            border-right: none;
+  .list {
+    padding-left: 24px;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 510px;
+    margin: 0 auto;
 
-            .histories__list-body {
-                float: right;
-                margin: 0 0 0 40px;
-            }
+    .list-item {
+      padding: 20px 0 0;
+      border-left: 3px solid #eee;
+      border-right: none;
 
-            .histories__list-body::after {
-                left: -10px;
-                border-top: 1px solid transparent;
-                border-left: 1px solid #d4d4d4;
-                border-right: 1px solid transparent;
-                border-bottom: 1px solid #d4d4d4;
-            }
+      .histories__list-body {
+        float: right;
+        margin: 0 0 0 40px;
+      }
 
-            .histories__list-footer {
-                left: -27px;
-            }
+      .histories__list-body::after {
+        left: -10px;
+        border-top: 1px solid transparent;
+        border-left: 1px solid #d4d4d4;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid #d4d4d4;
+      }
 
-            &:nth-child(2n) {
-                padding: 20px 0 0 0px;
+      .histories__list-footer {
+        left: -27px;
+      }
 
-                .histories__list-body {
-                    transform: translateY(0px);
-                    margin: 0 0 0 40px;
-                }
+      &:nth-child(2n) {
+        padding: 20px 0 0;
 
-                .histories__list-footer {
-                    top: 42px;
-                }
-            }
+        .histories__list-body {
+          transform: translateY(0);
+          margin: 0 0 0 40px;
         }
+
+        .histories__list-footer {
+          top: 42px;
+        }
+      }
     }
+  }
 }
 
 @media screen and (max-width: 416px) {
-    .list .list-item .histories__list-body .histories__list-heading {
-        font-size: 16px;
-    }
+
+  .list .list-item .histories__list-body .histories__list-heading {
+    font-size: 16px;
+  }
 }
