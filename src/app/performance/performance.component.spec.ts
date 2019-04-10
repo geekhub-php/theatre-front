@@ -16,8 +16,7 @@ describe('PerformanceComponent', () => {
       imports: [
         NgbModule.forRoot(),
         HttpClientModule,
-        RouterTestingModule,
-        GatewayService
+        RouterTestingModule
       ]
     })
     .compileComponents();
