@@ -14,9 +14,7 @@ export class ScheduleComponent implements OnInit {
 
   scheduleList: Array<PerformanceEvent>;
 
-  constructor(private gateway: GatewayService) {
-
-  }
+  constructor(private gateway: GatewayService) { }
 
   ngOnInit() {
   }

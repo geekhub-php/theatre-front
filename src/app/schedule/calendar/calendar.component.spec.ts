@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { CalendarComponent } from './calendar.component';
-
 import { HttpClientModule } from '@angular/common/http';
-import { CalendarrModule } from '../calendarr.module';
+
+import { CalendarComponent } from './calendar.component';
+import { CalendarModule, CalendarDateFormatter, DateAdapter } from 'angular-calendar';
+
 
 describe('CalendarComponent', () => {
   let component: CalendarComponent;
@@ -11,9 +12,10 @@ describe('CalendarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CalendarComponent ],
-      imports: [ HttpClientModule,
-      CalendarrModule
-      ],
+      imports: [ HttpClientModule, CalendarModule ],
+      providers: [
+        { provide: DateAdapter, useValue: {} }
+      ]
     })
     .compileComponents();
   }));

@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
+
+import { CalendarModule } from 'angular-calendar';
+
 import { ScheduleComponent } from './schedule.component';
 
 describe('ScheduleComponent', () => {
@@ -9,7 +12,7 @@ describe('ScheduleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ScheduleComponent ],
-      imports: [ HttpClientModule ],
+      imports: [ HttpClientModule, CalendarModule ],
     })
     .compileComponents();
   }));
