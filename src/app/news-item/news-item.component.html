@@ -1,4 +1,4 @@
-<div class="card" *ngFor="let item of listPost">
+<div class="card">
   <a routerLink="news/{{item.slug}}">
     <img *ngIf="item.mainPicture.post_big.url" src='{{ item.mainPicture.post_big.url }}'
          class="card-img-top" alt="news picture">
