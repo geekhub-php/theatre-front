@@ -3,6 +3,7 @@ import { CalendarComponent } from './calendar.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CalendarrModule } from '../calendarr.module';
+import { CalendarDateFormatter, DateAdapter } from 'angular-calendar';
 
 describe('CalendarComponent', () => {
   let component: CalendarComponent;
@@ -10,10 +11,14 @@ describe('CalendarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CalendarComponent ],
+      declarations: [ ],
       imports: [ HttpClientModule,
       CalendarrModule
       ],
+      providers: [
+        CalendarDateFormatter,
+        DateAdapter
+      ]
     })
     .compileComponents();
   }));
