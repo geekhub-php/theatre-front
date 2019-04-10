@@ -17,6 +17,8 @@ import { PerformanceComponent } from './performance/performance.component';
 
 import { ScheduleComponent } from './schedule/schedule.component';
 import { CalendarrModule } from './schedule/calendarr.module';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
@@ -56,6 +58,10 @@ import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
     NewsListModule,
     NgbModule,
     CalendarrModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
     StripHtmlModule
   ],
   providers: [],
