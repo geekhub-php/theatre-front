@@ -27,6 +27,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
     HomePageModule,
     NewsListModule,
     NgbModule,
-    StripHtmlModule
+    StripHtmlModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
