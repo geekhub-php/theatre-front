@@ -8,6 +8,7 @@ import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
 import { Roles } from '../model/Roles';
+import { Performance } from '../model/Performance';
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +26,10 @@ export class GatewayService {
   constructor(private http: HttpClient) {
   }
 
-  getPerformanceList(limit = 10): Observable<Roles> {
-    return this.http.get<Roles>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
+  getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
       .pipe(
-        catchError(this.handleError('get list of Performances', new Roles()))
+        catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
   }
 
@@ -45,7 +46,6 @@ export class GatewayService {
         catchError(this.handleError('get list of Performances', new Roles()))
       );
   }
-
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.historiesListUrl}`, {
       params: {limit, page, locale} // params: {limit: limit, page: page, locale: locale}

@@ -1,6 +1,7 @@
 <div class="container">
-  <!--<h2 class="page-title">Спектакль</h2>-->
-  <h2 class="page-title"> {{performance.title}} </h2>
+  <h2 class="page-title">Спектакль</h2>
+  <!--<h2 class="page-title"> {{performance.title}} </h2>-->
+  <h2 class="page-title"> {{test.body.title}} </h2>
   <!--  type: "казка" -->
   <section class="preview">
     <div class="performance-poster">
@@ -13,8 +14,8 @@
 
         <ngb-carousel *ngIf="images">
           <ng-template ngbSlide *ngFor="let image of images">
-            <img [src]="image" >
-                 <!--alt="Random slide"    приходит -->
+            <img [src]="image">
+            <!--alt="Random slide"    приходит -->
           </ng-template>
         </ngb-carousel>
 
@@ -38,50 +39,26 @@
               <span>Гидке каченя - Надія  Корбут</span>
             </a>
           </div> -->
-          <ul class="employees-list">
-            <li *ngFor="let person of employees">
-              {{ person.employee.first_name }}
-            </li>
-          </ul>
-          <!--<div class="item">-->
-          <!--<img src="" alt="">-->
-          <!--<span>Info about actor</span>-->
-          <!--</div>-->
-          <!--<div class="item">-->
-          <!--<img src="" alt="">-->
-          <!--<span>Info about actor</span>-->
-          <!--</div>-->
-          <!--<div class="item">-->
-          <!--<img src="" alt="">-->
-          <!--<span>Info about actor</span>-->
-          <!--</div>-->
-          <!--<div class="item">-->
-          <!--<img src="" alt="">-->
-          <!--<span>Info about actor</span>-->
-          <!--</div>-->
-          <!--<div class="item">-->
-          <!--<img src="" alt="">-->
-          <!--<span>Info about actor</span>-->
-          <!--</div>-->
-          <!--<div class="item">-->
-          <!--<img src="" alt="">-->
-          <!--<span>Info about actor</span>-->
-          <!--</div>-->
-          <!--<div class="item">-->
-          <!--<img src="" alt="">-->
-          <!--<span>Info about actor</span>-->
-          <!--</div>-->
+          <!--<ul class="employees-list">-->
+            <div *ngFor="let person of employees">
+              <div class="item">
+              <img src="{{ person.employee.avatar.employee_big.url }}" alt="">
+              <span>  {{ person.employee.first_name }}  {{ person.employee.last_name}} - {{ person.title}} </span>
+              </div>
+            </div>
+          <!--</ul>-->
+
 
           <!-- если актеров больше 8 то тогда  показывать  (*ngIf)  -->
-         <!-- <nav aria-label="Performance navigation" class="performance-pagination">  &lt;!&ndash;Future pagination&ndash;&gt;
-          <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-          </nav>-->
+          <!-- <nav aria-label="Performance navigation" class="performance-pagination">  &lt;!&ndash;Future pagination&ndash;&gt;
+           <ul class="pagination">
+           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+           <li class="page-item"><a class="page-link" href="#">1</a></li>
+           <li class="page-item"><a class="page-link" href="#">2</a></li>
+           <li class="page-item"><a class="page-link" href="#">3</a></li>
+           <li class="page-item"><a class="page-link" href="#">Next</a></li>
+           </ul>
+           </nav>-->
         </ng-template>
       </ngb-tab>
       <ngb-tab>
@@ -90,14 +67,15 @@
 
         </ng-template>
       </ngb-tab>
-      <ngb-tab>
-        <ng-template ngbTabTitle>Преса</ng-template>
-        <ng-template ngbTabContent>
-          Если нет контента есть смысл скрывать (*ngIf)
-        </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
 
+      <!--    Преса - ждем инфу от сервера когда нибудь
+      <ngb-tab>
+          <ng-template ngbTabTitle>Преса</ng-template>
+          <ng-template ngbTabContent>
+          </ng-template>
+        </ngb-tab>
+        -->
+    </ngb-tabset>
 
 
   </section>
