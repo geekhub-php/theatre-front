@@ -36,8 +36,8 @@ describe('theatre-front App', () => {
 
   it('shold navigate to About Us', () => {
     page.navigateTo();
-    mainMenu.navigateTo('Про Театр');
-    expect(element(by.css('h2')).getText()).toContain('Про Театер');
+    mainMenu.navigateTo('Про театр');
+    expect(element(by.css('h2')).getText()).toContain('Про Театр');
   });
   //
   // it('shold navigate to Persons', () => {
