@@ -28,9 +28,13 @@ export class CalendarComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
-  activeDayIsOpen: boolean = false;
+  activeDayIsOpen = false;
 
   loading = true;
+
+   year = 2019;
+
+   month = 4;
 
   modalData: {
     action: string;
@@ -45,8 +49,7 @@ export class CalendarComponent implements OnInit {
   }
 
   getDates(year: number, month: number) {
-    // black magic
-    return ['31-03-2019', '04-05-2019'];
+    return ['31-03-2019', '31-12-2019'];
   }
 
   dayClicked({date, events}: { date: Date; events: Array<PerformanceEvent> }): void {
@@ -69,7 +72,7 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    const [from, to] = this.getDates(2019, 4);
+    const [from, to] = this.getDates(this.year, this.month);
     this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
       this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
     });
