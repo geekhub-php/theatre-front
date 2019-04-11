@@ -59,12 +59,10 @@ export class CalendarComponent implements OnInit {
     if (
       (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
       events.length === 0
-    ) {
-      this.activeDayIsOpen = false;
-    } else {
+    ) this.activeDayIsOpen = false;
+     else {
       this.activeDayIsOpen = true;
     }
-
   }
 
   handleEvent(action: string, event: CalendarEvent): void {

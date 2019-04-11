@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarModule} from 'angular-calendar';
+import { CalendarModule } from 'angular-calendar';
 
 import { CalendarComponent } from './calendar/calendar.component';
 import { ScheduleComponent } from './schedule.component';
