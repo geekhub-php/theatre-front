@@ -8,9 +8,9 @@
       <div class="biography" [innerHtml]="person.biography"></div>
     </div>
   </section>
-  <ul class="gallery">
-    <li *ngFor="let photo of gallery">
-      <img src="{{ photo.images.performance_small?.url }}" alt="">
-    </li>
-  </ul>
+
+  <hr>
+
+  <ngx-gallery *ngIf="gallery.length" [options]="galleryOptions" [images]="gallery"></ngx-gallery>
+  <br>
 </div>
