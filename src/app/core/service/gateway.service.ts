@@ -28,7 +28,7 @@ export class GatewayService {
 
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.historiesListUrl}`, {
-      params: { limit: limit, page: page, locale: locale }
+      params: {limit, page, locale} // params: {limit: limit, page: page, locale: locale}
     })
     .pipe(
       catchError(this.handleError('get list of Histories', new HistoryListResponse()))
