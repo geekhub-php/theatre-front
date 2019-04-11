@@ -14,7 +14,6 @@ export class PerformanceComponent implements OnInit {
   slug: string;
   employees: any;
 
-  /*  this.gallery.reference.url   тут же и альт для изображения   */
 
   images = ['http://api.theatre.pp.ua/uploads/slider/0001/01/thumb_248_slider_slider.jpeg',
     'http://api.theatre.pp.ua/uploads/slider/0001/01/thumb_248_slider_slider.jpeg'];

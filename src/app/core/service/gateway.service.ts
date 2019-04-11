@@ -32,10 +32,6 @@ export class GatewayService {
       );
   }
 
-  //  свою модель нужно написать
-  // ERROR in src/app/performance/performance.component.ts(28,7): error TS2740: Type 'PerformanceListResponse'
-  // is missing the following properties from type 'Performance[]': length, pop, push, concat, and 26 more.
-
   getPerformanceBySlug(slug): Observable<HttpResponse<Performance>> {
     return this.http.get<HttpResponse<Performance>>(`${this.baseUrl}/performances/${slug}`, this.httpOptions)
       .pipe(
@@ -43,10 +39,10 @@ export class GatewayService {
     );
   }
 
-  getRoles(slug): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/performances/${slug}/roles`, {params: {}})
+  getRoles(slug): Observable<Roles> {
+    return this.http.get<Roles>(`${this.baseUrl}/performances/${slug}/roles`, {params: {}})
       .pipe(
-        catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
+        catchError(this.handleError('get list of Performances', new Roles()))
       );
   }
 
