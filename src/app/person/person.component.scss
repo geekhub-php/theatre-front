@@ -12,7 +12,6 @@
     color: $hover-color;
     margin: 20px 0 20px 400px;
   }
-
   section {
     display: flex;
     flex-direction: row;
@@ -22,7 +21,6 @@
       height: 450px;
       margin-right: 42px;
     }
-
     .about {
       font-size: 14px;
 
@@ -31,16 +29,6 @@
       }
     }
   }
-
-  // .gallery {
-  //   display: flex;
-  //   list-style: none;
-  //   margin: 25px 0 25px -45px;
-
-  //   li {
-  //     margin-left: 7px;
-  //   }
-  // }
   ngx-gallery ::ng-deep {
     .ngx-gallery-preview-img-wrapper img {
       max-width: 600px;
@@ -81,45 +69,6 @@
   }
 }
 
-// ngx-gallery ::ng-deep {
-//   .ngx-gallery-preview-img-wrapper img {
-//     max-width: 600px;
-//     max-height: 550px;
-//     border: 10px solid $light-grayish-red;
-//     border-radius: 3px;
-//   }
-//   .ngx-gallery-arrow-left .ngx-gallery-arrow {
-//     width: 40px;
-//     height: 40px;
-//     background-image: url('assets/images/left-icon.png');
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: 40px 40px;
-//     margin-left: 230px;
-//   }
-//   .ngx-gallery-arrow-right .ngx-gallery-arrow {
-//     width: 40px;
-//     height: 40px;
-//     background-image: url('assets/images/right-icon.png');
-//     background-position: center;
-//     background-size: 40px 40px;
-//     background-repeat: no-repeat;
-//     margin-right: 230px;
-//   }
-//   .ngx-gallery-active {
-//     background-color: #000000dc;
-//   }
-//   ngx-gallery-action i {
-//     width: 40px;
-//     height: 40px;
-//     background-image: url('assets/images/close-icon.png');
-//     background-position: center;
-//     background-size: 40px 40px;
-//     background-repeat: no-repeat;
-//     margin: 10px 10px 0 0;
-//   }
-// }
-
 @media screen and (max-width: 1120px) {
   .container {
     ngx-gallery ::ng-deep {
@@ -144,7 +93,6 @@
     h2 {
       margin: 10px 0;
     }
-
     section img {
       width: 170px;
       height: 265px;
@@ -163,19 +111,6 @@
       }
     }
   }
-
-  // ngx-gallery ::ng-deep {
-  //   .ngx-gallery-preview-img-wrapper img {
-  //     max-width: 380px !important;
-  //     border: 7px solid $light-grayish-red;
-  //   }
-  //   .ngx-gallery-arrow-left .ngx-gallery-arrow {
-  //     margin-left: 0;
-  //   }
-  //   .ngx-gallery-arrow-right .ngx-gallery-arrow {
-  //     margin-right: 0;
-  //   }
-  // }
 }
 
 @media screen and (max-width: 479px) {
