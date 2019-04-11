@@ -20,6 +20,7 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 
 describe('AppComponent', () => {
@@ -50,7 +51,8 @@ describe('AppComponent', () => {
           NewsListModule,
           RouterTestingModule,
           StripHtmlModule,
-          InfiniteScrollModule
+          InfiniteScrollModule,
+          NgxGalleryModule
       ]
     }).compileComponents();
   }));
