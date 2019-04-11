@@ -42,18 +42,18 @@ describe('AppComponent', () => {
         BoardTrusteesComponent
       ],
       providers: [
-          {provide: APP_BASE_HREF, useValue: '/'}
+        {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
-          AppRoutingModule,
-          CoreModule,
-          HomePageModule,
-          NewsListModule,
-          RouterTestingModule,
+        AppRoutingModule,
+        CoreModule,
+        HomePageModule,
+        NewsListModule,
+        RouterTestingModule,
         NgbModule.forRoot(),
-          StripHtmlModule,
-          InfiniteScrollModule,
-          NgxGalleryModule
+        StripHtmlModule,
+        InfiniteScrollModule,
+        NgxGalleryModule
       ]
     }).compileComponents();
   }));
