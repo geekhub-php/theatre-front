@@ -10,7 +10,8 @@ import { Performance } from '../core/model/Performance';
 export class PerformanceComponent implements OnInit {
   showNavigationArrows = true;
   perfomance;
-  slug = 'dorogha-do-sontsia.json';
+  roles;
+  slug = 'dorogha-do-sontsia';
 
   /*  this.gallery.reference.url   тут же и альт для изображения   */
 
@@ -23,18 +24,16 @@ export class PerformanceComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gateway.getPerformanceBySlug(this.slug).subscribe((res) => {
+    this.gateway.getPerformanceBySlug(this.slug + '.json').subscribe((res) => {
       this.perfomance = res;
       console.dir(this.perfomance);
     });
+
+    this.gateway.getRoles(this.slug + '/roles.json').subscribe((res) => {
+      this.roles = res;
+      console.dir(this.roles);
+    });
   }
 
-
-  //  без модели ни куда
-  // this.getway.getPerformanceRoles().subscribe((res: PerformanceListResponse) => {
-  //   this.roles = res;
-  //   console.dir(this.roles);
-  // });
-
-
 }
+
