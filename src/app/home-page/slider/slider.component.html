@@ -3,17 +3,18 @@
     <div class="slider-item" *ngFor="let item of sliderList">
       <img *ngIf="item.id"
         [ngClass]="{'active': item.id === slideId}" class="img"
-        [src]="item.performance.sliderImage.slider_slider.url" alt="pic">
+        [src]="item.performance.sliderImage.slider_slider.url" alt="pic"
+      >
     </div>
     <div class="slider-data">
       <button class="slider-button" (click)="prevSlide()"></button>
       <div class="data" *ngFor="let item of sliderList; let idx= index">
         <div class="data-button"
           [ngClass]="{'data-active ': item.id === slideId}"
-          (click)="slide(idx)">{{ item.date_time | date:shortDate }}</div>
-        <div class="data-more" 
-          [ngClass]="{'active-more': item.id === slideId}">
-            <span>{{item.performance.title}}</span>
+          (click)="slide(idx)"
+        >{{ item.date_time | date:shortDate }}</div>
+        <div class="data-more" [ngClass]="{'active-more': item.id === slideId}">
+          <span>{{item.performance.title}}</span>
         </div>
       </div>
       <button class="slider-button" (click)="nextSlide()"></button>
