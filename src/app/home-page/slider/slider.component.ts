@@ -17,7 +17,6 @@ export class SliderComponent implements OnInit {
     this.gateway.getPerformanceEventList().subscribe(res => {
       this.sliderList = res.performance_events;
       this.slideId = this.sliderList[this.count].id;
-      console.log(res.performance_events);
     });
   }
 
