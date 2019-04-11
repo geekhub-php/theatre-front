@@ -21,6 +21,7 @@ import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -41,17 +42,18 @@ describe('AppComponent', () => {
         BoardTrusteesComponent
       ],
       providers: [
-        {provide: APP_BASE_HREF, useValue: '/'}
+          {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
-        AppRoutingModule,
-        CoreModule,
-        HomePageModule,
-        NewsListModule,
-        RouterTestingModule,
+          AppRoutingModule,
+          CoreModule,
+          HomePageModule,
+          NewsListModule,
+          RouterTestingModule,
         NgbModule.forRoot(),
-        StripHtmlModule,
-        InfiniteScrollModule
+          StripHtmlModule,
+          InfiniteScrollModule,
+          NgxGalleryModule
       ]
     }).compileComponents();
   }));
