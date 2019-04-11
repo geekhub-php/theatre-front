@@ -55,7 +55,7 @@ export class CalendarComponent implements OnInit {
   dayClicked({date, events}: { date: Date; events: Array<PerformanceEvent> }): void {
     if (!isSameMonth(date, this.viewDate)) return;
     this.viewDate = date;
-    this.activeDayIsOpen =!(
+    this.activeDayIsOpen = !(
       (isSameDay(this.viewDate, date) && this.activeDayIsOpen === false) ||
       events.length === 0
     );
