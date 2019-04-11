@@ -89,7 +89,6 @@
 
 .scrollToTop {
   z-index: 999;
-  opacity: .8;
   font-size: 0;
   position: absolute;
   bottom: 67px;
@@ -104,10 +103,6 @@
   border: none;
   outline: none;
   cursor: pointer;
-
-  &:hover {
-    opacity: 1;
-  }
 
   @media (max-width: 767.98px) {
     width: 25px;
