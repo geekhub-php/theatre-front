@@ -51,6 +51,7 @@
   }
 
   @media (max-width: 991.98px) {
+
     .container {
       display: none;
     }
@@ -62,6 +63,7 @@
 }
 
 :host ::ng-deep {
+
   .navbar-nav {
     flex-direction: row;
     justify-content: center;

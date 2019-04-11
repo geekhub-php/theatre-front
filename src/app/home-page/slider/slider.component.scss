@@ -6,6 +6,107 @@ $big_nav_width: 12%;
 $nav_color: rgba(255, 82, 82, .2);
 $nav_hover_color: rgba(255, 82, 82, .8);
 
+.dots-active {
+  top: -64px;
+  width: 554px;
+  height: 92px;
+  background-image: url("../../../assets/images/item-active-1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 1px 0 0;
+  position: relative;
+  display: inline-block;
+  transition: .4s;
+
+  .block {
+    width: 449px;
+    height: 93px;
+    display: flex;
+    background-color: transparent;
+    margin: -95px 0 0 100px;
+
+    .buy {
+      width: 149px;
+      height: 93px;
+
+      .buy_ticket {
+        width: 114px;
+        height: 25px;
+        background-color: #484c4d;
+        border: none;
+        padding: 0;
+        margin-top: 58px;
+
+        .buy_ticket_p {
+          font-size: 14px;
+          margin: 0;
+          color: #fff;
+          font-family: "robotothin", serif;
+        }
+      }
+    }
+  }
+
+  .info {
+    width: 300px;
+    height: 93px;
+    text-align: left;
+
+    .p_time {
+      width: 300px;
+      margin: 0;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .title {
+      font-size: 27.5px;
+      color: #fff;
+      font-family: "robotothin", serif;
+      margin: 2px 0 11px;
+    }
+  }
+
+  .content-active {
+    display: block;
+    width: 91px;
+    height: 93px;
+    border: 1px solid transparent;
+    position: relative;
+
+    .ticket_p {
+      list-style-type: none;
+      color: #7d7c7c;
+      font-family: "robotoregular", serif;
+      font-size: 13px;
+    }
+
+    .ticket_day {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .ticket_date {
+      width: 60px;
+      height: 60px;
+      border-bottom: 1px solid #fff;
+      font-size: 44px;
+      color: #fff;
+      font-family: "robotothin", serif;
+      margin: -12px 0 2px 14px;
+    }
+
+    .ticket_month {
+      text-transform: uppercase;
+      margin: 0 0 20px;
+    }
+  }
+}
 
 .slider {
   margin: 0 auto;
@@ -35,7 +136,7 @@ $nav_hover_color: rgba(255, 82, 82, .8);
     }
   }
 
-  #nav_slide {
+  .nav_slide {
     width: 100%;
     bottom: 8px;
     height: 93px;
@@ -53,9 +154,11 @@ $nav_hover_color: rgba(255, 82, 82, .8);
   }
 
   @keyframes scroll {
+
     0% {
       opacity: .4;
     }
+
     100% {
       opacity: 1;
     }
@@ -65,7 +168,7 @@ $nav_hover_color: rgba(255, 82, 82, .8);
     top: -5px;
     width: 92px;
     height: 93px;
-    background-image: url('../../../assets/images/ticket.png');
+    background-image: url("../../../assets/images/ticket.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,7 +191,7 @@ $nav_hover_color: rgba(255, 82, 82, .8);
       .ticket_p {
         list-style-type: none;
         color: #7d7c7c;
-        font-family: 'robotoregular', serif;
+        font-family: "robotoregular", serif;
         font-size: 13px;
       }
 
@@ -100,16 +203,16 @@ $nav_hover_color: rgba(255, 82, 82, .8);
       .ticket_date {
         width: 60px;
         height: 60px;
-        border-bottom: 1px solid #ffffff;
+        border-bottom: 1px solid #fff;
         font-size: 44px;
-        color: #ffffff;
-        font-family: 'robotothin', serif;
+        color: #fff;
+        font-family: "robotothin", serif;
         margin: -12px 0 2px 14px;
       }
 
       .ticket_month {
         text-transform: uppercase;
-        margin: 0 0 20px 0;
+        margin: 0 0 20px;
       }
     }
 
@@ -117,114 +220,11 @@ $nav_hover_color: rgba(255, 82, 82, .8);
       display: none;
     }
   }
-
-}
-
-.dots-active {
-  top: -64px;
-  width: 554px;
-  height: 92px;
-  background-image: url('../../../assets/images/item-active-1.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: none;
-  background-color: transparent;
-  padding: 0px;
-  cursor: pointer;
-  margin: 0 1px 0 0;
-  position: relative;
-  display: inline-block;
-  transition: .4s;
-
-  .block {
-    width: 449px;
-    height: 93px;
-    display: flex;
-    background-color: transparent;
-    margin: -95px 0 0 100px;
-
-    .buy {
-      width: 149px;
-      height: 93px;
-
-      .buy_ticket {
-        width: 114px;
-        height: 25px;
-        background-color: #484c4d;
-        border: none;
-        padding: 0;
-        margin-top: 58px;
-
-        .buy_ticket_p {
-          font-size: 14px;
-          margin: 0;
-          color: #ffffff;
-          font-family: 'robotothin', serif;
-        }
-      }
-    }
-  }
-
-  .info {
-    width: 300px;
-    height: 93px;
-    text-align: left;
-
-    .p_time {
-      width: 300px;
-      margin: 0;
-      color: #ffffff;
-      font-size: 13px;
-    }
-
-    .title {
-      font-size: 27.5px;
-      color: #ffffff;
-      font-family: 'robotothin', serif;
-      margin: 2px 0 11px 0;
-    }
-  }
-
-  .content-active {
-    display: block;
-    width: 91px;
-    height: 93px;
-    border: 1px solid transparent;
-    position: relative;
-
-    .ticket_p {
-      list-style-type: none;
-      color: #7d7c7c;
-      font-family: 'robotoregular', serif;
-      font-size: 13px;
-    }
-
-    .ticket_day {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .ticket_date {
-      width: 60px;
-      height: 60px;
-      border-bottom: 1px solid #ffffff;
-      font-size: 44px;
-      color: #ffffff;
-      font-family: 'robotothin', serif;
-      margin: -12px 0 2px 14px;
-    }
-
-    .ticket_month {
-      text-transform: uppercase;
-      margin: 0 0 20px 0;
-    }
-  }
 }
 
 @media (max-width: 992px) {
 
-  #nav_slide {
+  .nav_slide {
     display: none;
     visibility: hidden;
 
@@ -240,6 +240,7 @@ $nav_hover_color: rgba(255, 82, 82, .8);
       display: none;
     }
   }
+
   .prev, .next {
     width: $big_nav_width;
     height: inherit;
