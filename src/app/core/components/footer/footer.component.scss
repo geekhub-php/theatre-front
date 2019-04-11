@@ -1,5 +1,30 @@
 @import "../../../../assets/variables";
 
+:host ::ng-deep {
+
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+
+    .nav-link {
+      padding: 15px;
+      color: $primary-color;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+
+    .active {
+      color: $hover-color;
+    }
+  }
+
+  .forum {
+    display: block !important;
+  }
+}
+
 .footer {
   font-size: 12px;
   margin-top: 50px;
@@ -51,6 +76,7 @@
   }
 
   @media (max-width: 991.98px) {
+
     .container {
       display: none;
     }
@@ -61,35 +87,13 @@
   }
 }
 
-:host ::ng-deep {
-  .navbar-nav {
-    flex-direction: row;
-    justify-content: center;
-
-    .nav-link {
-      padding: 15px;
-      color: $primary-color;
-
-      &:hover {
-        color: $hover-color;
-      }
-    }
-
-    .active {
-      color: $hover-color;
-    }
-  }
-
-  .forum {
-    display: block !important;
-  }
-}
-
 .scrollToTop {
+  z-index: 999;
+  opacity: .25;
   font-size: 0;
   position: fixed;
   bottom: 67px;
-  right: 35px;
+  right: 1%;
   width: 42px;
   height: 42px;
   border-radius: 4px;
@@ -99,13 +103,19 @@
   background-position: 50% 50%;
   border: none;
   outline: none;
+  cursor: pointer;
 
   &:hover {
-    bottom: 70px;
-    cursor: pointer;
+    opacity: .9;
   }
 
   &:active {
-    bottom: 60px;
+    opacity: 1;
+  }
+
+  @media (max-width: 767.98px) {
+    width: 25px;
+    height: 25px;
+    background-size: 50%;
   }
 }
