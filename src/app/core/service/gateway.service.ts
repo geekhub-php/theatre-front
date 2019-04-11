@@ -13,8 +13,6 @@ import { environment } from '../../../environments/environment';
 })
 export class GatewayService {
   readonly performanceListUrl = 'performances.json';
-  readonly performanceSlugUrl = 'performances/dorogha-do-sontsia.json?locale=uk'; //
-  readonly performanceRolesUrl = 'dorogha-do-sontsia/roles.json?locale=uk'; //
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
 
@@ -32,12 +30,13 @@ export class GatewayService {
   // ERROR in src/app/performance/performance.component.ts(28,7): error TS2740: Type 'PerformanceListResponse'
   // is missing the following properties from type 'Performance[]': length, pop, push, concat, and 26 more.
 
-  getPerformanceSlug(limit = 10): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceSlugUrl}`, {params: {limit: '100'}})
+  getPerformanceBySlug(slug): Observable<PerformanceListResponse> {
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/performances/${slug}`, {params: {}})
       .pipe(
-        catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
-      );
+      catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
+    );
   }
+
   //  заготовка для запроса на актеров. Нужна модель
   // getPerformanceRoles(limit = 10): Observable<PerformanceListResponse> {
   //   return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceRolesUrl}`, {params: {limit: '100'}})

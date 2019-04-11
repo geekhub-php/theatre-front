@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="page-title">Спектакль</h2>
-<!--  title: "Дорога до сонця"
-type: "казка" -->
+  <!--<h2 class="page-title"> {{perfomance.title}}</h2>-->
+  <!--  type: "казка" -->
   <section class="preview">
     <div class="performance-poster">
       <div class="future-img">
@@ -16,7 +16,7 @@ type: "казка" -->
         <ngb-carousel *ngIf="images">
           <ng-template ngbSlide *ngFor="let image of images">
             <img [src]="image" >
-                 <!--alt="Random slide"     ghb[jlbn -->
+                 <!--alt="Random slide"    приходит -->
           </ng-template>
         </ngb-carousel>
 
