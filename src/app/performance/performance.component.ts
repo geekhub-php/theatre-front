@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
 import { Performance } from '../core/model/Performance';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-performance',
@@ -9,8 +10,9 @@ import { Performance } from '../core/model/Performance';
 })
 export class PerformanceComponent implements OnInit {
   showNavigationArrows = true;
-  perfomance;
-  slug = 'dorogha-do-sontsia.json';
+  performance;
+  slug: string;
+  employees: any;
 
   /*  this.gallery.reference.url   тут же и альт для изображения   */
 
@@ -19,13 +21,29 @@ export class PerformanceComponent implements OnInit {
 
   /**/
 
-  constructor(private gateway: GatewayService) {
-  }
+  constructor(
+    private gateway: GatewayService,
+    private router: ActivatedRoute
+    ) { }
 
   ngOnInit() {
-    this.gateway.getPerformanceBySlug(this.slug).subscribe((res) => {
-      this.perfomance = res;
-      console.dir(this.perfomance);
+    this.getPerformanceBySlug();
+    this.getRoles();
+  }
+
+  getPerformanceBySlug() {
+    const slug = this.router.snapshot.paramMap.get('slug');
+    this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
+      this.performance = res.body;
+      console.log(res.body);
+    });
+  }
+
+  getRoles() {
+    const slug = this.router.snapshot.paramMap.get('slug');
+    this.gateway.getRoles(slug).subscribe((res) => {
+      console.log(res);
+      this.employees = res;
     });
   }
 
