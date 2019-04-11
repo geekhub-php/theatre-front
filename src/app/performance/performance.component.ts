@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
 import { Performance } from '../core/model/Performance';
 import { ActivatedRoute } from '@angular/router';
+import { Employee } from '../core/model/Employee';
 
 @Component({
   selector: 'app-performance',
@@ -23,7 +24,8 @@ export class PerformanceComponent implements OnInit {
   constructor(
     private gateway: GatewayService,
     private router: ActivatedRoute
-    ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.getPerformanceBySlug();
@@ -34,24 +36,16 @@ export class PerformanceComponent implements OnInit {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
-      console.log(res.body);
+      console.dir(res.body);
     });
   }
 
   getRoles() {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateway.getRoles(slug).subscribe((res) => {
-      console.log(res);
+      console.dir(res);
       this.employees = res;
     });
   }
-
-
-  //  без модели ни куда
-  // this.getway.getPerformanceRoles().subscribe((res: PerformanceListResponse) => {
-  //   this.roles = res;
-  //   console.dir(this.roles);
-  // });
-
 
 }

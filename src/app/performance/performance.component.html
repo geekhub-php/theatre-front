@@ -1,13 +1,11 @@
 <div class="container">
-  <h2 class="page-title">Спектакль</h2>
-  <!--<h2 class="page-title"> {{perfomance.title}}</h2>-->
+  <!--<h2 class="page-title">Спектакль</h2>-->
+  <h2 class="page-title"> {{performance.title}} </h2>
   <!--  type: "казка" -->
   <section class="preview">
     <div class="performance-poster">
       <div class="future-img" *ngIf="performance">
-        <!--mainPicture -->
-        <img src="{{ performance.mainPicture.performance_small.url }}">
-        Future image
+        <img src="{{ performance.mainPicture.performance_big.url }}" alt="performance.mainPicture.performance_big.alt">
       </div>
     </div>
     <div class="slider">
@@ -89,7 +87,7 @@
       <ngb-tab>
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
-          
+
         </ng-template>
       </ngb-tab>
       <ngb-tab>
