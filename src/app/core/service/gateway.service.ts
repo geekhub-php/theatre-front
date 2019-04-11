@@ -14,6 +14,7 @@ import { environment } from '../../../environments/environment';
 export class GatewayService {
   readonly performanceListUrl = '/performances.json';
   readonly historiesListUrl = 'histories.json';
+  readonly performanceEventsListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
@@ -32,6 +33,15 @@ export class GatewayService {
     .pipe(
       catchError(this.handleError('get list of Histories', new HistoryListResponse()))
     );
+  }
+
+  getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = 'uk'): Observable<any> {
+    return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
+      params: { fromDate: fromDate.toString(), limit, locale }
+    });
+    // .pipe(
+    //   catchError(this.handleError('get list of Histories', new HistoryListResponse()))
+    // );
   }
 
   /* tslint:disable:no-console */

@@ -1,119 +1,22 @@
 <div class="slider">
-  <div class="slide_img" [class.active-slide-img]="activeSlide === 0">
-    <img src="assets/images/slide1.jpg">
-    <a href="http://theatre-shevchenko.ck.ua/uk/performance/oliena-nie-priishla-dodomu"></a>
-    <div class="prev" (click)="setActiveSlide(4)"><span></span></div>
-    <div class="next" (click)="setActiveSlide(1)"><span></span></div>
-  </div>
-  <div class="slide_img" [class.active-slide-img]="activeSlide === 1">
-    <img src="assets/images/slide2.jpeg">
-    <div class="prev" (click)="setActiveSlide(0)"><span></span></div>
-    <div class="next" (click)="setActiveSlide(2)"><span></span></div>
-  </div>
-  <div class="slide_img" [class.active-slide-img]="activeSlide === 2">
-    <img src="assets/images/slide4.jpeg">
-    <div class="prev" (click)="setActiveSlide(1)"><span></span></div>
-    <div class="next" (click)="setActiveSlide(3)"><span></span></div>
-  </div>
-  <div class="slide_img" [class.active-slide-img]="activeSlide === 3">
-    <img src="assets/images/slide5.jpeg">
-    <div class="prev" (click)="setActiveSlide(2)"><span></span></div>
-    <div class="next" (click)="setActiveSlide(4)"><span></span></div>
-  </div>
-  <div class="slide_img" [class.active-slide-img]="activeSlide === 4">
-    <img src="assets/images/slide6.jpeg">
-    <div class="prev" (click)="setActiveSlide(3)"><span></span></div>
-    <div class="next" (click)="setActiveSlide(0)"><span></span></div>
-  </div>
-  <div class="nav_slide">
-    <div class="dots" (click)="setActiveSlide(0)" id="dot1">
-      <div class="content-active">
-        <p class="ticket_p ticket_day">Нд</p>
-        <p class="ticket_p ticket_date">24</p>
-        <p class="ticket_p ticket_month">лютого</p>
-      </div>
-      <div class="block">
-        <div class="info">
-          <h2 class="title">Сад Гетсиманський</h2>
-          <p class="p_time">Народна трагедія на 2 дії</p>
-          <p class="p_time">Тривалість вистави 2 год 20 хв.</p>
-        </div>
-        <div class="buy">
-          <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
-        </div>
-      </div>
+  <div class="slider-list">
+    <div class="slider-item" *ngFor="let item of sliderList">
+      <img *ngIf="item.id"
+        [ngClass]="{'active': item.id === slideId}" class="img"
+        [src]="item.performance.sliderImage.slider_slider.url" alt="pic">
     </div>
-    <div class="dots-active" (click)="setActiveSlide(1)" id="dot2">
-      <div class="content-active">
-        <p class="ticket_p ticket_day">Нд</p>
-        <p class="ticket_p ticket_date">24</p>
-        <p class="ticket_p ticket_month">лютого</p>
-      </div>
-      <div class="block">
-        <div class="info">
-          <h2 class="title">Сад Гетсиманський</h2>
-          <p class="p_time">Народна трагедія на 2 дії</p>
-          <p class="p_time">Тривалість вистави 2 год 20 хв.</p>
-        </div>
-        <div class="buy">
-          <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
+    <div class="slider-data">
+      <button class="slider-button" (click)="prevSlide()"></button>
+      <div class="data" *ngFor="let item of sliderList; let idx= index">
+        <div class="data-button"
+          [ngClass]="{'data-active ': item.id === slideId}"
+          (click)="slide(idx)">{{ item.date_time | date:shortDate }}</div>
+        <div class="data-more" 
+          [ngClass]="{'active-more': item.id === slideId}">
+            <span>{{item.performance.title}}</span>
         </div>
       </div>
-    </div>
-    <div class="dots" (click)="setActiveSlide(2)" id="dot3">
-      <div class="content-active">
-        <p class="ticket_p ticket_day">Нд</p>
-        <p class="ticket_p ticket_date">24</p>
-        <p class="ticket_p ticket_month">лютого</p>
-      </div>
-      <div class="block">
-        <div class="info">
-          <h2 class="title">Сад Гетсиманський</h2>
-          <p class="p_time">Народна трагедія на 2 дії</p>
-          <p class="p_time">Тривалість вистави 2 год 20 хв.</p>
-        </div>
-        <div class="buy">
-          <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
-        </div>
-      </div>
-    </div>
-    <div class="dots" (click)="setActiveSlide(3)" id="dot4">
-      <div class="content-active">
-        <p class="ticket_p ticket_day">Нд</p>
-        <p class="ticket_p ticket_date">24</p>
-        <p class="ticket_p ticket_month">лютого</p>
-      </div>
-      <div class="block">
-        <div class="info">
-          <h2 class="title">Сад Гетсиманський</h2>
-          <p class="p_time">Народна трагедія на 2 дії</p>
-          <p class="p_time">Тривалість вистави 2 год 20 хв.</p>
-        </div>
-        <div class="buy">
-          <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
-        </div>
-      </div>
-    </div>
-    <div class="dots" (click)="setActiveSlide(4)" id="dot5">
-      <div class="content-active">
-        <p class="ticket_p ticket_day">Нд</p>
-        <p class="ticket_p ticket_date">24</p>
-        <p class="ticket_p ticket_month">лютого</p>
-      </div>
-      <div class="block">
-        <div class="info">
-          <h2 class="title">Сад Гетсиманський</h2>
-          <p class="p_time">Народна трагедія на 2 дії</p>
-          <p class="p_time">Тривалість вистави 2 год 20 хв.</p>
-        </div>
-        <div class="buy">
-          <button class="buy_ticket"><p class="buy_ticket_p">Купити квиток</p></button>
-        </div>
-      </div>
+      <button class="slider-button" (click)="nextSlide()"></button>
     </div>
   </div>
 </div>
-
-
-
-

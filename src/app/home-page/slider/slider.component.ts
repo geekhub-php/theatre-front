@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { GatewayService } from '../../core/service/gateway.service';
 
 @Component({
   selector: 'app-slider',
@@ -6,15 +7,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
+  sliderList: Array<any>;
+  slideId: number;
+  count = 2;
 
-  activeSlide = 0;
-
-  constructor() { }
+  constructor(private gateway: GatewayService) { }
 
   ngOnInit() {
+    this.gateway.getPerformanceEventList().subscribe(res => {
+      this.sliderList = res.performance_events;
+      this.slideId = this.sliderList[this.count].id;
+      console.log(res.performance_events);
+    });
   }
 
-  setActiveSlide(idx: number) {
-    this.activeSlide = idx;
+  nextSlide(count: number) {
+    if (this.count < this.sliderList.length - 1) {
+      this.count++;
+    } else {
+      this.count = 0;
+    }
+    this.slideId = this.sliderList[this.count].id;
+  }
+
+  prevSlide(count: number) {
+    if (this.count < this.sliderList.length) {
+      this.count--;
+    } if (this.count < 0) {
+      this.count = this.sliderList.length - 1;
+    }
+    this.slideId = this.sliderList[this.count].id;
+  }
+
+  slide(idx: number) {
+    this.count = idx;
+    this.slideId = this.sliderList[this.count].id;
   }
 }

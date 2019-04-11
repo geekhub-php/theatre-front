@@ -1,283 +1,77 @@
-$big_width: 100%;
-$big_height: 40%;
-$small_width: 100%;
-$small_height: 55%;
-$big_nav_width: 12%;
-$nav_color: rgba(255, 82, 82, .2);
-$nav_hover_color: rgba(255, 82, 82, .8);
-
-.dots-active {
-  top: -64px;
-  width: 554px;
-  height: 92px;
-  background-image: url("../../../assets/images/item-active-1.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
-  margin: 0 1px 0 0;
+.slider-list {
   position: relative;
-  display: inline-block;
-  transition: .4s;
-
-  .block {
-    width: 449px;
-    height: 93px;
-    display: flex;
-    background-color: transparent;
-    margin: -95px 0 0 100px;
-
-    .buy {
-      width: 149px;
-      height: 93px;
-
-      .buy_ticket {
-        width: 114px;
-        height: 25px;
-        background-color: #484c4d;
-        border: none;
-        padding: 0;
-        margin-top: 58px;
-
-        .buy_ticket_p {
-          font-size: 14px;
-          margin: 0;
-          color: #fff;
-          font-family: "robotothin", serif;
-        }
-      }
-    }
-  }
-
-  .info {
-    width: 300px;
-    height: 93px;
-    text-align: left;
-
-    .p_time {
-      width: 300px;
-      margin: 0;
-      color: #fff;
-      font-size: 13px;
-    }
-
-    .title {
-      font-size: 27.5px;
-      color: #fff;
-      font-family: "robotothin", serif;
-      margin: 2px 0 11px;
-    }
-  }
-
-  .content-active {
-    display: block;
-    width: 91px;
-    height: 93px;
-    border: 1px solid transparent;
-    position: relative;
-
-    .ticket_p {
-      list-style-type: none;
-      color: #7d7c7c;
-      font-family: "robotoregular", serif;
-      font-size: 13px;
-    }
-
-    .ticket_day {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .ticket_date {
-      width: 60px;
-      height: 60px;
-      border-bottom: 1px solid #fff;
-      font-size: 44px;
-      color: #fff;
-      font-family: "robotothin", serif;
-      margin: -12px 0 2px 14px;
-    }
-
-    .ticket_month {
-      text-transform: uppercase;
-      margin: 0 0 20px;
-    }
-  }
-}
-
-.slider {
   margin: 0 auto;
-  position: relative;
-  width: $big_width;
-  height: 0;
-  padding-bottom: $big_height;
-  user-select: none;
-  background-color: #1c1c1c;
-
-  .slide_img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
-    img {
-      position: absolute;
-      width: inherit;
-      height: inherit;
-    }
-
-    a {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-    }
-  }
-
-  .nav_slide {
-    width: 100%;
-    bottom: 8px;
-    height: 93px;
-    position: absolute;
-    text-align: center;
-    z-index: 99;
-    cursor: default;
-    display: inline-block;
-  }
-
-
-  .active-slide-img {
-    z-index: 9;
-    animation: scroll 1s ease-in-out;
-  }
-
-  @keyframes scroll {
-
-    0% {
-      opacity: .4;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .dots {
-    top: -5px;
-    width: 92px;
-    height: 93px;
-    background-image: url("../../../assets/images/ticket.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    transition: .4s;
-    margin-left: -1px;
-
-    .content-active {
-      display: block;
-      width: 91px;
-      height: 93px;
-      border: 1px solid transparent;
-      position: relative;
-
-      .ticket_p {
-        list-style-type: none;
-        color: #7d7c7c;
-        font-family: "robotoregular", serif;
-        font-size: 13px;
-      }
-
-      .ticket_day {
-        margin: 0;
-        font-size: 15px;
-      }
-
-      .ticket_date {
-        width: 60px;
-        height: 60px;
-        border-bottom: 1px solid #fff;
-        font-size: 44px;
-        color: #fff;
-        font-family: "robotothin", serif;
-        margin: -12px 0 2px 14px;
-      }
-
-      .ticket_month {
-        text-transform: uppercase;
-        margin: 0 0 20px;
-      }
-    }
-
-    .block {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: 992px) {
-
-  .nav_slide {
+  max-height: 500px;
+  
+  .slider-item img {
     display: none;
-    visibility: hidden;
-
-    .dots-active {
-      display: none;
-    }
-
-    .dots {
-      display: none;
-    }
-
-    .content-active {
-      display: none;
-    }
+    margin: 0px auto;
+    max-height: 500px;
   }
 
-  .prev, .next {
-    width: $big_nav_width;
-    height: inherit;
+  .slider-data {
     position: absolute;
-    top: 0;
-    background-color: $nav_color;
-    z-index: 99;
-    transition: .45s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 19px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .slider-data .data {
+    display: flex;
     cursor: pointer;
-    text-align: center;
-  }
 
-  .next {
-    right: 0;
-  }
+    .data-button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      width: 92px;
+      height: 93px;
+      background-color: #4e4e4e;
+      text-align: center;
+      margin: 0 1px;
+    }
 
-  .prev {
-    left: 0;
-  }
-
-  .prev span, .next span {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: solid 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .prev span {
-    border-color: transparent #fff transparent transparent;
-    right: 35%;
-  }
-
-  .next span {
-    border-color: transparent transparent transparent #fff;
-    left: 35%;
-    border-right: 0;
-  }
+    .data-more {
+      position: relative;
+      box-sizing: border-box;
+      display: none;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 464px;
+      height: 93px;
+      background-color: #e44927;
+      padding: 11px;
+    }
+  } 
 }
+
+.active {
+  display: block !important; 
+}
+
+.data-active {
+  background: #dd492a !important;
+}
+
+.active-more {
+  display: block !important;
+  background-color: red;
+}
+
+.data-more {
+  display: none;
+}
+
+.slider-button {
+  position: relative;
+  margin: 0 5px;
+  border: none;
+  border-radius: 3px;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to top, #4c4c4c, #505050);
+  }
