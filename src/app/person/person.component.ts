@@ -28,7 +28,7 @@ export class PersonComponent implements OnInit {
         image: false,
         thumbnailsRemainingCount: true,
         height: '100px',
-        previewCloseOnClick: true,
+        // previewCloseOnClick: true,
         previewCloseOnEsc: true
       },
       {
