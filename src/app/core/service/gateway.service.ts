@@ -7,12 +7,14 @@ import { catchError } from 'rxjs/operators';
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
+import { NewsListResponse } from '../model/news/NewsListResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
   readonly performanceListUrl = '/performances.json';
+  readonly newsListUrl = 'posts.json';
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
 
@@ -23,6 +25,12 @@ export class GatewayService {
       .pipe(
           catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
+  }
+
+  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
+    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
+      params: {limit: limit, page: page, locale: locale}
+    });
   }
 
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
