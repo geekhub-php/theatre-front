@@ -34,7 +34,7 @@ export class GatewayService {
   }
 
   getPerformanceBySlug(slug): Observable<HttpResponse<Performance>> {
-    return this.http.get<HttpResponse<Performance>>(`${this.baseUrl}/performances/${slug}`, this.httpOptions)
+    return this.http.get<HttpResponse<Performance>>(`${this.baseUrl}/performances/${slug}`, {params:{}})
       .pipe(
         catchError(this.handleError('get list of Performances', new HttpResponse<Performance>()))
       );

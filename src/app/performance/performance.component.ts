@@ -4,6 +4,7 @@ import { Performance } from '../core/model/Performance';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../core/model/Employee';
 import { EmployeesListResponse } from '../core/model/EmoloyeeListResponse';
+import { PerformanceListResponse } from '../core/model/PerformanceListResponse';
 
 @Component({
   selector: 'app-performance',
@@ -12,7 +13,7 @@ import { EmployeesListResponse } from '../core/model/EmoloyeeListResponse';
 })
 export class PerformanceComponent implements OnInit {
   showNavigationArrows = true;
-  performance;
+  performance: Performance;
   test;
   slug: string;
   employees;

@@ -73,15 +73,30 @@
     }
   }
 
-  .item {
-    width: 200px;
-    height: 200px;
-    border: 1px solid $light-gray;
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-  }
+  .employees-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    list-style: none;
+      li {
+        border: 1px solid #c8c8c8;
+        margin: 2px;
+      }
 
+    .item {
+      width: 200px;
+      height: 200px;
+      border: 1px solid $light-gray;
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+      cursor: pointer;
+      img {
+       width: 200px;
+        height: auto;
+      }
+    }
+  }
   .performance-pagination {
     display: flex;
     justify-content: center;
