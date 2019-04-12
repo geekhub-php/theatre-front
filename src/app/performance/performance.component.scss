@@ -88,6 +88,7 @@
     list-style: none;
     margin: 0 auto;
     padding: 0;
+
     li {
       border: 1px solid $light-gray;
       margin: 5px;
@@ -100,22 +101,27 @@
         height: 300px;
         display: inline-block;
         //margin: 5px;
+
         text-align: center;
         cursor: pointer;
-        &:hover .name {
-          color: $hover-color;
-        }
-        .photo {
-          width: 100%;
-          height: 275px;
-        }
+
         .name {
           color: $primary-color;
           background: #f8f5f5;
         }
+
+        &:hover .name {
+          color: $hover-color;
+        }
+
+        .photo {
+          width: 100%;
+          height: 275px;
+        }
       }
     }
   }
+
   .performance-pagination {
     display: flex;
     justify-content: center;
@@ -143,12 +149,14 @@
 }
 
 @media (min-width: 770px) and (max-width: 991.98px) {
+
   .preview .performance-poster, .preview .performance-list {
     height: 180px;
   }
 }
 
 @media (min-width: 100px) and (max-width: 769.98px) {
+
   .preview {
     display: block;
     max-height: 1000px;
