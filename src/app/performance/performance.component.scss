@@ -91,24 +91,28 @@
     li {
       border: 1px solid $light-gray;
       margin: 5px;
+      border-radius: 5px;
+      overflow: hidden;
 
     .item {
       text-decoration: none;
       width: 200px;
       height: 300px;
       display: inline-block;
-      margin: 5px;
+      //margin: 5px;
       text-align: center;
       cursor: pointer;
-      color: $primary-color;
-      &:hover {
+      &:hover .name {
         color: $hover-color;
       }
       .photo {
         width: 100%;
         height: 275px;
       }
-
+      .name {
+        color: $primary-color;
+        background: #f8f5f5;
+      }
     }
     }
   }
