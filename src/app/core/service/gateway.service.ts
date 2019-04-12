@@ -16,6 +16,7 @@ import { Performance } from '../model/Performance';
 export class GatewayService {
   readonly performanceListUrl = 'performances.json';
   readonly historiesListUrl = 'histories.json';
+  readonly performanceEventsListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
   protected httpOptions = {
     headers: new HttpHeaders(),
@@ -54,6 +55,16 @@ export class GatewayService {
         catchError(this.handleError('get list of Histories', new HistoryListResponse()))
       );
   }
+
+  getPerformanceEvents(
+    fromDate: Date = new Date(),
+    limit: string = 'all',
+    performance: string = 'korolieva-zagublienikh-g-udzikiv',
+    locale: string = 'uk'
+  ): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
+      params: { fromDate: fromDate.toString(), limit, performance, locale }
+    });
 
   /* tslint:disable:no-console */
 

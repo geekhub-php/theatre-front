@@ -1,0 +1,49 @@
+.wiget-list {
+    list-style: none;
+    padding: 0;
+
+    .widget-item {
+        display: flex;
+        align-items: center;
+        background-color: #4f4f4f;
+
+        .widget-date {
+            width: 75px;
+            text-align: center;
+
+            .week {
+                font-family: "robotolight";
+                color: #717171;
+                font-size: 18px;
+            }
+
+            .day {
+                font-family: "robotothin" !important;
+                font-size: 30px;
+                color: #fff;
+                margin: -12px 0;
+            }
+
+            .month {
+                font-family: "robotolight";
+                color: #717171;
+                font-size: 18px;
+            }
+        }
+
+        .widget-date p {
+            margin: 0;
+        }
+
+        .widget-about {
+            width: 160px;
+        }
+
+        .widget-about .widget-heading {
+            font-family: "robotothin";
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 0px;
+        }
+    }
+}

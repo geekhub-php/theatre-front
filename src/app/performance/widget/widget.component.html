@@ -1,3 +1,14 @@
 <div class="wiget">
-  
+  <ul class="wiget-list">
+    <li class="widget-item" *ngFor="let item of listEvents">
+      <div class="widget-date">
+        <p class="week">{{ item.date_time | date:'E' }}</p>
+        <p class="day">{{ item.date_time | date:'dd' }}</p>
+        <p class="month">{{ item.date_time | date:'LLLL' }}</p>
+      </div>
+      <div class="widget-about">
+        <h3 class="widget-heading">{{item.performance.title}}</h3>
+      </div>
+    </li>
+  </ul>
 </div>

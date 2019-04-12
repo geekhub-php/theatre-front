@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GatewayService } from '../../core/service/gateway.service';
 
 @Component({
   selector: 'app-widget',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./widget.component.scss']
 })
 export class WidgetComponent implements OnInit {
+  listEvents: Array<any> = [];
 
-  constructor() { }
+  constructor(private gateway: GatewayService) { }
 
   ngOnInit() {
+    this.gateway.getPerformanceEvents().subscribe(res => {
+      this.listEvents = res.performance_events;
+    });
   }
-
 }
