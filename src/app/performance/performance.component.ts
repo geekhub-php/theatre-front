@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
 import { Performance } from '../core/model/Performance';
 import { ActivatedRoute } from '@angular/router';
-import { Employee } from '../core/model/Employee';
-import { EmployeesListResponse } from '../core/model/EmoloyeeListResponse';
-import { PerformanceListResponse } from '../core/model/PerformanceListResponse';
+
 
 @Component({
   selector: 'app-performance',
@@ -14,9 +12,8 @@ import { PerformanceListResponse } from '../core/model/PerformanceListResponse';
 export class PerformanceComponent implements OnInit {
   showNavigationArrows = true;
   performance: Performance;
-  test;
   slug: string;
-  employees;
+  employees  ;
 
 
   images = ['http://api.theatre.pp.ua/uploads/slider/0001/01/thumb_248_slider_slider.jpeg',
@@ -39,9 +36,7 @@ export class PerformanceComponent implements OnInit {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
-      this.test = res;
-      console.dir(performance);
-      console.dir(this.test);
+      console.dir(this.performance);
     });
   }
 

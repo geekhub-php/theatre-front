@@ -1,7 +1,6 @@
 <div class="container">
   <h2 class="page-title">Спектакль</h2>
-  <!--<h2 class="page-title"> {{performance.title}} </h2>-->
-  <!--<h2 class="page-title"> {{test.body.title}} </h2>-->
+  <h2 class="page-title"> {{performance.title}} </h2>
   <!--  type: "казка" -->
   <section class="preview">
     <div class="performance-poster">
@@ -58,7 +57,7 @@
       <ngb-tab>
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
-
+        <div [innerHtml]="performance.description"></div>
         </ng-template>
       </ngb-tab>
 
