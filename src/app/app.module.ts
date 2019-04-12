@@ -3,13 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { NewsListModule } from './news-list/news-list.module';
 
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -27,7 +26,9 @@ import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
-
+import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,11 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
     CoreModule,
     BrowserAnimationsModule,
     HomePageModule,
-    NewsListModule
+    NewsListModule,
+    NgbModule,
+    StripHtmlModule,
+    InfiniteScrollModule,
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
