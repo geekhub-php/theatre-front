@@ -13,14 +13,11 @@ export class PerformanceComponent implements OnInit {
   showNavigationArrows = true;
   performance: Performance;
   slug: string;
-  employees  ;
-
-
-  images = ['http://api.theatre.pp.ua/uploads/slider/0001/01/thumb_248_slider_slider.jpeg',
-    'http://api.theatre.pp.ua/uploads/slider/0001/01/thumb_248_slider_slider.jpeg'];
+  employees;
+  sliderImg;
+  images = [];
 
   /**/
-
   constructor(
     private gateway: GatewayService,
     private router: ActivatedRoute
@@ -32,20 +29,28 @@ export class PerformanceComponent implements OnInit {
     this.getRoles();
   }
 
+
   getPerformanceBySlug() {
     const slug = this.router.snapshot.paramMap.get('slug');
+    let temp;
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
-      console.dir(this.performance);
+      temp = this.performance.gallery;
+      this.getSliderImages(temp, this.images);
     });
   }
 
   getRoles() {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateway.getRoles(slug).subscribe((res) => {
-      console.dir(res);
       this.employees = res;
     });
+  }
+
+  getSliderImages(items, out) {
+    for (let i = 0; i < items.length; i++) {
+      out[i] = items[i].images.performance_big.url;
+    }
   }
 
 }

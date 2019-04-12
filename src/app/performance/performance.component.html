@@ -1,11 +1,10 @@
 <div class="container">
-  <h2 class="page-title">Спектакль</h2>
-  <h2 class="page-title"> {{performance.title}} </h2>
-  <!--  type: "казка" -->
+  <h2 class="page-title"> {{performance?.title}} </h2>
+  <h4 class="page-sub-title">{{performance?.type}}</h4>
   <section class="preview">
     <div class="performance-poster">
       <div class="future-img" *ngIf="performance">
-        <img src="{{ performance.mainPicture.performance_big.url }}" alt="performance.mainPicture.performance_big.alt">
+        <img [src]="performance.mainPicture.performance_big.url" alt="performance.mainPicture.performance_big.alt">
       </div>
     </div>
     <div class="slider">
@@ -13,8 +12,7 @@
 
         <ngb-carousel *ngIf="images">
           <ng-template ngbSlide *ngFor="let image of images">
-            <img [src]="image">
-            <!--alt="Random slide"    приходит -->
+            <img [src]="image" alt="">
           </ng-template>
         </ngb-carousel>
 
