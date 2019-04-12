@@ -12,6 +12,11 @@
       max-width: 100%;
     }
 
+    .active{
+      width: 100%;
+      height: 100%;
+    }
+
     .tickets {
       width: 100%;
       bottom: 8px;
@@ -62,12 +67,20 @@
         padding: 11px;
         background-image: url("../../../assets/images/tick.png");
         background-repeat: no-repeat;
-        .ticket_span{
+        .ticket_h2{
           color: #ffffff;
           font-family: 'robotothin', serif;
           text-align: left;
           font-size: 23px;
-          margin-top: 5px;
+          margin-top: -10px;
+          text-transform: lowercase;
+
+        }
+        .ticket_p{
+          color: #ffffff;
+          font-family: "robotoregular", serif;
+          font-size: 13px;
+          margin: 0;
         }
       }
     }
