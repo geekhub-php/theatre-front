@@ -25,13 +25,13 @@ describe('theatre-front App', () => {
   it('shold navigate to Repertoire', () => {
     page.navigateTo();
     mainMenu.navigateTo('Репертуар');
-    expect(element(by.css('h3')).getText()).toContain('repertoire');
+    expect(element(by.css('h3')).getText()).toContain('Репертуар');
   });
 
   it('shold navigate to News', () => {
     page.navigateTo();
     mainMenu.navigateTo('Новини');
-    expect(element(by.css('h3')).getText()).toContain('news');
+    expect(element(by.css('h3')).getText()).toContain('Новини');
   });
 
   it('shold navigate to About Us', () => {
