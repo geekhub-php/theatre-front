@@ -37,6 +37,7 @@ export class PerformanceComponent implements OnInit {
       this.performance = res.body;
       temp = this.performance.gallery;
       this.getSliderImages(temp, this.images);
+      console.dir(this.images.length);
     });
   }
 
