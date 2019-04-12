@@ -45,6 +45,10 @@ export class CalendarComponent implements OnInit {
   constructor(private gateway: GatewayService, private modal: NgbModal) {
   }
 
+  getDates(year: number, month: number) {
+    return ['31-03-2019', '04-05-2019'];
+  }
+
   setView(view: CalendarView) {
     this.view = view;
   }
@@ -53,28 +57,14 @@ export class CalendarComponent implements OnInit {
     this.activeDayIsOpen = false;
   }
 
-  static getDates(year: number, month: number) {
-    return ['31-03-2019', '31-12-2019'];
-  }
-
   dayClicked({date, events}: { date: Date; events: Array<PerformanceEvent> }): void {
-   if(isSameMonth(date, this.viewDate)) {
+   if (isSameMonth(date, this.viewDate)) {
       this.viewDate = date;
       (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
       events.length === 0 ? this.activeDayIsOpen = false :
-        this.activeDayIsOpen = true
+        this.activeDayIsOpen = true;
     }
   }
-
-
-      /*f (!isSameMonth(date, this.viewDate)) return;
-     this.viewDate = date;
-     this.activeDayIsOpen = !(
-       (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true)||
-       events.length === 0
-     );
-     this.activeDayIsOpen = true;
-   }*/
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = {event, action};
@@ -82,7 +72,7 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    const [from, to] = CalendarComponent.getDates(this.year, this.month);
+    const [from, to] = this.getDates(this.year, this.month);
     this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
       this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
     });
