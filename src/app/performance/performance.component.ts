@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
 import { Performance } from '../core/model/Performance';
 import { ActivatedRoute } from '@angular/router';
+import { Image } from '../core/model/Image';
 
 
 @Component({
@@ -14,8 +15,7 @@ export class PerformanceComponent implements OnInit {
   performance: Performance;
   slug: string;
   employees;
-  sliderImg;
-  images = [];
+  images: Array<Image> = [];
 
   /**/
   constructor(
@@ -49,8 +49,7 @@ export class PerformanceComponent implements OnInit {
 
   getSliderImages(items, out) {
     for (let i = 0; i < items.length; i++) {
-      out[i] = items[i].images.performance_big.url;
+      out[i] = items[i].images.performance_big;
     }
   }
-
 }

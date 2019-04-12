@@ -12,7 +12,7 @@
 
         <ngb-carousel *ngIf="images">
           <ng-template ngbSlide *ngFor="let image of images">
-            <img [src]="image" alt="">
+            <img [src]="image.url" [alt]="image.properties.alt" >
           </ng-template>
         </ngb-carousel>
 
@@ -32,8 +32,11 @@
           <ul class="employees-list">
             <li *ngFor="let person of employees">
               <a class="item" href="/persons/{{person.employee.slug}}" >
-              <img src="{{ person.employee.avatar.employee_big.url }}" alt="">
-              <span>{{ person.title}} - {{ person.employee.first_name }} {{ person.employee.last_name}}</span>
+              <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
+                <div class="name">
+              <span>{{ person.title}} </span>
+                <p >{{ person.employee.first_name }} {{ person.employee.last_name}}</p>
+                </div>
               </a>
 
             </li>
