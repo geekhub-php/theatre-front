@@ -38,7 +38,9 @@ CHROME_BIN=/usr/bin/chromium-browser ng test --watch=false
 
 ### Run on Windows
 
-**ToDo**: *write the doc*
+```bash
+ng test --watch=false
+```
 
 ## Running end-to-end tests
 
