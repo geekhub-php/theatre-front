@@ -45,12 +45,14 @@
   overflow: hidden;
 
   .performance-poster, .performance-list {
-    border: 1px solid $hover-color;
-    height: 320px;
     width: 25%;
     box-sizing: border-box;
     margin: 0 10px;
     text-align: center;
+  }
+
+  .performance-list {
+    border: 1px solid $hover-color;
   }
 
   .slider {
@@ -159,8 +161,9 @@
 
   .preview {
     display: block;
-    max-height: 1000px;
     text-align: center;
+    height: auto;
+    max-height: 1000px;
   }
 
   .preview .performance-poster, .preview .performance-list, .preview .slider {
@@ -170,8 +173,12 @@
     width: 100%;
   }
 
-  .preview .slider {
-    width: 100%;
+  .container .preview .slider {
     margin: 10px 0;
+    max-width: 100%;
+  }
+
+  ::ng-deep .carousel {
+    width: auto;
   }
 }
