@@ -40,13 +40,11 @@
 .preview {
   display: flex;
   justify-content: center;
-  height: 320px;
+  height: 315px;
   margin-bottom: 20px;
   overflow: hidden;
 
   .performance-poster, .performance-list {
-    border: 1px solid $hover-color;
-    height: 320px;
     width: 25%;
     box-sizing: border-box;
     margin: 0 10px;
@@ -54,7 +52,7 @@
   }
 
   .slider {
-    max-width: 50%;
+    min-width: 50%;
   }
 }
 
@@ -83,7 +81,6 @@
 
   .employees-list {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     list-style: none;
     margin: 0 auto;
@@ -97,11 +94,9 @@
 
       .item {
         text-decoration: none;
-        width: 200px;
+        width: 225px;
         height: 300px;
         display: inline-block;
-        //margin: 5px;
-
         text-align: center;
         cursor: pointer;
 
@@ -148,11 +143,26 @@
   display: none;
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .preview{
+    height: 300px;
+  }
+
+  .item {
+   width: 215px!important;
+ }
+}
+
 @media (min-width: 770px) and (max-width: 991.98px) {
 
   .preview .performance-poster, .preview .performance-list {
-    height: 180px;
+    height: 250px;
   }
+  .item {
+    width: 210px!important;
+    height: 275px!important;
+  }
+
 }
 
 @media (min-width: 100px) and (max-width: 769.98px) {

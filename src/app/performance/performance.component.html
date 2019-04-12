@@ -8,15 +8,12 @@
       </div>
     </div>
     <div class="slider">
-      <div class="slider1">
-
-        <ngb-carousel *ngIf="images">
-          <ng-template ngbSlide *ngFor="let image of images">
-            <img [src]="image.url" [alt]="image.properties.alt">
-          </ng-template>
-        </ngb-carousel>
-
-      </div>
+      <!--<ngb-carousel *ngIf="images">-->
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let image of images">
+          <img [src]="image.url" [alt]="image.properties.alt">
+        </ng-template>
+      </ngb-carousel>
     </div>
     <div class="performance-list">
       <div class="future-list">performances widget</div>
@@ -26,24 +23,21 @@
   <section class="info">
 
     <ngb-tabset>
-      <ngb-tab title="Актори">
+      <ngb-tab title="Актори" *ngIf="employees.length">
         <ng-template ngbTabContent>
-
           <ul class="employees-list">
             <li *ngFor="let person of employees">
-              <a class="item" href="/persons/{{person.employee.slug}}">
-                <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
+              <a class="item" href="/persons/{{person.employee.slug}}" >
+              <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
                 <div class="name">
-                  <span>{{ person.title}} </span>
-                  <p>{{ person.employee.first_name }} {{ person.employee.last_name}}</p>
+              <span>{{ person.title}} </span>
+                <p >{{ person.employee.first_name }} {{ person.employee.last_name}}</p>
                 </div>
               </a>
-
             </li>
           </ul>
 
-
-          <!-- если актеров больше 8 то тогда  показывать  (*ngIf)  -->
+          <!-- если актеров больше 8 то тогда  показывать -->
           <!-- <nav aria-label="Performance navigation" class="performance-pagination">  &lt;!&ndash;Future pagination&ndash;&gt;
            <ul class="pagination">
            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -58,7 +52,7 @@
       <ngb-tab>
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
-          <div [innerHtml]="performance.description"></div>
+        <div [innerHtml]="performance.description"></div>
         </ng-template>
       </ngb-tab>
 

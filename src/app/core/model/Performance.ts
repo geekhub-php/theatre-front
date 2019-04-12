@@ -7,4 +7,5 @@ export class Performance {
   mainPicture: ImageCollection;
   sliderImage: ImageCollection;
   gallery?: ImageCollection;
+  type?: string;
 }
