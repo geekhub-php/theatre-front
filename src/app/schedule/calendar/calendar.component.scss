@@ -60,3 +60,18 @@ h3 {
     box-shadow: inset 0 0 15px 0 rgba(28, 28, 28, 0.29);
   }
 }
+@media screen and (max-width: 1198px){
+  .btn-switch {
+    margin: 0 180px;
+  }
+}
+@media screen and (max-width: 991px ){
+  .btn-switch {
+    margin: 0 100px;
+  }
+}
+@media screen and (max-width: 770px){
+  .calendar, .content {
+    display: none;
+  }
+}

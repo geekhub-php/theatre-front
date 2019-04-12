@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild, OnInit } from '@angular/core';
-import { addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays } from 'date-fns';
+import { addDays, endOfDay, endOfMonth, isSameDay, isSameMonth, subDays } from 'date-fns';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarEvent, CalendarView } from 'angular-calendar';
 import { Subject } from 'rxjs';
@@ -24,6 +24,8 @@ export class CalendarComponent implements OnInit {
 
   scheduleList: Array<PerformanceEvent>;
 
+  events = this.scheduleList;
+
   viewDate: Date = new Date();
 
   refresh: Subject<any> = new Subject();
@@ -32,9 +34,8 @@ export class CalendarComponent implements OnInit {
 
   loading = true;
 
-   year = 2019;
-
-   month = 4;
+  year = 2019;
+  month = 4;
 
   modalData: {
     action: string;
@@ -44,23 +45,36 @@ export class CalendarComponent implements OnInit {
   constructor(private gateway: GatewayService, private modal: NgbModal) {
   }
 
+  setView(view: CalendarView) {
+    this.view = view;
+  }
+
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
 
-  getDates(year: number, month: number) {
+  static getDates(year: number, month: number) {
     return ['31-03-2019', '31-12-2019'];
   }
 
   dayClicked({date, events}: { date: Date; events: Array<PerformanceEvent> }): void {
-    if (!isSameMonth(date, this.viewDate)) return;
-    this.viewDate = date;
-    this.activeDayIsOpen = !(
-      (isSameDay(this.viewDate, date) && this.activeDayIsOpen === false) ||
-      events.length === 0
-    );
-    this.activeDayIsOpen = true;
+   if(isSameMonth(date, this.viewDate)) {
+      this.viewDate = date;
+      (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+      events.length === 0 ? this.activeDayIsOpen = false :
+        this.activeDayIsOpen = true
+    }
   }
+
+
+      /*f (!isSameMonth(date, this.viewDate)) return;
+     this.viewDate = date;
+     this.activeDayIsOpen = !(
+       (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true)||
+       events.length === 0
+     );
+     this.activeDayIsOpen = true;
+   }*/
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = {event, action};
@@ -68,11 +82,9 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    const [from, to] = this.getDates(this.year, this.month);
+    const [from, to] = CalendarComponent.getDates(this.year, this.month);
     this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
       this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
     });
   }
-
-
 }
