@@ -1,16 +1,39 @@
 @import "../../assets/variables";
 
-div {
+.container {
   font-family: $main-font;
+  outline: 1px solid #000;
 
   h2 {
     font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    outline: 1px solid #000;
+  }
+
+  img {
+    margin-right: 20px;
+  }
+
+  p {
+    outline: 1px solid #000;
   }
 
   .post-date {
     text-align: right;
+    margin-bottom: -20px;
+    outline: 1px solid #000;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .container {
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
   }
 }
