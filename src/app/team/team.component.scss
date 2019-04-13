@@ -28,7 +28,7 @@
 
     .person {
       width: 146px;
-      height: 300px;
+      height: 256px;
       border: 1px solid $light-gray;
       background-color: $light-grayish-red;
       font-size: 12px;
@@ -38,6 +38,7 @@
       border-radius: 5px;
       overflow: hidden;
       position: relative;
+      cursor: pointer;
 
       img {
         width: 100%;
@@ -80,7 +81,7 @@
 
       .person {
         width: 115px !important;
-        height: 235px !important;
+        height: 205px !important;
         font-size: 10px;
 
         h4 {

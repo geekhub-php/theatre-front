@@ -28,7 +28,8 @@ export class PersonComponent implements OnInit {
         image: false,
         thumbnailsRemainingCount: true,
         height: '100px',
-        previewCloseOnEsc: true
+        previewCloseOnEsc: true,
+        previewAnimation: false
       },
       {
         breakpoint: 500,
