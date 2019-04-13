@@ -11,6 +11,7 @@ export class TeamComponent implements OnInit {
   employees: Array<Employee> = [];
   page: number;
   collectionSize: number;
+  inProgress: boolean;
 
   constructor(private httpGatewayService: GatewayService) {}
 
@@ -28,5 +29,7 @@ export class TeamComponent implements OnInit {
 
   onScroll() {
     if (this.employees.length < this.collectionSize) this.getEmployees(this.page + 1);
+    this.inProgress = true;
+    if (this.employees.length === this.collectionSize) this.inProgress = false;
   }
 }

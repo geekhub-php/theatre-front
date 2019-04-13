@@ -5,12 +5,14 @@
   <section class="persons-list"
            infiniteScroll
            [infiniteScrollDistance]="2"
-           [infiniteScrollThrottle]="500"
+           [infiniteScrollThrottle]="1700"
            (scrolled)="onScroll()">
     <div class="person" *ngFor="let person of employees" routerLink="{{ person.slug }}">
       <img src="{{ person.avatar.employee_big.url }}" alt="photo">
       <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
-      <!-- <a routerLink="{{ person.slug }}">Детальніше</a> -->
     </div>
   </section>
+  <div class="spinner-grow text-primary" role="status" *ngIf="inProgress">
+    <span class="sr-only">Loading...</span>
+  </div>
 </div>
