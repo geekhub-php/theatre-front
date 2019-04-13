@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
 import { Employee } from '../core/model/Employee';
 
@@ -11,7 +11,10 @@ export class TeamComponent implements OnInit {
   employees: Array<Employee> = [];
   page: number;
   collectionSize: number;
-  inProgress: boolean;
+
+  @Output() name: EventEmitter<string> = new EventEmitter();
+  @Output() hide: EventEmitter<string> = new EventEmitter();
+
 
   constructor(private httpGatewayService: GatewayService) {}
 
@@ -20,6 +23,7 @@ export class TeamComponent implements OnInit {
   }
 
   getEmployees(page) {
+    this.name.emit('load-team');
     this.httpGatewayService.getEmployees(page).subscribe((res) => {
       this.employees = this.employees.concat(res.body.employees);
       this.collectionSize = res.body.total_count;
@@ -29,7 +33,5 @@ export class TeamComponent implements OnInit {
 
   onScroll() {
     if (this.employees.length < this.collectionSize) this.getEmployees(this.page + 1);
-    this.inProgress = true;
-    if (this.employees.length === this.collectionSize) this.inProgress = false;
   }
 }
