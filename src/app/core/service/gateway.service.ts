@@ -59,12 +59,13 @@ export class GatewayService {
   getPerformanceEvents(
     fromDate: Date = new Date(),
     limit: string = 'all',
-    performance: string = 'korolieva-zagublienikh-g-udzikiv',
-    locale: string = 'uk'
+    locale: string = 'uk',
+    performance?: string
   ): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
-      params: { fromDate: fromDate.toString(), limit, performance, locale }
-    });
+    const params = { fromDate: fromDate.toString(), limit, locale };
+    if (performance) params.performance = performance;
+    return this.http.get<any>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params});
+  }
 
   /* tslint:disable:no-console */
 
