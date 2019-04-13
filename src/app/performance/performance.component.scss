@@ -170,6 +170,23 @@
 }
 
 @media (min-width: 100px) and (max-width: 769.98px) {
+  .item {
+    width: 115px !important;
+    height: 157px !important;
+  }
+
+  .item img {
+    width: 115px !important;
+    height: 157px !important;
+  }
+
+  .item p, .item span {
+    font-size: 15px;
+  }
+
+  .info .employees-list {
+    justify-content: center;
+  }
 
   .preview {
     display: block;

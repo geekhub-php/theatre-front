@@ -23,31 +23,21 @@
 
   <section class="info">
 
+
     <ngb-tabset>
       <ngb-tab title="Актори" *ngIf="roles?.length">
         <ng-template ngbTabContent>
           <ul class="employees-list">
             <li *ngFor="let person of roles">
-              <a class="item" href="/persons/{{person.employee.slug}}" >
+              <a class="item" href="/persons/{{person.employee.slug}}">
               <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
                 <div class="name">
-              <span>{{ person.title}} </span>
-                <p >{{ person.employee.first_name }} {{ person.employee.last_name}}</p>
+              <span>{{ person.title }} </span>
+                <p>{{ person.employee.first_name }} {{ person.employee.last_name }}</p>
                 </div>
               </a>
             </li>
           </ul>
-
-          <!-- если актеров больше 8 то тогда  показывать -->
-          <!-- <nav aria-label="Performance navigation" class="performance-pagination">  &lt;!&ndash;Future pagination&ndash;&gt;
-           <ul class="pagination">
-           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-           <li class="page-item"><a class="page-link" href="#">1</a></li>
-           <li class="page-item"><a class="page-link" href="#">2</a></li>
-           <li class="page-item"><a class="page-link" href="#">3</a></li>
-           <li class="page-item"><a class="page-link" href="#">Next</a></li>
-           </ul>
-           </nav>-->
         </ng-template>
       </ngb-tab>
       <ngb-tab *ngIf="performance">
