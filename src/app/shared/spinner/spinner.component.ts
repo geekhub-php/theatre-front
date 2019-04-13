@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-spinner',
@@ -9,22 +9,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
     `,
   styleUrls: ['./spinner.component.scss']
 })
-export class SpinnerComponent implements OnInit {
+export class SpinnerComponent {
 
-  inProgress: boolean;
+  inProgress = false;
 
-  @Output() show: EventEmitter<string> = new EventEmitter();
-  @Output() hide: EventEmitter<string> = new EventEmitter();
+  @Input() name: string;
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
-  showSpinner() {
-    if (this.inProgress === true) this.show.emit('in progress');
-  }
-  hideSpinner() {
-    if (this.inProgress === false) this.hide.emit('finished');
-  }
 }
