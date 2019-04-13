@@ -38,7 +38,9 @@ export class PerformanceComponent implements OnInit {
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
       temp = this.performance.gallery;
-      this.getSliderImages(temp, this.images);
+      if (temp) {
+        this.getSliderImages(temp, this.images);
+      }
     });
   }
 

@@ -24,7 +24,7 @@
   <section class="info">
 
     <ngb-tabset>
-      <ngb-tab title="Актори" *ngIf="roles">
+      <ngb-tab title="Актори" *ngIf="roles?.length">
         <ng-template ngbTabContent>
           <ul class="employees-list">
             <li *ngFor="let person of roles">
