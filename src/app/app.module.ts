@@ -44,8 +44,7 @@ import { StripNbspPipe } from './shared/pipes/strip-nbsp/strip-nbsp.pipe';
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent,
-    StripNbspPipe
+    BoardTrusteesComponent
   ],
   imports: [
     BrowserModule,
