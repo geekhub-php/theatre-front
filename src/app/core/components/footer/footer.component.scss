@@ -1,5 +1,30 @@
 @import "../../../../assets/variables";
 
+:host ::ng-deep {
+
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+
+    .nav-link {
+      padding: 15px;
+      color: $primary-color;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+
+    .active {
+      color: $hover-color;
+    }
+  }
+
+  .forum {
+    display: block !important;
+  }
+}
+
 .footer {
   font-size: 12px;
   margin-top: 50px;
@@ -62,36 +87,12 @@
   }
 }
 
-:host ::ng-deep {
-
-  .navbar-nav {
-    flex-direction: row;
-    justify-content: center;
-
-    .nav-link {
-      padding: 15px;
-      color: $primary-color;
-
-      &:hover {
-        color: $hover-color;
-      }
-    }
-
-    .active {
-      color: $hover-color;
-    }
-  }
-
-  .forum {
-    display: block !important;
-  }
-}
-
 .scrollToTop {
+  z-index: 999;
   font-size: 0;
-  position: fixed;
+  position: absolute;
   bottom: 67px;
-  right: 35px;
+  right: 1%;
   width: 42px;
   height: 42px;
   border-radius: 4px;
@@ -101,13 +102,11 @@
   background-position: 50% 50%;
   border: none;
   outline: none;
+  cursor: pointer;
 
-  &:hover {
-    bottom: 70px;
-    cursor: pointer;
-  }
-
-  &:active {
-    bottom: 60px;
+  @media (max-width: 767.98px) {
+    width: 25px;
+    height: 25px;
+    background-size: 50%;
   }
 }
