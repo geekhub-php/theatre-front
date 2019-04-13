@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -8,6 +8,7 @@ import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
 import { NewsListResponse } from '../model/news/NewsListResponse';
+import { NewsItem } from '../model/news/NewsItem';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,12 @@ export class GatewayService {
   readonly newsListUrl = 'posts.json';
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
+
+  protected httpOptions = {
+    headers: new HttpHeaders(),
+    observe: 'response' as 'body',
+    params: new HttpParams()
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +46,12 @@ export class GatewayService {
     })
     .pipe(
       catchError(this.handleError('get list of Histories', new HistoryListResponse()))
+    );
+  }
+
+  getNewsBySlug(slug): Observable<HttpResponse<NewsItem>> {
+    return this.http.get<HttpResponse<NewsItem>>(
+      `${this.baseUrl}/posts/${slug}`, this.httpOptions
     );
   }
 

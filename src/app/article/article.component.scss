@@ -1,0 +1,16 @@
+@import "../../assets/variables";
+
+div {
+  font-family: $main-font;
+
+  h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .post-date {
+    text-align: right;
+  }
+}
