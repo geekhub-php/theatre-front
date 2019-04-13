@@ -24,10 +24,10 @@
   <section class="info">
 
     <ngb-tabset>
-      <ngb-tab title="Актори" *ngIf="employees.length">
+      <ngb-tab title="Актори" *ngIf="roles">
         <ng-template ngbTabContent>
           <ul class="employees-list">
-            <li *ngFor="let person of employees">
+            <li *ngFor="let person of roles">
               <a class="item" href="/persons/{{person.employee.slug}}" >
               <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
                 <div class="name">
@@ -50,7 +50,7 @@
            </nav>-->
         </ng-template>
       </ngb-tab>
-      <ngb-tab>
+      <ngb-tab *ngIf="performance">
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
         <div [innerHtml]="performance.description"></div>
