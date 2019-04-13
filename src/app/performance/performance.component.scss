@@ -148,13 +148,14 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .preview{
+
+  .preview {
     height: 300px;
   }
 
   .item {
-   width: 215px!important;
- }
+    width: 215px!important;
+  }
 }
 
 @media (min-width: 770px) and (max-width: 991.98px) {
@@ -162,14 +163,15 @@
   .preview .performance-poster, .preview .performance-list {
     height: 250px;
   }
+
   .item {
     width: 210px!important;
     height: 275px!important;
   }
-
 }
 
 @media (min-width: 100px) and (max-width: 769.98px) {
+
   .item {
     width: 115px !important;
     height: 157px !important;
