@@ -21,6 +21,7 @@ import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { SpinnerModule } from './shared/spinner/spinner.module';
 
 
 describe('AppComponent', () => {
@@ -52,7 +53,8 @@ describe('AppComponent', () => {
           RouterTestingModule,
           StripHtmlModule,
           InfiniteScrollModule,
-          NgxGalleryModule
+          NgxGalleryModule,
+          SpinnerModule
       ]
     }).compileComponents();
   }));

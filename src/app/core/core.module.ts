@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SpinnerModule
   ],
   exports: [
     HeaderComponent,
