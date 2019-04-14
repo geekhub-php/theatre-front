@@ -109,6 +109,12 @@
   .container {
     width: 320px !important;
 
+    h2 {
+      display: none;
+    }
+    .persons-photo {
+      display: none;
+    }
     .persons-list {
       width: 248px !important;
     }

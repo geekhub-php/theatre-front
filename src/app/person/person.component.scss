@@ -99,6 +99,8 @@
       margin-right: 12px;
     }
     ngx-gallery ::ng-deep {
+      width: 240px !important;
+
       .ngx-gallery-preview-img-wrapper img {
         max-width: 380px !important;
         border: 7px solid $light-grayish-red;
@@ -123,6 +125,8 @@
       height: 225px;
     }
     ngx-gallery ::ng-deep {
+      width: 240px !important;
+
       .ngx-gallery-preview-img-wrapper img {
         max-width: 250px !important;
       }

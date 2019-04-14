@@ -44,13 +44,15 @@ export class PersonComponent implements OnInit {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gatewayService.getEmployeeBySlug(slug).subscribe((res) => {
       this.person = res.body;
-      this.gallery = res.body.gallery.map(({images}) => {
-        return {
-          small: images.performance_small.url,
-          medium: images.reference.url,
-          big: images.performance_big.url
-        };
-      });
+      if (res.body.gallery) {
+        this.gallery = res.body.gallery.map(({images}) => {
+          return {
+            small: images.performance_small.url,
+            medium: images.reference.url,
+            big: images.performance_big.url
+          };
+        });
+      }
     });
   }
 }
