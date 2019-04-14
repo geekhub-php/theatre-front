@@ -3,6 +3,8 @@ import { GatewayService } from '../core/service/gateway.service';
 import { Performance } from '../core/model/Performance';
 import { ActivatedRoute } from '@angular/router';
 import { Image } from '../core/model/Image';
+import { Employee } from '../core/model/Employee';
+import { Role } from '../core/model/Role';
 
 
 @Component({
@@ -14,7 +16,7 @@ export class PerformanceComponent implements OnInit {
   showNavigationArrows = true;
   performance: Performance;
   slug: string;
-  employees;
+  roles: Array<Role>;
   images: Array<Image> = [];
 
   /**/
@@ -25,25 +27,27 @@ export class PerformanceComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getPerformanceBySlug();
+    const slug = this.router.snapshot.paramMap.get('slug');
+    this.getPerformanceBySlug(slug);
     this.getRoles();
   }
 
 
-  getPerformanceBySlug() {
-    const slug = this.router.snapshot.paramMap.get('slug');
+  getPerformanceBySlug(slug: string) {
     let temp;
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
       temp = this.performance.gallery;
-      this.getSliderImages(temp, this.images);
+      if (temp) {
+        this.getSliderImages(temp, this.images);
+      }
     });
   }
 
   getRoles() {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateway.getRoles(slug).subscribe((res) => {
-      this.employees = res;
+      this.roles = res;
     });
   }
 

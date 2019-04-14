@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
-import { Roles } from '../model/Roles';
+import { Role } from '../model/Role';
 import { Performance } from '../model/Performance';
 
 @Injectable({
@@ -41,10 +41,10 @@ export class GatewayService {
       );
   }
 
-  getRoles(slug): Observable<Roles> {
-    return this.http.get<Roles>(`${this.baseUrl}/performances/${slug}/roles`, {params: {}})
+  getRoles(slug): Observable<Array<Role>> {
+    return this.http.get<Array<Role>>(`${this.baseUrl}/performances/${slug}/roles`, {params: {}})
       .pipe(
-        catchError(this.handleError('get list of Performances', new Roles()))
+        catchError(this.handleError('get list of Performances', [new Role()]))
       );
   }
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {

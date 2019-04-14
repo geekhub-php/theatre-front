@@ -3,7 +3,7 @@ import { Employee } from './Employee';
 import { EmployeesListResponse } from './EmoloyeeListResponse';
 import { ImageCollection } from './ImageCollection';
 
-export class Roles implements Performance {
+export class Role {
   mainPicture: ImageCollection;
   sliderImage: ImageCollection;
   title: string;

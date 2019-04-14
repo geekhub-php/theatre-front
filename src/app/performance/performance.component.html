@@ -8,15 +8,13 @@
       </div>
     </div>
     <div class="slider">
-      <div class="slider1">
 
         <ngb-carousel *ngIf="images">
           <ng-template ngbSlide *ngFor="let image of images">
-            <img [src]="image.url" [alt]="image.properties.alt" >
+            <img [src]="image.url" [alt]="image.properties.alt">
           </ng-template>
         </ngb-carousel>
 
-      </div>
     </div>
     <div class="performance-list">
       <app-widget></app-widget>
@@ -25,37 +23,24 @@
 
   <section class="info">
 
-    <ngb-tabset>
-      <ngb-tab title="Актори">
-        <ng-template ngbTabContent>
 
+    <ngb-tabset>
+      <ngb-tab title="Актори" *ngIf="roles?.length">
+        <ng-template ngbTabContent>
           <ul class="employees-list">
-            <li *ngFor="let person of employees">
-              <a class="item" href="/persons/{{person.employee.slug}}" >
+            <li *ngFor="let person of roles">
+              <a class="item" href="/persons/{{person.employee.slug}}">
               <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
                 <div class="name">
-              <span>{{ person.title}} </span>
-                <p >{{ person.employee.first_name }} {{ person.employee.last_name}}</p>
+              <span>{{ person.title }} </span>
+                <p>{{ person.employee.first_name }} {{ person.employee.last_name }}</p>
                 </div>
               </a>
-
             </li>
           </ul>
-
-
-          <!-- если актеров больше 8 то тогда  показывать  (*ngIf)  -->
-          <!-- <nav aria-label="Performance navigation" class="performance-pagination">  &lt;!&ndash;Future pagination&ndash;&gt;
-           <ul class="pagination">
-           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-           <li class="page-item"><a class="page-link" href="#">1</a></li>
-           <li class="page-item"><a class="page-link" href="#">2</a></li>
-           <li class="page-item"><a class="page-link" href="#">3</a></li>
-           <li class="page-item"><a class="page-link" href="#">Next</a></li>
-           </ul>
-           </nav>-->
         </ng-template>
       </ngb-tab>
-      <ngb-tab>
+      <ngb-tab *ngIf="performance">
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
         <div [innerHtml]="performance.description"></div>
