@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SideMenuComponent } from './side-menu.component';
+import { SpinnerModule } from '../../shared/spinner/spinner.module';
 
 describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
@@ -8,7 +9,8 @@ describe('SideMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SideMenuComponent ]
+      declarations: [ SideMenuComponent ],
+      imports: [ SpinnerModule ]
     })
     .compileComponents();
   }));

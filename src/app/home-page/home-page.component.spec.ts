@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
 import { NewsListModule } from '../news-list/news-list.module';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -14,7 +15,10 @@ describe('HomePageComponent', () => {
       declarations: [ HomePageComponent,
         SideMenuComponent,
         SliderComponent],
-      imports: [ NewsListModule ]
+      imports: [
+        NewsListModule,
+        SpinnerModule
+      ]
     })
     .compileComponents();
   }));

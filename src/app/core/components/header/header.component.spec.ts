@@ -5,6 +5,7 @@ import { MainNavComponent } from '../main-nav/main-nav.component';
 import { HeaderComponent } from './header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { HomePageModule } from '../../../home-page/home-page.module';
+import { SpinnerModule } from '../../../shared/spinner/spinner.module';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -19,7 +20,8 @@ describe('HeaderComponent', () => {
       ],
       imports: [
         HomePageModule,
-        RouterTestingModule
+        RouterTestingModule,
+        SpinnerModule
       ]
     })
     .compileComponents();

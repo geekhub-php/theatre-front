@@ -11,7 +11,6 @@ export class LoaderService {
   }
 
   start(name: string) {
-    console.log('LoaderService.start: '+name);
     this.subject.next({load: true, name});
   }
 
