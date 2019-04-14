@@ -1,9 +1,10 @@
 <div class="container">
-  <div *ngIf="item">
-    <h2>{{item.title}}</h2>
+  <div class="row" *ngIf="item">
     <img align="left" *ngIf="item.mainPicture.post_big.url" src='{{ item.mainPicture.post_big.url }}'
          alt="news picture">
-    <p>{{item.text | stripNbsp | striphtml:[1500, "..."]}}</p>
+    <h2>{{item.title}}</h2>
+    <div class="ccc"   [innerHtml]=item.text></div>
+    <p>{{item.text}}</p>
     <p class="post-date">{{item.updated_at | date: 'd.MM.yyyy' }}</p>
   </div>
 </div>

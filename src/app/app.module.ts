@@ -28,7 +28,6 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
-import { StripNbspPipe } from './shared/pipes/strip-nbsp/strip-nbsp.pipe';
 
 @NgModule({
   declarations: [

@@ -23,8 +23,6 @@ export class ArticleComponent implements OnInit {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateAway.getNewsBySlug(slug).subscribe((res) => {
       this.item = res.body;
-      console.log(slug);
     });
   }
-
 }
