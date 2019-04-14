@@ -1,6 +1,6 @@
-export type WidgetResType = {
-    fromDate: string 
-    limit: string 
-    locale: string 
-    performance?: string
+export interface WidgetResType {
+    fromDate: string;
+    limit: string;
+    locale: string;
+    performance?: string;
 }
