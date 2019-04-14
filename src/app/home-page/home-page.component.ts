@@ -7,17 +7,10 @@ import { LoaderService } from '../shared/spinner/loader.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  @Output() open: EventEmitter<any> = new EventEmitter(true);
-  constructor(private loaderService: LoaderService) { }
+
+  constructor() { }
 
   ngOnInit() {
   }
 
-  start(name) {
-    this.loaderService.start(name);
-  }
-
-  stop(name: string) {
-    this.loaderService.stop(name);
-  }
 }

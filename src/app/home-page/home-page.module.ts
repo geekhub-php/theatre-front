@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
 import { NewsListModule } from '../news-list/news-list.module';
-import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { SpinnerModule } from '../shared/spinner/spinner.module';
   imports: [
     CommonModule,
     RouterModule,
-    NewsListModule,
-    SpinnerModule
+    NewsListModule
   ],
   exports: [
     SliderComponent,
