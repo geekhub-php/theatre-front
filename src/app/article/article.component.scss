@@ -1,5 +1,12 @@
 @import "../../assets/variables";
 
+:host ::ng-deep .post-text {
+  p {
+    margin-bottom: 0.3rem !important;
+    color: #cd2e2d;
+  }
+}
+
 .container {
 
   .row {
