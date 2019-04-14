@@ -1,21 +1,28 @@
+@import "../../../assets/variables";
+
+.slider-img {
+  position: relative;
+  height: 500px;
+  background: $dark-grayish-red;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    max-width: initial;
+    margin: 0 auto;
+  }
+}
+
 .slider {
+
   .slider-list {
     position: relative;
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
-
-    .slider-img img {
-      display: none;
-      margin: 0 auto;
-      max-height: 100%;
-      max-width: 100%;
-    }
-
-    .active{
-      width: 100%;
-      height: 100%;
-    }
 
     .tickets {
       width: 100%;
@@ -44,13 +51,13 @@
         margin: 0 -1px;
         background-image: url("../../../assets/images/ticket.png");
         background-repeat: no-repeat;
-        color: #ffffff;
-        font-family: 'robotothin', serif;
+        color: #fff;
+        font-family: "robotothin", serif;
         font-size: 24px;
         padding: 0 10px;
         line-height: 1.2;
-
       }
+
       .ticket-active {
         background-image: url("../../../assets/images/orange-ticket.png");
       }
@@ -67,17 +74,18 @@
         padding: 11px;
         background-image: url("../../../assets/images/tick.png");
         background-repeat: no-repeat;
-        .ticket_h2{
-          color: #ffffff;
-          font-family: 'robotothin', serif;
+
+        .ticket_h2 {
+          color: #fff;
+          font-family: "robotothin", serif;
           text-align: left;
           font-size: 23px;
           margin-top: -10px;
           text-transform: lowercase;
-
         }
-        .ticket_p{
-          color: #ffffff;
+
+        .ticket_p {
+          color: #fff;
           font-family: "robotoregular", serif;
           font-size: 13px;
           margin: 0;
@@ -102,12 +110,14 @@
   border-radius: 3px;
   width: 36px;
   height: 36px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
   background-color: #4c4c4c;
+
   &:hover {
     background-color: #e54b2b;
   }
-  .arrow-prev{
+
+  .arrow-prev {
     width: 9px;
     height: 19px;
     background-image: url("../../../assets/images/arrow-left.png");
@@ -115,7 +125,8 @@
     background-size: auto;
     margin: 0 0 0 6px;
   }
-  .arrow-next{
+
+  .arrow-next {
     width: 9px;
     height: 19px;
     background-image: url("../../../assets/images/arrow-right.png");
@@ -127,22 +138,17 @@
 
 
 @media (max-width: 992px) {
+
   .slider-list {
     position: relative;
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
 
-    .slider-img img {
-      display: none;
-      margin: 0 auto;
-      max-height: 100%;
-      max-width: 100%;
-
-    }
     .tickets {
       display: none;
       visibility: hidden;
+
       .data {
         display: none;
 

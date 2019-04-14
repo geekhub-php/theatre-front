@@ -1,10 +1,12 @@
 <div class="slider">
   <div class="slider-list">
-    <div class="slider-img" *ngFor="let item of sliderList">
-      <img *ngIf="item.id"
-           [ngClass]="{'active': item.id === slideId}" class="img"
-           [src]="item.performance.sliderImage.slider_slider.url" alt="pic">
-    </div>
+    <ng-template ngFor let-item [ngForOf]="sliderList">
+      <div *ngIf="item.id === slideId" class="slider-img"
+           [ngClass]="{'active': item.id === slideId}">
+        <img class="img" [src]="item.performance.sliderImage.slider_slider.url" alt="pic">
+      </div>
+    </ng-template>
+
     <div class="tickets">
       <button class="slider-button" (click)="prev()"><div class="arrow-prev"></div></button>
       <div class="data" *ngFor="let item of sliderList; let idx= index">
