@@ -60,8 +60,12 @@ export class GatewayService {
 
   getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
   ): Observable<PerformanceEventResponse> {
-    const params: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
-    if (performance) params.performance = performance;
+    const options: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
+    if (performance) options.performance = performance;
+
+    const params = new HttpParams();
+    Object.keys(options).forEach((key) => params.set(key, options[key]));
+
     return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params})
       .pipe(
         catchError(this.handleError('get list of PerformanceEvent', new PerformanceEventResponse()))
