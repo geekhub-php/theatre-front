@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
 import { Employee } from '../core/model/Employee';
+import { LoaderService } from '../shared/spinner/loader.service';
 
 @Component({
   selector: 'app-team',
@@ -12,18 +13,17 @@ export class TeamComponent implements OnInit {
   page: number;
   collectionSize: number;
 
-  @Output() name: EventEmitter<string> = new EventEmitter();
-  @Output() hide: EventEmitter<string> = new EventEmitter();
-
-
-  constructor(private httpGatewayService: GatewayService) {}
+  constructor(
+    private httpGatewayService: GatewayService,
+    private loaderService: LoaderService
+  ) { }
 
   ngOnInit() {
     this.getEmployees(this.page);
   }
 
   getEmployees(page) {
-    this.name.emit('load-team');
+    this.loaderService.start('load-team');
     this.httpGatewayService.getEmployees(page).subscribe((res) => {
       this.employees = this.employees.concat(res.body.employees);
       this.collectionSize = res.body.total_count;
@@ -33,5 +33,6 @@ export class TeamComponent implements OnInit {
 
   onScroll() {
     if (this.employees.length < this.collectionSize) this.getEmployees(this.page + 1);
+    if (this.employees.length === this.collectionSize) this.loaderService.stop('load-team');
   }
 }
