@@ -62,6 +62,7 @@
   }
 }
 
+<<<<<<< HEAD
 :host ::ng-deep {
 
   .navbar-nav {
@@ -87,11 +88,14 @@
   }
 }
 
+=======
+>>>>>>> develop
 .scrollToTop {
+  z-index: 999;
   font-size: 0;
-  position: fixed;
+  position: absolute;
   bottom: 67px;
-  right: 35px;
+  right: 1%;
   width: 42px;
   height: 42px;
   border-radius: 4px;
@@ -101,13 +105,11 @@
   background-position: 50% 50%;
   border: none;
   outline: none;
+  cursor: pointer;
 
-  &:hover {
-    bottom: 70px;
-    cursor: pointer;
-  }
-
-  &:active {
-    bottom: 60px;
+  @media (max-width: 767.98px) {
+    width: 25px;
+    height: 25px;
+    background-size: 50%;
   }
 }

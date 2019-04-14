@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
     // tslint:disable-next-line:only-arrow-functions
     (function smoothscroll() {
       const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      const temp = 25;
+      const temp = 10;
       if (currentScroll > 0) {
         window.requestAnimationFrame(smoothscroll);
         window.scrollTo(0, currentScroll - (currentScroll / temp));
