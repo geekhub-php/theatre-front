@@ -1,14 +1,34 @@
-<div class="wiget">
-  <ul class="wiget-list">
-    <li class="widget-item" *ngFor="let item of listEvents">
-      <div class="widget-date">
-        <p class="week">{{ item.date_time | date:'E' }}</p>
-        <p class="day">{{ item.date_time | date:'dd' }}</p>
-        <p class="month">{{ item.date_time | date:'LLLL' }}</p>
-      </div>
-      <div class="widget-about">
-        <h3 class="widget-heading">{{item.performance.title}}</h3>
-      </div>
-    </li>
-  </ul>
-</div>
+<ng-container *ngIf="slug !== null; else main">
+  <div class="wiget">
+    <ul class="wiget-list">
+      <li class="widget-item" *ngFor="let item of listEvents">
+        <div class="widget-date">
+          <p class="week">{{ item.date_time | date:'E' }}</p>
+          <p class="day">{{ item.date_time | date:'dd' }}</p>
+          <p class="month">{{ item.date_time | date:'LLLL' }}</p>
+        </div>
+        <div class="widget-about">
+          <h3 class="widget-heading">{{item.performance.title | titlecase}}</h3>
+          <p class="time">{{ item.date_time | date:'hh:mm' }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</ng-container>
+<ng-template #main>
+  <div class="main-wiget">
+    <ul class="wiget-list">
+      <li class="widget-item hover" *ngFor="let item of listEvents" [routerLink]="[ '/performance', item.performance.slug ]">
+        <div class="widget-date">
+            <p class="week">{{ item.date_time | date:'E' }}</p>
+            <p class="day">{{ item.date_time | date:'dd' }}</p>
+            <p class="month">{{ item.date_time | date:'LLLL' }}</p>
+          </div>
+          <div class="widget-about txt-left">
+            <h3 class="widget-heading">{{item.performance.title | titlecase}}</h3>
+            <p class="type">{{ item.performance.type }}</p>
+          </div>
+      </li>
+    </ul>
+  </div>
+</ng-template>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../../core/service/gateway.service';
+import { PerformanceEvent } from '../../core/model/widget/PerformanceEvent';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-widget',
@@ -7,12 +9,15 @@ import { GatewayService } from '../../core/service/gateway.service';
   styleUrls: ['./widget.component.scss']
 })
 export class WidgetComponent implements OnInit {
-  listEvents: Array<any> = [];
+  listEvents: Array<PerformanceEvent> = [];
+  slug: string;
 
-  constructor(private gateway: GatewayService) { }
+  constructor(private gateway: GatewayService, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.gateway.getPerformanceEvents().subscribe(res => {
+    if (this.slug !== null) { this.slug = this.router.snapshot.paramMap.get('slug') } 
+    this.gateway.getPerformanceEvents(this.slug).subscribe(res => {
+      console.log(res.performance_events);
       this.listEvents = res.performance_events;
     });
   }

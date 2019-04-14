@@ -1,33 +1,41 @@
 .wiget-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 
     .widget-item {
+        padding: 6px 0;
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         background-color: #4f4f4f;
+        border-bottom: 1px dashed #373737;
+
+        &:last-child {
+            border-bottom: none;
+        }
 
         .widget-date {
-            width: 75px;
+            padding: 0 14px;
             text-align: center;
+            font-family: "robotolight";
 
             .week {
-                font-family: "robotolight";
                 color: #717171;
                 font-size: 18px;
+                line-height: 18px;
             }
 
             .day {
-                font-family: "robotothin" !important;
                 font-size: 30px;
                 color: #fff;
-                margin: -12px 0;
+                line-height: 32px;
             }
 
             .month {
-                font-family: "robotolight";
                 color: #717171;
-                font-size: 18px;
+                font-size: 14px;
+                line-height: 14px;
             }
         }
 
@@ -36,14 +44,46 @@
         }
 
         .widget-about {
-            width: 160px;
+            flex-grow: 1;
+            text-align: center;
+
+            .time {
+                margin: 5px 0 0 0;
+                font-family: "robotolight";
+                font-size: 12px;
+                color: #fff;
+            }
         }
 
-        .widget-about .widget-heading {
-            font-family: "robotothin";
+        .widget-about h3.widget-heading {
+            font-family: "robotolight";
             font-size: 18px;
             color: #fff;
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
     }
+}
+
+.main-wiget {
+    max-width: 350px;
+}
+
+.widget-item {
+    .widget-about {
+        .type {
+            margin: 0;
+            font-family: "robotolight";
+            font-size: 12px;
+            color: #fff;
+        }
+    }
+}
+
+.hover:hover {
+    background-color: #e64c2b !important;
+    cursor: pointer;
+}
+
+.txt-left {
+    text-align: left !important;
 }

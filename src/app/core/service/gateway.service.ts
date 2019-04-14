@@ -9,6 +9,8 @@ import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
 import { Role } from '../model/Role';
 import { Performance } from '../model/Performance';
+import { WidgetResType } from '../model/widget/WidgetResType';
+import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -56,15 +58,14 @@ export class GatewayService {
       );
   }
 
-  getPerformanceEvents(
-    fromDate: Date = new Date(),
-    limit: string = 'all',
-    locale: string = 'uk',
-    performance?: string
-  ): Observable<any> {
-    const params = { fromDate: fromDate.toString(), limit, locale };
+  getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
+  ): Observable<PerformanceEventResponse> {
+    const params: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
     if (performance) params.performance = performance;
-    return this.http.get<any>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params});
+    return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params})
+      .pipe(
+        catchError(this.handleError('get list of PerformanceEvent', new PerformanceEventResponse()))
+      );
   }
 
   /* tslint:disable:no-console */
