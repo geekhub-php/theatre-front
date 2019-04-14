@@ -6,6 +6,15 @@
     </div>
     <div class="col-lg-9 order-lg-2 order-1">
       <h3>Новини</h3>
+      <app-spinner name="team-load"></app-spinner>
+      <button (click)="start('team-load')">Start Load Team</button>
+      <button (click)="stop('team-load')">Start Load Team</button><br>
+      <button (click)="start('loader-2')">Start Load Team</button>
+      <button (click)="stop('loader-2')">Start Load Team</button><br>
+      <button (click)="start('loader-3')">Start Load Team</button>
+      <button (click)="stop('loader-3')">Start Load Team</button><br>
+      <button (click)="start('loader-4')">Start Load Team</button>
+      <button (click)="stop('loader-4')">Start Load Team</button><br>
       <app-news-list></app-news-list>
     </div>
   </div>
