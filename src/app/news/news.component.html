@@ -2,6 +2,13 @@
   <h2>Новини</h2>
   <app-spinner name="news"></app-spinner>
   <div *ngIf="listPost.length">
-    <app-news-item *ngFor="let item of listPost" [item]="item"></app-news-item>
+    <app-news-item *ngFor="let item of listPost | paginate: { itemsPerPage: 5, currentPage: p }" [item]="item">
+    </app-news-item>
+    <pagination-controls class="myPagination"
+                         previousLabel=""
+                         nextLabel=""
+                         (pageChange)="p = $event"
+                         maxSize="4">
+    </pagination-controls>
   </div>
 </div>
