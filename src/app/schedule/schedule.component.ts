@@ -18,11 +18,12 @@ export class ScheduleComponent implements OnInit {
 
   date = new Date('April 15, 2019');
 
-  year = this.date.setFullYear(2019);
+   //year = this.date.setFullYear(2019);
+   //dayOfWeek = (this.date.getDay() + 6)% 7;
 
   month = 4;
 
-  dayOfWeek = (this.date.getDay() + 6)% 7;
+  year = 2019;
 
   constructor(private datePipe: DatePipe, private gateway: GatewayService, private loaderService: LoaderService) { }
 
@@ -32,7 +33,6 @@ export class ScheduleComponent implements OnInit {
 
   prevMonth() {
     this.date.setMonth(this.date.getMonth() - 1);
-    return
   }
 
   nextMonth() {
