@@ -6,4 +6,6 @@ export class Performance {
   description: string;
   mainPicture: ImageCollection;
   sliderImage: ImageCollection;
+  gallery?: ImageCollection;
+  type?: string;
 }

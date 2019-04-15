@@ -1,0 +1,215 @@
+@import "../../assets/variables";
+
+::ng-deep .carousel-control-prev .sr-only, ::ng-deep .carousel-control-next .sr-only {
+  display: none;
+}
+
+::ng-deep .tab-pane {
+  border-left: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+  padding: 10px;
+  text-align: center;
+}
+
+::ng-deep .info .nav-link {
+  color: $dark-grayish-red;
+  border-color: $light-gray;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+::ng-deep .info .nav-tabs, ::ng-deep .info .nav-tabs .nav-link.active {
+  border-color: $light-gray;
+}
+
+.page-title {
+  color: $hover-color;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.page-sub-title {
+  color: $hover-color;
+  font-size: 16px;
+  text-align: center;
+  margin: 10px 0 25px;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  height: 315px;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  .performance-poster, .performance-list {
+    width: 25%;
+    box-sizing: border-box;
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .performance-list {
+    border: 1px solid $hover-color;
+  }
+
+  .slider {
+    min-width: 50%;
+  }
+}
+
+.info {
+  margin-bottom: 100px;
+
+  .nav-info {
+    margin-top: 20px;
+    margin-bottom: -2px;
+    box-sizing: border-box;
+
+    .nav-item {
+      display: inline-block;
+      padding: 5px 40px;
+      margin: 15px 0 0;
+      border: 1px solid $light-gray;
+      border-bottom: none;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .hidden-item {
+      border-bottom: 1px solid $light-gray;
+    }
+  }
+
+  .employees-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      border: 1px solid $light-gray;
+      margin: 5px;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .item {
+        text-decoration: none;
+        width: 225px;
+        height: 300px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+
+        .name {
+          color: $primary-color;
+          background: #f8f5f5;
+        }
+
+        &:hover .name {
+          color: $hover-color;
+        }
+
+        .photo {
+          width: 100%;
+          height: 275px;
+        }
+      }
+    }
+  }
+
+  .performance-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .performances {
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid $light-gray;
+    border-bottom: none;
+  }
+
+  .press {
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid $light-gray;
+    border-bottom: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+  .preview {
+    height: 300px;
+  }
+
+  .item {
+    width: 215px!important;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 991.98px) {
+
+  .preview .performance-poster, .preview .performance-list {
+    height: 250px;
+  }
+
+  .item {
+    width: 210px!important;
+    height: 275px!important;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 769.98px) {
+
+  .item {
+    width: 115px !important;
+    height: 157px !important;
+  }
+
+  .item img {
+    width: 115px !important;
+    height: 157px !important;
+  }
+
+  .item p, .item span {
+    font-size: 15px;
+  }
+
+  .info .employees-list {
+    justify-content: center;
+  }
+
+  .preview {
+    display: block;
+    text-align: center;
+    height: auto;
+    max-height: 1000px;
+  }
+
+  .preview .performance-poster, .preview .performance-list, .preview .slider {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 500px;
+    width: 100%;
+  }
+
+  .container .preview .slider {
+    margin: 10px 0;
+    max-width: 100%;
+  }
+
+  ::ng-deep .carousel {
+    width: auto;
+  }
+}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -7,31 +7,69 @@ import { catchError } from 'rxjs/operators';
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
+import { Role } from '../model/Role';
+import { Performance } from '../model/Performance';
+import { WidgetResType } from '../model/widget/WidgetResType';
+import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
-  readonly performanceListUrl = '/performances.json';
+  readonly performanceListUrl = 'performances.json';
   readonly historiesListUrl = 'histories.json';
+  readonly performanceEventsListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
+  protected httpOptions = {
+    headers: new HttpHeaders(),
+    observe: 'response' as 'body',
+    params: new HttpParams()
+  };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, { params: {limit: '100'} })
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
       .pipe(
-          catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
+        catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
   }
 
+  getPerformanceBySlug(slug): Observable<HttpResponse<Performance>> {
+    return this.http.get<HttpResponse<Performance>>(`${this.baseUrl}/performances/${slug}`, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('get list of Performances', new HttpResponse<Performance>()))
+      );
+  }
+
+  getRoles(slug): Observable<Array<Role>> {
+    return this.http.get<Array<Role>>(`${this.baseUrl}/performances/${slug}/roles`, {params: {}})
+      .pipe(
+        catchError(this.handleError('get list of Performances', [new Role()]))
+      );
+  }
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.historiesListUrl}`, {
       params: {limit, page, locale} // params: {limit: limit, page: page, locale: locale}
     })
-    .pipe(
-      catchError(this.handleError('get list of Histories', new HistoryListResponse()))
-    );
+      .pipe(
+        catchError(this.handleError('get list of Histories', new HistoryListResponse()))
+      );
+  }
+
+  getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
+  ): Observable<PerformanceEventResponse> {
+    const options: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
+    if (performance) options.performance = performance;
+
+    const params = new HttpParams();
+    Object.keys(options).forEach((key) => params.set(key, options[key]));
+
+    return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params})
+      .pipe(
+        catchError(this.handleError('get list of PerformanceEvent', new PerformanceEventResponse()))
+      );
   }
 
   /* tslint:disable:no-console */

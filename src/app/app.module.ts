@@ -29,6 +29,7 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { WidgetComponent } from './performance/widget/widget.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 
@@ -46,7 +47,8 @@ import { SpinnerModule } from './shared/spinner/spinner.module';
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent
+    BoardTrusteesComponent,
+    WidgetComponent
   ],
   imports: [
     BrowserModule,

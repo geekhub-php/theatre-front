@@ -19,6 +19,7 @@ import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
@@ -43,18 +44,18 @@ describe('AppComponent', () => {
         BoardTrusteesComponent
       ],
       providers: [
-          {provide: APP_BASE_HREF, useValue: '/'}
+        {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
-          AppRoutingModule,
-          CoreModule,
-          HomePageModule,
-          NewsListModule,
-          RouterTestingModule,
-          StripHtmlModule,
-          InfiniteScrollModule,
-          NgxGalleryModule,
-          SpinnerModule
+        AppRoutingModule,
+        CoreModule,
+        HomePageModule,
+        NewsListModule,
+        RouterTestingModule,
+        StripHtmlModule,
+        InfiniteScrollModule,
+        NgxGalleryModule,
+        SpinnerModule
       ]
     }).compileComponents();
   }));
