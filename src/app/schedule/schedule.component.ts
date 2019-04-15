@@ -18,8 +18,8 @@ export class ScheduleComponent implements OnInit {
 
   date = new Date('April 15, 2019');
 
-   //year = this.date.setFullYear(2019);
-   //dayOfWeek = (this.date.getDay() + 6)% 7;
+   // year = this.date.setFullYear(2019);
+   // dayOfWeek = (this.date.getDay() + 6)% 7;
 
   month = 4;
 
