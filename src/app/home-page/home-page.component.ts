@@ -1,3 +1,5 @@
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { LoaderService } from '../shared/spinner/loader.service';
 import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
 import { NewsItem } from '../core/model/news/NewsItem';
