@@ -4,6 +4,7 @@ import { GatewayService } from '../core/service/gateway.service';
 import { ScheduleListResponse } from '../core/model/schedule/ScheduleListResponse';
 import { plainToClass } from 'class-transformer';
 import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
+import { LoaderService } from '../shared/spinner/loader.service';
 
 @Component({
   selector: 'app-schedule',
@@ -17,7 +18,7 @@ export class ScheduleComponent implements OnInit {
   year = 2019;
   month = 4;
 
-  constructor(private datePipe: DatePipe, private gateway: GatewayService) { }
+  constructor(private datePipe: DatePipe, private gateway: GatewayService, private loaderService: LoaderService) { }
 
   transformDate(date) {
     return this.datePipe.transform(date, 'MM-yyyy');
@@ -40,10 +41,14 @@ export class ScheduleComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loaderService.start('poster');
     const [from, to] = this.getDates(this.year, this.month);
-    this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
-      this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
-      console.log(this.scheduleList);
-    });
+    this.gateway.getSchedulesList(from, to).subscribe(
+      (res: ScheduleListResponse) => {
+        this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
+        this.loaderService.stop('poster');
+      },
+      err => this.loaderService.stop('poster')
+    );
   }
 }

@@ -9,6 +9,7 @@
     <button class="btn btn-next" (click)="nextMonth">Наступний</button>
   </div>
   <div class="col-md-8 mobile">
+    <app-spinner name="poster"></app-spinner>
     <section class="schedule-event" *ngFor="let event of scheduleList">
       <div class="schedule-body">
         <a class="schedule-link" href="/performance">
