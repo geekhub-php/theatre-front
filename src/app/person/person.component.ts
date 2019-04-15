@@ -50,14 +50,10 @@ export class PersonComponent implements OnInit {
           const imagesObj = {};
 
           if (images.hasOwnProperty('employee_big')) imagesObj['big'] = images.employee_big.url;
-          if (images.hasOwnProperty('reference')) imagesObj['medium'] = images.reference.url;
           if (images.hasOwnProperty('employee_small')) imagesObj['small'] = images.employee_small.url;
-
-          // return {
-          //   small: images.performance_small.url,
-          //   medium: images.reference.url,
-          //   big: images.performance_big.url
-          // };
+          if (images.hasOwnProperty('performance_big')) imagesObj['big'] = images.performance_big.url;
+          if (images.hasOwnProperty('performance_small')) imagesObj['small'] = images.performance_small.url;
+          if (images.hasOwnProperty('reference')) imagesObj['medium'] = images.reference.url;
 
           return imagesObj;
         });
