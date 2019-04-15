@@ -1,13 +1,15 @@
 <div class="container">
   <h2 class="page-title">Репертуар</h2>
   <ul class="perfomances">
-    <li class="perfomance-item" *ngFor="let item of perfomances" [routerLink]="'performance/' + item.slug">
+    <li class="perfomance-item" *ngFor="let item of perfomances" [routerLink]="['', 'performance', item.slug]">
       <img class="image" [src]="item.mainPicture.performance_big.url"
            [alt]="item.mainPicture.performance_small.properties.alt">
       <h3 class="perfomance-title">
-        <a [routerLink]="'performance/' + item.slug">{{item.title}}</a>
+        <a [routerLink]="['', 'performance', item.slug]">{{item.title}}</a>
       </h3>
     </li>
+    <li class="perfomance-item blank-item"></li>
+    <li class="perfomance-item blank-item"></li>
+    <li class="perfomance-item blank-item"></li>
   </ul>
 </div>
-
