@@ -22,6 +22,7 @@ import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { SpinnerModule } from './shared/spinner/spinner.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -45,6 +46,7 @@ describe('AppComponent', () => {
         {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
+<<<<<<< HEAD
         AppRoutingModule,
         CoreModule,
         HomePageModule,
@@ -54,6 +56,17 @@ describe('AppComponent', () => {
         StripHtmlModule,
         InfiniteScrollModule,
         NgxGalleryModule
+=======
+          AppRoutingModule,
+          CoreModule,
+          HomePageModule,
+          NewsListModule,
+          RouterTestingModule,
+          StripHtmlModule,
+          InfiniteScrollModule,
+          NgxGalleryModule,
+          SpinnerModule
+>>>>>>> develop
       ]
     }).compileComponents();
   }));
