@@ -54,5 +54,4 @@ export class ScheduleComponent implements OnInit {
       this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
     });
   }
-
 }
