@@ -16,9 +16,8 @@ describe('SideMenuComponent', () => {
       imports: [
         HttpClientModule,
         RouterModule,
-        RouterTestingModule],
-      declarations: [ SideMenuComponent ],
-      imports: [ SpinnerModule ]
+        RouterTestingModule,
+        SpinnerModule]
     })
       .compileComponents();
   }));

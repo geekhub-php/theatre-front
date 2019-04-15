@@ -14,7 +14,8 @@ describe('HomePageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePageComponent,
+      declarations: [
+        HomePageComponent,
         SideMenuComponent,
         SliderComponent,
         NewsItemComponent
