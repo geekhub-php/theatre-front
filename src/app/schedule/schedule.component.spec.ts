@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScheduleComponent } from './schedule.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 describe('ScheduleComponent', () => {
   let component: ScheduleComponent;
@@ -10,7 +11,10 @@ describe('ScheduleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ScheduleComponent ],
-      imports: [ HttpClientModule ]
+      imports: [
+        HttpClientModule,
+        SpinnerModule
+      ]
     })
     .compileComponents();
   }));
