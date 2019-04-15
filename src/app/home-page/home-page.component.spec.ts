@@ -22,11 +22,11 @@ describe('HomePageComponent', () => {
       imports: [
         HttpClientModule,
         RouterTestingModule,
-        SliderComponent],
-      imports: [
-        NewsListModule,
-        SpinnerModule
-      ]
+      SliderComponent],
+    imports: [
+      NewsListModule,
+      SpinnerModule
+    ]
     })
     .compileComponents();
   }));

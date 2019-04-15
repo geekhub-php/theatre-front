@@ -1,9 +1,10 @@
 @import "../../assets/variables";
 
 :host ::ng-deep .post-text {
+
   p {
-    margin-bottom: 0.3rem !important;
-    color: #cd2e2d;
+    margin-bottom: -3px;
+    color: $dark-grayish-red;
   }
 }
 
@@ -15,80 +16,8 @@
       align-self: center;
     }
 
-    .ccc {
-
-      p {
-        margin-bottom: 0.3rem !important;
-        color: #cd2e2d;
-      }
+    h2 {
+      color: $primary-color;
     }
   }
 }
-
-
-p {
-  margin-top: 200px;
-  margin-bottom: 0 !important;
-  color: #cd2e2d;
-}
-
-
-//.container {
-//  font-family: $main-font;
-//  outline: 1px solid #000;
-//
-//  h2 {
-//    font-size: 22px;
-//    margin-top: 30px;
-//    margin-bottom: 30px;
-//    text-align: center;
-//    outline: 1px solid #000;
-//  }
-//
-//  img {
-//    margin-right: 20px;
-//  }
-//  .ccc{
-//    line-height: 15px;
-//     p{
-//      margin: 0;
-//      padding: 0;
-//      margin-bottom: 1px !important;
-//    }
-//  }
-//
-//  //.row {
-//  //  background: #797777;
-//  //  .text {
-//  //    background: aqua;
-//  //    p{
-//  //      background: #df4a2b;
-//  //      margin: 0;
-//  //      padding: 0;
-//  //      color: #0000ff;
-////
-//  //      b{
-//  //        background: blueviolet;
-//  //      }
-//  //    }
-//  //  }
-//  //}
-//
-//
-//  .post-date {
-//    margin-bottom: -20px;
-//    outline: 1px solid #000;
-//  }
-//}
-//
-//@media (max-width: 576px) {
-//
-//  .container {
-//
-//    h2 {
-//      font-size: 20px;
-//      margin-bottom: 5px;
-//    }
-//  }
-//}
-//
