@@ -6,9 +6,11 @@
         <img class="img" [src]="item.performance.sliderImage.slider_slider.url" alt="pic">
       </div>
     </ng-template>
-
-    <div class="tickets">
+    <div class="buttons">
       <button class="slider-button" (click)="prev()"><div class="arrow-prev"></div></button>
+      <button class="slider-button slider-button-next" (click)="next()"><div class="arrow-next"></div></button>
+    </div>
+    <div class="tickets">
       <div class="data" *ngFor="let item of sliderList; let idx= index">
         <div class="ticket"
              [ngClass]="{'ticket-active ': item.id === slideId}"
@@ -20,7 +22,6 @@
           <p class="ticket_p">Місце проведення: <span>{{item.venue}}</span></p>
         </div>
       </div>
-      <button class="slider-button" (click)="next()"><div class="arrow-next"></div></button>
     </div>
   </div>
 </div>
