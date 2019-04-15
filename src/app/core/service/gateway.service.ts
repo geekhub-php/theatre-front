@@ -11,6 +11,8 @@ import { Role } from '../model/Role';
 import { Performance } from '../model/Performance';
 import { WidgetResType } from '../model/widget/WidgetResType';
 import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
+import { EmployeesListResponse } from '../model/EmployeesListResponse';
+import { Employee } from '../model/Employee';
 
 @Injectable({
   providedIn: 'root'
@@ -26,13 +28,12 @@ export class GatewayService {
     params: new HttpParams()
   };
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, { params: {limit: '100'} })
       .pipe(
-        catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
+          catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
   }
 
@@ -49,6 +50,18 @@ export class GatewayService {
         catchError(this.handleError('get list of Performances', [new Role()]))
       );
   }
+  getEmployees(page): Observable<HttpResponse<EmployeesListResponse>> {
+    return this.http.get<HttpResponse<EmployeesListResponse>>(
+      `${this.baseUrl}/employees?locale=uk&limit=10&page=${page}`, this.httpOptions
+    );
+  }
+
+  getEmployeeBySlug(slug): Observable<HttpResponse<Employee>> {
+    return this.http.get<HttpResponse<Employee>>(
+      `${this.baseUrl}/employees/${slug}`, this.httpOptions
+    );
+  }
+
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.historiesListUrl}`, {
       params: {limit, page, locale} // params: {limit: limit, page: page, locale: locale}

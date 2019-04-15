@@ -1,1 +1,13 @@
-<div class="container"></div>
+<div class="container" *ngIf="person">
+  <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+  <section>
+    <img src="{{ person.avatar.employee_big.url }}" alt="">
+    <div class="about">
+      <p>Посада: {{ person.position }}</p>
+      <p>Біографія:</p>
+      <div class="biography" [innerHtml]="person.biography"></div>
+    </div>
+  </section>
+  <ngx-gallery *ngIf="gallery.length" [options]="galleryOptions" [images]="gallery"></ngx-gallery>
+  <br>
+</div>
