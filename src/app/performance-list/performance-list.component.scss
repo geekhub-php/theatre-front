@@ -1,5 +1,4 @@
 .container {
-
   padding: 0;
 
   .page-title {
@@ -13,16 +12,14 @@
 
   .perfomances {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 0;
     list-style: none;
 
     .perfomance-item {
       height: 230px;
       width: 163px;
-      padding-right: 1px;
       margin-bottom: 20px;
       position: relative;
       cursor: pointer;
@@ -30,10 +27,6 @@
       .image {
         width: 100%;
         max-height: 230px;
-      }
-
-      .image-high {
-        height: 230px;
       }
 
       .perfomance-title {
@@ -60,11 +53,9 @@
       }
     }
 
-    .perfomances::after {
-      content: "";
-      flex: auto;
+    .blank-item {
+      height: 0;
     }
-
   }
 }
 
