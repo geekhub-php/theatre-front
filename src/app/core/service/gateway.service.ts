@@ -63,10 +63,10 @@ export class GatewayService {
     const options: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
     if (performance) options.performance = performance;
 
-    const params = new HttpParams();
-    Object.keys(options).forEach((key) => params.set(key, options[key]));
+    let params = new HttpParams();
+    Object.keys(options).forEach((key) => params = params.set(key, options[key]));
 
-    return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params})
+    return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params: params})
       .pipe(
         catchError(this.handleError('get list of PerformanceEvent', new PerformanceEventResponse()))
       );
