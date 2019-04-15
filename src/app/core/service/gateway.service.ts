@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -31,12 +31,13 @@ export class GatewayService {
     params: new HttpParams()
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, { params: {limit: '100'} })
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
       .pipe(
-          catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
+        catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
   }
 
@@ -53,6 +54,7 @@ export class GatewayService {
         catchError(this.handleError('get list of Performances', [new Role()]))
       );
   }
+
   getEmployees(page): Observable<HttpResponse<EmployeesListResponse>> {
     return this.http.get<HttpResponse<EmployeesListResponse>>(
       `${this.baseUrl}/employees?locale=uk&limit=10&page=${page}`, this.httpOptions
@@ -89,7 +91,7 @@ export class GatewayService {
 
   getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
   ): Observable<PerformanceEventResponse> {
-    const options: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
+    const options: WidgetResType = {fromDate: fromDate.toString(), limit, locale};
     if (performance) options.performance = performance;
 
     const params = new HttpParams();
