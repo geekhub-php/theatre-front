@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { GatewayService } from '../core/service/gateway.service';
+import { PerformanceListResponse } from '../core/model/PerformanceListResponse';
+import { Performance } from '../core/model/Performance';
 
 @Component({
   selector: 'app-performance-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./performance-list.component.scss']
 })
 export class PerformanceListComponent implements OnInit {
+  response: PerformanceListResponse;
+  perfomances: Array<Performance>;
 
-  constructor() { }
+  constructor(private gateway: GatewayService) {
+
+  }
 
   ngOnInit() {
+    this.gateway.getPerformanceList().subscribe((result) => {
+      this.perfomances = result.performances;
+    });
   }
+
 }
