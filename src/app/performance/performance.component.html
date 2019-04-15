@@ -1,37 +1,35 @@
 <div class="container">
-  <app-spinner name="about"></app-spinner>
+  <app-spinner name="identity"></app-spinner>
   <h2 class="page-title"> {{performance?.title}} </h2>
   <h4 class="page-sub-title">{{performance?.type}}</h4>
   <section class="preview">
     <div class="performance-poster">
       <div class="future-img" *ngIf="performance">
-        <img class="mainPicture" [src]="performance.mainPicture.performance_big.url"
-             alt="performance.mainPicture.performance_big.alt">
+        <img class="mainPicture" [src]="performance.mainPicture.performance_big.url" alt="performance.mainPicture.performance_big.alt">
       </div>
     </div>
     <div class="slider">
-      <ngb-carousel *ngIf="images">
-        <ng-template ngbSlide *ngFor="let image of images">
-          <img [src]="image.url" [alt]="image.properties.alt">
-        </ng-template>
-      </ngb-carousel>
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide *ngFor="let image of images">
+            <img [src]="image.url" [alt]="image.properties.alt">
+          </ng-template>
+        </ngb-carousel>
     </div>
     <div class="performance-widget">
-      <!--<app-widget></app-widget>-->
+      <div class="future-list">performances widget</div>
     </div>
   </section>
   <section class="info">
     <ngb-tabset>
       <ngb-tab title="Актори" *ngIf="roles?.length">
         <ng-template ngbTabContent>
-          <app-spinner name="roles"></app-spinner>
           <ul class="employees-list">
             <li *ngFor="let person of roles">
-              <a class="item" href="/test-page//persons/{{person.employee.slug}}">
-                <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
+              <a class="item" href="/persons/{{person.employee.slug}}">
+              <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
                 <div class="name">
-                  <span>{{ person.title }} </span>
-                  <p>{{ person.employee.first_name }} {{ person.employee.last_name }}</p>
+              <span>{{ person.title }} </span>
+                <p>{{ person.employee.first_name }} {{ person.employee.last_name }}</p>
                 </div>
               </a>
             </li>
@@ -41,7 +39,7 @@
       <ngb-tab *ngIf="performance">
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
-          <div [innerHtml]="performance.description"></div>
+        <div [innerHtml]="performance.description"></div>
         </ng-template>
       </ngb-tab>
       <!--    Преса - ждем инфу от сервера когда нибудь

@@ -3,6 +3,7 @@ import { GatewayService } from '../core/service/gateway.service';
 import { Performance } from '../core/model/Performance';
 import { ActivatedRoute } from '@angular/router';
 import { Image } from '../core/model/Image';
+import { Employee } from '../core/model/Employee';
 import { Role } from '../core/model/Role';
 import { LoaderService } from '../shared/spinner/loader.service';
 
@@ -19,9 +20,11 @@ export class PerformanceComponent implements OnInit {
   images: Array<Image> = [];
 
   /**/
-  constructor(private gateway: GatewayService,
-              private router: ActivatedRoute,
-              private loaderService: LoaderService) {
+  constructor(
+    private gateway: GatewayService,
+    private router: ActivatedRoute,
+    private loaderService: LoaderService
+  ) {
   }
 
   ngOnInit() {
@@ -30,6 +33,7 @@ export class PerformanceComponent implements OnInit {
     this.getPerformanceBySlug(slug);
     this.getRoles();
   }
+
 
   getPerformanceBySlug(slug: string) {
     let temp;
