@@ -5,6 +5,8 @@ import { MainNavComponent } from '../main-nav/main-nav.component';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from './footer.component';
 import { HomePageModule } from '../../../home-page/home-page.module';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { SpinnerModule } from '../../../shared/spinner/spinner.module';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -19,7 +21,8 @@ describe('FooterComponent', () => {
       ],
       imports: [
         HomePageModule,
-        RouterTestingModule
+        RouterTestingModule,
+        SpinnerModule
       ]
     })
       .compileComponents();
