@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Image } from '../core/model/Image';
 import { Employee } from '../core/model/Employee';
 import { Role } from '../core/model/Role';
+import {WidgetComponent } from './widget/widget.component';
 
 
 @Component({

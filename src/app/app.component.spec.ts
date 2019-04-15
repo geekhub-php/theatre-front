@@ -52,6 +52,7 @@ describe('AppComponent', () => {
         HomePageModule,
         NewsListModule,
         RouterTestingModule,
+        NgbModule.forRoot(),
         StripHtmlModule,
         InfiniteScrollModule,
         NgxGalleryModule,
