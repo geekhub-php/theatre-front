@@ -22,6 +22,7 @@ import { CoreModule } from './core/core.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 describe('AppComponent', () => {
@@ -54,7 +55,8 @@ describe('AppComponent', () => {
           StripHtmlModule,
           InfiniteScrollModule,
           NgxGalleryModule,
-          SpinnerModule
+        SpinnerModule,
+        NgxPaginationModule
       ]
     }).compileComponents();
   }));
