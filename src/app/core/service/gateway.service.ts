@@ -20,7 +20,7 @@ import { NewsItem } from '../model/news/NewsItem';
   providedIn: 'root'
 })
 export class GatewayService {
-  readonly performanceListUrl = '/performances.json';
+  readonly performanceListUrl = 'performances.json';
   readonly newsListUrl = 'posts.json';
   readonly historiesListUrl = 'histories.json';
   readonly performanceEventsListUrl = 'performanceevents.json';
