@@ -52,8 +52,8 @@ describe('AppComponent', () => {
           RouterTestingModule,
           StripHtmlModule,
           InfiniteScrollModule,
-          NgxGalleryModule,
-          SpinnerModule
+        NgxGalleryModule,
+        SpinnerModule
       ]
     }).compileComponents();
   }));
