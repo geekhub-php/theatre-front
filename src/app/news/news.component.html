@@ -1,6 +1,7 @@
 <div class="container">
+  <h2>Новини</h2>
+  <app-spinner name="news"></app-spinner>
   <div *ngIf="listPost.length">
-    <h2>Новини</h2>
     <app-news-item *ngFor="let item of listPost" [item]="item"></app-news-item>
   </div>
 </div>
