@@ -1,9 +1,13 @@
 <div class="container">
   <div class="row" *ngIf="item">
-    <img align="left" *ngIf="item.mainPicture.post_big.url" src='{{ item.mainPicture.post_big.url }}'
-         alt="news picture">
-    <h2>{{item.title}}</h2>
-    <div class="post-text" [innerHtml]=item.text></div>
-    <p class="post-date">{{item.updated_at | date: 'd.MM.yyyy' }}</p>
+    <div class="col">
+      <div class="img">
+        <img *ngIf="item.mainPicture.post_big.url" src='{{ item.mainPicture.post_big.url }}'
+             alt="news picture">
+      </div>
+      <h2>{{item.title}}</h2>
+      <div class="post-text" [innerHtml]=item.text></div>
+      <p class="post-date">{{item.updated_at | date: 'd.MM.yyyy' }}</p>
+    </div>
   </div>
 </div>
