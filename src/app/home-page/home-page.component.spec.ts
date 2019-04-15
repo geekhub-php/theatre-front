@@ -6,6 +6,7 @@ import { SliderComponent } from './slider/slider.component';
 import { NewsItemComponent } from '../news-item/news-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -18,8 +19,10 @@ describe('HomePageComponent', () => {
         SliderComponent,
         NewsItemComponent],
       imports: [
+        SpinnerModule,
         HttpClientModule,
-        RouterTestingModule]
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));
