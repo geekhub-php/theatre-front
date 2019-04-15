@@ -9,11 +9,10 @@ import { Moment } from 'moment';
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss']
+  styleUrls: ['./schedule.component.scss'],
+  providers: [ DatePipe ]
 })
 export class ScheduleComponent implements OnInit {
-
-  constructor(private datePipe: DatePipe, private gateway: GatewayService) { }
 
   scheduleList: Array<PerformanceEvent>;
 
@@ -26,6 +25,8 @@ export class ScheduleComponent implements OnInit {
   year = 2019;
 
   month = 4;
+
+  constructor(private datePipe: DatePipe, private gateway: GatewayService) { }
 
   transformDate(date) {
     return this.datePipe.transform(date, 'MM-yyyy');

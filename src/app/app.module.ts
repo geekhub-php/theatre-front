@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -63,9 +62,7 @@ import { SpinnerModule } from './shared/spinner/spinner.module';
     NgxGalleryModule,
     SpinnerModule
   ],
-  providers: [
-    DatePipe
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

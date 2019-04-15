@@ -11,7 +11,7 @@
   <div class="col-md-8 mobile">
     <section class="schedule-item" *ngFor="let item of scheduleList">
       <div class="schedule-body">
-        <a class="schedule-link" [routerLink]="['']">
+        <a class="schedule-link" href="/performance">
           <h2 class="schedule-title"> {{item.title}} </h2>
           <p class="schedule-time"> {{item.time}} </p>
           <div class="schedule-main">
