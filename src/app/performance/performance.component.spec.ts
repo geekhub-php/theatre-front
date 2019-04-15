@@ -5,6 +5,7 @@ import { PerformanceComponent } from './performance.component';
 import { GatewayService } from '../core/service/gateway.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 describe('PerformanceComponent', () => {
   let component: PerformanceComponent;
@@ -12,14 +13,15 @@ describe('PerformanceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PerformanceComponent ],
+      declarations: [PerformanceComponent],
       imports: [
         NgbModule.forRoot(),
         HttpClientModule,
-        RouterTestingModule
+        RouterTestingModule,
+        SpinnerModule
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

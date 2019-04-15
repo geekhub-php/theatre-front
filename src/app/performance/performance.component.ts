@@ -3,10 +3,8 @@ import { GatewayService } from '../core/service/gateway.service';
 import { Performance } from '../core/model/Performance';
 import { ActivatedRoute } from '@angular/router';
 import { Image } from '../core/model/Image';
-import { Employee } from '../core/model/Employee';
 import { Role } from '../core/model/Role';
-// import { WidgetComponent } from './widget/widget.component';
-
+import { LoaderService } from '../shared/spinner/loader.service';
 
 @Component({
   selector: 'app-performance',
@@ -21,28 +19,29 @@ export class PerformanceComponent implements OnInit {
   images: Array<Image> = [];
 
   /**/
-  constructor(
-    private gateway: GatewayService,
-    private router: ActivatedRoute
-  ) {
+  constructor(private gateway: GatewayService,
+              private router: ActivatedRoute,
+              private loaderService: LoaderService) {
   }
 
   ngOnInit() {
     const slug = this.router.snapshot.paramMap.get('slug');
+    this.loaderService.start('load');
     this.getPerformanceBySlug(slug);
     this.getRoles();
   }
-
 
   getPerformanceBySlug(slug: string) {
     let temp;
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
+      this.loaderService.stop('load');
       temp = this.performance.gallery;
       if (temp) {
         this.getSliderImages(temp, this.images);
       }
-    });
+    }, err => this.loaderService.stop('load'));
+    this.loaderService.start('load');
   }
 
   getRoles() {
