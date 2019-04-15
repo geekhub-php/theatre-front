@@ -4,6 +4,7 @@ import { SideMenuComponent } from './side-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SpinnerModule } from '../../shared/spinner/spinner.module';
 
 describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
@@ -16,6 +17,8 @@ describe('SideMenuComponent', () => {
         HttpClientModule,
         RouterModule,
         RouterTestingModule]
+      declarations: [ SideMenuComponent ],
+      imports: [ SpinnerModule ]
     })
     .compileComponents();
   }));
