@@ -4,7 +4,6 @@ import { GatewayService } from '../core/service/gateway.service';
 import { ScheduleListResponse } from '../core/model/schedule/ScheduleListResponse';
 import { plainToClass } from 'class-transformer';
 import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
-import { Moment } from 'moment';
 
 @Component({
   selector: 'app-schedule',
@@ -16,15 +15,15 @@ export class ScheduleComponent implements OnInit {
 
   scheduleList: Array<PerformanceEvent>;
 
-  date = new Date();
+  date = new Date('April 15, 2019');
 
-  moment = require('moment');
-
-  eMoment = this.moment(this.date);
+  dayOfWeek = (this.date.getDay() + 6)% 7;
 
   year = 2019;
 
   month = 4;
+
+
 
   constructor(private datePipe: DatePipe, private gateway: GatewayService) { }
 
@@ -33,11 +32,11 @@ export class ScheduleComponent implements OnInit {
   }
 
   prevMonth() {
-    this.eMoment.subtract(1, 'months');
+    this.date.setMonth(this.date.getMonth() - 1);
   }
 
   nextMonth() {
-    this.eMoment.add(1, 'months');
+    this.date.setMonth(this.date.getMonth() + 1);
   }
 
   now() {

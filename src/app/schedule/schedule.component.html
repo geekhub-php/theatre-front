@@ -1,26 +1,27 @@
 <div class="container">
   <div class="col-8 col-md-8 title">
     <h2>Poster for</h2>
-    <h3> {{date | date:'MMMM yyyy': 'uk'}} </h3>
+    <h3> {{date | date:'MMMM yyyy'}} </h3>
   </div>
   <div class="btn-group btn-switch">
-    <button class="btn btn-prev" (click)="prevMonth()">Попереднiй</button>
-    <button class="btn btn-now" (click)="now()">Зараз</button>
-    <button class="btn btn-next" (click)="nextMonth()">Наступний</button>
+    <button class="btn btn-prev" (click)="prevMonth">Попереднiй</button>
+    <button class="btn btn-now" (click)="now">Зараз</button>
+    <button class="btn btn-next" (click)="nextMonth">Наступний</button>
   </div>
   <div class="col-md-8 mobile">
-    <section class="schedule-item" *ngFor="let item of scheduleList">
+    <section class="schedule-event" *ngFor="let event of scheduleList">
       <div class="schedule-body">
         <a class="schedule-link" href="/performance">
-          <h2 class="schedule-title"> {{item.title}} </h2>
-          <p class="schedule-time"> {{item.time}} </p>
+          <h2 class="schedule-title">{{event.performance.title}}</h2>
+          <p class="schedule-time">{{event.time}}</p>
           <div class="schedule-main">
-            <img class="schedule-small_img" [src]='item.image.schedule_small.url' alt="performance picture">
+            <img class="schedule-small_img" [src]='event.performance.mainPicture.performance_small'
+                 alt="{{event.performance.title}}">
           </div>
         </a>
       </div>
       <div class="schedule-day">
-        <span class="day"> {{item.day}} </span>
+        <span class="day">{{event.day}}</span>
       </div>
     </section>
   </div>

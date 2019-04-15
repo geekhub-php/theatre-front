@@ -29,7 +29,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  .schedule-item {
+  .schedule-event {
     position: relative;
     padding: 20px 22px 0 0;
     flex-basis: 50%;
@@ -110,7 +110,7 @@ h3 {
     flex-direction: column;
     max-width: 510px;
     margin: 40px auto 0;
-    .schedule-item {
+    .schedule-event {
       padding: 20px 0 0 0;
       border-left: 3px solid #eee;
       border-right: none;
