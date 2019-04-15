@@ -2,16 +2,14 @@
 
 .slider-img {
   position: relative;
-  height: 500px;
+  height: 700px;
   background: $dark-grayish-red;
+  max-width: 100%;
 
   img {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 100%;
-    max-width: initial;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -136,39 +134,56 @@
   }
 }
 
-
 @media (max-width: 992px) {
-
-  .slider-list {
+  .slider {
     position: relative;
-    margin: 0 auto;
-    max-height: 100%;
+    height: auto;
     max-width: 100%;
 
-    .tickets {
-      display: none;
-      visibility: hidden;
+    .slider-list {
+      position: relative;
+      margin: 0 auto;
+      height: auto;
+      max-width: 100%;
+      .active {
+        display: block !important;
+        height: auto;
+        max-width: 100%;
+      }
+      img {
+        position: relative;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+      }
 
-      .data {
+      .tickets {
         display: none;
+        visibility: hidden;
 
-        .ticket_data {
-          display: none;
-          visibility: hidden;
-        }
-
-        .ticket-active {
+        .data {
           display: none;
 
-          .ticket_span {
+          .ticket_data {
+            display: none;
+            visibility: hidden;
+          }
+
+          .ticket-active {
+            display: none;
+
+            .ticket_span {
+              display: none;
+            }
+          }
+
+          .ticket {
             display: none;
           }
-        }
-
-        .ticket {
-          display: none;
         }
       }
     }
   }
 }
+
+
