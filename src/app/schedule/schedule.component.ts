@@ -12,18 +12,10 @@ import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
   providers: [ DatePipe ]
 })
 export class ScheduleComponent implements OnInit {
-
   scheduleList: Array<PerformanceEvent>;
-
   date = new Date('April 15, 2019');
-
-  dayOfWeek = (this.date.getDay() + 6)% 7;
-
   year = 2019;
-
   month = 4;
-
-
 
   constructor(private datePipe: DatePipe, private gateway: GatewayService) { }
 
@@ -51,6 +43,7 @@ export class ScheduleComponent implements OnInit {
     const [from, to] = this.getDates(this.year, this.month);
     this.gateway.getSchedulesList(from, to).subscribe((res: ScheduleListResponse) => {
       this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
+      console.log(this.scheduleList);
     });
   }
 }
