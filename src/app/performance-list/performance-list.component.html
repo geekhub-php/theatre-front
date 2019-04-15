@@ -3,7 +3,7 @@
   <app-spinner name="about"></app-spinner>
   <ul class="perfomances">
     <li class="perfomance-item" *ngFor="let item of perfomances">
-      <a href="/test-page/performance{{item.slug}}">
+      <a href="/test-page/performance/{{item.slug}}">
         <img class="image" [src]="item.mainPicture.performance_big.url"
              [alt]="item.mainPicture.performance_small.properties.alt">
         <h3 class="perfomance-title">
