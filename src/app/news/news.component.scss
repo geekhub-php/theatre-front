@@ -1,0 +1,10 @@
+@import "../../assets/variables";
+
+h2 {
+  font-size: 25px;
+  font-family: $main-font;
+  color: $hover-color;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}

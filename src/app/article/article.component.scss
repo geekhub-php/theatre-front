@@ -1,0 +1,53 @@
+@import "../../assets/variables";
+
+:host ::ng-deep .post-text {
+
+  p {
+    margin-bottom: -3px;
+    color: $dark-grayish-red;
+  }
+}
+
+.container {
+  font-family: $main-font;
+  margin-bottom: -30px;
+
+  .row {
+
+    .img {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: $primary-color;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    .post-date {
+      color: $dark-grayish-red;
+      text-align: right;
+      margin-top: 15px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+
+  .container {
+
+    .row {
+
+      .img {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+}

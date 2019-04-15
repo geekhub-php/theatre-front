@@ -50,7 +50,7 @@ describe('AppComponent', () => {
         AppRoutingModule,
         CoreModule,
         HomePageModule,
-        NewsListModule,
+        RouterTestingModule,
         RouterTestingModule,
         NgbModule.forRoot(),
         StripHtmlModule,
