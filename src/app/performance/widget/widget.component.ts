@@ -12,12 +12,15 @@ export class WidgetComponent implements OnInit {
   listEvents: Array<PerformanceEvent> = [];
   slug: string;
 
-  constructor(private gateway: GatewayService, private router: ActivatedRoute) { }
+  constructor(private gateway: GatewayService, private router: ActivatedRoute) {
+  }
 
   ngOnInit() {
-    if (this.slug !== null) { this.slug = this.router.snapshot.paramMap.get('slug') } 
+    if (this.slug !== null) {
+      this.slug = this.router.snapshot.paramMap.get('slug');
+    }
     this.gateway.getPerformanceEvents(this.slug).subscribe(res => {
-      console.log(res.performance_events);
+      console.dir(res.performance_events);
       this.listEvents = res.performance_events;
     });
   }
