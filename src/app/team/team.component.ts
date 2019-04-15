@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
-import { Employee } from '../core/model/Employee';
+import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
 
 @Component({

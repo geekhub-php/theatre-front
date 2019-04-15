@@ -1,4 +1,4 @@
-import { ListResponseInterface } from './ListResponseInterface';
+import { ListResponseInterface } from '../ListResponseInterface';
 import { Employee } from './Employee';
 
 export class EmployeesListResponse implements ListResponseInterface {

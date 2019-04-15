@@ -7,8 +7,8 @@ import { catchError } from 'rxjs/operators';
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
-import { EmployeesListResponse } from '../model/EmployeesListResponse';
-import { Employee } from '../model/Employee';
+import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
+import { Employee } from '../model/employee/Employee';
 
 @Injectable({
   providedIn: 'root'
