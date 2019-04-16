@@ -190,6 +190,12 @@
 
 @media (min-width: 576px) and (max-width: 769.98px) {
 
+  .wrap {
+    display: block;
+    width: 630px;
+    margin: 0 auto;
+  }
+
   .item {
     width: 145px !important;
     height: 165px !important;
@@ -202,10 +208,6 @@
 
   .item p, .item span {
     font-size: 15px;
-  }
-
-  .info .employees-list {
-    margin-left: 7px;
   }
 
   .container .preview {
@@ -235,8 +237,13 @@
 
 @media (min-width: 425px) and (max-width: 575.98px) {
 
+  .wrap {
+    display: block;
+    width: 315px;
+    margin: 0 auto;
+  }
+
   .employees-list {
-    padding-left: 26px !important;
 
     .item {
       width: 145px !important;
@@ -271,11 +278,15 @@
   }
 }
 
-
 @media (min-width: 375px) and (max-width: 424.98px) {
 
+  .wrap {
+    display: block;
+    width: 305px;
+    margin: 0 auto;
+  }
+
   .employees-list {
-    padding-left: 12px !important;
 
     .item {
       width: 140px !important;
@@ -310,11 +321,16 @@
   }
 }
 
-
 @media (min-width: 320px) and (max-width: 374.98px) {
 
+  .wrap {
+    display: block;
+    width: 255px;
+    margin: 0 auto;
+  }
+
+
   .employees-list {
-    padding-left: 7px !important;
 
     .item {
       width: 115px !important;

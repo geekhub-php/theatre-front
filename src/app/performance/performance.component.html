@@ -23,6 +23,7 @@
     <ngb-tabset>
       <ngb-tab title="Актори" *ngIf="roles?.length">
         <ng-template ngbTabContent>
+          <div class="wrap">
           <ul class="employees-list">
             <li *ngFor="let person of roles">
               <a  class="item" [routerLink]="['', 'persons', person.employee.slug]">
@@ -34,6 +35,7 @@
               </a>
             </li>
           </ul>
+          </div>
         </ng-template>
       </ngb-tab>
       <ngb-tab *ngIf="performance">
