@@ -1,10 +1,10 @@
 @import "../../assets/variables";
 h2 {
   color: $hover-color;
-  font-family: robotothin,sans-serif;
+  font-family: roboto,sans-serif;
 }
 h3 {
-  font-family: robotothin,sans-serif;
+  font-family: roboto,sans-serif;
 }
 .title {
   margin: 60px auto 0;
@@ -43,8 +43,7 @@ h3 {
     }
     .schedule-body {
       position: relative;
-      width: 250px;
-      height: 230px;
+      max-width: 430px;
       background: $white-color;
       border: 1px solid #d4d4d4;
       border-radius: 2px;
@@ -69,7 +68,7 @@ h3 {
       }
       .schedule-main .schedule-small_img {
         display: block;
-        margin: -15px auto;
+        margin: 0 auto;
         max-height: 300px;
       }
     }
@@ -103,7 +102,6 @@ h3 {
       }
     }
   }
-
 @media screen and (max-width: 900px) {
   .mobile {
     padding-left: 24px;
@@ -145,13 +143,12 @@ h3 {
     display: none;
   }
 }
-
 @media screen and (max-width: 416px) {
   .schedule-title {
     font-size: 16px;
   }
   .btn-switch {
-    margin: 0 34px;
+    margin: 0 80px;
   }
   .btn-now {
     display: none;
@@ -174,7 +171,7 @@ h3 {
 }
 @media screen and (max-width: 576px){
   .btn-switch {
-    margin: 0 34px;
+    margin: 0 56px;
   }
 
 }

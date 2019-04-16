@@ -31,16 +31,19 @@ export class ScheduleComponent implements OnInit {
     return this.datePipe.transform(date, 'MM-yyyy');
   }
 
-  prevMonth() {
+  prevMonth(event: any) {
+    this.date = new Date();
     this.date.setMonth(this.date.getMonth() - 1);
   }
 
-  nextMonth() {
+  nextMonth(event: any) {
+    this.date = new Date();
     this.date.setMonth(this.date.getMonth() + 1);
   }
 
-  now() {
-
+  now(event: any) {
+    this.date = new Date();
+    return this.month;
   }
 
   getDates(year: number, month: number) {
