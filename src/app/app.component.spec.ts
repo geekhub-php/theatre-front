@@ -46,7 +46,6 @@ describe('AppComponent', () => {
         {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
-<<<<<<< HEAD
         AppRoutingModule,
         CoreModule,
         HomePageModule,
@@ -55,18 +54,17 @@ describe('AppComponent', () => {
         NgbModule.forRoot(),
         StripHtmlModule,
         InfiniteScrollModule,
-        NgxGalleryModule
-=======
-          AppRoutingModule,
-          CoreModule,
-          HomePageModule,
-          NewsListModule,
-          RouterTestingModule,
-          StripHtmlModule,
-          InfiniteScrollModule,
-          NgxGalleryModule,
-          SpinnerModule
->>>>>>> develop
+        AppRoutingModule,
+        CoreModule,
+        HomePageModule,
+        NewsListModule,
+        RouterTestingModule,
+        StripHtmlModule,
+        InfiniteScrollModule,
+        NgxGalleryModule,
+        SpinnerModule,
+        NgxGalleryModule,
+        SpinnerModule
       ]
     }).compileComponents();
   }));
