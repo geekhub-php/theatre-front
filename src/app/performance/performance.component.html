@@ -8,8 +8,8 @@
         <img class="mainPicture" [src]="performance.mainPicture.performance_big.url" alt="performance.mainPicture.performance_big.alt">
       </div>
     </div>
-    <div class="slider">
-        <ngb-carousel *ngIf="images">
+    <div class="slider"  *ngIf="images.length">
+        <ngb-carousel>
           <ng-template ngbSlide *ngFor="let image of images">
             <img [src]="image.url" [alt]="image.properties.alt">
           </ng-template>
