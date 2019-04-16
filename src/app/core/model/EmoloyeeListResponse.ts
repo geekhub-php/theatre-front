@@ -1,5 +1,5 @@
 import { ListResponseInterface } from './ListResponseInterface';
-import { Employee } from './Employee';
+import { Employee } from './employee/Employee';
 
 export class EmployeesListResponse implements ListResponseInterface {
   total_count: number;

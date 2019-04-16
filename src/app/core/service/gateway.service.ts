@@ -11,8 +11,8 @@ import { Role } from '../model/Role';
 import { Performance } from '../model/Performance';
 import { WidgetResType } from '../model/widget/WidgetResType';
 import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
-import { EmployeesListResponse } from '../model/EmployeesListResponse';
-import { Employee } from '../model/Employee';
+import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
+import { Employee } from '../model/employee/Employee';
 import { NewsListResponse } from '../model/news/NewsListResponse';
 import { NewsItem } from '../model/news/NewsItem';
 

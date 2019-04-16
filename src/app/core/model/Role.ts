@@ -1,5 +1,5 @@
 import { Performance } from './Performance';
-import { Employee } from './Employee';
+import { Employee } from './employee/Employee';
 import { EmployeesListResponse } from './EmoloyeeListResponse';
 import { ImageCollection } from './ImageCollection';
 
