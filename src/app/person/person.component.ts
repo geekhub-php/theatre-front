@@ -34,9 +34,9 @@ export class PersonComponent implements OnInit {
         previewAnimation: false
       },
       {
-        breakpoint: 500,
+        breakpoint: 770,
         width: '100%',
-        thumbnailsColumns: 2,
+        thumbnailsColumns: 1,
         imageSize: 'cover'
       }
     ];
