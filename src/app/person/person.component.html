@@ -11,7 +11,10 @@
         <div class="biography" [innerHtml]="person.biography"></div>
       </div>
     </section>
-    <ngx-gallery *ngIf="person.gallery" [options]="galleryOptions" [images]="person.gallery"></ngx-gallery>
+    <ngx-gallery *ngIf="person.gallery"
+                 [options]="galleryOptions"
+                 [images]="person.gallery">
+    </ngx-gallery>
     <br>
   </div>
 </div>

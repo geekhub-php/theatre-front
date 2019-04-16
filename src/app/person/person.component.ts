@@ -46,7 +46,7 @@ export class PersonComponent implements OnInit {
     this.loaderService.start('person');
     this.gatewayService.getEmployeeBySlug(slug).subscribe(
       res => {
-        this.person = plainToClass(Employee, res.body);
+        this.person = plainToClass(Employee, res);
         this.loaderService.stop('person');
       },
       err => this.loaderService.stop('person')
