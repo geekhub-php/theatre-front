@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
 import { PerformanceListResponse } from '../core/model/PerformanceListResponse';
 import { Performance } from '../core/model/Performance';
@@ -13,11 +13,17 @@ export class PerformanceListComponent implements OnInit {
   response: PerformanceListResponse;
   perfomances: Array<Performance>;
 
-  constructor(private gateway: GatewayService, private loaderService: LoaderService) {
-
-  }
+  constructor(
+    private changeDetector: ChangeDetectorRef,
+    private gateway: GatewayService,
+    private loaderService: LoaderService
+  ) {}
 
   ngOnInit() {
+    this.gateway.getPerformanceList().subscribe(({ performances }) => {
+      this.perfomances = performances;
+      this.changeDetector.markForCheck();
+    });
     this.loaderService.start('about');
 
     this.gateway.getPerformanceList().subscribe(
@@ -30,4 +36,3 @@ export class PerformanceListComponent implements OnInit {
     this.loaderService.start('about');
   }
 }
-
