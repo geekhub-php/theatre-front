@@ -1,6 +1,6 @@
 <ng-container *ngIf="slug !== null; else main">
-  <div class="wiget">
-    <ul class="wiget-list">
+  <div class="widget">
+    <ul class="widget-list">
       <li class="widget-item" *ngFor="let item of listEvents">
         <div class="widget-date">
           <p class="week">{{ item.date_time | date:'E' }}</p>
@@ -16,8 +16,8 @@
   </div>
 </ng-container>
 <ng-template #main>
-  <div class="main-wiget">
-    <ul class="wiget-list">
+  <div class="widget">
+    <ul class="widget-list">
       <li class="widget-item hover" *ngFor="let item of listEvents" [routerLink]="[ '/performance', item.performance.slug ]">
         <div class="widget-date">
             <p class="week">{{ item.date_time | date:'E' }}</p>
