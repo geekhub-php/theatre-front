@@ -23,6 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
+import { WidgetModule } from './widget/widget.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -51,7 +52,7 @@ describe('AppComponent', () => {
         HomePageModule,
         NewsListModule,
         RouterTestingModule,
-        NgbModule.forRoot(),
+        NgbModule,
         StripHtmlModule,
         InfiniteScrollModule,
         AppRoutingModule,
@@ -64,7 +65,8 @@ describe('AppComponent', () => {
         NgxGalleryModule,
         SpinnerModule,
         NgxGalleryModule,
-        SpinnerModule
+        SpinnerModule,
+        WidgetModule
       ]
     }).compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WidgetComponent } from './widget.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('WidgetComponent', () => {
   let component: WidgetComponent;
@@ -8,7 +10,8 @@ describe('WidgetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WidgetComponent ]
+      declarations: [ WidgetComponent ],
+      imports: [RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
   }));
