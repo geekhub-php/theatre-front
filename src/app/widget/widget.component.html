@@ -18,8 +18,8 @@
 <ng-template #main>
   <div class="widget">
     <ul class="widget-list">
-      <li class="widget-item hover" *ngFor="let item of listEvents" [routerLink]="[ '/performance', item.performance.slug ]">
-        <div class="widget-date">
+      <li class="widget-item hover bg-news-code pdr34px" *ngFor="let item of listEvents" [routerLink]="[ '/performance', item.performance.slug ]">
+        <div class="widget-date bg-line mrg10px">
             <p class="week">{{ item.date_time | date:'E' }}</p>
             <p class="day">{{ item.date_time | date:'dd' }}</p>
             <p class="month">{{ item.date_time | date:'LLLL' }}</p>
