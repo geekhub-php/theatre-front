@@ -13,6 +13,7 @@
     <section class="schedule-event" *ngFor="let event of scheduleList">
       <div class="schedule-body">
         <a class="schedule-link" href="/performance">
+          <!--<a [routerLink]="['', 'performance', item.slug]">{{item.title}}</a>-->
           <h2 class="schedule-title">{{event.performance.title}}</h2>
           <p class="schedule-time">{{event.time}}</p>
           <div class="schedule-main">
