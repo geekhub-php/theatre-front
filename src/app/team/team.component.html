@@ -5,7 +5,7 @@
   <section class="persons-list"
            infiniteScroll
            [infiniteScrollDistance]="2"
-           [infiniteScrollThrottle]="500"
+           [infiniteScrollThrottle]="300"
            (scrolled)="onScroll()">
     <a class="person" *ngFor="let person of employees" routerLink="{{ person.slug }}">
       <img src="{{ person.avatar.employee_big.url }}" alt="photo">
