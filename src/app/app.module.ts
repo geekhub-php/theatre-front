@@ -47,8 +47,7 @@ import { WidgetComponent } from './widget/widget.component';
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent,
-    WidgetComponent
+    BoardTrusteesComponent
   ],
   imports: [
     BrowserModule,
