@@ -159,7 +159,7 @@
   }
 
   .preview .performance-widget {
-    min-width: 240px;
+    width: 240px;
   }
 }
 
@@ -177,15 +177,14 @@
   }
 
   .container .preview .performance-widget {
-    min-width: 240px;
-    margin: 10px;
+    margin: 10px auto;
+    width: 240px;
   }
 
   .preview .slider {
     width: 80%;
     margin: 0 auto;
   }
-
 
   .item {
     width: 155px !important;
@@ -228,9 +227,8 @@
   }
 
   .container .preview .performance-widget {
-    min-width: 240px;
-    text-align: center;
     margin: 10px auto;
+    width: 240px;
   }
 
   .preview .slider {
@@ -272,9 +270,8 @@
   }
 
   .container .preview .performance-widget {
-    margin: 10px;
-    min-width: 240px;
-    text-align: center;
+    margin: 10px auto;
+    width: 240px;
   }
 }
 
@@ -309,9 +306,8 @@
   }
 
   .container .preview .performance-widget {
-    margin: 10px;
-    min-width: 240px;
-    text-align: center;
+    margin: 10px auto;
+    width: 240px;
   }
 
   .preview .slider {
@@ -350,9 +346,8 @@
   }
 
   .container .preview .performance-widget {
-    margin: 10px;
-    min-width: 240px;
-    text-align: center;
+    margin: 10px auto;
+    width: 240px;
   }
 
   .preview .slider {
