@@ -59,7 +59,6 @@ describe('AppComponent', () => {
         AppRoutingModule,
         CoreModule,
         HomePageModule,
-        NewsListModule,
         RouterTestingModule,
         StripHtmlModule,
         InfiniteScrollModule,
