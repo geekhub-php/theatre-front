@@ -5,7 +5,6 @@ import { ScheduleListResponse } from '../core/model/schedule/ScheduleListRespons
 import { plainToClass } from 'class-transformer';
 import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
 import { LoaderService } from '../shared/spinner/loader.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule',
@@ -19,7 +18,6 @@ export class ScheduleComponent implements OnInit {
 
   date = new Date('April 15, 2019');
 
-   // year = this.date.setFullYear(2019);
    // dayOfWeek = (this.date.getDay() + 6)% 7;
 
   month = 4;
@@ -33,13 +31,17 @@ export class ScheduleComponent implements OnInit {
   }
 
   prevMonth(event: any) {
-    this.date = new Date();
+    this.date = new Date(this.date);
     this.date.setMonth(this.date.getMonth() - 1);
+
+    return Date;
   }
 
   nextMonth(event: any) {
-    this.date = new Date();
+    this.date = new Date(this.date);
     this.date.setMonth(this.date.getMonth() + 1);
+
+    return Date;
   }
 
   now(event: any) {
