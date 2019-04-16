@@ -1,5 +1,6 @@
 <div class="container">
   <h2 class="page-title">Репертуар</h2>
+  <app-spinner name="identity"></app-spinner>
   <ul class="perfomances">
     <li class="perfomance-item" *ngFor="let item of perfomances" [routerLink]="['', 'performance', item.slug]">
       <img class="image" [src]="item.mainPicture.performance_big.url"
