@@ -62,34 +62,6 @@
   }
 }
 
-<<<<<<< HEAD
-:host ::ng-deep {
-
-  .navbar-nav {
-    flex-direction: row;
-    justify-content: center;
-
-    .nav-link {
-      padding: 15px;
-      color: $primary-color;
-
-      &:hover {
-        color: $hover-color;
-      }
-    }
-
-    .active {
-      color: $hover-color;
-    }
-  }
-
-  .forum {
-    display: block !important;
-  }
-}
-
-=======
->>>>>>> develop
 .scrollToTop {
   z-index: 999;
   font-size: 0;
