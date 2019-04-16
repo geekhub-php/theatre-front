@@ -22,7 +22,8 @@ describe('NewsComponent', () => {
         RouterTestingModule,
         HttpClientModule,
         SpinnerModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        WidgetModule
       ]
     })
     .compileComponents();
