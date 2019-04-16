@@ -15,7 +15,7 @@ export class WidgetComponent implements OnInit {
   constructor(private gateway: GatewayService, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    if (this.slug !== null) { this.slug = this.router.snapshot.paramMap.get('slug') } 
+    if (this.slug !== null) { this.slug = this.router.snapshot.paramMap.get('slug'); }
     this.gateway.getPerformanceEvents(this.slug).subscribe(res => {
       this.listEvents = res.performance_events;
     });

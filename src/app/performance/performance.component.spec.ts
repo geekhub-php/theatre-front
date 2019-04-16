@@ -5,6 +5,7 @@ import { PerformanceComponent } from './performance.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { WidgetModule } from '../widget/widget.module';
 
 describe('PerformanceComponent', () => {
   let component: PerformanceComponent;
@@ -14,10 +15,11 @@ describe('PerformanceComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PerformanceComponent],
       imports: [
-        NgbModule.forRoot(),
+        NgbModule,
         HttpClientModule,
         RouterTestingModule,
-        SpinnerModule
+        SpinnerModule,
+        WidgetModule
       ]
     })
       .compileComponents();
