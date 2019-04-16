@@ -305,6 +305,7 @@
 
   .container .preview .performance-poster {
     width: 70%;
+    margin: 0 auto;
   }
 
   .container .preview .performance-widget {
@@ -318,7 +319,7 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 374.98px) {
+@media (min-width: 300px) and (max-width: 374.98px) {
 
   .wrap {
     display: block;
