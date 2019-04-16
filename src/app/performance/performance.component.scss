@@ -153,21 +153,23 @@
   }
 }
 
-@media (min-width: 770px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
 
   .container .preview {
     display: flex;
     flex-wrap: wrap;
-    height: 600px;
+    min-height: 600px;
   }
 
   .preview .performance-poster {
     order: 0;
+    width: 50%;
   }
 
   .preview .performance-widget {
     order: 1;
-    min-height: 10px;
+    min-height: 100px;
+    width: 50%;
   }
 
   .preview .slider {
@@ -188,7 +190,7 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 769.98px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
 
   .wrap {
     display: block;
@@ -327,8 +329,8 @@
     display: block;
     width: 255px;
     margin: 0 auto;
-  }
 
+  }
 
   .employees-list {
 
