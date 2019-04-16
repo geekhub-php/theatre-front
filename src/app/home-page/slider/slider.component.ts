@@ -20,7 +20,7 @@ export class SliderComponent implements OnInit {
     });
   }
 
-  next(count: number) {
+  next() {
     if (this.count < this.sliderList.length - 1) {
       this.count++;
     } else {
@@ -29,7 +29,7 @@ export class SliderComponent implements OnInit {
     this.slideId = this.sliderList[this.count].id;
   }
 
-  prev(count: number) {
+  prev() {
     if (this.count < this.sliderList.length) {
       this.count--;
     } if (this.count < 0) {
