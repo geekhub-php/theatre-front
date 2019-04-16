@@ -32,3 +32,12 @@ h2 {
   }
 }
 
+@media (max-width: 572px) {
+
+  :host ::ng-deep .myPagination {
+
+    .ngx-pagination {
+      margin-left: -30px;
+    }
+  }
+}
