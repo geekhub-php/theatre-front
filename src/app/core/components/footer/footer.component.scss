@@ -52,12 +52,15 @@
 
   @media (max-width: 991.98px) {
 
-    .container {
+    .footer-menu {
       display: none;
     }
 
+    .social {
+      margin: 0 auto;
+    }
     .copy {
-      padding-top: 15px;
+      padding-top: 5px;
     }
   }
 }
