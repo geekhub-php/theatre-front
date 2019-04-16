@@ -1,23 +1,26 @@
-import { ImageCollection } from '../ImageCollection';
 import { Type } from 'class-transformer';
 import { INgxGalleryImage } from 'ngx-gallery';
+import { GalleryImageCollection } from './GalleryImageCollection';
 
 export class GalleryImage implements INgxGalleryImage {
   decription: string;
   title: string;
-  @Type(() => ImageCollection)
-  images: ImageCollection;
+  @Type(() => GalleryImageCollection)
+  images: GalleryImageCollection;
 
   get small() {
-    return this.images.performance_small.url;
+    const image = this.images.performance_small || this.images.employee_small;
+    if (image) return image.url;
   }
 
   get medium() {
-    return this.images.performance_big.url;
+    const image = this.images.performance_big || this.images.employee_big;
+    if (image) return image.url;
   }
 
   get big() {
-    return this.images.performance_big.url;
+    const image = this.images.performance_big || this.images.employee_big;
+    if (image) return image.url;
   }
 
   get description() {
