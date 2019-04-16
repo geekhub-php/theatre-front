@@ -46,6 +46,10 @@
     margin-bottom: 20px;
     overflow: hidden;
 
+    .performance-widget {
+      min-width: 240px;
+    }
+
     .performance-poster, .performance-widget {
       width: 25%;
       box-sizing: border-box;
@@ -170,6 +174,7 @@
     order: 1;
     min-height: 100px;
     width: 50%;
+    min-width: 240px;
   }
 
   .preview .slider {
@@ -226,6 +231,7 @@
   .container .preview .performance-widget {
     order: 1;
     width: 35%;
+    min-width: 240px;
   }
 
   .preview .slider {
@@ -273,6 +279,7 @@
     order: 1;
     min-height: 10px;
     margin: 10px;
+    min-width: 240px;
   }
 
   .preview .slider {
@@ -316,6 +323,7 @@
     order: 1;
     min-height: 10px;
     margin: 10px;
+    min-width: 240px;
   }
 
   .preview .slider {
@@ -329,7 +337,6 @@
     display: block;
     width: 255px;
     margin: 0 auto;
-
   }
 
   .employees-list {
@@ -360,6 +367,7 @@
     order: 1;
     min-height: 10px;
     margin: 10px;
+    min-width: 240px;
   }
 
   .preview .slider {
