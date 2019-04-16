@@ -1,10 +1,11 @@
 <div class="container">
   <app-spinner name="person"></app-spinner>
   <div *ngIf="person">
-    <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+    <!-- <h2>{{ person.first_name }} {{ person.last_name }}</h2> -->
     <section>
       <img src="{{ person.avatar.employee_big.url }}" alt="">
       <div class="about">
+        <h2>{{ person.first_name }} {{ person.last_name }}</h2>
         <p>Посада: {{ person.position }}</p>
         <p>Біографія:</p>
         <div class="biography" [innerHtml]="person.biography"></div>

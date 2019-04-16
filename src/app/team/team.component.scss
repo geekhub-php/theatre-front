@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: -9px;
+    // margin-left: -9px;
 
     .person {
       width: 146px;
@@ -59,20 +59,20 @@
 @media screen and (max-width: 768px) {
 
   .container {
-    width: 360px !important;
+    width: 450px !important;
 
     h2 {
       margin: 10px 0;
     }
     img {
-      width: 350px !important;
+      width: 420px !important;
     }
     h3 {
       margin: 10px 0;
     }
 
     .persons-list {
-      width: 255px !important;
+      width: 380px !important;
 
       .person {
         width: 115px !important;
