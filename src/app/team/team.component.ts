@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GatewayService } from '../core/service/gateway.service';
-import { Employee } from '../core/model/Employee';
+import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
 
 @Component({
@@ -10,7 +10,9 @@ import { LoaderService } from '../shared/spinner/loader.service';
 })
 export class TeamComponent implements OnInit {
   employees: Array<Employee> = [];
+  limit: string;
   page: number;
+  locale: string;
   collectionSize: number;
 
   constructor(
@@ -19,20 +21,20 @@ export class TeamComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getEmployees(this.page);
+    this.getEmployees(this.limit, this.page, this.locale);
   }
 
-  getEmployees(page) {
+  getEmployees(limit, page, locale) {
     this.loaderService.start('load-team');
-    this.httpGatewayService.getEmployees(page).subscribe((res) => {
-      this.employees = this.employees.concat(res.body.employees);
-      this.collectionSize = res.body.total_count;
-      this.page = res.body.page;
+    this.httpGatewayService.getEmployees(limit, page, locale).subscribe((res) => {
+      this.employees = this.employees.concat(res.employees);
+      this.collectionSize = res.total_count;
+      this.page = res.page;
     });
   }
 
   onScroll() {
-    if (this.employees.length < this.collectionSize) this.getEmployees(this.page + 1);
+    if (this.employees.length < this.collectionSize) this.getEmployees(this.limit, this.page + 1, this.locale);
     if (this.employees.length === this.collectionSize) this.loaderService.stop('load-team');
   }
 }

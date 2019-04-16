@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GatewayService } from '../core/service/gateway.service';
-import { Employee } from '../core/model/Employee';
+import { plainToClass } from 'class-transformer';
 import { NgxGalleryOptions, NgxGalleryImage } from 'ngx-gallery';
-
+import { GatewayService } from '../core/service/gateway.service';
+import { Employee } from '../core/model/employee/Employee';
+import { LoaderService } from '../shared/spinner/loader.service';
 
 @Component({
   selector: 'app-person',
@@ -17,12 +18,13 @@ export class PersonComponent implements OnInit {
 
   constructor(
     private router: ActivatedRoute,
-    private gatewayService: GatewayService
+    private gatewayService: GatewayService,
+    private loaderService: LoaderService
   ) { }
 
   ngOnInit() {
-    this.getPerson();
-
+    const slug = this.router.snapshot.paramMap.get('slug');
+    this.getPerson(slug);
     this.galleryOptions = [
       {
         image: false,
@@ -40,19 +42,14 @@ export class PersonComponent implements OnInit {
     ];
   }
 
-  getPerson() {
-    const slug = this.router.snapshot.paramMap.get('slug');
-    this.gatewayService.getEmployeeBySlug(slug).subscribe((res) => {
-      this.person = res.body;
-      if (res.body.gallery) {
-        this.gallery = res.body.gallery.map(({images}) => {
-          return {
-            small: images.performance_small.url,
-            medium: images.reference.url,
-            big: images.performance_big.url
-          };
-        });
-      }
-    });
+  getPerson(slug) {
+    this.loaderService.start('person');
+    this.gatewayService.getEmployeeBySlug(slug).subscribe(
+      res => {
+        this.person = plainToClass(Employee, res);
+        this.loaderService.stop('person');
+      },
+      err => this.loaderService.stop('person')
+    );
   }
 }
