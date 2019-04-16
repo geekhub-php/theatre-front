@@ -17,9 +17,9 @@
              (click)="slide(idx)">{{ item.date_time | date: "longDate" }}</div>
         <div class="ticket_data"
              [ngClass]="{'active-more': item.id === slideId}">
-          <h2 class="ticket_h2">{{item.performance.title}}</h2>
-          <p class="ticket_p">{{item.performance.type}}</p>
-          <p class="ticket_p">Місце проведення: <span>{{item.venue}}</span></p>
+          <h2 class="ticket_h2">{{ item.performance.title }}</h2>
+          <p class="ticket_p">{{ item.performance.type }}</p>
+          <p class="ticket_p">Місце проведення: <span>{{ item.venue }}</span></p>
         </div>
       </div>
     </div>

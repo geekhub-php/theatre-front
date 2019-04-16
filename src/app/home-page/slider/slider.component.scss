@@ -21,14 +21,15 @@
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
-    .but{
+
+    .but {
       position: absolute;
       width: 100px;
       height: 400px;
-      background-color: white;
-      border: 1px solid black;
-
+      background-color: #fff;
+      border: 1px solid #000;
     }
+
     .tickets {
       width: 100%;
       bottom: 18px;
@@ -108,11 +109,12 @@
   display: block !important;
 }
 
-.buttons{
+.buttons {
   display: none;
 }
 
 @media (max-width: 992px) {
+
   .slider {
     position: relative;
     height: auto;
@@ -123,6 +125,7 @@
       margin: 0 auto;
       height: auto;
       max-width: 100%;
+
       .buttons {
         visibility: visible;
         position: absolute;
@@ -132,6 +135,7 @@
         bottom: 50%;
         display: flex;
         justify-content: space-between;
+
         .slider-button {
           width: 36px;
           height: 36px;
@@ -142,9 +146,11 @@
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
           background-color: #4c4c4c;
           margin: 0 10px;
+
           &:hover {
             background-color: #e54b2b;
           }
+
           .arrow-prev {
             width: 9px;
             height: 19px;
@@ -164,11 +170,13 @@
           }
         }
       }
+
       .active {
         display: block !important;
         height: auto;
         max-width: 100%;
       }
+
       img {
         position: relative;
         height: auto;
@@ -190,10 +198,10 @@
 
           .ticket-active {
             display: none;
+          }
 
-            .ticket_span {
-              display: none;
-            }
+          .ticket-active .ticket_span {
+            display: none;
           }
 
           .ticket {
@@ -204,5 +212,3 @@
     }
   }
 }
-
-
