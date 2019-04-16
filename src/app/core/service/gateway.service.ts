@@ -26,13 +26,17 @@ export class GatewayService {
   readonly performanceEventsListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
 
-  protected httpOptions = {
+   protected httpOptions = {
     headers: new HttpHeaders(),
     observe: 'response' as 'body',
     params: new HttpParams()
   };
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) { }
+  getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = 'uk'): Observable<any> {
+    return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
+      params: { fromDate: fromDate.toString(), limit, locale }
+    });
   }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
