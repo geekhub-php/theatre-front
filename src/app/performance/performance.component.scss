@@ -116,17 +116,10 @@
 
         .photo {
           width: 100%;
-          height: 275px;
+          height: 335px;
         }
       }
     }
-  }
-
-  .performance-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
   }
 
   .performances {
@@ -160,21 +153,23 @@
   }
 }
 
-@media (min-width: 770px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
 
   .container .preview {
     display: flex;
     flex-wrap: wrap;
-    height: 600px;
+    min-height: 600px;
   }
 
   .preview .performance-poster {
     order: 0;
+    width: 50%;
   }
 
   .preview .performance-widget {
     order: 1;
-    min-height: 10px;
+    min-height: 100px;
+    width: 50%;
   }
 
   .preview .slider {
@@ -190,12 +185,18 @@
     height: 200px !important;
 
     img {
-      height: 200px !important;
+      height: 230px !important;
     }
   }
 }
 
-@media (min-width: 576px) and (max-width: 769.98px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  .wrap {
+    display: block;
+    width: 630px;
+    margin: 0 auto;
+  }
 
   .item {
     width: 145px !important;
@@ -204,15 +205,11 @@
 
   .item img {
     width: 145px !important;
-    height: 165px !important;
+    height: 220px !important;
   }
 
   .item p, .item span {
     font-size: 15px;
-  }
-
-  .info .employees-list {
-    margin-left: 7px;
   }
 
   .container .preview {
@@ -242,8 +239,13 @@
 
 @media (min-width: 425px) and (max-width: 575.98px) {
 
+  .wrap {
+    display: block;
+    width: 315px;
+    margin: 0 auto;
+  }
+
   .employees-list {
-    padding-left: 26px !important;
 
     .item {
       width: 145px !important;
@@ -252,14 +254,14 @@
 
     .item img {
       width: 145px !important;
-      height: 165px !important;
+      height: 220px !important;
     }
   }
 
   .container .preview {
     display: flex;
     flex-wrap: wrap;
-    min-height: 775px;
+    min-height: 950px;
   }
 
   .container .preview .performance-poster {
@@ -277,12 +279,16 @@
     order: 2;
   }
 }
-
 
 @media (min-width: 375px) and (max-width: 424.98px) {
 
+  .wrap {
+    display: block;
+    width: 305px;
+    margin: 0 auto;
+  }
+
   .employees-list {
-    padding-left: 12px !important;
 
     .item {
       width: 140px !important;
@@ -291,14 +297,14 @@
 
     .item img {
       width: 140px !important;
-      height: 165px !important;
+      height: 210px !important;
     }
   }
 
   .container .preview {
     display: flex;
     flex-wrap: wrap;
-    min-height: 650px;
+    min-height: 700px;
   }
 
   .container .preview .performance-poster {
@@ -317,11 +323,16 @@
   }
 }
 
-
 @media (min-width: 320px) and (max-width: 374.98px) {
 
+  .wrap {
+    display: block;
+    width: 255px;
+    margin: 0 auto;
+
+  }
+
   .employees-list {
-    padding-left: 7px !important;
 
     .item {
       width: 115px !important;
@@ -330,14 +341,14 @@
 
     .item img {
       width: 115px !important;
-      height: 150px !important;
+      height: 170px !important;
     }
   }
 
   .container .preview {
     display: flex;
     flex-wrap: wrap;
-    min-height: 575px;
+    min-height: 620px;
   }
 
   .container .preview .performance-poster {
