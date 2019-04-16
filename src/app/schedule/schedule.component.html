@@ -12,7 +12,7 @@
     <app-spinner name="poster"></app-spinner>
     <section class="schedule-event" *ngFor="let event of scheduleList">
       <div class="schedule-body">
-        <a [routerLink]="['', 'performance', item.slug]">{{item.title}}
+        <a [routerLink]="['', 'performance', event.performance.slug]">
           <h2 class="schedule-title">{{event.performance.title}}</h2>
           <p class="schedule-time">{{event.time}}</p>
           <div class="schedule-main">
@@ -27,4 +27,3 @@
     </section>
   </div>
 </div>
-

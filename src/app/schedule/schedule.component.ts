@@ -5,6 +5,7 @@ import { ScheduleListResponse } from '../core/model/schedule/ScheduleListRespons
 import { plainToClass } from 'class-transformer';
 import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
 import { LoaderService } from '../shared/spinner/loader.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule',

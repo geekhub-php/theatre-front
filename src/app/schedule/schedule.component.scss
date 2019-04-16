@@ -25,10 +25,14 @@ h3 {
 .btn:focus {
   box-shadow: none;
 }
+
 .mobile {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  .schedule-time {
+    color: $hover-color;
+  }
   .schedule-event {
     position: relative;
     padding: 20px 22px 0 0;
