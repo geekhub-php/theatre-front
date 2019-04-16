@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsComponent } from './news.component';
 import { WidgetModule } from '../widget/widget.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NewsComponent', () => {
   let component: NewsComponent;
@@ -10,7 +11,7 @@ describe('NewsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NewsComponent ],
-      imports: [ WidgetModule ]
+      imports: [ WidgetModule, RouterTestingModule ]
     })
     .compileComponents();
   }));

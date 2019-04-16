@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WidgetComponent } from './widget.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [WidgetComponent],
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterTestingModule,
+    RouterModule,
   ],
   exports: [WidgetComponent]
 })
