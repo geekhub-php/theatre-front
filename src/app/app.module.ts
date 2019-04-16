@@ -29,9 +29,8 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { SpinnerModule } from './shared/spinner/spinner.module';
-import { WidgetComponent } from './widget/widget.component';
+import { WidgetModule } from './widget/widget.module';
 
 @NgModule({
   declarations: [
@@ -61,7 +60,8 @@ import { WidgetComponent } from './widget/widget.component';
     StripHtmlModule,
     InfiniteScrollModule,
     NgxGalleryModule,
-    SpinnerModule
+    SpinnerModule,
+    WidgetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
