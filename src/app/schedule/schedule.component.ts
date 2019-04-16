@@ -43,6 +43,7 @@ export class ScheduleComponent implements OnInit {
 
   now(event: any) {
     this.date = new Date();
+    
     return this.month;
   }
 
