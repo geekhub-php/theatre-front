@@ -9,7 +9,7 @@ import { LoaderService } from '../shared/spinner/loader.service';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-  limit = '10';
+  limit = '100';
   listPost: Array<NewsItem> = [];
 
   constructor(private gatewayService: GatewayService,
