@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 import { GatewayService } from '../core/service/gateway.service';
 import { PerformanceListResponse } from '../core/model/PerformanceListResponse';
 import { Performance } from '../core/model/Performance';
+import { LoaderService } from '../shared/spinner/loader.service';
 
 @Component({
   selector: 'app-performance-list',
@@ -16,13 +17,16 @@ export class PerformanceListComponent implements OnInit {
 
   constructor(
     private changeDetector: ChangeDetectorRef,
-    private gateway: GatewayService
+    private gateway: GatewayService,
+    private loaderService: LoaderService
   ) {}
 
   ngOnInit() {
+    this.loaderService.start('identity');
     this.gateway.getPerformanceList().subscribe(({ performances }) => {
       this.perfomances = performances;
       this.changeDetector.markForCheck();
+      this.loaderService.stop('identity');
     });
   }
 }
