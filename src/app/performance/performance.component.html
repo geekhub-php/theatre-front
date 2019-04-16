@@ -2,23 +2,25 @@
   <app-spinner name="identity"></app-spinner>
   <h2 class="page-title"> {{performance?.title}} </h2>
   <h4 class="page-sub-title">{{performance?.type}}</h4>
+
   <section class="preview">
     <div class="performance-poster">
       <div class="future-img" *ngIf="performance">
         <img [src]="performance.mainPicture.performance_big.url" alt="performance.mainPicture.performance_big.alt">
       </div>
     </div>
-    <div class="slider">
-        <ngb-carousel *ngIf="images">
-          <ng-template ngbSlide *ngFor="let image of images">
-            <img [src]="image.url" [alt]="image.properties.alt">
-          </ng-template>
-        </ngb-carousel>
-    </div>
     <div class="performance-widget">
       <div class="future-list">performances widget</div>
     </div>
+    <div class="slider">
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide *ngFor="let image of images">
+          <img [src]="image.url" [alt]="image.properties.alt">
+        </ng-template>
+      </ngb-carousel>
+    </div>
   </section>
+
   <section class="info">
     <ngb-tabset>
       <ngb-tab title="Актори" *ngIf="roles?.length">
