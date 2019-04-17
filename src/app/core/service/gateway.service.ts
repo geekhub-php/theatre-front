@@ -9,6 +9,8 @@ import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { environment } from '../../../environments/environment';
 import { Role } from '../model/Role';
 import { Performance } from '../model/Performance';
+import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
+import { Employee } from '../model/employee/Employee';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +48,23 @@ export class GatewayService {
         catchError(this.handleError('get list of Performances', [new Role()]))
       );
   }
+
+  getEmployees(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<EmployeesListResponse> {
+    return this.http.get<EmployeesListResponse>(
+      `${this.baseUrl}/employees.json`, { params: { limit, page, locale } }
+    ).pipe(
+      catchError(this.handleError('get Employees list', new EmployeesListResponse()))
+    );
+  }
+
+  getEmployeeBySlug(slug): Observable<Employee> {
+    return this.http.get<Employee>(
+      `${this.baseUrl}/employees/${slug}`, { params: { slug } }
+    ).pipe(
+      catchError(this.handleError('get Employee', new Employee()))
+    );
+  }
+
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.historiesListUrl}`, {
       params: {limit, page, locale} // params: {limit: limit, page: page, locale: locale}

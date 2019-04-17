@@ -1,1 +1,16 @@
-<div class="container"></div>
+<div class="container">
+  <h2>Персоналії</h2>
+  <img class="persons-photo" src="assets/images/persons.jpg" alt="">
+  <h3>Творчий склад</h3>
+  <section class="persons-list"
+           infiniteScroll
+           [infiniteScrollDistance]="2"
+           [infiniteScrollThrottle]="600"
+           (scrolled)="onScroll()">
+    <a class="person" *ngFor="let person of employees" routerLink="{{ person.slug }}">
+      <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+    </a>
+  </section>
+  <app-spinner name="load-team"></app-spinner>
+</div>
