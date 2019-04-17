@@ -3,7 +3,6 @@ import { NewsItem } from '../core/model/news/NewsItem';
 import { ActivatedRoute } from '@angular/router';
 import { GatewayService } from '../core/service/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
-import { plainToClass } from 'class-transformer';
 
 @Component({
   selector: 'app-article',
@@ -27,7 +26,7 @@ export class ArticleComponent implements OnInit {
     this.loaderService.start('article');
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateAway.getNewsBySlug(slug).subscribe((res) => {
-        this.item = plainToClass(NewsItem, res);
+        this.item = res.body;
         this.loaderService.stop('article');
       },
       err => this.loaderService.stop('article')

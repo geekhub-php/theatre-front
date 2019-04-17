@@ -9,9 +9,7 @@ import { LoaderService } from '../shared/spinner/loader.service';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-  limit = '10';
-  page = '1';
-  locale = 'uk';
+  limit = '100';
   listPost: Array<NewsItem> = [];
 
   constructor(private gatewayService: GatewayService,
@@ -19,12 +17,8 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getNews();
-  }
-
-  getNews() {
     this.loaderService.start('news');
-    this.gatewayService.getNews(this.limit, this.page, this.locale).subscribe((res: { posts }) => {
+    this.gatewayService.getNews(this.limit, '1', 'uk').subscribe((res: { posts }) => {
         this.listPost = res.posts;
         this.loaderService.stop('news');
       },
