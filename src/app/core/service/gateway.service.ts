@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
+import { History } from '../model/history/History';
 import { ScheduleListResponse } from '../model/schedule/ScheduleListResponse';
 import { environment } from '../../../environments/environment';
 import { Role } from '../model/Role';
@@ -88,6 +89,13 @@ export class GatewayService {
       .pipe(
         catchError(this.handleError('get list of Histories', new HistoryListResponse()))
       );
+  }
+
+  getHistoryBySlug(slug: string): Observable<History> {
+    return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
+    .pipe(
+      catchError(this.handleError('get History', new History()))
+    );
   }
 
   getSchedulesList(from: string, to: string, locale: string = 'uk'): Observable<ScheduleListResponse> {
