@@ -24,6 +24,5 @@ export class NewsComponent implements OnInit {
       },
       err => this.loaderService.stop('news')
     );
-    this.loaderService.start('news');
   }
 }
