@@ -31,6 +31,5 @@ export class ArticleComponent implements OnInit {
       },
       err => this.loaderService.stop('article')
     );
-    this.loaderService.start('article');
   }
 }
