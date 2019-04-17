@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
+import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -31,6 +32,13 @@ export class GatewayService {
     })
     .pipe(
       catchError(this.handleError('get list of Histories', new HistoryListResponse()))
+    );
+  }
+
+  getHistoryBySlug(slug: string): Observable<History> {
+    return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
+    .pipe(
+      catchError(this.handleError('get History', new History()))
     );
   }
 
