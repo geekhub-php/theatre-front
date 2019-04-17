@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -29,21 +29,23 @@ export class GatewayService {
   readonly performanceEventsListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
 
-   protected httpOptions = {
+  protected httpOptions = {
     headers: new HttpHeaders(),
     observe: 'response' as 'body',
     params: new HttpParams()
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
+
   getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = 'uk'): Observable<any> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
-      params: { fromDate: fromDate.toString(), limit, locale }
+      params: {fromDate: fromDate.toString(), limit, locale}
     });
   }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, { params: {limit: '100'} })
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
       .pipe(
         catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
@@ -65,13 +67,13 @@ export class GatewayService {
 
   getEmployees(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/employees.json`, { params: { limit, page, locale } }
+      `${this.baseUrl}/employees.json`, {params: {limit, page, locale}}
     );
   }
 
   getEmployeeBySlug(slug): Observable<Employee> {
     return this.http.get<Employee>(
-      `${this.baseUrl}/employees/${slug}`, { params: { slug } }
+      `${this.baseUrl}/employees/${slug}`, {params: {slug}}
     );
   }
 
@@ -93,9 +95,9 @@ export class GatewayService {
 
   getHistoryBySlug(slug: string): Observable<History> {
     return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
-    .pipe(
-      catchError(this.handleError('get History', new History()))
-    );
+      .pipe(
+        catchError(this.handleError('get History', new History()))
+      );
   }
 
   getSchedulesList(from: string, to: string, locale: string = 'uk'): Observable<ScheduleListResponse> {
@@ -111,8 +113,9 @@ export class GatewayService {
     );
   }
 
-  getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
-  ): Observable<PerformanceEventResponse> {
+  getPerformanceEvents(performance?:
+                         string, fromDate: Date = new Date(), limit: string = 'all',
+                       locale: string = 'uk'): Observable<PerformanceEventResponse> {
     const options: WidgetResType = {fromDate: fromDate.toString(), limit, locale};
     if (performance) options.performance = performance;
 

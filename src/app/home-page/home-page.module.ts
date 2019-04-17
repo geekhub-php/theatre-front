@@ -4,18 +4,18 @@ import { RouterModule } from '@angular/router';
 
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
-import { NewsListModule } from '../news-list/news-list.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsItemComponent } from '../news-item/news-item.component';
 
 @NgModule({
   declarations: [
     SideMenuComponent,
-    SliderComponent
+    SliderComponent,
+    NewsItemComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    NewsListModule,
     HttpClientModule
   ],
   exports: [
@@ -23,4 +23,5 @@ import { HttpClientModule } from '@angular/common/http';
     SideMenuComponent
   ]
 })
-export class HomePageModule { }
+export class HomePageModule {
+}
