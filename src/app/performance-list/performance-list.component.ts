@@ -27,6 +27,8 @@ export class PerformanceListComponent implements OnInit {
       this.perfomances = performances;
       this.changeDetector.markForCheck();
       this.loaderService.stop('repertoire');
-    });
+    },
+      error1 => this.loaderService.stop('repertoire')
+    );
   }
 }
