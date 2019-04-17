@@ -22,11 +22,11 @@ export class PerformanceListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loaderService.start('identity');
+    this.loaderService.start('repertoire');
     this.gateway.getPerformanceList().subscribe(({ performances }) => {
       this.perfomances = performances;
       this.changeDetector.markForCheck();
-      this.loaderService.stop('identity');
+      this.loaderService.stop('repertoire');
     });
   }
 }
