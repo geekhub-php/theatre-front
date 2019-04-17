@@ -4,6 +4,7 @@
   <div *ngIf="listPost.length">
     <app-news-item *ngFor="let item of listPost | paginate: { itemsPerPage: 5, currentPage: p }" [item]="item">
     </app-news-item>
+    <app-widget></app-widget>
     <pagination-controls class="myPagination"
                          previousLabel=""
                          nextLabel=""
