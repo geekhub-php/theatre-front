@@ -13,7 +13,6 @@ import { LoaderService } from '../shared/spinner/loader.service';
 })
 export class PersonComponent implements OnInit {
   person: Employee;
-  gallery: Array<NgxGalleryImage> = [];
   galleryOptions: Array<NgxGalleryOptions>;
 
   constructor(
