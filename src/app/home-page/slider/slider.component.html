@@ -1,3 +1,27 @@
-<p>
-  slider works!
-</p>
+<div class="slider">
+  <div class="slider-list">
+    <ng-template ngFor let-item [ngForOf]="sliderList">
+      <div *ngIf="item.id === slideId" class="slider-img"
+           [ngClass]="{'active': item.id === slideId}">
+        <img class="img" [src]="item.performance.sliderImage.slider_slider.url" alt="pic">
+      </div>
+    </ng-template>
+    <div class="buttons">
+      <button class="slider-button" (click)="prev()"><div class="arrow-prev"></div></button>
+      <button class="slider-button" (click)="next()"><div class="arrow-next"></div></button>
+    </div>
+    <div class="tickets">
+      <div class="data" *ngFor="let item of sliderList; let idx= index">
+        <div class="ticket"
+             [ngClass]="{'ticket-active ': item.id === slideId}"
+             (click)="slide(idx)">{{ item.date_time | date: "MMMM d EEE" }}</div>
+        <div class="ticket_data"
+             [ngClass]="{'active-more': item.id === slideId}">
+          <h2 class="ticket_h2">{{ item.performance.title }}</h2>
+          <p class="ticket_p">{{ item.performance.type }}</p>
+          <p class="ticket_p">Місце проведення: <span>{{ item.venue }}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
