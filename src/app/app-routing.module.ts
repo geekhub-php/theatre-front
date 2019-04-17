@@ -3,10 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from './home-page/home-page.component';
-
 import { AboutComponent } from './about/about.component';
-import { AboutMoreComponent } from './about/about-more/about-more.component';
-
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { TeamComponent } from './team/team.component';
