@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -19,12 +19,6 @@ export class GatewayService {
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
 
-  protected httpOptions = {
-    headers: new HttpHeaders(),
-    observe: 'response' as 'body',
-    params: new HttpParams()
-  };
-
   constructor(private http: HttpClient) { }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
@@ -32,12 +26,6 @@ export class GatewayService {
       .pipe(
           catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
-  }
-
-  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
-    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
-      params: {limit, page, locale}
-    });
   }
 
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
@@ -49,9 +37,15 @@ export class GatewayService {
     );
   }
 
-  getNewsBySlug(slug): Observable<HttpResponse<NewsItem>> {
-    return this.http.get<HttpResponse<NewsItem>>(
-      `${this.baseUrl}/posts/${slug}`, this.httpOptions
+  getNews(limit, page, locale): Observable<NewsListResponse> {
+    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
+      params: {limit, page, locale}
+    });
+  }
+
+  getNewsBySlug(slug): Observable<NewsItem> {
+    return this.http.get<NewsItem>(
+      `${this.baseUrl}/posts/${slug}`, {params: {slug}}
     );
   }
 
