@@ -2,10 +2,10 @@
   <div class="widget">
     <ul class="widget-list">
       <li class="widget-item" *ngFor="let item of listEvents">
-        <div class="widget-date">
-          <p class="week">{{ item.date_time | date:'E' }}</p>
+        <div class="widget-date" dateArr='item.date_time'>
+          <p class="week">{{ moment.locale('uk').format('ddd') }}</p>
           <p class="day">{{ item.date_time | date:'dd' }}</p>
-          <p class="month">{{ item.date_time | date:'LLLL' }}</p>
+          <p class="month">{{ moment.locale('uk').format('LL').match('[\u0400-\u04FF]+[^ \u0440\.]')[0] }}</p>
         </div>
         <div class="widget-about">
           <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
@@ -20,9 +20,9 @@
     <ul class="widget-list">
       <li class="widget-item hover bg-news-code pdr34px" *ngFor="let item of listEvents" [routerLink]="[ '/performance', item.performance.slug ]">
         <div class="widget-date bg-line mrg10px">
-            <p class="week">{{ item.date_time | date:'E' }}</p>
+            <p class="week">{{ moment.locale('uk').format('ddd') }}</p>
             <p class="day">{{ item.date_time | date:'dd' }}</p>
-            <p class="month">{{ item.date_time | date:'LLLL' }}</p>
+            <p class="month">{{ moment.locale('uk').format('LL').match('[\u0400-\u04FF]+[^ \u0440\.]')[0] }}</p>
           </div>
           <div class="widget-about txt-left">
             <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
