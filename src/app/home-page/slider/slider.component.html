@@ -24,6 +24,7 @@
           <h2 class="ticket_h2">{{ item.performance.title | titlecase }}</h2>
           <p class="ticket_p">{{ item.performance.type }}</p>
           <p class="ticket_p">Місце проведення: <span>{{ item.venue }}</span></p>
+          <a [routerLink]="['performance', item.performance.slug]"></a>
         </div>
       </div>
     </div>

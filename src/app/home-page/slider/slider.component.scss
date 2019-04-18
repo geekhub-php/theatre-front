@@ -111,6 +111,14 @@
         background-image: url("../../../assets/images/tick.png");
         background-repeat: no-repeat;
 
+        a {
+          position: absolute;
+          width: 463px;
+          height: 93px;
+          top: 0;
+          right: 0;
+        }
+
         .ticket_h2 {
           color: #fff;
           font-family: "robotothin", serif;
