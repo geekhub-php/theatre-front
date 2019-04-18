@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -8,6 +8,8 @@ import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
+import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
+import { Employee } from '../model/employee/Employee';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +26,22 @@ export class GatewayService {
       .pipe(
           catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
+  }
+
+  getEmployees(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<EmployeesListResponse> {
+    return this.http.get<EmployeesListResponse>(
+      `${this.baseUrl}/employees.json`, { params: { limit, page, locale } }
+    ).pipe(
+      catchError(this.handleError('get Employees list', new EmployeesListResponse()))
+    );
+  }
+
+  getEmployeeBySlug(slug): Observable<Employee> {
+    return this.http.get<Employee>(
+      `${this.baseUrl}/employees/${slug}`, { params: { slug } }
+    ).pipe(
+      catchError(this.handleError('get Employee', new Employee()))
+    );
   }
 
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
