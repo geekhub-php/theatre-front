@@ -5,27 +5,29 @@
   <section class="preview">
     <div class="performance-poster">
       <div class="future-img" *ngIf="performance">
-        <img class="mainPicture" [src]="performance.mainPicture.performance_big.url" alt="performance.mainPicture.performance_big.alt">
+        <img [src]="performance.mainPicture.performance_big.url" alt="performance.mainPicture.performance_big.alt">
       </div>
     </div>
-    <div class="slider">
-        <ngb-carousel *ngIf="images">
-          <ng-template ngbSlide *ngFor="let image of images">
-            <img [src]="image.url" [alt]="image.properties.alt">
-          </ng-template>
-        </ngb-carousel>
+    <div class="performance-widget">
+      <div class="future-list"><app-widget></app-widget></div>
     </div>
-    <div class="performance-list">
-      <app-widget></app-widget>
+    <div class="slider">
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide *ngFor="let image of images">
+          <img [src]="image.url" [alt]="image.properties.alt">
+        </ng-template>
+      </ngb-carousel>
     </div>
   </section>
+
   <section class="info">
     <ngb-tabset>
       <ngb-tab title="Актори" *ngIf="roles?.length">
         <ng-template ngbTabContent>
+          <div class="wrap">
           <ul class="employees-list">
             <li *ngFor="let person of roles">
-              <a class="item" href="/persons/{{person.employee.slug}}">
+              <a  class="item" [routerLink]="['', 'persons', person.employee.slug]">
               <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
                 <div class="name">
               <span>{{ person.title }} </span>
@@ -34,6 +36,7 @@
               </a>
             </li>
           </ul>
+          </div>
         </ng-template>
       </ngb-tab>
       <ngb-tab *ngIf="performance">
