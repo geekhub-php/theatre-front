@@ -1,9 +1,12 @@
+@import "../../assets/variables";
+
 .container {
   padding: 0;
 
   .page-title {
     color: #e54b2b;
     text-align: center;
+    font-family: $main-font_light;
     size: 24px;
     padding: 15px 0;
     font-weight: 100;
@@ -20,19 +23,20 @@
     .perfomance-item {
       height: 230px;
       width: 163px;
-      margin-bottom: 20px;
-      position: relative;
+      margin-bottom: 87px;
       cursor: pointer;
 
-      .image {
-        width: 100%;
-        max-height: 230px;
+      .image-wraper {
+        height: 230px;
+
+        .image {
+          width: 100%;
+          max-height: 230px;
+        }
       }
 
       .perfomance-title {
-        position: absolute;
-        bottom: 0;
-        width: 162px;
+        font-family: $main-font_light;
         height: 67px;
         font-size: 16px;
         background-color: #2a2a2a;
