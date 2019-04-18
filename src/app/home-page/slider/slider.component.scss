@@ -199,6 +199,7 @@
     }
   }
 }
+
 @media (max-width: 767.98px) {
 
   .slider {
@@ -299,6 +300,7 @@
     }
   }
 }
+
 @media (max-width: 600px) {
 
   .slider {
@@ -413,7 +415,8 @@
       height: 250px;
       width: 100%;
       overflow: hidden;
-      img{
+
+      img {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -515,7 +518,7 @@
       height: 200px;
       width: 100%;
 
-      img{
+      img {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -563,7 +566,6 @@
             background-image: url("../../../assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
-
           }
         }
       }
