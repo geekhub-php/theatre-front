@@ -14,6 +14,9 @@
     max-width: initial;
     margin: 0 auto;
   }
+  .link_response{
+    visibility: hidden;
+  }
 }
 
 .slider {
@@ -111,12 +114,13 @@
         background-image: url("../../../assets/images/tick.png");
         background-repeat: no-repeat;
 
-        a {
+        .ticket_link {
           position: absolute;
           width: 463px;
           height: 93px;
           top: 0;
           right: 0;
+          text-decoration: none;
 
           .ticket_h2 {
             color: #fff;
@@ -168,6 +172,17 @@
       transform: translate(-50%, -50%);
       height: 100%;
       max-width: initial;
+      margin: 0 auto;
+    }
+
+    .link_response {
+      visibility: visible;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: 100%;
       margin: 0 auto;
     }
 
@@ -262,6 +277,17 @@
         transform: translate(-50%, -50%);
         height: 100%;
         max-width: initial;
+        margin: 0 auto;
+      }
+
+      .link_response {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
         margin: 0 auto;
       }
 
@@ -363,6 +389,17 @@
         transform: translate(-50%, -50%);
         height: 100%;
         max-width: initial;
+        margin: 0 auto;
+      }
+
+      .link_response {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
         margin: 0 auto;
       }
 
@@ -469,6 +506,17 @@
         margin: 0 auto;
       }
 
+      .link_response {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+      }
+
       .buttons {
         visibility: visible;
         position: absolute;
@@ -568,6 +616,17 @@
         transform: translate(-50%, -50%);
         height: 100%;
         max-width: initial;
+        margin: 0 auto;
+      }
+
+      .link_response {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
         margin: 0 auto;
       }
 
