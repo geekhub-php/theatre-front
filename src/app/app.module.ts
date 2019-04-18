@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 
@@ -51,6 +51,7 @@ import { WidgetModule } from './widget/widget.module';
     BoardTrusteesComponent,
   ],
   imports: [
+    RouterTestingModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
