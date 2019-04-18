@@ -29,12 +29,6 @@ export class GatewayService {
   readonly performanceEventsListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
 
-  protected httpOptions = {
-    headers: new HttpHeaders(),
-    observe: 'response' as 'body',
-    params: new HttpParams()
-  };
-
   constructor(private http: HttpClient) {
   }
 
@@ -107,10 +101,22 @@ export class GatewayService {
       });
   }
 
-  getNewsBySlug(slug): Observable<HttpResponse<NewsItem>> {
-    return this.http.get<HttpResponse<NewsItem>>(
-      `${this.baseUrl}/posts/${slug}`, this.httpOptions
-    );
+  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
+    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
+      params: {limit, page, locale}
+    })
+      .pipe(
+        catchError(this.handleError('get list of News', new NewsListResponse()))
+      );
+  }
+
+  getNewsBySlug(slug): Observable<NewsItem> {
+    return this.http.get<NewsItem>(
+      `${this.baseUrl}/posts/${slug}`, {params: {slug}}
+    )
+      .pipe(
+        catchError(this.handleError('get NewsItem', new NewsItem()))
+      );
   }
 
   getPerformanceEvents(performance?:
