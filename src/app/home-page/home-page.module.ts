@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
-import { HttpClientModule } from '@angular/common/http';
 import { NewsItemComponent } from '../news-item/news-item.component';
 
 @NgModule({
@@ -15,13 +14,12 @@ import { NewsItemComponent } from '../news-item/news-item.component';
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    HttpClientModule
+    RouterModule
   ],
   exports: [
     SliderComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    NewsItemComponent
   ]
 })
-export class HomePageModule {
-}
+export class HomePageModule { }

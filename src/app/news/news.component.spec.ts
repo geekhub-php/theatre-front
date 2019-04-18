@@ -6,7 +6,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { WidgetModule } from '../widget/widget.module';
 
 describe('NewsComponent', () => {
   let component: NewsComponent;
@@ -22,8 +21,7 @@ describe('NewsComponent', () => {
         RouterTestingModule,
         HttpClientModule,
         SpinnerModule,
-        NgxPaginationModule,
-        WidgetModule
+        NgxPaginationModule
       ]
     })
     .compileComponents();
