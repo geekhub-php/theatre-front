@@ -3,13 +3,13 @@
     <ul class="widget-list">
       <li class="widget-item" *ngFor="let item of listEvents">
         <div class="widget-date" dateArr='item.date_time'>
-          <p class="week">{{ moment.locale('uk').format('ddd') }}</p>
+          <p class="week">{{ item.date_time | date:'EEE': null : 'uk-UA' }}</p>
           <p class="day">{{ item.date_time | date:'dd' }}</p>
-          <p class="month">{{ moment.locale('uk').format('LL').match('[\u0400-\u04FF]+[^ \u0440\.]')[0] }}</p>
+          <p class="month">{{ item.date_time | date:'MMMM': null : 'uk-UA' }}</p>
         </div>
         <div class="widget-about">
           <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
-          <p class="time">{{ item.date_time | date:'hh:mm' }}</p>
+          <p class="time">{{ item.date_time | date:'HH:mm': null : 'uk-UA' }}</p>
         </div>
       </li>
     </ul>
@@ -20,9 +20,9 @@
     <ul class="widget-list">
       <li class="widget-item hover bg-news-code pdr34px" *ngFor="let item of listEvents" [routerLink]="[ '/performance', item.performance.slug ]">
         <div class="widget-date bg-line mrg10px">
-            <p class="week">{{ moment.locale('uk').format('ddd') }}</p>
+            <p class="week">{{ item.date_time | date:'EEE': null : 'uk-UA' }}</p>
             <p class="day">{{ item.date_time | date:'dd' }}</p>
-            <p class="month">{{ moment.locale('uk').format('LL').match('[\u0400-\u04FF]+[^ \u0440\.]')[0] }}</p>
+            <p class="month">{{ item.date_time | date:'MMMM': null : 'uk-UA'  }}</p>
           </div>
           <div class="widget-about txt-left">
             <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
