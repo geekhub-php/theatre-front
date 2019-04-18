@@ -29,6 +29,12 @@ export class GatewayService {
   readonly performanceEventsListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
 
+  protected httpOptions = {
+    headers: new HttpHeaders(),
+    observe: 'response' as 'body',
+    params: new HttpParams()
+  };
+
   constructor(private http: HttpClient) {
   }
 
@@ -39,7 +45,8 @@ export class GatewayService {
   }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`,
+      {params: {limit: '100'}})
       .pipe(
         catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
@@ -69,12 +76,6 @@ export class GatewayService {
     return this.http.get<Employee>(
       `${this.baseUrl}/employees/${slug}`, {params: {slug}}
     );
-  }
-
-  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
-    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
-      params: {limit, page, locale}
-    });
   }
 
 
