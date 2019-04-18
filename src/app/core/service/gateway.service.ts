@@ -51,22 +51,6 @@ export class GatewayService {
       );
   }
 
-  getEmployees(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<EmployeesListResponse> {
-    return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/employees.json`, { params: { limit, page, locale } }
-    ).pipe(
-      catchError(this.handleError('get Employees list', new EmployeesListResponse()))
-    );
-  }
-
-  getEmployeeBySlug(slug): Observable<Employee> {
-    return this.http.get<Employee>(
-      `${this.baseUrl}/employees/${slug}`, { params: { slug } }
-    ).pipe(
-      catchError(this.handleError('get Employee', new Employee()))
-    );
-  }
-
   getPerformanceBySlug(slug): Observable<HttpResponse<Performance>> {
     return this.http.get<HttpResponse<Performance>>(`${this.baseUrl}/performances/${slug}`, this.httpOptions)
       .pipe(
