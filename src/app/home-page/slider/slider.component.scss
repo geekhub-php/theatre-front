@@ -117,24 +117,23 @@
           height: 93px;
           top: 0;
           right: 0;
-        }
 
-        .ticket_h2 {
-          color: #fff;
-          font-family: "robotothin", serif;
-          text-align: left;
-          font-size: 23px;
-          margin-top: -5px;
-          margin-bottom: 14px;
-          text-transform: capitalize;
-          margin-left: 5px;
-        }
+          .ticket_h2 {
+            color: #fff;
+            font-family: "robotothin", serif;
+            text-align: left;
+            font-size: 23px;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+            margin-left: 15px;
+          }
 
-        .ticket_p {
-          color: #fff;
-          font-family: "robotoregular", serif;
-          font-size: 13px;
-          margin: 0 0 0 5px;
+          .ticket_p {
+            color: #fff;
+            font-family: "robotoregular", serif;
+            font-size: 13px;
+            margin: 0 0 0 15px;
+          }
         }
       }
     }
