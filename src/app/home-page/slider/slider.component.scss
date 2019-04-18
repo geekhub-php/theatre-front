@@ -41,6 +41,9 @@
       cursor: pointer;
 
       .ticket {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         cursor: pointer;
         border: none;
         outline: none;
@@ -56,10 +59,43 @@
         font-size: 24px;
         padding: 0 11px;
         line-height: 1.2;
+
+        .ticket-day {
+          padding: 3px;
+          font-size: 16px;
+          color: #7d7c7c;
+          text-transform: capitalize;
+        }
+
+        .ticket-number {
+          margin-top: -8px;
+          font-family: "robotolight";
+          font-size: 44px;
+          border-bottom: 1px solid #7d7c7c;
+        }
+
+        .ticket-month {
+          margin-top: 2px;
+          font-size: 14px;
+          color: #7d7c7c;
+        }
       }
 
       .ticket-active {
         background-image: url("../../../assets/images/orange-ticket.png");
+
+        .ticket-day {
+          color: #fff !important;
+        }
+
+        .ticket-number {
+          color: #fff !important;
+          border-bottom: 1px solid #fff;
+        }
+
+        .ticket-month {
+          color: #fff !important;
+        }
       }
 
       .ticket_data {
@@ -82,7 +118,7 @@
           font-size: 23px;
           margin-top: -5px;
           margin-bottom: 14px;
-          text-transform: lowercase;
+          text-transform: capitalize;
           margin-left: 5px;
         }
 
