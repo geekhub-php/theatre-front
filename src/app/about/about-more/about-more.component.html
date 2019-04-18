@@ -1,0 +1,10 @@
+<div class="container">
+  <app-spinner name="about-more"></app-spinner>
+  <div class="history" *ngIf="history">
+    <h2 class="history-heading">{{ history.title }}</h2>
+    <div class="img-wrap">
+      <img class="history-main_img" [src]='history.mainPicture.history_big.url' alt="picture">
+    </div>
+    <p class="history-main_text" [innerHtml]="history.text"></p>
+  </div>
+</div>

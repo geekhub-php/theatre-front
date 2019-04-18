@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
+import { HttpClientModule } from '@angular/common/http';
 import { NewsItemComponent } from '../news-item/news-item.component';
 
 @NgModule({
@@ -15,13 +16,12 @@ import { NewsItemComponent } from '../news-item/news-item.component';
   imports: [
     CommonModule,
     RouterModule,
-    NewsListModule,
-    RouterTestingModule
+    HttpClientModule
   ],
   exports: [
     SliderComponent,
-    SideMenuComponent,
-    NewsItemComponent
+    SideMenuComponent
   ]
 })
-export class HomePageModule { }
+export class HomePageModule {
+}

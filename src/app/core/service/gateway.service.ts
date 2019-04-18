@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
+import { History } from '../model/history/History';
 import { ScheduleListResponse } from '../model/schedule/ScheduleListResponse';
 import { environment } from '../../../environments/environment';
 import { Role } from '../model/Role';
@@ -37,8 +38,15 @@ export class GatewayService {
   constructor(private http: HttpClient) {
   }
 
+  getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = 'uk'): Observable<any> {
+    return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
+      params: {fromDate: fromDate.toString(), limit, locale}
+    });
+  }
+
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
-    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, { params: {limit: '100'} })
+    return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`,
+      {params: {limit: '100'}})
       .pipe(
         catchError(this.handleError('get list of Performances', new PerformanceListResponse()))
       );
@@ -61,19 +69,17 @@ export class GatewayService {
   getEmployees(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
       `${this.baseUrl}/employees.json`, { params: { limit, page, locale } }
+    ).pipe(
+      catchError(this.handleError('get Employees list', new EmployeesListResponse()))
     );
   }
 
   getEmployeeBySlug(slug): Observable<Employee> {
     return this.http.get<Employee>(
       `${this.baseUrl}/employees/${slug}`, { params: { slug } }
+    ).pipe(
+      catchError(this.handleError('get Employee', new Employee()))
     );
-  }
-
-  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
-    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
-      params: {limit, page, locale}
-    });
   }
 
 
@@ -86,6 +92,13 @@ export class GatewayService {
       );
   }
 
+  getHistoryBySlug(slug: string): Observable<History> {
+    return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
+      .pipe(
+        catchError(this.handleError('get History', new History()))
+      );
+  }
+
   getSchedulesList(from: string, to: string, locale: string = 'uk'): Observable<ScheduleListResponse> {
     return this.http.get<ScheduleListResponse>(
       `${this.baseUrl}/${this.scheduleListUrl}`, {
@@ -93,14 +106,27 @@ export class GatewayService {
       });
   }
 
-  getNewsBySlug(slug): Observable<HttpResponse<NewsItem>> {
-    return this.http.get<HttpResponse<NewsItem>>(
-      `${this.baseUrl}/posts/${slug}`, this.httpOptions
-    );
+  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
+    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
+      params: {limit, page, locale}
+    })
+      .pipe(
+        catchError(this.handleError('get list of News', new NewsListResponse()))
+      );
   }
 
-  getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
-  ): Observable<PerformanceEventResponse> {
+  getNewsBySlug(slug): Observable<NewsItem> {
+    return this.http.get<NewsItem>(
+      `${this.baseUrl}/posts/${slug}`, {params: {slug}}
+    )
+      .pipe(
+        catchError(this.handleError('get NewsItem', new NewsItem()))
+      );
+  }
+
+  getPerformanceEvents(performance?:
+                         string, fromDate: Date = new Date(), limit: string = 'all',
+                       locale: string = 'uk'): Observable<PerformanceEventResponse> {
     const options: WidgetResType = {fromDate: fromDate.toString(), limit, locale};
     if (performance) options.performance = performance;
 
