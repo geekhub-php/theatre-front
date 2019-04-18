@@ -2,7 +2,7 @@
   <div class="widget">
     <ul class="widget-list">
       <li class="widget-item" *ngFor="let item of listEvents">
-        <div class="widget-date" dateArr='item.date_time'>
+        <div class="widget-date bg-line">
           <p class="week">{{ item.date_time | date:'EEE': null : 'uk-UA' }}</p>
           <p class="day">{{ item.date_time | date:'dd' }}</p>
           <p class="month">{{ item.date_time | date:'MMMM': null : 'uk-UA' }}</p>
@@ -18,16 +18,18 @@
 <ng-template #main>
   <div class="widget">
     <ul class="widget-list">
-      <li class="widget-item hover bg-news-code pdr34px" *ngFor="let item of listEvents" [routerLink]="[ '/performance', item.performance.slug ]">
+      <li class="widget-item hover bg-news-code pdr34px"
+          *ngFor="let item of listEvents"
+          [routerLink]="[ '/performance', item.performance.slug ]">
         <div class="widget-date bg-line mrg10px">
-            <p class="week">{{ item.date_time | date:'EEE': null : 'uk-UA' }}</p>
-            <p class="day">{{ item.date_time | date:'dd' }}</p>
-            <p class="month">{{ item.date_time | date:'MMMM': null : 'uk-UA'  }}</p>
-          </div>
-          <div class="widget-about txt-left">
-            <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
-            <p class="type">{{ item.performance.type }}</p>
-          </div>
+          <p class="week">{{ item.date_time | date:'EEE': null : 'uk-UA' }}</p>
+          <p class="day">{{ item.date_time | date:'dd' }}</p>
+          <p class="month">{{ item.date_time | date:'MMMM': null : 'uk-UA' }}</p>
+        </div>
+        <div class="widget-about txt-left">
+          <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
+          <p class="type">{{ item.performance.type }}</p>
+        </div>
       </li>
     </ul>
   </div>

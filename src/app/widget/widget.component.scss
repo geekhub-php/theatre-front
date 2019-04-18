@@ -83,6 +83,16 @@
 .hover:hover {
   background-color: #e64c2b !important;
   cursor: pointer;
+} 
+
+.hover:hover .widget-date {
+  .week {
+    color: #fff;
+  }
+
+  .month  {
+    color: #fff;
+  }
 }
 
 .txt-left {
