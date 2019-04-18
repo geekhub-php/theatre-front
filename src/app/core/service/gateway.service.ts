@@ -19,11 +19,6 @@ export class GatewayService {
   readonly performanceListUrl = 'performances.json';
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
-  protected httpOptions = {
-    headers: new HttpHeaders(),
-    observe: 'response' as 'body',
-    params: new HttpParams()
-  };
 
   constructor(private http: HttpClient) {
   }
@@ -36,7 +31,7 @@ export class GatewayService {
   }
 
   getPerformanceBySlug(slug): Observable<HttpResponse<Performance>> {
-    return this.http.get<HttpResponse<Performance>>(`${this.baseUrl}/performances/${slug}`, this.httpOptions)
+    return this.http.get<HttpResponse<Performance>>(`${this.baseUrl}/performances/${slug}`, { observe: 'response' as 'body'})
       .pipe(
         catchError(this.handleError('get list of Performances', new HttpResponse<Performance>()))
       );

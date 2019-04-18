@@ -1,6 +1,6 @@
 import { Performance } from './Performance';
-import { Employee } from './Employee';
-import { EmployeesListResponse } from './EmoloyeeListResponse';
+import { Employee } from './employee/Employee';
+import { EmployeesListResponse } from './employee/EmployeesListResponse';
 import { ImageCollection } from './ImageCollection';
 
 export class Role {
