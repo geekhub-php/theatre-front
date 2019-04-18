@@ -51,7 +51,7 @@ export class GatewayService {
         catchError(this.handleError('get list of Performances', [new Role()]))
       );
   }
-  
+
   getEmployees(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
       `${this.baseUrl}/employees.json`, { params: { limit, page, locale } }

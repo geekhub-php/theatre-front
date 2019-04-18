@@ -9,9 +9,6 @@
   margin: 0;
 
   .widget-item {
-    &:last-child {
-      border-bottom: none;
-    }
 
     .widget-wrap {
       display: flex;
@@ -21,6 +18,10 @@
       padding: 6px 0;
       background-color: #4f4f4f;
       border-bottom: 1px dashed #373737;
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
 
     .widget-date {
@@ -88,6 +89,7 @@
 }
 
 .hover:hover .widget-date {
+
   .week {
     color: #fff;
   }
