@@ -10,7 +10,8 @@
   border-bottom: 1px solid $light-gray;
   padding: 10px;
   text-align: center;
-  width: 815px;
+  width: 900px;
+  margin:  0 auto;
 }
 
 ::ng-deep .info .nav-link {
@@ -30,6 +31,10 @@
 ::ng-deep .info .nav-tabs, ::ng-deep .info .nav-tabs .nav-link.active {
   border-color: $light-gray;
 }
+::ng-deep .info .nav-tabs .nav-link.active {
+  border-bottom: 1px solid #fff;
+}
+
 
 .container {
 
@@ -77,7 +82,7 @@
 
 .info {
   margin-bottom: 10px;
-  width: 815px;
+  width: 900px;
 
   .nav-info {
     margin-top: 20px;
@@ -98,8 +103,12 @@
       border-bottom: 1px solid $light-gray;
     }
   }
+  .wrap {
+    margin: auto;
+  }
 
   .employees-list {
+    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -150,6 +159,7 @@
     border: 1px solid $light-gray;
     border-bottom: none;
   }
+
 }
 
 .hidden {
@@ -217,6 +227,8 @@
 
   .container .preview {
     display: inline-block;
+    width: 100%;
+    text-align: center;
   }
 
   .container .preview .performance-poster {
@@ -263,6 +275,12 @@
 
 @media (min-width: 425px) and (max-width: 575.98px) {
 
+  .container .preview {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
   .container .info {
     margin: auto;
     width: 405px;
@@ -294,7 +312,7 @@
   }
 
   .preview .slider {
-    margin: 0 auto ;
+    margin: 0 auto;
   }
 
   .container .preview .performance-poster {
@@ -309,6 +327,12 @@
 }
 
 @media (min-width: 375px) and (max-width: 424.98px) {
+
+  .container .preview {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
 
   .container .info {
     margin: auto;
@@ -357,6 +381,12 @@
 }
 
 @media (min-width: 300px) and (max-width: 374.98px) {
+
+  .container .preview {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
 
   .container .info {
     margin: auto;
