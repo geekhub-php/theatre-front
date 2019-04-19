@@ -4,47 +4,58 @@ h2 {
   color: $hover-color;
   font-family: roboto,sans-serif;
 }
+
 h3 {
   font-family: roboto,sans-serif;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 .title {
   margin: 60px auto 0;
   text-align: center;
 }
+
 .btn-switch {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .btn {
   color: $hover-color;
   border: 1px solid $hover-color;
   background-color: $white-color;
 }
+
 .btn:hover {
   color: $white-color;
   background-color: $hover-color;
 }
+
 .btn:focus {
   box-shadow: none;
 }
+
 table {
   border-spacing: 0;
   border-collapse: collapse;
 }
+
 .desktop {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .calendar {
   max-width: 100%;
   margin: 35px 0;
 }
+
 .day-of-week {
   background-color: $hover-color;
   color: $white-color;
@@ -55,14 +66,16 @@ table {
   width: 141px;
   text-align: center;
 }
+
 .day-of-month {
   position: relative;
   overflow: hidden;
   height: 142px;
-  padding: 34px 0 0 0;
+  padding: 34px 0 0;
   border: 1px solid #c8c8c8;
   vertical-align: bottom;
 }
+
 .this-month-number {
   position: absolute;
   top: 5px;
@@ -79,6 +92,7 @@ table {
   min-width: 25px;
   text-align: center;
 }
+
 .next-month-number {
   position: absolute;
   top: 5px;
@@ -95,6 +109,7 @@ table {
   min-width: 25px;
   text-align: center;
 }
+
 .calendar-img {
   max-width: 100%;
   margin-top: -40px;
@@ -104,32 +119,38 @@ table {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   .schedule-time {
     color: $hover-color;
     text-align: center;
   }
+
   .schedule-event {
     position: relative;
     padding: 20px 22px 0 0;
     flex-basis: 50%;
     border-right: 3px solid #eee;
+
     &:last-child {
       padding-bottom: 20px;
     }
+
     .schedule-link {
       text-decoration: none;
       color: $hover-color;
     }
+
     .schedule-body {
       position: relative;
       max-width: 400px;
       border: 1px solid #d4d4d4;
       border-radius: 2px;
       padding: 12px;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
       margin: 0 18px 0 0;
     }
-    .schedule-body:after {
+
+    .schedule-body::after {
       content: "";
       position: absolute;
       width: 20px;
@@ -144,74 +165,87 @@ table {
       border-right: 1px solid #d4d4d4;
       border-bottom: 1px solid transparent;
     }
-      .schedule-title {
-        color: #474b4d;
-        font-size: 18px;
-        text-align: center;
-      }
-      .schedule-main .schedule-small_img {
-        display: block;
-        margin: 0 auto;
-        max-height: 300px;
-      }
-    }
-    .schedule-day {
-      position: absolute;
-      content: "";
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      background-color: $hover-color;
-      top: 42px;
-      right: -27px;
-    }
-    .day {
-      display: block;
-      margin-top: 12px;
+
+    .schedule-title {
+      color: #474b4d;
       font-size: 18px;
-      font-weight: 900;
-      color: $white-color;
       text-align: center;
     }
-    &:nth-child(2n) {
-      position: relative;
-      border-right: none;
-      padding: 20px 0 0 22px;
-      .schedule-body {
-        transform: translateY(102px);
-        margin: 0 0 0 18px;
-      }
-      .schedule-body::after {
-        left: -10px;
-        border: 1px solid #d4d4d4;
-        background-color: $white-color;
-        transform: rotate(45deg);
-        border-top: 1px solid transparent;
-        border-left: 1px solid #d4d4d4;
-        border-right: 1px solid transparent;
-        border-bottom: 1px solid #d4d4d4;
-      }
-      .schedule-day {
-        position: absolute;
-        top: 144px;
-        left: -27px;
-      }
+
+    .schedule-main .schedule-small_img {
+      display: block;
+      margin: 0 auto;
+      max-height: 300px;
     }
   }
+
+  .schedule-day {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: $hover-color;
+    top: 42px;
+    right: -27px;
+  }
+
+  .day {
+    display: block;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 900;
+    color: $white-color;
+    text-align: center;
+  }
+
+  &:nth-child(2n) {
+    position: relative;
+    border-right: none;
+    padding: 20px 0 0 22px;
+
+    .schedule-body {
+      transform: translateY(102px);
+      margin: 0 0 0 18px;
+    }
+
+    .schedule-body::after {
+      left: -10px;
+      border: 1px solid #d4d4d4;
+      background-color: $white-color;
+      transform: rotate(45deg);
+      border-top: 1px solid transparent;
+      border-left: 1px solid #d4d4d4;
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid #d4d4d4;
+    }
+
+    .schedule-day {
+      position: absolute;
+      top: 144px;
+      left: -27px;
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
+
   .mobile {
     padding-left: 24px;
     justify-content: flex-start;
     flex-direction: column;
-    max-width:400px;
+    max-width: 400px;
     margin: 40px auto 0;
+
     .schedule-event {
-      padding: 20px 0 0 0;
+      padding: 20px 0 0;
       border-left: 3px solid #eee;
       border-right: none;
+
       .schedule-body {
         margin: 0 0 0 60px;
       }
+
       .schedule-body::after {
         left: -10px;
         border-top: 1px solid transparent;
@@ -219,15 +253,19 @@ table {
         border-right: 1px solid transparent;
         border-bottom: 1px solid #d4d4d4;
       }
+
       .schedule-day {
         left: -27px;
       }
+
       &:nth-child(2n) {
-        padding: 20px 0 0 0px;
+        padding: 20px 0 0;
+
         .schedule-body {
-          transform: translateY(0px);
+          transform: translateY(0);
           margin: 0 0 0 60px;
         }
+
         .schedule-day {
           top: 42px;
         }
@@ -235,17 +273,23 @@ table {
     }
   }
 }
-@media screen and (min-width: 1000px){
+
+@media screen and (min-width: 1000px) {
+
   .mobile {
     display: none;
   }
 }
+
 @media screen and (max-width: 400px) {
+
   .btn-now {
     display: none;
   }
 }
-@media screen and (max-width: 1000px){
+
+@media screen and (max-width: 1000px) {
+
   .desktop {
     display: none;
   }
