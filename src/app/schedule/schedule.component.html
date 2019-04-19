@@ -27,119 +27,120 @@
       <tbody>
       <tr *ngFor="let event of scheduleList">
         <td class="day-of-month">
-          <span class="this-month-number">{{day | date: 'd'}}</span>
-            <img class="calendar-img" src={{event.performance.mainPicture.performance_big.url}}
-                 alt="{{event.performance.title}}">
+
+          <span class="this-month-number">{{ event.day | date: 'd' }}</span>
+            <img class="calendar-img" [src]=event.performance.mainPicture.performance_big.url
+                 [alt]="event.performance.title">
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{day | date: 'd'}}</span>
+          <span class="this-month-number">{{ event.day | date: 'd' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{day | date: 'd'}}</span>
+          <span class="this-month-number">{{ event.day | date: 'd' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{day | date: 'd'}}</span>
+          <span class="this-month-number">{{ event.day | date: 'd' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{day | date: 'd'}}</span>
+          <span class="this-month-number">{{ event.day | date: 'd' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{day | date: 'd'}}</span>
+          <span class="this-month-number">{{ event.day | date: 'd' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{day | date: 'd'}}</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ event.day | date: 'd' }}</span>
         </td>
       </tr>
       <tr>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
-        </td>
-        <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
       </tr>
       <tr>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="this-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="next-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="next-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="next-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="next-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
         </td>
         <td class="day-of-month">
-          <span class="next-month-number">{{date | date:'d'}}</span>
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>   
+      </tr>
+      <tr>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="this-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="next-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="next-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="next-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="next-month-number">{{ date | date:'d' }}</span>
+        </td>
+        <td class="day-of-month">
+          <span class="next-month-number">{{ date | date:'d' }}</span>
         </td>
       </tr>
       </tbody>
@@ -151,8 +152,8 @@
     <section class="schedule-event" *ngFor="let event of scheduleList">
       <div class="schedule-body">
         <a [routerLink]="['', 'performance', event.performance.slug]">
-          <h2 class="schedule-title">{{event.performance.title}}</h2>
-          <p class="schedule-time">{{event.time}}</p>
+          <h2 class="schedule-title">{{ event.performance.title }}</h2>
+          <p class="schedule-time">{{ event.time }}</p>
           <div class="schedule-main">
             <img class="schedule-small_img" src={{event.performance.mainPicture.performance_small.url}}
                  alt="{{event.performance.title}}">
@@ -160,7 +161,7 @@
         </a>
       </div>
       <div class="schedule-day">
-        <span class="day">{{event.day}}</span>
+        <span class="day">{{ event.day }}</span>
       </div>
     </section>
   </div>
