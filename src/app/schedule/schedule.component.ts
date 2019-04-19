@@ -22,6 +22,8 @@ export class ScheduleComponent implements OnInit {
 
   date = new Date('April 19, 2019');
 
+  day = this.date.getDate();
+
   constructor(private datePipe: DatePipe, private gateway: GatewayService, private loaderService: LoaderService) { }
 
   transformDate(date) {
@@ -30,7 +32,6 @@ export class ScheduleComponent implements OnInit {
 
   prevMonth(event: any) {
     this.date = new Date(this.date);
-    this.date.setDate(this.date.getDate() - 1);
     this.date.setMonth(this.date.getMonth() - 1);
 
     return Date;
@@ -39,7 +40,6 @@ export class ScheduleComponent implements OnInit {
 
   nextMonth(event: any) {
     this.date = new Date(this.date);
-    this.date.setDate(this.date.getDate() + 1);
     this.date.setMonth(this.date.getMonth() + 1);
 
     return Date;
