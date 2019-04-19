@@ -21,12 +21,6 @@ export class GatewayService {
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
 
-  protected httpOptions = {
-    headers: new HttpHeaders(),
-    observe: 'response' as 'body',
-    params: new HttpParams()
-  };
-
   constructor(private http: HttpClient) { }
 
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
