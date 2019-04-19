@@ -1,10 +1,24 @@
 .history {
+  font-family: "robotoregular";
 
-  .history-heading {
-    margin: 20px 0;
-    font-size: 24px;
-    text-align: center;
-    color: #e54b2b;
+  .history-title {
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    .history-heading {
+      margin: 0;
+      font-size: 24px;
+      color: #e54b2b;
+    }
+
+    .history-date {
+      color: #868b8c;
+      margin: 0;
+      font-size: 18px;
+    }
   }
 
   .history-main_img {
@@ -12,7 +26,44 @@
     max-height: 500px;
     margin: 0 auto;
   }
+
+  .performance-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    list-style: none;
+    
+    .list-item {
+      height: 290px;
+      width: 150px;
+      margin: 5px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .list-item .img{
+      width: 100%;
+    }
+
+    .list-item .title{
+      background-color: #2a2a2a;;
+      display: flex;
+      height: 70px;
+      margin-bottom: 0;
+    }
+
+    .list-item .title .span {
+      text-align: center;
+      font-family: 'robotothin';
+      color: #fff;
+      margin: auto;
+    }
+  }
 }
+
+
 
 .img-wrap {
   margin: 16px auto;
