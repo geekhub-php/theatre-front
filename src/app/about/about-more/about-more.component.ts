@@ -19,6 +19,7 @@ export class AboutMoreComponent implements OnInit {
     this.loaderService.start('about-more');
     this.gateway.getHistoryBySlug(slug).subscribe(
       (res) => {
+        console.log(res);
         this.history = res;
         this.loaderService.stop('about-more');
       },
@@ -26,5 +27,4 @@ export class AboutMoreComponent implements OnInit {
     );
     this.loaderService.start('about-more');
   }
-
 }

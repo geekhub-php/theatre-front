@@ -21,51 +21,97 @@
     }
   }
 
-  .history-main_img {
-    display: block;
-    max-height: 500px;
-    margin: 0 auto;
+  .history-main-picture {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    .history-main_img {
+      width: 568px;
+    }
+
+    .history-main_img .img {
+      display: block;
+      margin: 0px auto 0 0;
+      max-height: 280px;
+    }
+
+    .history-gallery {
+      width: 400px;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .history-gallery .img {
+      margin: 0 0 3px 3px;
+      width: 128px;
+    }
   }
 
   .performance-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     padding: 0;
     list-style: none;
-    
+
     .list-item {
-      height: 290px;
-      width: 150px;
-      margin: 5px; 
+      cursor: pointer;
+      height: 218px;
+      width: 106px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      margin-right: 2px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
     }
 
-    .list-item .img{
+    .list-item .img {
       width: 100%;
     }
 
-    .list-item .title{
-      background-color: #2a2a2a;;
+    .list-item .title {
+      font-size: 12px;
+      background-color: #2a2a2a;
       display: flex;
-      height: 70px;
+      height: 60px;
       margin-bottom: 0;
     }
 
     .list-item .title .span {
       text-align: center;
-      font-family: 'robotothin';
+      font-family: "robotothin";
       color: #fff;
       margin: auto;
     }
   }
+
+  .history-main_text {
+    color: #868b8c;
+  }
 }
 
+@media screen and (max-width: 767px) {
+  .history .history-main-picture {
+    flex-wrap: wrap;
+  }
 
+  .history .history-main-picture .history-gallery {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
+  }
 
-.img-wrap {
-  margin: 16px auto;
-  max-width: 800px;
+  .history .history-main-picture .history-gallery .img {
+    margin-left: 0;
+  }
 }
