@@ -14,7 +14,8 @@
     max-width: initial;
     margin: 0 auto;
   }
-  .link_response{
+
+  .link_response {
     visibility: hidden;
   }
 }
@@ -121,23 +122,23 @@
           top: 0;
           right: 0;
           text-decoration: none;
+        }
 
-          .ticket_h2 {
-            color: #fff;
-            font-family: "robotothin", serif;
-            text-align: left;
-            font-size: 23px;
-            margin-bottom: 15px;
-            text-transform: capitalize;
-            margin-left: 15px;
-          }
+        .ticket_link .ticket_h2 {
+          color: #fff;
+          font-family: "robotothin", serif;
+          text-align: left;
+          font-size: 23px;
+          margin-bottom: 15px;
+          text-transform: capitalize;
+          margin-left: 15px;
+        }
 
-          .ticket_p {
-            color: #fff;
-            font-family: "robotoregular", serif;
-            font-size: 13px;
-            margin: 0 0 0 15px;
-          }
+        .ticket_link .ticket_p {
+          color: #fff;
+          font-family: "robotoregular", serif;
+          font-size: 13px;
+          margin: 0 0 0 15px;
         }
       }
     }
@@ -560,7 +561,6 @@
           }
         }
       }
-
 
       .active {
         width: 100%;

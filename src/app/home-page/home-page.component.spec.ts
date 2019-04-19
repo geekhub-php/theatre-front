@@ -7,6 +7,8 @@ import { NewsListModule } from '../news-list/news-list.module';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -20,7 +22,8 @@ describe('HomePageComponent', () => {
       imports: [
         NewsListModule,
         HttpClientModule,
-        SpinnerModule
+        SpinnerModule,
+        RouterTestingModule
       ]
     })
     .compileComponents();
