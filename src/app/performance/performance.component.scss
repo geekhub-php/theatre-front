@@ -134,8 +134,7 @@
           color: $primary-color;
         }
 
-        &:hover {
-          box-shadow: 0 0 1px $transparent-black;
+       &:hover .name {
           color: $hover-color;
         }
 
