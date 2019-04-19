@@ -16,18 +16,27 @@ export class ScheduleComponent implements OnInit {
 
   scheduleList: Array<PerformanceEvent>;
 
-  month = 4;
+  date = new Date('April 19, 2019');
+
+  month =  4;
 
   year = 2019;
 
-  date = new Date('April 19, 2019');
-
   day = this.date.getDate();
+
+  newDay = new Date(this.date);
 
   constructor(private datePipe: DatePipe, private gateway: GatewayService, private loaderService: LoaderService) { }
 
   transformDate(date) {
     return this.datePipe.transform(date, 'MM-yyyy');
+  }
+
+   addDays(date, days) {
+    this.newDay = new Date(date);
+    this.newDay.setDate(this.newDay.getDate() + 1);
+
+    return Date;
   }
 
   prevMonth(event: any) {
@@ -53,7 +62,7 @@ export class ScheduleComponent implements OnInit {
 
   getDates(year: number, month: number) {
 
-    return ['31-03-2019', '04-05-2019'];
+    return ['01-04-2019', '05-05-2019'];
   }
 
   ngOnInit() {
