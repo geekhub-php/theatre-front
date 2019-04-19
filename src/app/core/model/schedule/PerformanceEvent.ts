@@ -10,11 +10,4 @@ export class PerformanceEvent {
   venue: string;
 
   performance: Performance;
-  /*get start() {
-    return new Date(`${this.year}-${this.month}-${this.day} ${this.time}`);
-  }
-
-  get title() {
-    return this.performance.title;
-  }*/
 }

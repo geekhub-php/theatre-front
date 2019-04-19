@@ -16,13 +16,11 @@ export class ScheduleComponent implements OnInit {
 
   scheduleList: Array<PerformanceEvent>;
 
-  date = new Date('April 15, 2019');
-
-   // dayOfWeek = (this.date.getDay() + 6)% 7;
-
   month = 4;
 
   year = 2019;
+
+  date = new Date('April 19, 2019');
 
   constructor(private datePipe: DatePipe, private gateway: GatewayService, private loaderService: LoaderService) { }
 
@@ -32,13 +30,16 @@ export class ScheduleComponent implements OnInit {
 
   prevMonth(event: any) {
     this.date = new Date(this.date);
+    this.date.setDate(this.date.getDate() - 1);
     this.date.setMonth(this.date.getMonth() - 1);
 
     return Date;
+
   }
 
   nextMonth(event: any) {
     this.date = new Date(this.date);
+    this.date.setDate(this.date.getDate() + 1);
     this.date.setMonth(this.date.getMonth() + 1);
 
     return Date;
@@ -51,6 +52,7 @@ export class ScheduleComponent implements OnInit {
   }
 
   getDates(year: number, month: number) {
+
     return ['31-03-2019', '04-05-2019'];
   }
 

@@ -1,10 +1,14 @@
 @import "../../assets/variables";
+
 h2 {
   color: $hover-color;
   font-family: roboto,sans-serif;
 }
 h3 {
   font-family: roboto,sans-serif;
+}
+a:hover {
+  text-decoration: none;
 }
 .title {
   margin: 60px auto 0;
@@ -26,6 +30,74 @@ h3 {
 }
 .btn:focus {
   box-shadow: none;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.desktop {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.calendar {
+  max-width: 100%;
+  margin: 35px 0;
+}
+.day-of-week {
+  background-color: $hover-color;
+  color: $white-color;
+  font-family: robotothin,sans-serif;
+  font-size: 14px;
+  border-right: 1px solid $white-color;
+  padding: 11px 0;
+  width: 141px;
+  text-align: center;
+}
+.day-of-month {
+  position: relative;
+  overflow: hidden;
+  height: 142px;
+  padding: 34px 0 0 0;
+  border: 1px solid #c8c8c8;
+  vertical-align: bottom;
+}
+.this-month-number {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: 5;
+  display: block;
+  margin: 0 0 0 7px;
+  font-size: 18px;
+  color: $hover-color;
+  background: $white-color;
+  border-radius: 3px;
+  line-height: 1;
+  padding: 2px 0;
+  min-width: 25px;
+  text-align: center;
+}
+.next-month-number {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: 5;
+  display: block;
+  margin: 0 0 0 7px;
+  font-size: 18px;
+  color: $transparent-black;
+  background: $white-color;
+  border-radius: 3px;
+  line-height: 1;
+  padding: 2px 0;
+  min-width: 25px;
+  text-align: center;
+}
+.calendar-img {
+  max-width: 100%;
+  margin-top: -40px;
 }
 
 .mobile {
@@ -126,7 +198,7 @@ h3 {
       }
     }
   }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .mobile {
     padding-left: 24px;
     justify-content: flex-start;
@@ -163,13 +235,18 @@ h3 {
     }
   }
 }
-@media screen and (min-width: 900px){
+@media screen and (min-width: 1000px){
   .mobile {
     display: none;
   }
 }
 @media screen and (max-width: 400px) {
   .btn-now {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px){
+  .desktop {
     display: none;
   }
 }
