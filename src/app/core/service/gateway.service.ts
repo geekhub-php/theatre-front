@@ -52,12 +52,6 @@ export class GatewayService {
     );
   }
 
-  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
-    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
-      params: {limit, page, locale}
-    });
-  }
-
   getHistoriesList(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<HistoryListResponse> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.historiesListUrl}`, {
       params: {limit, page, locale} // params: {limit: limit, page: page, locale: locale}
@@ -67,11 +61,6 @@ export class GatewayService {
     );
   }
 
-  getNewsBySlug(slug): Observable<HttpResponse<NewsItem>> {
-    return this.http.get<HttpResponse<NewsItem>>(
-      `${this.baseUrl}/posts/${slug}`, this.httpOptions
-    );
-  }
   getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
     return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
       params: {limit, page, locale}
