@@ -15,7 +15,6 @@ export class NewsComponent implements OnInit {
   locale: string;
   listPost: Array<NewsItem> = [];
   collectionSize: number;
-  par: any;
 
   constructor(private gatewayService: GatewayService,
               private loaderService: LoaderService,
@@ -33,14 +32,14 @@ export class NewsComponent implements OnInit {
         this.collectionSize = res.total_count;
         this.page = res.page;
         this.loaderService.stop('news');
+        const newParams = {
+          queryParams: {
+            page: this.page
+          }
+        };
+        this.appRoutes.navigate(['news'], newParams);
       },
       err => this.loaderService.stop('news')
     );
-    const newParams = {
-      queryParams: {
-        page: this.page
-      }
-    };
-    this.appRoutes.navigate(['news'], newParams);
   }
 }
