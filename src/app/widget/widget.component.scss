@@ -1,3 +1,5 @@
+@import "../../assets/variables";
+
 .widget {
   max-width: 350px;
   min-width: 240px;
@@ -9,6 +11,13 @@
   margin: 0;
 
   .widget-item {
+    box-sizing: border-box;
+    border-bottom: 1px dashed $primary-color;
+    background-color: $bg-widget;
+
+    &:last-child {
+      border-bottom: none;
+    }
 
     .widget-wrap {
       display: flex;
@@ -16,12 +25,6 @@
       justify-content: flex-start;
       box-sizing: border-box;
       padding: 6px 0;
-      background-color: #4f4f4f;
-      border-bottom: 1px dashed #373737;
-
-      &:last-child {
-        border-bottom: none;
-      }
     }
 
     .widget-date {
@@ -29,24 +32,24 @@
       box-sizing: border-box;
       position: relative;
       text-align: center;
-      font-family: "robotolight";
+      font-family: $main-font;
     }
 
     .week {
-      color: #717171;
+      color: $dark-grayish-red;
       font-size: 18px;
       line-height: 18px;
     }
 
     .day {
-      font-family: "robotothin";
+      font-family: $main-font_light;
       font-size: 30px;
-      color: #fff;
+      color: $white-color;
       line-height: 32px;
     }
 
     .month {
-      color: #717171;
+      color: $dark-grayish-red;
       font-size: 14px;
       line-height: 14px;
     }
@@ -62,40 +65,40 @@
 
     .time {
       margin: 5px 0 0;
-      font-family: "robotolight";
+      font-family: $main-font;
       font-size: 12px;
-      color: #fff;
+      color: $white-color;
     }
   }
 
   .widget-about h3.widget-heading {
-    font-family: "robotolight";
+    font-family: $main-font;
     font-size: 18px;
-    color: #fff;
+    color: $white-color;
     margin-bottom: 0;
   }
 }
 
 .widget-item .widget-about .type {
   margin: 0;
-  font-family: "robotothin";
+  font-family: $main-font_light;
   font-size: 12px;
-  color: #fff;
+  color: $white-color;
 }
 
 .hover:hover {
-  background-color: #e64c2b !important;
+  background-color: $hover-color !important;
   cursor: pointer;
 }
 
 .hover:hover .widget-date {
 
   .week {
-    color: #fff;
+    color: $white-color;
   }
 
   .month {
-    color: #fff;
+    color: $white-color;
   }
 }
 
@@ -108,7 +111,7 @@
 }
 
 .bg-news-code {
-  background: url("../../assets/images/news-code.png") 97% center no-repeat, #4f4f4f;
+  background: url("../../assets/images/news-code.png") 97% center no-repeat, $bg-widget;
 }
 
 .mrg10px {
