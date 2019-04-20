@@ -7,6 +7,7 @@ import { catchError } from 'rxjs/operators';
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { ScheduleListResponse } from '../model/schedule/ScheduleListResponse';
+import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
 import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
 import { Employee } from '../model/employee/Employee';
@@ -76,6 +77,13 @@ export class GatewayService {
     const dateNumber = ('0' + date.getDate()).slice(-2);
 
     return `${dateNumber}-${month}-${year}`;
+  }
+
+  getHistoryBySlug(slug: string): Observable<History> {
+    return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
+    .pipe(
+      catchError(this.handleError('get History', new History()))
+    );
   }
 
   /* tslint:disable:no-console */

@@ -30,6 +30,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { ScheduleModule } from './schedule/schedule.module';
+import { AboutMoreComponent } from './about/about-more/about-more.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ScheduleModule } from './schedule/schedule.module';
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent
+    BoardTrusteesComponent,
+    AboutMoreComponent
   ],
   imports: [
     BrowserModule,
