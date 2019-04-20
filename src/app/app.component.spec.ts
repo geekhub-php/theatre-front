@@ -22,6 +22,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutMoreComponent } from './about/about-more/about-more.component';
 
 
 describe('AppComponent', () => {
@@ -40,7 +41,8 @@ describe('AppComponent', () => {
         TeamComponent,
         ContactsComponent,
         PartnersComponent,
-        BoardTrusteesComponent
+        BoardTrusteesComponent,
+        AboutMoreComponent
       ],
       providers: [
           {provide: APP_BASE_HREF, useValue: '/'}
@@ -49,7 +51,6 @@ describe('AppComponent', () => {
           AppRoutingModule,
           CoreModule,
           HomePageModule,
-          RouterTestingModule,
           RouterTestingModule,
           StripHtmlModule,
           InfiniteScrollModule,

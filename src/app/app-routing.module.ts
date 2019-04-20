@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from './home-page/home-page.component';
+
 import { AboutComponent } from './about/about.component';
+import { AboutMoreComponent } from './about/about-more/about-more.component';
+
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { TeamComponent } from './team/team.component';
@@ -29,6 +32,7 @@ const appRoutes: Routes = [
     {path: 'news', component: NewsComponent},
     {path: 'news/:slug', component: ArticleComponent},
     {path: 'about', component: AboutComponent},
+  {path: 'about/:slug', component: AboutMoreComponent},
     {path: 'persons', component: TeamComponent},
     {path: 'persons/:slug', component: PersonComponent},
     {path: 'contacts', component: ContactsComponent},
