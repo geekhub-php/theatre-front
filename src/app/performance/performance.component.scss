@@ -10,7 +10,7 @@
   border-bottom: 1px solid $light-gray;
   padding: 10px;
   text-align: center;
-  width: 900px;
+  width: 970px;
   margin: 0 auto;
 }
 
@@ -36,6 +36,10 @@
   border-bottom: 1px solid #fff;
 }
 
+::ng-deep .slider img {
+  max-height: 300px;
+  max-width: 450px;
+}
 
 .container {
 
@@ -58,6 +62,7 @@
     justify-content: center;
     margin-bottom: 20px;
     overflow: hidden;
+    height: 300px;
 
     .performance-widget {
       min-width: 240px;
@@ -74,16 +79,18 @@
     }
 
     .slider {
-      min-width: 45%;
+      width: 45%;
       overflow: hidden;
       order: 1;
+      background-color: $light-gray;
+      text-align: center;
     }
   }
 }
 
 .info {
   margin-bottom: 10px;
-  width: 900px;
+  width: 970px;
 
   .nav-info {
     margin-top: 20px;
@@ -189,6 +196,7 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+    height: auto;
   }
 
   .container .preview .performance-poster {
@@ -202,7 +210,7 @@
   }
 
   .preview .slider {
-    width: 80%;
+    width: 80% !important;
     margin: 0 auto;
   }
 
@@ -230,6 +238,7 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+    height: auto;
   }
 
   .container .preview .performance-poster {
@@ -244,6 +253,7 @@
 
   .preview .slider {
     margin: 0 auto;
+    width: auto !important;
   }
 
   ::ng-deep .carousel {
@@ -280,6 +290,7 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+    height: auto;
   }
 
   .container .info {
@@ -314,16 +325,24 @@
 
   .preview .slider {
     margin: 0 auto;
+    width: 80% !important;
+    height: 200px;
   }
 
   .container .preview .performance-poster {
     margin: 0 auto;
   }
 
+
   .container .preview .performance-widget {
     margin: 10px;
     min-width: 240px;
     text-align: center;
+  }
+
+  ::ng-deep .slider img {
+    max-height: 200px;
+    max-width: 100%;
   }
 }
 
@@ -333,6 +352,7 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+    height: auto;
   }
 
   .container .info {
@@ -378,6 +398,14 @@
 
   .preview .slider {
     margin: 0 auto;
+    width: 90% !important;
+    text-align: center;
+    height: 200px;
+  }
+
+  ::ng-deep .slider img {
+    max-height: 200px;
+    max-width: 100%;
   }
 }
 
@@ -387,6 +415,7 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+    height: auto;
   }
 
   .container .info {
@@ -432,5 +461,12 @@
 
   .preview .slider {
     margin: 0 auto;
+    height: 150px !important;
+    width: 90% !important;
+  }
+
+  ::ng-deep .slider img {
+    max-height: 150px;
+    max-width: 100%;
   }
 }
