@@ -15,8 +15,6 @@ import { AppComponent } from './app.component';
 import { PerformanceListComponent } from './performance-list/performance-list.component';
 import { PerformanceComponent } from './performance/performance.component';
 
-import { ScheduleComponent } from './schedule/schedule.component';
-
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -31,13 +29,13 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { SpinnerModule } from './shared/spinner/spinner.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerformanceListComponent,
     PerformanceComponent,
-    ScheduleComponent,
     AboutComponent,
     TeamComponent,
     ContactsComponent,
@@ -60,7 +58,8 @@ import { SpinnerModule } from './shared/spinner/spinner.module';
     StripHtmlModule,
     InfiniteScrollModule,
     NgxGalleryModule,
-    SpinnerModule
+    SpinnerModule,
+    ScheduleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
