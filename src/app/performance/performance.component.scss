@@ -85,6 +85,12 @@
       background-color: $light-gray;
       text-align: center;
     }
+    ::ng-deep .slider img {
+      height: 300px;
+      max-width: 100%;
+      vertical-align: middle !important;
+      margin: auto;
+    }
   }
 }
 
@@ -332,7 +338,6 @@
   .container .preview .performance-poster {
     margin: 0 auto;
   }
-
 
   .container .preview .performance-widget {
     margin: 10px;
