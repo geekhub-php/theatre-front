@@ -41,6 +41,6 @@ export class NewsComponent implements OnInit {
         page: this.page
       }
     };
-    this.appRoutes.navigate(['/news'], newParams);
+    this.appRoutes.navigate(['news'], newParams);
   }
 }
