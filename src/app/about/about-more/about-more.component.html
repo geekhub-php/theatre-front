@@ -7,11 +7,7 @@
     </div>
     <div class="history-main-picture">
       <div class="history-main_img">
-        <img class="img" [src]='history.mainPicture.history_big.url' alt="picture">
-      </div>
-      <div class="history-gallery">
-        <img class="img" [src]="item.sliderImage.slider_slider.url" alt="performance photo"
-          *ngFor="let item of history.performances">
+        <img class="img" [src]='history.mainPicture.reference.url' alt="picture">
       </div>
     </div>
     <div class="performance">
