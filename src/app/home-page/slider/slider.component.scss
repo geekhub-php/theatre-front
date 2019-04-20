@@ -1,0 +1,709 @@
+@import "../../../assets/variables";
+
+.slider-img {
+  position: relative;
+  height: 500px;
+  background: $dark-grayish-red;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    max-width: initial;
+    margin: 0 auto;
+  }
+
+  .link_response {
+    visibility: hidden;
+  }
+}
+
+.slider {
+
+  .slider-list {
+    position: relative;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+
+    .tickets {
+      width: 100%;
+      bottom: 18px;
+      height: 93px;
+      position: absolute;
+      z-index: 99;
+      cursor: default;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .data {
+      display: flex;
+      cursor: pointer;
+
+      .ticket {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        width: 92px;
+        height: 93px;
+        background-color: transparent;
+        text-align: center;
+        margin: 0 -1px;
+        background-image: url("../../../assets/images/ticket.png");
+        background-repeat: no-repeat;
+        color: #fff;
+        font-family: "robotothin", serif;
+        font-size: 24px;
+        padding: 0 11px;
+        line-height: 1.2;
+
+        .ticket-day {
+          padding: 3px;
+          font-size: 16px;
+          color: #7d7c7c;
+          text-transform: capitalize;
+        }
+
+        .ticket-number {
+          margin-top: -8px;
+          font-family: "robotolight";
+          font-size: 44px;
+          border-bottom: 1px solid #7d7c7c;
+        }
+
+        .ticket-month {
+          margin-top: 2px;
+          font-size: 14px;
+          color: #7d7c7c;
+        }
+      }
+
+      .ticket-active {
+        background-image: url("../../../assets/images/orange-ticket.png");
+
+        .ticket-day {
+          color: #fff !important;
+        }
+
+        .ticket-number {
+          color: #fff !important;
+          border-bottom: 1px solid #fff;
+        }
+
+        .ticket-month {
+          color: #fff !important;
+        }
+      }
+
+      .ticket_data {
+        position: relative;
+        box-sizing: border-box;
+        display: none;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 463px;
+        height: 93px;
+        background-color: transparent;
+        padding: 11px;
+        background-image: url("../../../assets/images/tick.png");
+        background-repeat: no-repeat;
+
+        .ticket_link {
+          position: absolute;
+          width: 463px;
+          height: 93px;
+          top: 0;
+          right: 0;
+          text-decoration: none;
+        }
+
+        .ticket_link .ticket_h2 {
+          color: #fff;
+          font-family: "robotothin", serif;
+          text-align: left;
+          font-size: 23px;
+          margin-bottom: 15px;
+          text-transform: capitalize;
+          margin-left: 15px;
+        }
+
+        .ticket_link .ticket_p {
+          color: #fff;
+          font-family: "robotoregular", serif;
+          font-size: 13px;
+          margin: 0 0 0 15px;
+        }
+      }
+    }
+  }
+}
+
+.active {
+  display: block !important;
+}
+
+.active-more {
+  display: block !important;
+}
+
+.buttons {
+  display: none;
+}
+
+@media (max-width: 992px) {
+
+  .slider-list {
+    position: relative;
+    margin: 0 auto;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      max-width: initial;
+      margin: 0 auto;
+    }
+
+    .link_response {
+      visibility: visible;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .buttons {
+      visibility: visible;
+      position: absolute;
+      width: 100%;
+      height: 36px;
+      bottom: 46.5%;
+      display: flex;
+      justify-content: space-between;
+
+      .slider-button {
+        width: 36px;
+        height: 36px;
+        top: 50%;
+        bottom: 50%;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+        background-color: #4c4c4c;
+        margin: 0 10px;
+
+        &:hover {
+          background-color: #e54b2b;
+        }
+
+        .arrow-prev {
+          width: 9px;
+          height: 19px;
+          background-image: url("../../../assets/images/arrow-left.png");
+          background-repeat: no-repeat;
+          background-size: auto;
+          margin: 0 0 0 6px;
+        }
+
+        .arrow-next {
+          width: 9px;
+          height: 19px;
+          background-image: url("../../../assets/images/arrow-right.png");
+          background-repeat: no-repeat;
+          background-size: auto;
+          margin: 0 0 0 8px;
+        }
+      }
+    }
+
+    .tickets {
+      display: none;
+      visibility: hidden;
+
+      .data {
+        display: none;
+
+        .ticket_data {
+          display: none;
+          visibility: hidden;
+        }
+
+        .ticket-active {
+          display: none;
+        }
+
+        .ticket-active .ticket_span {
+          display: none;
+        }
+
+        .ticket {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  .slider {
+    width: 100%;
+    height: 400px;
+
+    .slider-list {
+      position: relative;
+      margin: 0 auto;
+      height: 400px;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        max-width: initial;
+        margin: 0 auto;
+      }
+
+      .link_response {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .buttons {
+        visibility: visible;
+        position: absolute;
+        width: 100%;
+        height: 36px;
+        bottom: 46.5%;
+        display: flex;
+        justify-content: space-between;
+
+        .slider-button {
+          width: 36px;
+          height: 36px;
+          top: 50%;
+          bottom: 50%;
+          border: none;
+          border-radius: 3px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+          background-color: #4c4c4c;
+          margin: 0 10px;
+
+          &:hover {
+            background-color: #e54b2b;
+          }
+
+          .arrow-prev {
+            width: 9px;
+            height: 19px;
+            background-image: url("../../../assets/images/arrow-left.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin: 0 0 0 6px;
+          }
+
+          .arrow-next {
+            width: 9px;
+            height: 19px;
+            background-image: url("../../../assets/images/arrow-right.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+
+      .active {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .tickets {
+        display: none;
+        visibility: hidden;
+
+        .data {
+          display: none;
+
+          .ticket_data {
+            display: none;
+            visibility: hidden;
+          }
+
+          .ticket-active {
+            display: none;
+          }
+
+          .ticket-active .ticket_span {
+            display: none;
+          }
+
+          .ticket {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+
+  .slider {
+    width: 100%;
+    height: 300px;
+
+    .slider-list {
+      position: relative;
+      margin: 0 auto;
+      height: 300px;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        max-width: initial;
+        margin: 0 auto;
+      }
+
+      .link_response {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .buttons {
+        visibility: visible;
+        position: absolute;
+        width: 100%;
+        height: 36px;
+        bottom: 46.5%;
+        display: flex;
+        justify-content: space-between;
+
+        .slider-button {
+          width: 36px;
+          height: 36px;
+          top: 50%;
+          bottom: 50%;
+          border: none;
+          border-radius: 3px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+          background-color: #4c4c4c;
+          margin: 0 10px;
+
+          &:hover {
+            background-color: #e54b2b;
+          }
+
+          .arrow-prev {
+            width: 9px;
+            height: 19px;
+            background-image: url("../../../assets/images/arrow-left.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin: 0 0 0 6px;
+          }
+
+          .arrow-next {
+            width: 9px;
+            height: 19px;
+            background-image: url("../../../assets/images/arrow-right.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+
+      .active {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .tickets {
+        display: none;
+        visibility: hidden;
+
+        .data {
+          display: none;
+
+          .ticket_data {
+            display: none;
+            visibility: hidden;
+          }
+
+          .ticket-active {
+            display: none;
+          }
+
+          .ticket-active .ticket_span {
+            display: none;
+          }
+
+          .ticket {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+
+  .slider {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+
+    .slider-list {
+      position: relative;
+      margin: 0 auto;
+      height: 250px;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        max-width: initial;
+        margin: 0 auto;
+      }
+
+      .link_response {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .buttons {
+        visibility: visible;
+        position: absolute;
+        width: 100%;
+        height: 36px;
+        bottom: 46.5%;
+        display: flex;
+        justify-content: space-between;
+
+        .slider-button {
+          width: 36px;
+          height: 36px;
+          top: 50%;
+          bottom: 50%;
+          border: none;
+          border-radius: 3px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+          background-color: #4c4c4c;
+          margin: 0 10px;
+
+          &:hover {
+            background-color: #e54b2b;
+          }
+
+          .arrow-prev {
+            width: 9px;
+            height: 19px;
+            background-image: url("../../../assets/images/arrow-left.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin: 0 0 0 6px;
+          }
+
+          .arrow-next {
+            width: 9px;
+            height: 19px;
+            background-image: url("../../../assets/images/arrow-right.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+
+      .active {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .tickets {
+        display: none;
+        visibility: hidden;
+
+        .data {
+          display: none;
+
+          .ticket_data {
+            display: none;
+            visibility: hidden;
+          }
+
+          .ticket-active {
+            display: none;
+          }
+
+          .ticket-active .ticket_span {
+            display: none;
+          }
+
+          .ticket {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+
+  .slider {
+    width: 100%;
+    height: 200px;
+
+    .slider-list {
+      position: relative;
+      margin: 0 auto;
+      height: 200px;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        max-width: initial;
+        margin: 0 auto;
+      }
+
+      .link_response {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .buttons {
+        visibility: visible;
+        position: absolute;
+        width: 100%;
+        height: 36px;
+        bottom: 46.5%;
+        display: flex;
+        justify-content: space-between;
+
+        .slider-button {
+          width: 36px;
+          height: 36px;
+          top: 50%;
+          bottom: 50%;
+          border: none;
+          border-radius: 3px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
+          background-color: #4c4c4c;
+          margin: 0 10px;
+
+          &:hover {
+            background-color: #e54b2b;
+          }
+
+          .arrow-prev {
+            width: 9px;
+            height: 19px;
+            background-image: url("../../../assets/images/arrow-left.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin: 0 0 0 6px;
+          }
+
+          .arrow-next {
+            width: 9px;
+            height: 19px;
+            background-image: url("../../../assets/images/arrow-right.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+
+      .active {
+        width: 100%;
+        height: 200px;
+      }
+
+      .tickets {
+        display: none;
+        visibility: hidden;
+
+        .data {
+          display: none;
+
+          .ticket_data {
+            display: none;
+            visibility: hidden;
+          }
+
+          .ticket-active {
+            display: none;
+          }
+
+          .ticket-active .ticket_span {
+            display: none;
+          }
+
+          .ticket {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
