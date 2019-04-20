@@ -11,7 +11,7 @@
   padding: 10px;
   text-align: center;
   width: 900px;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 
 ::ng-deep .info .nav-link {
@@ -31,6 +31,7 @@
 ::ng-deep .info .nav-tabs, ::ng-deep .info .nav-tabs .nav-link.active {
   border-color: $light-gray;
 }
+
 ::ng-deep .info .nav-tabs .nav-link.active {
   border-bottom: 1px solid #fff;
 }
@@ -103,6 +104,7 @@
       border-bottom: 1px solid $light-gray;
     }
   }
+
   .wrap {
     margin: auto;
   }
@@ -134,7 +136,7 @@
           color: $primary-color;
         }
 
-       &:hover .name {
+        &:hover .name {
           color: $hover-color;
         }
 
@@ -159,7 +161,6 @@
     border: 1px solid $light-gray;
     border-bottom: none;
   }
-
 }
 
 .hidden {
