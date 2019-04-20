@@ -1,5 +1,7 @@
+@import '../../../assets/variables';
+
 .history {
-  font-family: "robotoregular";
+  font-family: $main-font_bold;
 
   .history-title {
     margin: 24px 0;
@@ -11,11 +13,11 @@
     .history-heading {
       margin: 0;
       font-size: 24px;
-      color: #e54b2b;
+      color: $hover-color;
     }
 
     .history-date {
-      color: #868b8c;
+      color: $dark-grayish-red;
       margin: 0;
       font-size: 18px;
     }
@@ -63,14 +65,14 @@
 
   .list-item .title .span {
     text-align: center;
-    font-family: "robotothin";
-    color: #fff;
+    font-family: $main-font_light;
+    color: $white-color;
     margin: auto;
   }
 }
 
 .history-main_text {
-  color: #868b8c;
+  color: $dark-grayish-red;
 }
 
 @media screen and (max-width: 767px) {
