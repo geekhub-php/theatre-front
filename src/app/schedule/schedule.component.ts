@@ -21,6 +21,7 @@ export class ScheduleComponent implements OnInit {
   from: Date;
   to: Date;
   newDay = new Date(this.date);
+  dayOfWeek = (this.date.getDay() + 6)% 7;
 
   constructor(private datePipe: DatePipe, private gateway: GatewayService, private loaderService: LoaderService) { }
 
@@ -53,7 +54,7 @@ export class ScheduleComponent implements OnInit {
   now(event: any) {
     this.date = new Date();
 
-    return this.month;
+    this.getPerformanceEvents();
   }
 
   getDates() {

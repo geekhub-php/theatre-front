@@ -45,10 +45,8 @@ table {
 }
 
 .desktop {
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .calendar {
@@ -65,6 +63,7 @@ table {
   padding: 11px 0;
   width: 141px;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .day-of-month {
@@ -72,7 +71,7 @@ table {
   overflow: hidden;
   height: 142px;
   padding: 34px 0 0;
-  border: 1px solid #c8c8c8;
+  border: 1px solid $light-gray;
   vertical-align: bottom;
 }
 
@@ -129,7 +128,7 @@ table {
     position: relative;
     padding: 20px 22px 0 0;
     flex-basis: 50%;
-    border-right: 3px solid #eee;
+    border-right: 3px solid $light-grayish-red;
 
     &:last-child {
       padding-bottom: 20px;
@@ -143,7 +142,7 @@ table {
     .schedule-body {
       position: relative;
       max-width: 400px;
-      border: 1px solid #d4d4d4;
+      border: 1px solid $light-gray;
       border-radius: 2px;
       padding: 12px;
       box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
@@ -157,17 +156,17 @@ table {
       height: 20px;
       top: 36px;
       right: -10px;
-      border: 1px solid #d4d4d4;
+      border: 1px solid $light-gray;
       background-color: $white-color;
       transform: rotate(45deg);
-      border-top: 1px solid #d4d4d4;
+      border-top: 1px solid $light-gray;
       border-left: 1px solid transparent;
-      border-right: 1px solid #d4d4d4;
+      border-right: 1px solid $light-gray;
       border-bottom: 1px solid transparent;
     }
 
     .schedule-title {
-      color: #474b4d;
+      color: $primary-color;
       font-size: 18px;
       text-align: center;
     }
@@ -211,13 +210,13 @@ table {
 
     .schedule-body::after {
       left: -10px;
-      border: 1px solid #d4d4d4;
+      border: 1px solid $light-gray;
       background-color: $white-color;
       transform: rotate(45deg);
       border-top: 1px solid transparent;
-      border-left: 1px solid #d4d4d4;
+      border-left: 1px solid $light-gray;
       border-right: 1px solid transparent;
-      border-bottom: 1px solid #d4d4d4;
+      border-bottom: 1px solid $light-gray;
     }
 
     .schedule-day {
@@ -234,12 +233,12 @@ table {
     padding-left: 24px;
     justify-content: flex-start;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 270px;
     margin: 40px auto 0;
 
     .schedule-event {
       padding: 20px 0 0;
-      border-left: 3px solid #eee;
+      border-left: 3px solid $light-grayish-red;
       border-right: none;
 
       .schedule-body {
@@ -249,9 +248,9 @@ table {
       .schedule-body::after {
         left: -10px;
         border-top: 1px solid transparent;
-        border-left: 1px solid #d4d4d4;
+        border-left: 1px solid $light-gray;
         border-right: 1px solid transparent;
-        border-bottom: 1px solid #d4d4d4;
+        border-bottom: 1px solid $light-gray;
       }
 
       .schedule-day {
@@ -278,6 +277,12 @@ table {
 
   .mobile {
     display: none;
+  }
+}
+
+@media screen and (min-width: 560px){
+  .mobile {
+    max-width: 400px;
   }
 }
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"></div>
 
   <div class="col-8 col-md-8 title">
     <h2>Афіша на</h2>
@@ -15,13 +15,13 @@
     <table class="calendar">
       <thead>
       <tr>
-        <th class="day-of-week">Понеділок</th>
-        <th class="day-of-week">Вівторок</th>
-        <th class="day-of-week">Середа</th>
-        <th class="day-of-week">Четвер</th>
-        <th class="day-of-week">П'ятниця</th>
-        <th class="day-of-week">Субота</th>
-        <th class="day-of-week">Неділя</th>
+        <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
+        <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
+        <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
+        <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
+        <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
+        <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
+        <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
       </tr>
       </thead>
       <tbody>
@@ -164,4 +164,4 @@
       </div>
     </section>
   </div>
-</div>
+
