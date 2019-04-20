@@ -7,7 +7,7 @@ import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -29,8 +29,6 @@ import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -60,7 +58,6 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     InfiniteScrollModule,
     NgxGalleryModule,
     SpinnerModule,
-    NgxPaginationModule,
     NgbPaginationModule
   ],
   providers: [],
