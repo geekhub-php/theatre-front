@@ -10,7 +10,7 @@ import { LoaderService } from '../shared/spinner/loader.service';
 })
 export class NewsComponent implements OnInit {
   limit: string;
-  page = 1;
+  page: string;
   locale: string;
   listPost: Array<NewsItem> = [];
 
