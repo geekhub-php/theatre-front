@@ -55,9 +55,9 @@ export class GatewayService {
     );
   }
 
-  getNews(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<NewsListResponse> {
+  getNews(limit: string = '10', page: number = 1, locale: string = 'uk'): Observable<NewsListResponse> {
     return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
-      params: {limit, page, locale}
+      params: {limit, page: page.toString(), locale}
     })
       .pipe(
         catchError(this.handleError('get list of News', new NewsListResponse()))

@@ -30,6 +30,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     InfiniteScrollModule,
     NgxGalleryModule,
     SpinnerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

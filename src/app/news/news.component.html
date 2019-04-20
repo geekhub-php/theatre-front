@@ -2,12 +2,16 @@
   <h2>Новини</h2>
   <app-spinner name="news"></app-spinner>
   <div *ngIf="listPost">
-    <app-news-item *ngFor="let item of listPost | paginate: config" [item]="item">
+    <app-news-item *ngFor="let item of listPost" [item]="item">
     </app-news-item>
-    <pagination-controls class="myPagination"
-                         previousLabel=""
-                         nextLabel=""
-                         (pageChange)="onPageChange($event)">
-    </pagination-controls>
+    <ngb-pagination class="d-flex justify-content-center"
+                    [collectionSize]="collectionSize"
+                    [(page)]="page" [boundaryLinks]="false"
+                    (pageChange)="getNews($event)">
+      <ng-template ngbPaginationFirst>&#171;</ng-template>
+      <ng-template ngbPaginationPrevious>&#8249;</ng-template>
+      <ng-template ngbPaginationNext>&#8250;</ng-template>
+      <ng-template ngbPaginationLast>&#187;</ng-template>
+    </ngb-pagination>
   </div>
 </div>

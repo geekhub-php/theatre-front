@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.loaderService.start('home');
-    this.gatewayService.getNews(this.limit, '1', 'uk').subscribe((res: { posts }) => {
+    this.gatewayService.getNews(this.limit, 1, 'uk').subscribe((res: { posts }) => {
       this.listPost = res.posts;
       this.loaderService.stop('home');
     },

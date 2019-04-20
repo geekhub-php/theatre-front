@@ -10,41 +10,25 @@ import { LoaderService } from '../shared/spinner/loader.service';
 })
 export class NewsComponent implements OnInit {
   limit: string;
-  page: string;
+  page: number;
   locale: string;
   listPost: Array<NewsItem> = [];
-
-  total = {count: 50, data: []};
-  config = {
-    itemsPerPage: 10,
-    currentPage: 1,
-    totalItems: this.total.count
-  };
+  collectionSize: number;
 
   constructor(private gatewayService: GatewayService,
               private loaderService: LoaderService) {
-    for (let i = 0; i < this.total.count; i++) {
-      this.total.data.push(
-        {
-          id: i + 1,
-          value: 'items number ' + (i + 1)
-        }
-      );
-    }
-  }
-
-  onPageChange(event) {
-    this.config.currentPage = event;
   }
 
   ngOnInit() {
-    this.getNews();
+    this.getNews(this.limit, this.page, this.locale);
   }
 
-  getNews() {
+  getNews(limit, page, locale) {
     this.loaderService.start('news');
-    this.gatewayService.getNews(this.limit, this.page, this.locale).subscribe((res: { posts }) => {
+    this.gatewayService.getNews(this.limit, this.page, this.locale).subscribe(res => {
         this.listPost = res.posts;
+        this.collectionSize = res.total_count;
+        this.page = res.page;
         this.loaderService.stop('news');
       },
       err => this.loaderService.stop('news')
