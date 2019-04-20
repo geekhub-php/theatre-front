@@ -51,7 +51,7 @@ export class ScheduleComponent implements OnInit {
     });
   }
 
-  prevMonth(isWide: boolean) {
+  prevMonth() {
     this.date = new Date(this.date);
     this.date.setMonth(this.date.getMonth() - 1);
 
@@ -66,7 +66,7 @@ export class ScheduleComponent implements OnInit {
     this.getPerformanceEvents();
   }
 
-  now(isWide: boolean) {
+  now() {
     this.date = new Date();
 
     this.getPerformanceEvents();
