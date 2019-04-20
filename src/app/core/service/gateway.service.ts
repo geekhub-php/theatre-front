@@ -20,17 +20,17 @@ import { Employee } from '../model/employee/Employee';
 export class GatewayService {
   readonly performanceListUrl = 'performances.json';
   readonly historiesListUrl = 'histories.json';
-  readonly performanceEventsListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
-  protected httpOptions = {
-    headers: new HttpHeaders(),
-    observe: 'response' as 'body',
-    params: new HttpParams()
-  };
+  readonly performanceEventsListUrl = 'performanceevents.json';
 
   constructor(private http: HttpClient) {
   }
 
+  getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = 'uk'): Observable<any> {
+    return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
+      params: { fromDate: fromDate.toString(), limit, locale }
+    });
+  }
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
     return this.http.get<PerformanceListResponse>(`${this.baseUrl}/${this.performanceListUrl}`, {params: {limit: '100'}})
       .pipe(
