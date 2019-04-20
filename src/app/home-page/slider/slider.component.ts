@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GatewayService } from '../../core/service/gateway.service';
-import { interval, Observable, Subject } from 'rxjs';
+import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 
@@ -10,8 +10,8 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnDestroy, OnInit {
-  intevalTime = 4000;
-  source = interval(this.intevalTime);
+  intervalTime = 4000;
+  source = interval(this.intervalTime);
   sliderList: Array<any>;
   slideId: number;
   count = 0;
