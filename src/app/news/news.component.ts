@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NewsItem } from '../core/model/news/NewsItem';
 import { GatewayService } from '../core/service/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news',
@@ -14,9 +15,11 @@ export class NewsComponent implements OnInit {
   locale: string;
   listPost: Array<NewsItem> = [];
   collectionSize: number;
+  par: any;
 
   constructor(private gatewayService: GatewayService,
-              private loaderService: LoaderService) {
+              private loaderService: LoaderService,
+              private appRoutes: Router) {
   }
 
   ngOnInit() {
@@ -33,5 +36,11 @@ export class NewsComponent implements OnInit {
       },
       err => this.loaderService.stop('news')
     );
+    const newParams = {
+      queryParams: {
+        page: this.page
+      }
+    };
+    this.appRoutes.navigate(['/news'], newParams);
   }
 }
