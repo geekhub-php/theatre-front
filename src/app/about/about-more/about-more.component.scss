@@ -41,17 +41,17 @@
 
     .history-gallery {
       width: 400px;
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      align-content: flex-start;
-      align-items: flex-start;
     }
 
     .history-gallery .img {
       margin: 0 0 3px 3px;
       width: 128px;
     }
+  }
+
+  .performance {
+    display: flex;
+    justify-content: center;
   }
 
   .performance-list {
@@ -114,5 +114,17 @@
 
   .history .history-main-picture .history-gallery .img {
     margin-left: 0;
+  }
+
+  .performance {
+    margin: 0 auto;
+    width: 324px;
+  }
+}
+
+@media screen and (max-width: 349px) {
+
+  .performance {
+    width: 216px;
   }
 }
