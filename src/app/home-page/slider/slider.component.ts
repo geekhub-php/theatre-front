@@ -1,22 +1,33 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { GatewayService } from '../../core/service/gateway.service';
+import { interval, Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit {
-
+export class SliderComponent implements OnDestroy, OnInit {
+  intevalTime = 4000;
+  source = interval(this.intevalTime);
   sliderList: Array<any>;
   slideId: number;
   count = 0;
+  private ngUnSubscribe: Subject<void> = new Subject<void>();
   constructor(private gateway: GatewayService) { }
+
+  ngOnDestroy() {
+    this.ngUnSubscribe.next();
+    this.ngUnSubscribe.complete();
+  }
 
   ngOnInit() {
     this.gateway.getPerformanceEventList().subscribe(res => {
       this.sliderList = res.performance_events;
       this.slideId = this.sliderList[this.count].id;
+      this.startInterval();
     });
   }
 
@@ -42,5 +53,19 @@ export class SliderComponent implements OnInit {
     this.count = idx;
     this.slideId = this.sliderList[this.count].id;
   }
-}
+
+  startInterval() {
+    this.source.pipe(takeUntil(this.ngUnSubscribe)).subscribe(() => {
+      this.next();
+    });
+  }
+
+  resetInterval() {
+    this.ngUnSubscribe.next();
+    this.startInterval();
+  }
+}  // ngOnDestroy() {
+  //   this.ngUnSubscribe.next();
+  //   this.ngUnSubscribe.complete();
+  // }
 

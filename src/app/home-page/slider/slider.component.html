@@ -8,14 +8,14 @@
       </div>
     </ng-template>
     <div class="buttons">
-      <button class="slider-button" (click)="prev()"><div class="arrow-prev"></div></button>
-      <button class="slider-button" (click)="next()"><div class="arrow-next"></div></button>
+      <button class="slider-button" (click)="prev(); resetInterval()"><div class="arrow-prev"></div></button>
+      <button class="slider-button" (click)="next(); resetInterval()"><div class="arrow-next"></div></button>
     </div>
     <div class="tickets">
       <div class="data" *ngFor="let item of sliderList; let idx= index">
         <div class="ticket"
              [ngClass]="{'ticket-active ': item.id === slideId}"
-             (click)="slide(idx)">
+             (click)="slide(idx); resetInterval()">
           <span class="ticket-day">{{ item.date_time | date: "EEE": null :"uk-UA" }}</span>
           <span class="ticket-number">{{ item.date_time | date: "dd": null :"uk-UA" }}</span>
           <span class="ticket-month">{{ item.date_time | date: "MMMM": null :"uk-UA" }}</span>
