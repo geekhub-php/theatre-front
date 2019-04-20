@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 
-describe('ScheduleComponent', () => {
+fdescribe('ScheduleComponent', () => {
   let component: ScheduleComponent;
   let fixture: ComponentFixture<ScheduleComponent>;
 
@@ -29,5 +29,9 @@ describe('ScheduleComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('check dates', () => {
+    const dates = component.getDates();
+    console.log(dates);
   });
 });

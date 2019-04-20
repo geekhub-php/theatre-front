@@ -54,11 +54,22 @@ export class GatewayService {
     );
   }
 
-  getSchedulesList(from: string, to: string, locale: string = 'uk'): Observable<ScheduleListResponse> {
+  getSchedulesList(from: Date, to: Date, locale: string = 'uk'): Observable<ScheduleListResponse> {
+    const fromDate = this.dateToString(from);
+    const toDate = this.dateToString(to);
+
     return this.http.get<ScheduleListResponse>(
       `${this.baseUrl}/${this.scheduleListUrl}`, {
-        params: {limit: 'all', from, to}
+        params: {limit: 'all', fromDate, toDate}
       });
+  }
+
+  dateToString(date: Date): string {
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const dateNumber = ('0' + date.getDate()).slice(-2);
+
+    return `${dateNumber}-${month}-${year}`;
   }
 
   /* tslint:disable:no-console */

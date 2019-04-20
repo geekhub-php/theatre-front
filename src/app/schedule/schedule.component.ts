@@ -15,15 +15,11 @@ import { LoaderService } from '../shared/spinner/loader.service';
 export class ScheduleComponent implements OnInit {
 
   scheduleList: Array<PerformanceEvent>;
-
-  date = new Date('April 19, 2019');
-
+  date = new Date();
   month =  4;
-
   year = 2019;
-
-  day = this.date.getDate();
-
+  from: Date;
+  to: Date;
   newDay = new Date(this.date);
 
   constructor(private datePipe: DatePipe, private gateway: GatewayService, private loaderService: LoaderService) { }
@@ -43,7 +39,7 @@ export class ScheduleComponent implements OnInit {
     this.date = new Date(this.date);
     this.date.setMonth(this.date.getMonth() - 1);
 
-    return Date;
+    this.getPerformanceEvents();
 
   }
 
@@ -51,7 +47,7 @@ export class ScheduleComponent implements OnInit {
     this.date = new Date(this.date);
     this.date.setMonth(this.date.getMonth() + 1);
 
-    return Date;
+    this.getPerformanceEvents();
   }
 
   now(event: any) {
@@ -60,14 +56,25 @@ export class ScheduleComponent implements OnInit {
     return this.month;
   }
 
-  getDates(year: number, month: number) {
+  getDates() {
+    const from = new Date(this.date);
+    from.setDate(1);
+    console.log(`date is: ${from.getDate()}, day is: ${from.getDay()}, month is: ${from.getMonth()}`);
+    from.setDate(-from.getDay());
+    const to = new Date(this.date);
+    to.setDate(38);
 
-    return ['01-04-2019', '05-05-2019'];
+    return [from, to];
   }
 
   ngOnInit() {
+    this.getPerformanceEvents();
+  }
+
+  getPerformanceEvents() {
     this.loaderService.start('poster');
-    const [from, to] = this.getDates(this.year, this.month);
+    const [from, to] = this.getDates();
+    console.log(from, to);
     this.gateway.getSchedulesList(from, to).subscribe(
       (res: ScheduleListResponse) => {
         this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
