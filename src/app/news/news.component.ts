@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-  limit: string;
+  limit = 5;
   page: number;
   locale: string;
   listPost: Array<NewsItem> = [];
