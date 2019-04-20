@@ -1,11 +1,14 @@
+@import '../../assets/variables';
+
 .heading {
   margin: 20px 0;
   font-size: 24px;
   text-align: center;
-  color: #e54b2b;
+  color: $hover-color;
 }
 
 .list {
+  font-family: $main-font;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -14,7 +17,7 @@
     position: relative;
     padding: 20px 22px 0 0;
     flex-basis: 50%;
-    border-right: 3px solid #eee;
+    border-right: 3px solid $light-grayish-red;
 
     &:last-child {
       padding-bottom: 20px;
@@ -27,7 +30,7 @@
     .histories__list-body {
       position: relative;
       max-width: 430px;
-      border: 1px solid #d4d4d4;
+      border: 1px solid $light-gray;
       border-radius: 2px;
       padding: 12px;
       box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
@@ -40,22 +43,22 @@
         height: 20px;
         top: 36px;
         right: -10px;
-        border: 1px solid #d4d4d4;
-        background-color: #fff;
+        border: 1px solid $light-gray;
+        background-color: $white-color;
         transform: rotate(45deg);
-        border-top: 1px solid #d4d4d4;
+        border-top: 1px solid $light-gray;
         border-left: 1px solid transparent;
-        border-right: 1px solid #d4d4d4;
+        border-right: 1px solid $light-gray;
         border-bottom: 1px solid transparent;
       }
 
       .histories__list-heading {
-        color: #474b4d;
+        color: $primary-color;
         font-size: 18px;
       }
 
       .histories__list-main .histories__list-main_text {
-        color: #868b8c;
+        color: $dark-grayish-red;
         font-size: 14px;
       }
 
@@ -72,17 +75,17 @@
       border-radius: 50%;
       width: 50px;
       height: 50px;
-      background-color: #df442b;
+      background-color: $hover-color;
       top: 42px;
       right: -27px;
     }
 
     .histories__list-footer .year {
+      font-family: $main-font_bold;
       display: block;
       margin-top: 12px;
       font-size: 18px;
-      font-weight: 900;
-      color: #fff;
+      color: $white-color;
       text-align: center;
     }
 
@@ -99,13 +102,13 @@
 
       .histories__list-body::after {
         left: -10px;
-        border: 1px solid #d4d4d4;
-        background-color: #fff;
+        border: 1px solid $light-gray;
+        background-color: $white-color;
         transform: rotate(45deg);
         border-top: 1px solid transparent;
-        border-left: 1px solid #d4d4d4;
+        border-left: 1px solid $light-gray;
         border-right: 1px solid transparent;
-        border-bottom: 1px solid #d4d4d4;
+        border-bottom: 1px solid $light-gray;
       }
 
       .histories__list-footer {
@@ -128,7 +131,7 @@
 
     .list-item {
       padding: 20px 0 0;
-      border-left: 3px solid #eee;
+      border-left: 3px solid $light-grayish-red;
       border-right: none;
 
       .histories__list-body {
@@ -139,9 +142,9 @@
       .histories__list-body::after {
         left: -10px;
         border-top: 1px solid transparent;
-        border-left: 1px solid #d4d4d4;
+        border-left: 1px solid $light-gray;
         border-right: 1px solid transparent;
-        border-bottom: 1px solid #d4d4d4;
+        border-bottom: 1px solid $light-gray;
       }
 
       .histories__list-footer {
