@@ -1,0 +1,158 @@
+@import "../../assets/variables";
+
+.container {
+  width: 1000px;
+
+  .person {
+    display: flex;
+    flex-direction: column;
+
+    section {
+      margin-top: 45px;
+
+      img {
+        width: 300px;
+        margin-right: 42px;
+        float: left;
+      }
+      .about {
+        font-size: 14px;
+
+        h2 {
+          font-family: $main-font_light;
+          font-size: 24px;
+          color: $hover-color;
+          margin-bottom: 30px;
+        }
+        .biography {
+          color: $dark-grayish-red;
+        }
+      }
+    }
+    ngx-gallery ::ng-deep {
+      .ngx-gallery-preview-img-wrapper img {
+        max-width: 600px;
+        max-height: 550px;
+        border: 10px solid $light-grayish-red;
+        border-radius: 3px;
+      }
+      .ngx-gallery-arrow-left .ngx-gallery-arrow {
+        width: 40px;
+        height: 40px;
+        background-image: url('assets/images/left-icon.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+        margin-left: 230px;
+      }
+      .ngx-gallery-arrow-right .ngx-gallery-arrow {
+        width: 40px;
+        height: 40px;
+        background-image: url('assets/images/right-icon.png');
+        background-position: center;
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        margin-right: 230px;
+      }
+      .ngx-gallery-active {
+        background-color: $transparent-black;
+      }
+      ngx-gallery-action i {
+        width: 40px;
+        height: 40px;
+        background-image: url('assets/images/close-icon.png');
+        background-position: center;
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        margin: 10px 10px 0 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .container .person {
+      ngx-gallery ::ng-deep {
+        .ngx-gallery-preview-img-wrapper img {
+          max-width: 480px;
+        }
+        .ngx-gallery-arrow-left .ngx-gallery-arrow {
+          margin-left: 90px;
+        }
+        .ngx-gallery-arrow-right .ngx-gallery-arrow {
+          margin-right: 90px;
+        }
+      }
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    width: 490px;
+    text-align: center;
+
+    .person {
+      align-items: center;
+
+      section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+
+        img {
+          width: 170px;
+          height: 265px;
+          margin-right: 0;
+        }
+        .about h2 {
+          margin: 10px 0;
+        }
+      }
+      ngx-gallery ::ng-deep {
+        width: 150px !important;
+        margin-top: 10px;
+
+        .ngx-gallery-thumbnails a {
+          border: 2px solid $hover-color;
+        }
+        .ngx-gallery-preview-img-wrapper img {
+          max-width: 380px !important;
+          border: 7px solid $light-grayish-red;
+        }
+        .ngx-gallery-arrow-left .ngx-gallery-arrow {
+          margin-left: 0;
+        }
+        .ngx-gallery-arrow-right .ngx-gallery-arrow {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+
+  .container {
+    width: 320px !important;
+
+    .person {
+      section img {
+        width: 150px;
+        height: 225px;
+      }
+      ngx-gallery ::ng-deep {
+        .ngx-gallery-preview-img-wrapper img {
+          max-width: 250px !important;
+        }
+        .ngx-gallery-arrow-left .ngx-gallery-arrow {
+          margin-left: -12px;
+        }
+        .ngx-gallery-arrow-right .ngx-gallery-arrow {
+          margin-right: -12px;
+        }
+      }
+    }
+  }
+}
