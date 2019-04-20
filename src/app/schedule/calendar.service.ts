@@ -60,7 +60,7 @@ export class CalendarService {
     let day: number;
     day = from.getDay();
 
-    if (0 === day) from.setDate(-6);
+    if (0 === day) from.setDate(-6); // tslint:disable-line
     else from.setDate(from.getDate() - (day - 1));
 
     return from;
