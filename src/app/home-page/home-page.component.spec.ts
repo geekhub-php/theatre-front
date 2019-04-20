@@ -22,6 +22,7 @@ describe('HomePageComponent', () => {
       imports: [
         SpinnerModule,
         HttpClientModule,
+        SpinnerModule,
         RouterTestingModule
       ]
     })

@@ -33,6 +33,7 @@
     }
 
     ngx-gallery ::ng-deep {
+
       .ngx-gallery-preview-img-wrapper img {
         max-width: 600px;
         max-height: 550px;
@@ -43,7 +44,7 @@
       .ngx-gallery-arrow-left .ngx-gallery-arrow {
         width: 40px;
         height: 40px;
-        background-image: url('assets/images/left-icon.png');
+        background-image: url("assets/images/left-icon.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 40px 40px;
@@ -53,7 +54,7 @@
       .ngx-gallery-arrow-right .ngx-gallery-arrow {
         width: 40px;
         height: 40px;
-        background-image: url('assets/images/right-icon.png');
+        background-image: url("assets/images/right-icon.png");
         background-position: center;
         background-size: 40px 40px;
         background-repeat: no-repeat;
@@ -67,7 +68,7 @@
       ngx-gallery-action i {
         width: 40px;
         height: 40px;
-        background-image: url('assets/images/close-icon.png');
+        background-image: url("assets/images/close-icon.png");
         background-position: center;
         background-size: 40px 40px;
         background-repeat: no-repeat;
@@ -78,8 +79,11 @@
 }
 
 @media screen and (max-width: 1120px) {
+
   .container .person {
+
     ngx-gallery ::ng-deep {
+
       .ngx-gallery-preview-img-wrapper img {
         max-width: 480px;
       }
@@ -115,12 +119,10 @@
           height: 265px;
           margin-right: 0;
         }
-
         .about h2 {
           margin: 10px 0;
         }
       }
-
       ngx-gallery ::ng-deep {
         width: 150px !important;
         margin-top: 10px;
@@ -152,12 +154,14 @@
     width: 320px !important;
 
     .person {
+
       section img {
         width: 150px;
         height: 225px;
       }
 
       ngx-gallery ::ng-deep {
+
         .ngx-gallery-preview-img-wrapper img {
           max-width: 250px !important;
         }
