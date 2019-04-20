@@ -1,4 +1,3 @@
-import { Component, OnInit } from '@angular/core';
 import { Component, OnInit, Input } from '@angular/core';
 import { GatewayService } from '../../core/service/gateway.service';
 
@@ -44,3 +43,4 @@ export class SliderComponent implements OnInit {
     this.slideId = this.sliderList[this.count].id;
   }
 }
+

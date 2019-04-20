@@ -33,6 +33,7 @@
     }
 
     ngx-gallery ::ng-deep {
+
       .ngx-gallery-preview-img-wrapper img {
         max-width: 600px;
         max-height: 550px;
@@ -82,6 +83,15 @@
   .container .person {
 
     ngx-gallery ::ng-deep {
+
+      .ngx-gallery-preview-img-wrapper img {
+        max-width: 480px;
+      }
+
+      .ngx-gallery-arrow-left .ngx-gallery-arrow {
+        margin-left: 90px;
+      }
+
       .ngx-gallery-preview-img-wrapper img {
         max-width: 480px;
       }
@@ -154,12 +164,14 @@
     width: 320px !important;
 
     .person {
+
       section img {
         width: 150px;
         height: 225px;
       }
 
       ngx-gallery ::ng-deep {
+
         .ngx-gallery-preview-img-wrapper img {
           max-width: 250px !important;
         }

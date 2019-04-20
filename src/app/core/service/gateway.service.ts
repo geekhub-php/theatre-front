@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
+import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
 import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
 import { Employee } from '../model/employee/Employee';
@@ -14,7 +15,7 @@ import { Employee } from '../model/employee/Employee';
   providedIn: 'root'
 })
 export class GatewayService {
-  readonly performanceListUrl = '/performances.json';
+  readonly performanceListUrl = 'performances.json';
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
   readonly performanceEventsListUrl = 'performanceevents.json';
@@ -56,6 +57,13 @@ export class GatewayService {
     })
     .pipe(
       catchError(this.handleError('get list of Histories', new HistoryListResponse()))
+    );
+  }
+
+  getHistoryBySlug(slug: string): Observable<History> {
+    return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
+    .pipe(
+      catchError(this.handleError('get History', new History()))
     );
   }
 
