@@ -21,65 +21,61 @@
     }
   }
 
-  .history-main-picture {
-    margin-bottom: 10px;
-
-    .history-main_img .img {
-      display: block;
-      margin: 0 auto 0 0;
-      max-height: 446px;
-    }
+  .history-main_img .img {
+    display: block;
+    margin: 0 auto 10px 0;
+    max-height: 446px;
   }
+}
 
-  .performance-list {
+.performance-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  list-style: none;
+
+  .list-item {
+    cursor: pointer;
+    height: 218px;
+    width: 106px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding: 0;
-    list-style: none;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2px;
 
-    .list-item {
-      cursor: pointer;
-      height: 218px;
-      width: 106px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-right: 2px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    .list-item .img {
-      width: 100%;
-    }
-
-    .list-item .title {
-      font-size: 12px;
-      background-color: #2a2a2a;
-      display: flex;
-      height: 60px;
-      margin-bottom: 0;
-    }
-
-    .list-item .title .span {
-      text-align: center;
-      font-family: "robotothin";
-      color: #fff;
-      margin: auto;
+    &:last-child {
+      margin-right: 0;
     }
   }
 
-  .history-main_text {
-    color: #868b8c;
+  .list-item .img {
+    width: 100%;
   }
+
+  .list-item .title {
+    font-size: 12px;
+    background-color: #2a2a2a;
+    display: flex;
+    height: 60px;
+    margin-bottom: 0;
+  }
+
+  .list-item .title .span {
+    text-align: center;
+    font-family: "robotothin";
+    color: #fff;
+    margin: auto;
+  }
+}
+
+.history-main_text {
+  color: #868b8c;
 }
 
 @media screen and (max-width: 767px) {
 
-  .history .history-main-picture {
+  .history .history-main_img {
     flex-wrap: wrap;
   }
 
@@ -90,10 +86,10 @@
 }
 
 @media screen and (max-width: 576px) {
-  .history .history-main-picture .history-main_img .img {
+
+  .history .history-main_img .img {
     margin: 0 auto;
   }
-
 }
 
 @media screen and (max-width: 349px) {
