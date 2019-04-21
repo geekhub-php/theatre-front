@@ -23,6 +23,9 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
     this.getNews(this.limit, this.page, this.locale);
+    this.appRoutes.events.subscribe(() =>
+      window.scrollTo(0, 0)
+    );
   }
 
   getNews(limit, page, locale) {
