@@ -1,24 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { NewsItem } from '../core/model/news/NewsItem';
 import { GatewayService } from '../core/service/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NewsListResponse } from '../core/model/news/NewsListResponse';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements OnInit, OnChanges {
+  @Input() page: number; // What's needed here?
   limit = '5';
-  page: number;
+
   locale: string;
   listPost: Array<NewsItem> = [];
   collectionSize: number;
 
   constructor(private gatewayService: GatewayService,
               private loaderService: LoaderService,
-              private appRoutes: Router) {
+              private appRoutes: Router,
+              private active: ActivatedRoute) {
+    this.appRoutes.events.subscribe((event) => { // It's listening events of routing?
+      console.log(event);
+    });
+  }
+
+  ngOnChanges(changes: SimpleChanges) { // Why doesn't it work?
+    console.log(changes);
   }
 
   ngOnInit() {
