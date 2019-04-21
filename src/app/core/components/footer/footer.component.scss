@@ -43,6 +43,9 @@
     .social {
       list-style: none;
       padding-top: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
       .fa-icon {
         width: 20px;
