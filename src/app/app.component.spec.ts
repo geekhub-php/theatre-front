@@ -23,6 +23,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
+import { DevTeamComponent } from './dev-team/dev-team.component';
 
 
 describe('AppComponent', () => {
@@ -42,7 +43,8 @@ describe('AppComponent', () => {
         ContactsComponent,
         PartnersComponent,
         BoardTrusteesComponent,
-        AboutMoreComponent
+        AboutMoreComponent,
+        DevTeamComponent
       ],
       providers: [
           {provide: APP_BASE_HREF, useValue: '/'}
