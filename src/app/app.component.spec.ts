@@ -22,6 +22,7 @@ import { CoreModule } from './core/core.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
+import { AboutMoreComponent } from './about/about-more/about-more.component';
 
 
 describe('AppComponent', () => {
@@ -40,7 +41,8 @@ describe('AppComponent', () => {
         TeamComponent,
         ContactsComponent,
         PartnersComponent,
-        BoardTrusteesComponent
+        BoardTrusteesComponent,
+        AboutMoreComponent
       ],
       providers: [
           {provide: APP_BASE_HREF, useValue: '/'}
