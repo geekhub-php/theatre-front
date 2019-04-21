@@ -29,7 +29,7 @@ export class PerformanceComponent implements OnInit {
 
   ngOnInit() {
     const slug = this.router.snapshot.paramMap.get('slug');
-    this.loaderService.start('load');
+    this.loaderService.start('performance-page');
     this.getPerformanceBySlug(slug);
     this.getRoles();
   }
@@ -38,13 +38,13 @@ export class PerformanceComponent implements OnInit {
     let temp;
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
-      this.loaderService.stop('load');
+      this.loaderService.stop('performance-page');
       temp = this.performance.gallery;
       if (temp) {
         this.getSliderImages(temp, this.images);
       }
-    }, err => this.loaderService.stop('load'));
-    this.loaderService.start('load');
+    }, err => this.loaderService.stop('performance-page'));
+    this.loaderService.start('performance-page');
   }
 
   getRoles() {
