@@ -7,7 +7,8 @@
     <ngb-pagination class="d-flex justify-content-center"
                     [collectionSize]="collectionSize"
                     [(page)]="page" [boundaryLinks]="false"
-                    (pageChange)="getNews($event)">
+                    (pageChange)="getNews($event)"
+                    [pageSize]="5">
       <ng-template ngbPaginationFirst>&#171;</ng-template>
       <ng-template ngbPaginationPrevious>&#8249;</ng-template>
       <ng-template ngbPaginationNext>&#8250;</ng-template>
