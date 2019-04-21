@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Над проектом працювали</h2>
+  <h3>Керівники групи</h3>
+  <section class="persons-list">
+    <a class="person" href="{{ person.link }}"
+    target="_blank"
+    *ngFor="let person of teamLeadsList">
+      <img src="{{ person.avatar }}" alt="">
+      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+      <p>{{ person.task }}</p>
+    </a>
+  </section>
+  <h3>Front-End</h3>
+  <section class="persons-list">
+    <a class="person" href="{{ person.link }}"
+    target="_blank"
+    *ngFor="let person of devList">
+      <img src="{{ person.avatar }}" alt="">
+      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+      <span>{{ person.task }}</span>
+    </a>
+  </section>
+  <h3>QA</h3>
+  <section class="persons-list">
+    <a class="person" href="{{ person.link }}"
+    target="_blank"
+    *ngFor="let person of qaList">
+      <img src="{{ person.avatar }}" alt="">
+      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+      <p>{{ person.task }}</p>
+    </a>
+  </section>
+  <app-spinner name="load-team"></app-spinner>
+</div>

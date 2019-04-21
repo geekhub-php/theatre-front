@@ -22,6 +22,7 @@ import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { DevTeamComponent } from './dev-team/dev-team.component';
 
 
 const appRoutes: Routes = [
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
     {path: 'contacts', component: ContactsComponent},
     {path: 'partners', component: PartnersComponent},
     {path: 'board-trustees', component: BoardTrusteesComponent},
+    {path: 'developers-team', component: DevTeamComponent},
     {path: '**', component: PageNotFoundComponent}
 ];
 
