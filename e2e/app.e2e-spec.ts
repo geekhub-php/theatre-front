@@ -28,10 +28,10 @@ describe('theatre-front App', () => {
     expect(element(by.css('h2')).getText()).toContain('Репертуар');
   });
 
-  it('shold navigate to News', () => {
+  it('shold navigate to NewsItem', () => {
     page.navigateTo();
     mainMenu.navigateTo('Новини');
-    expect(element(by.css('h3')).getText()).toContain('news');
+    expect(element(by.css('h2')).getText()).toContain('Новини');
   });
 
   it('shold navigate to About Us', () => {
