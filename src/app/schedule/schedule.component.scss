@@ -128,11 +128,13 @@ table {
 .more {
   background-color: $dark-grayish-red;
 }
+
 .more p {
   color: $white-color;
   text-align: center;
   font-size: 14px;
 }
+
 .mobile {
   display: flex;
   flex-wrap: wrap;
@@ -142,6 +144,7 @@ table {
     color: $hover-color;
     text-align: center;
   }
+
   .schedule-place {
     text-align: center;
     color: $primary-color;
@@ -306,13 +309,6 @@ table {
 @media screen and (min-width: 560px){
   .mobile {
     max-width: 400px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-
-  .btn-now {
-    display: none;
   }
 }
 
