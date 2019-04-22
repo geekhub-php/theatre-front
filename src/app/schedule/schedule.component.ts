@@ -60,12 +60,12 @@ export class ScheduleComponent implements OnInit {
     if (!this.scheduleList) return [];
 
     return this.scheduleList.filter((event: PerformanceEvent) => {
-      return event.month == date.getMonth() + 1
-        && event.day == date.getDate();
+      return +event.month === date.getMonth() + 1
+        && +event.day === date.getDate();
     });
   }
 
-  prevMonth(isWide: boolean) {
+  prevMonth() {
     this.date = new Date(this.date);
     this.date.setMonth(this.date.getMonth() - 1);
 
@@ -80,7 +80,7 @@ export class ScheduleComponent implements OnInit {
     this.getPerformanceEvents();
   }
 
-  now(isWide: boolean) {
+  now() {
     this.date = new Date();
 
     this.getPerformanceEvents();
