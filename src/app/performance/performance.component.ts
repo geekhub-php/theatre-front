@@ -11,7 +11,6 @@ import { LoaderService } from '../shared/spinner/loader.service';
   styleUrls: ['./performance.component.scss']
 })
 export class PerformanceComponent implements OnInit {
-  showNavigationArrows = true;
   performance: Performance;
   slug: string;
   roles: Array<Role>;

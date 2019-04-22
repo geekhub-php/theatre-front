@@ -50,7 +50,7 @@ export class GatewayService {
   getRoles(slug): Observable<Array<Role>> {
     return this.http.get<Array<Role>>(`${this.baseUrl}/performances/${slug}/roles`, {params: {}})
       .pipe(
-        catchError(this.handleError('get list of Performances', [new Role()]))
+        catchError(this.handleError('get list of Performances', []))
       );
   }
 
