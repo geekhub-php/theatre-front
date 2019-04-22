@@ -13,7 +13,7 @@ describe('theatre-front App', () => {
   it('shold navigate to Home', () => {
     page.navigateTo();
     mainMenu.navigateTo('Головна');
-    expect(element(by.css('h2')).getText()).toContain('Новини');
+    expect(element(by.css('h3')).getText()).toContain('Новини');
   });
 
   it('shold navigate to Poster', () => {
