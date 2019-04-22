@@ -1,8 +1,8 @@
 @import "../../assets/variables";
 
-h3 {
+h2 {
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   color: $hover-color;
   font-family: $main-font;
   margin-top: 40px;
@@ -27,7 +27,15 @@ h3 {
 
 @media (max-width: 576px) {
 
-  h3 {
+  h2 {
     font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .board-section {
+
+    img {
+      margin-top: 0;
+    }
   }
 }

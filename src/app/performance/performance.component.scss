@@ -45,9 +45,10 @@
 
   .page-title {
     color: $hover-color;
-    font-size: 24px;
+    font-size: 25px;
     text-align: center;
     margin-top: 25px;
+    font-family: $main-font;
   }
 
   .page-sub-title {
@@ -85,6 +86,7 @@
       background-color: $light-gray;
       text-align: center;
     }
+
     ::ng-deep .slider img {
       height: 300px;
       max-width: 100%;

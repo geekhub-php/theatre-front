@@ -10,12 +10,12 @@ h2 {
 }
 
 ngb-pagination ::ng-deep ul {
+
   li a {
     color: $primary-color;
     outline: none;
     font-family: $main-font;
     border: transparent;
-
   }
 
   li.active a {
