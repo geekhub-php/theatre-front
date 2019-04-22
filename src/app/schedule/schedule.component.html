@@ -36,13 +36,12 @@
             <a [routerLink]="['', 'performance', event.performance.slug]">
               <p *ngFor="let event of dayPerformances" class="event-title">{{ event.performance.title }}</p>
               <p *ngFor="let event of dayPerformances">{{ event.time }}</p>
+              <p *ngFor="let event of dayPerformances">{{ event.venue }}</p>
             </a>
           </div>
-          <div *ngFor="let event of dayPerformances" class="more">
+          <div class="more">
             <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
-              <a [routerLink]="['', 'performance', event.performance.slug]">
                 <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
-              </a>
             </span>
           </div>
         </div>
@@ -59,6 +58,7 @@
       <a [routerLink]="['', 'performance', event.performance.slug]">
         <h2 class="schedule-title">{{ event.performance.title }}</h2>
         <p class="schedule-time">{{ event.time }}</p>
+        <p class="schedule-place">{{ event.venue }}</p>
         <div class="schedule-main">
           <img class="schedule-small_img" src={{event.performance.mainPicture.performance_small.url}}
                alt="{{event.performance.title}}">

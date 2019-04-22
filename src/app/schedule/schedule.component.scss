@@ -113,9 +113,7 @@ table {
   color: $white-color;
   text-align: center;
   font-size: 14px;
-}
-.event-title {
-  margin-top: 25px;
+  margin: 5px auto 0;
 }
 
 .calendar-img:hover {
@@ -143,6 +141,10 @@ table {
   .schedule-time {
     color: $hover-color;
     text-align: center;
+  }
+  .schedule-place {
+    text-align: center;
+    color: $primary-color;
   }
 
   .schedule-event {
