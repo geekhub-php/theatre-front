@@ -110,8 +110,21 @@ table {
 }
 
 .calendar-img {
-  max-width: 100%;
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
   margin-top: -40px;
+}
+
+.hidden {
+  display: none;
+}
+.panel {
+  padding: 0 18px;
+  height: 50px;
+  color: $white-color;
+  background-color: $hover-color;
+  overflow: hidden;
 }
 
 .mobile {

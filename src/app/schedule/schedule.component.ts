@@ -6,6 +6,8 @@ import { plainToClass } from 'class-transformer';
 import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { CalendarService } from './calendar.service';
+import { Router, NavigationStart } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-schedule',
@@ -19,13 +21,25 @@ export class ScheduleComponent implements OnInit {
   dayPerformances: Array<PerformanceEvent>;
   date: Date;
   weeks: Array<Array<Date>>;
+  collapse = true;
 
   constructor(
     private datePipe: DatePipe,
     private gateway: GatewayService,
     private loaderService: LoaderService,
-    private calendar: CalendarService
-  ) { }
+    private calendar: CalendarService,
+    private router: Router
+  ) {
+    router.events
+      .pipe(filter(event => event instanceof NavigationStart))
+      .subscribe(() => this.collapse = true);
+  }
+
+  toggleElement() {
+    this.collapse =!this.collapse;
+    console.dir(this.collapse);
+  }
+
 
   ngOnInit() {
     this.date = new Date();
@@ -87,4 +101,5 @@ export class ScheduleComponent implements OnInit {
       err => this.loaderService.stop('poster')
     );
   }
+
 }

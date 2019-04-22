@@ -27,12 +27,17 @@
     <tbody>
     <tr *ngFor="let week of weeks">
       <td *ngFor="let day of week" class="day-of-month">
-        <span class="this-month-number">{{ day | date: 'd' }}</span>
-        <img *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1" class="calendar-img" [src]=dayPerformances[0].performance.mainPicture.performance_big.url
-             [alt]="dayPerformances[0].performance.title">
-        <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
-          <span *ngFor="let event of dayPerformances">{{event.performance.title}}</span>
-        </span>
+          <span class="this-month-number">{{ day | date: 'd' }}</span>
+          <img *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1" class="calendar-img"
+               [src]=dayPerformances[0].performance.mainPicture.performance_big.url
+             [alt]="dayPerformances[0].performance.title"
+          (click)="toggleElement()">
+        <div class="panel hidden">
+          <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
+            <span *ngFor="let event of dayPerformances" class="event-title">{{ event.performance.title }}</span>
+          <span *ngFor="let event of dayPerformances"class="event-time">{{ event.time }}</span>
+          </span>
+        </div>
       </td>
     </tr>
     </tbody>
