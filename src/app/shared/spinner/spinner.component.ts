@@ -20,7 +20,7 @@ export class SpinnerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loaderService.subject.subscribe((value: {load: boolean, name: string}) => {
+    this.loaderService.subject.subscribe((value: { load: boolean, name: string }) => {
       if (this.name !== value.name) return;
       this.visible = value.load;
     });

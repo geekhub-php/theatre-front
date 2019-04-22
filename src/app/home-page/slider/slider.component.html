@@ -8,8 +8,12 @@
       </div>
     </ng-template>
     <div class="buttons">
-      <button class="slider-button" (click)="prev()"><div class="arrow-prev"></div></button>
-      <button class="slider-button" (click)="next()"><div class="arrow-next"></div></button>
+      <button class="slider-button" (click)="prev()">
+        <div class="arrow-prev"></div>
+      </button>
+      <button class="slider-button" (click)="next()">
+        <div class="arrow-next"></div>
+      </button>
     </div>
     <div class="tickets">
       <div class="data" *ngFor="let item of sliderList; let idx= index">

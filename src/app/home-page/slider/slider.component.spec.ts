@@ -9,7 +9,7 @@ describe('SliderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SliderComponent ],
+      declarations: [SliderComponent],
       imports: [
         HttpClientModule,
         RouterTestingModule

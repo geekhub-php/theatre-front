@@ -13,13 +13,12 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
-import { NewsListModule } from './news-list/news-list.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
@@ -48,16 +47,16 @@ describe('AppComponent', () => {
         {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
+        NgbModule,
         AppRoutingModule,
         CoreModule,
         HomePageModule,
-        NewsListModule,
         RouterTestingModule,
-        NgbModule.forRoot(),
         StripHtmlModule,
         InfiniteScrollModule,
         NgxGalleryModule,
-        SpinnerModule
+        SpinnerModule,
+        NgbPaginationModule,
       ]
     }).compileComponents();
   }));
