@@ -12,7 +12,7 @@
     <div class="performance-widget">
       <div class="future-list">performances widget</div>
     </div>
-    <div class="slider"  *ngIf="images?.length">
+    <div class="slider" *ngIf="images?.length">
       <ngb-carousel>
         <ng-template ngbSlide *ngFor="let image of images">
           <img [src]="image.url" [alt]="image.properties.alt">
@@ -26,24 +26,26 @@
       <ngb-tab title="Актори" *ngIf="roles?.length">
         <ng-template ngbTabContent>
           <div class="wrap">
-          <ul class="employees-list">
-            <li *ngFor="let person of roles">
-              <a  class="item" [routerLink]="['', 'persons', person.employee.slug]">
-              <img class="photo" src="{{ person.employee.avatar.employee_big.url }}" alt="">
-                <div class="name">
-              <span>{{ person.title }} </span>
-                <p>{{ person.employee.first_name }} {{ person.employee.last_name }}</p>
-                </div>
-              </a>
-            </li>
-          </ul>
+            <ul class="employees-list">
+              <li *ngFor="let role of roles">
+                <a class="item" [routerLink]="['', 'persons', role.employee.slug]">
+                  <img class="photo"
+                       src="{{ role.employee.avatar.employee_big.url }}"
+                       alt="{{ role.title }} | {{ role.employee.first_name }} {{ role.employee.last_name }}">
+                  <div class="name">
+                    <span>{{ role.title }} </span>
+                    <p>{{ role.employee.first_name }} {{ role.employee.last_name }}</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
           </div>
         </ng-template>
       </ngb-tab>
       <ngb-tab *ngIf="performance">
         <ng-template ngbTabTitle>Про спекталь</ng-template>
         <ng-template ngbTabContent>
-        <div [innerHtml]="performance.description"></div>
+          <div [innerHtml]="performance.description"></div>
         </ng-template>
       </ngb-tab>
       <!--    Преса - ждем инфу от сервера когда нибудь
