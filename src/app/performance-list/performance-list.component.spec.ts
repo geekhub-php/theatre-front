@@ -12,11 +12,11 @@ describe('PerformanceListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PerformanceListComponent ],
-      imports: [ HttpClientModule,
-                  RouterTestingModule,
-                  SpinnerModule,
-                  StripHtmlModule]
+      declarations: [PerformanceListComponent],
+      imports: [HttpClientModule,
+        RouterTestingModule,
+        SpinnerModule,
+        StripHtmlModule]
     })
     .compileComponents();
   }));

@@ -12,12 +12,12 @@ describe('TeamComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TeamComponent ],
+      declarations: [TeamComponent],
       imports: [
-          HttpClientModule,
-          RouterTestingModule,
-          InfiniteScrollModule,
-          SpinnerModule
+        HttpClientModule,
+        RouterTestingModule,
+        InfiniteScrollModule,
+        SpinnerModule
       ]
     })
     .compileComponents();
