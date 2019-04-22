@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     {path: 'news', component: NewsComponent},
     {path: 'news/:slug', component: ArticleComponent},
     {path: 'about', component: AboutComponent},
-  {path: 'about/:slug', component: AboutMoreComponent},
+    {path: 'about/:slug', component: AboutMoreComponent},
     {path: 'persons', component: TeamComponent},
     {path: 'persons/:slug', component: PersonComponent},
     {path: 'contacts', component: ContactsComponent},
