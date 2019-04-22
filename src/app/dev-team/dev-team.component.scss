@@ -1,58 +1,22 @@
 @import "../../assets/variables";
+@import "../team/team.component.scss";
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  h2 {
-    font-family: $main-font_light;
-    font-size: 24px;
-    color: $hover-color;
-    margin: 20px 0;
-  }
+.persons-list {
+  width: auto !important;
+  max-width: 636px !important;
 
-  h3 {
-    font-family: $main-font_light;
-    font-size: 19px;
-    margin: 20px 0;
-  }
+  .person {
+    width: 150px;
+    height: 261px;
+    margin: 0 4.5px 6px 4.5px;
 
-  .persons-list {
-    max-width: 636px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    .person {
-      width: 150px;
-      height: 261px;
-      border: 1px solid $light-gray;
-      background-color: $light-grayish-red;
-      font-size: 12px;
-      color: $primary-color;
-      text-decoration: none;
-      font-family: $main-font;
-      text-align: center;
-      margin: 0 4.5px 6px 4.5px;
-      border-radius: 5px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-
-      img {
-        width: 100%;
-      }
-      h4 {
-        font-size: 18px;
-        font-weight: 400;
-        padding-top: 5px;
-      }
+    img {
+      width: 100%;
+      height: auto !important;
     }
-    .person:hover {
-      box-shadow: 0 0 1px $transparent-black;
-      color: $hover-color;
+    h4 {
+      padding: 5px 0 0 0 !important;
     }
   }
 }
@@ -63,30 +27,15 @@
   .container {
     width: 520px !important;
 
-    h2 {
-      margin: 10px 0;
-    }
-
-    img {
-      width: 420px !important;
-    }
-
-    h3 {
-      margin: 10px 0;
-    }
-
     .persons-list {
-      max-width: 520px !important;
+      width: auto !important;
+      max-width: 380px !important;
 
       .person {
-        height: 240px !important;
-        font-size: 10px;
+        height: 217px !important;
 
-        h4 {
-          font-size: 15.5px !important;
-        }
-        span {
-          padding: 0 5px;
+        img {
+          height: auto !important;
         }
       }
     }
@@ -99,15 +48,10 @@
     width: 320px !important;
 
     .persons-list {
-      width: 305px !important;
+      width: 267px !important;
 
       .person {
-        width: 140px;
-        height: 240px !important;
-
-        span {
-          font-size: 11px;
-        }
+        width: 120px !important;
       }
     }
   }
