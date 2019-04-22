@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 import { GatewayService } from '../core/service/gateway.service';
-import { PerformanceListResponse } from '../core/model/PerformanceListResponse';
-import { Performance } from '../core/model/Performance';
+import { PerformanceListResponse } from '../core/model/performance/PerformanceListResponse';
+import { Performance } from '../core/model/performance/Performance';
 import { LoaderService } from '../shared/spinner/loader.service';
 
 @Component({

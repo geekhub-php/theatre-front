@@ -18,13 +18,12 @@ import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
-
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -47,18 +46,19 @@ describe('AppComponent', () => {
         DevTeamComponent
       ],
       providers: [
-          {provide: APP_BASE_HREF, useValue: '/'}
+        {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
-          AppRoutingModule,
-          CoreModule,
-          HomePageModule,
-          RouterTestingModule,
-          StripHtmlModule,
-          InfiniteScrollModule,
+        NgbModule,
+        AppRoutingModule,
+        CoreModule,
+        HomePageModule,
+        RouterTestingModule,
+        StripHtmlModule,
+        InfiniteScrollModule,
         NgxGalleryModule,
         SpinnerModule,
-        NgbPaginationModule
+        NgbPaginationModule,
       ]
     }).compileComponents();
   }));
