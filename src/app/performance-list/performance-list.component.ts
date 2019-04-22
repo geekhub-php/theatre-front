@@ -19,15 +19,16 @@ export class PerformanceListComponent implements OnInit {
     private changeDetector: ChangeDetectorRef,
     private gateway: GatewayService,
     private loaderService: LoaderService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.loaderService.start('repertoire');
-    this.gateway.getPerformanceList().subscribe(({ performances }) => {
-      this.perfomances = performances;
-      this.changeDetector.markForCheck();
-      this.loaderService.stop('repertoire');
-    },
+    this.gateway.getPerformanceList().subscribe(({performances}) => {
+        this.perfomances = performances;
+        this.changeDetector.markForCheck();
+        this.loaderService.stop('repertoire');
+      },
       error1 => this.loaderService.stop('repertoire')
     );
   }

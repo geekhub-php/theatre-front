@@ -11,10 +11,10 @@ describe('AboutMoreComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutMoreComponent ],
-      imports: [ SpinnerModule, HttpClientModule, RouterTestingModule ]
+      declarations: [AboutMoreComponent],
+      imports: [SpinnerModule, HttpClientModule, RouterTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

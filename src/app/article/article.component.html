@@ -1,1 +1,14 @@
-<div class="container"></div>
+<div class="container">
+  <app-spinner name="article"></app-spinner>
+  <div class="row" *ngIf="item">
+    <div class="col">
+      <div class="img">
+        <img *ngIf="item.mainPicture.post_big.url" src='{{ item.mainPicture.post_big.url }}'
+             alt="{{item.short_description}}">
+      </div>
+      <h2>{{item.title}}</h2>
+      <div class="post-text" [innerHtml]=item.text></div>
+      <p class="post-date">{{item.updated_at | date: 'd.MM.yyyy' }}</p>
+    </div>
+  </div>
+</div>

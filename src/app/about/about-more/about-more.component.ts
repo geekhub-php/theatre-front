@@ -12,7 +12,8 @@ import { LoaderService } from '../../shared/spinner/loader.service';
 export class AboutMoreComponent implements OnInit {
   history: History;
 
-  constructor(private route: ActivatedRoute, private gateway: GatewayService, private loaderService: LoaderService) { }
+  constructor(private route: ActivatedRoute, private gateway: GatewayService, private loaderService: LoaderService) {
+  }
 
   ngOnInit() {
     const slug = this.route.snapshot.params.slug;

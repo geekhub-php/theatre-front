@@ -10,12 +10,15 @@ import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
 import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
 import { Employee } from '../model/employee/Employee';
+import { NewsListResponse } from '../model/news/NewsListResponse';
+import { NewsItem } from '../model/news/NewsItem';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
-  readonly performanceListUrl = 'performances.json';
+  readonly performanceListUrl = '/performances.json';
+  readonly newsListUrl = 'posts.json';
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
   readonly performanceEventsListUrl = 'performanceevents.json';
@@ -24,7 +27,7 @@ export class GatewayService {
 
   getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = 'uk'): Observable<any> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
-      params: { fromDate: fromDate.toString(), limit, locale }
+      params: {fromDate: fromDate.toString(), limit, locale}
     });
   }
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
@@ -36,7 +39,7 @@ export class GatewayService {
 
   getEmployees(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/employees.json`, { params: { limit, page, locale } }
+      `${this.baseUrl}/employees.json`, {params: {limit, page, locale}}
     ).pipe(
       catchError(this.handleError('get Employees list', new EmployeesListResponse()))
     );
@@ -44,7 +47,7 @@ export class GatewayService {
 
   getEmployeeBySlug(slug): Observable<Employee> {
     return this.http.get<Employee>(
-      `${this.baseUrl}/employees/${slug}`, { params: { slug } }
+      `${this.baseUrl}/employees/${slug}`, {params: {slug}}
     ).pipe(
       catchError(this.handleError('get Employee', new Employee()))
     );
@@ -61,9 +64,27 @@ export class GatewayService {
 
   getHistoryBySlug(slug: string): Observable<History> {
     return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
-    .pipe(
-      catchError(this.handleError('get History', new History()))
-    );
+      .pipe(
+        catchError(this.handleError('get History', new History()))
+      );
+  }
+
+  getNews(limit: string = '10', page: number = 1, locale: string = 'uk'): Observable<NewsListResponse> {
+    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
+      params: {limit, page: page.toString(), locale}
+    })
+      .pipe(
+        catchError(this.handleError('get list of News', new NewsListResponse()))
+      );
+  }
+
+  getNewsBySlug(slug): Observable<NewsItem> {
+    return this.http.get<NewsItem>(
+      `${this.baseUrl}/posts/${slug}`, {params: {slug}}
+    )
+      .pipe(
+        catchError(this.handleError('get NewsItem', new NewsItem()))
+      );
   }
 
   /* tslint:disable:no-console */
