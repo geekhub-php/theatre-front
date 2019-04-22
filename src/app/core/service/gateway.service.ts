@@ -4,12 +4,12 @@ import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/comm
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { PerformanceListResponse } from '../model/PerformanceListResponse';
+import { PerformanceListResponse } from '../model/performance/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
 import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
 import { Role } from '../model/Role';
-import { Performance } from '../model/Performance';
+import { Performance } from '../model/performance/Performance';
 import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
 import { Employee } from '../model/employee/Employee';
 import { NewsListResponse } from '../model/news/NewsListResponse';
@@ -19,7 +19,7 @@ import { NewsItem } from '../model/news/NewsItem';
   providedIn: 'root'
 })
 export class GatewayService {
-  readonly performanceListUrl = '/performances.json';
+  readonly performanceListUrl = 'performances.json';
   readonly newsListUrl = 'posts.json';
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;

@@ -3,19 +3,19 @@
   <h2 class="page-title"> {{performance?.title}} </h2>
   <h4 class="page-sub-title">{{performance?.type}}</h4>
 
-  <section class="preview">
+  <section class="preview" *ngIf="performance">
     <div class="performance-poster">
-      <div class="future-img" *ngIf="performance">
+      <div class="future-img">
         <img [src]="performance.mainPicture.performance_big.url" [alt]="performance.mainPicture.performance_big.alt">
       </div>
     </div>
     <div class="performance-widget">
       <div class="future-list">performances widget</div>
     </div>
-    <div class="slider" *ngIf="images?.length">
+    <div class="slider" *ngIf="performance.gallery">
       <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let image of images">
-          <img [src]="image.url" [alt]="image.properties.alt">
+        <ng-template ngbSlide *ngFor="let image of performance.gallery">
+          <img [src]="image.images.performance_big.url" [alt]="image.images.performance_big.properties.alt">
         </ng-template>
       </ngb-carousel>
     </div>

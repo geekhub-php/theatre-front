@@ -1,11 +1,10 @@
-import { Performance } from './Performance';
+import { Performance } from './performance/Performance';
 import { Employee } from './employee/Employee';
-import { EmployeesListResponse } from './employee/EmployeesListResponse';
-import { ImageCollection } from './ImageCollection';
+import { PerformanceImageCollection } from './performance/PerformanceImageCollection';
 
 export class Role {
-  mainPicture: ImageCollection;
-  sliderImage: ImageCollection;
+  mainPicture: PerformanceImageCollection;
+  sliderImage: PerformanceImageCollection;
   title: string;
   description: string;
   performance: Performance;
