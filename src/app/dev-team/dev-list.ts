@@ -83,16 +83,17 @@ export const DevList = [
 
 export const QAList = [
   {
-    avatar: '',
+    avatar: 'https://avatars0.githubusercontent.com/u/33347340?s=400&v=4',
     first_name: 'Алекс',
     last_name: 'Шинкаренко',
-    link: '',
+    link: 'https://github.com/shynkarenkoalex',
     task: 'QA'
   },
   {
-    avatar: '',
+    avatar: 'https://avatars3.githubusercontent.com/u/49372642?s=400&v=4',
     first_name: 'Андрій',
     last_name: 'Макурін',
+    link: 'https://github.com/makurin91',
     task: 'QA'
   }
 ];
