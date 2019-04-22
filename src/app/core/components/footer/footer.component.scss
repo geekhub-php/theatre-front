@@ -43,6 +43,9 @@
     .social {
       list-style: none;
       padding-top: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
       .fa-icon {
         width: 20px;
@@ -51,6 +54,7 @@
         color: #00f;
         border: none;
         opacity: .8;
+        margin-right: 5px;
 
         &:hover {
           opacity: 1;
