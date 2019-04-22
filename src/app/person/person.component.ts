@@ -19,7 +19,8 @@ export class PersonComponent implements OnInit {
     private router: ActivatedRoute,
     private gatewayService: GatewayService,
     private loaderService: LoaderService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     const slug = this.router.snapshot.paramMap.get('slug');

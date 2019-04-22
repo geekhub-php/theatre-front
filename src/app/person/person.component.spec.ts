@@ -12,12 +12,12 @@ describe('PersonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonComponent ],
+      declarations: [PersonComponent],
       imports: [
-          HttpClientModule,
-          RouterTestingModule,
-          NgxGalleryModule,
-          SpinnerModule
+        HttpClientModule,
+        RouterTestingModule,
+        NgxGalleryModule,
+        SpinnerModule
       ]
     })
     .compileComponents();

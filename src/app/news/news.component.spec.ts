@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsComponent } from './news.component';
+import { NewsItemComponent } from '../news-item/news-item.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 describe('NewsComponent', () => {
   let component: NewsComponent;
@@ -8,7 +13,16 @@ describe('NewsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsComponent ]
+      declarations: [
+        NewsComponent,
+        NewsItemComponent
+      ],
+      imports: [
+        RouterTestingModule,
+        HttpClientModule,
+        SpinnerModule,
+        NgbPaginationModule
+      ]
     })
     .compileComponents();
   }));

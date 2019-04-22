@@ -18,7 +18,8 @@ export class TeamComponent implements OnInit {
   constructor(
     private httpGatewayService: GatewayService,
     private loaderService: LoaderService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.getEmployees(this.limit, this.page, this.locale);

@@ -5,10 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
-import { NewsListModule } from './news-list/news-list.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -27,10 +26,10 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
+import { DevTeamComponent } from './dev-team/dev-team.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +45,8 @@ import { AboutMoreComponent } from './about/about-more/about-more.component';
     HomePageComponent,
     PartnersComponent,
     BoardTrusteesComponent,
-    AboutMoreComponent
+    AboutMoreComponent,
+    DevTeamComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,15 +55,16 @@ import { AboutMoreComponent } from './about/about-more/about-more.component';
     CoreModule,
     BrowserAnimationsModule,
     HomePageModule,
-    NewsListModule,
     NgbModule,
     StripHtmlModule,
     InfiniteScrollModule,
     NgxGalleryModule,
     SpinnerModule,
     ScheduleModule,
+    NgbPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

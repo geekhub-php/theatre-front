@@ -1,6 +1,6 @@
-import { Image } from './Image';
+import { Image } from '../Image';
 
-export class ImageCollection {
+export class PerformanceImageCollection {
   reference: Image;
   performance_small: Image;
   performance_big: Image;
