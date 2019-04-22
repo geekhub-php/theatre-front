@@ -75,7 +75,7 @@ table {
   vertical-align: bottom;
 }
 
-.this-month-number {
+.day-number {
   position: absolute;
   top: 5px;
   left: 0;
@@ -92,39 +92,36 @@ table {
   text-align: center;
 }
 
-.next-month-number {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  z-index: 5;
-  display: block;
-  margin: 0 0 0 7px;
-  font-size: 18px;
-  color: $transparent-black;
-  background: $white-color;
-  border-radius: 3px;
-  line-height: 1;
-  padding: 2px 0;
-  min-width: 25px;
-  text-align: center;
-}
-
 .calendar-img {
   width: 100%;
   height: inherit;
   object-fit: cover;
+  position: relative;
   margin-top: -40px;
+  flex-direction: column;
 }
 
-.hidden {
-  display: none;
-}
 .panel {
-  padding: 0 18px;
-  height: 50px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  background-color: $primary-color;
+  display: none;
+  opacity: 0;
+}
+.panel span {
   color: $white-color;
-  background-color: $hover-color;
-  overflow: hidden;
+  text-align: center;
+}
+
+.calendar-img:hover {
+  cursor: pointer;
+}
+
+.calendar-img:hover .panel {
+  display: block;
+  opacity: 0.6;
 }
 
 .mobile {

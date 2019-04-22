@@ -15,28 +15,31 @@
   <table class="calendar">
     <thead>
     <tr>
-      <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
-      <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
-      <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
-      <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
-      <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
-      <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
-      <th class="day-of-week">{{ date | date:'EEEE': null : 'uk-UA' }}</th>
+      <th class="day-of-week">Понеділок</th>
+      <th class="day-of-week">Вівторок</th>
+      <th class="day-of-week">Середа</th>
+      <th class="day-of-week">Четвер</th>
+      <th class="day-of-week">П'ятниця</th>
+      <th class="day-of-week">Субота</th>
+      <th class="day-of-week">Неділя</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let week of weeks">
       <td *ngFor="let day of week" class="day-of-month">
-          <span class="this-month-number">{{ day | date: 'd' }}</span>
-          <img *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1" class="calendar-img"
+        <span class="day-number">{{ day | date: 'd' }}</span>
+        <div class="calendar-img">
+          <img *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1"
                [src]=dayPerformances[0].performance.mainPicture.performance_big.url
-             [alt]="dayPerformances[0].performance.title"
-          (click)="toggleElement()">
-        <div class="panel hidden">
-          <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
-            <span *ngFor="let event of dayPerformances" class="event-title">{{ event.performance.title }}</span>
-          <span *ngFor="let event of dayPerformances"class="event-time">{{ event.time }}</span>
-          </span>
+               [alt]="dayPerformances[0].performance.title">
+          <div class="panel"  *ngFor="let event of dayPerformances">
+            <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
+              <a [routerLink]="['', 'performance', event.performance.slug]">
+                <span *ngFor="let event of dayPerformances">{{ event.performance.title }}</span>
+                <span *ngFor="let event of dayPerformances">{{ event.performance.time }}</span>
+              </a>
+            </span>
+          </div>
         </div>
       </td>
     </tr>
