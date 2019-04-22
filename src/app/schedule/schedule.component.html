@@ -33,10 +33,15 @@
                [src]=dayPerformances[0].performance.mainPicture.performance_big.url
                [alt]="dayPerformances[0].performance.title">
           <div class="panel"  *ngFor="let event of dayPerformances">
+            <a [routerLink]="['', 'performance', event.performance.slug]">
+              <p *ngFor="let event of dayPerformances" class="event-title">{{ event.performance.title }}</p>
+              <p *ngFor="let event of dayPerformances">{{ event.time }}</p>
+            </a>
+          </div>
+          <div *ngFor="let event of dayPerformances" class="more">
             <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
               <a [routerLink]="['', 'performance', event.performance.slug]">
-                <span *ngFor="let event of dayPerformances">{{ event.performance.title }}</span>
-                <span *ngFor="let event of dayPerformances">{{ event.performance.time }}</span>
+                <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
               </a>
             </span>
           </div>

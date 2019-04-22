@@ -98,7 +98,6 @@ table {
   object-fit: cover;
   position: relative;
   margin-top: -40px;
-  flex-direction: column;
 }
 
 .panel {
@@ -110,9 +109,13 @@ table {
   display: none;
   opacity: 0;
 }
-.panel span {
+.panel p {
   color: $white-color;
   text-align: center;
+  font-size: 14px;
+}
+.event-title {
+  margin-top: 25px;
 }
 
 .calendar-img:hover {
@@ -121,9 +124,17 @@ table {
 
 .calendar-img:hover .panel {
   display: block;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
+.more {
+  background-color: $dark-grayish-red;
+}
+.more p {
+  color: $white-color;
+  text-align: center;
+  font-size: 14px;
+}
 .mobile {
   display: flex;
   flex-wrap: wrap;
