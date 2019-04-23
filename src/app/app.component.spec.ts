@@ -60,6 +60,7 @@ describe('AppComponent', () => {
         NgxGalleryModule,
         SpinnerModule,
         NgbPaginationModule,
+        WidgetModule
       ]
     }).compileComponents();
   }));

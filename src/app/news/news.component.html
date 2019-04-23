@@ -2,6 +2,7 @@
   <h2>Новини</h2>
   <app-spinner name="news"></app-spinner>
   <div *ngIf="listPost">
+    <app-widget class="widget"></app-widget>
     <app-news-item *ngFor="let item of listPost" [item]="item">
     </app-news-item>
     <ngb-pagination class="d-flex justify-content-center"

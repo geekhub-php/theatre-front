@@ -92,8 +92,9 @@ export class GatewayService {
     return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params: params})
       .pipe(
         catchError(this.handleError('get list of PerformanceEvent', new PerformanceEventResponse()))
-      )}
-      
+      );
+    }
+
   getHistoryBySlug(slug: string): Observable<History> {
     return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
       .pipe(

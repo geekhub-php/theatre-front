@@ -3,10 +3,10 @@
     <img *ngIf="item.mainPicture.post_big.url" src='{{ item.mainPicture.post_big.url }}'
          class="card-img-top" alt="{{item.short_description}}">
     <div class="card-body">
-      <h2>{{item.title}}</h2>
-      <p class="card-text">{{item.short_description}}</p>
+      <h2>{{ item.title }}</h2>
+      <p class="card-text">{{ item.short_description }}</p>
     </div>
-    <p class="list-group-item">{{item.updated_at | date: 'd.MM.yyyy' }}</p>
+    <p class="list-group-item">{{ item.updated_at | date: 'd.MM.yyyy' }}</p>
   </a>
 </div>
 

@@ -9,14 +9,15 @@
   .person {
     width: 150px;
     height: 261px;
-    margin: 0 4.5px 6px 4.5px;
+    margin: 0 4.5px 6px;
 
     img {
       width: 100%;
       height: auto !important;
     }
+
     h4 {
-      padding: 5px 0 0 0 !important;
+      padding: 5px 0 0 !important;
     }
   }
 }

@@ -1,7 +1,7 @@
 <div class="container">
   <app-spinner name="performance-page"></app-spinner>
-  <h2 class="page-title"> {{performance?.title}} </h2>
-  <h4 class="page-sub-title">{{performance?.type}}</h4>
+  <h2 class="page-title"> {{ performance?.title }} </h2>
+  <h4 class="page-sub-title">{{ performance?.type }}</h4>
 
   <section class="preview" *ngIf="performance">
     <div class="performance-poster">
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="performance-widget">
-      <div class="future-list">performances widget</div>
+      <div class="future-list"><app-widget></app-widget></div>
     </div>
     <div class="slider" *ngIf="performance.gallery">
       <ngb-carousel>
