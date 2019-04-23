@@ -24,6 +24,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
+import { WidgetModule } from './widget/widget.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -59,6 +60,7 @@ describe('AppComponent', () => {
         NgxGalleryModule,
         SpinnerModule,
         NgbPaginationModule,
+        WidgetModule
       ]
     }).compileComponents();
   }));
