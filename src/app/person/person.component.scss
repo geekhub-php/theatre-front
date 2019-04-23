@@ -20,8 +20,8 @@
         font-size: 14px;
 
         h2 {
-          font-family: $main-font_light;
-          font-size: 24px;
+          font-family: $main-font;
+          font-size: $main-font-size;
           color: $hover-color;
           margin-bottom: 30px;
         }
