@@ -23,6 +23,7 @@
 .slider {
   max-height: 100%;
   max-width: initial;
+  overflow: hidden;
 
   .slider-list {
     position: relative;
