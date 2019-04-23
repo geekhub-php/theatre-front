@@ -1,6 +1,4 @@
-import { ImageCollection } from '../ImageCollection';
-import { Performance } from '../Performance';
-
+import { Performance } from '../performance/Performance';
 
 export class PerformanceEvent {
   year: number;
