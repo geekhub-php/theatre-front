@@ -15,7 +15,7 @@ describe('PerformanceComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PerformanceComponent],
       imports: [
-        NgbModule,
+        NgbModule.forRoot(),
         HttpClientModule,
         RouterTestingModule,
         SpinnerModule,

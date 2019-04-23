@@ -11,7 +11,9 @@ export class SliderComponent implements OnInit {
   sliderList: Array<any>;
   slideId: number;
   count = 0;
-  constructor(private gateway: GatewayService) { }
+
+  constructor(private gateway: GatewayService) {
+  }
 
   ngOnInit() {
     this.gateway.getPerformanceEventList().subscribe(res => {
@@ -32,7 +34,8 @@ export class SliderComponent implements OnInit {
   prev() {
     if (this.count < this.sliderList.length) {
       this.count--;
-    } if (this.count < 0) {
+    }
+    if (this.count < 0) {
       this.count = this.sliderList.length - 1;
     }
     this.slideId = this.sliderList[this.count].id;

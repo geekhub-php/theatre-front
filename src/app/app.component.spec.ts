@@ -13,16 +13,17 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
-import { NewsListModule } from './news-list/news-list.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
+import { AboutMoreComponent } from './about/about-more/about-more.component';
+import { DevTeamComponent } from './dev-team/dev-team.component';
 import { WidgetModule } from './widget/widget.module';
 
 describe('AppComponent', () => {
@@ -41,32 +42,24 @@ describe('AppComponent', () => {
         TeamComponent,
         ContactsComponent,
         PartnersComponent,
-        BoardTrusteesComponent
+        BoardTrusteesComponent,
+        AboutMoreComponent,
+        DevTeamComponent
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue: '/'}
       ],
       imports: [
-        AppRoutingModule,
-        CoreModule,
-        HomePageModule,
-        NewsListModule,
-        RouterTestingModule,
         NgbModule,
-        StripHtmlModule,
-        InfiniteScrollModule,
         AppRoutingModule,
         CoreModule,
         HomePageModule,
-        NewsListModule,
         RouterTestingModule,
         StripHtmlModule,
         InfiniteScrollModule,
         NgxGalleryModule,
         SpinnerModule,
-        NgxGalleryModule,
-        SpinnerModule,
-        WidgetModule
+        NgbPaginationModule,
       ]
     }).compileComponents();
   }));

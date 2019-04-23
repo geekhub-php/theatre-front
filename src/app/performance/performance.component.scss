@@ -85,6 +85,12 @@
       background-color: $light-gray;
       text-align: center;
     }
+    ::ng-deep .slider img {
+      height: 300px;
+      max-width: 100%;
+      vertical-align: middle !important;
+      margin: auto;
+    }
   }
 }
 
@@ -205,8 +211,8 @@
   }
 
   .container .preview .performance-widget {
-    width: 240px;
-    margin: 10px auto;
+    min-width: 240px;
+    margin: 10px;
   }
 
   .preview .slider {
@@ -246,7 +252,7 @@
   }
 
   .container .preview .performance-widget {
-    width: 240px;
+    min-width: 240px;
     text-align: center;
     margin: 10px auto;
   }
@@ -333,10 +339,9 @@
     margin: 0 auto;
   }
 
-
   .container .preview .performance-widget {
-    margin: 10px auto;
-    width: 240px;
+    margin: 10px;
+    min-width: 240px;
     text-align: center;
   }
 
@@ -391,8 +396,8 @@
   }
 
   .container .preview .performance-widget {
-    margin: 10px auto;
-    width: 240px;
+    margin: 10px;
+    min-width: 240px;
     text-align: center;
   }
 
@@ -454,8 +459,8 @@
   }
 
   .container .preview .performance-widget {
-    margin: 10px auto;
-    width: 240px;
+    margin: 10px;
+    min-width: 240px;
     text-align: center;
   }
 

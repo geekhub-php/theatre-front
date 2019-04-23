@@ -5,10 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
-import { NewsListModule } from './news-list/news-list.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -31,6 +30,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { WidgetModule } from './widget/widget.module';
+import { AboutMoreComponent } from './about/about-more/about-more.component';
+import { DevTeamComponent } from './dev-team/dev-team.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import { WidgetModule } from './widget/widget.module';
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent
+    BoardTrusteesComponent,
+    AboutMoreComponent,
+    DevTeamComponent
   ],
   imports: [
     BrowserModule,
@@ -55,15 +58,16 @@ import { WidgetModule } from './widget/widget.module';
     CoreModule,
     BrowserAnimationsModule,
     HomePageModule,
-    NewsListModule,
     NgbModule,
     StripHtmlModule,
     InfiniteScrollModule,
     NgxGalleryModule,
     SpinnerModule,
-    WidgetModule
+    WidgetModule,
+    NgbPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

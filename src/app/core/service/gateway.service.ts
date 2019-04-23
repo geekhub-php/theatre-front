@@ -4,21 +4,25 @@ import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/comm
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { PerformanceListResponse } from '../model/PerformanceListResponse';
+import { PerformanceListResponse } from '../model/performance/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
+import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
 import { Role } from '../model/Role';
-import { Performance } from '../model/Performance';
-import { WidgetResType } from '../model/widget/WidgetResType';
-import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
+import { Performance } from '../model/performance/Performance';
 import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
 import { Employee } from '../model/employee/Employee';
+import { NewsListResponse } from '../model/news/NewsListResponse';
+import { NewsItem } from '../model/news/NewsItem';
+import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
+import { WidgetResType } from '../model/widget/WidgetResType';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
   readonly performanceListUrl = 'performances.json';
+  readonly newsListUrl = 'posts.json';
   readonly historiesListUrl = 'histories.json';
   readonly baseUrl = environment.baseUrl;
   readonly performanceEventsListUrl = 'performanceevents.json';
@@ -28,7 +32,7 @@ export class GatewayService {
 
   getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = 'uk'): Observable<any> {
     return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
-      params: { fromDate: fromDate.toString(), limit, locale }
+      params: {fromDate: fromDate.toString(), limit, locale}
     });
   }
   getPerformanceList(limit = 10): Observable<PerformanceListResponse> {
@@ -48,13 +52,13 @@ export class GatewayService {
   getRoles(slug): Observable<Array<Role>> {
     return this.http.get<Array<Role>>(`${this.baseUrl}/performances/${slug}/roles`, {params: {}})
       .pipe(
-        catchError(this.handleError('get list of Performances', [new Role()]))
+        catchError(this.handleError('get list of Performances', []))
       );
   }
 
   getEmployees(limit: string = '10', page: string = '1', locale: string = 'uk'): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/employees.json`, { params: { limit, page, locale } }
+      `${this.baseUrl}/employees.json`, {params: {limit, page, locale}}
     ).pipe(
       catchError(this.handleError('get Employees list', new EmployeesListResponse()))
     );
@@ -62,7 +66,7 @@ export class GatewayService {
 
   getEmployeeBySlug(slug): Observable<Employee> {
     return this.http.get<Employee>(
-      `${this.baseUrl}/employees/${slug}`, { params: { slug } }
+      `${this.baseUrl}/employees/${slug}`, {params: {slug}}
     ).pipe(
       catchError(this.handleError('get Employee', new Employee()))
     );
@@ -88,6 +92,30 @@ export class GatewayService {
     return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params: params})
       .pipe(
         catchError(this.handleError('get list of PerformanceEvent', new PerformanceEventResponse()))
+      )}
+      
+  getHistoryBySlug(slug: string): Observable<History> {
+    return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)
+      .pipe(
+        catchError(this.handleError('get History', new History()))
+      );
+  }
+
+  getNews(limit: string = '10', page: number = 1, locale: string = 'uk'): Observable<NewsListResponse> {
+    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
+      params: {limit, page: page.toString(), locale}
+    })
+      .pipe(
+        catchError(this.handleError('get list of News', new NewsListResponse()))
+      );
+  }
+
+  getNewsBySlug(slug): Observable<NewsItem> {
+    return this.http.get<NewsItem>(
+      `${this.baseUrl}/posts/${slug}`, {params: {slug}}
+    )
+      .pipe(
+        catchError(this.handleError('get NewsItem', new NewsItem()))
       );
   }
 
