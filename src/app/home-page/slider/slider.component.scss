@@ -10,7 +10,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100%;
+    max-height: 100%;
     max-width: initial;
     margin: 0 auto;
   }
@@ -21,6 +21,9 @@
 }
 
 .slider {
+  max-height: 100%;
+  max-width: initial;
+  overflow: hidden;
 
   .slider-list {
     position: relative;
@@ -259,7 +262,7 @@
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
 
   .slider {
     width: 100%;
@@ -311,6 +314,8 @@
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
           background-color: #4c4c4c;
           margin: 0 10px;
+          padding-right: 14px;
+          padding-left: 0;
 
           &:hover {
             background-color: #e54b2b;
@@ -322,7 +327,7 @@
             background-image: url("../../../assets/images/arrow-left.png");
             background-repeat: no-repeat;
             background-size: auto;
-            margin: 0 0 0 6px;
+            margin-left: 12px;
           }
 
           .arrow-next {
@@ -331,7 +336,7 @@
             background-image: url("../../../assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
-            margin: 0 0 0 8px;
+            margin-left: 14px;
           }
         }
       }
@@ -423,6 +428,8 @@
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
           background-color: #4c4c4c;
           margin: 0 10px;
+          padding-right: 14px;
+          padding-left: 0;
 
           &:hover {
             background-color: #e54b2b;
@@ -434,7 +441,7 @@
             background-image: url("../../../assets/images/arrow-left.png");
             background-repeat: no-repeat;
             background-size: auto;
-            margin: 0 0 0 6px;
+            margin-left: 12px;
           }
 
           .arrow-next {
@@ -443,7 +450,7 @@
             background-image: url("../../../assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
-            margin: 0 0 0 8px;
+            margin-left: 14px;
           }
         }
       }
@@ -537,6 +544,8 @@
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
           background-color: #4c4c4c;
           margin: 0 10px;
+          padding-right: 14px;
+          padding-left: 0;
 
           &:hover {
             background-color: #e54b2b;
@@ -548,7 +557,7 @@
             background-image: url("../../../assets/images/arrow-left.png");
             background-repeat: no-repeat;
             background-size: auto;
-            margin: 0 0 0 6px;
+            margin-left: 12px;
           }
 
           .arrow-next {
@@ -557,7 +566,7 @@
             background-image: url("../../../assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
-            margin: 0 0 0 8px;
+            margin-left: 14px;
           }
         }
       }
