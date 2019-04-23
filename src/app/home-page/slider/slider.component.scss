@@ -23,7 +23,7 @@
 .slider {
   max-height: 100%;
   max-width: initial;
-  
+
   .slider-list {
     position: relative;
     margin: 0 auto;
@@ -427,6 +427,8 @@
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
           background-color: #4c4c4c;
           margin: 0 10px;
+          padding-right: 14px;
+          padding-left: 0;
 
           &:hover {
             background-color: #e54b2b;
@@ -438,7 +440,7 @@
             background-image: url("../../../assets/images/arrow-left.png");
             background-repeat: no-repeat;
             background-size: auto;
-            margin: 0 0 0 6px;
+            margin-left: 12px;
           }
 
           .arrow-next {
@@ -447,7 +449,7 @@
             background-image: url("../../../assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
-            margin: 0 0 0 8px;
+            margin-left: 14px;
           }
         }
       }
