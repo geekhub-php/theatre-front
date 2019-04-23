@@ -3,7 +3,6 @@ import { GatewayService } from '../core/service/gateway.service';
 import { Performance } from '../core/model/Performance';
 import { ActivatedRoute } from '@angular/router';
 import { Image } from '../core/model/Image';
-import { Employee } from '../core/model/Employee';
 import { Role } from '../core/model/Role';
 import { LoaderService } from '../shared/spinner/loader.service';
 
