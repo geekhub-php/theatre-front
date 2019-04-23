@@ -34,16 +34,16 @@
                [alt]="dayPerformances[0].performance.title">
           <div class="panel"  *ngFor="let event of dayPerformances">
             <a [routerLink]="['', 'performance', event.performance.slug]">
-              <p *ngFor="let event of dayPerformances" class="event-title">{{ event.performance.title }}</p>
+              <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
               <p *ngFor="let event of dayPerformances">{{ event.time }}</p>
               <p *ngFor="let event of dayPerformances">{{ event.venue }}</p>
             </a>
           </div>
-          <div class="more">
             <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
-                <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
+              <div class="more" *ngFor="let event of dayPerformances">
+                 <span *ngFor="let event of dayPerformances">{{ event.performance.title }}</span>
+              </div>
             </span>
-          </div>
         </div>
       </td>
     </tr>

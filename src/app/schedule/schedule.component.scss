@@ -127,12 +127,16 @@ table {
 
 .more {
   background-color: $dark-grayish-red;
+  height: 100%;
 }
 
-.more p {
+
+.more span {
   color: $white-color;
+  display: block;
   text-align: center;
   font-size: 14px;
+  padding-top: 25px;
 }
 
 .mobile {
