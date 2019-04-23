@@ -10,7 +10,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100%;
+    max-height: 100%;
     max-width: initial;
     margin: 0 auto;
   }
@@ -21,7 +21,8 @@
 }
 
 .slider {
-
+  max-height: 100%;
+  max-width: initial;
   .slider-list {
     position: relative;
     margin: 0 auto;
