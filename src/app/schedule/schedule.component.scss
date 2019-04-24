@@ -95,9 +95,7 @@ table {
 .calendar-img {
   width: 100%;
   height: inherit;
-  object-fit: cover;
-  position: relative;
-  margin-top: -40px;
+  margin-top: -140px;
 }
 
 .panel {
@@ -128,15 +126,19 @@ table {
 
 .more {
   background-color: $dark-grayish-red;
-  height: 100%;
+  height: inherit;
+  margin-top: -40px;
 }
 
-.more span {
+.events {
+  height: 50%;
+}
+
+.events a{
   color: $white-color;
-  display: block;
   text-align: center;
   font-size: 14px;
-  padding-top: 25px;
+  display: block;
 }
 
 .mobile {

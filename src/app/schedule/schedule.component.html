@@ -32,24 +32,22 @@
           <img *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1"
                [src]=dayPerformances[0].performance.mainPicture.performance_big.url
                [alt]="dayPerformances[0].performance.title">
-          <div class="panel"  *ngFor="let event of dayPerformances">
+            <div class="panel"  *ngFor="let event of dayPerformances">
+              <div *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1">
+                <a [routerLink]="['', 'performance', event.performance.slug]">
+                  <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
+                  <p *ngFor="let event of dayPerformances">{{ event.time }}</p>
+                  <p *ngFor="let event of dayPerformances">{{ event.venue }}</p>
+                </a>
+              </div>
+            </div>
+        </div>
+        <div class="more" *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
+          <div *ngFor="let event of dayPerformances" class="events">
             <a [routerLink]="['', 'performance', event.performance.slug]">
-              <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
-              <p *ngFor="let event of dayPerformances">{{ event.time }}</p>
-              <p *ngFor="let event of dayPerformances">{{ event.venue }}</p>
+              <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title }}</p>
             </a>
           </div>
-            <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
-              <div class="more" *ngFor="let event of dayPerformances">
-                 <span *ngFor="let event of dayPerformances">{{ event.performance.title }}</span>
-                <div class="panel" *ngFor="let event of dayPerformances">
-                  <a [routerLink]="['', 'performance', event.performance.slug]">
-                    <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
-                    <p *ngFor="let event of dayPerformances">{{ event.time }}</p>
-                  </a>
-                </div>
-              </div>
-            </span>
         </div>
       </td>
     </tr>
