@@ -35,9 +35,9 @@
             <div class="panel"  *ngFor="let event of dayPerformances">
               <div *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1">
                 <a [routerLink]="['', 'performance', event.performance.slug]">
-                  <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
-                  <p *ngFor="let event of dayPerformances">{{ event.time }}</p>
-                  <p *ngFor="let event of dayPerformances">{{ event.venue }}</p>
+                  <p>{{ event.performance.title }}</p>
+                  <p>{{ event.time }}</p>
+                  <p>{{ event.venue }}</p>
                 </a>
               </div>
             </div>
