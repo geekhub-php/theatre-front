@@ -42,6 +42,12 @@
             <span *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
               <div class="more" *ngFor="let event of dayPerformances">
                  <span *ngFor="let event of dayPerformances">{{ event.performance.title }}</span>
+                <div class="panel" *ngFor="let event of dayPerformances">
+                  <a [routerLink]="['', 'performance', event.performance.slug]">
+                    <p *ngFor="let event of dayPerformances">{{ event.performance.title }}</p>
+                    <p *ngFor="let event of dayPerformances">{{ event.time }}</p>
+                  </a>
+                </div>
               </div>
             </span>
         </div>
