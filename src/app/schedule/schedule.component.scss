@@ -132,13 +132,14 @@ table {
 
 .events {
   height: 50%;
-}
-
-.events a{
   color: $white-color;
   text-align: center;
   font-size: 14px;
   display: block;
+
+  &:hover {
+    background-color: $light-hover-color;
+  }
 }
 
 .mobile {

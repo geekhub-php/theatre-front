@@ -43,11 +43,9 @@
             </div>
         </div>
         <div class="more" *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
-          <div *ngFor="let event of dayPerformances" class="events">
-            <a [routerLink]="['', 'performance', event.performance.slug]">
+          <a [routerLink]="['', 'performance', event.performance.slug]" *ngFor="let event of dayPerformances" class="events">
               <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title }}</p>
-            </a>
-          </div>
+          </a>
         </div>
       </td>
     </tr>
