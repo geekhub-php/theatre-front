@@ -43,8 +43,21 @@
             </div>
         </div>
         <div class="more" *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
-          <a [routerLink]="['', 'performance', event.performance.slug]" *ngFor="let event of dayPerformances" class="events">
-              <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title }}</p>
+          <a
+             triggers="mouseenter:mouseleave"
+             [ngbPopover]="popContent"
+             [popoverTitle]="popTitle"
+             container="body"
+             [routerLink]="['', 'performance', event.performance.slug]"
+             *ngFor="let event of dayPerformances"
+             class="events">
+              <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title | striphtml:[40, '...'] }}</p>
+              <ng-template #popTitle>{{ event.performance.title }}</ng-template>
+              <ng-template #popContent>
+                <img src="{{ event.performance.mainPicture.performance_big.url }}">
+                <p>{{ event.time }}</p>
+                <p>{{ event.venue }}</p>
+              </ng-template>
           </a>
         </div>
       </td>

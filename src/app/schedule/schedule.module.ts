@@ -4,6 +4,8 @@ import { ScheduleComponent } from './schedule.component';
 import { CalendarService } from './calendar.service';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { RouterModule } from '@angular/router';
+import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
+import { StripHtmlModule } from '../shared/pipes/strip-html/strip-html.module';
 
 @NgModule({
   providers: [
@@ -15,7 +17,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SpinnerModule,
-    RouterModule
+    RouterModule,
+    NgbPopoverModule,
+    StripHtmlModule
   ],
   exports: [
     ScheduleComponent,
