@@ -15,6 +15,8 @@ import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
 import { Employee } from '../model/employee/Employee';
 import { NewsListResponse } from '../model/news/NewsListResponse';
 import { NewsItem } from '../model/news/NewsItem';
+import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
+import { WidgetResType } from '../model/widget/WidgetResType';
 
 @Injectable({
   providedIn: 'root'
@@ -98,6 +100,20 @@ export class GatewayService {
 
     return `${dateNumber}-${month}-${year}`;
   }
+
+  getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
+  ): Observable<PerformanceEventResponse> {
+    const options: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
+    if (performance) options.performance = performance;
+
+    let params = new HttpParams();
+    Object.keys(options).forEach((key) => params = params.set(key, options[key]));
+
+    return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params: params})
+      .pipe(
+        catchError(this.handleError('get list of PerformanceEvent', new PerformanceEventResponse()))
+      );
+    }
 
   getHistoryBySlug(slug: string): Observable<History> {
     return this.http.get<History>(`${this.baseUrl}/histories/${slug}`)

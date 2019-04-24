@@ -20,8 +20,8 @@
         font-size: 14px;
 
         h2 {
-          font-family: $main-font_light;
-          font-size: 24px;
+          font-family: $main-font;
+          font-size: $main-font-size;
           color: $hover-color;
           margin-bottom: 30px;
         }
@@ -119,10 +119,12 @@
           height: 265px;
           margin-right: 0;
         }
+
         .about h2 {
           margin: 10px 0;
         }
       }
+
       ngx-gallery ::ng-deep {
         width: 150px !important;
         margin-top: 10px;

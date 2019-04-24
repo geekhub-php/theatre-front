@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { WidgetModule } from '../widget/widget.module';
 
 describe('NewsComponent', () => {
   let component: NewsComponent;
@@ -21,7 +22,8 @@ describe('NewsComponent', () => {
         RouterTestingModule,
         HttpClientModule,
         SpinnerModule,
-        NgbPaginationModule
+        NgbPaginationModule,
+        WidgetModule
       ]
     })
     .compileComponents();

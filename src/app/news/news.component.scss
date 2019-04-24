@@ -1,7 +1,7 @@
 @import "../../assets/variables";
 
 h2 {
-  font-size: 25px;
+  font-size: $main-font-size;
   font-family: $main-font;
   color: $hover-color;
   margin-top: 20px;
@@ -9,13 +9,17 @@ h2 {
   text-align: center;
 }
 
+.widget {
+  float: right;
+}
+
 ngb-pagination ::ng-deep ul {
+
   li a {
     color: $primary-color;
     outline: none;
     font-family: $main-font;
     border: transparent;
-
   }
 
   li.active a {
@@ -32,5 +36,12 @@ ngb-pagination ::ng-deep ul {
       border-color: transparent;
       outline: transparent !important;
     }
+  }
+}
+
+@media (max-width: 992px) {
+
+  .widget {
+    display: none;
   }
 }

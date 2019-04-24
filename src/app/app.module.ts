@@ -28,6 +28,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { ScheduleModule } from './schedule/schedule.module';
+import { WidgetModule } from './widget/widget.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
 
@@ -62,7 +63,9 @@ import { DevTeamComponent } from './dev-team/dev-team.component';
     SpinnerModule,
     ScheduleModule,
     NgbPaginationModule,
-  ],
+    WidgetModule,
+    NgbPaginationModule
+ ],
   providers: [],
   bootstrap: [AppComponent]
 })
