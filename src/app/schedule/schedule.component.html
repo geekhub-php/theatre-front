@@ -54,9 +54,9 @@
               <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title | striphtml:[40, '...'] }}</p>
               <ng-template #popTitle>{{ event.performance.title }}</ng-template>
               <ng-template #popContent>
-                <img src="{{ event.performance.mainPicture.performance_big.url }}">
-                <p>{{ event.time }}</p>
-                <p>{{ event.venue }}</p>
+                <img src="{{ event.performance.mainPicture.performance_big.url }}" class="popover-img">
+                <p class="popover-time">{{ event.time }}</p>
+                <p class="popover-venue">{{ event.venue }}</p>
               </ng-template>
           </a>
         </div>

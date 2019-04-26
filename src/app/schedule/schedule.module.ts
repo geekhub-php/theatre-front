@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
+import { NgbModule, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { ScheduleComponent } from './schedule.component';
 import { CalendarService } from './calendar.service';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { RouterModule } from '@angular/router';
-import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 import { StripHtmlModule } from '../shared/pipes/strip-html/strip-html.module';
 
 @NgModule({
@@ -12,9 +12,10 @@ import { StripHtmlModule } from '../shared/pipes/strip-html/strip-html.module';
     CalendarService,
   ],
   declarations: [
-    ScheduleComponent,
+    ScheduleComponent
   ],
   imports: [
+    NgbModule,
     CommonModule,
     SpinnerModule,
     RouterModule,
