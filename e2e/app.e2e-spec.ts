@@ -19,7 +19,7 @@ describe('theatre-front App', () => {
   it('shold navigate to Poster', () => {
     page.navigateTo();
     mainMenu.navigateTo('Афіша');
-    expect(element(by.css('h2')).getText()).toContain('Poster');
+    expect(element(by.css('h2')).getText()).toContain('Афіша на');
   });
 
   it('shold navigate to Repertoire', () => {

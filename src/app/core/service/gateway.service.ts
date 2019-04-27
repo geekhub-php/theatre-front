@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { PerformanceListResponse } from '../model/performance/PerformanceListResponse';
 import { HistoryListResponse } from '../model/history/HistoryListResponse';
+import { ScheduleListResponse } from '../model/schedule/ScheduleListResponse';
 import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
 import { Role } from '../model/Role';
@@ -24,6 +25,7 @@ export class GatewayService {
   readonly performanceListUrl = 'performances.json';
   readonly newsListUrl = 'posts.json';
   readonly historiesListUrl = 'histories.json';
+  readonly scheduleListUrl = 'performanceevents.json';
   readonly baseUrl = environment.baseUrl;
   readonly performanceEventsListUrl = 'performanceevents.json';
 
@@ -79,6 +81,24 @@ export class GatewayService {
       .pipe(
         catchError(this.handleError('get list of Histories', new HistoryListResponse()))
       );
+  }
+
+  getSchedulesList(from: Date, to: Date, locale: string = 'uk'): Observable<ScheduleListResponse> {
+    const fromDate = this.dateToString(from);
+    const toDate = this.dateToString(to);
+
+    return this.http.get<ScheduleListResponse>(
+      `${this.baseUrl}/${this.scheduleListUrl}`, {
+        params: {limit: 'all', fromDate, toDate}
+      });
+  }
+
+  dateToString(date: Date): string {
+    const year = date.getFullYear();
+    const month = `0${date.getMonth() + 1}`.slice(-2); // tslint:disable-line
+    const day = `0${date.getDate()}`.slice(-2); // tslint:disable-line
+
+    return `${day}-${month}-${year}`;
   }
 
   getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
