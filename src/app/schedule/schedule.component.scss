@@ -102,7 +102,7 @@ table {
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 0px;
+  top: 0;
   background-color: $primary-color;
   display: none;
   opacity: 0;
@@ -121,7 +121,7 @@ table {
 
 .calendar-img:hover .panel {
   display: block;
-  opacity: 0.9;
+  opacity: .9;
 }
 
 .more {
@@ -335,7 +335,8 @@ table {
   }
 }
 
-@media screen and (min-width: 560px){
+@media screen and (min-width: 560px) {
+
   .mobile {
     max-width: 400px;
   }

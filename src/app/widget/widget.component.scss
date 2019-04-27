@@ -12,6 +12,7 @@
   margin: 0;
 
   .widget-item {
+    min-height: 72px;
     box-sizing: border-box;
     border-bottom: 1px dashed $primary-color;
     background-color: $bg-widget;
@@ -121,4 +122,19 @@
 
 .pdr34px {
   padding-right: 34px !important;
+}
+
+.notEvetWrap {
+  text-align: center;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center {
+  margin: auto;
 }
