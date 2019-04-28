@@ -1,4 +1,4 @@
-<div class="slider">
+<div *ngIf="sliderList.length > 0" class="slider">
   <div class="slider-list">
     <ng-template ngFor let-item [ngForOf]="sliderList">
       <div *ngIf="item.id === slideId" class="slider-img"
@@ -36,3 +36,4 @@
     </div>
   </div>
 </div>
+

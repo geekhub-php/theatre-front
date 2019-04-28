@@ -8,7 +8,7 @@ import { GatewayService } from '../../core/service/gateway.service';
 })
 export class SliderComponent implements OnInit {
 
-  sliderList: Array<any>;
+  sliderList: Array<any> = [];
   slideId: number;
   count = 0;
 
