@@ -84,12 +84,18 @@ table {
   margin: 0 0 0 7px;
   font-size: 18px;
   color: $hover-color;
-  background: $white-color;
+  background-color: $white-color;
   border-radius: 3px;
   line-height: 1;
   padding: 2px 0;
   min-width: 25px;
   text-align: center;
+}
+
+.contain {
+  width: 40px;
+  margin-bottom: 50px;
+  float: left;
 }
 
 .calendar-img {
@@ -100,12 +106,12 @@ table {
 
 .panel {
   height: 100%;
-  width: 100%;
   position: absolute;
   top: 0;
   background-color: $primary-color;
   display: none;
   opacity: 0;
+  overflow: hidden;
 }
 
 .panel p {

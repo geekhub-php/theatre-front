@@ -34,6 +34,7 @@
                [alt]="dayPerformances[0].performance.title">
             <div class="panel"  *ngFor="let event of dayPerformances">
               <div *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1">
+                <div class="contain"></div>
                 <a [routerLink]="['', 'performance', event.performance.slug]">
                   <p>{{ event.performance.title }}</p>
                   <p>{{ event.time }}</p>
@@ -43,6 +44,7 @@
             </div>
         </div>
         <div class="more" *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">
+          <div class="contain"></div>
           <a
              triggers="mouseenter:mouseleave"
              [ngbPopover]="popContent"
