@@ -21,15 +21,6 @@ export class PerformanceComponent implements OnInit {
               private router: ActivatedRoute,
               private loaderService: LoaderService,
               private meta: Meta) {
-    this.meta.addTag({name: 'og:url', content: 'http://theatre-shevchenko.ck.ua'});
-    this.meta.addTag({name: 'og:type', content: 'website'});
-    this.meta.addTag({name: 'og:title', content: this.slug});
-    this.meta.addTag({name: 'og:description', content: 'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка'});
-    this.meta.addTag({name: 'og:image', content: 'http://theatre-shevchenko.ck.ua/img/logo.png'});
-    const temp = this.meta.getTag('name="og:title');
-    const tmp = this.meta.getTag('name="og:description');
-    console.dir(temp);
-    console.dir(tmp);
   }
 
   ngOnInit() {
@@ -37,6 +28,7 @@ export class PerformanceComponent implements OnInit {
     this.loaderService.start('performance-page');
     this.getPerformanceBySlug(slug);
     this.getRoles();
+    this.updateMetaTag();
   }
 
   getPerformanceBySlug(slug: string) {
@@ -53,4 +45,13 @@ export class PerformanceComponent implements OnInit {
       this.roles = res;
     });
   }
+
+  updateMetaTag() {
+    this.meta.updateTag({property: 'og:url', content: `http://theatre-shevchenko.ck.ua/ ${this.slug}`});
+    this.meta.updateTag({property: 'og:title', content: this.slug});
+    this.meta.updateTag({property: 'og:description', content: 'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка'});
+    this.meta.updateTag({property: 'og:image', content: this.performance.mainPicture.performance_big.url});
+
+  }
+
 }
