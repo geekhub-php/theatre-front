@@ -11,12 +11,13 @@ export class AppComponent {
 
   constructor(private meta: Meta,
               private titleService: Title) {
+    this.setTitle(this.title);
+
     this.meta.addTag({name: 'og:url', content: 'http://theatre-shevchenko.ck.ua'});
     this.meta.addTag({name: 'og:type', content: 'website'});
     this.meta.addTag({name: 'og:title', content: this.title});
     this.meta.addTag({name: 'og:description', content: 'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка'});
     this.meta.addTag({name: 'og:image', content: 'http://theatre-shevchenko.ck.ua/img/logo.png'});
-    this.setTitle(this.title);
   }
 
   setTitle(newTitle: string) {
