@@ -17,4 +17,5 @@ export class AppComponent {
       content: 'https://scontent.fdnk2-1.fna.fbcdn.net/v/t1.0-0/c0.0.369.369a/p370x247/12122823_1672362166338620_1793269158110847143_n.jpg'
     });
   }
+  title = 'app';
 }
