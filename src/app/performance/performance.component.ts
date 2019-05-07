@@ -22,6 +22,9 @@ export class PerformanceComponent implements OnInit {
               private loaderService: LoaderService,
               private meta: Meta
   ) {
+    this.meta.updateTag({property: 'og:url', content: `http://theatre-shevchenko.ck.ua/performance/${this.slug}`});
+    // {property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/img/logo.png'},
+    this.meta.updateTag({property: 'og:description', content: 'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка'});
   }
 
   ngOnInit() {
@@ -29,9 +32,6 @@ export class PerformanceComponent implements OnInit {
     this.loaderService.start('performance-page');
     this.getPerformanceBySlug(slug);
     this.getRoles();
-    this.meta.updateTag({property: 'og:url', content: `http://theatre-shevchenko.ck.ua/performance/${this.slug}`});
-      // {property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/img/logo.png'},
-    this.meta.updateTag({property: 'og:description', content: 'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка'});
   }
 
   getPerformanceBySlug(slug: string) {
