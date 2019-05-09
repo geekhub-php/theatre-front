@@ -127,12 +127,23 @@
           text-decoration: none;
         }
 
-        .ticket_link .ticket_h2 {
+        .ticket_link, .ticket_h2 {
           color: #fff;
           font-family: "robotothin", serif;
           text-align: left;
           font-size: 23px;
           margin-bottom: 15px;
+          text-transform: capitalize;
+          margin-left: 15px;
+        }
+
+        .ticket_h2_small {
+          color: #fff;
+          font-family: "robotothin", serif;
+          text-align: left;
+          font-size: 20px;
+          margin-bottom: 15px;
+          margin-top: 2px;
           text-transform: capitalize;
           margin-left: 15px;
         }
