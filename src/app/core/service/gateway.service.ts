@@ -101,7 +101,7 @@ export class GatewayService {
     return `${day}-${month}-${year}`;
   }
 
-  getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = 'all', locale: string = 'uk'
+  getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = '5', locale: string = 'uk'
   ): Observable<PerformanceEventResponse> {
     const options: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
     if (performance) options.performance = performance;
