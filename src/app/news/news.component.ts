@@ -12,7 +12,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class NewsComponent implements OnInit {
   limit = '5';
   page: number;
-  locale: string;
   listPost: Array<NewsItem> = [];
   collectionSize: number;
 
@@ -23,12 +22,12 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.active.queryParams.subscribe(params => this.getNews(params.limit, params.page, params.locale));
+    this.active.queryParams.subscribe(params => this.getNews(params.limit, params.page));
     this.page = +this.active.snapshot.queryParamMap.get('page') || 1;
     this.appRoutes.events.subscribe(() =>
       window.scrollTo(0, 0)
     );
-    this.getNews(this.limit, this.page, this.locale);
+    this.getNews(this.limit, this.page);
   }
 
   goToPage(page: number) {
@@ -40,9 +39,9 @@ export class NewsComponent implements OnInit {
     });
   }
 
-  getNews(limit, page, locale) {
+  getNews(limit, page) {
     this.loaderService.start('news');
-    this.gatewayService.getNews(this.limit, this.page, this.locale).subscribe(res => {
+    this.gatewayService.getNews(this.limit, this.page).subscribe(res => {
         this.listPost = res.posts;
         this.collectionSize = res.total_count;
         this.page = res.page;

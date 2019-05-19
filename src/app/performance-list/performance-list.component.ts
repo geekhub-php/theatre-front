@@ -24,6 +24,7 @@ export class PerformanceListComponent implements OnInit {
 
   ngOnInit() {
     this.loaderService.start('repertoire');
+    // TODO: add pagination here
     this.gateway.getPerformanceList().subscribe(({performances}) => {
         this.perfomances = performances;
         this.changeDetector.markForCheck();
