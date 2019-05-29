@@ -30,7 +30,8 @@ export class GatewayService {
 
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string) {
-    this.localeId = this.localeId.slice(0, 2);
+    const idLength = 2;
+    this.localeId = this.localeId.slice(0, idLength);
   }
 
   getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = this.localeId): Observable<any> {
@@ -108,7 +109,10 @@ export class GatewayService {
     return `${day}-${month}-${year}`;
   }
 
-  getPerformanceEvents(performance?: string, fromDate: Date = new Date(), limit: string = '5', locale: string = this.localeId): Observable<PerformanceEventResponse> {
+  getPerformanceEvents(performance?: string,
+                       fromDate: Date = new Date(),
+                       limit: string = '5',
+                       locale: string = this.localeId): Observable<PerformanceEventResponse> {
     const options: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
     if (performance) options.performance = performance;
 
