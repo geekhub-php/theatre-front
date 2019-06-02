@@ -23,8 +23,8 @@ script:
   - npm run lint-css
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
   - ng e2e
-  - npm run build:uk-ua --configuration=staging --deploy-url=http://develop.theatre.pp.ua/$BRANCH/ --base-href=/$BRANCH/
-  - npm run build:en-us
+  - ng build --configuration=staging --deploy-url=http://develop.theatre.pp.ua/$BRANCH/ --base-href=/$BRANCH/
+  - cp ./deploy/branch.conf ./dist/
 
 notifications:
   email:
