@@ -20,9 +20,9 @@
         <div class="ticket"
              [ngClass]="{'ticket-active ': item.id === slideId}"
              (click)="slide(idx)">
-          <span class="ticket-day">{{ item.date_time | date: "EEE": null :"uk-UA" }}</span>
-          <span class="ticket-number">{{ item.date_time | date: "dd": null :"uk-UA" }}</span>
-          <span class="ticket-month">{{ item.date_time | date: "MMMM": null :"uk-UA" }}</span>
+          <span class="ticket-day">{{ item.date_time | date: "EEE" }}</span>
+          <span class="ticket-number">{{ item.date_time | date: "dd" }}</span>
+          <span class="ticket-month">{{ item.date_time | date: "MMMM" }}</span>
         </div>
         <div class="ticket_data"
              [ngClass]="{'active-more': item.id === slideId}">
