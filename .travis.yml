@@ -50,6 +50,7 @@ after_success:
   - ssh -o StrictHostKeyChecking=no deploybot@104.248.253.61 "pwd"
 
   - cp ./deploy/branch.conf ./dist/
+  - cp ./deploy/index.html ./dist/
   - cd dist/ && tar -zcvf ../dist.tar.gz * && cd -
   - scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa dist.tar.gz deploybot@104.248.253.61:~/theatre-front/$BRANCH.tar.gz
   - ssh deploybot@104.248.253.61 "rm -rf ~/theatre-front/$BRANCH && mkdir ~/theatre-front/$BRANCH"
