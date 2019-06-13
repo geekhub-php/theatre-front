@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     const currentUrl = window.location.href;
 
     // tslint:disable-next-line:no-magic-numbers
-    return `${currentUrl.substr(0, urlLength - 1)}/${otherLang}/${currentUrl.substr(urlLength + 4)}`;
+    return `${currentUrl.substr(0, urlLength - 1)}/${otherLang}/${currentUrl.substr(urlLength + 3)}`;
   }
 
   constructor(private router: Router,
