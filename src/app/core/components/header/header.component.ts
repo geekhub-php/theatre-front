@@ -1,9 +1,9 @@
-import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 
-import { filter } from 'rxjs/operators';
+import { LangService } from '../../services/lang.service';
 
-import { environment } from '../../../../environments/environment';
+import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -11,31 +11,18 @@ import { environment } from '../../../../environments/environment';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   collapse = true;
 
   get langRedirectUrl() {
-    const langList = ['en', 'uk'];
-    const otherLang = langList.find((l) => l !== this.localeId);
-
-    const urlLength = environment.siteUrl.length;
-    const currentUrl = window.location.href;
-
-    // tslint:disable-next-line:no-magic-numbers
-    return `${currentUrl.substr(0, urlLength - 1)}/${otherLang}/${currentUrl.substr(urlLength + 3)}`;
+    return this.langService.getLangRedirectUrl();
   }
 
   constructor(private router: Router,
-              @Inject(LOCALE_ID) private localeId: string) {
-    const idLength = 2;
-    this.localeId = this.localeId.slice(0, idLength);
-
+              private langService: LangService) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
       .subscribe(() => this.collapse = true);
-  }
-
-  ngOnInit() {
   }
 
   toogleMenu() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsItem } from '../core/model/news/NewsItem';
-import { GatewayService } from '../core/service/gateway.service';
+import { GatewayService } from '../core/services/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { ActivatedRoute, Router } from '@angular/router';
 

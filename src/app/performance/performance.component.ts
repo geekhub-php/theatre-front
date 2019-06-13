@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GatewayService } from '../core/service/gateway.service';
+import { GatewayService } from '../core/services/gateway.service';
 import { Performance } from '../core/model/performance/Performance';
 import { ActivatedRoute } from '@angular/router';
 import { Role } from '../core/model/Role';
