@@ -16,7 +16,8 @@
         <app-main-nav></app-main-nav>
       </div>
 
-      <a class="language d-none d-lg-block" href="#" i18n="@@lang">Укр</a>
+      <a class="language d-none d-lg-block" [href]="langRedirectUrl" i18n="@@lang">Укр</a>
+      {{ langRedirectUrl }}
     </nav>
   </div>
 </header>
