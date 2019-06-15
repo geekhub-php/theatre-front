@@ -1,54 +1,48 @@
-<ng-container *ngIf="slug !== null; else main">
-  <div class="widget">
-    <ul class="widget-list">
-      <ng-container *ngIf="listEvents.length > 0; else liNotEvents">
+<div class="widget">
+  <ul class="widget-list">
+    <ng-container *ngIf="listEvents.length > 0; else noEvents">
+      <ng-container *ngIf="slug; else main">
         <li class="widget-item" *ngFor="let item of listEvents">
           <div class="widget-wrap">
             <div class="widget-date bg-line">
-              <p class="week">{{ item.date_time | date:'EEE': null : 'uk-UA' }}</p>
+              <p class="week">{{ item.date_time | date:'EEE' }}</p>
               <p class="day">{{ item.date_time | date:'dd' }}</p>
-              <p class="month">{{ item.date_time | date:'MMMM': null : 'uk-UA' }}</p>
+              <p class="month">{{ item.date_time | date:'MMMM' }}</p>
             </div>
             <div class="widget-about">
               <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
-              <p class="time">{{ item.date_time | date:'HH:mm': null : 'uk-UA' }}</p>
+              <p class="time">{{ item.date_time | date:'HH:mm' }}</p>
             </div>
           </div>
         </li>
       </ng-container>
-    </ul>
-  </div>
-</ng-container>
+    </ng-container>
+  </ul>
+</div>
 
 <ng-template #main>
-  <div class="widget">
-    <ul class="widget-list">
-      <ng-container *ngIf="listEvents.length > 0; else liNotEvents">
-        <ng-container *ngFor="let item of listEvents; let i=index">
-          <li class="widget-item" *ngIf="i < 5" [routerLink]="[ '/performance', item.performance.slug ]">
-            <div class="widget-wrap hover bg-news-code pdr34px">
-              <div class="widget-date bg-line mrg10px">
-                <p class="week">{{ item.date_time | date:'EEE': null : 'uk-UA' }}</p>
-                <p class="day">{{ item.date_time | date:'dd' }}</p>
-                <p class="month">{{ item.date_time | date:'MMMM': null : 'uk-UA' }}</p>
-              </div>
-              <div class="widget-about txt-left">
-                <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
-                <p class="type">{{ item.performance.type }}</p>
-              </div>
-            </div>
-          </li>
-        </ng-container>
-      </ng-container>
-    </ul>
-  </div>
+  <li class="widget-item"
+  *ngFor="let item of listEvents; let i=index"
+  [routerLink]="[ '/performance', item.performance.slug ]">
+    <div class="widget-wrap hover bg-news-code pdr40px" *ngIf="i < 5">
+      <div class="widget-date bg-line mrg10px">
+        <p class="week">{{ item.date_time | date:'EEE' }}</p>
+        <p class="day">{{ item.date_time | date:'dd' }}</p>
+        <p class="month">{{ item.date_time | date:'MMMM' }}</p>
+      </div>
+      <div class="widget-about">
+        <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
+        <p class="type">{{ item.performance.type }}</p>
+      </div>
+    </div>
+  </li>
 </ng-template>
 
-<ng-template #liNotEvents>
-  <li class="widget-item bg-news-code pdr34px flex">
+<ng-template #noEvents>
+  <li class="widget-item bg-news-code pdr40px flex">
     <div class="widget-wrap flex-center">
-      <div class="widget-about txt-left ">
-        <h3 class="widget-heading notEvetWrap">На данний момент, вистав немає</h3>
+      <div class="widget-about">
+        <h3 class="widget-heading no-events-wrap" i18n="@@noPerformances">No performances for now</h3>
       </div>
     </div>
   </li>

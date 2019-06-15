@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GatewayService } from '../../core/service/gateway.service';
+import { GatewayService } from '../../core/services/gateway.service';
 
 @Component({
   selector: 'app-slider',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GatewayService } from '../core/service/gateway.service';
+import { GatewayService } from '../core/services/gateway.service';
 import { PerformanceEvent } from '../core/model/widget/PerformanceEvent';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,7 +15,8 @@ export class WidgetComponent implements OnInit {
   constructor(private gateway: GatewayService, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    if (this.slug !== null) { this.slug = this.router.snapshot.paramMap.get('slug'); }
+    this.slug = this.router.snapshot.paramMap.get('slug');
+
     this.gateway.getPerformanceEvents(this.slug).subscribe((res) => {
       this.listEvents = res.performance_events;
     });

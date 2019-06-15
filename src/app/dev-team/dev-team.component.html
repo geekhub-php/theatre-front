@@ -1,11 +1,10 @@
 <div class="container">
-  <h2>Над проектом працювали</h2>
-  <h3>Керівники групи</h3>
+  <h2 i18n="@@projectTeam">Project team</h2>
+  <h3 i18n="@@teamLeads">Team-leads</h3>
   <section class="persons-list">
-    <a class="person" href="{{ person.link }}"
-    target="_blank"
-    *ngFor="let person of teamLeadsList">
-      <img src="{{ person.avatar }}" alt="">
+    <a class="person" href="{{ person.link }}" target="_blank"
+       *ngFor="let person of teamLeadsList">
+      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name">
       <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
       <p>{{ person.task }}</p>
     </a>
@@ -15,7 +14,7 @@
     <a class="person" href="{{ person.link }}"
     target="_blank"
     *ngFor="let person of devList">
-      <img src="{{ person.avatar }}" alt="">
+      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name">
       <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
       <span>{{ person.task }}</span>
     </a>
@@ -25,7 +24,7 @@
     <a class="person" href="{{ person.link }}"
     target="_blank"
     *ngFor="let person of qaList">
-      <img src="{{ person.avatar }}" alt="">
+      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name">
       <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
       <p>{{ person.task }}</p>
     </a>
