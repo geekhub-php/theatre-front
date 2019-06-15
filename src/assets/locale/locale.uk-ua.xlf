@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="theatreName" datatype="html">
+        <source>Cherkassy theatre of Taras Shevchenko</source>
+        <target>Театр імені Т.Г. Шевченка</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu" datatype="html">
+        <source>Menu</source>
+        <target>Меню</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lang" datatype="html">
+        <source>Укр</source>
+        <target>Eng</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="up" datatype="html">
+        <source>Up</source>
+        <target>Вгору</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/footer/footer.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="facebookPage" datatype="html">
+        <source>Facebook page</source>
+        <target>Сторінка в Facebook</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/footer/footer.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="venue" datatype="html">
+        <source>Venue:</source>
+        <target>Місце проведення:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home-page/slider/slider.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trustees" datatype="html">
+        <source>Board of trustees</source>
+        <target>Піклувальна рада</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home-page/side-menu/side-menu.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/board-trustees/board-trustees.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="partners" datatype="html">
+        <source>Partners</source>
+        <target>Партнери</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home-page/side-menu/side-menu.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/partners/partners.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forum" datatype="html">
+        <source>Forum</source>
+        <target>Форум</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home-page/side-menu/side-menu.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="posterFor" datatype="html">
+        <source>Poster for</source>
+        <target>Афіша на</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="prev" datatype="html">
+        <source>Previous</source>
+        <target>Попереднiй</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="now" datatype="html">
+        <source>Today</source>
+        <target>Зараз</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="next" datatype="html">
+        <source>Next</source>
+        <target>Наступний</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="monday" datatype="html">
+        <source>Monday</source>
+        <target>Понеділок</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tuesday" datatype="html">
+        <source>Tuesday</source>
+        <target>Вівторок</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="wednesday" datatype="html">
+        <source>Wednesday</source>
+        <target>Середа</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="thursday" datatype="html">
+        <source>Thursday</source>
+        <target>Четвер</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="friday" datatype="html">
+        <source>Friday</source>
+        <target>П&apos;ятниця</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="saturday" datatype="html">
+        <source>Saturday</source>
+        <target>Субота</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sunday" datatype="html">
+        <source>Sunday</source>
+        <target>Неділя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noPerformances" datatype="html">
+        <source>No performances for now</source>
+        <target>На данний момент, вистав немає</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/widget/widget.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="repertoire" datatype="html">
+        <source>Repertoire</source>
+        <target>Репертуар</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/performance-list/performance-list.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="actors" datatype="html">
+        <source>Actors</source>
+        <target>Актори</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/performance/performance.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="performanceDetails" datatype="html">
+        <source>Description</source>
+        <target>Про спекталь</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/performance/performance.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aboutTitle" datatype="html">
+        <source>About</source>
+        <target>Про Театр</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/about/about.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="persons" datatype="html">
+        <source>Persons</source>
+        <target>Персоналії</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/team/team.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="theatreTeam" datatype="html">
+        <source>Theatre team</source>
+        <target>Творчий склад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/team/team.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsTitle" datatype="html">
+        <source>Contacts</source>
+        <target>Контакти</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsDirector" datatype="html">
+        <source>Director, Secretary</source>
+        <target>Директор, Секретар</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsAdmin" datatype="html">
+        <source>Administrator</source>
+        <target>Адміністратор</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsTicketOffice" datatype="html">
+        <source>Ticket office</source>
+        <target>Каса</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsEmail" datatype="html">
+        <source>E-mail</source>
+        <target>Eлектронна пошта</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactAddress" datatype="html">
+        <source>Address</source>
+        <target>Звертайтеся за адресою</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addressValue" datatype="html">
+        <source>Cherkasy, Shevchenko, 234</source>
+        <target>м. Черкаси, бул. Шевченка, 234</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="position" datatype="html">
+        <source>Position:</source>
+        <target>Посада:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/person/person.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="biography" datatype="html">
+        <source>Biography:</source>
+        <target>Біографія:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/person/person.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="news" datatype="html">
+        <source>News</source>
+        <target>Новини</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/news/news.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pageInProgress" datatype="html">
+        <source>Sorry, we are working on this page right now.</source>
+        <target>Вибачте за тимчасові незручності, робота над даною сторінкою ведеться.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/partners/partners.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/board-trustees/board-trustees.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectTeam" datatype="html">
+        <source>Project team</source>
+        <target>Над проектом працювали</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dev-team/dev-team.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="teamLeads" datatype="html">
+        <source>Team-leads</source>
+        <target>Керівники групи</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dev-team/dev-team.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pageNotFound" datatype="html">
+        <source>Sorry, page not found</source>
+        <target>Вибачте, дана сторінка не знайдена.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tryAgain" datatype="html">
+        <source>Please, try again</source>
+        <target>Cпробуйте ще раз</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mainPage" datatype="html">
+        <source>Main page</source>
+        <target>Головна</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="poster" datatype="html">
+        <source>Poster</source>
+        <target>Афіша</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about" datatype="html">
+        <source>About</source>
+        <target>Про театр</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contacts" datatype="html">
+        <source>Contacts</source>
+        <target>Контакти</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="ngb.alert.close" datatype="html">
+        <source>Close</source>
+        <target>Закрити</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/alert/alert.d.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.previous" datatype="html">
+        <source>Previous</source>
+        <target>Попередній</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.next" datatype="html">
+        <source>Next</source>
+        <target>Наступний</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.previous-month" datatype="html">
+        <source>Previous month</source>
+        <target>Попередній місяць</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.next-month" datatype="html">
+        <source>Next month</source>
+        <target>Наступний місяць</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-month" datatype="html">
+        <source>Select month</source>
+        <target>Вибрати місяць</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-year" datatype="html">
+        <source>Select year</source>
+        <target>Вибрати рік</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first" datatype="html">
+        <source>««</source>
+        <target>««</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous" datatype="html">
+        <source>«</source>
+        <target>«</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next" datatype="html">
+        <source>»</source>
+        <target>»</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last" datatype="html">
+        <source>»»</source>
+        <target>»»</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first-aria" datatype="html">
+        <source>First</source>
+        <target>Перша</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous-aria" datatype="html">
+        <source>Previous</source>
+        <target>Попередня</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next-aria" datatype="html">
+        <source>Next</source>
+        <target>Наступна</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last-aria" datatype="html">
+        <source>Last</source>
+        <target>Остання</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.progressbar.value" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</source>
+        <target><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
+        <source>Increment hours</source>
+        <target>Збільшення годин</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.HH" datatype="html">
+        <source>HH</source>
+        <target>HH</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.hours" datatype="html">
+        <source>Hours</source>
+        <target>Години</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
+        <source>Decrement hours</source>
+        <target>Зменшення годин</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
+        <source>Increment minutes</source>
+        <target>Збільшення хвилин</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.MM" datatype="html">
+        <source>MM</source>
+        <target>MM</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.minutes" datatype="html">
+        <source>Minutes</source>
+        <target>Хвилини</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
+        <source>Decrement minutes</source>
+        <target>Зменшення хвилин</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
+        <source>Increment seconds</source>
+        <target>Збільшення секунд</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.SS" datatype="html">
+        <source>SS</source>
+        <target>SS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.seconds" datatype="html">
+        <source>Seconds</source>
+        <target>Секунди</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
+        <source>Decrement seconds</source>
+        <target>Зменшення секунд</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.PM" datatype="html">
+        <source>PM</source>
+        <target>PM</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.AM" datatype="html">
+        <source>AM</source>
+        <target>AM</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

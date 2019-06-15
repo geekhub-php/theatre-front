@@ -1,0 +1,137 @@
+@import "../../assets/variables";
+
+.widget {
+  margin: 0 auto;
+  max-width: 350px;
+  min-width: 240px;
+}
+
+.widget-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .widget-item {
+    min-height: 72px;
+    box-sizing: border-box;
+    border-bottom: 1px dashed $primary-color;
+    background-color: $bg-widget;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .widget-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding: 6px 0;
+    }
+
+    .widget-date {
+      min-width: 75px;
+      margin-right: 5px;
+      box-sizing: border-box;
+      position: relative;
+      text-align: center;
+      font-family: $main-font;
+    }
+
+    .week {
+      color: $dark-grayish-red;
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    .day {
+      font-family: $main-font_light;
+      font-size: 30px;
+      color: $white-color;
+      line-height: 32px;
+    }
+
+    .month {
+      color: $dark-grayish-red;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  .widget-date p {
+    margin: 0;
+  }
+
+  .widget-about {
+    flex-grow: 1;
+    text-align: left;
+
+    .time {
+      margin: 5px 0 0;
+      font-family: $main-font;
+      font-size: 12px;
+      color: $white-color;
+    }
+  }
+
+  .widget-about h3.widget-heading {
+    font-family: $main-font;
+    font-size: 18px;
+    color: $white-color;
+    margin-bottom: 0;
+  }
+}
+
+.widget-item .widget-about .type {
+  margin: 0;
+  font-family: $main-font_light;
+  font-size: 12px;
+  color: $white-color;
+}
+
+.hover:hover {
+  background-color: $hover-color !important;
+  cursor: pointer;
+}
+
+.hover:hover .widget-date {
+
+  .week {
+    color: $white-color;
+  }
+
+  .month {
+    color: $white-color;
+  }
+}
+
+.bg-line {
+  background: url("../../assets/images/play-stick-menu.png") right center no-repeat;
+}
+
+.bg-news-code {
+  background: url("../../assets/images/news-code.png") 97% center no-repeat, $bg-widget;
+}
+
+.mrg10px {
+  margin-right: 10px !important;
+}
+
+.pdr40px {
+  padding-right: 40px !important;
+}
+
+.no-events-wrap {
+  text-align: center;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center {
+  margin: auto;
+}

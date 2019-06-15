@@ -1,26 +1,89 @@
+@import "../../../../assets/variables";
+
 $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
-nav {
-  background: linear-gradient(to right,rgba(236,83,42,1) 0,rgba(196,36,46,1) 100%);
-  font-size: 85%;
+.header {
+  background: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
+  font-size: 12px;
 
-  li a:hover {
-    background: #FFF;
-    color: #23527c;
+  .header-logo {
+    margin: 4px 5px;
   }
-  .menu-container a.active {
-    border-top: $navLinkActiveBorderTop solid white;
-    padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
+
+  .menu-container, .navbar-collapse, .language {
+    align-items: stretch;
+  }
+
+  .navbar-collapse {
+    margin-left: 25px;
+  }
+
+  .language {
+    cursor: pointer;
+    padding: 30.5px 0;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 }
-.menu-container, .navbar-collapse {
-  align-items: stretch;
-}
-a.nav-link {
-  padding: $navLinkPaddingTop 11px;
-  white-space: nowrap;
-}
-#header-logo {
-  margin: 0.25rem 0.75rem 0.25rem 0;
+
+:host ::ng-deep {
+
+  .navbar-nav {
+    color: #fff;
+
+    .nav-link {
+      white-space: nowrap;
+    }
+
+    .mobile-language {
+      text-decoration: none;
+    }
+
+    .nav-link,
+    .mobile-language {
+      padding: $navLinkPaddingTop 11px;
+      color: #fff;
+
+      &:hover {
+        background: #fff;
+        color: $primary-color;
+      }
+
+      &.active {
+        border-top: $navLinkActiveBorderTop solid #fff;
+        padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
+      }
+    }
+
+    .forum {
+      display: none;
+    }
+
+    @media (max-width: 992px) {
+
+      .nav-link,
+      .mobile-language {
+        display: inline-block;
+        width: auto;
+        float: right;
+        margin-left: auto;
+        padding: 5px;
+      }
+
+      .nav-link.active {
+        padding: 5px 5px 5px - $navLinkActiveBorderTop;
+        border-top: none;
+        border-bottom: $navLinkActiveBorderTop solid #fff;
+      }
+
+      .forum {
+        display: block;
+      }
+    }
+  }
 }

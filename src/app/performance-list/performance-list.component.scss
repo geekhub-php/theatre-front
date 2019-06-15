@@ -1,45 +1,64 @@
-.card-title-stub {
-  width: 70%;
-  height: 1.5rem;
-}
-.stub {
-  color: #fff;
-  background: linear-gradient(-45deg, #ffffff, #c8c8c8);
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 2s ease infinite;
-  -moz-animation: Gradient 2s ease infinite;
-  animation: Gradient 2s ease infinite;
+@import "../../assets/variables";
+
+.container {
+  padding: 0;
+
+  .page-title {
+    color: $hover-color;
+    text-align: center;
+    font-family: $main-font;
+    font-size: $main-font-size;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .perfomances {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    list-style: none;
+
+    .perfomance-item {
+      height: 230px;
+      width: 163px;
+      margin-bottom: 87px;
+      cursor: pointer;
+
+      .image-wraper {
+        height: 230px;
+
+        .image {
+          width: 100%;
+          max-height: 230px;
+        }
+      }
+
+      .perfomance-title {
+        font-family: $main-font_light;
+        height: 67px;
+        font-size: 16px;
+        background-color: #2a2a2a;
+        font-weight: 100;
+        color: #fff;
+        margin: auto;
+        text-align: center;
+        display: flex;
+
+        a {
+          color: #fff;
+          margin: auto;
+        }
+
+        a:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .blank-item {
+      height: 0;
+    }
+  }
 }
 
-.card-text-stub {
-  height: 0.75rem;
-  margin-bottom: 0.2rem;
-}
-
-.text-stub1 {
-  width: 90%;
-}
-.text-stub2 {
-  width: 60%;
-}
-.text-stub3 {
-  width: 75%;
-}
-
-@-webkit-keyframes Gradient {
-  0% {background-position: 0% 50%}
-  50% {background-position: 100% 50%}
-  100% {background-position: 0% 50%}
-}
-
-@-moz-keyframes Gradient {
-  0% {background-position: 0% 50%}
-  50% {background-position: 100% 50%}
-  100% {background-position: 0% 50%}
-}
-
-@keyframes Gradient {
-  0% {background-position: 0% 50%}
-  50% {background-position: 100% 50%}
-  100% {background-position: 0% 50%}
-}

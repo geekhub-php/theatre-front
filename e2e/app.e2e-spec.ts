@@ -12,43 +12,43 @@ describe('theatre-front App', () => {
 
   it('shold navigate to Home', () => {
     page.navigateTo();
-    mainMenu.navigateTo('HOME');
-    expect(element(by.css('p')).getText()).toContain('home-page works');
+    mainMenu.navigateTo('Main page');
+    expect(element(by.css('h3')).getText()).toContain('News');
   });
 
   it('shold navigate to Poster', () => {
     page.navigateTo();
-    mainMenu.navigateTo('POSTER');
-    expect(element(by.css('p')).getText()).toContain('schedule works');
+    mainMenu.navigateTo('Poster');
+    expect(element(by.css('h2')).getText()).toContain('Poster for');
   });
 
   it('shold navigate to Repertoire', () => {
     page.navigateTo();
-    mainMenu.navigateTo('REPERTOIRE');
-    expect(element(by.css('h1')).getText()).toContain('Repertoire');
+    mainMenu.navigateTo('Repertoire');
+    expect(element(by.css('h2')).getText()).toContain('Repertoire');
   });
 
-  it('shold navigate to News', () => {
+  it('shold navigate to NewsItem', () => {
     page.navigateTo();
-    mainMenu.navigateTo('NEWS');
-    expect(element(by.css('p')).getText()).toContain('news-list works');
+    mainMenu.navigateTo('News');
+    expect(element(by.css('h2')).getText()).toContain('News');
   });
 
   it('shold navigate to About Us', () => {
     page.navigateTo();
-    mainMenu.navigateTo('ABOUT US');
-    expect(element(by.css('p')).getText()).toContain('about works');
+    mainMenu.navigateTo('About');
+    expect(element(by.css('h2')).getText()).toContain('About');
   });
 
   it('shold navigate to Persons', () => {
     page.navigateTo();
-    mainMenu.navigateTo('PERSONS');
-    expect(element(by.css('p')).getText()).toContain('team-list works');
+    mainMenu.navigateTo('Persons');
+    expect(element(by.css('h3')).getText()).toContain('Theatre team');
   });
 
   it('shold navigate to Contacts', () => {
     page.navigateTo();
-    mainMenu.navigateTo('CONTACTS');
-    expect(element(by.css('p')).getText()).toContain('contacts works');
+    mainMenu.navigateTo('Contacts');
+    expect(element(by.css('h2')).getText()).toContain('Contacts');
   });
 });

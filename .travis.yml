@@ -1,17 +1,14 @@
 language: node_js
 node_js:
-  - "10.15"
-
+  - '10.15'
+dist: trusty
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 
 branches:
   only:
     - master
+    - develop
 
 before_script:
   - google-chrome --version
@@ -21,8 +18,15 @@ before_script:
   - webdriver-manager start > ./webdriver.log 2>&1 &
 
 script:
+  - npm run lint
+  - npm run lint-css
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
-#  - ng e2e
+  - ng e2e
+  - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
+  - if [ -z "$BRANCH" = "master" ]; then DOMAIN="http://theatre-shevchenko.ck.ua"; else DOMAIN="http://develop.theatre.pp.ua"; fi
+  - if [ -z "$BRANCH" = "master" ]; then ENV="prod"; else ENV="staging"; fi
+  - ng build --configuration=$ENV --deploy-url=$DOMAIN/$BRANCH/uk/ --base-href=/$BRANCH/uk/ --aot true --vendor-chunk true --output-path 'dist/uk/' --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --verbose --i18n-missing-translation=error
+  - ng build --configuration=$ENV --deploy-url=$DOMAIN/$BRANCH/en/ --base-href=/$BRANCH/en/ --aot true --vendor-chunk true --output-path 'dist/en/'
 
 notifications:
   email:
@@ -34,4 +38,23 @@ after_failure:
 
 after_script:
   - npm install ocular.js
-  - $(npm bin)/ocular coverage/clover.xml
+  - "$(npm bin)/ocular coverage/clover.xml"
+
+after_success:
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_PULL_REQUEST_BRANCH
+  - openssl aes-256-cbc -K $encrypted_9a6207bd2a44_key -iv $encrypted_9a6207bd2a44_iv -in geekhub-deployment.enc -out geekhub-deployment -d
+  - rm geekhub-deployment.enc # Don't need it anymore
+  - mv geekhub-deployment ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh -o StrictHostKeyChecking=no deploybot@104.248.253.61 "pwd"
+
+  - cp ./deploy/branch.conf ./dist/
+  - cp ./deploy/index.html ./dist/
+  - cd dist/ && tar -zcvf ../dist.tar.gz * && cd -
+  - scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa dist.tar.gz deploybot@104.248.253.61:~/theatre-front/$BRANCH.tar.gz
+  - ssh deploybot@104.248.253.61 "rm -rf ~/theatre-front/$BRANCH && mkdir ~/theatre-front/$BRANCH"
+  - ssh deploybot@104.248.253.61 "tar -xf ~/theatre-front/$BRANCH.tar.gz -C ~/theatre-front/$BRANCH"
+  - ssh deploybot@104.248.253.61 "sed -e 's/{{branch}}/$BRANCH/g' ~/theatre-front/$BRANCH/branch.conf > ~/nginxconf/$BRANCH.conf"
+  - echo "Deployed to $DOMAIN/en/$BRANCH/ and $DOMAIN/uk/$BRANCH/"
+

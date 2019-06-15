@@ -1,0 +1,41 @@
+@import "../../assets/variables";
+
+h2 {
+  text-align: center;
+  font-size: $main-font-size;
+  color: $hover-color;
+  font-family: $main-font;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.board-section {
+  align-items: center;
+  text-align: center;
+
+  img {
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    font-family: $main-font;
+    color: $primary-color;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  h2 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .board-section {
+
+    img {
+      margin-top: 0;
+    }
+  }
+}

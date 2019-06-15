@@ -1,3 +1,19 @@
-<p>
-  news works!
-</p>
+<div class="container">
+  <h2 i18n="@@news">News</h2>
+  <app-spinner name="news"></app-spinner>
+  <div *ngIf="listPost">
+    <app-widget class="widget"></app-widget>
+    <app-news-item *ngFor="let item of listPost" [item]="item">
+    </app-news-item>
+    <ngb-pagination class="d-flex justify-content-center"
+                    [collectionSize]="collectionSize"
+                    [(page)]="page" [boundaryLinks]="false"
+                    (pageChange)="goToPage($event)"
+                    [pageSize]="5">
+      <ng-template ngbPaginationFirst>&#171;</ng-template>
+      <ng-template ngbPaginationPrevious>&#8249;</ng-template>
+      <ng-template ngbPaginationNext>&#8250;</ng-template>
+      <ng-template ngbPaginationLast>&#187;</ng-template>
+    </ngb-pagination>
+  </div>
+</div>

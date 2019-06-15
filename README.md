@@ -21,7 +21,26 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Unit tests run via [Karma](https://karma-runner.github.io).
+
+### Run on Linux
+
+First you should find your chrome browser binary
+
+```bash
+which chromium-browser
+```
+
+Then export `CHROME_BIN` env variable or just use before `ng test` command:
+```bash
+CHROME_BIN=/usr/bin/chromium-browser ng test --watch=false
+```
+
+### Run on Windows
+
+```bash
+ng test --watch=false
+```
 
 ## Running end-to-end tests
 

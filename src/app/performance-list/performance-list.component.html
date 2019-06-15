@@ -1,2 +1,20 @@
-<h1>Repertoire</h1>
-
+<div class="container">
+  <h2 class="page-title" i18n="@@repertoire">Repertoire</h2>
+  <app-spinner name="repertoire"></app-spinner>
+  <ul class="perfomances">
+    <li class="perfomance-item" *ngFor="let item of perfomances" [routerLink]="['', 'performance', item.slug]">
+      <div class="image-wraper">
+        <img class="image" [src]="item.mainPicture.performance_big.url"
+             [alt]="item.mainPicture.performance_small.properties.alt">
+      </div>
+      <h3 class="perfomance-title">
+        <a [routerLink]="['', 'performance', item.slug]">{{ item.title | striphtml:[40, "..."] }}</a>
+      </h3>
+    </li>
+    <li class="perfomance-item blank-item"></li>
+    <li class="perfomance-item blank-item"></li>
+    <li class="perfomance-item blank-item"></li>
+    <li class="perfomance-item blank-item"></li>
+    <li class="perfomance-item blank-item"></li>
+  </ul>
+</div>
