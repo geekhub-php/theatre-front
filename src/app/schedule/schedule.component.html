@@ -68,21 +68,23 @@
 
 <div class="mobile">
   <app-spinner name="poster"></app-spinner>
-  <section class="schedule-event" *ngFor="let event of scheduleList">
-    <div *ngIf="event.month == date.getMonth() + 1" class="schedule-body">
-      <a [routerLink]="['', 'performance', event.performance.slug]">
-        <h2 class="schedule-title">{{ event.performance.title }}</h2>
-        <p class="schedule-time">{{ event.time }}</p>
-        <p class="schedule-place">{{ event.venue }}</p>
-        <div class="schedule-main">
-          <img class="schedule-small_img" src={{event.performance.mainPicture.performance_small.url}}
-               alt="{{event.performance.title}}">
-        </div>
-      </a>
-    </div>
-    <div *ngIf="event.month == date.getMonth() + 1" class="schedule-day">
-      <span class="day">{{ event.day }}</span>
-    </div>
-  </section>
+  <ng-container *ngFor="let event of scheduleList">
+    <section *ngIf="event.month == date.getMonth() + 1" class="schedule-event">
+      <div class="schedule-body">
+        <a [routerLink]="['', 'performance', event.performance.slug]">
+          <h2 class="schedule-title">{{ event.performance.title }}</h2>
+          <p class="schedule-time">{{ event.time }}</p>
+          <p class="schedule-place">{{ event.venue }}</p>
+          <div class="schedule-main">
+            <img class="schedule-small_img" src={{event.performance.mainPicture.performance_small.url}}
+                 alt="{{event.performance.title}}">
+          </div>
+        </a>
+      </div>
+      <div *ngIf="event.month == date.getMonth() + 1" class="schedule-day">
+        <span class="day">{{ event.day }}</span>
+      </div>
+    </section>
+  </ng-container>
 </div>
 

@@ -258,34 +258,6 @@ table {
     color: $white-color;
     text-align: center;
   }
-
-  &:nth-child(2n) {
-    position: relative;
-    border-right: none;
-    padding: 20px 0 0 22px;
-
-    .schedule-body {
-      transform: translateY(102px);
-      margin: 0 0 0 18px;
-    }
-
-    .schedule-body::after {
-      left: -10px;
-      border: 1px solid $light-gray;
-      background-color: $white-color;
-      transform: rotate(45deg);
-      border-top: 1px solid transparent;
-      border-left: 1px solid $light-gray;
-      border-right: 1px solid transparent;
-      border-bottom: 1px solid $light-gray;
-    }
-
-    .schedule-day {
-      position: absolute;
-      top: 144px;
-      left: -27px;
-    }
-  }
 }
 
 @media screen and (max-width: 1000px) {
