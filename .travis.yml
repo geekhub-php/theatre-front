@@ -24,7 +24,7 @@ script:
   - ng e2e
   - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
   - if [ "$BRANCH" = "master" ]; then DOMAIN="http://theatre-shevchenko.ck.ua"; else DOMAIN="http://develop.theatre.pp.ua"; fi
-  - if [ "$BRANCH" = "master" ]; then ENV="prod"; else ENV="staging"; fi
+  - if [ "$BRANCH" = "master" ]; then ENV="production"; else ENV="staging"; fi
   - ng build --configuration=$ENV --deploy-url=$DOMAIN/$BRANCH/uk/ --base-href=/$BRANCH/uk/ --aot true --vendor-chunk true --output-path 'dist/uk/' --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --verbose --i18n-missing-translation=error
   - ng build --configuration=$ENV --deploy-url=$DOMAIN/$BRANCH/en/ --base-href=/$BRANCH/en/ --aot true --vendor-chunk true --output-path 'dist/en/'
 
