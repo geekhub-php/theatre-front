@@ -57,8 +57,21 @@
       }
     }
 
+    @media (max-width: 329px) {
+      .perfomance-item {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 300px) {
+      .perfomance-item {
+        width: 163px;
+      }
+    }
+
     .blank-item {
       height: 0;
+      margin: 0;
     }
   }
 }
