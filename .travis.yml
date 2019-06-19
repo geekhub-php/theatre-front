@@ -23,10 +23,11 @@ script:
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
   - ng e2e
   - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
-  - if [ -z "$BRANCH" = "master" ]; then DOMAIN="http://theatre-shevchenko.ck.ua"; else DOMAIN="http://develop.theatre.pp.ua"; fi
-  - if [ -z "$BRANCH" = "master" ]; then ENV="prod"; else ENV="staging"; fi
-  - ng build --configuration=$ENV --deploy-url=$DOMAIN/$BRANCH/uk/ --base-href=/$BRANCH/uk/ --aot true --vendor-chunk true --output-path 'dist/uk/' --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --verbose --i18n-missing-translation=error
-  - ng build --configuration=$ENV --deploy-url=$DOMAIN/$BRANCH/en/ --base-href=/$BRANCH/en/ --aot true --vendor-chunk true --output-path 'dist/en/'
+  - if [ "$BRANCH" = "master" ]; then DOMAIN="http://theatre-shevchenko.ck.ua"; else DOMAIN="http://develop.theatre.pp.ua/$BRANCH"; fi
+  - if [ "$BRANCH" = "master" ]; then ENV="production"; else ENV="staging"; fi
+  - if [ "$BRANCH" = "master" ]; then BASE_HREF="/"; else BASE_HREF="/$BRANCH/"; fi
+  - ng build --configuration=$ENV --deploy-url=$DOMAIN/uk/ --base-href="$BASE_HREF"uk/ --aot true --vendor-chunk true --output-path 'dist/uk/' --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --verbose --i18n-missing-translation=error
+  - ng build --configuration=$ENV --deploy-url=$DOMAIN/en/ --base-href="$BASE_HREF"en/ --aot true --vendor-chunk true --output-path 'dist/en/'
 
 notifications:
   email:
@@ -56,5 +57,5 @@ after_success:
   - ssh deploybot@104.248.253.61 "rm -rf ~/theatre-front/$BRANCH && mkdir ~/theatre-front/$BRANCH"
   - ssh deploybot@104.248.253.61 "tar -xf ~/theatre-front/$BRANCH.tar.gz -C ~/theatre-front/$BRANCH"
   - ssh deploybot@104.248.253.61 "sed -e 's/{{branch}}/$BRANCH/g' ~/theatre-front/$BRANCH/branch.conf > ~/nginxconf/$BRANCH.conf"
-  - echo "Deployed to $DOMAIN/en/$BRANCH/ and $DOMAIN/uk/$BRANCH/"
+  - echo "Deployed to $DOMAIN"
 
