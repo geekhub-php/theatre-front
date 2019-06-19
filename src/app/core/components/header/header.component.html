@@ -1,13 +1,13 @@
 <header class="header">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <h1 class="header-logo" aria-label="Театр імені Т.Г. Шевченка">
+      <h1 class="header-logo" aria-label="Cherkassy theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
         <a routerLink="/">
           <img src="assets/images/logo.png" alt="logo">
         </a>
       </h1>
 
-      <button class="navbar-toggler" aria-label="Меню"
+      <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu"
               type="button" (click)="toogleMenu()">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -16,7 +16,7 @@
         <app-main-nav></app-main-nav>
       </div>
 
-      <a class="language d-none d-lg-block" href="#">Укр</a>
+      <a class="language d-none d-lg-block" [href]="langRedirectUrl" i18n="@@lang">Укр</a>
     </nav>
   </div>
 </header>

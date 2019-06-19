@@ -10,7 +10,9 @@
     "lint": "ng lint",
     "lint-css": "stylelint --config .stylelintrc 'src/**/*.scss' --fix",
     "e2e": "ng e2e",
-    "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json"
+    "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json",
+    "build:uk-ua": "ng build --prod --aot true --vendor-chunk true --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --output-path 'dist/uk-UA/' --verbose --i18n-missing-translation=error",
+    "build:en-us": "ng build --prod --aot true --vendor-chunk true --output-path 'dist/en-US/'"
   },
   "private": true,
   "dependencies": {

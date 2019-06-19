@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GatewayService } from '../core/service/gateway.service';
+import { GatewayService } from '../core/services/gateway.service';
 import { History } from '../core/model/history/History';
 import { HistoryListResponse } from '../core/model/history/HistoryListResponse';
 import { LoaderService } from '../shared/spinner/loader.service';

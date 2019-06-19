@@ -31,6 +31,7 @@
 
     .widget-date {
       min-width: 75px;
+      margin-right: 5px;
       box-sizing: border-box;
       position: relative;
       text-align: center;
@@ -63,7 +64,7 @@
 
   .widget-about {
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
 
     .time {
       margin: 5px 0 0;
@@ -104,10 +105,6 @@
   }
 }
 
-.txt-left {
-  text-align: left !important;
-}
-
 .bg-line {
   background: url("../../assets/images/play-stick-menu.png") right center no-repeat;
 }
@@ -120,11 +117,11 @@
   margin-right: 10px !important;
 }
 
-.pdr34px {
-  padding-right: 34px !important;
+.pdr40px {
+  padding-right: 40px !important;
 }
 
-.notEvetWrap {
+.no-events-wrap {
   text-align: center;
   padding-left: 10px !important;
   padding-right: 10px !important;

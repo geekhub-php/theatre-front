@@ -23,7 +23,7 @@
 
   <section class="info">
     <ngb-tabset>
-      <ngb-tab title="Актори" *ngIf="roles?.length">
+      <ngb-tab title="Actors" i18n-title="@@actors" *ngIf="roles?.length">
         <ng-template ngbTabContent>
           <div class="wrap">
             <ul class="employees-list">
@@ -43,7 +43,7 @@
         </ng-template>
       </ngb-tab>
       <ngb-tab *ngIf="performance">
-        <ng-template ngbTabTitle>Про спекталь</ng-template>
+        <ng-template ngbTabTitle i18n="@@performanceDetails">Description</ng-template>
         <ng-template ngbTabContent>
           <div [innerHtml]="performance.description"></div>
         </ng-template>
