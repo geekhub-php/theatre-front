@@ -5,17 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
-import { NewsListModule } from './news-list/news-list.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
 import { PerformanceListComponent } from './performance-list/performance-list.component';
 import { PerformanceComponent } from './performance/performance.component';
-
-import { ScheduleComponent } from './schedule/schedule.component';
 
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
@@ -29,15 +26,17 @@ import { BoardTrusteesComponent } from './board-trustees/board-trustees.componen
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { SpinnerModule } from './shared/spinner/spinner.module';
+import { ScheduleModule } from './schedule/schedule.module';
+import { WidgetModule } from './widget/widget.module';
+import { AboutMoreComponent } from './about/about-more/about-more.component';
+import { DevTeamComponent } from './dev-team/dev-team.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerformanceListComponent,
     PerformanceComponent,
-    ScheduleComponent,
     AboutComponent,
     TeamComponent,
     ContactsComponent,
@@ -46,7 +45,9 @@ import { SpinnerModule } from './shared/spinner/spinner.module';
     NewsComponent,
     HomePageComponent,
     PartnersComponent,
-    BoardTrusteesComponent
+    BoardTrusteesComponent,
+    AboutMoreComponent,
+    DevTeamComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,14 +56,18 @@ import { SpinnerModule } from './shared/spinner/spinner.module';
     CoreModule,
     BrowserAnimationsModule,
     HomePageModule,
-    NewsListModule,
     NgbModule,
     StripHtmlModule,
     InfiniteScrollModule,
     NgxGalleryModule,
-    SpinnerModule
-  ],
+    SpinnerModule,
+    ScheduleModule,
+    NgbPaginationModule,
+    WidgetModule,
+    NgbPaginationModule
+ ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

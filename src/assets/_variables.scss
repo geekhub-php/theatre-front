@@ -4,11 +4,12 @@ $navbar-padding-y: 0;
 $main-font_light: robotothin, sans-serif;
 $main-font: robotolight, sans-serif;
 $main-font_bold: robotoregular, sans-serif;
+$main-font-size: 25px;
 
 $primary-color: #363a3b;
 $hover-color: #df4a2b;
 $danger: $hover-color;
-$light-hover-color: rgba(255, 74, 43, 0.08);
+$light-hover-color: rgba(255, 74, 43, .08);
 $white-color: #fff;
 
 $light-grayish-red: #f8f5f5;
@@ -16,3 +17,4 @@ $dark-grayish-red: #797777;
 $light-gray: #c9c9c9;
 $transparent-black: #000000dc;
 
+$bg-widget: #4f4f4f;

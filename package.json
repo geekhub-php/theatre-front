@@ -10,7 +10,9 @@
     "lint": "ng lint",
     "lint-css": "stylelint --config .stylelintrc 'src/**/*.scss' --fix",
     "e2e": "ng e2e",
-    "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json"
+    "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json",
+    "build:uk-ua": "ng build --prod --aot true --vendor-chunk true --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --output-path 'dist/uk-UA/' --verbose --i18n-missing-translation=error",
+    "build:en-us": "ng build --prod --aot true --vendor-chunk true --output-path 'dist/en-US/'"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +25,7 @@
     "@angular/platform-browser": "^7.2.8",
     "@angular/platform-browser-dynamic": "^7.2.8",
     "@angular/router": "^7.2.8",
-    "@ng-bootstrap/ng-bootstrap": "^4.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.1.1",
     "angular-calendar": "^0.27.0",
     "bootstrap": "^4.3.1",
     "class-transformer": "^0.2.0",
@@ -31,7 +33,6 @@
     "date-fns": "^1.30.1",
     "ngx-gallery": "^5.9.1",
     "ngx-infinite-scroll": "^7.1.0",
-    "ngx-pagination": "^3.2.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.0.0-rc.0",

@@ -12,43 +12,43 @@ describe('theatre-front App', () => {
 
   it('shold navigate to Home', () => {
     page.navigateTo();
-    mainMenu.navigateTo('Головна');
-    expect(element(by.css('h3')).getText()).toContain('Новини');
+    mainMenu.navigateTo('Main page');
+    expect(element(by.css('h3')).getText()).toContain('News');
   });
 
   it('shold navigate to Poster', () => {
     page.navigateTo();
-    mainMenu.navigateTo('Афіша');
-    expect(element(by.css('h2')).getText()).toContain('Poster');
+    mainMenu.navigateTo('Poster');
+    expect(element(by.css('h2')).getText()).toContain('Poster for');
   });
 
   it('shold navigate to Repertoire', () => {
     page.navigateTo();
-    mainMenu.navigateTo('Репертуар');
-    expect(element(by.css('h2')).getText()).toContain('Репертуар');
+    mainMenu.navigateTo('Repertoire');
+    expect(element(by.css('h2')).getText()).toContain('Repertoire');
   });
 
-  it('shold navigate to News', () => {
+  it('shold navigate to NewsItem', () => {
     page.navigateTo();
-    mainMenu.navigateTo('Новини');
-    expect(element(by.css('h3')).getText()).toContain('news');
+    mainMenu.navigateTo('News');
+    expect(element(by.css('h2')).getText()).toContain('News');
   });
 
   it('shold navigate to About Us', () => {
     page.navigateTo();
-    mainMenu.navigateTo('Про театр');
-    expect(element(by.css('h2')).getText()).toContain('Про Театр');
+    mainMenu.navigateTo('About');
+    expect(element(by.css('h2')).getText()).toContain('About');
   });
-  //
-  // it('shold navigate to Persons', () => {
-  //   page.navigateTo();
-  //   mainMenu.navigateTo('Персоналії');
-  //   expect(element(by.css('p')).getText()).toContain('Посада:');
-  // });
+
+  it('shold navigate to Persons', () => {
+    page.navigateTo();
+    mainMenu.navigateTo('Persons');
+    expect(element(by.css('h3')).getText()).toContain('Theatre team');
+  });
 
   it('shold navigate to Contacts', () => {
     page.navigateTo();
-    mainMenu.navigateTo('Контакти');
-    expect(element(by.css('h2')).getText()).toContain('Контакти');
+    mainMenu.navigateTo('Contacts');
+    expect(element(by.css('h2')).getText()).toContain('Contacts');
   });
 });

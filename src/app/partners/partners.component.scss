@@ -1,10 +1,10 @@
 @import "../../assets/variables";
 
-h3 {
+h2 {
   text-align: center;
-  font-size: 30px;
-  color: $hover-color;
+  font-size: $main-font-size;
   font-family: $main-font;
+  color: $hover-color;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -27,7 +27,15 @@ h3 {
 
 @media (max-width: 576px) {
 
-  h3 {
+  h2 {
     font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .partners-section {
+
+    img {
+      margin-top: 0;
+    }
   }
 }

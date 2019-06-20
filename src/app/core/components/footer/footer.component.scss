@@ -43,6 +43,9 @@
     .social {
       list-style: none;
       padding-top: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
       .fa-icon {
         width: 20px;
@@ -51,6 +54,7 @@
         color: #00f;
         border: none;
         opacity: .8;
+        margin-right: 5px;
 
         &:hover {
           opacity: 1;
@@ -64,6 +68,7 @@
     justify-content: center;
     align-items: center;
     opacity: .5;
+    margin-bottom: 20px;
 
     .text::after {
       content: " ";
@@ -82,8 +87,9 @@
     }
 
     .social {
-      margin: 0 auto;
+      margin-left: auto;
     }
+
     .copy {
       padding-top: 5px;
     }

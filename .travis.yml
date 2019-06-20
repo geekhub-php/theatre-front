@@ -16,15 +16,18 @@ before_script:
   - npm install webdriver-manager -g
   - webdriver-manager update
   - webdriver-manager start > ./webdriver.log 2>&1 &
-  - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
 
 script:
   - npm run lint
   - npm run lint-css
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
   - ng e2e
-  - ng build --configuration=staging --deploy-url=http://develop.theatre.pp.ua/$BRANCH/ --base-href=/$BRANCH/
-  - cp ./deploy/branch.conf ./dist/
+  - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
+  - if [ "$BRANCH" = "master" ]; then DOMAIN="http://theatre-shevchenko.ck.ua"; else DOMAIN="http://develop.theatre.pp.ua/$BRANCH"; fi
+  - if [ "$BRANCH" = "master" ]; then ENV="production"; else ENV="staging"; fi
+  - if [ "$BRANCH" = "master" ]; then BASE_HREF="/"; else BASE_HREF="/$BRANCH/"; fi
+  - ng build --configuration=$ENV --deploy-url=$DOMAIN/uk/ --base-href="$BASE_HREF"uk/ --aot true --vendor-chunk true --output-path 'dist/uk/' --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --verbose --i18n-missing-translation=error
+  - ng build --configuration=$ENV --deploy-url=$DOMAIN/en/ --base-href="$BASE_HREF"en/ --aot true --vendor-chunk true --output-path 'dist/en/'
 
 notifications:
   email:
@@ -48,10 +51,11 @@ after_success:
   - ssh -o StrictHostKeyChecking=no deploybot@104.248.253.61 "pwd"
 
   - cp ./deploy/branch.conf ./dist/
+  - cp ./deploy/index.html ./dist/
   - cd dist/ && tar -zcvf ../dist.tar.gz * && cd -
   - scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa dist.tar.gz deploybot@104.248.253.61:~/theatre-front/$BRANCH.tar.gz
   - ssh deploybot@104.248.253.61 "rm -rf ~/theatre-front/$BRANCH && mkdir ~/theatre-front/$BRANCH"
   - ssh deploybot@104.248.253.61 "tar -xf ~/theatre-front/$BRANCH.tar.gz -C ~/theatre-front/$BRANCH"
   - ssh deploybot@104.248.253.61 "sed -e 's/{{branch}}/$BRANCH/g' ~/theatre-front/$BRANCH/branch.conf > ~/nginxconf/$BRANCH.conf"
-  - echo "Deployed to http://develop.theatre.pp.ua/$BRANCH/"
+  - echo "Deployed to $DOMAIN"
 

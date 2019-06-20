@@ -4,13 +4,12 @@
   padding: 0;
 
   .page-title {
-    color: #e54b2b;
+    color: $hover-color;
     text-align: center;
-    font-family: $main-font_light;
-    size: 24px;
-    padding: 15px 0;
-    font-weight: 100;
-    margin-bottom: 12px;
+    font-family: $main-font;
+    font-size: $main-font-size;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .perfomances {

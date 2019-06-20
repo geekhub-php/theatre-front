@@ -1,0 +1,328 @@
+@import "../../assets/variables";
+
+h2 {
+  color: $hover-color;
+  font-family: roboto,sans-serif;
+}
+
+h3 {
+  font-family: roboto,sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.title {
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.btn-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn {
+  color: $hover-color;
+  border: 1px solid $hover-color;
+  background-color: $white-color;
+}
+
+.btn:hover {
+  color: $white-color;
+  background-color: $hover-color;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.desktop {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.calendar {
+  max-width: 100%;
+  margin: 35px 0;
+}
+
+.day-of-week {
+  background-color: $hover-color;
+  color: $white-color;
+  font-family: robotothin,sans-serif;
+  font-size: 14px;
+  border-right: 1px solid $white-color;
+  padding: 11px 0;
+  width: 141px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.day-of-month {
+  position: relative;
+  overflow: hidden;
+  height: 142px;
+  padding: 34px 0 0;
+  border: 1px solid $light-gray;
+  vertical-align: bottom;
+}
+
+.day-number {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: 5;
+  display: block;
+  margin: 0 0 0 7px;
+  font-size: 18px;
+  color: $hover-color;
+  background-color: $white-color;
+  border-radius: 3px;
+  line-height: 1;
+  padding: 2px 0;
+  min-width: 25px;
+  text-align: center;
+}
+
+.contain {
+  width: 40px;
+  margin-bottom: 50px;
+  float: left;
+}
+
+.calendar-img {
+  width: 100%;
+  height: inherit;
+  margin-top: -140px;
+}
+
+.panel {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: $primary-color;
+  display: none;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.panel p {
+  color: $white-color;
+  text-align: center;
+  font-size: 14px;
+  margin: 5px auto 0;
+}
+
+.calendar-img:hover {
+  cursor: pointer;
+}
+
+.calendar-img:hover .panel {
+  display: block;
+  opacity: .9;
+}
+
+.more {
+  background-color: $dark-grayish-red;
+  height: inherit;
+  margin-top: -40px;
+}
+
+.events {
+  height: 50%;
+  color: $white-color;
+  text-align: center;
+  font-size: 14px;
+  display: block;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.events p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.popover-time {
+  text-align: center;
+  font-size: 16px;
+  color: $hover-color;
+}
+
+.popover-venue {
+  text-align: center;
+  font-size: 16px;
+}
+
+.popover-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+}
+
+.mobile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .schedule-time {
+    color: $hover-color;
+    text-align: center;
+  }
+
+  .schedule-place {
+    text-align: center;
+    color: $primary-color;
+  }
+
+  .schedule-event {
+    position: relative;
+    padding: 20px 22px 0 0;
+    flex-basis: 50%;
+    border-right: 3px solid $light-grayish-red;
+
+    &:last-child {
+      padding-bottom: 20px;
+    }
+
+    .schedule-link {
+      text-decoration: none;
+      color: $hover-color;
+    }
+
+    .schedule-body {
+      position: relative;
+      max-width: 400px;
+      border: 1px solid $light-gray;
+      border-radius: 2px;
+      padding: 12px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
+      margin: 0 18px 0 0;
+    }
+
+    .schedule-body::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 36px;
+      right: -10px;
+      border: 1px solid $light-gray;
+      background-color: $white-color;
+      transform: rotate(45deg);
+      border-top: 1px solid $light-gray;
+      border-left: 1px solid transparent;
+      border-right: 1px solid $light-gray;
+      border-bottom: 1px solid transparent;
+    }
+
+    .schedule-title {
+      color: $primary-color;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .schedule-main .schedule-small_img {
+      display: block;
+      margin: 0 auto;
+      max-height: 300px;
+    }
+  }
+
+  .schedule-day {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: $hover-color;
+    top: 42px;
+    right: -27px;
+  }
+
+  .day {
+    display: block;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 900;
+    color: $white-color;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .mobile {
+    padding-left: 24px;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 270px;
+    margin: 40px auto 0;
+
+    .schedule-event {
+      padding: 20px 0 0;
+      border-left: 3px solid $light-grayish-red;
+      border-right: none;
+
+      .schedule-body {
+        margin: 0 0 0 60px;
+      }
+
+      .schedule-body::after {
+        left: -10px;
+        border-top: 1px solid transparent;
+        border-left: 1px solid $light-gray;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid $light-gray;
+      }
+
+      .schedule-day {
+        left: -27px;
+      }
+
+      &:nth-child(2n) {
+        padding: 20px 0 0;
+
+        .schedule-body {
+          transform: translateY(0);
+          margin: 0 0 0 60px;
+        }
+
+        .schedule-day {
+          top: 42px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 560px) {
+
+  .mobile {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .desktop {
+    display: none;
+  }
+}

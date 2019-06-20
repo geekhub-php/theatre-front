@@ -1,0 +1,479 @@
+@import "../../assets/variables";
+
+::ng-deep .carousel-control-prev .sr-only, ::ng-deep .carousel-control-next .sr-only {
+  display: none;
+}
+
+::ng-deep .tab-pane {
+  border-left: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+  padding: 10px;
+  text-align: center;
+  width: 970px;
+  margin: 0 auto;
+}
+
+::ng-deep .info .nav-link {
+  color: $dark-grayish-red;
+  border-color: $light-gray;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+::ng-deep .info .nav-link:hover {
+  color: $dark-grayish-red;
+  border-color: $light-gray;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+::ng-deep .info .nav-tabs, ::ng-deep .info .nav-tabs .nav-link.active {
+  border-color: $light-gray;
+}
+
+::ng-deep .info .nav-tabs .nav-link.active {
+  border-bottom: 1px solid #fff;
+}
+
+::ng-deep .slider img {
+  max-height: 300px;
+  max-width: 450px;
+}
+
+.container {
+
+  .page-title {
+    color: $hover-color;
+    font-size: $main-font-size;
+    text-align: center;
+    margin-top: 25px;
+    font-family: $main-font;
+  }
+
+  .page-sub-title {
+    color: $hover-color;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 0 25px;
+  }
+
+  .preview {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 300px;
+
+    .performance-widget {
+      min-width: 240px;
+      order: 2;
+      box-sizing: border-box;
+      margin: 0 10px;
+    }
+
+    .performance-poster {
+      width: 235px;
+      box-sizing: border-box;
+      margin: 0 10px;
+      text-align: center;
+    }
+
+    .slider {
+      width: 45%;
+      overflow: hidden;
+      order: 1;
+      background-color: $light-gray;
+      text-align: center;
+    }
+
+    ::ng-deep .slider img {
+      height: 300px;
+      max-width: 100%;
+      vertical-align: middle !important;
+      margin: auto;
+    }
+  }
+}
+
+.info {
+  margin-bottom: 10px;
+  width: 970px;
+
+  .nav-info {
+    margin-top: 20px;
+    margin-bottom: -2px;
+    box-sizing: border-box;
+
+    .nav-item {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 15px 0 0;
+      border: 1px solid $light-gray;
+      border-bottom: none;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .hidden-item {
+      border-bottom: 1px solid $light-gray;
+    }
+  }
+
+  .wrap {
+    margin: auto;
+  }
+
+  .employees-list {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      border: 1px solid $light-gray;
+      margin: 5px;
+      border-radius: 5px;
+      overflow: hidden;
+      background: #f8f5f5;
+
+      .item {
+        text-decoration: none;
+        width: 146px;
+        height: 256px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+
+        .name {
+          color: $primary-color;
+        }
+
+        &:hover .name {
+          color: $hover-color;
+        }
+
+        .photo {
+          width: 146px;
+          height: 200px;
+        }
+      }
+    }
+  }
+
+  .performances {
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid $light-gray;
+    border-bottom: none;
+  }
+
+  .press {
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid $light-gray;
+    border-bottom: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+  .preview, .slider {
+    height: 285px;
+    overflow: hidden;
+  }
+
+  .info {
+    margin: auto;
+  }
+
+  .preview .performance-widget {
+    min-width: 240px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  .container .preview {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: auto;
+  }
+
+  .container .preview .performance-poster {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  .container .preview .performance-widget {
+    min-width: 240px;
+    margin: 10px;
+  }
+
+  .preview .slider {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+
+  .info {
+    margin: auto;
+    width: 655px;
+
+    li .photo {
+      width: 100%;
+    }
+  }
+
+  ::ng-deep .tab-pane {
+    width: 655px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  .item p, .item span {
+    font-size: 15px;
+  }
+
+  .container .preview {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: auto;
+  }
+
+  .container .preview .performance-poster {
+    margin: 0 auto;
+  }
+
+  .container .preview .performance-widget {
+    min-width: 240px;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .preview .slider {
+    margin: 0 auto;
+    width: auto !important;
+  }
+
+  ::ng-deep .carousel {
+    width: auto;
+  }
+
+  .info {
+    margin: auto;
+    width: 500px;
+
+    .wrap {
+      width: 475px;
+      margin: 0 auto;
+    }
+
+    .item {
+      width: 140px;
+    }
+
+    li .photo {
+      width: 100%;
+      height: 157px;
+    }
+  }
+
+  ::ng-deep .tab-pane {
+    width: 500px;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 575.98px) {
+
+  .container .preview {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: auto;
+  }
+
+  .container .info {
+    margin: auto;
+    width: 405px;
+
+    .wrap {
+      width: 385px;
+      margin: 0 auto;
+    }
+
+    .employees-list {
+
+      .item {
+        width: 115px;
+      }
+
+      li .photo {
+        width: 100%;
+        height: 157px;
+      }
+    }
+  }
+
+  ::ng-deep .tab-pane {
+    width: 405px;
+  }
+
+  .container .preview {
+    display: inline-block;
+  }
+
+  .preview .slider {
+    margin: 0 auto;
+    width: 80% !important;
+    height: 200px;
+  }
+
+  .container .preview .performance-poster {
+    margin: 0 auto;
+  }
+
+  .container .preview .performance-widget {
+    margin: 10px;
+    min-width: 240px;
+    text-align: center;
+  }
+
+  ::ng-deep .slider img {
+    max-height: 200px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 424.98px) {
+
+  .container .preview {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: auto;
+  }
+
+  .container .info {
+    margin: auto;
+    width: 275px;
+
+    .wrap {
+      width: 255px;
+      margin: 0 auto;
+    }
+
+    .employees-list {
+
+      .item {
+        width: 115px;
+      }
+
+      li .photo {
+        width: 100%;
+        height: 157px;
+      }
+    }
+  }
+
+  ::ng-deep .tab-pane {
+    width: 275px;
+  }
+
+  .container .preview {
+    display: inline-block;
+  }
+
+  .container .preview .performance-poster {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .container .preview .performance-widget {
+    margin: 10px;
+    min-width: 240px;
+    text-align: center;
+  }
+
+  .preview .slider {
+    margin: 0 auto;
+    width: 90% !important;
+    text-align: center;
+    height: 200px;
+  }
+
+  ::ng-deep .slider img {
+    max-height: 200px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 374.98px) {
+
+  .container .preview {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: auto;
+  }
+
+  .container .info {
+    margin: auto;
+    width: 275px;
+
+    .wrap {
+      width: 255px;
+      margin: 0 auto;
+    }
+
+    .employees-list {
+
+      .item {
+        width: 115px;
+      }
+
+      li .photo {
+        width: 100%;
+        height: 157px;
+      }
+    }
+  }
+
+  ::ng-deep .tab-pane {
+    width: 275px;
+  }
+
+  .container .preview {
+    display: inline-block;
+  }
+
+  .container .preview .performance-poster {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .container .preview .performance-widget {
+    margin: 10px;
+    min-width: 240px;
+    text-align: center;
+  }
+
+  .preview .slider {
+    margin: 0 auto;
+    height: 150px !important;
+    width: 90% !important;
+  }
+
+  ::ng-deep .slider img {
+    max-height: 150px;
+    max-width: 100%;
+  }
+}

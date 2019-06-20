@@ -1,23 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 
+import { LangService } from '../../services/lang.service';
+
 import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   collapse = true;
 
-  constructor(private router: Router) {
+  get langRedirectUrl() {
+    return this.langService.getLangRedirectUrl();
+  }
+
+  constructor(private router: Router,
+              private langService: LangService) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
       .subscribe(() => this.collapse = true);
-  }
-
-  ngOnInit() {
   }
 
   toogleMenu() {
