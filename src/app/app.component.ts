@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  constructor(private meta: Meta,
+              private titleService: Title) {}
+
+  setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
 }
