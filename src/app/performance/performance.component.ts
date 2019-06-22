@@ -4,7 +4,6 @@ import { Performance } from '../core/model/performance/Performance';
 import { ActivatedRoute } from '@angular/router';
 import { Role } from '../core/model/Role';
 import { LoaderService } from '../shared/spinner/loader.service';
-import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-performance',
@@ -16,16 +15,9 @@ export class PerformanceComponent implements OnInit {
   slug: string;
   roles: Array<Role>;
 
-  /**/
   constructor(private gateway: GatewayService,
               private router: ActivatedRoute,
-              private loaderService: LoaderService,
-              private meta: Meta
-  ) {
-    this.meta.updateTag({property: 'og:url', content: `http://theatre-shevchenko.ck.ua/performance/${this.slug}`});
-    // {property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/img/logo.png'},
-    this.meta.updateTag({property: 'og:description', content: 'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка'});
-  }
+              private loaderService: LoaderService) { }
 
   ngOnInit() {
     const slug = this.router.snapshot.paramMap.get('slug');
