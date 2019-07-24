@@ -15,13 +15,9 @@ export class PerformanceComponent implements OnInit {
   slug: string;
   roles: Array<Role>;
 
-  /**/
-  constructor(
-    private gateway: GatewayService,
-    private router: ActivatedRoute,
-    private loaderService: LoaderService
-  ) {
-  }
+  constructor(private gateway: GatewayService,
+              private router: ActivatedRoute,
+              private loaderService: LoaderService) { }
 
   ngOnInit() {
     const slug = this.router.snapshot.paramMap.get('slug');
@@ -44,4 +40,5 @@ export class PerformanceComponent implements OnInit {
       this.roles = res;
     });
   }
+
 }
