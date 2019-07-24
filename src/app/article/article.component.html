@@ -8,7 +8,7 @@
       </div>
       <h2>{{ item.title }}</h2>
       <div class="post-text" [innerHtml]=item.text></div>
-      <p class="post-date">{{ item.updated_at | date: 'd.MM.yyyy' }}</p>
+      <p class="post-date">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
     </div>
   </div>
 </div>
