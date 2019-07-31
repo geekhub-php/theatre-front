@@ -18,7 +18,6 @@ export class SliderComponent implements OnInit {
   ngOnInit() {
     this.gateway.getPerformanceEventList().subscribe(res => {
       this.sliderList = res.performance_events;
-      this.slideId = this.sliderList[this.count].id;
     });
   }
 
