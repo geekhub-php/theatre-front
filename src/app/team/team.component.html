@@ -7,9 +7,10 @@
            [infiniteScrollDistance]="2"
            [infiniteScrollThrottle]="600"
            (scrolled)="onScroll()">
-    <a class="person" *ngFor="let person of employees" routerLink="{{ person.slug }}">
+    <a class="person" *ngFor="let person of employees" routerLink="{{ person.slug }}"
+       itemscope itemtype="http://schema.org/Person">
       <img src="{{ person.avatar.employee_big.url }}" alt="photo">
-      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+      <h4  itemprop="name">{{ person.first_name }}<br>{{ person.last_name }}</h4>
     </a>
   </section>
   <app-spinner name="load-team"></app-spinner>
