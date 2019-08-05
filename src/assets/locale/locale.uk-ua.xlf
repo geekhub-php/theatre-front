@@ -423,6 +423,10 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="ngb.toast.close-aria" datatype="html">
+        <source>Close</source>
+        <target>Закрити</target>
+      </trans-unit>
       <trans-unit id="ngb.carousel.previous" datatype="html">
         <source>Previous</source>
         <target>Попередній</target>
