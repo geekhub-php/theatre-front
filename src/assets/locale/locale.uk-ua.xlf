@@ -306,6 +306,14 @@
           <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="birthdate" datatype="html">
+              <source>Birthdate:</source>
+              <target>День народження:</target>
+              <context-group purpose="location">
+                <context context-type="sourcefile">app/person/person.component.html</context>
+                <context context-type="linenumber">17</context>
+              </context-group>
+
       <trans-unit id="position" datatype="html">
         <source>Position:</source>
         <target>Посада:</target>
