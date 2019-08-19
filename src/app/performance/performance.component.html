@@ -1,12 +1,13 @@
-<div class="container">
+<div class="container"  itemscope itemtype="http://schema.org/TheaterEvent">
   <app-spinner name="performance-page"></app-spinner>
-  <h2 class="page-title"> {{ performance?.title }} </h2>
+  <h2 class="page-title" itemprop="name"> {{ performance?.title }} </h2>
   <h4 class="page-sub-title">{{ performance?.type }}</h4>
 
   <section class="preview" *ngIf="performance">
     <div class="performance-poster">
       <div class="future-img">
-        <img [src]="performance.mainPicture.performance_big.url" [alt]="performance.mainPicture.performance_big.alt">
+        <img [src]="performance.mainPicture.performance_big.url" [alt]="performance.mainPicture.performance_big.alt"
+             itemprop="image">
       </div>
     </div>
     <div class="performance-widget">
@@ -20,7 +21,6 @@
       </ngb-carousel>
     </div>
   </section>
-
   <section class="info">
     <ngb-tabset>
       <ngb-tab title="Actors" i18n-title="@@actors" *ngIf="roles?.length">
@@ -28,7 +28,7 @@
           <div class="wrap">
             <ul class="employees-list">
               <li *ngFor="let role of roles">
-                <a class="item" [routerLink]="['', 'persons', role.employee.slug]">
+                <a class="item" [routerLink]="['', 'persons', role.employee.slug]"  itemprop="actor">
                   <img class="photo"
                        src="{{ role.employee.avatar.employee_big.url }}"
                        alt="{{ role.title }} | {{ role.employee.first_name }} {{ role.employee.last_name }}">
@@ -45,7 +45,7 @@
       <ngb-tab *ngIf="performance">
         <ng-template ngbTabTitle i18n="@@performanceDetails">Description</ng-template>
         <ng-template ngbTabContent>
-          <div [innerHtml]="performance.description"></div>
+          <div [innerHtml]="performance.description"  itemprop="description"></div>
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
