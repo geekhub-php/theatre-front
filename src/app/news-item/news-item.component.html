@@ -1,16 +1,16 @@
 <div class="card" itemscope itemtype="https://schema.org/CreativeWork">
-  <a routerLink="../news/{{item.slug}}"  itemprop="mainEntityOfPage" >
+  <a routerLink=" ../news/{{item.slug}}" >
     <img *ngIf="item.mainPicture.post_big.url" src='{{ item.mainPicture.post_big.url }}'
-         class="card-img-top" alt="{{item.short_description}}"  itemprop="image">
+         class="card-img-top" alt="{{item.short_description}}" itemprop="image">
     <div class="card-body">
       <h2 itemprop="headline">{{ item.title }}</h2>
-      <p class="card-text"  itemprop="text">{{ item.short_description }}</p>
+      <p class="card-text" itemprop="text">{{ item.short_description }}</p>
     </div>
-    <meta itemprop="author" content={{item.created_by}} />
-    <meta itemprop="publisher" content={{item.updated_by}} />
-    <meta itemprop="dateModified" content={{item.updated_at}} />
-    <meta itemprop="datePublished" content={{item.created_at}} />
-    <p class="list-group-item"  >{{ item.created_at | date: 'd.MM.yyyy' }}</p>
+    <meta itemprop="dateModified" content={{item.updated_at}}/>
+    <meta itemprop="datePublished" content={{item.created_at}}/>
+    <meta itemprop="author" content={{item.created_by}}/>
+    <meta itemprop="publisher" content={{item.updated_by}}/>
+    <p class="list-group-item">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
   </a>
 </div>
 
