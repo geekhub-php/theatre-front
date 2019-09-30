@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - '10.15'
-dist: trusty
+dist: xenial
 addons:
   chrome: stable
 
@@ -21,7 +21,6 @@ script:
   - npm run lint
   - npm run lint-css
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
-  - ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=77.0.3865.75 # Protractor 5.4.2 is not compatible with Chrome 77 https://github.com/angular/protractor/issues/5312
   - ng e2e
   - if [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then BRANCH=$TRAVIS_BRANCH; else BRANCH=$TRAVIS_PULL_REQUEST_BRANCH; fi
   - if [ "$BRANCH" = "master" ]; then DOMAIN="http://theatre-shevchenko.ck.ua"; else DOMAIN="http://develop.theatre.pp.ua/$BRANCH"; fi
