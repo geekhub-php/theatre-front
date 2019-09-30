@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - '10.15'
-dist: trusty
+dist: xenial
 addons:
   chrome: stable
 
@@ -14,7 +14,7 @@ before_script:
   - google-chrome --version
   - npm install -g @angular/cli
   - npm install webdriver-manager -g
-  - webdriver-manager update
+  - webdriver-manager update --versions.chrome=77.0.3865.75 # Protractor 5.4.2 is not compatible with Chrome 77 https://github.com/angular/protractor/issues/5312
   - webdriver-manager start > ./webdriver.log 2>&1 &
 
 script:
