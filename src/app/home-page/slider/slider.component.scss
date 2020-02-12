@@ -45,7 +45,11 @@
 
     .data {
       display: flex;
-      cursor: pointer;
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+      }
 
       .ticket {
         display: flex;
@@ -125,6 +129,17 @@
           top: 0;
           right: 0;
           text-decoration: none;
+
+          .buy-button {
+            position: absolute;
+            right: 30px;
+            top: 10px;
+
+            p {
+              padding: 0;
+              margin: 0;
+            }
+          }
         }
 
         .ticket_link, .ticket_h2 {
