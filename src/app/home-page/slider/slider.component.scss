@@ -109,6 +109,17 @@
         }
       }
 
+      .buy-button {
+        position: absolute;
+        right: 30px;
+        top: 10px;
+
+        p {
+          padding: 0;
+          margin: 0;
+        }
+      }
+
       .ticket_data {
         position: relative;
         box-sizing: border-box;
@@ -129,17 +140,6 @@
           top: 0;
           right: 0;
           text-decoration: none;
-
-          .buy-button {
-            position: absolute;
-            right: 30px;
-            top: 10px;
-
-            p {
-              padding: 0;
-              margin: 0;
-            }
-          }
         }
 
         .ticket_link, .ticket_h2 {
