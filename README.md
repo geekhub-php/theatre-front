@@ -4,7 +4,6 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/?branch=master)
 
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
 
 ## Development server
