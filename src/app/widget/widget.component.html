@@ -9,9 +9,14 @@
               <p class="day">{{ item.date_time | date:'dd' }}</p>
               <p class="month">{{ item.date_time | date:'MMMM' }}</p>
             </div>
-            <div class="widget-about">
-              <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
-              <p class="time">{{ item.time }}</p>
+            <div class="widget-about row">
+              <h3 class="widget-heading col-12">{{ item.performance.title | titlecase }}</h3>
+              <p class="time col-4">{{ item.time }}</p>
+              <a href="{{ item.buy_ticket_link }}" target="_blank" class="col-8" *ngIf="item.buy_ticket_link">
+                <div class="btn btn-success float-right">
+                  <p i18n="@@trustees" class="ticket_p">Buy ticket</p>
+                </div>
+              </a>
             </div>
           </div>
         </li>

@@ -23,10 +23,11 @@ import { WidgetResType } from '../model/widget/WidgetResType';
 })
 export class GatewayService {
   readonly baseUrl = environment.baseUrl;
-  readonly performanceListUrl = 'performances.json';
-  readonly newsListUrl = 'posts.json';
-  readonly historiesListUrl = 'histories.json';
-  readonly performanceEventsListUrl = 'performanceevents.json';
+  readonly performanceListUrl = 'performances';
+  readonly newsListUrl = 'posts';
+  readonly historiesListUrl = 'histories';
+  readonly performanceEventsListUrl = 'performanceevents';
+  readonly employeesListUrl = 'employees';
 
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string) {
@@ -68,7 +69,7 @@ export class GatewayService {
 
   getEmployees(limit: string = '10', page: string = '1', locale: string = this.localeId): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/employees.json`, {params: {limit, page, locale}}
+      `${this.baseUrl}/${this.employeesListUrl}`, {params: {limit, page, locale}}
     ).pipe(
       catchError(this.handleError('get Employees list', new EmployeesListResponse()))
     );

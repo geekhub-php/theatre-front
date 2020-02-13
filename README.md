@@ -49,3 +49,27 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Fix issue with e2e tests and travis
+
+While stable chrome version will update on travis-ci
+this can cause to fail e2e tests on CI, with error:
+
+```bash
+ This version of ChromeDriver only supports Chrome version 77
+```
+
+To fix them, you should update webdriver and 
+protractor configuration according to new version
+of Chrome (see current version in Travis logs).  
+Update in `travis.yml`:
+
+```bash
+webdriver-manager update --versions.chrome={{version_of_chrome}}
+```
+
+Update `protractor.conf.js`:
+
+```bash
+chromeDriver: './node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_{{version_of_chrome}}'
+```

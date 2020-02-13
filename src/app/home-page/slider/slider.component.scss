@@ -45,7 +45,11 @@
 
     .data {
       display: flex;
-      cursor: pointer;
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+      }
 
       .ticket {
         display: flex;
@@ -102,6 +106,17 @@
 
         .ticket-month {
           color: #fff !important;
+        }
+      }
+
+      .buy-button {
+        position: absolute;
+        right: 30px;
+        top: 10px;
+
+        p {
+          padding: 0;
+          margin: 0;
         }
       }
 
