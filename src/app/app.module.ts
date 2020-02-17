@@ -31,6 +31,7 @@ import { ScheduleModule } from './schedule/schedule.module';
 import { WidgetModule } from './widget/widget.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
+import { SeasonsComponent } from './seasons/seasons.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { DevTeamComponent } from './dev-team/dev-team.component';
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
+    SeasonsComponent,
   ],
   imports: [
     BrowserModule,
