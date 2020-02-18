@@ -30,15 +30,8 @@ export class PerformanceListComponent implements OnInit {
     this.seasonNumber = +this.activatedRoute.snapshot.queryParamMap.get('season') || 'current';
     this.activatedRoute.queryParams.subscribe(params => {
       this.seasonNumber = params['season'] || 'current';
-      // console.log(this.season);
       this.getPerformances(this.seasonNumber);
     });
-    // this.appRoutes.events.subscribe(() => {
-    //   this.season = +this.active.snapshot.queryParamMap.get('season') || 'current';
-    //   console.log(this.season);
-    //   // this.getPerformances(this.season);
-    // });
-    // this.getPerformances(this.seasonNumber);
   }
 
   getPerformances(season: number|string) {
