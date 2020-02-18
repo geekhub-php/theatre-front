@@ -41,9 +41,9 @@ export class GatewayService {
     return this.http.get<Array<Season>>(`${this.baseUrl}/${this.seasonListUrl}`, {});
   }
 
-  getSeasonPerformances(season: number|string, locale: string = this.localeId): Observable<Array<Performance>> {
+  getSeasonPerformances(seasonNumber: number, locale: string = this.localeId): Observable<Array<Performance>> {
     return this.http.get<Array<Performance>>(
-      `${this.baseUrl}/${this.seasonListUrl}/${season}/${this.performanceListUrl}`,
+      `${this.baseUrl}/${this.seasonListUrl}/${seasonNumber}/${this.performanceListUrl}`,
       {params: {locale}}
       );
   }

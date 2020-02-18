@@ -2,9 +2,16 @@
 <div class="seasons">
   <span *ngIf="seasons"><span i18n="@@seasons">Seasons</span>: </span>
   <span
+    *ngIf="seasons"
+    class="badge badge-pill badge-primary season-badge"
+    [ngClass]="-1 == activeSeasonNumber ? 'active' : ''"
+    (click)="loadSeason(ALL_PERFORMANCES)"
+    i18n="@@allSeasons"
+  >All Seasons</span>
+  <span
     *ngFor="let season of seasons"
     class="badge badge-pill badge-primary season-badge"
     [ngClass]="season.number == activeSeasonNumber ? 'active' : ''"
-    (click)="loadSeason(season)"
+    (click)="loadSeason(season.number)"
   >{{ season.name }}</span>
 </div>

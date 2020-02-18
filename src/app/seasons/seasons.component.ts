@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SeasonsComponent implements OnInit {
   seasons: Array<Season>;
   activeSeasonNumber: number;
+  ALL_PERFORMANCES = -1;
 
   constructor(
     private changeDetector: ChangeDetectorRef,
@@ -36,11 +37,11 @@ export class SeasonsComponent implements OnInit {
       });
   }
 
-  loadSeason(season: Season) {
-    this.activeSeasonNumber = season.number;
+  loadSeason(seasonNumber: number) {
+    this.activeSeasonNumber = seasonNumber;
     this.appRoutes.navigate([], {
       relativeTo: this.activatedRoute,
-      queryParams: {season: season.number}
+      queryParams: {season: seasonNumber}
     });
   }
 }

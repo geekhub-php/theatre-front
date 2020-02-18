@@ -15,7 +15,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PerformanceListComponent implements OnInit {
   response: PerformanceListResponse;
   perfomances: Array<Performance>;
-  seasonNumber: number|string;
+  seasonNumber: number;
+  CURRENT_SEASON = 0; // api conventions to get recent season
 
   constructor(
     private changeDetector: ChangeDetectorRef,
@@ -27,17 +28,17 @@ export class PerformanceListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.seasonNumber = +this.activatedRoute.snapshot.queryParamMap.get('season') || 'current';
+    this.seasonNumber = +this.activatedRoute.snapshot.queryParamMap.get('season') || this.CURRENT_SEASON;
     this.activatedRoute.queryParams.subscribe(params => {
-      this.seasonNumber = params['season'] || 'current';
+      this.seasonNumber = params['season'] || this.CURRENT_SEASON;
       this.getPerformances(this.seasonNumber);
     });
   }
 
-  getPerformances(season: number|string) {
+  getPerformances(seasonNumber: number) {
     this.perfomances = [];
     this.loaderService.start('repertoire');
-    this.gateway.getSeasonPerformances(season).subscribe((performances) => {
+    this.gateway.getSeasonPerformances(seasonNumber).subscribe((performances) => {
         this.perfomances = performances;
         this.changeDetector.markForCheck();
         this.loaderService.stop('repertoire');
