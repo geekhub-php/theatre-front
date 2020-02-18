@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SeasonsComponent implements OnInit {
   seasons: Array<Season>;
   activeSeasonNumber: number;
-  ALL_PERFORMANCES = -1;
+  ALL_SEASONS = -1;
 
   constructor(
     private changeDetector: ChangeDetectorRef,

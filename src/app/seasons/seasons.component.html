@@ -4,8 +4,8 @@
   <span
     *ngIf="seasons"
     class="badge badge-pill badge-primary season-badge"
-    [ngClass]="ALL_PERFORMANCES == activeSeasonNumber ? 'active' : ''"
-    (click)="loadSeason(ALL_PERFORMANCES)"
+    [ngClass]="ALL_SEASONS == activeSeasonNumber ? 'active' : ''"
+    (click)="loadSeason(ALL_SEASONS)"
     i18n="@@allSeasons"
   >All Seasons</span>
   <span
