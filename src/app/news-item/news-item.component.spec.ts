@@ -7,6 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NewsItem } from '../core/model/news/NewsItem';
 import { NewsItemImage } from '../core/model/news/NewsItemImage';
 import { Image } from '../core/model/Image';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 describe('NewsItemComponent', () => {
   let component: NewsItemComponent;
@@ -18,6 +19,7 @@ describe('NewsItemComponent', () => {
       imports: [
         HttpClientModule,
         RouterModule,
+        SpinnerModule,
         RouterTestingModule
       ]
     })

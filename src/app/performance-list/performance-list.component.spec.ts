@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { StripHtmlModule } from '../shared/pipes/strip-html/strip-html.module';
+import { SeasonsComponent } from '../seasons/seasons.component';
 
 describe('PerformanceListComponent', () => {
   let component: PerformanceListComponent;
@@ -12,7 +13,10 @@ describe('PerformanceListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PerformanceListComponent],
+      declarations: [
+        PerformanceListComponent,
+        SeasonsComponent
+      ],
       imports: [HttpClientModule,
         RouterTestingModule,
         SpinnerModule,
