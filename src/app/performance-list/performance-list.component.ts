@@ -22,7 +22,6 @@ export class PerformanceListComponent implements OnInit {
     private changeDetector: ChangeDetectorRef,
     private gateway: GatewayService,
     private loaderService: LoaderService,
-    private appRoutes: Router,
     private activatedRoute: ActivatedRoute
   ) {
   }
