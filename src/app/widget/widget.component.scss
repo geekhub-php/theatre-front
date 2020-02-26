@@ -101,7 +101,9 @@
 
 .hover:hover {
   background-color: $hover-color !important;
-  cursor: pointer;
+  .link {
+    cursor: pointer;
+  }
 }
 
 .hover:hover .widget-date {

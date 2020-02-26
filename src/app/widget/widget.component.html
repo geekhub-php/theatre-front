@@ -28,16 +28,21 @@
 <ng-template #main>
   <li class="widget-item"
   *ngFor="let item of listEvents; let i=index"
-  [routerLink]="[ '/performance', item.performance.slug ]">
+  >
     <div class="widget-wrap hover bg-news-code pdr40px" *ngIf="i < 5">
-      <div class="widget-date bg-line mrg10px">
+      <div class="widget-date link bg-line mrg10px" [routerLink]="[ '/performance', item.performance.slug ]">
         <p class="week">{{ item.date_time | date:'EEE' }}</p>
         <p class="day">{{ item.date_time | date:'dd' }}</p>
         <p class="month">{{ item.date_time | date:'MMMM' }}</p>
       </div>
       <div class="widget-about">
-        <h3 class="widget-heading">{{ item.performance.title | titlecase }}</h3>
-        <p class="type">{{ item.performance.type }}</p>
+        <h3 class="widget-heading link" [routerLink]="[ '/performance', item.performance.slug ]">{{ item.performance.title | titlecase }}</h3>
+        <p class="type link" [routerLink]="[ '/performance', item.performance.slug ]">{{ item.performance.type }}</p>
+        <a href="{{ item.buy_ticket_link }}" target="_blank" class="col-8" *ngIf="item.buy_ticket_link">
+          <div class="btn btn-success float-right">
+            <p i18n="@@buyTicket" class="ticket_p">Buy ticket</p>
+          </div>
+        </a>
       </div>
     </div>
   </li>
