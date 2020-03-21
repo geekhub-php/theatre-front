@@ -5,6 +5,8 @@ import { NgxGalleryOptions, NgxGalleryImage } from 'ngx-gallery';
 import { GatewayService } from '../core/services/gateway.service';
 import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
+import { PersonSchema } from '../core/model/schema/PersonSchema';
+import { Person } from 'schema-dts';
 
 @Component({
   selector: 'app-person',
@@ -14,6 +16,7 @@ import { LoaderService } from '../shared/spinner/loader.service';
 export class PersonComponent implements OnInit {
   person: Employee;
   galleryOptions: Array<NgxGalleryOptions>;
+  schema: Person;
 
   constructor(
     private router: ActivatedRoute,
@@ -47,6 +50,7 @@ export class PersonComponent implements OnInit {
     this.gatewayService.getEmployeeBySlug(slug).subscribe(
       res => {
         this.person = plainToClass(Employee, res);
+        this.schema = PersonSchema.map(this.person);
         this.loaderService.stop('person');
       },
       err => this.loaderService.stop('person')
