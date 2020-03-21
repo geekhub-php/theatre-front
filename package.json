@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^8.2.0-rc.0",
     "@angular/router": "^8.2.0-rc.0",
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
+    "@ngx-lite/json-ld": "^0.6.2",
     "angular-calendar": "^0.27.9-alpha.0",
     "bootstrap": "^4.3.1",
     "class-transformer": "^0.2.3",
@@ -35,6 +36,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.5.2",
+    "schema-dts": "^0.5.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
@@ -66,7 +67,8 @@ import { SeasonsComponent } from './seasons/seasons.component';
     ScheduleModule,
     NgbPaginationModule,
     WidgetModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgxJsonLdModule
  ],
   providers: [],
   bootstrap: [AppComponent]
