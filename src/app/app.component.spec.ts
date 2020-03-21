@@ -25,6 +25,7 @@ import { SpinnerModule } from './shared/spinner/spinner.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
 import { WidgetModule } from './widget/widget.module';
+import { SeasonsComponent } from './seasons/seasons.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -44,7 +45,8 @@ describe('AppComponent', () => {
         PartnersComponent,
         BoardTrusteesComponent,
         AboutMoreComponent,
-        DevTeamComponent
+        DevTeamComponent,
+        SeasonsComponent
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue: '/'}

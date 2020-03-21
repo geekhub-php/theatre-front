@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GatewayService } from '../../core/services/gateway.service';
+import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
 
 @Component({
   selector: 'app-slider',
@@ -8,7 +9,7 @@ import { GatewayService } from '../../core/services/gateway.service';
 })
 export class SliderComponent implements OnInit {
 
-  sliderList: Array<any> = [];
+  sliderList: Array<PerformanceEvent> = [];
   slideId: number;
   count = 0;
 
