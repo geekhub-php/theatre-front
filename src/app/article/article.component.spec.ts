@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StripHtmlModule } from '../shared/pipes/strip-html/strip-html.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 
 describe('ArticleComponent', () => {
   let component: ArticleComponent;
@@ -17,7 +18,8 @@ describe('ArticleComponent', () => {
         HttpClientModule,
         StripHtmlModule,
         RouterTestingModule,
-        SpinnerModule
+        SpinnerModule,
+        NgxJsonLdModule
       ]
     })
     .compileComponents();

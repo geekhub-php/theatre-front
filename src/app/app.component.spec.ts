@@ -26,6 +26,7 @@ import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
 import { WidgetModule } from './widget/widget.module';
 import { SeasonsComponent } from './seasons/seasons.component';
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -62,7 +63,8 @@ describe('AppComponent', () => {
         NgxGalleryModule,
         SpinnerModule,
         NgbPaginationModule,
-        WidgetModule
+        WidgetModule,
+        NgxJsonLdModule
       ]
     }).compileComponents();
   }));

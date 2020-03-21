@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 
 describe('PersonComponent', () => {
   let component: PersonComponent;
@@ -17,7 +18,8 @@ describe('PersonComponent', () => {
         HttpClientModule,
         RouterTestingModule,
         NgxGalleryModule,
-        SpinnerModule
+        SpinnerModule,
+        NgxJsonLdModule
       ]
     })
     .compileComponents();
