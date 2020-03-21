@@ -70,6 +70,18 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="buyTicket" datatype="html">
+        <source>Buy ticket</source>
+        <target>Купити квиток</target>
+      </trans-unit>
+      <trans-unit id="seasons" datatype="html">
+        <source>Seasons</source>
+        <target>Сезони</target>
+      </trans-unit>
+      <trans-unit id="allSeasons" datatype="html">
+        <source>All Seasons</source>
+        <target>Усі Сезони</target>
+      </trans-unit>
       <trans-unit id="partners" datatype="html">
         <source>Partners</source>
         <target>Партнери</target>

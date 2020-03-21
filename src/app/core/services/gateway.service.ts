@@ -17,16 +17,19 @@ import { NewsListResponse } from '../model/news/NewsListResponse';
 import { NewsItem } from '../model/news/NewsItem';
 import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
 import { WidgetResType } from '../model/widget/WidgetResType';
+import { Season } from '../model/season/Season';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
   readonly baseUrl = environment.baseUrl;
-  readonly performanceListUrl = 'performances.json';
-  readonly newsListUrl = 'posts.json';
-  readonly historiesListUrl = 'histories.json';
-  readonly performanceEventsListUrl = 'performanceevents.json';
+  readonly performanceListUrl = 'performances';
+  readonly seasonListUrl = 'seasons';
+  readonly newsListUrl = 'posts';
+  readonly historiesListUrl = 'histories';
+  readonly performanceEventsListUrl = 'performanceevents';
+  readonly employeesListUrl = 'employees';
 
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string) {
@@ -34,8 +37,19 @@ export class GatewayService {
     this.localeId = this.localeId.slice(0, idLength);
   }
 
-  getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = this.localeId): Observable<any> {
-    return this.http.get<HistoryListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
+  getSeasons(): Observable<Array<Season>> {
+    return this.http.get<Array<Season>>(`${this.baseUrl}/${this.seasonListUrl}`, {});
+  }
+
+  getSeasonPerformances(seasonNumber: number, locale: string = this.localeId): Observable<Array<Performance>> {
+    return this.http.get<Array<Performance>>(
+      `${this.baseUrl}/${this.seasonListUrl}/${seasonNumber}/${this.performanceListUrl}`,
+      {params: {locale}}
+      );
+  }
+
+  getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = this.localeId): Observable<ScheduleListResponse> {
+    return this.http.get<ScheduleListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
       params: {fromDate: fromDate.toString(), limit, locale}
     });
   }
@@ -68,7 +82,7 @@ export class GatewayService {
 
   getEmployees(limit: string = '10', page: string = '1', locale: string = this.localeId): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/employees.json`, {params: {limit, page, locale}}
+      `${this.baseUrl}/${this.employeesListUrl}`, {params: {limit, page, locale}}
     ).pipe(
       catchError(this.handleError('get Employees list', new EmployeesListResponse()))
     );

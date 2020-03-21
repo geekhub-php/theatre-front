@@ -1,0 +1,18 @@
+@import "../../assets/variables";
+
+.seasons {
+  margin-bottom: 5px;
+  span.active {
+    background-color: $header-color-down;
+    cursor: default;
+  }
+}
+.season-badge {
+  margin-right: 3px;
+  background-color: $header-color-up;
+  cursor: pointer;
+}
+.season-badge:hover {
+  background-color: $header-color-down;
+}
+

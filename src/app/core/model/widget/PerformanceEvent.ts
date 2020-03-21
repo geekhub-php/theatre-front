@@ -5,4 +5,5 @@ export class PerformanceEvent {
   time: string;
   locale: string;
   performance: Performance;
+  buy_ticket_link: string;
 }
