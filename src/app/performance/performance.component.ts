@@ -4,6 +4,8 @@ import { Performance } from '../core/model/performance/Performance';
 import { ActivatedRoute } from '@angular/router';
 import { Role } from '../core/model/Role';
 import { LoaderService } from '../shared/spinner/loader.service';
+import { Movie, WithContext } from 'schema-dts';
+import { PerformanceSchema } from '../core/model/schema/PerformanceSchema';
 
 @Component({
   selector: 'app-performance',
@@ -14,6 +16,7 @@ export class PerformanceComponent implements OnInit {
   performance: Performance;
   slug: string;
   roles: Array<Role>;
+  schema: WithContext<Movie>;
 
   constructor(private gateway: GatewayService,
               private router: ActivatedRoute,
@@ -29,6 +32,7 @@ export class PerformanceComponent implements OnInit {
   getPerformanceBySlug(slug: string) {
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
+      this.schema = PerformanceSchema.map(this.performance);
       this.loaderService.stop('performance-page');
     }, err => this.loaderService.stop('performance-page'));
     this.loaderService.start('performance-page');

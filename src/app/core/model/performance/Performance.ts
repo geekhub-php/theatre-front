@@ -9,4 +9,5 @@ export class Performance {
   sliderImage: PerformanceImageCollection;
   gallery?: Array<PerformanceGallery>;
   type?: string;
+  premiere: string;
 }
