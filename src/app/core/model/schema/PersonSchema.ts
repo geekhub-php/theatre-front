@@ -9,6 +9,7 @@ export class PersonSchema {
       givenName: employee.first_name,
       familyName: employee.last_name,
       birthDate: employee.dob,
+      jobTitle: employee.position
     };
   }
 }
