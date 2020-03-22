@@ -9,8 +9,8 @@ export class PerformanceSchema {
         '@context': 'https://schema.org',
         '@type': 'MediaObject',
         contentUrl: pGallery.images.performance_big.url,
-        height: '' + pGallery.images.performance_big.properties.height,
-        width: '' + pGallery.images.performance_big.properties.width
+        height: `${pGallery.images.performance_big.properties.height}`,
+        width: `${pGallery.images.performance_big.properties.width}`
       };
 
       return mediaObject;
