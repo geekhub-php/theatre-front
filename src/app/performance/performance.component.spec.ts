@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { WidgetModule } from '../widget/widget.module';
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 
 describe('PerformanceComponent', () => {
   let component: PerformanceComponent;
@@ -19,7 +20,8 @@ describe('PerformanceComponent', () => {
         HttpClientModule,
         RouterTestingModule,
         SpinnerModule,
-        WidgetModule
+        WidgetModule,
+        NgxJsonLdModule
       ]
     })
       .compileComponents();
