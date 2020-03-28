@@ -1,5 +1,6 @@
 import { NewsItem } from '../news/NewsItem';
 import { Article, Person, WithContext } from 'schema-dts';
+import { TheatreGroupEn } from './TheatreGroupEn';
 
 export class NewsItemSchema {
   static map(newsItem: NewsItem): WithContext<Article> {
@@ -14,6 +15,10 @@ export class NewsItemSchema {
         '@type': 'Person',
         name: 'newsItem.created_by',
         memberOf: ''
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': TheatreGroupEn.id
       },
       headline: 'headline'
     };

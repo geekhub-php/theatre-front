@@ -39,10 +39,12 @@ const cashierContact: WithContext<ContactPoint> = {
 };
 
 export class TheatreGroupEn {
+  static readonly id = 'http://theatre-shevchenko.ck.ua#theatre';
   static map(): WithContext<TheaterGroup> {
     return {
       '@context': 'https://schema.org',
       '@type': 'TheaterGroup',
+      '@id': TheatreGroupEn.id,
       logo: '',
       name: 'Cherkasy theatre',
       url: '',
