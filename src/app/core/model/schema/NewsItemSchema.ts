@@ -1,5 +1,5 @@
 import { NewsItem } from '../news/NewsItem';
-import { Article, WithContext } from 'schema-dts';
+import { Article, Person, WithContext } from 'schema-dts';
 
 export class NewsItemSchema {
   static map(newsItem: NewsItem): WithContext<Article> {
@@ -10,8 +10,11 @@ export class NewsItemSchema {
       image: newsItem.mainPicture.post_big.url,
       datePublished: newsItem.created_at,
       dateModified: newsItem.updated_at,
-      publisher: 'newsItem.updated_by',
-      author: 'newsItem.created_by',
+      author:  {
+        '@type': 'Person',
+        name: 'newsItem.created_by',
+        memberOf: ''
+      },
       headline: 'headline'
     };
   }
