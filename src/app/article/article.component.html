@@ -3,7 +3,7 @@
   <div class="row" *ngIf="item">
     <div class="col">
       <div class="img">
-        <img *ngIf="item.mainPicture.post_big.url" src='{{ item.mainPicture.post_big.url }}'
+        <img *ngIf="item.mainPicture" src='{{ item.mainPicture.post_big.url }}'
              alt="{{item.short_description}}">
       </div>
       <h2>{{ item.title }}</h2>
