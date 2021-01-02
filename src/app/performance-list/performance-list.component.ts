@@ -5,6 +5,7 @@ import { PerformanceListResponse } from '../core/model/performance/PerformanceLi
 import { Performance } from '../core/model/performance/Performance';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-performance-list',
@@ -22,7 +23,8 @@ export class PerformanceListComponent implements OnInit {
     private changeDetector: ChangeDetectorRef,
     private gateway: GatewayService,
     private loaderService: LoaderService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private meta: Meta
   ) {
   }
 
@@ -32,6 +34,8 @@ export class PerformanceListComponent implements OnInit {
       this.seasonNumber = params['season'] || this.CURRENT_SEASON;
       this.getPerformances(this.seasonNumber);
     });
+    this.updateMeta();
+    this.gateway.createLinkForCanonicalURL();
   }
 
   getPerformances(seasonNumber: number) {
@@ -44,5 +48,14 @@ export class PerformanceListComponent implements OnInit {
       },
       error1 => this.loaderService.stop('repertoire')
     );
+  }
+
+  updateMeta() {
+    this.meta.updateTag({ property: 'og:title', content: 'Черкаський драматичний театр імені Т. Г. Шевченка' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Репертуар Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка'
+    });
+    this.meta.updateTag({property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/assets/images/logo.png'});
   }
 }

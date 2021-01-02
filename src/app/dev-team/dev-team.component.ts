@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DevList, TeamLeadsList, QAList } from './dev-list';
+import { Meta } from '@angular/platform-browser';
+import { GatewayService } from '../core/services/gateway.service';
 
 @Component({
   selector: 'app-dev-team',
@@ -12,9 +14,16 @@ export class DevTeamComponent implements OnInit {
   devList = DevList;
   qaList = QAList;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private meta: Meta, private gatewayService: GatewayService) {
+    this.meta.updateTag({ property: 'og:title', content: 'Черкаський драматичний театр імені Т. Г. Шевченка' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Команда розробників сайту Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка'
+    });
+    this.meta.updateTag({property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/assets/images/logo.png'});
   }
 
+  ngOnInit() {
+    this.gatewayService.createLinkForCanonicalURL();
+  }
 }

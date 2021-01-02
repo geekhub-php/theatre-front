@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GatewayService } from '../../core/services/gateway.service';
 import { History } from '../../core/model/history/History';
 import { LoaderService } from '../../shared/spinner/loader.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-more',
@@ -12,8 +13,7 @@ import { LoaderService } from '../../shared/spinner/loader.service';
 export class AboutMoreComponent implements OnInit {
   history: History;
 
-  constructor(private route: ActivatedRoute, private gateway: GatewayService, private loaderService: LoaderService) {
-  }
+  constructor(private route: ActivatedRoute, private gateway: GatewayService, private loaderService: LoaderService, private meta: Meta) {}
 
   ngOnInit() {
     const slug = this.route.snapshot.params.slug;
@@ -22,8 +22,12 @@ export class AboutMoreComponent implements OnInit {
       (res) => {
         this.history = res;
         this.loaderService.stop('about-more');
+        this.meta.updateTag({property: 'og:title', content: this.history.title});
+        this.meta.updateTag({property: 'og:description', content: this.history.text});
+        this.meta.updateTag({property: 'og:image', content: this.history.mainPicture.history_small.url});
       },
       err => this.loaderService.stop('about-more')
     );
+    this.gateway.createLinkForCanonicalURL();
   }
 }

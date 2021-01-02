@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/services/gateway.service';
 import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-team',
@@ -16,11 +17,19 @@ export class TeamComponent implements OnInit {
 
   constructor(
     private httpGatewayService: GatewayService,
-    private loaderService: LoaderService
-  ) { }
+    private loaderService: LoaderService,
+    private meta: Meta
+  ) {
+    this.meta.updateTag({ property: 'og:title', content: 'Черкаський драматичний театр імені Т. Г. Шевченка' });
+    this.meta.updateTag(
+      {property: 'og:description', content: 'Персоналії Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка'});
+    this.meta.updateTag(
+      {property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/uk/assets/images/persons.jpg'});
+  }
 
   ngOnInit() {
     this.getEmployees(this.limit, this.page);
+    this.httpGatewayService.createLinkForCanonicalURL();
   }
 
   getEmployees(limit, page) {

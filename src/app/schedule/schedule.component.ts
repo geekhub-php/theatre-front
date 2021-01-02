@@ -6,6 +6,7 @@ import { plainToClass } from 'class-transformer';
 import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { CalendarService } from './calendar.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-schedule',
@@ -24,12 +25,20 @@ export class ScheduleComponent implements OnInit {
     private datePipe: DatePipe,
     private gateway: GatewayService,
     private loaderService: LoaderService,
-    private calendar: CalendarService
+    private calendar: CalendarService,
+    private meta: Meta
   ) {}
 
   ngOnInit() {
     this.date = new Date();
     this.getPerformanceEvents();
+    this.meta.updateTag({ property: 'og:title', content: 'Черкаський драматичний театр імені Т. Г. Шевченка' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка'
+    });
+    this.meta.updateTag({property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/assets/images/logo.png'});
+    this.gateway.createLinkForCanonicalURL();
   }
 
   transformDate(date) {

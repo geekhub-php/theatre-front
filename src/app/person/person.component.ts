@@ -5,6 +5,7 @@ import { NgxGalleryOptions, NgxGalleryImage } from 'ngx-gallery';
 import { GatewayService } from '../core/services/gateway.service';
 import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-person',
@@ -18,7 +19,8 @@ export class PersonComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private gatewayService: GatewayService,
-    private loaderService: LoaderService
+    private loaderService: LoaderService,
+    private meta: Meta
   ) {
   }
 
@@ -40,6 +42,7 @@ export class PersonComponent implements OnInit {
         imageSize: 'cover'
       }
     ];
+    this.gatewayService.createLinkForCanonicalURL();
   }
 
   getPerson(slug) {
@@ -48,8 +51,15 @@ export class PersonComponent implements OnInit {
       res => {
         this.person = plainToClass(Employee, res);
         this.loaderService.stop('person');
+        this.updateMeta();
       },
       err => this.loaderService.stop('person')
     );
+  }
+
+  updateMeta() {
+    this.meta.updateTag({property: 'og:title', content: `${this.person.first_name} ${this.person.last_name}`});
+    this.meta.updateTag({property: 'og:description', content: this.person.biography});
+    this.meta.updateTag({property: 'og:image', content: this.person.avatar.employee_small.url});
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GatewayService } from '../core/services/gateway.service';
 
 @Component({
   selector: 'app-board-trustees',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardTrusteesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gatewayService: GatewayService) { }
 
   ngOnInit() {
+    this.gatewayService.createLinkForCanonicalURL();
   }
 
 }
