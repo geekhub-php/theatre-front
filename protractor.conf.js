@@ -4,7 +4,6 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
-  chromeDriver: './node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_80.0.3987.106',
   allScriptsTimeout: 11000,
   specs: [
     './e2e/**/*.e2e-spec.ts'
