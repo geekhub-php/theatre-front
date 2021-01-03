@@ -12,7 +12,17 @@
   <li><a class="nav-link d-lg-none" routerLink="/board-trustees" routerLinkActive="active" i18n="@@trustees">Board of trustees</a></li>
   <li><a class="nav-link d-lg-none" routerLink="/partners" routerLinkActive="active" i18n="@@partners">Partners</a></li>
   <!--language-->
-  <li class=""><a class="mobile-language d-lg-none" [href]="langRedirectUrl" i18n="@@lang">Укр</a></li>
+  <div>
+    <li>
+      <a class="mobile-language d-lg-none" [href]="langRedirectUrl" i18n="@@lang">Укр</a>
+    </li>
+    <!--visually impaired button-->
+    <li>
+      <button class="visually-impaired-button" (click)="toggleVisuallyImpaired()">
+        <svg width="16" height="16">
+          <use href="assets/images/visibility-black-18dp.svg#visibility"></use>
+        </svg>
+      </button>
+    </li>
+  </div>
 </ul>
-
-
