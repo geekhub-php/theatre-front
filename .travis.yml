@@ -5,6 +5,9 @@ dist: xenial
 addons:
   chrome: stable
   ssh_known_hosts: 104.248.253.61
+  apt:
+    packages:
+      - sshpass
 
 branches:
   only:
