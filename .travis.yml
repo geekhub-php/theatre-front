@@ -4,6 +4,7 @@ node_js:
 dist: xenial
 addons:
   chrome: stable
+  ssh_known_hosts: 104.248.253.61
 
 branches:
   only:
