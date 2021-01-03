@@ -2,7 +2,15 @@
   <li><a class="nav-link" routerLink="/" routerLinkActive="active"
          [routerLinkActiveOptions]="{ exact: true }" i18n="@@mainPage">Main page</a></li>
   <li><a class="nav-link" routerLink="/poster" routerLinkActive="active" i18n="@@poster">Poster</a></li>
-  <li><a class="nav-link" routerLink="/repertoire" routerLinkActive="active" i18n="@@repertoire">Repertoire</a></li>
+  <li>
+    <a
+      class="nav-link"
+      routerLink="/repertoire"
+      [queryParams]="{season: -1}"
+      routerLinkActive="active"
+      i18n="@@repertoire"
+    >Repertoire</a>
+  </li>
   <li><a class="nav-link" routerLink="/news" routerLinkActive="active" i18n="@@news">News</a></li>
   <li><a class="nav-link" routerLink="/about" routerLinkActive="active" i18n="@@about">About</a></li>
   <li><a class="nav-link" routerLink="/persons" routerLinkActive="active" i18n="@@persons">Persons</a></li>
@@ -14,5 +22,3 @@
   <!--language-->
   <li class=""><a class="mobile-language d-lg-none" [href]="langRedirectUrl" i18n="@@lang">Укр</a></li>
 </ul>
-
-
