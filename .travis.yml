@@ -14,13 +14,6 @@ branches:
     - master
     - develop
 
-before_script:
-#  - google-chrome --version
-#  - npm install -g @angular/cli
-#  - npm install webdriver-manager -g
-#  - webdriver-manager update --versions.chrome=80.0.3987.100 # Protractor 5.4.2 is not compatible with Chrome 77 https://github.com/angular/protractor/issues/5312
-#  - webdriver-manager start > ./webdriver.log 2>&1 &
-
 script:
   - npm run lint
   - npm run lint-css
@@ -50,9 +43,7 @@ after_success:
   - echo $TRAVIS_PULL_REQUEST_BRANCH
   - openssl aes-256-cbc -K $encrypted_40387a6d5956_key -iv $encrypted_40387a6d5956_iv -in deploy/key.enc -out ./deployment -d
   - mv deployment ~/.ssh/id_rsa
-#  - echo -e $SSH_PUB ~/.ssh/id_rsa.pub
   - chmod 600 ~/.ssh/id_rsa
-#  - eval `ssh-agent -s -k`
   - ssh-add ~/.ssh/id_rsa
   - ssh deploybot@104.248.253.61 "pwd"
 
