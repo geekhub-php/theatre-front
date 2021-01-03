@@ -52,7 +52,6 @@ after_success:
   - rm geekhub-deployment.enc # Don't need it anymore
   - mv geekhub-deployment ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
-  - sshpass -p '' ssh-add ~/.ssh/id_rsa
   - ssh deploybot@104.248.253.61 "pwd"
 
   - cp ./deploy/branch.conf ./dist/
