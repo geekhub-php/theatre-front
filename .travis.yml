@@ -51,7 +51,9 @@ after_success:
   - openssl aes-256-cbc -K $encrypted_40387a6d5956_key -iv $encrypted_40387a6d5956_iv -in geekhub-deployment.enc -out ./geekhub-deployment -d
   - rm geekhub-deployment.enc # Don't need it anymore
   - mv geekhub-deployment ~/.ssh/id_rsa
+  - echo -e $SSH_PUB ~/.ssh/id_rsa.pub
   - chmod 600 ~/.ssh/id_rsa
+  - eval `ssh-agent -s`
   - ssh deploybot@104.248.253.61 "pwd"
 
   - cp ./deploy/branch.conf ./dist/
