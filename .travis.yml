@@ -49,7 +49,7 @@ after_success:
   - mv geekhub-deployment ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
   - sshpass -p '' ssh-add ~/.ssh/id_rsa
-  - ssh -o StrictHostKeyChecking=no deploybot@104.248.253.61 "pwd"
+  - ssh deploybot@104.248.253.61 "pwd"
 
   - cp ./deploy/branch.conf ./dist/
   - cp ./deploy/index.html ./dist/
