@@ -22,19 +22,6 @@ before_script:
 #  - webdriver-manager start > ./webdriver.log 2>&1 &
 
 script:
-  # try this
-  - echo $TRAVIS_BRANCH
-  - echo $TRAVIS_PULL_REQUEST_BRANCH
-  - openssl aes-256-cbc -K $encrypted_40387a6d5956_key -iv $encrypted_40387a6d5956_iv -in geekhub-deployment.enc -out ./geekhub-deployment -d
-  - rm geekhub-deployment.enc # Don't need it anymore
-  - mv geekhub-deployment ~/.ssh/id_rsa
-  - echo -e $SSH_PUB ~/.ssh/id_rsa.pub
-  - chmod 600 ~/.ssh/id_rsa
-  - eval `ssh-agent -s -k`
-  - ssh-add ~/.ssh/id_rsa
-  - ssh deploybot@104.248.253.61 "pwd"
-
-
   - npm run lint
   - npm run lint-css
   - ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
@@ -61,12 +48,11 @@ after_script:
 after_success:
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_PULL_REQUEST_BRANCH
-  - openssl aes-256-cbc -K $encrypted_40387a6d5956_key -iv $encrypted_40387a6d5956_iv -in geekhub-deployment.enc -out ./geekhub-deployment -d
-  - rm geekhub-deployment.enc # Don't need it anymore
-  - mv geekhub-deployment ~/.ssh/id_rsa
-  - echo -e $SSH_PUB ~/.ssh/id_rsa.pub
+  - openssl aes-256-cbc -K $encrypted_40387a6d5956_key -iv $encrypted_40387a6d5956_iv -in deploy/key.enc -out ./deployment -d
+  - mv deployment ~/.ssh/id_rsa
+#  - echo -e $SSH_PUB ~/.ssh/id_rsa.pub
   - chmod 600 ~/.ssh/id_rsa
-  - eval `ssh-agent -s -k`
+#  - eval `ssh-agent -s -k`
   - ssh-add ~/.ssh/id_rsa
   - ssh deploybot@104.248.253.61 "pwd"
 
