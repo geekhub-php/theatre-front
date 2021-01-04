@@ -153,10 +153,19 @@ table {
   font-size: 14px;
 }
 
-.popover-time {
+.popover-time,
+.popover-date {
   text-align: center;
   font-size: 16px;
   color: $hover-color;
+}
+
+.popover-time {
+  margin-bottom: 0;
+}
+
+.popover-date {
+  margin-bottom: 20px;
 }
 
 .popover-venue {
@@ -166,7 +175,7 @@ table {
 
 .popover-img {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   max-width: 150px;
 }
 
