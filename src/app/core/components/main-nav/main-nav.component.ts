@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { LangService } from '../../services/lang.service';
-import { triggerVisuallyImpaired } from '../visually-impaired/visually-impaired.component';
 
 @Component({
   selector: 'app-main-nav',
@@ -14,8 +13,4 @@ export class MainNavComponent {
   }
 
   constructor(private langService: LangService) { }
-
-  toggleVisuallyImpaired() {
-    triggerVisuallyImpaired.next(true);
-  }
 }
