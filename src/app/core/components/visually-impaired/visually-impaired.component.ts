@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
 
 export const triggerVisuallyImpaired: BehaviorSubject<Boolean> = new BehaviorSubject(false);
 
@@ -10,8 +11,18 @@ export const triggerVisuallyImpaired: BehaviorSubject<Boolean> = new BehaviorSub
 })
 export class VisuallyImpairedComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
+  }
+
+  reduceFont() {
+    const htmlDomEl = this.document.querySelector('html');
+    htmlDomEl.setAttribute('style', 'font-size: 16px');
+  }
+
+  zoomFont() {
+    const htmlDomEl = this.document.querySelector('html');
+    htmlDomEl.setAttribute('style', 'font-size: 24px');
   }
 }

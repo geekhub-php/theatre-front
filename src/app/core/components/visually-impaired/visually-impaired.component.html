@@ -1,3 +1,80 @@
 <div class="visually-impaired">
-  <p>Visually Impaired</p>
+  <div class="visually-impaired__color-schemas color-schemes">
+    <p class="color-schemes__text" i18n="@@color-schemes">Color schemes</p>
+
+    <div class="color-schemes__nav">
+      <div class="color-schemes__buttons">
+        <button class="color-schemes__button --black-white">
+          Aa
+        </button>
+        <button class="color-schemes__button --white-black">
+          Aa
+        </button>
+      </div>
+
+      <div class="color-schemes__buttons">
+        <button class="color-schemes__button --yellow-black">
+          Aa
+        </button>
+        <button class="color-schemes__button --black-yellow">
+          Aa
+        </button>
+      </div>
+
+      <div class="color-schemes__buttons">
+        <button class="color-schemes__button --yellow-blue">
+          Aa
+        </button>
+        <button class="color-schemes__button --blue-yellow">
+          Aa
+        </button>
+      </div>
+
+      <div class="color-schemes__buttons">
+        <button class="color-schemes__button --white-green">
+          Aa
+        </button>
+        <button class="color-schemes__button --green-white">
+          Aa
+        </button>
+      </div>
+
+      <div class="color-schemes__buttons">
+        <button class="color-schemes__button --sepia">
+          Aa
+        </button>
+        <button class="color-schemes__button --inversion">
+          Aa
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="visually-impaired__size-fonts size-fonts">
+    <p class="size-fonts__text" i18n="@@color-schemes">Font size</p>
+
+    <div class="size-fonts__nav">
+      <div class="size-fonts__buttons">
+        <button class="size-fonts__button" (click)="reduceFont()">
+          -a
+        </button>
+        <button class="size-fonts__button" (click)="zoomFont()">
+          +A
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="visually-impaired__close-disable close-disable">
+    <div class="close-disable__nav">
+      <div class="close-disable__buttons">
+        <button class="close-disable__button">
+          X
+        </button>
+        <button class="close-disable__button">
+          O
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
