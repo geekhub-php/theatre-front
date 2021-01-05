@@ -94,6 +94,33 @@
       padding-top: 5px;
     }
   }
+
+  &__icon {
+    transition: .3s ease;
+  }
+
+  &__link {
+    display: flex;
+    margin-left: 10px;
+
+    &:hover {
+      .footer__icon {
+        fill-opacity: .8;
+      }
+    }
+
+    &_ucf {
+      width: 36px;
+      height: 20px;
+      margin-left: 10px;
+
+      &:hover {
+        .footer__icon {
+          fill: #FFCC2D;
+        }
+      }
+    }
+  }
 }
 
 .scrollToTop {

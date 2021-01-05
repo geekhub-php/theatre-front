@@ -258,6 +258,25 @@ table {
     color: $white-color;
     text-align: center;
   }
+
+  .schedule-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px auto 0;
+
+    .btn-success {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+
+      .ticket_p {
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -317,6 +336,10 @@ table {
 
   .mobile {
     max-width: 400px;
+
+    .schedule-button {
+      width: 50%;
+    }
   }
 }
 
