@@ -104,6 +104,7 @@
     margin-left: 10px;
 
     &:hover {
+
       .footer__icon {
         fill-opacity: .8;
       }
@@ -115,8 +116,9 @@
       margin-left: 10px;
 
       &:hover {
+
         .footer__icon {
-          fill: #FFCC2D;
+          fill: #ffcc2d;
         }
       }
     }
@@ -133,7 +135,7 @@
   height: 42px;
   border-radius: 4px;
   background-color: $danger;
-  background-image: url("assets/images/arrow.png");
+  background-image: url("~assets/images/arrow.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border: none;
