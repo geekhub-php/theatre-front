@@ -12,7 +12,6 @@ import { triggerVisuallyImpaired } from '../visually-impaired/visually-impaired.
 export class HeaderComponent {
   collapse = false;
   trigger = triggerVisuallyImpaired;
-  toggle = false;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -29,10 +28,5 @@ export class HeaderComponent {
 
   toogleMenu() {
     this.collapse = !this.collapse;
-  }
-
-  toggleVisuallyImpaired() {
-    this.toggle = !this.toggle;
-    this.trigger.next(this.toggle);
   }
 }

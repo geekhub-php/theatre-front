@@ -31,6 +31,18 @@ $navLinkActiveBorderTop: 3px;
   }
 }
 
+.visually-impaired-button {
+  appearance: none;
+  background: none;
+  border: none;
+  margin: 0 5px;
+  color: $white-color;
+
+  &:hover {
+    background-color: $white-hover-color;
+  }
+}
+
 :host ::ng-deep {
 
   .navbar-nav {
