@@ -6,13 +6,57 @@
   align-items: center;
 
   padding: 0.625rem 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .color-schemes {
+
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+.size-fonts {
+
+  &__text {
+    text-align: center;
+    margin-bottom: 5px;
+    color: $white-color;
+  }
+
+  &__button {
+    appearance: none;
+    background: none;
+    border: 1px solid $white-color;
+    margin: 0 5px;
+    color: $white-color;
+
+    &:hover {
+      background-color: $white-hover-color;
+    }
+  }
+}
+
+
+.close-disable {
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  &__button {
+    appearance: none;
+    background: none;
+    border: none;
+    margin: 0 5px;
+    color: $white-color;
+
+    &:hover {
+      background-color: $white-hover-color;
+    }
   }
 }

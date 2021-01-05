@@ -10,6 +10,7 @@ export const triggerVisuallyImpaired: BehaviorSubject<Boolean> = new BehaviorSub
   styleUrls: ['./visually-impaired.component.scss']
 })
 export class VisuallyImpairedComponent implements OnInit {
+  trigger = triggerVisuallyImpaired;
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
