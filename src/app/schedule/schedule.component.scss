@@ -207,7 +207,7 @@ table {
       max-width: 28.571rem;
       border: 1px solid $light-gray;
       border-radius: 2px;
-      padding: 0.857rem;
+      padding: .857rem;
       box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
       margin: 0 18px 0 0;
     }
@@ -218,7 +218,7 @@ table {
       width: 1.429rem;
       height: 1.429rem;
       top: 2.571rem;
-      right: -0.714rem;
+      right: -.714rem;
       background-color: $white-color;
       transform: rotate(45deg);
       border-top: 1px solid $light-gray;
@@ -253,7 +253,7 @@ table {
 
   .day {
     display: block;
-    margin-top: 0.857rem;
+    margin-top: .857rem;
     font-size: 1.286rem;
     font-weight: 900;
     color: $white-color;
@@ -300,7 +300,7 @@ table {
       }
 
       .schedule-body::after {
-        left: -0.714rem;
+        left: -.714rem;
         border-top: 1px solid transparent;
         border-left: 1px solid $light-gray;
         border-right: 1px solid transparent;
