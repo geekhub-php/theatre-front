@@ -31,6 +31,5 @@ export class AboutComponent implements OnInit {
       err => this.loaderService.stop('about')
     );
     this.loaderService.start('about');
-    this.getway.createLinkForCanonicalURL();
   }
 }

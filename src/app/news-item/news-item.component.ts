@@ -15,7 +15,6 @@ export class NewsItemComponent implements OnInit {
 
   ngOnInit() {
     this.updateMeta();
-    this.gatewayService.createLinkForCanonicalURL();
   }
 
   updateMeta() {

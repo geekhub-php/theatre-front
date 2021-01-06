@@ -38,7 +38,6 @@ export class ScheduleComponent implements OnInit {
       content: 'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка'
     });
     this.meta.updateTag({property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/assets/images/logo.png'});
-    this.gateway.createLinkForCanonicalURL();
   }
 
   transformDate(date) {

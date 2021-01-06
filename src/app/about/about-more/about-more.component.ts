@@ -28,6 +28,5 @@ export class AboutMoreComponent implements OnInit {
       },
       err => this.loaderService.stop('about-more')
     );
-    this.gateway.createLinkForCanonicalURL();
   }
 }

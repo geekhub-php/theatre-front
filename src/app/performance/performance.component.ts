@@ -26,7 +26,6 @@ export class PerformanceComponent implements OnInit {
     this.loaderService.start('performance-page');
     this.getPerformanceBySlug(slug);
     this.getRoles();
-    this.gateway.createLinkForCanonicalURL();
   }
 
   getPerformanceBySlug(slug: string) {

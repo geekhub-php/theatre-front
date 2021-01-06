@@ -42,7 +42,6 @@ export class PersonComponent implements OnInit {
         imageSize: 'cover'
       }
     ];
-    this.gatewayService.createLinkForCanonicalURL();
   }
 
   getPerson(slug) {

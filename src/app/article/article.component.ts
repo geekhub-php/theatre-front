@@ -23,7 +23,6 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     this.getArticle();
-    this.gateAway.createLinkForCanonicalURL();
   }
 
   getArticle() {

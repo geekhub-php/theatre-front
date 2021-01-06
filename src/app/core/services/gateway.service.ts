@@ -166,13 +166,6 @@ export class GatewayService {
       );
   }
 
-  createLinkForCanonicalURL() {
-    document.addEventListener('DOMContentLoaded', () => {
-      const link: HTMLLinkElement = this.doc.getElementById('canonical');
-      link.setAttribute('href', this.doc.URL);
-    });
-  }
-
   /* tslint:disable:no-console */
 
   /**

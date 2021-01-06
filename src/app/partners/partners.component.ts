@@ -11,6 +11,5 @@ export class PartnersComponent implements OnInit {
   constructor(private gatewayService: GatewayService) { }
 
   ngOnInit() {
-    this.gatewayService.createLinkForCanonicalURL();
   }
 }

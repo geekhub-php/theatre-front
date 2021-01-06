@@ -20,6 +20,5 @@ export class ContactsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gatewayService.createLinkForCanonicalURL();
   }
 }
