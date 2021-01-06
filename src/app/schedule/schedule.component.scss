@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 h2 {
   color: $hover-color;
@@ -45,7 +45,7 @@ table {
 }
 
 .desktop {
-  max-width: 1000px;
+  max-width: 71.429rem;
   margin: auto;
 }
 
@@ -58,10 +58,10 @@ table {
   background-color: $hover-color;
   color: $white-color;
   font-family: robotothin,sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
   border-right: 1px solid $white-color;
   padding: 11px 0;
-  width: 141px;
+  width: 10.071rem;
   text-align: center;
   text-transform: capitalize;
 }
@@ -69,7 +69,7 @@ table {
 .day-of-month {
   position: relative;
   overflow: hidden;
-  height: 142px;
+  height: 10.143rem;
   padding: 34px 0 0;
   border: 1px solid $light-gray;
   vertical-align: bottom;
@@ -82,26 +82,26 @@ table {
   z-index: 5;
   display: block;
   margin: 0 0 0 7px;
-  font-size: 18px;
+  font-size: 1.286rem;
   color: $hover-color;
   background-color: $white-color;
   border-radius: 3px;
   line-height: 1;
   padding: 2px 0;
-  min-width: 25px;
+  min-width: 1.786rem;
   text-align: center;
 }
 
 .contain {
-  width: 40px;
-  margin-bottom: 50px;
+  width: 2.857rem;
+  margin-bottom: 3.571rem;
   float: left;
 }
 
 .calendar-img {
   width: 100%;
   height: inherit;
-  margin-top: -140px;
+  margin-top: -10rem;
 }
 
 .panel {
@@ -117,7 +117,7 @@ table {
 .panel p {
   color: $white-color;
   text-align: center;
-  font-size: 14px;
+  font-size: 1rem;
   margin: 5px auto 0;
 }
 
@@ -133,14 +133,14 @@ table {
 .more {
   background-color: $dark-grayish-red;
   height: inherit;
-  margin-top: -40px;
+  margin-top: -2.857rem;
 }
 
 .events {
   height: 50%;
   color: $white-color;
   text-align: center;
-  font-size: 14px;
+  font-size: 1rem;
   display: block;
 
   &:hover {
@@ -150,18 +150,18 @@ table {
 
 .events p {
   text-align: center;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .popover-time {
   text-align: center;
-  font-size: 16px;
+  font-size: 1.143rem;
   color: $hover-color;
 }
 
 .popover-venue {
   text-align: center;
-  font-size: 16px;
+  font-size: 1.143rem;
 }
 
 .popover-img {
@@ -178,11 +178,13 @@ table {
   .schedule-time {
     color: $hover-color;
     text-align: center;
+    font-size: 1rem;
   }
 
   .schedule-place {
     text-align: center;
     color: $primary-color;
+    font-size: 1rem;
   }
 
   .schedule-event {
@@ -202,10 +204,10 @@ table {
 
     .schedule-body {
       position: relative;
-      max-width: 400px;
+      max-width: 28.571rem;
       border: 1px solid $light-gray;
       border-radius: 2px;
-      padding: 12px;
+      padding: 0.857rem;
       box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
       margin: 0 18px 0 0;
     }
@@ -213,11 +215,10 @@ table {
     .schedule-body::after {
       content: "";
       position: absolute;
-      width: 20px;
-      height: 20px;
-      top: 36px;
-      right: -10px;
-      border: 1px solid $light-gray;
+      width: 1.429rem;
+      height: 1.429rem;
+      top: 2.571rem;
+      right: -0.714rem;
       background-color: $white-color;
       transform: rotate(45deg);
       border-top: 1px solid $light-gray;
@@ -228,7 +229,7 @@ table {
 
     .schedule-title {
       color: $primary-color;
-      font-size: 18px;
+      font-size: 1.286rem;
       text-align: center;
     }
 
@@ -243,17 +244,17 @@ table {
     position: absolute;
     content: "";
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 3.571rem;
+    height: 3.571rem;
     background-color: $hover-color;
-    top: 42px;
-    right: -27px;
+    top: 3rem;
+    right: -1.929rem;
   }
 
   .day {
     display: block;
-    margin-top: 12px;
-    font-size: 18px;
+    margin-top: 0.857rem;
+    font-size: 1.286rem;
     font-weight: 900;
     color: $white-color;
     text-align: center;
@@ -274,31 +275,32 @@ table {
       .ticket_p {
         margin: 0;
         text-align: center;
+        font-size: 1rem;
       }
     }
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 71.429rem) {
 
   .mobile {
-    padding-left: 24px;
+    padding-left: 1.714rem;
     justify-content: flex-start;
     flex-direction: column;
-    max-width: 270px;
-    margin: 40px auto 0;
+    max-width: 19.286rem;
+    margin: 2.857rem auto 0;
 
     .schedule-event {
-      padding: 20px 0 0;
+      padding: 1.429rem 0 0;
       border-left: 3px solid $light-grayish-red;
       border-right: none;
 
       .schedule-body {
-        margin: 0 0 0 60px;
+        margin: 0 0 0 4.286rem;
       }
 
       .schedule-body::after {
-        left: -10px;
+        left: -0.714rem;
         border-top: 1px solid transparent;
         border-left: 1px solid $light-gray;
         border-right: 1px solid transparent;
@@ -306,36 +308,36 @@ table {
       }
 
       .schedule-day {
-        left: -27px;
+        left: -1.929rem;
       }
 
       &:nth-child(2n) {
-        padding: 20px 0 0;
+        padding: 1.429rem 0 0;
 
         .schedule-body {
           transform: translateY(0);
-          margin: 0 0 0 60px;
+          margin: 0 0 0 4.286rem;
         }
 
         .schedule-day {
-          top: 42px;
+          top: 3rem;
         }
       }
     }
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 71.429rem) {
 
   .mobile {
     display: none;
   }
 }
 
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 40rem) {
 
   .mobile {
-    max-width: 400px;
+    max-width: 28.571rem;
 
     .schedule-button {
       width: 50%;
@@ -343,7 +345,7 @@ table {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 71.429rem) {
 
   .desktop {
     display: none;
