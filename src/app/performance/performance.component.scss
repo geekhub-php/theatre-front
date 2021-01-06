@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 ::ng-deep .carousel-control-prev .sr-only, ::ng-deep .carousel-control-next .sr-only {
   display: none;
@@ -10,11 +10,13 @@
   border-bottom: 1px solid $light-gray;
   padding: 10px;
   text-align: center;
-  width: 970px;
+  width: 69.286rem;
   margin: 0 auto;
+  font-size: 1rem;
 }
 
 ::ng-deep .info .nav-link {
+  font-size: 1rem;
   color: $dark-grayish-red;
   border-color: $light-gray;
   border-top-left-radius: 0;
@@ -37,8 +39,8 @@
 }
 
 ::ng-deep .slider img {
-  max-height: 300px;
-  max-width: 450px;
+  max-height: 21.429rem;
+  max-width: 32.143rem;
 }
 
 .container {
@@ -53,7 +55,7 @@
 
   .page-sub-title {
     color: $hover-color;
-    font-size: 16px;
+    font-size: 1.143rem;
     text-align: center;
     margin: 10px 0 25px;
   }
@@ -63,17 +65,17 @@
     justify-content: center;
     margin-bottom: 20px;
     overflow: hidden;
-    height: 300px;
+    height: 21.429rem;
 
     .performance-widget {
-      min-width: 240px;
+      min-width: 17.143rem;
       order: 2;
       box-sizing: border-box;
       margin: 0 10px;
     }
 
     .performance-poster {
-      width: 235px;
+      width: 16.786rem;
       box-sizing: border-box;
       margin: 0 10px;
       text-align: center;
@@ -88,7 +90,7 @@
     }
 
     ::ng-deep .slider img {
-      height: 300px;
+      height: 21.429rem;
       max-width: 100%;
       vertical-align: middle !important;
       margin: auto;
@@ -98,11 +100,11 @@
 
 .info {
   margin-bottom: 10px;
-  width: 970px;
+  width: 69.286rem;
 
   .nav-info {
-    margin-top: 20px;
-    margin-bottom: -2px;
+    margin-top: 1.429rem;
+    margin-bottom: -0.143rem;
     box-sizing: border-box;
 
     .nav-item {
@@ -125,7 +127,7 @@
   }
 
   .employees-list {
-    max-width: 800px;
+    max-width: 57.143rem;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -141,8 +143,8 @@
 
       .item {
         text-decoration: none;
-        width: 146px;
-        height: 256px;
+        width: 10.429rem;
+        height: 18.286rem;
         display: inline-block;
         text-align: center;
         cursor: pointer;
@@ -156,8 +158,8 @@
         }
 
         .photo {
-          width: 146px;
-          height: 200px;
+          width: 10.429rem;
+          height: 14.286rem;
         }
       }
     }
@@ -185,7 +187,7 @@
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
   .preview, .slider {
-    height: 285px;
+    height: 20.357rem;
     overflow: hidden;
   }
 
@@ -194,7 +196,7 @@
   }
 
   .preview .performance-widget {
-    min-width: 240px;
+    min-width: 17.143rem;
   }
 }
 
@@ -213,7 +215,7 @@
   }
 
   .container .preview .performance-widget {
-    min-width: 240px;
+    min-width: 17.143rem;
     margin: 10px;
   }
 
@@ -224,7 +226,7 @@
 
   .info {
     margin: auto;
-    width: 655px;
+    width: 46.786rem;
 
     li .photo {
       width: 100%;
@@ -232,14 +234,15 @@
   }
 
   ::ng-deep .tab-pane {
-    width: 655px;
+    font-size: 1rem;
+    width: 46.786rem;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
 
   .item p, .item span {
-    font-size: 15px;
+    font-size: 1.071rem;
   }
 
   .container .preview {
@@ -254,7 +257,7 @@
   }
 
   .container .preview .performance-widget {
-    min-width: 240px;
+    min-width: 17.143rem;
     text-align: center;
     margin: 10px auto;
   }
@@ -270,25 +273,25 @@
 
   .info {
     margin: auto;
-    width: 500px;
+    width: 35.714rem;
 
     .wrap {
-      width: 475px;
+      width: 33.929rem;
       margin: 0 auto;
     }
 
     .item {
-      width: 140px;
+      width: 10rem;
     }
 
     li .photo {
       width: 100%;
-      height: 157px;
+      height: 11.214rem;
     }
   }
 
   ::ng-deep .tab-pane {
-    width: 500px;
+    width: 35.714rem;
   }
 }
 
@@ -303,7 +306,7 @@
 
   .container .info {
     margin: auto;
-    width: 405px;
+    width: 28.929rem;
 
     .wrap {
       width: 385px;
@@ -313,18 +316,18 @@
     .employees-list {
 
       .item {
-        width: 115px;
+        width: 8.214rem;
       }
 
       li .photo {
         width: 100%;
-        height: 157px;
+        height: 11.214rem;
       }
     }
   }
 
   ::ng-deep .tab-pane {
-    width: 405px;
+    width: 28.929rem;
   }
 
   .container .preview {
@@ -334,7 +337,7 @@
   .preview .slider {
     margin: 0 auto;
     width: 80% !important;
-    height: 200px;
+    height: 14.286rem;
   }
 
   .container .preview .performance-poster {
@@ -343,12 +346,12 @@
 
   .container .preview .performance-widget {
     margin: 10px;
-    min-width: 240px;
+    min-width: 17.143rem;
     text-align: center;
   }
 
   ::ng-deep .slider img {
-    max-height: 200px;
+    max-height: 14.286rem;
     max-width: 100%;
   }
 }
@@ -364,28 +367,28 @@
 
   .container .info {
     margin: auto;
-    width: 275px;
+    width: 19.643rem;
 
     .wrap {
-      width: 255px;
+      width: 18.214rem;
       margin: 0 auto;
     }
 
     .employees-list {
 
       .item {
-        width: 115px;
+        width: 8.214rem;
       }
 
       li .photo {
         width: 100%;
-        height: 157px;
+        height: 11.214rem;
       }
     }
   }
 
   ::ng-deep .tab-pane {
-    width: 275px;
+    width: 19.643rem;
   }
 
   .container .preview {
@@ -399,7 +402,7 @@
 
   .container .preview .performance-widget {
     margin: 10px;
-    min-width: 240px;
+    min-width: 17.143rem;
     text-align: center;
   }
 
@@ -407,11 +410,11 @@
     margin: 0 auto;
     width: 90% !important;
     text-align: center;
-    height: 200px;
+    height: 14.286rem;
   }
 
   ::ng-deep .slider img {
-    max-height: 200px;
+    max-height: 14.286rem;
     max-width: 100%;
   }
 }
@@ -427,28 +430,28 @@
 
   .container .info {
     margin: auto;
-    width: 275px;
+    width: 19.643rem;
 
     .wrap {
-      width: 255px;
+      width: 18.214rem;
       margin: 0 auto;
     }
 
     .employees-list {
 
       .item {
-        width: 115px;
+        width: 8.214rem;
       }
 
       li .photo {
         width: 100%;
-        height: 157px;
+        height: 11.214rem;
       }
     }
   }
 
   ::ng-deep .tab-pane {
-    width: 275px;
+    width: 19.643rem;
   }
 
   .container .preview {
@@ -462,18 +465,18 @@
 
   .container .preview .performance-widget {
     margin: 10px;
-    min-width: 240px;
+    min-width: 17.143rem;
     text-align: center;
   }
 
   .preview .slider {
     margin: 0 auto;
-    height: 150px !important;
+    height: 10.714rem !important;
     width: 90% !important;
   }
 
   ::ng-deep .slider img {
-    max-height: 150px;
+    max-height: 10.714rem;
     max-width: 100%;
   }
 }
