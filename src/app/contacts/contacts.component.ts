@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GatewayService } from '../core/services/gateway.service';
 
 @Component({
   selector: 'app-contacts',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gateway: GatewayService) { }
 
   ngOnInit() {
+    this.gateway.createLinkForCanonicalURL();
   }
 
 }

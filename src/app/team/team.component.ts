@@ -21,6 +21,7 @@ export class TeamComponent implements OnInit {
 
   ngOnInit() {
     this.getEmployees(this.limit, this.page);
+    this.httpGatewayService.createLinkForCanonicalURL();
   }
 
   getEmployees(limit, page) {

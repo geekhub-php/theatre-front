@@ -18,6 +18,7 @@ import { NewsItem } from '../model/news/NewsItem';
 import { PerformanceEventResponse } from '../model/widget/PerformanceEventResponse';
 import { WidgetResType } from '../model/widget/WidgetResType';
 import { Season } from '../model/season/Season';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,8 @@ export class GatewayService {
   readonly employeesListUrl = 'employees';
 
   constructor(private http: HttpClient,
-              @Inject(LOCALE_ID) private localeId: string) {
+              @Inject(LOCALE_ID) private localeId: string,
+              @Inject(DOCUMENT) private doc) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
   }
@@ -162,6 +164,11 @@ export class GatewayService {
       .pipe(
         catchError(this.handleError('get NewsItem', new NewsItem()))
       );
+  }
+
+  createLinkForCanonicalURL() {
+    const link: HTMLLinkElement = this.doc.getElementById('canonical');
+    link.setAttribute('href', this.doc.URL);
   }
 
   /* tslint:disable:no-console */

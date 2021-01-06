@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NewsItem } from '../core/model/news/NewsItem';
+import { GatewayService } from '../core/services/gateway.service';
 
 @Component({
   selector: 'app-news-item',
@@ -8,7 +9,10 @@ import { NewsItem } from '../core/model/news/NewsItem';
 })
 export class NewsItemComponent implements OnInit {
   @Input() item: NewsItem;
-  constructor() { }
-  ngOnInit(): void {
+
+  constructor(private gateway: GatewayService) { }
+
+  ngOnInit() {
+    this.gateway.createLinkForCanonicalURL();
   }
 }

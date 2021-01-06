@@ -32,5 +32,6 @@ export class ArticleComponent implements OnInit {
       },
       err => this.loaderService.stop('article')
     );
+    this.gateAway.createLinkForCanonicalURL();
   }
 }
