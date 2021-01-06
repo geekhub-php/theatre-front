@@ -19,7 +19,7 @@ export class VisuallyImpairedComponent implements OnInit {
 
   reduceFont() {
     const htmlDomEl = this.document.querySelector('html');
-    htmlDomEl.setAttribute('style', 'font-size: 16px');
+    htmlDomEl.setAttribute('style', 'font-size: 14px');
   }
 
   zoomFont() {
