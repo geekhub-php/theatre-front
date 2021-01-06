@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 .container {
   padding: 0;
@@ -20,24 +20,24 @@
     list-style: none;
 
     .perfomance-item {
-      height: 230px;
-      width: 163px;
-      margin-bottom: 87px;
+      height: 16.429rem;
+      width: 11.643rem;
+      margin-bottom: 6.214rem;
       cursor: pointer;
 
       .image-wraper {
-        height: 230px;
+        height: 16.429rem;
 
         .image {
           width: 100%;
-          max-height: 230px;
+          max-height: 16.429rem;
         }
       }
 
       .perfomance-title {
         font-family: $main-font_light;
-        height: 67px;
-        font-size: 16px;
+        height: 4.786rem;
+        font-size: 1.143rem;
         background-color: #2a2a2a;
         font-weight: 100;
         color: #fff;
