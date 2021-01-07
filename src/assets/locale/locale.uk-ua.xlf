@@ -82,6 +82,10 @@
         <source>All Seasons</source>
         <target>Усі Сезони</target>
       </trans-unit>
+      <trans-unit id="archiveSeason" datatype="html">
+        <source>Archive</source>
+        <target>Архів</target>
+      </trans-unit>
       <trans-unit id="partners" datatype="html">
         <source>Partners</source>
         <target>Партнери</target>
