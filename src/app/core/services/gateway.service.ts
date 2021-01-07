@@ -73,10 +73,17 @@ export class GatewayService {
       );
   }
 
-  getRoles(slug, locale: string = this.localeId): Observable<Array<Role>> {
+  getPerformanceRoles(slug, locale: string = this.localeId): Observable<Array<Role>> {
     return this.http.get<Array<Role>>(`${this.baseUrl}/performances/${slug}/roles`, {params: {locale}})
       .pipe(
-        catchError(this.handleError('get list of Performances', []))
+        catchError(this.handleError('get list of Roles by Performance', []))
+      );
+  }
+
+  getActorRoles(slug, locale: string = this.localeId): Observable<Array<Role>> {
+    return this.http.get<Array<Role>>(`${this.baseUrl}/employees/${slug}/roles`, {params: {locale}})
+      .pipe(
+        catchError(this.handleError('get list of Roles by Actor', []))
       );
   }
 
