@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { LoaderService } from '../shared/spinner/loader.service';
+
 import { GatewayService } from '../core/services/gateway.service';
 import { Performance } from '../core/model/performance/Performance';
-import { ActivatedRoute } from '@angular/router';
 import { Role } from '../core/model/Role';
-import { LoaderService } from '../shared/spinner/loader.service';
+
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-performance',
@@ -26,24 +30,19 @@ export class PerformanceComponent implements OnInit {
   ngOnInit() {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.loaderService.start('performance-page');
-    this.getPerformanceBySlug(slug);
-    this.getRoles();
-    this.gateway.updateCanonicalURL();
-  }
 
-  getPerformanceBySlug(slug: string) {
-    this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
-      this.performance = res.body;
+    forkJoin([
+      this.gateway.getPerformanceBySlug(slug),
+      this.gateway.getPerformanceRoles(slug)
+    ]).subscribe(([performance, roles]) => {
+      this.performance = performance.body;
+      this.roles = roles;
+
+      this.activeId = this.roles.length ? 'actors' : 'performance';
+
       this.loaderService.stop('performance-page');
     }, err => this.loaderService.stop('performance-page'));
-    this.loaderService.start('performance-page');
-  }
 
-  getRoles() {
-    const slug = this.router.snapshot.paramMap.get('slug');
-    this.gateway.getPerformanceRoles(slug).subscribe((res) => {
-      this.roles = res;
-    });
+    this.gateway.updateCanonicalURL();
   }
-
 }
