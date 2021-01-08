@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 .container {
   display: flex;
@@ -15,22 +15,22 @@
 
   h3 {
     font-family: $main-font_light;
-    font-size: 19px;
+    font-size: 1.357rem;
     margin: 20px 0;
   }
 
   .persons-list {
-    width: 800px;
+    width: 57.143rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
     .person {
-      width: 146px;
-      height: 256px;
+      width: 10.429rem;
+      height: 18.286rem;
       border: 1px solid $light-gray;
       background-color: $light-grayish-red;
-      font-size: 12px;
+      font-size: 0.857rem;
       color: $primary-color;
       text-decoration: none;
       font-family: $main-font;
@@ -43,11 +43,11 @@
 
       img {
         width: 100%;
-        height: 200px;
+        height: 14.286rem;
       }
 
       h4 {
-        font-size: 18px;
+        font-size: 1.286rem;
         font-weight: 400;
         padding: 5px;
       }
@@ -64,7 +64,7 @@
 @media screen and (max-width: 768px) {
 
   .container {
-    width: 450px !important;
+    width: 32.143rem !important;
 
     h2 {
       margin: 10px 0;
@@ -79,12 +79,12 @@
     }
 
     .persons-list {
-      width: 380px !important;
+      width: 27.143rem !important;
 
       .person {
         width: 115px !important;
         height: 205px !important;
-        font-size: 10px;
+        font-size: 0.714rem;
 
         h4 {
           font-size: 15.5px !important;
