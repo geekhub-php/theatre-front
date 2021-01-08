@@ -32,6 +32,7 @@ import { WidgetModule } from './widget/widget.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
 import { SeasonsComponent } from './seasons/seasons.component';
+import { PersonRolesComponent } from './person-roles/person-roles.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { SeasonsComponent } from './seasons/seasons.component';
     ContactsComponent,
     ArticleComponent,
     PersonComponent,
+    PersonRolesComponent,
     NewsComponent,
     HomePageComponent,
     PartnersComponent,

@@ -8,6 +8,7 @@
         <p><ng-container i18n="@@position">Position:</ng-container> {{ person.position }}</p>
         <p i18n="@@biography">Biography:</p>
         <div class="biography" [innerHtml]="person.biography"></div>
+        <app-person-roles actorSlug="{{ person.slug }}"></app-person-roles>
       </div>
     </section>
     <ngx-gallery *ngIf="person.gallery"
