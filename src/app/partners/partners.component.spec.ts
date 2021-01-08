@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { PartnersComponent } from './partners.component';
 
@@ -11,7 +12,9 @@ describe('PartnersComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PartnersComponent ],
-      imports: [ HttpClientTestingModule ]
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])]
     })
     .compileComponents();
   }));

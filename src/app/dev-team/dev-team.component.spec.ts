@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { DevTeamComponent } from './dev-team.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DevTeamComponent', () => {
   let component: DevTeamComponent;
@@ -11,7 +12,9 @@ describe('DevTeamComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DevTeamComponent ],
-      imports: [ HttpClientTestingModule ]
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])]
     })
     .compileComponents();
   }));

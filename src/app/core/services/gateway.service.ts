@@ -19,22 +19,27 @@ import { PerformanceEventResponse } from '../model/widget/PerformanceEventRespon
 import { WidgetResType } from '../model/widget/WidgetResType';
 import { Season } from '../model/season/Season';
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
   readonly baseUrl = environment.baseUrl;
+  readonly canonicalUrl = environment.canonicalUrl;
   readonly performanceListUrl = 'performances';
   readonly seasonListUrl = 'seasons';
   readonly newsListUrl = 'posts';
   readonly historiesListUrl = 'histories';
   readonly performanceEventsListUrl = 'performanceevents';
   readonly employeesListUrl = 'employees';
+  href = '';
+  link: HTMLLinkElement;
 
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string,
-              @Inject(DOCUMENT) private doc) {
+              @Inject(DOCUMENT) private doc,
+              private router: Router) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
   }
@@ -167,10 +172,10 @@ export class GatewayService {
   }
 
   createLinkForCanonicalURL() {
-    document.addEventListener('DOMContentLoaded', () => {
-      const link: HTMLLinkElement = this.doc.getElementById('canonical');
-      link.setAttribute('href', this.doc.URL);
-    });
+    if (this.doc.getElementById('canonical')) {
+      this.href = this.router.url;
+      this.link = this.doc.getElementById('canonical').setAttribute('href', `${this.canonicalUrl}${this.href}`);
+    }
   }
 
   /* tslint:disable:no-console */

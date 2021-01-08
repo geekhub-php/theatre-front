@@ -8,10 +8,9 @@ import { GatewayService } from '../core/services/gateway.service';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor(private gateway: GatewayService) { }
+  constructor(private gateway: GatewayService) {}
 
   ngOnInit() {
     this.gateway.createLinkForCanonicalURL();
   }
-
 }

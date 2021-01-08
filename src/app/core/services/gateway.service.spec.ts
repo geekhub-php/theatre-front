@@ -3,6 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { HttpClient } from '@angular/common/http';
 
 import { GatewayService } from './gateway.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 describe('PerformanceRepositoryService', () => {
@@ -12,7 +13,9 @@ describe('PerformanceRepositoryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [GatewayService],
-      imports: [ HttpClientTestingModule ]
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])]
     });
     httpClient = TestBed.get(HttpClient);
     httpTestingController = TestBed.get(HttpTestingController);
