@@ -95,7 +95,6 @@
       true,
       "allow-fast-null-checks"
     ],
-    "no-use-before-declare": true,
     "no-var-keyword": true,
     "no-duplicate-imports": true,
     "no-invalid-template-strings": true,
