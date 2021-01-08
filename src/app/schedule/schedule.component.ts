@@ -30,7 +30,7 @@ export class ScheduleComponent implements OnInit {
   ngOnInit() {
     this.date = new Date();
     this.getPerformanceEvents();
-    this.gateway.createLinkForCanonicalURL();
+    this.gateway.updateCanonicalURL();
   }
 
   transformDate(date) {

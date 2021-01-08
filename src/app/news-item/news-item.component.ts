@@ -13,6 +13,6 @@ export class NewsItemComponent implements OnInit {
   constructor(private gateway: GatewayService) { }
 
   ngOnInit() {
-    this.gateway.createLinkForCanonicalURL();
+    this.gateway.updateCanonicalURL();
   }
 }

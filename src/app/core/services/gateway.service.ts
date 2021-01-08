@@ -169,7 +169,7 @@ export class GatewayService {
       );
   }
 
-  createLinkForCanonicalURL() {
+  updateCanonicalURL() {
     if (this.doc.getElementById('canonical')) {
       this.doc.getElementById('canonical').setAttribute('href', `${this.canonicalUrl}${this.localeId}${this.router.url}`);
     }
