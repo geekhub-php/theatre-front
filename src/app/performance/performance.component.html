@@ -22,9 +22,10 @@
   </section>
 
   <section class="info">
-    <ngb-tabset>
-      <ngb-tab title="Actors" i18n-title="@@actors" *ngIf="roles?.length">
-        <ng-template ngbTabContent>
+    <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">
+      <li [ngbNavItem]="'actors'" *ngIf="roles?.length">
+        <a ngbNavLink i18n="@@actors">Actors</a>
+        <ng-template ngbNavContent>
           <div class="wrap">
             <ul class="employees-list">
               <li *ngFor="let role of roles">
@@ -41,13 +42,14 @@
             </ul>
           </div>
         </ng-template>
-      </ngb-tab>
-      <ngb-tab *ngIf="performance">
-        <ng-template ngbTabTitle i18n="@@performanceDetails">Description</ng-template>
-        <ng-template ngbTabContent>
+      </li>
+      <li [ngbNavItem]="'performance'" *ngIf="performance">
+        <a ngbNavLink i18n="@@performanceDetails">Description</a>
+        <ng-template ngbNavContent>
           <div [innerHtml]="performance.description"></div>
         </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
   </section>
 </div>
