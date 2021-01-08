@@ -1,4 +1,4 @@
-@import "../../../assets/variables";
+@import "~assets/variables";
 
 .slider-img {
   position: relative;
@@ -34,7 +34,7 @@
     .tickets {
       width: 100%;
       bottom: 18px;
-      height: 93px;
+      height: 6.643rem;
       position: absolute;
       z-index: 99;
       cursor: default;
@@ -58,42 +58,43 @@
         cursor: pointer;
         border: none;
         outline: none;
-        width: 92px;
-        height: 93px;
+        width: 6.571rem;
+        height: 6.643rem;
         background-color: transparent;
         text-align: center;
         margin: 0 -1px;
-        background-image: url("../../../assets/images/ticket.png");
+        background-image: url("~assets/images/ticket.png");
         background-repeat: no-repeat;
+        background-size: cover;
         color: #fff;
         font-family: "robotothin", serif;
-        font-size: 24px;
+        font-size: 1.714rem;
         padding: 0 11px;
         line-height: 1.2;
 
         .ticket-day {
           padding: 3px;
-          font-size: 16px;
+          font-size: 1.143rem;
           color: #7d7c7c;
           text-transform: capitalize;
         }
 
         .ticket-number {
-          margin-top: -8px;
-          font-family: "robotolight";
-          font-size: 44px;
+          margin-top: -0.571rem;
+          font-family: "robotolight", serif;
+          font-size: 3.143rem;
           border-bottom: 1px solid #7d7c7c;
         }
 
         .ticket-month {
-          margin-top: 2px;
-          font-size: 14px;
+          margin-top: 0.143rem;
+          font-size: 1rem;
           color: #7d7c7c;
         }
       }
 
       .ticket-active {
-        background-image: url("../../../assets/images/orange-ticket.png");
+        background-image: url("~assets/images/orange-ticket.png");
 
         .ticket-day {
           color: #fff !important;
@@ -126,17 +127,18 @@
         display: none;
         justify-content: space-between;
         align-items: flex-end;
-        width: 463px;
-        height: 93px;
+        width: 33.071rem;
+        height: 6.643rem;
         background-color: transparent;
         padding: 11px;
-        background-image: url("../../../assets/images/tick.png");
+        background-image: url("~assets/images/tick.png");
         background-repeat: no-repeat;
+        background-size: cover;
 
         .ticket_link {
           position: absolute;
-          width: 463px;
-          height: 93px;
+          width: 33.071rem;
+          height: 6.643rem;
           top: 0;
           right: 0;
           text-decoration: none;
@@ -146,7 +148,7 @@
           color: #fff;
           font-family: "robotothin", serif;
           text-align: left;
-          font-size: 23px;
+          font-size: 1.643rem;
           margin-bottom: 15px;
           text-transform: capitalize;
           margin-left: 15px;
@@ -156,7 +158,7 @@
           color: #fff;
           font-family: "robotothin", serif;
           text-align: left;
-          font-size: 20px;
+          font-size: 1.429rem;
           margin-bottom: 15px;
           margin-top: 2px;
           text-transform: capitalize;
@@ -166,7 +168,7 @@
         .ticket_link .ticket_p {
           color: #fff;
           font-family: "robotoregular", serif;
-          font-size: 13px;
+          font-size: 0.929rem;
           margin: 0 0 0 15px;
         }
       }
@@ -243,7 +245,7 @@
         .arrow-prev {
           width: 9px;
           height: 19px;
-          background-image: url("../../../assets/images/arrow-left.png");
+          background-image: url("~assets/images/arrow-left.png");
           background-repeat: no-repeat;
           background-size: auto;
           margin: 0 0 0 6px;
@@ -252,7 +254,7 @@
         .arrow-next {
           width: 9px;
           height: 19px;
-          background-image: url("../../../assets/images/arrow-right.png");
+          background-image: url("~assets/images/arrow-right.png");
           background-repeat: no-repeat;
           background-size: auto;
           margin: 0 0 0 8px;
@@ -350,7 +352,7 @@
           .arrow-prev {
             width: 9px;
             height: 19px;
-            background-image: url("../../../assets/images/arrow-left.png");
+            background-image: url("~assets/images/arrow-left.png");
             background-repeat: no-repeat;
             background-size: auto;
             margin-left: 12px;
@@ -359,7 +361,7 @@
           .arrow-next {
             width: 9px;
             height: 19px;
-            background-image: url("../../../assets/images/arrow-right.png");
+            background-image: url("~assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
             margin-left: 14px;
@@ -464,7 +466,7 @@
           .arrow-prev {
             width: 9px;
             height: 19px;
-            background-image: url("../../../assets/images/arrow-left.png");
+            background-image: url("~assets/images/arrow-left.png");
             background-repeat: no-repeat;
             background-size: auto;
             margin-left: 12px;
@@ -473,7 +475,7 @@
           .arrow-next {
             width: 9px;
             height: 19px;
-            background-image: url("../../../assets/images/arrow-right.png");
+            background-image: url("~assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
             margin-left: 14px;
@@ -580,7 +582,7 @@
           .arrow-prev {
             width: 9px;
             height: 19px;
-            background-image: url("../../../assets/images/arrow-left.png");
+            background-image: url("~assets/images/arrow-left.png");
             background-repeat: no-repeat;
             background-size: auto;
             margin-left: 12px;
@@ -589,7 +591,7 @@
           .arrow-next {
             width: 9px;
             height: 19px;
-            background-image: url("../../../assets/images/arrow-right.png");
+            background-image: url("~assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
             margin-left: 14px;
@@ -694,7 +696,7 @@
           .arrow-prev {
             width: 9px;
             height: 19px;
-            background-image: url("../../../assets/images/arrow-left.png");
+            background-image: url("~assets/images/arrow-left.png");
             background-repeat: no-repeat;
             background-size: auto;
             margin-left: 12px;
@@ -703,7 +705,7 @@
           .arrow-next {
             width: 9px;
             height: 19px;
-            background-image: url("../../../assets/images/arrow-right.png");
+            background-image: url("~assets/images/arrow-right.png");
             background-repeat: no-repeat;
             background-size: auto;
             margin-left: 14px;
