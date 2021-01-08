@@ -1,7 +1,7 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 .card {
-  max-width: 605px;
+  max-width: 43.214rem;
   font-family: $main-font;
   color: $primary-color;
   font-weight: 600;
@@ -12,12 +12,12 @@
     color: $primary-color;
 
     h2 {
-      font-size: 18px;
+      font-size: 1.286rem;
       font-weight: 500;
     }
 
     p {
-      font-size: 14px;
+      font-size: 1rem;
       font-weight: 300;
       color: $dark-grayish-red;
     }
@@ -25,7 +25,7 @@
     .list-group-item {
       border-width: 1px 0 0;
       text-align: right;
-      font-size: 12px;
+      font-size: 0.857rem;
     }
   }
 }

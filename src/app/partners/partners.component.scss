@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 h2 {
   text-align: center;
@@ -18,7 +18,7 @@ h2 {
   }
 
   p {
-    font-size: 20px;
+    font-size: 1.429rem;
     font-family: $main-font;
     color: $primary-color;
     margin-top: 20px;
