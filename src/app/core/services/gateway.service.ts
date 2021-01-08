@@ -33,8 +33,6 @@ export class GatewayService {
   readonly historiesListUrl = 'histories';
   readonly performanceEventsListUrl = 'performanceevents';
   readonly employeesListUrl = 'employees';
-  href = '';
-  link: HTMLLinkElement;
 
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string,
@@ -173,8 +171,7 @@ export class GatewayService {
 
   createLinkForCanonicalURL() {
     if (this.doc.getElementById('canonical')) {
-      this.href = this.router.url;
-      this.link = this.doc.getElementById('canonical').setAttribute('href', `${this.canonicalUrl}${this.href}`);
+      this.doc.getElementById('canonical').setAttribute('href', `${this.canonicalUrl}${this.localeId}${this.router.url}`);
     }
   }
 
