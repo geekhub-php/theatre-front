@@ -32,6 +32,7 @@ export class PerformanceListComponent implements OnInit {
       this.seasonNumber = params['season'] || this.CURRENT_SEASON;
       this.getPerformances(this.seasonNumber);
     });
+    this.gateway.updateCanonicalURL();
   }
 
   getPerformances(seasonNumber: number) {

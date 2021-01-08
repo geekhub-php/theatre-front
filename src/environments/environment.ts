@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://apistaging.theatre.pp.ua/api'
+  baseUrl: 'http://apistaging.theatre.pp.ua/api',
+  canonicalUrl: 'http://theatre-shevchenko.ck.ua/'
 };

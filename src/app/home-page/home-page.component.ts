@@ -22,5 +22,6 @@ export class HomePageComponent implements OnInit {
     },
       err => this.loaderService.stop('home')
     );
+    this.gatewayService.updateCanonicalURL();
   }
 }
