@@ -25,7 +25,7 @@ import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgxGalleryModule } from 'ngx-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { WidgetModule } from './widget/widget.module';
