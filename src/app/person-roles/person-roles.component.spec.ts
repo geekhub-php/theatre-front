@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PersonRolesComponent } from './person-roles.component';
 import { SpinnerComponent } from '../shared/spinner/spinner.component';
@@ -10,7 +10,7 @@ describe('PersonRolesComponent', () => {
   let component: PersonRolesComponent;
   let fixture: ComponentFixture<PersonRolesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PersonRolesComponent ],
       imports: [HttpClientModule, RouterTestingModule, SpinnerModule]
