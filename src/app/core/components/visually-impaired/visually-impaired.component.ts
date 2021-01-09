@@ -26,4 +26,8 @@ export class VisuallyImpairedComponent implements OnInit {
   resetSettings() {
     this.visuallyImpairedService.resetSettings();
   }
+
+  inverseColor() {
+    this.visuallyImpairedService.inverseColors();
+  }
 }

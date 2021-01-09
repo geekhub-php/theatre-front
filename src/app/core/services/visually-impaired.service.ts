@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 interface IVisuallyImpaired {
   fontSize: '14px' | '24px';
-  colorSchema: 'string' | null;
+  colorSchema: 'inverse' | 'none';
 }
 
 const DEFAULT_FONT_SIZE = '14px';
@@ -16,7 +16,7 @@ export class VisuallyImpairedService {
   triggerVisuallyImpaired: BehaviorSubject<Boolean> = new BehaviorSubject(false);
 
   localStorageVI: IVisuallyImpaired = {
-    colorSchema: null,
+    colorSchema: 'none',
     fontSize: DEFAULT_FONT_SIZE,
   };
 
@@ -30,27 +30,45 @@ export class VisuallyImpairedService {
   checkLocalStorage() {
     const visuallyImpaired: IVisuallyImpaired = JSON.parse(localStorage.getItem('visually-impaired'));
 
+    this.localStorageVI.colorSchema = visuallyImpaired && visuallyImpaired.colorSchema ? visuallyImpaired.colorSchema : 'none';
+    this.localStorageVI.fontSize = visuallyImpaired && visuallyImpaired.fontSize ? visuallyImpaired.fontSize : DEFAULT_FONT_SIZE;
+
     visuallyImpaired && visuallyImpaired.fontSize
-      ? this.htmlDomEl.setAttribute('style', `font-size: ${visuallyImpaired.fontSize}`)
-      : this.htmlDomEl.setAttribute('style', `font-size: ${this.localStorageVI.fontSize}`);
+      ? this.setStylesOnElement({ fontSize: `${visuallyImpaired.fontSize}`} , this.htmlDomEl)
+      : this.setStylesOnElement({ fontSize: `${this.localStorageVI.fontSize}`} , this.htmlDomEl);
+
+    if (visuallyImpaired && visuallyImpaired.colorSchema === 'inverse') {
+      this.setStylesOnElement({ filter: 'invert(100%)'} , this.htmlDomEl);
+    }
   }
 
   setZoomFont() {
     this.localStorageVI.fontSize = '24px';
 
-    this.htmlDomEl.setAttribute('style', `font-size: ${this.localStorageVI.fontSize}`);
+    this.setStylesOnElement({ fontSize: this.localStorageVI.fontSize} , this.htmlDomEl);
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
   }
 
   setReduceFont() {
     this.localStorageVI.fontSize = '14px';
 
-    this.htmlDomEl.setAttribute('style', `font-size: ${this.localStorageVI.fontSize}`);
+    this.setStylesOnElement({ fontSize: this.localStorageVI.fontSize} , this.htmlDomEl);
+    localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
+  }
+
+  inverseColors() {
+    this.localStorageVI.colorSchema = 'inverse';
+
+    this.setStylesOnElement({ filter: 'invert(100%)'} , this.htmlDomEl);
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
   }
 
   resetSettings() {
-    this.htmlDomEl.setAttribute('style', `font-size: ${DEFAULT_FONT_SIZE}`);
+    this.setStylesOnElement({ fontSize: `${DEFAULT_FONT_SIZE}`, filter: 'none'}, this.htmlDomEl);
     localStorage.removeItem('visually-impaired');
+  }
+
+  setStylesOnElement(styles, element) {
+    Object.assign(element.style, styles);
   }
 }
