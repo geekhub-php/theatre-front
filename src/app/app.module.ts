@@ -54,7 +54,7 @@ import { PersonRolesComponent } from './person-roles/person-roles.component';
     SeasonsComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
