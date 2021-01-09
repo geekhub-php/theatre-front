@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { LangService } from '../../services/lang.service';
 import { filter } from 'rxjs/operators';
-import { triggerVisuallyImpaired } from '../visually-impaired/visually-impaired.component';
+import { VisuallyImpairedService } from '../../services/visually-impaired.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +11,7 @@ import { triggerVisuallyImpaired } from '../visually-impaired/visually-impaired.
 })
 export class HeaderComponent {
   collapse = false;
-  trigger = triggerVisuallyImpaired;
+  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -19,7 +19,8 @@ export class HeaderComponent {
 
   constructor(
     private router: Router,
-    private langService: LangService
+    private langService: LangService,
+    private visuallyImpairedService: VisuallyImpairedService
   ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))

@@ -1,8 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { VisuallyImpairedService } from '../../services/visually-impaired.service';
 
-export const triggerVisuallyImpaired: BehaviorSubject<Boolean> = new BehaviorSubject(false);
 
 @Component({
   selector: 'app-visually-impaired',
@@ -10,20 +8,22 @@ export const triggerVisuallyImpaired: BehaviorSubject<Boolean> = new BehaviorSub
   styleUrls: ['./visually-impaired.component.scss']
 })
 export class VisuallyImpairedComponent implements OnInit {
-  trigger = triggerVisuallyImpaired;
+  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(private visuallyImpairedService: VisuallyImpairedService) { }
 
   ngOnInit() {
   }
 
   reduceFont() {
-    const htmlDomEl = this.document.querySelector('html');
-    htmlDomEl.setAttribute('style', 'font-size: 14px');
+    this.visuallyImpairedService.setReduceFont();
   }
 
   zoomFont() {
-    const htmlDomEl = this.document.querySelector('html');
-    htmlDomEl.setAttribute('style', 'font-size: 24px');
+    this.visuallyImpairedService.setZoomFont();
+  }
+
+  resetSettings() {
+    this.visuallyImpairedService.resetSettings();
   }
 }
