@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 interface IVisuallyImpaired {
   fontSize: '14px' | '24px';
-  colorSchema: 'inverse' | 'none';
+  colorSchema: 'inverse' | 'sepia' | 'none';
 }
 
 const DEFAULT_FONT_SIZE = '14px';
@@ -60,6 +60,13 @@ export class VisuallyImpairedService {
     this.localStorageVI.colorSchema = 'inverse';
 
     this.setStylesOnElement({ filter: 'invert(100%)'} , this.htmlDomEl);
+    localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
+  }
+
+  setSepia() {
+    this.localStorageVI.colorSchema = 'sepia';
+
+    this.setStylesOnElement({ filter: 'sepia(100%)'} , this.htmlDomEl);
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
   }
 

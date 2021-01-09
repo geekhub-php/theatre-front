@@ -23,11 +23,15 @@ export class VisuallyImpairedComponent implements OnInit {
     this.visuallyImpairedService.setZoomFont();
   }
 
-  resetSettings() {
-    this.visuallyImpairedService.resetSettings();
-  }
-
   inverseColor() {
     this.visuallyImpairedService.inverseColors();
+  }
+
+  setSepia() {
+    this.visuallyImpairedService.setSepia();
+  }
+
+  resetSettings() {
+    this.visuallyImpairedService.resetSettings();
   }
 }
