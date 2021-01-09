@@ -11,7 +11,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
 // The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
+export const app = () => {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/theatre-front/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
@@ -37,17 +37,18 @@ export function app(): express.Express {
   });
 
   return server;
-}
+};
 
-function run(): void {
-  const port = process.env.PORT || 4000;
+const run = () => {
+  const defaultPort = 4000;
+  const port = process.env.PORT || defaultPort;
 
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.warn(`Node Express server listening on http://localhost:${port}`);
   });
-}
+};
 
 // Webpack will replace 'require' with '__webpack_require__'
 // '__non_webpack_require__' is a proxy to Node 'require'
