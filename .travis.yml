@@ -25,6 +25,7 @@ script:
   - if [ "$BRANCH" = "master" ]; then BASE_HREF="/"; else BASE_HREF="/$BRANCH/"; fi
   - ng build --configuration=$ENV --deploy-url=$DOMAIN/uk/ --base-href="$BASE_HREF"uk/ --aot true --vendor-chunk true --output-path 'dist/uk/' --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --verbose --i18n-missing-translation=error
   - ng build --configuration=$ENV --deploy-url=$DOMAIN/en/ --base-href="$BASE_HREF"en/ --aot true --vendor-chunk true --output-path 'dist/en/'
+  - npm run build:ssr
 
 notifications:
   email:
