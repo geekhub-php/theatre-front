@@ -5,7 +5,7 @@
     <app-widget class="widget"></app-widget>
     <app-news-item *ngFor="let item of listPost" [item]="item">
     </app-news-item>
-    <ngb-pagination class="d-flex justify-content-center"
+    <ngb-pagination class="pagination d-flex justify-content-center"
                     [collectionSize]="collectionSize"
                     [(page)]="page" [boundaryLinks]="false"
                     (pageChange)="goToPage($event)"
