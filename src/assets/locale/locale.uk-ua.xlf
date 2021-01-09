@@ -98,6 +98,10 @@
         <source>All Seasons</source>
         <target>Усі Сезони</target>
       </trans-unit>
+      <trans-unit id="archiveSeason" datatype="html">
+        <source>Archive</source>
+        <target>Архів</target>
+      </trans-unit>
       <trans-unit id="partners" datatype="html">
         <source>Partners</source>
         <target>Партнери</target>
@@ -348,6 +352,22 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/person/person.component.html</context>
           <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="roles" datatype="html">
+        <source>Roles:</source>
+        <target>Ролі:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/person-roles/person-roles.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="atPerformance" datatype="html">
+        <source>at the performance</source>
+        <target>у виставі</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/person-roles/person-roles.component.html</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="news" datatype="html">

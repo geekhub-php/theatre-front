@@ -13,6 +13,7 @@ export class SeasonsComponent implements OnInit {
   seasons: Array<Season>;
   activeSeasonNumber: number;
   ALL_SEASONS = -1;
+  ARCHIVE_SEASON = -2;
 
   constructor(
     private changeDetector: ChangeDetectorRef,

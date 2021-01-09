@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DevList, TeamLeadsList, QAList } from './dev-list';
+import { GatewayService } from '../core/services/gateway.service';
 
 @Component({
   selector: 'app-dev-team',
@@ -12,9 +13,10 @@ export class DevTeamComponent implements OnInit {
   devList = DevList;
   qaList = QAList;
 
-  constructor() { }
+  constructor(private gateway: GatewayService) { }
 
   ngOnInit() {
+    this.gateway.updateCanonicalURL();
   }
 
 }

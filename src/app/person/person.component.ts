@@ -40,6 +40,7 @@ export class PersonComponent implements OnInit {
         imageSize: 'cover'
       }
     ];
+    this.gatewayService.updateCanonicalURL();
   }
 
   getPerson(slug) {
