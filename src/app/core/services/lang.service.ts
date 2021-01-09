@@ -1,4 +1,5 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -7,7 +8,8 @@ import { Inject, Injectable, LOCALE_ID } from '@angular/core';
 export class LangService {
   redirectLang: string;
 
-  constructor(@Inject(LOCALE_ID) private localeId: string) {
+  constructor(@Inject(LOCALE_ID) private localeId: string,
+              private router: Router) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
 
@@ -16,6 +18,6 @@ export class LangService {
   }
 
   getLangRedirectUrl() {
-    return window.location.href.replace(`/${this.localeId}/`, `/${this.redirectLang}/`);
+    return this.router.url.replace(`/${this.localeId}/`, `/${this.redirectLang}/`);
   }
 }

@@ -73,12 +73,11 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import "assets/variables";
 
-body,html {
+body, html {
   height: 100%;
 }
 
 @media (min-width: 1200px) {
-
   .container {
     max-width: 1000px !important;
     overflow: hidden;

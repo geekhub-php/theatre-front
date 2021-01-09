@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { NewsItem } from '../core/model/news/NewsItem';
 import { GatewayService } from '../core/services/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-news',
@@ -17,16 +18,13 @@ export class NewsComponent implements OnInit {
 
   constructor(private gatewayService: GatewayService,
               private loaderService: LoaderService,
-              private appRoutes: Router,
-              private active: ActivatedRoute) {
+              private router: Router,
+              private activeRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.active.queryParams.subscribe(params => this.getNews(params.limit, params.page));
-    this.page = +this.active.snapshot.queryParamMap.get('page') || 1;
-    this.appRoutes.events.subscribe(() =>
-      window.scrollTo(0, 0)
-    );
+    this.activeRoute.queryParams.subscribe(params => this.getNews(params.limit, params.page));
+    this.page = +this.activeRoute.snapshot.queryParamMap.get('page') || 1;
     this.getNews(this.limit, this.page);
     this.gatewayService.updateCanonicalURL();
   }
@@ -34,8 +32,8 @@ export class NewsComponent implements OnInit {
   goToPage(page: number) {
     const params = {page};
     this.page = page;
-    this.appRoutes.navigate([], {
-      relativeTo: this.active,
+    this.router.navigate([], {
+      relativeTo: this.activeRoute,
       queryParams: params
     });
   }
