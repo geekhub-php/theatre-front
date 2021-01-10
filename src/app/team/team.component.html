@@ -2,11 +2,11 @@
   <h2 i18n="@@persons">Persons</h2>
   <img class="persons-photo" src="assets/images/persons.jpg" alt="collectives">
   <div *ngFor="let listEmployee of employeesStatus, index as i">
-    <div *ngIf="employeesStatus[0].length && listEmployee === artCoreEmployees" class="persons-title" i18n="@@artCore">Art-core</div>
-    <div *ngIf="employeesStatus[1].length && listEmployee === artProductionEmployees" class="persons-title" i18n="@@artProduction">Art-production</div>
-    <div *ngIf="employeesStatus[2].length && listEmployee === administrativeEmployees" class="persons-title" i18n="@@administrative">Administrative</div>
-    <div *ngIf="employeesStatus[3].length && listEmployee === creativeEmployees" class="persons-title" i18n="@@creative">Creative</div>
-    <div *ngIf="employeesStatus[4].length && listEmployee === invitedActorEmployees" class="persons-title" i18n="@@invitedActor">Invited actor</div>
+    <h3 *ngIf="employeesStatus[0].length && listEmployee === artCoreEmployees" class="persons-title" i18n="@@artCore">Art-core</h3>
+    <h3 *ngIf="employeesStatus[1].length && listEmployee === artProductionEmployees" class="persons-title" i18n="@@artProduction">Art-production</h3>
+    <h3 *ngIf="employeesStatus[2].length && listEmployee === administrativeEmployees" class="persons-title" i18n="@@administrative">Administrative</h3>
+    <h3 *ngIf="employeesStatus[3].length && listEmployee === creativeEmployees" class="persons-title" i18n="@@creative">Creative</h3>
+    <h3 *ngIf="employeesStatus[4].length && listEmployee === invitedActorEmployees" class="persons-title" i18n="@@invitedActor">Invited actor</h3>
     <section class="persons-list">
       <a class="person" *ngFor="let person of listEmployee" [routerLink]="[person.slug]">
         <img src="{{ person.avatar.employee_big.url }}" alt="photo">

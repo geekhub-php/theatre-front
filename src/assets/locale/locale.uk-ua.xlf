@@ -258,20 +258,12 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="theatreTeam" datatype="html">
-        <source>Theatre team</source>
-        <target>Творчий склад</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/team/team.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="artCore" datatype="html">
         <source>Art-core</source>
         <target>Художньо-керівний склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/team/team.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="artProduction" datatype="html">
@@ -279,7 +271,7 @@
         <target>Художньо-постановчий склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/team/team.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="administrative" datatype="html">
@@ -287,7 +279,7 @@
         <target>Aдміністративно-управлінський склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/team/team.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="creative" datatype="html">
@@ -295,7 +287,7 @@
         <target>Творчий склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/team/team.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="invitedActor" datatype="html">
@@ -303,7 +295,7 @@
         <target>Запрошені артисти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/team/team.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsTitle" datatype="html">
