@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { LangService } from '../../services/lang.service';
 import { filter } from 'rxjs/operators';
-import { VisuallyImpairedService } from '../../services/visually-impaired.service';
+import { VisuallyImpairedService } from '../../services/visually-impaired/visually-impaired.service';
 
 @Component({
   selector: 'app-header',

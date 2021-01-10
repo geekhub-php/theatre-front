@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VisuallyImpairedService } from '../../services/visually-impaired.service';
+import { VisuallyImpairedService } from '../../services/visually-impaired/visually-impaired.service';
 
 
 @Component({
