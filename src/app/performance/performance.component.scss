@@ -133,26 +133,38 @@
     padding: 0;
 
     li {
-      border: 1px solid $light-gray;
       margin: 5px;
-      border-radius: 5px;
-      overflow: hidden;
-      background: #f8f5f5;
 
       .item {
-        text-decoration: none;
+        display: block;
         width: 146px;
-        height: 256px;
-        display: inline-block;
+        height: 100%;
+        background: $light-grayish-red;
+        box-shadow: 0 5px 5px 3px #e8e8e8;
+        border-radius: 5px;
+        text-decoration: none;
         text-align: center;
         cursor: pointer;
+        overflow: hidden;
+        transition: .3s ease;
 
         .name {
+          padding: 0 4px;
+          font-weight: 300;
           color: $primary-color;
+          transition: .3s ease;
+
+          p {
+            margin-bottom: 10px;
+          }
         }
 
-        &:hover .name {
-          color: $hover-color;
+        &:hover {
+          box-shadow: 0 0 10px 5px #bdbdbd;
+
+          .name {
+            color: $hover-color;
+          }
         }
 
         .photo {
