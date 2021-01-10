@@ -1,7 +1,6 @@
 <div class="container">
   <h2 i18n="@@persons">Persons</h2>
   <img class="persons-photo" src="assets/images/persons.jpg" alt="collectives">
-  <h3 i18n="@@theatreTeam">Theatre team</h3>
   <div *ngFor="let listEmployee of employeesStatus, index as i">
     <div *ngIf="employeesStatus[0].length && listEmployee === artCoreEmployees" class="persons-title" i18n="@@artCore">Art-core</div>
     <div *ngIf="employeesStatus[1].length && listEmployee === artProductionEmployees" class="persons-title" i18n="@@artProduction">Art-production</div>
