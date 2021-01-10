@@ -99,3 +99,12 @@ body,html {
 img {
   max-width: 100%;
 }
+
+.popover-poster {
+  max-width: 350px !important;
+  width: 100%;
+
+  .popover-body {
+    padding: 20px 10px;
+  }
+}

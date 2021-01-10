@@ -99,9 +99,17 @@ table {
 }
 
 .calendar-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 142px;
+  z-index: 2;
+}
+
+.calendar-photo {
   width: 100%;
-  height: inherit;
-  margin-top: -10rem;
+  height: 100%;
+  object-fit: cover;
 }
 
 .panel {
@@ -131,42 +139,73 @@ table {
 }
 
 .more {
-  background-color: $dark-grayish-red;
+  position: relative;
   height: inherit;
   margin-top: -2.857rem;
+  z-index: 2;
 }
 
 .events {
-  height: 50%;
+  display: block;
+  height: 100%;
   color: $white-color;
   text-align: center;
-  font-size: 1rem;
-  display: block;
+  font-size: .857rem;
+  transition: .2s ease;
 
-  &:hover {
-    background-color: $hover-color;
+  &_double {
+    height: 50%;
+  }
+
+  &_triple {
+    height: 32%;
+  }
+
+  &_double,
+  &_triple {
+    padding-top: 4px;
+    background-color: $dark-grayish-red;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  &_triple:first-of-type {
+    height: 36%;
   }
 }
 
 .events p {
   text-align: center;
-  font-size: 1rem;
+  font-size: .857rem;
+  line-height: 1.3;
 }
 
-.popover-time {
+.popover-time,
+.popover-date {
   text-align: center;
   font-size: 1.143rem;
   color: $hover-color;
 }
 
+.popover-time {
+  margin-bottom: 0;
+}
+
+.popover-date {
+  margin-bottom: 6px;
+}
+
 .popover-venue {
+  margin-bottom: 10px;
   text-align: center;
   font-size: 1.143rem;
 }
 
 .popover-img {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   max-width: 150px;
 }
 
