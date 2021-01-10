@@ -7,6 +7,12 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "uk-UA": "src/assets/locale/locale.uk-ua.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -40,14 +46,38 @@
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "localize": true
+            },
+            "production-ua": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "localize": ["uk-UA"]
             },
             "staging": {
               "budgets": [
@@ -70,6 +100,29 @@
                   "with": "src/environments/environment.staging.ts"
                 }
               ]
+            },
+            "ua": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "localize": ["uk-UA"]
             }
           }
         },
@@ -81,6 +134,15 @@
           "configurations": {
             "production": {
               "browserTarget": "theatre-front:build:production"
+            },
+            "production-ua": {
+              "browserTarget": "theatre-front:build:production-ua"
+            },
+            "staging": {
+              "browserTarget": "theatre-front:build:staging"
+            },
+            "ua": {
+              "browserTarget": "theatre-front:build:ua"
             }
           }
         },
@@ -137,7 +199,18 @@
                 }
               ],
               "sourceMap": false,
-              "optimization": true
+              "localize": true
+            },
+            "production-ua": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "localize": ["uk-UA"]
             }
           }
         },
@@ -151,6 +224,10 @@
             "production": {
               "browserTarget": "theatre-front:build:production",
               "serverTarget": "theatre-front:server:production"
+            },
+            "production-ua": {
+              "browserTarget": "theatre-front:build:production-ua",
+              "serverTarget": "theatre-front:server:production-ua"
             }
           }
         },

@@ -33,7 +33,15 @@ export const app = () => {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    // this is for i18n
+    const supportedLocales = ['en-US', 'uk-UA']; // supported Locales
+    const defaultLocale = 'en-US';
+    const matches = req.url.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
+
+    // check if the requested url has a correct format '/locale' and matches any of the supportedLocales
+    const locale = (matches && supportedLocales.indexOf(matches[1]) !== -1) ? matches[1] : defaultLocale;
+
+    res.render(`${locale}/${indexHtml}`, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
   });
 
   return server;
