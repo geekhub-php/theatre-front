@@ -38,7 +38,8 @@ export class TeamComponent implements OnInit {
       this.administrativeEmployees = this.getEmployeesStatus('administrative');
       this.creativeEmployees = this.getEmployeesStatus('creative');
       this.invitedActorEmployees = this.getEmployeesStatus('invited');
-      this.employeesStatus = [this.artCoreEmployees, this.artProductionEmployees, this.administrativeEmployees, this.creativeEmployees, this.invitedActorEmployees];
+      this.employeesStatus = [this.artCoreEmployees, this.artProductionEmployees, this.administrativeEmployees,
+        this.creativeEmployees, this.invitedActorEmployees];
       this.loaderService.stop('load-team');
     });
   }

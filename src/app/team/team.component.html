@@ -12,56 +12,8 @@
       <a class="person" *ngFor="let person of listEmployee" [routerLink]="[person.slug]">
         <img src="{{ person.avatar.employee_big.url }}" alt="photo">
         <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
-        {{person.staff}}
       </a>
     </section>
   </div>
-<!--  <div class="persons-title">Art-core</div>-->
-<!--  <section class="persons-list">-->
-<!--    <a class="person" *ngFor="let person of artCoreEmployees" [routerLink]="[person.slug]">-->
-<!--      <img src="{{ person.avatar.employee_big.url }}" alt="photo">-->
-<!--      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>-->
-<!--      {{person.staff}}-->
-<!--    </a>-->
-<!--  </section>-->
-<!--  <div class="persons-title">Art-core</div>-->
-<!--  <section class="persons-list">-->
-<!--    <a class="person" *ngFor="let person of artCoreEmployees" [routerLink]="[person.slug]">-->
-<!--      <img src="{{ person.avatar.employee_big.url }}" alt="photo">-->
-<!--      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>-->
-<!--      {{person.staff}}-->
-<!--    </a>-->
-<!--  </section>-->
-<!--  <div class="persons-title">Art-production</div>-->
-<!--  <section class="persons-list">-->
-<!--    <a class="person" *ngFor="let person of artProductionEmployees" [routerLink]="[person.slug]">-->
-<!--      <img src="{{ person.avatar.employee_big.url }}" alt="photo">-->
-<!--      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>-->
-<!--      {{person.staff}}-->
-<!--    </a>-->
-<!--  </section>-->
-<!--  <div class="persons-title">Administrative</div>-->
-<!--  <section class="persons-list">-->
-<!--    <a class="person" *ngFor="let person of administrativeEmployees" [routerLink]="[person.slug]">-->
-<!--      <img src="{{ person.avatar.employee_big.url }}" alt="photo">-->
-<!--      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>-->
-<!--      {{person.staff}}-->
-<!--    </a>-->
-<!--  </section>-->
-<!--  <div class="persons-title">Creative</div>-->
-<!--  <section class="persons-list">-->
-<!--    <a class="person" *ngFor="let person of creativeEmployees" [routerLink]="[person.slug]">-->
-<!--      <img src="{{ person.avatar.employee_big.url }}" alt="photo">-->
-<!--      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>-->
-<!--      {{person.staff}}-->
-<!--    </a>-->
-<!--  </section>-->
-<!--  <div class="persons-title">Invited actor</div>-->
-<!--  <section class="persons-list">-->
-<!--    <a class="person" *ngFor="let person of invitedActorEmployees" [routerLink]="[person.slug]">-->
-<!--      <img src="{{ person.avatar.employee_big.url }}" alt="photo">-->
-<!--      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>-->
-<!--    </a>-->
-<!--  </section>-->
   <app-spinner name="load-team"></app-spinner>
 </div>
