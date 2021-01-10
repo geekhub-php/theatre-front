@@ -152,6 +152,14 @@ table {
   font-size: 12px;
   transition: .2s ease;
 
+  &_double {
+    height: 50%;
+  }
+
+  &_triple {
+    height: 32%;
+  }
+
   &_double,
   &_triple {
     padding-top: 4px;
@@ -162,16 +170,8 @@ table {
     }
   }
 
-  &_double {
-    height: 50%;
-  }
-
-  &_triple {
-    height: 32%;
-
-    &:first-of-type {
-      height: 36%;
-    }
+  &_triple:first-of-type {
+    height: 36%;
   }
 }
 
