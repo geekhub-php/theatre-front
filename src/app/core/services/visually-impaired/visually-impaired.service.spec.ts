@@ -37,7 +37,7 @@ describe('VisuallyImpairedService', () => {
 
     service.checkLocalStorage();
     expect(service['htmlDomEl'].style.fontSize).toEqual('14px');
-    expect(service['htmlDomEl'].style.filter).toEqual('none');
+    expect(service['htmlDomEl'].style.filter).toBeTruthy();
 
     localStorage.removeItem('visually-impaired');
     service.checkLocalStorage();
@@ -50,6 +50,42 @@ describe('VisuallyImpairedService', () => {
     service.setStylesOnElement({ filter: 'none' }, service['htmlDomEl']);
 
     expect(service['htmlDomEl'].style.fontSize).toEqual('24px');
+    expect(service['htmlDomEl'].style.filter).toEqual('none');
+  });
+
+  it('should set sepia filter', () => {
+    service.setSepia();
+
+    expect(service['htmlDomEl'].style.filter).toEqual('sepia(100%)');
+    expect(JSON.parse(localStorage.getItem('visually-impaired'))['colorSchema']).toEqual('sepia');
+  });
+
+  it('should inverse colors filter', () => {
+    service.inverseColors();
+
+    expect(service['htmlDomEl'].style.filter).toEqual('invert(100%)');
+    expect(JSON.parse(localStorage.getItem('visually-impaired'))['colorSchema']).toEqual('invert');
+  });
+
+  it('should reduce font', () => {
+    service.setReduceFont();
+
+    expect(service['htmlDomEl'].style.fontSize).toEqual('14px');
+    expect(JSON.parse(localStorage.getItem('visually-impaired'))['fontSize']).toEqual('14px');
+  });
+
+  it('should set zoom font', () => {
+    service.setZoomFont();
+
+    expect(service['htmlDomEl'].style.fontSize).toEqual('24px');
+    expect(JSON.parse(localStorage.getItem('visually-impaired'))['fontSize']).toEqual('24px');
+  });
+
+  it('should reset settings', () => {
+    service.resetSettings();
+
+    expect(localStorage.getItem('visually-impaired')).toBeFalsy();
+    expect(service['htmlDomEl'].style.fontSize).toEqual('14px');
     expect(service['htmlDomEl'].style.filter).toEqual('none');
   });
 });
