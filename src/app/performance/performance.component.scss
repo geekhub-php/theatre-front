@@ -144,6 +144,7 @@
         border-radius: 5px;
         text-decoration: none;
         text-align: center;
+        color: $primary-color;
         cursor: pointer;
         overflow: hidden;
         transition: .3s ease;
@@ -151,20 +152,15 @@
         .name {
           padding: 0 4px;
           font-weight: 300;
-          color: $primary-color;
-          transition: .3s ease;
+        }
 
-          p {
-            margin-bottom: 10px;
-          }
+        p {
+          margin-bottom: 10px;
         }
 
         &:hover {
           box-shadow: 0 0 10px 5px #bdbdbd;
-
-          .name {
-            color: $hover-color;
-          }
+          color: $hover-color;
         }
 
         .photo {
