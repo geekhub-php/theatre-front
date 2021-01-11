@@ -7,9 +7,14 @@
   <button class="btn btn-prev" (click)="prevMonth()" i18n="@@prev">Previous</button>
   <button class="btn btn-now" (click)="now()" i18n="@@now">Today</button>
   <button class="btn btn-next" (click)="nextMonth()" i18n="@@next">Next</button>
+  <button (click)="changeView()" class="poster-view">
+    <svg width="20" height="20" class="poster-view__icon">
+      <use xlink:href="assets/images/list-grid.svg#list-grid"></use>
+    </svg>
+  </button>
 </div>
 
-<div class="desktop">
+<div class="desktop" *ngIf="changedView">
   <table class="calendar">
     <thead>
     <tr>
@@ -91,3 +96,31 @@
   </ng-container>
 </div>
 
+<div class="list-view" *ngIf="!changedView">
+  <div class="list-view__item" *ngFor="let event of scheduleList">
+    <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
+      <div class="list-view__date-wrapper">
+        <div class="list-view__date" *ngIf="event.month == date.getMonth() + 1">
+          <div class="list-view__day">{{ event.date_time | date: 'dd.MM' }}</div>
+          <div class="list-view__day-type">{{ event.date_time | date: 'EEEE' }}</div>
+        </div>
+        <img [src]=event.performance.mainPicture.performance_big.url
+             [alt]="event.performance.title" class="list-view__img">
+      </div>
+      <div class="list-view__content">
+        <div class="list-view__title">{{ event.performance.title }}</div>
+        <div class="list-view__description" [innerHtml]="event.performance.description"></div>
+      </div>
+      <div class="list-view__info">
+        <div class="list-view__time">{{ event.time }}</div>
+        <div class="list-view__place">{{ event.venue }}</div>
+        <div class="list-view__type">{{ event.performance.type }}</div>
+          <a href="{{ event.buy_ticket_link }}" target="_blank" class="list-view__button" *ngIf="event.buy_ticket_link">
+            <div class="btn-success">
+              <p i18n="@@buyTicket" class="ticket_p">Buy ticket</p>
+            </div>
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
