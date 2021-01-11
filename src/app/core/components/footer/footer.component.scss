@@ -34,18 +34,24 @@
   background-size: 100% 4px;
   background-image: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
 
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
   .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     .social {
-      list-style: none;
-      padding-top: 15px;
       display: flex;
       flex-direction: row;
       align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
 
       .fa-icon {
         width: 20px;
@@ -68,7 +74,6 @@
     justify-content: center;
     align-items: center;
     opacity: .5;
-    margin-bottom: 10px;
 
     .text::after {
       content: " ";
@@ -89,16 +94,11 @@
     margin-left: 10px;
 
     &_ucf {
-      margin-bottom: -15px;
-
-      @media (max-width: 476px) {
-        margin-bottom: -10px;
-      }
 
       .footer__icon {
         @media (max-width: 476px) {
-          width: 66px;
-          height: 50px;
+          width: 50px;
+          height: 40px;
         }
       }
 
@@ -131,6 +131,21 @@
 
     .copy {
       padding-top: 5px;
+    }
+
+    &__row {
+      justify-content: center;
+    }
+
+    &__link {
+      margin-top: 14px;
+    }
+  }
+
+  .copy {
+    @media (max-width: 476px) {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
