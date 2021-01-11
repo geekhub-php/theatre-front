@@ -208,115 +208,6 @@ table {
   max-width: 150px;
 }
 
-.mobile {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  .schedule-time {
-    color: $hover-color;
-    text-align: center;
-  }
-
-  .schedule-place {
-    text-align: center;
-    color: $primary-color;
-  }
-
-  .schedule-event {
-    position: relative;
-    padding: 20px 22px 0 0;
-    flex-basis: 50%;
-    border-right: 3px solid $light-grayish-red;
-
-    &:last-child {
-      padding-bottom: 20px;
-    }
-
-    .schedule-link {
-      text-decoration: none;
-      color: $hover-color;
-    }
-
-    .schedule-body {
-      position: relative;
-      max-width: 400px;
-      border: 1px solid $light-gray;
-      border-radius: 2px;
-      padding: 12px;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
-      margin: 0 18px 0 0;
-    }
-
-    .schedule-body::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      top: 36px;
-      right: -10px;
-      border: 1px solid $light-gray;
-      background-color: $white-color;
-      transform: rotate(45deg);
-      border-top: 1px solid $light-gray;
-      border-left: 1px solid transparent;
-      border-right: 1px solid $light-gray;
-      border-bottom: 1px solid transparent;
-    }
-
-    .schedule-title {
-      color: $primary-color;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    .schedule-main .schedule-small_img {
-      display: block;
-      margin: 0 auto;
-      max-height: 300px;
-    }
-  }
-
-  .schedule-day {
-    position: absolute;
-    content: "";
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: $hover-color;
-    top: 42px;
-    right: -27px;
-  }
-
-  .day {
-    display: block;
-    margin-top: 12px;
-    font-size: 18px;
-    font-weight: 900;
-    color: $white-color;
-    text-align: center;
-  }
-
-  .schedule-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 10px auto 0;
-
-    .btn-success {
-      width: 100%;
-      padding: 10px;
-      border-radius: 4px;
-
-      .ticket_p {
-        margin: 0;
-        text-align: center;
-      }
-    }
-  }
-}
-
 .list-view {
   display: flex;
   flex-direction: column;
@@ -429,8 +320,8 @@ table {
       outline: none;
     }
 
-    &:after {
-      content: '';
+    &::after {
+      content: "";
       position: absolute;
       left: 200px;
       top: 50%;
@@ -441,29 +332,28 @@ table {
       transition: .3s ease;
     }
 
-    &:before {
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       z-index: -1;
-      opacity: 0.7;
+      opacity: .7;
       transition: .3s ease;
-
       background-color: rgb(212 132 132 / 70%);
     }
 
     &:hover {
       color: $white-color;
 
-      &:before {
+      &::before {
         background-color: rgb(74 64 64 / 70%);
         opacity: 1;
       }
 
-      &:after {
+      &::after {
         border-color: $white-color;
       }
 
@@ -475,6 +365,115 @@ table {
 
       .list-view__img {
         opacity: 1;
+      }
+    }
+  }
+}
+
+.mobile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .schedule-time {
+    color: $hover-color;
+    text-align: center;
+  }
+
+  .schedule-place {
+    text-align: center;
+    color: $primary-color;
+  }
+
+  .schedule-event {
+    position: relative;
+    padding: 20px 22px 0 0;
+    flex-basis: 50%;
+    border-right: 3px solid $light-grayish-red;
+
+    &:last-child {
+      padding-bottom: 20px;
+    }
+
+    .schedule-link {
+      text-decoration: none;
+      color: $hover-color;
+    }
+
+    .schedule-body {
+      position: relative;
+      max-width: 400px;
+      border: 1px solid $light-gray;
+      border-radius: 2px;
+      padding: 12px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
+      margin: 0 18px 0 0;
+    }
+
+    .schedule-body::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 36px;
+      right: -10px;
+      border: 1px solid $light-gray;
+      background-color: $white-color;
+      transform: rotate(45deg);
+      border-top: 1px solid $light-gray;
+      border-left: 1px solid transparent;
+      border-right: 1px solid $light-gray;
+      border-bottom: 1px solid transparent;
+    }
+
+    .schedule-title {
+      color: $primary-color;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .schedule-main .schedule-small_img {
+      display: block;
+      margin: 0 auto;
+      max-height: 300px;
+    }
+  }
+
+  .schedule-day {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: $hover-color;
+    top: 42px;
+    right: -27px;
+  }
+
+  .day {
+    display: block;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 900;
+    color: $white-color;
+    text-align: center;
+  }
+
+  .schedule-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px auto 0;
+
+    .btn-success {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+
+      .ticket_p {
+        margin: 0;
+        text-align: center;
       }
     }
   }
@@ -493,6 +492,7 @@ table {
   }
 
   &:hover {
+
     .poster-view__icon {
       fill: $primary-color;
     }
