@@ -41,6 +41,48 @@
     border: none;
     color: $white-color;
 
+    &.--black-white,
+    &.--white-black,
+    &.--yellow-black,
+    &.--black-yellow,
+    &.--blue-yellow,
+    &.--green-white,
+    &.--white-green,
+    &.--sepia,
+    &.--inversion {
+      position: relative;
+
+      & > .hover {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        top: 2.5rem;
+        left: -1rem;
+        min-width: 10.714rem;
+        max-width: 21.429rem;
+        background-color: $primary-color;
+        color: $white-color;
+        border-radius: 5px;
+      }
+
+      &:hover > .hover {
+        display: block;
+
+        &::before {
+          display: block;
+          content: "";
+          position: absolute;
+          top: -0.286rem;
+          left: 1.571rem;
+          width: 0.714rem;
+          height: 0.714rem;
+          z-index: -1;
+          transform: rotate(135deg);
+          background-color: $primary-color;
+        }
+      }
+    }
+
     &.--black-white {
       background-color: $black-color;
       color: $white-color;
@@ -109,6 +151,7 @@
   }
 
   &__button {
+    position: relative;
     appearance: none;
     background: none;
     border: 1px solid $white-color;
@@ -116,12 +159,41 @@
     color: $white-color;
     min-width: 36px;
 
+    & > .hover-font {
+      display: none;
+      position: absolute;
+      z-index: 99;
+      top: 2.5rem;
+      left: -14px;
+      min-width: 10.714rem;
+      max-width: 21.429rem;
+      background-color: $primary-color;
+      color: $white-color;
+      border-radius: 5px;
+    }
+
+    &:hover > .hover-font {
+      display: block;
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: -0.286rem;
+        left: 1.571rem;
+        width: 0.714rem;
+        height: 0.714rem;
+        z-index: -1;
+        transform: rotate(135deg);
+        background-color: $primary-color;
+      }
+    }
+
     &:hover {
       background-color: $white-hover-color;
     }
   }
 }
-
 
 .close-disable {
 
