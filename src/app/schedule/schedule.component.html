@@ -104,8 +104,6 @@
           <div class="list-view__day">{{ event.date_time | date: 'dd.MM' }}</div>
           <div class="list-view__day-type">{{ event.date_time | date: 'EEEE' }}</div>
         </div>
-        <img [src]=event.performance.mainPicture.performance_big.url
-             [alt]="event.performance.title" class="list-view__img">
       </div>
       <div class="list-view__content">
         <div class="list-view__title">{{ event.performance.title }}</div>
@@ -121,6 +119,8 @@
             </div>
           </a>
       </div>
+      <img [src]="event.performance.sliderImage.slider_slider.url"
+           [alt]="event.performance.title" class="list-view__img">
     </div>
   </div>
 </div>
