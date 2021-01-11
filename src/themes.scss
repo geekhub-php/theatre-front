@@ -1,0 +1,47 @@
+@import "~assets/variables";
+
+.theme-black-white {
+  filter: grayscale(100%) !important;
+
+  svg {
+    fill: $black-color !important;
+    stroke: $black-color !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    background: $white-color !important;
+    color: $black-color !important;
+  }
+
+  .header {
+    background: $white-color !important;
+    color: $black-color !important;
+  }
+
+  .nav-link {
+    color: $black-color !important;
+  }
+
+  .active {
+    border-top-color: $black-color !important;
+  }
+
+  .ticket, .ticket-active, .ticket_data {
+    background: $white-color !important;
+    color: $black-color !important;
+  }
+
+  .buy-button {
+    background: $white-color !important;
+    color: $black-color !important;
+    border-color: $black-color !important;
+  }
+
+  .ticket_data a, .ticket_data p, .ticket-day, .ticket-number, .ticket-month {
+    color: $black-color !important;
+  }
+
+  .language {
+    color: $black-color !important;
+  }
+}

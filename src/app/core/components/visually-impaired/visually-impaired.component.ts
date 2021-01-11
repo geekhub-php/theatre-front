@@ -31,6 +31,10 @@ export class VisuallyImpairedComponent implements OnInit {
     this.visuallyImpairedService.setSepia();
   }
 
+  setBlackWhite() {
+    this.visuallyImpairedService.setBlackWhite();
+  }
+
   resetSettings() {
     this.visuallyImpairedService.resetSettings();
   }

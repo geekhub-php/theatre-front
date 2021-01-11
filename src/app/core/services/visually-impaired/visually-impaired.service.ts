@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 interface IVisuallyImpaired {
   fontSize: '14px' | '24px';
-  colorSchema: 'invert' | 'sepia' | 'none';
+  colorSchema: 'invert' | 'sepia' | 'black-white' | 'none';
 }
 
 const DEFAULT_FONT_SIZE = '14px';
@@ -40,6 +40,9 @@ export class VisuallyImpairedService {
       case 'sepia':
         this.setStylesOnElement({ filter: 'sepia(100%)'} , this.htmlDomEl);
         break;
+      case 'black-white':
+        this.htmlDomEl.classList.add('theme-black-white');
+        break;
       default:
         this.setStylesOnElement({ filter: `none`} , this.htmlDomEl);
     }
@@ -73,8 +76,15 @@ export class VisuallyImpairedService {
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
   }
 
+  setBlackWhite() {
+    this.localStorageVI.colorSchema = 'black-white';
+    this.htmlDomEl.classList.add('theme-black-white');
+    localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
+  }
+
   resetSettings() {
     this.setStylesOnElement({ fontSize: `${DEFAULT_FONT_SIZE}`, filter: 'none'}, this.htmlDomEl);
+    this.htmlDomEl.classList.remove('theme-black-white');
     localStorage.removeItem('visually-impaired');
   }
 

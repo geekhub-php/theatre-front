@@ -67,6 +67,13 @@ describe('VisuallyImpairedService', () => {
     expect(JSON.parse(localStorage.getItem('visually-impaired'))['colorSchema']).toEqual('invert');
   });
 
+  it('should set black-white theme', () => {
+    service.setBlackWhite();
+
+    expect(service['htmlDomEl'].className).toEqual('theme-black-white');
+    expect(JSON.parse(localStorage.getItem('visually-impaired'))['colorSchema']).toEqual('black-white');
+  });
+
   it('should reduce font', () => {
     service.setReduceFont();
 
