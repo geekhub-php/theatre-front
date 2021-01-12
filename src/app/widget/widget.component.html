@@ -12,7 +12,7 @@
             <div class="widget-about row">
               <h3 class="widget-heading col-12">{{ item.performance.title | titlecase }}</h3>
               <p class="time col-4">{{ item.time }}</p>
-              <a href="{{ item.buy_ticket_link }}" target="_blank" class="col-8" *ngIf="item.buy_ticket_link">
+              <a href="{{ item.buy_ticket_link }}" target="_blank" *ngIf="item.buy_ticket_link">
                 <div class="btn btn-success float-right">
                   <p i18n="@@buyTicket" class="ticket_p">Buy ticket</p>
                 </div>
@@ -38,7 +38,7 @@
       <div class="widget-about">
         <h3 class="widget-heading link" [routerLink]="[ '/performance', item.performance.slug ]">{{ item.performance.title | titlecase }}</h3>
         <p class="type link" [routerLink]="[ '/performance', item.performance.slug ]">{{ item.performance.type }}</p>
-        <a href="{{ item.buy_ticket_link }}" target="_blank" class="col-8" *ngIf="item.buy_ticket_link">
+        <a href="{{ item.buy_ticket_link }}" target="_blank" *ngIf="item.buy_ticket_link">
           <div class="btn btn-success float-right">
             <p i18n="@@buyTicket" class="ticket_p">Buy ticket</p>
           </div>

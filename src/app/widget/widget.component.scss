@@ -14,8 +14,10 @@
   .widget-item {
     min-height: 72px;
     box-sizing: border-box;
-    border-bottom: 1px dashed $primary-color;
+    border-bottom: 1px dashed #adadad;
     background-color: $bg-widget;
+    border-radius: 3px;
+    overflow: hidden;
 
     &:last-child {
       border-bottom: none;
@@ -27,6 +29,7 @@
       justify-content: flex-start;
       box-sizing: border-box;
       padding: 6px 0;
+      transition: .3s ease;
     }
 
     .widget-date {
@@ -35,7 +38,8 @@
       box-sizing: border-box;
       position: relative;
       text-align: center;
-      font-family: 'cormorant_infantmedium', serif;
+      font-family: "cormorant_infantmedium", serif;
+      transition: .3s ease;
     }
 
     .week {
@@ -45,7 +49,7 @@
     }
 
     .day {
-      font-family: 'cormorant_infantmedium', serif;
+      font-family: "cormorant_infantmedium", serif;
       font-size: 30px;
       color: $white-color;
       line-height: 32px;
@@ -74,12 +78,12 @@
 
     .ticket_p {
       margin: 0;
-      font-family: 'cormorant_infantmedium', serif;
+      font-family: "cormorant_infantmedium", serif;
     }
 
     .time {
       margin: 5px 0 0;
-      font-family: 'cormorant_infantmedium', serif;
+      font-family: "cormorant_infantmedium", serif;
       font-size: 14px;
       color: $white-color;
     }
@@ -124,7 +128,7 @@
 }
 
 .bg-news-code {
-  background: url("../../assets/images/news-code.png") 97% center no-repeat, $bg-widget;
+  background: url("../../assets/images/news-code.png") 97% center no-repeat, $new-secondary-color;
 }
 
 .mrg10px {

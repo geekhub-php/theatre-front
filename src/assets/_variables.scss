@@ -1,13 +1,13 @@
 $navbar-padding-x: 0;
 $navbar-padding-y: 0;
 
-$main-font_light: 'cormorant_garamondlight', serif;
-$main-font: 'cormorant_garamondregular', serif;
-$main-font_bold: 'cormorant_garamondsemibold', serif;
+$main-font_light: "cormorant_garamondlight", serif;
+$main-font: "cormorant_garamondregular", serif;
+$main-font_bold: "cormorant_garamondsemibold", serif;
 $main-font-size: 30px;
 
-$primary-color: #363a3b;
-$hover-color: #df4a2b;
+$primary-color: #3f3f3f;
+$hover-color: #a2414f;
 $danger: $hover-color;
 $light-hover-color: rgba(255, 74, 43, .08);
 $white-color: #fff;
@@ -18,6 +18,8 @@ $light-gray: #c9c9c9;
 $transparent-black: #000000dc;
 
 $bg-widget: #4f4f4f;
-$header-color-up: rgba(236, 83, 42, 1);
-$header-color-down: rgba(196, 36, 46, 1);
 
+$new-primary-color: #a2414f;
+$new-success-color: #ffdf6c;
+$new-secondary-color: #3f3f3f;
+$new-dark-color: #202020;

@@ -4,8 +4,9 @@ $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
 .header {
-  background: linear-gradient(to right, $header-color-up 0, $header-color-down 100%);
+  background: linear-gradient(36deg, $new-success-color, $new-primary-color, $new-secondary-color 100%);
   font-size: 12px;
+  color: #c33d50;
 
   .header-logo {
     margin: 4px 5px;
@@ -25,11 +26,12 @@ $navLinkActiveBorderTop: 3px;
     padding: 30.5px 0;
     text-decoration: none;
     color: #fff;
-    font-size: 14px;
-    font-family: 'cormorant_garamondsemibold', serif;
+    font-size: 12px;
+    font-family: "cormorant_garamondsemibold", serif;
+    transition: .3s ease;
 
     &:hover {
-      color: $primary-color;
+      color: #fff;
     }
   }
 }
@@ -40,6 +42,7 @@ $navLinkActiveBorderTop: 3px;
     color: #fff;
 
     .nav-link {
+      transition: .3s ease;
       white-space: nowrap;
     }
 
@@ -51,6 +54,7 @@ $navLinkActiveBorderTop: 3px;
     .mobile-language {
       padding: $navLinkPaddingTop 11px;
       color: #fff;
+      border-top: $navLinkActiveBorderTop solid transparent;
 
       &:hover {
         background: #fff;
@@ -58,8 +62,7 @@ $navLinkActiveBorderTop: 3px;
       }
 
       &.active {
-        border-top: $navLinkActiveBorderTop solid #fff;
-        padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
+        border-color: #fff;
       }
     }
 

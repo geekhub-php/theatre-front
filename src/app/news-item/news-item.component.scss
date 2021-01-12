@@ -6,6 +6,8 @@
   color: $primary-color;
   font-weight: 600;
   margin-bottom: 40px;
+  border: none;
+  box-shadow: 0 0 10px 10px #f3f3f3;
 
   a {
     text-decoration: none;
@@ -23,8 +25,9 @@
     }
 
     .list-group-item {
-      font-family: 'cormorant_infantmedium', serif;
+      font-family: "cormorant_infantmedium", serif;
       border-width: 1px 0 0;
+      border-color: #e8e8e8;
       text-align: right;
       font-size: 14px;
     }

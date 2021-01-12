@@ -2,22 +2,25 @@
 
 .seasons {
   margin-bottom: 5px;
-  font-family: 'cormorant_infantmedium', serif;
+  font-family: "cormorant_infantmedium", serif;
   font-size: 17px;
 
   span.active {
-    background-color: $header-color-down;
+    background-color: $new-primary-color;
     cursor: default;
   }
 }
 
 .season-badge {
   margin-right: 3px;
-  background-color: $header-color-up;
+  background-color: $new-primary-color;
   cursor: pointer;
+  opacity: .7;
+  transition: .3s ease;
 }
 
 .season-badge:hover {
-  background-color: $header-color-down;
+  opacity: 1;
+  background-color: $new-primary-color;
 }
 

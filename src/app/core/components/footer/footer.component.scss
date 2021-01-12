@@ -32,7 +32,7 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% 4px;
-  background-image: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
+  background-image: linear-gradient(to right, $new-primary-color 0, $new-primary-color 100%);
 
   &__row {
     display: flex;
@@ -75,7 +75,7 @@
     align-items: center;
     opacity: .5;
     font-size: 14px;
-    font-family: 'cormorant_garamondmedium', serif;
+    font-family: "cormorant_garamondmedium", serif;
 
     .text::after {
       content: " ";
@@ -88,7 +88,7 @@
   }
 
   .text-font {
-    font-family: 'cormorant_infantmedium', serif;
+    font-family: "cormorant_infantmedium", serif;
   }
 
   &__icon {
