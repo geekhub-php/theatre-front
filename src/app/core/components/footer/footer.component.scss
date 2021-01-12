@@ -74,6 +74,8 @@
     justify-content: center;
     align-items: center;
     opacity: .5;
+    font-size: 14px;
+    font-family: 'cormorant_garamondmedium', serif;
 
     .text::after {
       content: " ";
@@ -83,6 +85,10 @@
     a {
       color: $hover-color;
     }
+  }
+
+  .text-font {
+    font-family: 'cormorant_infantmedium', serif;
   }
 
   &__icon {

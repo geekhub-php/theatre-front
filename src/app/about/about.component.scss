@@ -55,12 +55,12 @@
 
       .histories__list-heading {
         color: $primary-color;
-        font-size: 18px;
+        font-size: 19px;
       }
 
       .histories__list-main .histories__list-main_text {
         color: $dark-grayish-red;
-        font-size: 14px;
+        font-size: 16px;
       }
 
       .histories__list-main .histories__list-main_img {
@@ -82,7 +82,7 @@
     }
 
     .histories__list-footer .year {
-      font-family: $main-font_bold;
+      font-family: 'cormorant_infantbold', serif;
       display: block;
       margin-top: 12px;
       font-size: 18px;

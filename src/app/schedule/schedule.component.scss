@@ -2,11 +2,11 @@
 
 h2 {
   color: $hover-color;
-  font-family: roboto,sans-serif;
+  font-family: 'cormorant_infantmedium', serif;
 }
 
 h3 {
-  font-family: roboto,sans-serif;
+  font-family: 'cormorant_infantmedium', serif;
 }
 
 a:hover {
@@ -22,6 +22,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-family: 'cormorant_infantmedium', serif;
 }
 
 .btn {
@@ -57,8 +58,8 @@ table {
 .day-of-week {
   background-color: $hover-color;
   color: $white-color;
-  font-family: robotothin,sans-serif;
-  font-size: 14px;
+  font-family: 'cormorant_infantsemibold', serif;
+  font-size: 16px;
   border-right: 1px solid $white-color;
   padding: 11px 0;
   width: 141px;
@@ -70,6 +71,7 @@ table {
   position: relative;
   overflow: hidden;
   height: 142px;
+  font-family: 'cormorant_infantsemibold', serif;
   border: 1px solid $light-gray;
   vertical-align: bottom;
 }
@@ -150,6 +152,7 @@ table {
   color: $white-color;
   text-align: center;
   font-size: 12px;
+  font-family: 'cormorant_garamondregular', serif;
   transition: .2s ease;
 
   &_double {
@@ -184,8 +187,9 @@ table {
 .popover-time,
 .popover-date {
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: $hover-color;
+  font-family: 'cormorant_infantsemibold', serif;
 }
 
 .popover-time {
@@ -199,7 +203,8 @@ table {
 .popover-venue {
   margin-bottom: 10px;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
+  font-family: 'cormorant_garamondsemibold', serif;
 }
 
 .popover-img {
@@ -239,10 +244,12 @@ table {
     margin-bottom: 16px;
     color: $primary-color;
     font-size: 26px;
+    font-family: 'cormorant_infantbold', serif;
   }
 
   &__description {
-    font-size: 14px;
+    font-family: 'cormorant_garamondmedium', serif;
+    font-size: 16px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 5;
@@ -255,11 +262,13 @@ table {
   }
 
   &__day {
+    font-family: 'cormorant_infantbold', serif;
     font-size: 40px;
   }
 
   &__day-type {
     padding-left: 6px;
+    font-family: 'cormorant_infantmedium', serif;
   }
 
   &__date {
@@ -267,16 +276,19 @@ table {
   }
 
   &__time {
+    font-family: 'cormorant_infantbold', serif;
     margin-top: 16px;
     margin-bottom: 6px;
   }
 
   &__place {
     margin-bottom: 6px;
+    font-family: 'cormorant_garamondmedium', serif;
     text-align: center;
   }
 
   &__type {
+    font-family: 'cormorant_garamondmedium', serif;
     text-align: center;
   }
 
@@ -289,6 +301,7 @@ table {
       border-radius: 3px;
 
       p {
+        font-family: 'cormorant_infantmedium', serif;
         margin: 0;
       }
     }
@@ -380,11 +393,13 @@ table {
   justify-content: space-between;
 
   .schedule-time {
+    font-family: 'cormorant_infantsemibold', serif;
     color: $hover-color;
     text-align: center;
   }
 
   .schedule-place {
+    font-family: 'cormorant_garamondsemibold', serif;
     text-align: center;
     color: $primary-color;
   }
@@ -477,6 +492,7 @@ table {
 
       .ticket_p {
         margin: 0;
+        font-family: 'cormorant_infantmedium', serif;
         text-align: center;
       }
     }

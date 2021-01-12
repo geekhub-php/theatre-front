@@ -22,14 +22,20 @@
 
     h2 {
       color: $primary-color;
-      font-size: $main-font-size;
+      font-size: 30px;
       text-align: center;
     }
 
     .post-date {
+      font-family: 'cormorant_infantmedium', serif;
+      font-size: 14px;
       color: $dark-grayish-red;
       text-align: right;
       margin-top: 15px;
+    }
+
+    .post-text {
+      font-size: 18px;
     }
   }
 }

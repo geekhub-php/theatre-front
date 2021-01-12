@@ -8,7 +8,7 @@
 
   .person {
     width: 150px;
-    height: 261px;
+    height: 260px!important;
     margin: 0 4.5px 6px;
 
     img {
@@ -18,6 +18,11 @@
 
     h4 {
       padding: 5px 0 0 !important;
+      font-size: 20px!important;
+    }
+
+    p {
+      font-size: 14px;
     }
   }
 }

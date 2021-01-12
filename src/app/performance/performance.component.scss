@@ -15,6 +15,8 @@
 }
 
 ::ng-deep .info .nav-link {
+  font-family: $main-font;
+  font-size: 18px;
   color: $dark-grayish-red;
   border-color: $light-gray;
   border-top-left-radius: 0;
@@ -41,6 +43,10 @@
   max-width: 450px;
 }
 
+::ng-deep .tab-pane {
+  font-family: $main-font;
+}
+
 .container {
 
   .page-title {
@@ -52,8 +58,9 @@
   }
 
   .page-sub-title {
+    font-family: $main-font;
     color: $hover-color;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     margin: 10px 0 25px;
   }

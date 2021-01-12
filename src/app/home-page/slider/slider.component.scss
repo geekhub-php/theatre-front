@@ -66,7 +66,7 @@
         background-image: url("../../../assets/images/ticket.png");
         background-repeat: no-repeat;
         color: #fff;
-        font-family: "robotothin", serif;
+        font-family: 'cormorant_infantregular', serif;
         font-size: 24px;
         padding: 0 11px;
         line-height: 1.2;
@@ -80,7 +80,7 @@
 
         .ticket-number {
           margin-top: -8px;
-          font-family: "robotolight";
+          font-family: 'cormorant_infantsemibold', serif;
           font-size: 44px;
           border-bottom: 1px solid #7d7c7c;
         }
@@ -144,7 +144,7 @@
 
         .ticket_link, .ticket_h2 {
           color: #fff;
-          font-family: "robotothin", serif;
+          font-family: 'cormorant_infantregular', serif;
           text-align: left;
           font-size: 23px;
           margin-bottom: 15px;
@@ -154,7 +154,7 @@
 
         .ticket_h2_small {
           color: #fff;
-          font-family: "robotothin", serif;
+          font-family: 'cormorant_infantregular', serif;
           text-align: left;
           font-size: 20px;
           margin-bottom: 15px;
@@ -165,8 +165,8 @@
 
         .ticket_link .ticket_p {
           color: #fff;
-          font-family: "robotoregular", serif;
-          font-size: 13px;
+          font-family: 'cormorant_infantregular', serif;
+          font-size: 15px;
           margin: 0 0 0 15px;
         }
       }

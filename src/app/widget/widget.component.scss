@@ -35,7 +35,7 @@
       box-sizing: border-box;
       position: relative;
       text-align: center;
-      font-family: $main-font;
+      font-family: 'cormorant_infantmedium', serif;
     }
 
     .week {
@@ -45,7 +45,7 @@
     }
 
     .day {
-      font-family: $main-font_light;
+      font-family: 'cormorant_infantmedium', serif;
       font-size: 30px;
       color: $white-color;
       line-height: 32px;
@@ -74,12 +74,13 @@
 
     .ticket_p {
       margin: 0;
+      font-family: 'cormorant_infantmedium', serif;
     }
 
     .time {
       margin: 5px 0 0;
-      font-family: $main-font;
-      font-size: 12px;
+      font-family: 'cormorant_infantmedium', serif;
+      font-size: 14px;
       color: $white-color;
     }
   }
@@ -95,7 +96,7 @@
 .widget-item .widget-about .type {
   margin: 0;
   font-family: $main-font_light;
-  font-size: 12px;
+  font-size: 14px;
   color: $white-color;
 }
 
