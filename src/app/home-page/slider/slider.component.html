@@ -34,7 +34,7 @@
             <div class="row">
               <a [routerLink]="['', 'performance', item.performance.slug]"
                  [ngClass]="item.buy_ticket_link ? 'col-md-8' : 'col-md-12'">
-                <p class="ticket_p">{{ item.performance.type }}</p>
+                <p class="c">{{ item.performance.type }}</p>
               </a>
               <a href="{{ item.buy_ticket_link }}" target="_blank" class="col-md-4" *ngIf="item.buy_ticket_link">
                 <div class="btn btn-success buy-button">

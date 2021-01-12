@@ -74,6 +74,13 @@ describe('VisuallyImpairedService', () => {
     expect(JSON.parse(localStorage.getItem('visually-impaired'))['colorSchema']).toEqual('black-white');
   });
 
+  it('should set white-black theme', () => {
+    service.setWhiteBlack();
+
+    expect(service['htmlDomEl'].className).toEqual('theme-white-black');
+    expect(JSON.parse(localStorage.getItem('visually-impaired'))['colorSchema']).toEqual('white-black');
+  });
+
   it('should reduce font', () => {
     service.setReduceFont();
 
@@ -94,5 +101,11 @@ describe('VisuallyImpairedService', () => {
     expect(localStorage.getItem('visually-impaired')).toBeFalsy();
     expect(service['htmlDomEl'].style.fontSize).toEqual('14px');
     expect(service['htmlDomEl'].style.filter).toEqual('none');
+  });
+
+  it('should remove all classes from element', () => {
+    service.removeClassList();
+
+    expect(service['htmlDomEl'].classList.length).toEqual(0);
   });
 });

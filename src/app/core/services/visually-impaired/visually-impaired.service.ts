@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 interface IVisuallyImpaired {
   fontSize: '14px' | '24px';
-  colorSchema: 'invert' | 'sepia' | 'black-white' | 'none';
+  colorSchema: 'invert' | 'sepia' | 'black-white' | 'white-black' | 'none';
 }
 
 const DEFAULT_FONT_SIZE = '14px';
@@ -43,6 +43,9 @@ export class VisuallyImpairedService {
       case 'black-white':
         this.htmlDomEl.classList.add('theme-black-white');
         break;
+      case 'white-black':
+        this.htmlDomEl.classList.add('theme-white-black');
+        break;
       default:
         this.setStylesOnElement({ filter: `none`} , this.htmlDomEl);
     }
@@ -77,15 +80,28 @@ export class VisuallyImpairedService {
   }
 
   setBlackWhite() {
+    this.removeClassList();
     this.localStorageVI.colorSchema = 'black-white';
     this.htmlDomEl.classList.add('theme-black-white');
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
   }
 
+  setWhiteBlack() {
+    this.removeClassList();
+    this.localStorageVI.colorSchema = 'white-black';
+    this.htmlDomEl.classList.add('theme-white-black');
+    localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
+  }
+
   resetSettings() {
     this.setStylesOnElement({ fontSize: `${DEFAULT_FONT_SIZE}`, filter: 'none'}, this.htmlDomEl);
-    this.htmlDomEl.classList.remove('theme-black-white');
+    this.removeClassList();
     localStorage.removeItem('visually-impaired');
+  }
+
+  removeClassList() {
+    this.htmlDomEl.classList.remove('theme-white-black');
+    this.htmlDomEl.classList.remove('theme-black-white');
   }
 
   setStylesOnElement(styles: Object, element: HTMLElement) {

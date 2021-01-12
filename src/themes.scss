@@ -3,14 +3,14 @@
 .theme-black-white {
   filter: grayscale(100%) !important;
 
-  svg {
-    fill: $black-color !important;
-    stroke: $black-color !important;
-  }
-
   h1, h2, h3, h4, h5, h6, p {
     background: $white-color !important;
     color: $black-color !important;
+  }
+
+  svg {
+    fill: $black-color !important;
+    stroke: $black-color !important;
   }
 
   .header {
@@ -37,11 +37,199 @@
     border-color: $black-color !important;
   }
 
-  .ticket_data a, .ticket_data p, .ticket-day, .ticket-number, .ticket-month {
+  .ticket_h2, .ticket_p, .ticket-day, .ticket-number, .ticket-month {
     color: $black-color !important;
   }
 
   .language {
     color: $black-color !important;
+  }
+
+  .day-of-week {
+    background: $white-color !important;
+    color: $black-color !important;
+  }
+
+  .events_double, .events_triple {
+    background: $white-color !important;
+    color: $black-color !important;
+  }
+
+  .perfomance-title .link {
+    background: $white-color !important;
+    color: $black-color !important;
+    border: 1px solid $black-color !important;
+  }
+
+  .badge, .widget-item, .widget-wrap, .hover:hover {
+    background: $white-color !important;
+    color: $black-color !important;
+    border: 1px solid $black-color !important;
+  }
+
+  .widget-item, .widget-wrap {
+    background: $white-color !important;
+    color: $black-color !important;
+    border: 1px solid $black-color !important;
+  }
+
+  .widget-about {
+
+    .btn-success {
+      background: $white-color !important;
+      color: $black-color !important;
+      border: 1px solid $black-color !important;
+    }
+  }
+
+  .hover:hover {
+    background: $white-color !important;
+    color: $black-color !important;
+    border: 1px solid $black-color !important;
+  }
+
+  .histories__list-footer {
+    background: $white-color !important;
+    color: $black-color !important;
+    border: 1px solid $black-color !important;
+
+    .year {
+      color: $black-color !important;
+    }
+  }
+
+  .footer {
+    border-color: $black-color !important;
+  }
+
+  .person {
+    background: $white-color !important;
+    color: $black-color !important;
+    border: 1px solid $black-color !important;
+  }
+}
+
+.theme-white-black {
+  filter: grayscale(100%) !important;
+
+  h1, h2, h3, h4, h5, h6, p {
+    background: $black-color !important;
+    color: $white-color !important;
+  }
+
+  app-root, .card-body {
+    background-color: $black-color !important;
+  }
+
+  .pagination .page-item a {
+    background-color: $black-color !important;
+    color: $white-color !important;
+    border: 1px solid $white-color !important;
+  }
+
+  svg {
+    fill: $white-color !important;
+  }
+
+  .header {
+    background: $black-color !important;
+    color: $white-color !important;
+  }
+
+  .nav-link {
+    color: $white-color !important;
+
+    &:hover {
+      background: $black-color !important;
+    }
+  }
+
+  .active {
+    border-top-color: $white-color !important;
+  }
+
+  .ticket, .ticket-active, .ticket_data {
+    background: $black-color !important;
+    color: $white-color !important;
+  }
+
+  .buy-button {
+    background: $black-color !important;
+    color: $white-color !important;
+    border-color: $white-color !important;
+  }
+
+  .ticket_h2, .ticket_p, .ticket-day, .ticket-number, .ticket-month {
+    color: $white-color !important;
+  }
+
+  .language {
+    color: $white-color !important;
+  }
+
+  .day-of-week {
+    background: $black-color !important;
+    color: $white-color !important;
+  }
+
+  .events_double, .events_triple {
+    background: $black-color !important;
+    color: $white-color !important;
+  }
+
+  .perfomance-title .link {
+    background: $black-color !important;
+    color: $white-color  !important;
+    border: 1px solid $white-color !important;
+  }
+
+  .badge, .widget-item, .widget-wrap, .hover:hover {
+    background: $black-color !important;
+    color: $white-color !important;
+    border: 1px solid $white-color !important;
+  }
+
+  .widget-item, .widget-wrap {
+    background: $black-color !important;
+    color: $white-color !important;
+    border: 1px solid $white-color !important;
+  }
+
+  .widget-about {
+
+    .btn-success {
+      background: $black-color !important;
+      color: $white-color !important;
+      border: 1px solid $white-color !important;
+    }
+  }
+
+  .hover:hover {
+    background: $black-color !important;
+    color: $white-color !important;
+    border: 1px solid $black-color !important;
+  }
+
+  .histories__list-footer {
+    background: $black-color !important;
+    color: $white-color !important;
+    border: 1px solid $white-color !important;
+
+    .year {
+      color: $white-color !important;
+    }
+  }
+
+  .footer, .footer .copy, .footer .container {
+    border-color: $white-color !important;
+    color: $white-color;
+    background-color: $black-color;
+    opacity: 1 !important;
+  }
+
+  .person {
+    background: $black-color !important;
+    color: $white-color !important;
+    border: 1px solid $white-color !important;
   }
 }

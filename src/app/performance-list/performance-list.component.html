@@ -9,7 +9,7 @@
              [alt]="item.mainPicture.performance_small.properties.alt">
       </div>
       <h3 class="perfomance-title">
-        <a [routerLink]="['', 'performance', item.slug]">{{ item.title | striphtml:[40, "..."] }}</a>
+        <a class="link" [routerLink]="['', 'performance', item.slug]">{{ item.title | striphtml:[40, "..."] }}</a>
       </h3>
     </li>
     <li class="perfomance-item blank-item"></li>
