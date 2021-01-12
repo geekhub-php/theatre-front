@@ -34,3 +34,11 @@ ul {
     display: none;
   }
 }
+
+.side-menu {
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+}

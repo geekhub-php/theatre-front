@@ -44,7 +44,9 @@
     "unit-case": "lower",
 
     "value-keyword-case": "lower",
-    "value-no-vendor-prefix": true,
+    "value-no-vendor-prefix": [ true, {
+      "ignoreValues": "box"
+    }],
 
     "max-empty-lines": 2,
     "indentation": [ 2, {
