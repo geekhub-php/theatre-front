@@ -357,10 +357,6 @@
       <trans-unit id="pageInProgress" datatype="html">
         <source>Sorry, we are working on this page right now.</source>
         <target>Вибачте за тимчасові незручності, робота над даною сторінкою ведеться.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/board-trustees/board-trustees.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="projectTeam" datatype="html">
         <source>Project team</source>
