@@ -92,11 +92,11 @@ export class GatewayService {
       );
   }
 
-  getEmployees(limit: string = '10', page: string = '1', locale: string = this.localeId): Observable<EmployeesListResponse> {
-    return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/${this.employeesListUrl}`, {params: {limit, page, locale}}
+  getEmployees(locale: string = this.localeId): Observable<Employee> {
+    return this.http.get<Employee>(
+      `${this.baseUrl}/${this.employeesListUrl}`, {params: {locale}}
     ).pipe(
-      catchError(this.handleError('get Employees list', new EmployeesListResponse()))
+      catchError(this.handleError('get Employees list', new Employee()))
     );
   }
 

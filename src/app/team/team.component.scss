@@ -29,17 +29,19 @@
       width: 10.429rem;
       height: 18.286rem;
       border: 1px solid $light-gray;
+      position: relative;
+      margin: 0 0 6px 9px;
+      box-shadow: 0 5px 5px 3px #e8e8e8;
       background-color: $light-grayish-red;
       font-size: .857rem;
       color: $primary-color;
+      border-radius: 5px;
       text-decoration: none;
       font-family: $main-font;
       text-align: center;
-      margin: 0 0 6px 9px;
-      border-radius: 5px;
       overflow: hidden;
-      position: relative;
       cursor: pointer;
+      transition: .3s ease;
 
       img {
         width: 100%;
@@ -54,9 +56,17 @@
     }
 
     .person:hover {
-      box-shadow: 0 0 1px $transparent-black;
+      box-shadow: 0 0 10px 5px #bdbdbd;
       color: $hover-color;
     }
+  }
+
+  .persons-title {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: 100;
   }
 }
 
@@ -117,6 +127,10 @@
 
     .persons-list {
       width: 248px !important;
+    }
+
+    .persons-title {
+      max-width: 250px;
     }
   }
 }
