@@ -212,7 +212,7 @@ table {
 .list-view {
   display: flex;
   flex-direction: column;
-  max-width: 1100px;
+  max-width: 78.571rem;
   width: 100%;
   margin: 20px auto;
   padding: 0 40px;
@@ -239,11 +239,11 @@ table {
   &__title {
     margin-bottom: 16px;
     color: $primary-color;
-    font-size: 26px;
+    font-size: 1.857rem;
   }
 
   &__description {
-    font-size: 14px;
+    font-size: 1rem;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 5;
@@ -251,12 +251,13 @@ table {
   }
 
   &__info {
+    font-size: 1rem;
     align-items: center;
     color: $primary-color;
   }
 
   &__day {
-    font-size: 40px;
+    font-size: 2.857rem;
   }
 
   &__day-type {
@@ -531,7 +532,7 @@ table {
       border-right: none;
 
       .schedule-body {
-        margin: 0 0 0 4.286rem;
+        margin: 0 0 0 1.286rem;
       }
 
       .schedule-body::after {
@@ -551,7 +552,7 @@ table {
 
         .schedule-body {
           transform: translateY(0);
-          margin: 0 0 0 4.286rem;
+          margin: 0 0 0 1.286rem;
         }
 
         .schedule-day {
