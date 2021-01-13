@@ -12,4 +12,5 @@ export class Employee {
   last_name: string;
   position: string;
   slug: string;
+  staff: string;
 }
