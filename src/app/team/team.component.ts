@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/services/gateway.service';
 import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
-import { EmployeesListResponse } from '../core/model/employee/EmployeesListResponse';
 
 @Component({
   selector: 'app-team',
@@ -11,12 +10,13 @@ import { EmployeesListResponse } from '../core/model/employee/EmployeesListRespo
 })
 export class TeamComponent implements OnInit {
   employees: Array<Employee> = [];
+  artDirector: Array<Employee>;
   artCoreEmployees: Array<Employee>;
   artProductionEmployees: Array<Employee>;
   administrativeEmployees: Array<Employee>;
-  creativeEmployees: Array<Employee>;
+  creativeEmployees: Array<Employee> = [];
   invitedActorEmployees: Array<Employee>;
-  employeesStatus;
+  activeIds: Array<string> = [];
 
   constructor(
     private httpGatewayService: GatewayService,
@@ -33,18 +33,22 @@ export class TeamComponent implements OnInit {
     this.loaderService.start('load-team');
     this.httpGatewayService.getEmployees().subscribe((persons) => {
       this.employees = this.employees.concat(persons);
+      this.artDirector = this.getEmployeesStatus('art-director');
       this.artCoreEmployees = this.getEmployeesStatus('art-core');
       this.artProductionEmployees = this.getEmployeesStatus('art-production');
       this.administrativeEmployees = this.getEmployeesStatus('administrative');
       this.creativeEmployees = this.getEmployeesStatus('creative');
       this.invitedActorEmployees = this.getEmployeesStatus('invited');
-      this.employeesStatus = [this.artCoreEmployees, this.artProductionEmployees, this.administrativeEmployees,
-        this.creativeEmployees, this.invitedActorEmployees];
       this.loaderService.stop('load-team');
     });
   }
 
   getEmployeesStatus(status) {
     return this.employees.filter((person) => person.staff === status);
+  }
+
+  openAll() {
+    this.activeIds.length !== 0 ? this.activeIds = [] : this.activeIds = ['artDirector',
+      'artCoreEmployees', 'artProductionEmployees', 'administrativeEmployees', 'creativeEmployees', 'invitedActorEmployees'];
   }
 }

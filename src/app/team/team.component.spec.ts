@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 describe('TeamComponent', () => {
   let component: TeamComponent;
@@ -17,7 +18,8 @@ describe('TeamComponent', () => {
         HttpClientModule,
         RouterTestingModule,
         InfiniteScrollModule,
-        SpinnerModule
+        SpinnerModule,
+        NgbAccordionModule
       ]
     })
     .compileComponents();

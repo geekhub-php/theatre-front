@@ -7,7 +7,7 @@ import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule, NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -68,7 +68,8 @@ import { DonateComponent } from './donate/donate.component';
     ScheduleModule,
     NgbPaginationModule,
     WidgetModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgbAccordionModule,
  ],
   providers: [],
   bootstrap: [AppComponent]

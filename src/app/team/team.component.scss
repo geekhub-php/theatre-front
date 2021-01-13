@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0 auto;
 
     .person {
       position: relative;
@@ -67,8 +68,63 @@
     font-size: 18px;
     font-weight: 100;
   }
+
+  .persons-button {
+    margin: 20px auto 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    transition: .3s ease;
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &:hover {
+      box-shadow: 0 7px 10px 7px #e8e8e8;
+    }
+  }
 }
 
+::ng-deep {
+
+  .accordion {
+    width: 100%;
+
+    .card {
+      border: none;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+    }
+
+    .btn-link {
+      height: auto;
+      color: $primary-color;
+      transition: .3s ease;
+
+      &:hover {
+        color: $hover-color;
+        text-decoration: none;
+      }
+
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    .card-body {
+      padding: 0;
+    }
+  }
+}
 
 @media screen and (max-width: 768px) {
 

@@ -18,7 +18,7 @@ import { DonateComponent } from './donate/donate.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
-import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
@@ -64,7 +64,8 @@ describe('AppComponent', () => {
         NgxGalleryModule,
         SpinnerModule,
         NgbPaginationModule,
-        WidgetModule
+        WidgetModule,
+        NgbAccordionModule
       ]
     }).compileComponents();
   }));

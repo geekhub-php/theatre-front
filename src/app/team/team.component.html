@@ -1,18 +1,90 @@
 <div class="container">
   <h2 i18n="@@persons">Persons</h2>
   <img class="persons-photo" src="assets/images/persons.jpg" alt="collectives">
-  <div *ngFor="let listEmployee of employeesStatus">
-    <h3 *ngIf="employeesStatus[0].length && listEmployee === artCoreEmployees" class="persons-title" i18n="@@artCore">Art-core</h3>
-    <h3 *ngIf="employeesStatus[1].length && listEmployee === artProductionEmployees" class="persons-title" i18n="@@artProduction">Art-production</h3>
-    <h3 *ngIf="employeesStatus[2].length && listEmployee === administrativeEmployees" class="persons-title" i18n="@@administrative">Administrative</h3>
-    <h3 *ngIf="employeesStatus[3].length && listEmployee === creativeEmployees" class="persons-title" i18n="@@creative">Creative</h3>
-    <h3 *ngIf="employeesStatus[4].length && listEmployee === invitedActorEmployees" class="persons-title" i18n="@@invitedActor">Invited actor</h3>
-    <section class="persons-list">
-      <a class="person" *ngFor="let person of listEmployee" [routerLink]="[person.slug]">
-        <img src="{{ person.avatar.employee_big.url }}" alt="photo">
-        <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
-      </a>
-    </section>
-  </div>
+  <button (click)="openAll()" class="persons-button">
+    <svg width="30" height="30" class="persons-icon">
+      <use xlink:href="assets/images/mona.svg#mona"></use>
+    </svg>
+  </button>
+  <ngb-accordion [activeIds]="activeIds">
+    <ngb-panel *ngIf="artDirector?.length" id="artDirector">
+      <ng-template ngbPanelTitle>
+        <h3 class="persons-title" i18n="@@artDirector">Art-director</h3>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <section class="persons-list">
+          <a class="person" *ngFor="let person of artDirector" [routerLink]="[person.slug]">
+            <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+            <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+          </a>
+        </section>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel *ngIf="administrativeEmployees?.length" id="administrativeEmployees">
+      <ng-template ngbPanelTitle>
+        <h3 class="persons-title" i18n="@@administrative">Administrative</h3>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <section class="persons-list">
+          <a class="person" *ngFor="let person of administrativeEmployees" [routerLink]="[person.slug]">
+            <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+            <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+          </a>
+        </section>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel *ngIf="artCoreEmployees?.length" id="artCoreEmployees">
+      <ng-template ngbPanelTitle>
+        <h3 class="persons-title" i18n="@@artCore">Art-core</h3>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <section class="persons-list">
+          <a class="person" *ngFor="let person of artCoreEmployees" [routerLink]="[person.slug]">
+            <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+            <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+          </a>
+        </section>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel *ngIf="creativeEmployees?.length" id="creativeEmployees">
+      <ng-template ngbPanelTitle>
+        <h3 class="persons-title" i18n="@@creative">Creative</h3>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <section class="persons-list">
+          <a class="person" *ngFor="let person of creativeEmployees" [routerLink]="[person.slug]">
+            <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+            <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+          </a>
+        </section>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel *ngIf="artProductionEmployees?.length" id="artProductionEmployees">
+      <ng-template ngbPanelTitle>
+        <h3 class="persons-title" i18n="@@artProduction">Art-production</h3>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <section class="persons-list">
+          <a class="person" *ngFor="let person of artProductionEmployees" [routerLink]="[person.slug]">
+            <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+            <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+          </a>
+        </section>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel *ngIf="invitedActorEmployees?.length" id="invitedActorEmployees">
+      <ng-template ngbPanelTitle>
+        <h3 class="persons-title" i18n="@@invitedActor">Invited actor</h3>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <section class="persons-list">
+          <a class="person" *ngFor="let person of invitedActorEmployees" [routerLink]="[person.slug]">
+            <img src="{{ person.avatar.employee_big.url }}" alt="photo">
+            <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+          </a>
+        </section>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
   <app-spinner name="load-team"></app-spinner>
 </div>
