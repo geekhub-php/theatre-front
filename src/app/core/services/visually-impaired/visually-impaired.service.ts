@@ -66,15 +66,15 @@ export class VisuallyImpairedService {
   }
 
   inverseColors() {
+    this.removeClassList();
     this.localStorageVI.colorSchema = 'invert';
-
     this.setStylesOnElement({ filter: 'invert(100%)'} , this.htmlDomEl);
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
   }
 
   setSepia() {
+    this.removeClassList();
     this.localStorageVI.colorSchema = 'sepia';
-
     this.setStylesOnElement({ filter: 'sepia(100%)'} , this.htmlDomEl);
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
   }
