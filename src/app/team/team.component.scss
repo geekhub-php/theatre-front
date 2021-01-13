@@ -94,6 +94,10 @@
 
     .card {
       border: none;
+
+      .persons-list {
+        width: auto!important;
+      }
     }
 
     .card-header {
