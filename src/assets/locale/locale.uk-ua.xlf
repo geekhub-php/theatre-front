@@ -86,32 +86,16 @@
         <source>Archive</source>
         <target>Архів</target>
       </trans-unit>
-      <trans-unit id="partners" datatype="html">
-        <source>Partners</source>
-        <target>Партнери</target>
+      <trans-unit id="donate" datatype="html">
+        <source>Donate</source>
+        <target>Підтримати театр</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home-page/side-menu/side-menu.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/partners/partners.component.html</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-        <context-group purpose="location">
           <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="forum" datatype="html">
-        <source>Forum</source>
-        <target>Форум</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/home-page/side-menu/side-menu.component.html</context>
-          <context context-type="linenumber">23</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="posterFor" datatype="html">
@@ -405,14 +389,6 @@
       <trans-unit id="pageInProgress" datatype="html">
         <source>Sorry, we are working on this page right now.</source>
         <target>Вибачте за тимчасові незручності, робота над даною сторінкою ведеться.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/partners/partners.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/board-trustees/board-trustees.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="projectTeam" datatype="html">
         <source>Project team</source>

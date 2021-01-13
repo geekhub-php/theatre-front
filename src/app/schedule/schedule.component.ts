@@ -19,6 +19,7 @@ export class ScheduleComponent implements OnInit {
   dayPerformances: Array<PerformanceEvent>;
   date: Date;
   weeks: Array<Array<Date>>;
+  changedView = false;
 
   constructor(
     private datePipe: DatePipe,
@@ -89,4 +90,7 @@ export class ScheduleComponent implements OnInit {
     );
   }
 
+  changeView() {
+    this.changedView === true ? this.changedView = false :  this.changedView = true;
+  }
 }
