@@ -7,6 +7,10 @@
   align-items: center;
   padding: 10px 0;
   font-size: 1.1rem;
+
+  svg {
+    fill: $white-color;
+  }
 }
 
 .color-schemes {

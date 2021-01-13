@@ -7,6 +7,10 @@ $navLinkActiveBorderTop: 3px;
   background: linear-gradient(to right, $header-color-up 0, $header-color-down 100%);
   font-size: .857rem;
 
+  svg {
+    fill: $white-color;
+  }
+
   .header-logo {
     margin: 4px 5px;
     font-size: 0;
