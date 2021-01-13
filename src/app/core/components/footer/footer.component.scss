@@ -8,7 +8,7 @@
 
     .nav-link {
       padding: 15px;
-      color: $primary-color;
+      color: $new-dark-color;
 
       &:hover {
         color: $hover-color;
@@ -76,6 +76,7 @@
     opacity: .5;
     font-size: 14px;
     font-family: "cormorant_garamondmedium", serif;
+    color: $new-dark-color;
 
     .text::after {
       content: " ";

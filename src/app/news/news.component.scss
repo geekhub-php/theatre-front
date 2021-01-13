@@ -19,8 +19,9 @@ ngb-pagination ::ng-deep ul {
   li a {
     color: $primary-color;
     outline: none;
-    font-family: $main-font;
     border: transparent;
+    font-family: 'cormorant_infantmedium', serif;
+    border-radius: 5px;
   }
 
   li.active a {
