@@ -20,7 +20,7 @@ export class SeasonsComponent implements OnInit, OnDestroy {
   ALL_SEASONS = -1;
   ARCHIVE_SEASON = -2;
 
-  activeAudience: 'kids' | 'adults' | null;
+  activeAudience: 'kids' | 'adults' | null = null;
   ALL_AUDIENCE = null;
   KIDS_AUDIENCE: 'kids' = 'kids';
   ADULT_AUDIENCE: 'adults' = 'adults';
@@ -38,11 +38,15 @@ export class SeasonsComponent implements OnInit, OnDestroy {
     this.loaderService.start('seasons');
 
     this.sub$.add(this.activatedRoute.queryParams
-      .subscribe(params => this.activeSeasonNumber = params['season'] ? +params['season'] : this.activeSeasonNumber));
+      .subscribe(params => {
+        this.activeSeasonNumber = params['season'] ? +params['season'] : this.activeSeasonNumber;
+        this.activeAudience = params['audience'] ? params['audience'] : null;
+      }));
 
     this.sub$.add(this.gatewayService.getSeasons()
       .subscribe(seasons => {
         this.activeSeasonNumber = this.activeSeasonNumber ? this.activeSeasonNumber : seasons[0].number;
+        this.activeAudience = this.activeAudience ? this.activeAudience : seasons[0].audience;
         this.seasons = seasons;
         this.changeDetector.markForCheck();
         this.loaderService.stop('seasons');
@@ -59,6 +63,10 @@ export class SeasonsComponent implements OnInit, OnDestroy {
 
   filterAudience(audienceType: 'kids' | 'adults' | null) {
     this.activeAudience = audienceType;
+    const queryParams: { season: number, audience?: string } = { season: this.activeSeasonNumber };
+
+    if (!!audienceType) queryParams.audience = this.activeAudience;
+    this.appRoutes.navigate([], { relativeTo: this.activatedRoute, queryParams });
   }
 
   filterSeasonsByPerformance(seasons: Array<Season>, performance: Performance) {
