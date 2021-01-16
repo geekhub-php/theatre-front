@@ -6,6 +6,7 @@ $navLinkActiveBorderTop: 3px;
 .header {
   background: linear-gradient(36deg, $new-primary-color, $new-secondary-color 100%);
   //background: linear-gradient(to right, $header-color-up 0, $header-color-down 100%);
+
   color: #c33d50;
   font-size: .857rem;
 
@@ -31,7 +32,7 @@ $navLinkActiveBorderTop: 3px;
     padding: 2.179rem 0;
     text-decoration: none;
     color: #fff;
-    font-size: 0.857rem;
+    font-size: .857rem;
     transition: .3s ease;
 
     &:hover {
@@ -60,7 +61,7 @@ $navLinkActiveBorderTop: 3px;
     .nav-link {
       transition: .3s ease;
       white-space: nowrap;
-      font-size: 17px;
+      font-size: 1rem;
       text-transform: capitalize;
       cursor: pointer;
     }

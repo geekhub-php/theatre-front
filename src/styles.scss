@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/styles/variables";
-
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
@@ -38,7 +37,6 @@
 @import "../node_modules/bootstrap/scss/spinners";
 //@import "../node_modules/bootstrap/scss/print";
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
-
 @import "assets/styles/themes";
 
 body, html {

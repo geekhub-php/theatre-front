@@ -38,19 +38,18 @@
         height: 4.786rem;
         margin: auto;
         background-color: #2a2a2a;
-
         font-size: 1.143rem;
         font-weight: 300;
         color: #fff;
         text-align: center;
+      }
 
-        a {
-          color: #fff;
-          margin: auto;
+      a {
+        color: #fff;
+        margin: auto;
 
-          &:hover {
-            text-decoration: none;
-          }
+        &:hover {
+          text-decoration: none;
         }
       }
     }
