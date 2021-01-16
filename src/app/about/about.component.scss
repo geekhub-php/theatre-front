@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 .heading {
   margin: 20px 0;
@@ -16,7 +16,7 @@
 
   .list-item {
     position: relative;
-    padding: 20px 22px 0 0;
+    padding: 1.429rem 1.571rem 0 0;
     flex-basis: 50%;
     border-right: 3px solid $light-grayish-red;
 
@@ -30,21 +30,22 @@
 
     .histories__list-body {
       position: relative;
-      max-width: 430px;
+      z-index: 1;
+      max-width: 30.714rem;
       border: 1px solid $light-gray;
       border-radius: 2px;
       padding: 12px;
       box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
-      margin: 0 18px 0 0;
+      margin: 0 1.286rem 0 0;
 
       &::after {
         position: absolute;
         content: "";
-        width: 20px;
-        height: 20px;
-        top: 36px;
-        right: -10px;
-        border: 1px solid $light-gray;
+        z-index: -1;
+        width: 1.429rem;
+        height: 1.429rem;
+        top: 2.571rem;
+        right: -.714rem;
         background-color: $white-color;
         transform: rotate(45deg);
         border-top: 1px solid $light-gray;
@@ -55,18 +56,18 @@
 
       .histories__list-heading {
         color: $primary-color;
-        font-size: 18px;
+        font-size: 1.286rem;
       }
 
       .histories__list-main .histories__list-main_text {
         color: $dark-grayish-red;
-        font-size: 14px;
+        font-size: 1rem;
       }
 
       .histories__list-main .histories__list-main_img {
         display: block;
         margin: 5px auto;
-        max-height: 300px;
+        max-height: 21.429rem;
       }
     }
 
@@ -74,18 +75,18 @@
       position: absolute;
       content: "";
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
+      width: 3.571rem;
+      height: 3.571rem;
       background-color: $hover-color;
-      top: 42px;
-      right: -27px;
+      top: 3rem;
+      right: -1.929rem;
     }
 
     .histories__list-footer .year {
       font-family: $main-font_bold;
       display: block;
-      margin-top: 12px;
-      font-size: 18px;
+      margin-top: .857rem;
+      font-size: 1.286rem;
       color: $white-color;
       text-align: center;
     }
@@ -97,13 +98,12 @@
 
       .histories__list-body {
         float: right;
-        transform: translateY(102px);
-        margin: 0 0 0 18px;
+        transform: translateY(7.286rem);
+        margin: 0 0 0 1.286rem;
       }
 
       .histories__list-body::after {
-        left: -10px;
-        border: 1px solid $light-gray;
+        left: -.714rem;
         background-color: $white-color;
         transform: rotate(45deg);
         border-top: 1px solid transparent;
@@ -114,8 +114,8 @@
 
       .histories__list-footer {
         position: absolute;
-        top: 144px;
-        left: -27px;
+        top: 10.286rem;
+        left: -1.929rem;
       }
     }
   }
@@ -127,21 +127,21 @@
     padding-left: 24px;
     justify-content: flex-start;
     flex-direction: column;
-    max-width: 510px;
+    max-width: 36.429rem;
     margin: 0 auto;
 
     .list-item {
-      padding: 20px 0 0;
+      padding: 1.429rem 0 0;
       border-left: 3px solid $light-grayish-red;
       border-right: none;
 
       .histories__list-body {
         float: right;
-        margin: 0 0 0 40px;
+        margin: 0 0 0 2.857rem;
       }
 
       .histories__list-body::after {
-        left: -10px;
+        left: -.714rem;
         border-top: 1px solid transparent;
         border-left: 1px solid $light-gray;
         border-right: 1px solid transparent;
@@ -149,7 +149,7 @@
       }
 
       .histories__list-footer {
-        left: -27px;
+        left: -1.929rem;
       }
 
       &:nth-child(2n) {
@@ -157,11 +157,11 @@
 
         .histories__list-body {
           transform: translateY(0);
-          margin: 0 0 0 40px;
+          margin: 0 0 0 2.857rem;
         }
 
         .histories__list-footer {
-          top: 42px;
+          top: 3rem;
         }
       }
     }
@@ -171,6 +171,6 @@
 @media screen and (max-width: 416px) {
 
   .list .list-item .histories__list-body .histories__list-heading {
-    font-size: 16px;
+    font-size: 1.143rem;
   }
 }

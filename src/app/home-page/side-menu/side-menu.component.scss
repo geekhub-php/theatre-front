@@ -1,10 +1,10 @@
-@import "../../../assets/variables";
+@import "~assets/variables";
 
 ul {
   list-style-type: none;
   text-transform: uppercase;
-  font-size: 18px;
-  line-height: 38px;
+  font-size: 1.286rem;
+  line-height: 2.714rem;
   margin-top: 32px;
   font-family: $main-font;
   margin-left: -45px;

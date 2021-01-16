@@ -1,11 +1,15 @@
-@import "../../../../assets/variables";
+@import "~assets/variables";
 
 $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
 .header {
   background: linear-gradient(to right, $header-color-up 0, $header-color-down 100%);
-  font-size: 12px;
+  font-size: .857rem;
+
+  svg {
+    fill: $white-color;
+  }
 
   .header-logo {
     margin: 4px 5px;
@@ -29,6 +33,18 @@ $navLinkActiveBorderTop: 3px;
     &:hover {
       color: $primary-color;
     }
+  }
+}
+
+.visually-impaired-button {
+  appearance: none;
+  background: none;
+  border: none;
+  margin: 0 5px;
+  color: $white-color;
+
+  &:hover {
+    background-color: $white-hover-color;
   }
 }
 

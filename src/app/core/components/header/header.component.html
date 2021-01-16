@@ -1,23 +1,30 @@
 <header class="header">
   <div class="container">
+    <ng-container *ngIf="trigger | async">
+      <app-visually-impaired></app-visually-impaired>
+    </ng-container>
+
     <nav class="navbar navbar-expand-lg navbar-dark">
       <h1 class="header-logo" aria-label="Cherkassy theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
-        <a routerLink="/">
-          <img src="assets/images/logo.png" alt="logo">
-        </a>
+        <img routerLink="/" src="assets/images/logo.png" alt="logo">
         Cherkassy theatre of Taras Shevchenko
       </h1>
 
-      <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu"
-              type="button" (click)="toogleMenu()">
+      <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu" type="button" (click)="toogleMenu()">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="navbar-collapse" [ngClass]="collapse ? 'collapse' : ''">
+      <div class="navbar-collapse" [class.collapse]="collapse">
         <app-main-nav></app-main-nav>
       </div>
 
       <a class="language d-none d-lg-block" [href]="langRedirectUrl" i18n="@@lang">Укр</a>
+
+      <button class="visually-impaired-button d-none d-lg-block" (click)="trigger.next(!trigger.value);">
+        <svg width="24" height="24">
+          <use href="assets/images/visibility-black-18dp.svg#visibility"></use>
+        </svg>
+      </button>
     </nav>
   </div>
 </header>

@@ -4,13 +4,22 @@ $navbar-padding-y: 0;
 $main-font_light: robotothin, sans-serif;
 $main-font: robotolight, sans-serif;
 $main-font_bold: robotoregular, sans-serif;
-$main-font-size: 25px;
+$main-font-size: 1.786rem;
 
 $primary-color: #363a3b;
 $hover-color: #df4a2b;
 $danger: $hover-color;
 $light-hover-color: rgba(255, 74, 43, .08);
 $white-color: #fff;
+$black-color: #000;
+$yellow-color: #fff150;
+$blue-color: #1f5080;
+$green-color: #0e670b;
+$sepia-bg: #f4e0c1;
+$sepia-color: #80502b;
+$inversion-bg: #88c2f7;
+$inversion-color: #0f2c57;
+$white-hover-color: rgba(255, 255, 255, .3);
 
 $light-grayish-red: #f8f5f5;
 $dark-grayish-red: #797777;
@@ -20,4 +29,3 @@ $transparent-black: #000000dc;
 $bg-widget: #4f4f4f;
 $header-color-up: rgba(236, 83, 42, 1);
 $header-color-down: rgba(196, 36, 46, 1);
-
