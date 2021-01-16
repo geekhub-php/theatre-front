@@ -102,6 +102,14 @@
         <source>Archive</source>
         <target>Архів</target>
       </trans-unit>
+      <trans-unit id="showAll" datatype="html">
+        <source>Show all</source>
+        <target>Показати всі</target>
+      </trans-unit>
+      <trans-unit id="hideAll" datatype="html">
+        <source>Hide all</source>
+        <target>Приховати всі</target>
+      </trans-unit>
       <trans-unit id="donate" datatype="html">
         <source>Donate</source>
         <target>Підтримати театр</target>

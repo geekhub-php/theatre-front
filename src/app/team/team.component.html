@@ -2,9 +2,8 @@
   <h2 i18n="@@persons">Persons</h2>
   <img class="persons-photo" src="assets/images/persons.jpg" alt="collectives">
   <button (click)="openAll()" class="persons-button">
-    <svg width="30" height="30" class="persons-icon">
-      <use xlink:href="assets/images/mona.svg#mona"></use>
-    </svg>
+    <span *ngIf="this.activeIds.length == 0" i18n="@@showAll">Show all</span>
+    <span *ngIf="this.activeIds.length !== 0" i18n="@@hideAll">Hide all</span>
   </button>
   <ngb-accordion [activeIds]="activeIds">
     <ngb-panel *ngIf="artDirector?.length" id="artDirector">

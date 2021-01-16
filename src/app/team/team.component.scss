@@ -25,11 +25,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
+    padding-bottom: 10px;
 
     .person {
       width: 10.429rem;
       height: 18.286rem;
-      border: 1px solid $light-gray;
       position: relative;
       margin: 0 0 6px 9px;
       box-shadow: 0 5px 5px 3px #e8e8e8;
@@ -71,7 +71,7 @@
   }
 
   .persons-button {
-    margin: 20px auto 0;
+    margin: 10px 20px 0 auto;
     padding: 0;
     border: none;
     background: transparent;
@@ -83,7 +83,7 @@
     }
 
     &:hover {
-      box-shadow: 0 7px 10px 7px #e8e8e8;
+      color: $hover-color;
     }
   }
 }
