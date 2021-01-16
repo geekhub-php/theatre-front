@@ -22,6 +22,15 @@ $navLinkActiveBorderTop: 3px;
 
   .navbar-collapse {
     margin-left: 25px;
+    opacity: 1;
+
+    .opacity {
+      opacity: 0;
+
+      @media (max-width: 990px) {
+        opacity: 1;
+      }
+    }
   }
 
   .language {
@@ -33,6 +42,32 @@ $navLinkActiveBorderTop: 3px;
     &:hover {
       color: $primary-color;
     }
+  }
+}
+
+.header-button {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media (max-width: 990px) {
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .btn-success {
+    p {
+      margin: 0;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
   }
 }
 
@@ -52,6 +87,10 @@ $navLinkActiveBorderTop: 3px;
 
   .navbar-nav {
     color: #fff;
+
+    @media (max-width: 990px) {
+      align-items: flex-end!important;
+    }
 
     .nav-link {
       white-space: nowrap;
