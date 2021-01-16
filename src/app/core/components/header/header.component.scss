@@ -83,7 +83,7 @@ $navLinkActiveBorderTop: 3px;
     border-radius: 5px;
     border: thin solid $white-color;
     color: $white-color;
-    font-size: 14px;
+    font-size: 1rem;
     transition: .3s;
 
     &::placeholder {
@@ -132,8 +132,6 @@ $navLinkActiveBorderTop: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
-  height: 25px;
   background: transparent;
   border: none;
   transition: .3s ease;
