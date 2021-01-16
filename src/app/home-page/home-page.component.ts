@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { GatewayService } from '../core/services/gateway.service';
 import { NewsItem } from '../core/model/news/NewsItem';
-import { Meta } from '@angular/platform-browser';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-home-page',
@@ -12,9 +12,10 @@ import { Meta } from '@angular/platform-browser';
 export class HomePageComponent implements OnInit, AfterViewChecked {
   limit = '3';
   listPost: Array<NewsItem> = [];
+  readonly canonicalUrl = environment.canonicalUrl;
+
   constructor(private gatewayService: GatewayService,
-              private loaderService: LoaderService,
-              private meta: Meta) { }
+              private loaderService: LoaderService) { }
 
   ngOnInit() {
     this.loaderService.start('home');
@@ -28,12 +29,8 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    this.updateMeta();
-  }
-
-  updateMeta() {
-    this.meta.updateTag({property: 'og:title', content: 'Черкаський драматичний театр імені Т. Г. Шевченка'});
-    this.meta.updateTag({property: 'og:description', content: 'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка'});
-    this.meta.updateTag({property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/assets/images/logo.png'});
+    this.gatewayService.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
   }
 }

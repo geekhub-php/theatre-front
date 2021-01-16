@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { DonateComponent } from './donate.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DonateComponent', () => {
   let component: DonateComponent;
@@ -11,7 +12,9 @@ describe('DonateComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DonateComponent ],
-      imports: [ HttpClientTestingModule ]
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])]
     })
     .compileComponents();
   }));

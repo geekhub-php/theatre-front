@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 
 import { GatewayService } from '../core/services/gateway.service';
 import { PerformanceListResponse } from '../core/model/performance/PerformanceListResponse';
 import { Performance } from '../core/model/performance/Performance';
 import { LoaderService } from '../shared/spinner/loader.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Meta } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-performance-list',
@@ -23,8 +22,7 @@ export class PerformanceListComponent implements OnInit {
     private changeDetector: ChangeDetectorRef,
     private gateway: GatewayService,
     private loaderService: LoaderService,
-    private activatedRoute: ActivatedRoute,
-    private meta: Meta
+    private activatedRoute: ActivatedRoute
   ) {
   }
 
@@ -34,7 +32,9 @@ export class PerformanceListComponent implements OnInit {
       this.seasonNumber = params['season'] || this.CURRENT_SEASON;
       this.getPerformances(this.seasonNumber);
     });
-    this.updateMeta();
+    this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Репертуар Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
     this.gateway.updateCanonicalURL();
   }
 
@@ -48,14 +48,5 @@ export class PerformanceListComponent implements OnInit {
       },
       error1 => this.loaderService.stop('repertoire')
     );
-  }
-
-  updateMeta() {
-    this.meta.updateTag({ property: 'og:title', content: 'Черкаський драматичний театр імені Т. Г. Шевченка' });
-    this.meta.updateTag({
-      property: 'og:description',
-      content: 'Репертуар Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка'
-    });
-    this.meta.updateTag({property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/assets/images/logo.png'});
   }
 }

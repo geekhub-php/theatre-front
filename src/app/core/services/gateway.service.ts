@@ -20,6 +20,7 @@ import { WidgetResType } from '../model/widget/WidgetResType';
 import { Season } from '../model/season/Season';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,8 @@ export class GatewayService {
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string,
               @Inject(DOCUMENT) private doc,
-              private router: Router) {
+              private router: Router,
+              private meta: Meta) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
   }
@@ -180,6 +182,16 @@ export class GatewayService {
     if (this.doc.getElementById('canonical')) {
       this.doc.getElementById('canonical').setAttribute('href', `${this.canonicalUrl}${this.localeId}${this.router.url}`);
     }
+  }
+
+  updateMeta(title, description, image) {
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: description
+    });
+    this.meta.updateTag({ property: 'og:image', content: image });
+    this.meta.updateTag({ property: 'og:url', content: `${this.canonicalUrl}${this.localeId}${this.router.url}` });
   }
 
   /* tslint:disable:no-console */
