@@ -8,10 +8,13 @@ import { GatewayService } from '../core/services/gateway.service';
 })
 export class BoardTrusteesComponent implements OnInit {
 
-  constructor(private gateway: GatewayService) { }
-
-  ngOnInit() {
-    this.gateway.updateCanonicalURL();
+  constructor(private gatewayService: GatewayService) {
   }
 
+  ngOnInit() {
+    this.gatewayService.updateCanonicalURL();
+    this.gatewayService.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Піклувальна рада Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
+  }
 }

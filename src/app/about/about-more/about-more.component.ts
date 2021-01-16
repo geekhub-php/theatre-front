@@ -12,8 +12,7 @@ import { LoaderService } from '../../shared/spinner/loader.service';
 export class AboutMoreComponent implements OnInit {
   history: History;
 
-  constructor(private route: ActivatedRoute, private gateway: GatewayService, private loaderService: LoaderService) {
-  }
+  constructor(private route: ActivatedRoute, private gateway: GatewayService, private loaderService: LoaderService) {}
 
   ngOnInit() {
     const slug = this.route.snapshot.params.slug;
@@ -22,7 +21,10 @@ export class AboutMoreComponent implements OnInit {
       (res) => {
         this.history = res;
         this.loaderService.stop('about-more');
-      },
+        this.gateway.updateMeta(this.history.title,
+          this.history.text,
+          this.history.mainPicture.history_small.url);
+        },
       err => this.loaderService.stop('about-more')
     );
     this.gateway.updateCanonicalURL();
