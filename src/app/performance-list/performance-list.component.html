@@ -6,7 +6,8 @@
     <li class="perfomance-item" *ngFor="let item of perfomances" [routerLink]="['', 'performance', item.slug]">
       <div class="image-wraper">
         <img class="image" [src]="item.mainPicture.performance_big.url"
-             [alt]="item.mainPicture.performance_small.properties.alt">
+             [alt]="item.mainPicture.performance_small.properties.alt"
+             [title]="item.mainPicture.performance_small.properties.title">
       </div>
       <h3 class="perfomance-title">
         <a class="link" [routerLink]="['', 'performance', item.slug]">{{ item.title | striphtml:[40, "..."] }}</a>

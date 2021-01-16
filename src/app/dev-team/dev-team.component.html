@@ -4,7 +4,7 @@
   <section class="persons-list">
     <a class="person" href="{{ person.link }}" target="_blank"
        *ngFor="let person of teamLeadsList">
-      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name">
+      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name" [title]="person.first_name + person.last_name">
       <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
       <p>{{ person.task }}</p>
     </a>
@@ -14,7 +14,7 @@
     <a class="person" href="{{ person.link }}"
     target="_blank"
     *ngFor="let person of devList">
-      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name">
+      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name" [title]="person.first_name + person.last_name">
       <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
       <span>{{ person.task }}</span>
     </a>
@@ -24,7 +24,7 @@
     <a class="person" href="{{ person.link }}"
     target="_blank"
     *ngFor="let person of qaList">
-      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name">
+      <img src="{{ person.avatar }}" [alt]="person.first_name + person.last_name" [title]="person.first_name + person.last_name">
       <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
       <p>{{ person.task }}</p>
     </a>

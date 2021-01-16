@@ -2,7 +2,7 @@
   <app-spinner name="person"></app-spinner>
   <div class="person" *ngIf="person">
     <section>
-      <img [src]="person.avatar.employee_big.url" [alt]="person.first_name + person.last_name">
+      <img [src]="person.avatar.employee_big.url" [alt]="person.first_name + person.last_name" [title]="person.first_name + person.last_name">
       <div class="about">
         <h2>{{ person.first_name }} {{ person.last_name }}</h2>
         <p i18n="@@position">Position: {{ person.position }}</p>
