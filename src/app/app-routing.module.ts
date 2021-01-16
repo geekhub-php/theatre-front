@@ -39,8 +39,8 @@ const appRoutes: Routes = [
     {path: 'contacts', component: ContactsComponent},
     {path: 'partners', component: PartnersComponent},
     {path: 'board-trustees', component: BoardTrusteesComponent},
-    {path: 'developers-team', component: DevTeamComponent},
-    {path: '**', component: PageNotFoundComponent}
+    {path: 'developers-team', component: DevTeamComponent}
+    // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup
 ];
 
 @NgModule({

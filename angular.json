@@ -8,9 +8,9 @@
       "sourceRoot": "src",
       "projectType": "application",
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": "en",
         "locales": {
-          "uk-UA": "src/assets/locale/locale.uk-ua.xlf"
+          "ua": "src/assets/locale/locale.uk-ua.xlf"
         }
       },
       "architect": {
@@ -33,7 +33,7 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "production-en": {
               "budgets": [
                 {
                   "type": "anyComponentStyle",
@@ -54,7 +54,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "localize": true
+              "localize": ["en"]
             },
             "production-ua": {
               "budgets": [
@@ -77,9 +77,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "localize": ["uk-UA"]
+              "localize": ["ua"]
             },
-            "staging": {
+            "staging-en": {
               "budgets": [
                 {
                   "type": "anyComponentStyle",
@@ -101,7 +101,7 @@
                 }
               ]
             },
-            "ua": {
+            "staging-ua": {
               "budgets": [
                 {
                   "type": "anyComponentStyle",
@@ -122,7 +122,7 @@
                   "with": "src/environments/environment.staging.ts"
                 }
               ],
-              "localize": ["uk-UA"]
+              "localize": ["ua"]
             }
           }
         },
@@ -132,17 +132,17 @@
             "browserTarget": "theatre-front:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "theatre-front:build:production"
+            "production-en": {
+              "browserTarget": "theatre-front:build:production-en"
             },
             "production-ua": {
               "browserTarget": "theatre-front:build:production-ua"
             },
             "staging": {
-              "browserTarget": "theatre-front:build:staging"
+              "browserTarget": "theatre-front:build:staging-en"
             },
             "ua": {
-              "browserTarget": "theatre-front:build:ua"
+              "browserTarget": "theatre-front:build:staging-ua"
             }
           }
         },
@@ -190,7 +190,7 @@
             "tsConfig": "src/tsconfig.server.json"
           },
           "configurations": {
-            "production": {
+            "production-en": {
               "outputHashing": "media",
               "fileReplacements": [
                 {
@@ -199,7 +199,7 @@
                 }
               ],
               "sourceMap": false,
-              "localize": true
+              "localize": ["en"]
             },
             "production-ua": {
               "outputHashing": "media",
@@ -210,7 +210,7 @@
                 }
               ],
               "sourceMap": false,
-              "localize": ["uk-UA"]
+              "localize": ["ua"]
             }
           }
         },
@@ -221,9 +221,9 @@
             "serverTarget": "theatre-front:server"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "theatre-front:build:production",
-              "serverTarget": "theatre-front:server:production"
+            "production-en": {
+              "browserTarget": "theatre-front:build:production-en",
+              "serverTarget": "theatre-front:server:production-en"
             },
             "production-ua": {
               "browserTarget": "theatre-front:build:production-ua",

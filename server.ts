@@ -11,9 +11,9 @@ import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
 // The Express app is exported so that it can be used by serverless Functions.
-export const app = () => {
+export const app = (locale) => {
   const server = express();
-  const distFolder = join(process.cwd(), 'dist/theatre-front/browser');
+  const distFolder = join(process.cwd(), `dist/theatre-front/browser/${locale}`);
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
@@ -33,15 +33,7 @@ export const app = () => {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    // this is for i18n
-    const supportedLocales = ['en-US', 'uk-UA']; // supported Locales
-    const defaultLocale = 'en-US';
-    const matches = req.url.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
-
-    // check if the requested url has a correct format '/locale' and matches any of the supportedLocales
-    const locale = (matches && supportedLocales.indexOf(matches[1]) !== -1) ? matches[1] : defaultLocale;
-
-    res.render(`${locale}/${indexHtml}`, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    res.render(indexHtml, { req });
   });
 
   return server;
@@ -50,11 +42,12 @@ export const app = () => {
 const run = () => {
   const defaultPort = 4000;
   const port = process.env.PORT || defaultPort;
+  const language = process.env.LANGUAGE || 'ua';
 
   // Start up the Node server
-  const server = app();
+  const server = app(language);
   server.listen(port, () => {
-    console.warn(`Node Express server listening on http://localhost:${port}`);
+    console.warn(`Node Express server listening on http://localhost:${port} for language ${language}`);
   });
 };
 

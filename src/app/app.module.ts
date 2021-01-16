@@ -70,7 +70,6 @@ import { PersonRolesComponent } from './person-roles/person-roles.component';
     WidgetModule,
     NgbPaginationModule
  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
