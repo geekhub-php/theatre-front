@@ -283,13 +283,12 @@ table {
 
     .btn-success {
       background-color: $new-success-color;
-      border-color: $new-success-color;
+      border: thin solid $new-success-color;
       padding: 5px 15px;
       border-radius: 3px;
 
-      p {
-        color: $new-dark-color;
-        margin: 0;
+      &:hover {
+        border: thin solid $new-success-color;
       }
     }
   }
