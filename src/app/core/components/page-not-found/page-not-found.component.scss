@@ -1,11 +1,11 @@
-@import "../../../../assets/variables";
+@import "~assets/variables";
 
 .container, .col-xl-6 {
   margin: 0 auto;
   text-align: center;
 
   p {
-    font-size: 18px;
+    font-size: 1.286rem;
     font-family: $main-font;
     margin-top: 15px;
     color: $hover-color;
