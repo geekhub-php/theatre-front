@@ -10,43 +10,43 @@ describe('theatre-front App', () => {
     mainMenu = new MainMenu();
   });
 
-  it('shold navigate to Home', () => {
+  it('should navigate to Home', () => {
     page.navigateTo();
     mainMenu.navigateTo('Main page');
     expect(element(by.css('h3')).getText()).toContain('News');
   });
 
-  it('shold navigate to Poster', () => {
+  it('should navigate to Poster', () => {
     page.navigateTo();
     mainMenu.navigateTo('Poster');
     expect(element(by.css('h2')).getText()).toContain('Poster for');
   });
 
-  it('shold navigate to Repertoire', () => {
+  it('should navigate to Repertoire', () => {
     page.navigateTo();
     mainMenu.navigateTo('Repertoire');
     expect(element(by.css('h2')).getText()).toContain('Repertoire');
   });
 
-  it('shold navigate to NewsItem', () => {
+  it('should navigate to NewsItem', () => {
     page.navigateTo();
     mainMenu.navigateTo('News');
     expect(element(by.css('h2')).getText()).toContain('News');
   });
 
-  it('shold navigate to About Us', () => {
+  it('should navigate to About Us', () => {
     page.navigateTo();
     mainMenu.navigateTo('About');
     expect(element(by.css('h2')).getText()).toContain('About');
   });
 
-  it('shold navigate to Persons', () => {
+  it('should navigate to Persons', () => {
     page.navigateTo();
     mainMenu.navigateTo('Persons');
-    expect(element(by.css('h3')).getText()).toContain('Theatre team');
+    expect(element(by.css('h2')).getText()).toContain('Persons');
   });
 
-  it('shold navigate to Contacts', () => {
+  it('should navigate to Contacts', () => {
     page.navigateTo();
     mainMenu.navigateTo('Contacts');
     expect(element(by.css('h2')).getText()).toContain('Contacts');

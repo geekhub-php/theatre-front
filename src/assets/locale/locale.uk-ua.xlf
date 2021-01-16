@@ -2,6 +2,22 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="color-schemes" datatype="html">
+        <source>Color schemes</source>
+        <target>Кольорові схеми</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="font-size" datatype="html">
+        <source>Font size</source>
+        <target>Розмір шрифта</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="theatreName" datatype="html">
         <source>Cherkassy theatre of Taras Shevchenko</source>
         <target>Театр імені Т.Г. Шевченка</target>
@@ -242,12 +258,44 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="theatreTeam" datatype="html">
-        <source>Theatre team</source>
+      <trans-unit id="artCore" datatype="html">
+        <source>Art-core</source>
+        <target>Художньо-керівний склад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/team/team.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="artProduction" datatype="html">
+        <source>Art-production</source>
+        <target>Художньо-постановчий склад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/team/team.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="administrative" datatype="html">
+        <source>Administrative</source>
+        <target>Aдміністративно-управлінський склад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/team/team.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="creative" datatype="html">
+        <source>Creative</source>
         <target>Творчий склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/team/team.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="invitedActor" datatype="html">
+        <source>Invited actor</source>
+        <target>Запрошені артисти</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/team/team.component.html</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsTitle" datatype="html">
@@ -681,6 +729,54 @@
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="black-on-white" datatype="html">
+        <source>Black on White</source>
+        <target>Чорне на Білому</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="white-on-black" datatype="html">
+        <source>White on Black</source>
+        <target>Біле на Чорному</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sepia" datatype="html">
+        <source>Sepia</source>
+        <target>Сепія</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="inversion" datatype="html">
+        <source>Inversion</source>
+        <target>Інверсія</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reduce-font" datatype="html">
+        <source>Reduce Font</source>
+        <target>Зменшити Шрифт</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="zoom-font" datatype="html">
+        <source>Zoom Font</source>
+        <target>Збільшити Шрифт</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
     </body>

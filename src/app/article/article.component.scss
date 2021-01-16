@@ -1,8 +1,9 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 :host ::ng-deep .post-text {
 
   p {
+    font-size: 1rem;
     margin-bottom: -3px;
     color: $dark-grayish-red;
   }
@@ -52,7 +53,7 @@
       }
 
       h2 {
-        font-size: 20px;
+        font-size: 1.429rem;
       }
     }
   }

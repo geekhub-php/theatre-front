@@ -31,6 +31,7 @@
     "core-js": "^3.1.4",
     "date-fns": "^2.0.0-beta.3",
     "ngx-gallery": "^5.10.0",
+    "ngx-google-analytics": "^11.1.0",
     "ngx-infinite-scroll": "^7.1.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",

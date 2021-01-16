@@ -1,0 +1,211 @@
+@import "~assets/variables";
+
+.theme-black-white, .theme-white-black {
+  filter: grayscale(100%) !important;
+}
+
+.theme-black-white {
+
+  h1, h2, h3, h4, h5, h6, p {
+    background: $white-color !important;
+    color: $black-color !important;
+  }
+
+  svg {
+    fill: $black-color !important;
+  }
+
+  .size-fonts {
+
+    &__button {
+      border: 1px solid $black-color !important;
+      color: $black-color !important;
+    }
+  }
+
+  .header,
+  .ticket,
+  .ticket-active,
+  .ticket_data,
+  .day-of-week,
+  .events_double,
+  .events_triple {
+    background: $white-color !important;
+    color: $black-color !important;
+  }
+
+  .nav-link,
+  .ticket_h2,
+  .ticket_p,
+  .ticket-day,
+  .ticket-number,
+  .ticket-month,
+  .language,
+  .tab-pane,
+  .list-view__title,
+  .list-view__info,
+  .list-view__date,
+  .mobile-language,
+  .list-view__link:hover {
+    color: $black-color !important;
+  }
+
+  .perfomance-title .link,
+  .badge,
+  .widget-item,
+  .widget-wrap,
+  .widget-item,
+  .widget-wrap,
+  .histories__list-footer,
+  .person,
+  .navbar-toggler,
+  .hover:hover {
+    background: $white-color !important;
+    color: $black-color !important;
+    border: 1px solid $black-color !important;
+  }
+
+  .footer,
+  .list-view__link::after {
+    border-color: $black-color !important;
+  }
+
+  .active {
+    border-top-color: $black-color !important;
+  }
+
+  .buy-button, .btn-success {
+    background: $white-color !important;
+    color: $black-color !important;
+    border-color: 1px solid $black-color !important;
+  }
+
+  .list-view__item {
+    background-color: $white-color !important;
+    color: $black-color !important;
+  }
+
+  .histories__list-footer {
+
+    .year {
+      color: $black-color !important;
+    }
+  }
+
+  .navbar-toggler {
+
+    .navbar-toggler-icon {
+      background-color: $black-color !important;
+    }
+  }
+}
+
+.theme-white-black {
+
+  h1, h2, h3, h4, h5, h6, p {
+    background: $black-color !important;
+    color: $white-color !important;
+  }
+
+  svg {
+    fill: $white-color !important;
+  }
+
+  app-root, .card-body {
+    background-color: $black-color !important;
+  }
+
+  .pagination .page-item a {
+    background-color: $black-color !important;
+    color: $white-color !important;
+    border: 1px solid $white-color !important;
+  }
+
+  .header,
+  .ticket,
+  .ticket-active,
+  .ticket_data,
+  .day-of-week,
+  .events_double,
+  .events_triple {
+    background: $black-color !important;
+    color: $white-color !important;
+  }
+
+  .nav-link {
+    color: $white-color !important;
+
+    &:hover {
+      background: $black-color !important;
+    }
+  }
+
+  .active {
+    border-top-color: $white-color !important;
+  }
+
+  .buy-button, .btn-success {
+    background: $black-color !important;
+    color: $white-color !important;
+    border-color: $white-color !important;
+  }
+
+  .ticket_h2,
+  .ticket_p,
+  .ticket-day,
+  .ticket-number,
+  .ticket-month,
+  .language,
+  .tab-pane,
+  .list-view__title,
+  .list-view__info,
+  .list-view__date,
+  .list-view__link:hover {
+    color: $white-color !important;
+  }
+
+  .perfomance-title .link,
+  .badge,
+  .widget-item,
+  .widget-wrap,
+  .widget-item,
+  .person,
+  .btn-success,
+  .histories__list-footer,
+  .navbar-toggler,
+  .hover:hover {
+    background: $black-color !important;
+    color: $white-color !important;
+    border: 1px solid $white-color !important;
+  }
+
+  .histories__list-footer {
+
+    .year {
+      color: $white-color !important;
+    }
+  }
+
+  .footer, .footer .copy, .footer .container {
+    border-color: $white-color !important;
+    color: $white-color;
+    background-color: $black-color;
+    opacity: 1 !important;
+  }
+
+  .list-view__item {
+    background-color: $black-color !important;
+    color: $white-color !important;
+  }
+
+  .list-view__link::after {
+    border-color: $white-color !important;
+  }
+
+  .navbar-toggler {
+
+    .navbar-toggler-icon {
+      background-color: $black-color !important;
+    }
+  }
+}

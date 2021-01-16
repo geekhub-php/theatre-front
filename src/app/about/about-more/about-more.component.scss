@@ -1,4 +1,4 @@
-@import "../../../assets/variables";
+@import "~assets/variables";
 
 .history {
   font-family: $main-font_bold;
@@ -12,7 +12,7 @@
 
     .history-heading {
       margin: 0;
-      font-size: 24px;
+      font-size: 1.714rem;
       color: $hover-color;
     }
 
@@ -20,7 +20,7 @@
       font-family: "cormorant_infantmedium", serif;
       color: $dark-grayish-red;
       margin: 0;
-      font-size: 18px;
+      font-size: 1.286rem;
     }
   }
 
@@ -40,8 +40,8 @@
 
   .list-item {
     cursor: pointer;
-    height: 218px;
-    width: 106px;
+    height: 15.571rem;
+    width: 7.571rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -57,10 +57,10 @@
   }
 
   .list-item .title {
-    font-size: 12px;
+    font-size: .857rem;
     background-color: #2a2a2a;
     display: flex;
-    height: 60px;
+    height: 4.286rem;
     margin-bottom: 0;
   }
 
@@ -74,6 +74,7 @@
 
 .history-main_text {
   color: $dark-grayish-red;
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 767px) {
@@ -84,7 +85,7 @@
 
   .performance {
     margin: 0 auto;
-    width: 324px;
+    width: 23.143rem;
   }
 }
 
@@ -98,6 +99,6 @@
 @media screen and (max-width: 349px) {
 
   .performance {
-    width: 216px;
+    width: 15.429rem;
   }
 }

@@ -8,13 +8,15 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     MainNavComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    VisuallyImpairedComponent
   ],
   imports: [
     CommonModule,

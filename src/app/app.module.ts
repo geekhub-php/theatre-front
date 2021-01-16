@@ -33,6 +33,8 @@ import { DevTeamComponent } from './dev-team/dev-team.component';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { PersonRolesComponent } from './person-roles/person-roles.component';
 import { DonateComponent } from './donate/donate.component';
+import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -68,9 +70,11 @@ import { DonateComponent } from './donate/donate.component';
     ScheduleModule,
     NgbPaginationModule,
     WidgetModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.ga),
+    NgxGoogleAnalyticsRouterModule
  ],
-  providers: [],
+  providers: [GoogleAnalyticsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

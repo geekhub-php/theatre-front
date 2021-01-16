@@ -6,6 +6,7 @@ import { HeaderComponent } from './header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { HomePageModule } from '../../../home-page/home-page.module';
 import { SpinnerModule } from '../../../shared/spinner/spinner.module';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -22,7 +23,8 @@ describe('HeaderComponent', () => {
         HomePageModule,
         RouterTestingModule,
         SpinnerModule
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

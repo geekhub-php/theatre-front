@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 h2 {
   font-size: $main-font-size;
@@ -37,8 +37,13 @@ ngb-pagination ::ng-deep ul {
     .page-item.active .page-link {
       border-color: transparent;
       outline: transparent !important;
+      padding: 7px 11px !important;
     }
   }
+}
+
+.pagination {
+  font-size: .9rem;
 }
 
 @media (max-width: 992px) {

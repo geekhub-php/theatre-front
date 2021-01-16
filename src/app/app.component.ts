@@ -8,8 +8,10 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class AppComponent {
 
-  constructor(private meta: Meta,
-              private titleService: Title) {}
+  constructor(
+    private meta: Meta,
+    private titleService: Title,
+  ) {}
 
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
