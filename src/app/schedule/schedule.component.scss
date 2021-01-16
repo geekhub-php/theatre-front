@@ -1,12 +1,7 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 h2 {
   color: $hover-color;
-  font-family: "cormorant_infantsemibold", serif;
-}
-
-h3 {
-  font-family: "cormorant_infantsemibold", serif;
 }
 
 a:hover {
@@ -22,7 +17,6 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-family: "cormorant_infantmedium", serif;
 }
 
 .btn {
@@ -58,8 +52,6 @@ table {
 .day-of-week {
   background-color: $hover-color;
   color: $white-color;
-  font-family: "cormorant_infantsemibold", serif;
-  //font-family: robotothin,sans-serif;
   font-size: 1rem;
   border-right: 1px solid $white-color;
   padding: 11px 0;
@@ -71,7 +63,6 @@ table {
 .day-of-month {
   position: relative;
   overflow: hidden;
-  font-family: "cormorant_infantsemibold", serif;
   height: 10.143rem;
   padding: 34px 0 0;
   border: 1px solid $light-gray;
@@ -153,7 +144,6 @@ table {
   height: 100%;
   color: $white-color;
   text-align: center;
-  font-family: "cormorant_garamondregular", serif;
   font-size: .857rem;
   transition: .2s ease;
 
@@ -190,8 +180,8 @@ table {
 .popover-date {
   text-align: center;
   font-size: 1.143rem;
+  font-weight: 600;
   color: $hover-color;
-  font-family: "cormorant_infantsemibold", serif;
 }
 
 .popover-time {
@@ -205,7 +195,6 @@ table {
 .popover-venue {
   margin-bottom: 10px;
   text-align: center;
-  font-family: "cormorant_garamondsemibold", serif;
   font-size: 1.143rem;
 }
 
@@ -246,11 +235,9 @@ table {
     margin-bottom: 16px;
     color: $primary-color;
     font-size: 1.857rem;
-    font-family: "cormorant_infantbold", serif;
   }
 
   &__description {
-    font-family: "cormorant_garamondmedium", serif;
     font-size: 1rem;
     overflow: hidden;
     display: -webkit-box;
@@ -265,13 +252,11 @@ table {
   }
 
   &__day {
-    font-family: "cormorant_infantbold", serif;
     font-size: 2.857rem;
   }
 
   &__day-type {
     padding-left: 6px;
-    font-family: "cormorant_infantmedium", serif;
   }
 
   &__date {
@@ -279,19 +264,16 @@ table {
   }
 
   &__time {
-    font-family: "cormorant_infantbold", serif;
     margin-top: 16px;
     margin-bottom: 6px;
   }
 
   &__place {
     margin-bottom: 6px;
-    font-family: "cormorant_garamondmedium", serif;
     text-align: center;
   }
 
   &__type {
-    font-family: "cormorant_garamondmedium", serif;
     text-align: center;
   }
 
@@ -307,7 +289,6 @@ table {
 
       p {
         color: $new-dark-color;
-        font-family: "cormorant_infantmedium", serif;
         margin: 0;
       }
     }
@@ -399,17 +380,17 @@ table {
   justify-content: space-between;
 
   .schedule-time {
-    font-family: "cormorant_infantsemibold", serif;
     color: $hover-color;
     text-align: center;
     font-size: 1rem;
+    font-weight: 600;
   }
 
   .schedule-place {
-    font-family: "cormorant_garamondsemibold", serif;
     text-align: center;
     color: $primary-color;
     font-size: 1rem;
+    font-weight: 600;
   }
 
   .schedule-event {
@@ -478,10 +459,9 @@ table {
 
   .day {
     display: block;
-    font-family: "cormorant_infantsemibold", serif;
     margin-top: .857rem;
     font-size: 1.286rem;
-    font-weight: 900;
+    font-weight: 600;
     color: $white-color;
     text-align: center;
   }
@@ -500,7 +480,6 @@ table {
 
       .ticket_p {
         margin: 0;
-        font-family: "cormorant_infantmedium", serif;
         text-align: center;
         font-size: 1rem;
       }

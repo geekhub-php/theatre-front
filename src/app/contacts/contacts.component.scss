@@ -1,4 +1,4 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 @media screen and (max-device-width: 640px) {
 
@@ -29,7 +29,6 @@
 }
 
 .container {
-  font-family: $main-font;
   font-size: 14px;
   color: #868b8c;
 
@@ -68,7 +67,6 @@
   width: 45%;
   font-size: 1rem;
   font-weight: 600;
-  font-family: "cormorant_garamondsemibold", serif;
   text-align: right;
 }
 
@@ -83,14 +81,12 @@
   justify-content: flex-start;
   align-items: center;
   font-size: 1rem;
-  font-family: "cormorant_infantregular", serif;
 
   a {
     display: block;
     box-sizing: border-box;
     text-decoration: none;
     font-size: 16px;
-    font-family: "cormorant_infantregular", serif;
     color: inherit;
   }
 }

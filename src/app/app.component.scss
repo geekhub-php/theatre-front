@@ -1,4 +1,4 @@
-@import "../assets/variables";
+@import "~assets/styles/variables";
 
 ::ng-deep {
 
@@ -14,7 +14,6 @@
 
       p {
         color: $new-dark-color!important;
-        font-family: "cormorant_infantmedium", serif;
         margin: 0;
       }
     }

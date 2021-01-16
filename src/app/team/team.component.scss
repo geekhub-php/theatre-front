@@ -1,4 +1,4 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 .container {
   display: flex;
@@ -8,13 +8,11 @@
 
   h2 {
     font-size: $main-font-size;
-    font-family: $main-font;
     color: $hover-color;
     margin: 20px 0;
   }
 
   h3 {
-    font-family: $main-font_light;
     font-size: 1.357rem;
     margin: 20px 0;
   }
@@ -37,7 +35,6 @@
       color: $primary-color;
       border-radius: 5px;
       text-decoration: none;
-      font-family: $main-font;
       text-align: center;
       overflow: hidden;
       cursor: pointer;

@@ -1,4 +1,4 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 ::ng-deep .carousel-control-prev .sr-only, ::ng-deep .carousel-control-next .sr-only {
   display: none;
@@ -16,7 +16,6 @@
 }
 
 ::ng-deep .info .nav-link {
-  font-family: $main-font;
   font-size: 1rem;
   color: $dark-grayish-red;
   border-color: $light-gray;
@@ -44,10 +43,6 @@
   max-width: 32.143rem;
 }
 
-::ng-deep .tab-pane {
-  font-family: $main-font;
-}
-
 .container {
 
   .page-title {
@@ -55,11 +50,9 @@
     font-size: $main-font-size;
     text-align: center;
     margin-top: 25px;
-    font-family: $main-font;
   }
 
   .page-sub-title {
-    font-family: $main-font;
     color: $hover-color;
     font-size: 1.143rem;
     text-align: center;

@@ -1,4 +1,4 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
@@ -28,11 +28,10 @@ $navLinkActiveBorderTop: 3px;
 
   .language {
     cursor: pointer;
-    padding: 30.5px 0;
+    padding: 2.179rem 0;
     text-decoration: none;
     color: #fff;
-    font-size: 12px;
-    font-family: "cormorant_garamondsemibold", serif;
+    font-size: 0.857rem;
     transition: .3s ease;
 
     &:hover {

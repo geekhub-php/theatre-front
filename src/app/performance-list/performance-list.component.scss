@@ -1,4 +1,4 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 .container {
   padding: 0;
@@ -6,7 +6,6 @@
   .page-title {
     color: $hover-color;
     text-align: center;
-    font-family: $main-font;
     font-size: $main-font-size;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -35,23 +34,23 @@
       }
 
       .perfomance-title {
-        font-family: $main-font_light;
-        height: 4.786rem;
-        font-size: 1.143rem;
-        background-color: #2a2a2a;
-        font-weight: 100;
-        color: #fff;
-        margin: auto;
-        text-align: center;
         display: flex;
+        height: 4.786rem;
+        margin: auto;
+        background-color: #2a2a2a;
+
+        font-size: 1.143rem;
+        font-weight: 300;
+        color: #fff;
+        text-align: center;
 
         a {
           color: #fff;
           margin: auto;
-        }
 
-        a:hover {
-          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
     }

@@ -1,4 +1,4 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 :host ::ng-deep .post-text {
 
@@ -10,7 +10,6 @@
 }
 
 .container {
-  font-family: $main-font;
   margin-bottom: -30px;
 
   .row {
@@ -28,7 +27,6 @@
     }
 
     .post-date {
-      font-family: "cormorant_infantmedium", serif;
       font-size: 14px;
       color: $dark-grayish-red;
       text-align: right;

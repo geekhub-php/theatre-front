@@ -1,15 +1,13 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 .heading {
   margin: 20px 0;
   font-size: $main-font-size;
   text-align: center;
   color: $hover-color;
-  font-family: $main-font;
 }
 
 .list {
-  font-family: $main-font;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -85,7 +83,6 @@
     }
 
     .histories__list-footer .year {
-      font-family: "cormorant_infantbold", serif;
       display: block;
       margin-top: .857rem;
       font-size: 1.286rem;

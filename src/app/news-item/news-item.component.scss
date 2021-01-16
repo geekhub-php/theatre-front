@@ -1,8 +1,7 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 .card {
   max-width: 605px;
-  font-family: $main-font;
   color: $primary-color;
   font-weight: 600;
   margin-bottom: 40px;
@@ -25,7 +24,6 @@
     }
 
     .list-group-item {
-      font-family: "cormorant_infantmedium", serif;
       border-width: 1px 0 0;
       border-color: #e8e8e8;
       text-align: right;

@@ -1,4 +1,4 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 ul {
   list-style-type: none;
@@ -6,7 +6,6 @@ ul {
   font-size: 1.286rem;
   line-height: 2.714rem;
   margin-top: 32px;
-  font-family: $main-font;
   margin-left: -45px;
 
   li {

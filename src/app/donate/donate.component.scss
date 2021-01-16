@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
 .donate {
   display: flex;
@@ -14,7 +14,6 @@
     text-align: center;
     font-size: $main-font-size;
     color: $hover-color;
-    font-family: $main-font;
     margin-bottom: 30px;
 
     @media (max-width: 576px) {
@@ -24,7 +23,6 @@
 
   &__text {
     padding: 0 20px;
-    font-family: "cormorant_infantmedium", serif;
     font-size: 18px;
     text-align: center;
     line-height: 1.8;

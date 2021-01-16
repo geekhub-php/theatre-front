@@ -1,8 +1,6 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 .history {
-  font-family: $main-font_bold;
-
   .history-title {
     margin: 24px 0;
     display: flex;
@@ -17,10 +15,10 @@
     }
 
     .history-date {
-      font-family: "cormorant_infantmedium", serif;
       color: $dark-grayish-red;
       margin: 0;
       font-size: 1.286rem;
+      font-weight: 500;
     }
   }
 
@@ -66,7 +64,6 @@
 
   .list-item .title .span {
     text-align: center;
-    font-family: $main-font_light;
     color: $white-color;
     margin: auto;
   }
