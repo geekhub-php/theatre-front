@@ -14,4 +14,12 @@
     [ngClass]="season.number == activeSeasonNumber ? 'active' : ''"
     (click)="loadSeason(season.number)"
   >{{ season.name }}</span>
+  <span
+    *ngIf="seasons"
+    class="badge badge-pill badge-primary season-badge"
+    [ngClass]="ARCHIVE_SEASON == activeSeasonNumber ? 'active' : ''"
+    (click)="loadSeason(ARCHIVE_SEASON)"
+    i18n="@@archiveSeason"
+  >Archive</span>
+
 </div>

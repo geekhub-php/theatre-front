@@ -24,27 +24,31 @@
           <span class="ticket-number">{{ item.date_time | date: "dd" }}</span>
           <span class="ticket-month">{{ item.date_time | date: "MMMM" }}</span>
         </div>
-        <div class="ticket_data"
-             [ngClass]="{'active-more': item.id === slideId}">
+        <div class="ticket_data" [ngClass]="{'active-more': item.id === slideId}">
           <div class="ticket_link">
-            <a [routerLink]="['', 'performance', item.performance.slug]"
-               class="ticket_h2" [class.ticket_h2_small]="item.performance.title.length > 30">
+            <span
+              [routerLink]="['', 'performance', item.performance.slug]"
+              [class.ticket_h2_small]="item.performance.title.length > 30"
+              class="ticket_h2"
+            >
               {{ item.performance.title | titlecase }}
-            </a>
-            <div class="row">
-              <a [routerLink]="['', 'performance', item.performance.slug]"
-                 [ngClass]="item.buy_ticket_link ? 'col-md-8' : 'col-md-12'">
-                <p class="ticket_p">{{ item.performance.type }}</p>
-              </a>
+            </span>
+            <div style="display: flex; flex-wrap: wrap">
+              <span
+                [routerLink]="['', 'performance', item.performance.slug]"
+                [ngClass]="item.buy_ticket_link ? 'col-md-8' : 'col-md-12'"
+              >
+                <span class="c">{{ item.performance.type }}</span>
+              </span>
               <a href="{{ item.buy_ticket_link }}" target="_blank" class="col-md-4" *ngIf="item.buy_ticket_link">
                 <div class="btn btn-success buy-button">
-                  <p i18n="@@buyTicket" class="ticket_p">Buy ticket</p>
+                  <ng-container i18n="@@buyTicket" class="ticket_p">Buy ticket</ng-container>
                 </div>
               </a>
             </div>
-            <a [routerLink]="['', 'performance', item.performance.slug]" class="ticket_p"><ng-container i18n="@@venue">
-              Venue:</ng-container> <span>{{ item.venue }}</span>
-            </a>
+            <p [routerLink]="['', 'performance', item.performance.slug]" class="ticket_p">
+              <ng-container i18n="@@venue">Venue:</ng-container> <span>{{ item.venue }}</span>
+            </p>
           </div>
         </div>
       </div>

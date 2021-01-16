@@ -1,14 +1,19 @@
-@import "../../../../assets/variables";
+@import "~assets/variables";
 
 $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
 .header {
   background: linear-gradient(to right, $header-color-up 0, $header-color-down 100%);
-  font-size: 12px;
+  font-size: .857rem;
+
+  svg {
+    fill: $white-color;
+  }
 
   .header-logo {
     margin: 4px 5px;
+    font-size: 0;
   }
 
   .menu-container, .navbar-collapse, .language {
@@ -17,6 +22,15 @@ $navLinkActiveBorderTop: 3px;
 
   .navbar-collapse {
     margin-left: 25px;
+    opacity: 1;
+
+    .opacity {
+      opacity: 0;
+
+      @media (max-width: 990px) {
+        opacity: 1;
+      }
+    }
   }
 
   .language {
@@ -31,10 +45,46 @@ $navLinkActiveBorderTop: 3px;
   }
 }
 
+.header-button {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media (max-width: 990px) {
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.visually-impaired-button {
+  appearance: none;
+  background: none;
+  border: none;
+  margin: 0 5px;
+  color: $white-color;
+
+  &:hover {
+    background-color: $white-hover-color;
+  }
+}
+
 :host ::ng-deep {
 
   .navbar-nav {
     color: #fff;
+
+    @media (max-width: 990px) {
+      align-items: flex-end!important;
+    }
 
     .nav-link {
       white-space: nowrap;

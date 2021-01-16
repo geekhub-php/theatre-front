@@ -19,12 +19,14 @@ import { PerformanceEventResponse } from '../model/widget/PerformanceEventRespon
 import { WidgetResType } from '../model/widget/WidgetResType';
 import { Season } from '../model/season/Season';
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
   readonly baseUrl = environment.baseUrl;
+  readonly canonicalUrl = environment.canonicalUrl;
   readonly performanceListUrl = 'performances';
   readonly seasonListUrl = 'seasons';
   readonly newsListUrl = 'posts';
@@ -34,7 +36,8 @@ export class GatewayService {
 
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string,
-              @Inject(DOCUMENT) private doc) {
+              @Inject(DOCUMENT) private doc,
+              private router: Router) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
   }
@@ -75,18 +78,25 @@ export class GatewayService {
       );
   }
 
-  getRoles(slug, locale: string = this.localeId): Observable<Array<Role>> {
+  getPerformanceRoles(slug, locale: string = this.localeId): Observable<Array<Role>> {
     return this.http.get<Array<Role>>(`${this.baseUrl}/performances/${slug}/roles`, {params: {locale}})
       .pipe(
-        catchError(this.handleError('get list of Performances', []))
+        catchError(this.handleError('get list of Roles by Performance', []))
       );
   }
 
-  getEmployees(limit: string = '10', page: string = '1', locale: string = this.localeId): Observable<EmployeesListResponse> {
-    return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/${this.employeesListUrl}`, {params: {limit, page, locale}}
+  getActorRoles(slug, locale: string = this.localeId): Observable<Array<Role>> {
+    return this.http.get<Array<Role>>(`${this.baseUrl}/employees/${slug}/roles`, {params: {locale}})
+      .pipe(
+        catchError(this.handleError('get list of Roles by Actor', []))
+      );
+  }
+
+  getEmployees(locale: string = this.localeId): Observable<Employee> {
+    return this.http.get<Employee>(
+      `${this.baseUrl}/${this.employeesListUrl}`, {params: {locale}}
     ).pipe(
-      catchError(this.handleError('get Employees list', new EmployeesListResponse()))
+      catchError(this.handleError('get Employees list', new Employee()))
     );
   }
 
@@ -164,6 +174,12 @@ export class GatewayService {
       .pipe(
         catchError(this.handleError('get NewsItem', new NewsItem()))
       );
+  }
+
+  updateCanonicalURL() {
+    if (this.doc.getElementById('canonical')) {
+      this.doc.getElementById('canonical').setAttribute('href', `${this.canonicalUrl}${this.localeId}${this.router.url}`);
+    }
   }
 
   /* tslint:disable:no-console */

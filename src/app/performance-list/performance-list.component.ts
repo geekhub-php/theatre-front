@@ -35,6 +35,7 @@ export class PerformanceListComponent implements OnInit {
       this.getPerformances(this.seasonNumber);
     });
     this.updateMeta();
+    this.gateway.updateCanonicalURL();
   }
 
   getPerformances(seasonNumber: number) {

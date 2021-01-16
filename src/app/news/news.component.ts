@@ -30,6 +30,7 @@ export class NewsComponent implements OnInit, AfterViewChecked {
       window.scrollTo(0, 0)
     );
     this.getNews(this.limit, this.page);
+    this.gatewayService.updateCanonicalURL();
   }
 
   ngAfterViewChecked() {

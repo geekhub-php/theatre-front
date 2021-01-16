@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { PersonRolesComponent } from '../person-roles/person-roles.component';
 
 describe('PersonComponent', () => {
   let component: PersonComponent;
@@ -12,7 +13,7 @@ describe('PersonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PersonComponent],
+      declarations: [PersonComponent, PersonRolesComponent],
       imports: [
         HttpClientModule,
         RouterTestingModule,

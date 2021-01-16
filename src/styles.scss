@@ -72,15 +72,22 @@
 //@import "../node_modules/bootstrap/scss/print";
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import "assets/variables";
+@import "themes";
 
 body,html {
   height: 100%;
+  font-size: 14px;
+
+  svg {
+    width: 1.143rem;
+    height: 1.143rem;
+  }
 }
 
 @media (min-width: 1200px) {
 
   .container {
-    max-width: 1000px !important;
+    max-width: 71.429rem !important;
     overflow: hidden;
   }
 }
@@ -92,4 +99,13 @@ body,html {
 
 img {
   max-width: 100%;
+}
+
+.popover-poster {
+  max-width: 350px !important;
+  width: 100%;
+
+  .popover-body {
+    padding: 20px 10px;
+  }
 }

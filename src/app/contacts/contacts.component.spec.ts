@@ -1,18 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ContactsComponent } from './contacts.component';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('ContactsComponent', () => {
   let component: ContactsComponent;
   let fixture: ComponentFixture<ContactsComponent>;
   let httpMock: HttpTestingController;
 
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ContactsComponent ],
-      imports: [ HttpClientTestingModule ]
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])]
     })
     .compileComponents();
   }));

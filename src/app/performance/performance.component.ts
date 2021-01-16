@@ -26,6 +26,7 @@ export class PerformanceComponent implements OnInit {
     this.loaderService.start('performance-page');
     this.getPerformanceBySlug(slug);
     this.getRoles();
+    this.gateway.updateCanonicalURL();
   }
 
   getPerformanceBySlug(slug: string) {
@@ -39,7 +40,7 @@ export class PerformanceComponent implements OnInit {
 
   getRoles() {
     const slug = this.router.snapshot.paramMap.get('slug');
-    this.gateway.getRoles(slug).subscribe((res) => {
+    this.gateway.getPerformanceRoles(slug).subscribe((res) => {
       this.roles = res;
     });
   }

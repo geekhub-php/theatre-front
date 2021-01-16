@@ -28,24 +28,30 @@
 .footer {
   font-size: 12px;
   margin-top: 50px;
+  padding-bottom: 1px;
   width: 100%;
-  height: 70px;
   background-repeat: no-repeat;
   background-size: 100% 4px;
   background-image: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
 
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
   .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     .social {
-      list-style: none;
-      padding-top: 15px;
       display: flex;
       flex-direction: row;
       align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
 
       .fa-icon {
         width: 20px;
@@ -68,7 +74,6 @@
     justify-content: center;
     align-items: center;
     opacity: .5;
-    margin-bottom: 20px;
 
     .text::after {
       content: " ";
@@ -79,6 +84,40 @@
       color: $hover-color;
     }
   }
+
+  &__icon {
+    transition: .3s ease;
+  }
+
+  &__link {
+    display: flex;
+    margin-left: 10px;
+
+    &_ucf {
+
+      .footer__icon {
+        @media (max-width: 476px) {
+          width: 50px;
+          height: 40px;
+        }
+      }
+
+      &:hover {
+
+        .footer__icon {
+          fill: #ffcc2d;
+        }
+      }
+    }
+
+    &:hover {
+
+      .footer__icon {
+        fill-opacity: .8;
+      }
+    }
+  }
+
 
   @media (max-width: 991.98px) {
 
@@ -93,34 +132,20 @@
     .copy {
       padding-top: 5px;
     }
-  }
 
-  &__icon {
-    transition: .3s ease;
-  }
-
-  &__link {
-    display: flex;
-    margin-left: 10px;
-
-    &:hover {
-
-      .footer__icon {
-        fill-opacity: .8;
-      }
+    &__row {
+      justify-content: center;
     }
 
-    &_ucf {
-      width: 36px;
-      height: 20px;
-      margin-left: 10px;
+    &__link {
+      margin-top: 14px;
+    }
+  }
 
-      &:hover {
-
-        .footer__icon {
-          fill: #ffcc2d;
-        }
-      }
+  .copy {
+    @media (max-width: 476px) {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
@@ -135,7 +160,7 @@
   height: 42px;
   border-radius: 4px;
   background-color: $danger;
-  background-image: url("assets/images/arrow.png");
+  background-image: url("~assets/images/arrow.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border: none;

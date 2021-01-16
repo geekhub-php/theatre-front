@@ -5,4 +5,5 @@ export class PerformanceImageCollection {
   performance_small: Image;
   performance_big: Image;
   history_small: Image;
+  slider_slider: Image;
 }

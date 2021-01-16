@@ -21,7 +21,6 @@ import { ArticleComponent } from './article/article.component';
 import { PersonComponent } from './person/person.component';
 import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -32,6 +31,10 @@ import { WidgetModule } from './widget/widget.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
 import { SeasonsComponent } from './seasons/seasons.component';
+import { PersonRolesComponent } from './person-roles/person-roles.component';
+import { DonateComponent } from './donate/donate.component';
+import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,13 +46,14 @@ import { SeasonsComponent } from './seasons/seasons.component';
     ContactsComponent,
     ArticleComponent,
     PersonComponent,
+    PersonRolesComponent,
     NewsComponent,
     HomePageComponent,
-    PartnersComponent,
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
     SeasonsComponent,
+    DonateComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,9 +70,11 @@ import { SeasonsComponent } from './seasons/seasons.component';
     ScheduleModule,
     NgbPaginationModule,
     WidgetModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.ga),
+    NgxGoogleAnalyticsRouterModule
  ],
-  providers: [],
+  providers: [GoogleAnalyticsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

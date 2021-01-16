@@ -20,6 +20,7 @@ export class ScheduleComponent implements OnInit {
   dayPerformances: Array<PerformanceEvent>;
   date: Date;
   weeks: Array<Array<Date>>;
+  changedView = false;
 
   constructor(
     private datePipe: DatePipe,
@@ -38,6 +39,7 @@ export class ScheduleComponent implements OnInit {
       content: 'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка'
     });
     this.meta.updateTag({property: 'og:image', content: 'http://theatre-shevchenko.ck.ua/assets/images/logo.png'});
+    this.gateway.updateCanonicalURL();
   }
 
   transformDate(date) {
@@ -96,4 +98,7 @@ export class ScheduleComponent implements OnInit {
     );
   }
 
+  changeView() {
+    this.changedView === true ? this.changedView = false :  this.changedView = true;
+  }
 }

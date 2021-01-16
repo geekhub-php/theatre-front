@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/services/gateway.service';
 import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
+import { EmployeesListResponse } from '../core/model/employee/EmployeesListResponse';
 import { Meta } from '@angular/platform-browser';
 
 @Component({
@@ -11,9 +12,12 @@ import { Meta } from '@angular/platform-browser';
 })
 export class TeamComponent implements OnInit {
   employees: Array<Employee> = [];
-  limit: string;
-  page: number;
-  collectionSize: number;
+  artCoreEmployees: Array<Employee>;
+  artProductionEmployees: Array<Employee>;
+  administrativeEmployees: Array<Employee>;
+  creativeEmployees: Array<Employee>;
+  invitedActorEmployees: Array<Employee>;
+  employeesStatus;
 
   constructor(
     private httpGatewayService: GatewayService,
@@ -28,20 +32,26 @@ export class TeamComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getEmployees(this.limit, this.page);
+    this.getEmployees();
+    this.httpGatewayService.updateCanonicalURL();
   }
 
-  getEmployees(limit, page) {
+  getEmployees() {
     this.loaderService.start('load-team');
-    this.httpGatewayService.getEmployees(limit, page).subscribe((res) => {
-      this.employees = this.employees.concat(res.employees);
-      this.collectionSize = res.total_count;
-      this.page = res.page;
+    this.httpGatewayService.getEmployees().subscribe((persons) => {
+      this.employees = this.employees.concat(persons);
+      this.artCoreEmployees = this.getEmployeesStatus('art-core');
+      this.artProductionEmployees = this.getEmployeesStatus('art-production');
+      this.administrativeEmployees = this.getEmployeesStatus('administrative');
+      this.creativeEmployees = this.getEmployeesStatus('creative');
+      this.invitedActorEmployees = this.getEmployeesStatus('invited');
+      this.employeesStatus = [this.artCoreEmployees, this.artProductionEmployees, this.administrativeEmployees,
+        this.creativeEmployees, this.invitedActorEmployees];
+      this.loaderService.stop('load-team');
     });
   }
 
-  onScroll() {
-    if (this.employees.length < this.collectionSize) this.getEmployees(this.limit, this.page + 1);
-    if (this.employees.length === this.collectionSize) this.loaderService.stop('load-team');
+  getEmployeesStatus(status) {
+    return this.employees.filter((person) => person.staff === status);
   }
 }

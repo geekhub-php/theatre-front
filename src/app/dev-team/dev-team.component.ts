@@ -24,5 +24,7 @@ export class DevTeamComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.gateway.updateCanonicalURL();
   }
+
 }

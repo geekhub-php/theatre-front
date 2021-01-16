@@ -14,7 +14,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PartnersComponent } from './partners/partners.component';
+import { DonateComponent } from './donate/donate.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
@@ -26,6 +26,7 @@ import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
 import { WidgetModule } from './widget/widget.module';
 import { SeasonsComponent } from './seasons/seasons.component';
+import { PersonRolesComponent } from './person-roles/person-roles.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -39,10 +40,11 @@ describe('AppComponent', () => {
         NewsComponent,
         AboutComponent,
         PersonComponent,
+        PersonRolesComponent,
         ArticleComponent,
         TeamComponent,
         ContactsComponent,
-        PartnersComponent,
+        DonateComponent,
         BoardTrusteesComponent,
         AboutMoreComponent,
         DevTeamComponent,

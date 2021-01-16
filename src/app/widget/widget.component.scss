@@ -1,9 +1,9 @@
-@import "../../assets/variables";
+@import "~assets/variables";
 
 .widget {
   margin: 0 auto;
-  max-width: 350px;
-  min-width: 240px;
+  max-width: 25rem;
+  min-width: 17.143rem;
 }
 
 .widget-list {
@@ -12,7 +12,7 @@
   margin: 0;
 
   .widget-item {
-    min-height: 72px;
+    min-height: 5.143rem;
     box-sizing: border-box;
     border-bottom: 1px dashed $primary-color;
     background-color: $bg-widget;
@@ -30,7 +30,7 @@
     }
 
     .widget-date {
-      min-width: 75px;
+      min-width: 5.357rem;
       margin-right: 5px;
       box-sizing: border-box;
       position: relative;
@@ -40,21 +40,21 @@
 
     .week {
       color: $dark-grayish-red;
-      font-size: 18px;
-      line-height: 18px;
+      font-size: 1.286rem;
+      line-height: 1.286rem;
     }
 
     .day {
       font-family: $main-font_light;
-      font-size: 30px;
+      font-size: 2.143rem;
       color: $white-color;
-      line-height: 32px;
+      line-height: 2.286rem;
     }
 
     .month {
       color: $dark-grayish-red;
-      font-size: 14px;
-      line-height: 14px;
+      font-size: 1rem;
+      line-height: 1rem;
     }
   }
 
@@ -79,14 +79,14 @@
     .time {
       margin: 5px 0 0;
       font-family: $main-font;
-      font-size: 12px;
+      font-size: .857rem;
       color: $white-color;
     }
   }
 
   .widget-about h3.widget-heading {
     font-family: $main-font;
-    font-size: 18px;
+    font-size: 1.286rem;
     color: $white-color;
     margin-bottom: 0;
   }
@@ -95,12 +95,12 @@
 .widget-item .widget-about .type {
   margin: 0;
   font-family: $main-font_light;
-  font-size: 12px;
+  font-size: .857rem;
   color: $white-color;
 }
 
 .hover:hover {
-  background-color: $hover-color !important;
+  background-color: $hover-color;
 
   .link {
     cursor: pointer;
@@ -119,11 +119,11 @@
 }
 
 .bg-line {
-  background: url("../../assets/images/play-stick-menu.png") right center no-repeat;
+  background: url("~assets/images/play-stick-menu.png") right center no-repeat;
 }
 
 .bg-news-code {
-  background: url("../../assets/images/news-code.png") 97% center no-repeat, $bg-widget;
+  background: url("~assets/images/news-code.png") 97% center no-repeat, $bg-widget;
 }
 
 .mrg10px {

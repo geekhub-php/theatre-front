@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { BoardTrusteesComponent } from './board-trustees.component';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BoardTrusteesComponent', () => {
   let component: BoardTrusteesComponent;
@@ -11,7 +12,9 @@ describe('BoardTrusteesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BoardTrusteesComponent ],
-      imports: [ HttpClientTestingModule ]
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])]
     })
     .compileComponents();
   }));

@@ -3,8 +3,6 @@ import { Employee } from './employee/Employee';
 import { PerformanceImageCollection } from './performance/PerformanceImageCollection';
 
 export class Role {
-  mainPicture: PerformanceImageCollection;
-  sliderImage: PerformanceImageCollection;
   title: string;
   description: string;
   performance: Performance;

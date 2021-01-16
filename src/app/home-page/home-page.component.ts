@@ -24,6 +24,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
     },
       err => this.loaderService.stop('home')
     );
+    this.gatewayService.updateCanonicalURL();
   }
 
   ngAfterViewChecked() {

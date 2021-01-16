@@ -11,6 +11,7 @@ export class BoardTrusteesComponent implements OnInit {
   constructor(private gatewayService: GatewayService) { }
 
   ngOnInit() {
+    this.gateway.updateCanonicalURL();
   }
 
 }

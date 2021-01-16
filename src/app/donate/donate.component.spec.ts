@@ -1,16 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PartnersComponent } from './partners.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { DonateComponent } from './donate.component';
 
-describe('PartnersComponent', () => {
-  let component: PartnersComponent;
-  let fixture: ComponentFixture<PartnersComponent>;
+describe('DonateComponent', () => {
+  let component: DonateComponent;
+  let fixture: ComponentFixture<DonateComponent>;
   let httpMock: HttpTestingController;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PartnersComponent ],
+      declarations: [ DonateComponent ],
       imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
@@ -18,7 +18,7 @@ describe('PartnersComponent', () => {
 
   beforeEach(() => {
     httpMock = TestBed.get(HttpClientTestingModule);
-    fixture = TestBed.createComponent(PartnersComponent);
+    fixture = TestBed.createComponent(DonateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
