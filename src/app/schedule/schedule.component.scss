@@ -474,6 +474,9 @@ table {
     margin: 10px auto 0;
 
     .btn-success {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       padding: 10px;
       border-radius: 4px;

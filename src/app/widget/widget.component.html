@@ -14,7 +14,7 @@
               <p class="time col-4">{{ item.time }}</p>
               <a href="{{ item.buy_ticket_link }}" target="_blank" *ngIf="item.buy_ticket_link">
                 <div class="btn btn-success float-right">
-                  <p i18n="@@buyTicket" class="ticket_p">Buy ticket</p>
+                  <ng-container i18n="@@buyTicket" class="ticket_p">Buy ticket</ng-container>
                 </div>
               </a>
             </div>
@@ -40,7 +40,7 @@
         <p class="type link" [routerLink]="[ '/performance', item.performance.slug ]">{{ item.performance.type }}</p>
         <a href="{{ item.buy_ticket_link }}" target="_blank" *ngIf="item.buy_ticket_link">
           <div class="btn btn-success float-right">
-            <p i18n="@@buyTicket" class="ticket_p">Buy ticket</p>
+            <ng-container i18n="@@buyTicket" class="ticket_p">Buy ticket</ng-container>
           </div>
         </a>
       </div>
