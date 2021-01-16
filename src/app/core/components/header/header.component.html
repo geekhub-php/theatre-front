@@ -15,7 +15,11 @@
       </button>
 
       <div class="navbar-collapse" [class.collapse]="collapse">
-        <app-main-nav></app-main-nav>
+        <app-main-nav [class.opacity]="isCollapsed"></app-main-nav>
+        <div class="search-box" [ngbCollapse]="!isCollapsed">
+          <input type="text" class="search-input">
+          <button class="search-button">Search</button>
+        </div>
       </div>
 
       <a class="language d-none d-lg-block" [href]="langRedirectUrl" i18n="@@lang">Укр</a>
@@ -23,6 +27,11 @@
       <button class="visually-impaired-button d-none d-lg-block" (click)="trigger.next(!trigger.value);">
         <svg width="24" height="24">
           <use href="assets/images/visibility-black-18dp.svg#visibility"></use>
+        </svg>
+      </button>
+      <button class="search-icon-button" aria-controls="collapseExample" (click)="collapseMenu()" [attr.aria-expanded]="!isCollapsed">
+        <svg width="20" height="20">
+          <use href="assets/images/search.svg#search"></use>
         </svg>
       </button>
     </nav>
