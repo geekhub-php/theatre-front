@@ -64,7 +64,7 @@ $navLinkActiveBorderTop: 3px;
     position: static;
     width: 50%;
     margin-left: auto;
-    padding: 10px 0 20px;
+    padding: 10px 0;
 
     &.collapse:not(.show) {
       display: flex;
@@ -112,6 +112,7 @@ $navLinkActiveBorderTop: 3px;
     border: thin solid $white-color;
     color: $white-color;
     transition: .3s ease;
+    opacity: 1;
 
     &:focus,
     &:active {
@@ -120,6 +121,10 @@ $navLinkActiveBorderTop: 3px;
 
     &:hover {
       opacity: .6;
+    }
+
+    &.opacity {
+      opacity: 0;
     }
 
     @media (max-width: 990px) {

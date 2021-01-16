@@ -18,9 +18,9 @@
         <app-main-nav [class.opacity]="isCollapsed"></app-main-nav>
         <div class="search-box" [ngbCollapse]="!isCollapsed">
           <input type="text" class="search-input">
-          <button class="search-button">Search</button>
+          <button class="search-button" i18n="@@search">Search</button>
         </div>
-        <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank" class="header-button">
+        <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank" class="header-button" [class.opacity]="isCollapsed">
           <div class="btn btn-success">
             <ng-container i18n="@@buyTicket" class="ticket_p">Buy ticket</ng-container>
           </div>
