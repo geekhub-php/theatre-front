@@ -360,7 +360,6 @@ table {
   margin-left: 10px;
   background-color: transparent;
   border: none;
-
   color: $secondary-color;
   transition: .3s ease;
 
@@ -375,6 +374,7 @@ table {
 }
 
 @media screen and (max-width: 71.429rem) {
+
   .desktop, .poster-view {
     display: none;
   }
@@ -385,7 +385,6 @@ table {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-
   max-width: 34rem;
   padding-left: 1.714rem;
   margin: 2.857rem auto 0;
@@ -479,6 +478,7 @@ table {
 }
 
 @media screen and (max-width: 60rem) {
+
   .list-view {
     display: none;
   }

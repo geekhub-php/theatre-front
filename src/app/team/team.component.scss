@@ -10,7 +10,6 @@
 .persons-title {
   margin: 20px 0;
   padding-left: 10px;
-
   font-size: 1.5rem;
   font-weight: 100;
 }
@@ -24,15 +23,11 @@
 
 .person {
   position: relative;
-
   width: 10.429rem;
   height: 18.286rem;
-
   margin: 0 0 6px 9px;
-
   border: 1px solid $border-color;
   box-shadow: $typical-box-shadow;
-
   font-size: .857rem;
   border-radius: 5px;
   text-decoration: none;
@@ -48,7 +43,6 @@
     padding: 5px;
     font-size: 1.286rem;
     font-weight: 400;
-
     color: $secondary-color;
   }
 

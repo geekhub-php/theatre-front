@@ -1,7 +1,9 @@
 @import "~assets/styles/variables";
 
 @media screen and (max-device-width: 640px) {
+
   .contacts-items-wrapper {
+
     li {
       flex-direction: column;
       align-items: flex-end;

@@ -157,6 +157,7 @@
 
   &__button {
     @extend .u-unstyled-btn;
+
     position: relative;
     border: 1px solid $white-color;
     margin: 0 5px;
@@ -210,6 +211,7 @@
 
   &__button {
     @extend .u-unstyled-btn;
+
     margin: 0 5px;
     color: $white-color;
 
