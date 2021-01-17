@@ -1,0 +1,13 @@
+.tickets-button {
+  padding: 5px 12px;
+  border-radius: 3px;
+  transition: .3s ease all;
+
+  background-color: $white-color;
+  border-color: $white-color;
+
+  color: $secondary-color;
+
+  outline: none !important;
+  box-shadow: none !important;
+}

@@ -1,16 +1,5 @@
 @import "~assets/styles/variables";
 
-.btn-success {
-  background-color: $new-success-color;
-  border: thin solid $new-success-color;
-  padding: 5px 15px;
-  border-radius: 3px;
-
-  &:hover {
-    border: thin solid $new-success-color;
-  }
-}
-
 a:hover {
   text-decoration: none;
 }
@@ -24,21 +13,20 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
 
-.btn {
-  margin: 0 5px;
-  color: $secondary-color;
-  border: 1px solid $secondary-color;
-  background-color: $white-color;
-  box-shadow: none !important;
+  .btn {
+    margin: 0 5px;
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    background-color: $white-color;
+    box-shadow: none !important;
 
-  &:hover {
-    color: $main-color-darker;
-    border: 1px solid $main-color-darker;
+    &:hover {
+      color: $main-color-darker;
+      border: 1px solid $main-color-darker;
+    }
   }
 }
-
 
 table {
   border-spacing: 0;
@@ -482,6 +470,11 @@ table {
     font-weight: 600;
     color: $white-color;
     text-align: center;
+  }
+
+  .tickets-button {
+    border: 1px solid $secondary-color;
+    margin: 10px auto;
   }
 }
 

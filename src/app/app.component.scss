@@ -1,30 +1,5 @@
 @import "~assets/styles/variables";
 
-::ng-deep {
-
-  a {
-
-    .btn-success {
-      background-color: $new-success-color!important;
-      border-color: $new-success-color!important;
-      padding: 5px 12px;
-      border-radius: 3px;
-      transition: .3s ease all;
-      cursor: pointer;
-      color: $new-dark-color!important;
-    }
-
-    &:hover {
-
-      .btn-success {
-        background-color: transparent !important;
-        color: $new-success-color!important;
-        border-color: $new-success-color!important;
-      }
-    }
-  }
-}
-
 :host {
   display: block;
   position: relative;

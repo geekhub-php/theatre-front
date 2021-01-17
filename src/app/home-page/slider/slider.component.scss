@@ -20,6 +20,12 @@
   }
 }
 
+.tickets-button {
+  position: absolute;
+  right: 30px;
+  bottom: 15px;
+}
+
 .slider {
   max-height: 100%;
   max-width: initial;
@@ -106,12 +112,6 @@
         .ticket-month {
           color: #fff;
         }
-      }
-
-      .buy-button {
-        position: absolute;
-        right: 30px;
-        top: -15px;
       }
 
       .ticket_data {
