@@ -5,6 +5,7 @@ import { Season } from '../core/model/season/Season';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Performance } from '../core/model/performance/Performance';
 import { Subscription } from 'rxjs';
+import { EAudience } from '../core/model/Audience';
 
 @Component({
   selector: 'app-seasons',
@@ -20,10 +21,8 @@ export class SeasonsComponent implements OnInit, OnDestroy {
   ALL_SEASONS = -1;
   ARCHIVE_SEASON = -2;
 
-  activeAudience: 'kids' | 'adults' | null = null;
-  ALL_AUDIENCE = null;
-  KIDS_AUDIENCE: 'kids' = 'kids';
-  ADULT_AUDIENCE: 'adults' = 'adults';
+  EAudience = EAudience;
+  activeAudience: EAudience = null;
 
   constructor(
     private changeDetector: ChangeDetectorRef,
@@ -55,15 +54,15 @@ export class SeasonsComponent implements OnInit, OnDestroy {
 
   loadSeason(seasonNumber: number) {
     this.activeSeasonNumber = seasonNumber;
-    this.appRoutes.navigate([], {
-      relativeTo: this.activatedRoute,
-      queryParams: {season: seasonNumber}
-    });
+    const queryParams: { season: number, audience?: string } = { season: this.activeSeasonNumber };
+
+    if (!!this.activeAudience) queryParams.audience = this.activeAudience;
+    this.appRoutes.navigate([], { relativeTo: this.activatedRoute, queryParams });
   }
 
-  filterAudience(audienceType: 'kids' | 'adults' | null) {
+  filterAudience(audienceType: EAudience) {
     this.activeAudience = audienceType;
-    const queryParams: { season: number, audience?: string } = { season: this.activeSeasonNumber };
+    const queryParams: { season: number, audience?: EAudience } = { season: this.activeSeasonNumber };
 
     if (!!audienceType) queryParams.audience = this.activeAudience;
     this.appRoutes.navigate([], { relativeTo: this.activatedRoute, queryParams });

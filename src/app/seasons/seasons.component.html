@@ -45,24 +45,24 @@
   <span
     *ngIf="seasons"
     class="badge badge-pill badge-primary season-badge"
-    [class.active]="!ALL_AUDIENCE === !activeAudience"
-    (click)="filterAudience(ALL_AUDIENCE)"
+    [class.active]="!EAudience.ALL_AUDIENCE === !activeAudience"
+    (click)="filterAudience(EAudience.ALL_AUDIENCE)"
     i18n="@@allAudience"
   >All</span>
 
   <span
     *ngIf="seasons"
     class="badge badge-pill badge-primary season-badge"
-    [class.active]="KIDS_AUDIENCE === activeAudience"
-    (click)="filterAudience(KIDS_AUDIENCE)"
+    [class.active]="EAudience.KIDS_AUDIENCE === activeAudience"
+    (click)="filterAudience(EAudience.KIDS_AUDIENCE)"
     i18n="@@for_kids"
   >For Kids</span>
 
   <span
     *ngIf="seasons"
     class="badge badge-pill badge-primary season-badge"
-    [class.active]="ADULT_AUDIENCE === activeAudience"
-    (click)="filterAudience(ADULT_AUDIENCE)"
+    [class.active]="EAudience.ADULT_AUDIENCE === activeAudience"
+    (click)="filterAudience(EAudience.ADULT_AUDIENCE)"
     i18n="@@for_adult"
   >For Adult</span>
 </div>
