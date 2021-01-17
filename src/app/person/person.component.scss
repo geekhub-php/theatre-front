@@ -21,7 +21,7 @@
       font-size: 1rem;
 
       .biography {
-        color: $secondary-text-color;
+        color: $secondary-color-lighter;
       }
     }
   }
@@ -39,7 +39,7 @@ ngx-gallery ::ng-deep {
   .ngx-gallery-arrow-left .ngx-gallery-arrow {
     width: 40px;
     height: 40px;
-    background-image: url("~assets/images/left-icon.png");
+    background-image: url("~assets/images/gallery/left-icon.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 40px 40px;
@@ -49,7 +49,7 @@ ngx-gallery ::ng-deep {
   .ngx-gallery-arrow-right .ngx-gallery-arrow {
     width: 40px;
     height: 40px;
-    background-image: url("~assets/images/right-icon.png");
+    background-image: url("~assets/images/gallery/right-icon.png");
     background-position: center;
     background-size: 40px 40px;
     background-repeat: no-repeat;
@@ -63,7 +63,7 @@ ngx-gallery ::ng-deep {
   ngx-gallery-action i {
     width: 40px;
     height: 40px;
-    background-image: url("~assets/images/close-icon.png");
+    background-image: url("~assets/images/gallery/close-icon.png");
     background-position: center;
     background-size: 40px 40px;
     background-repeat: no-repeat;

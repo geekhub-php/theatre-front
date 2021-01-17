@@ -1,6 +1,16 @@
 @import "~assets/styles/variables";
 @import "~assets/styles/utilities";
 
+$white-color: #fff;
+$black-color: #000;
+$yellow-color: #fff150;
+$blue-color: #1f5080;
+$green-color: #0e670b;
+$sepia-bg: #f4e0c1;
+$sepia-color: #80502b;
+$inversion-bg: #88c2f7;
+$inversion-color: #0f2c57;
+
 :host {
   display: block;
   border-bottom: 1px solid rgba($white-color, .2);
