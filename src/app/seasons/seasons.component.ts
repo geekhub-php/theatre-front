@@ -24,16 +24,19 @@ export class SeasonsComponent implements OnInit, OnDestroy {
   EAudience = EAudience;
   activeAudience: EAudience = null;
 
+  viewMode = false;
+
   constructor(
     private changeDetector: ChangeDetectorRef,
     private loaderService: LoaderService,
     private appRoutes: Router,
     private activatedRoute: ActivatedRoute,
     private gatewayService: GatewayService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
+    this.viewMode = !!this.performance;
+
     this.loaderService.start('seasons');
 
     this.sub$.add(this.activatedRoute.queryParams
@@ -44,15 +47,20 @@ export class SeasonsComponent implements OnInit, OnDestroy {
 
     this.sub$.add(this.gatewayService.getSeasons()
       .subscribe(seasons => {
+        this.seasons = this.viewMode ? this.filterSeasonsByPerformance(seasons, this.performance) : seasons;
+        this.loaderService.stop('seasons');
+
+        if (this.viewMode) return;
+
         this.activeSeasonNumber = this.activeSeasonNumber ? this.activeSeasonNumber : seasons[0].number;
         this.activeAudience = this.activeAudience ? this.activeAudience : seasons[0].audience;
-        this.seasons = seasons;
         this.changeDetector.markForCheck();
-        this.loaderService.stop('seasons');
       }));
   }
 
   loadSeason(seasonNumber: number) {
+    if (this.viewMode) return;
+
     this.activeSeasonNumber = seasonNumber;
     const queryParams: { season: number, audience?: string } = { season: this.activeSeasonNumber };
 
@@ -61,6 +69,8 @@ export class SeasonsComponent implements OnInit, OnDestroy {
   }
 
   filterAudience(audienceType: EAudience) {
+    if (this.viewMode) return;
+
     this.activeAudience = audienceType;
     const queryParams: { season: number, audience?: EAudience } = { season: this.activeSeasonNumber };
 

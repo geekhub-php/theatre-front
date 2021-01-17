@@ -22,9 +22,7 @@
   </section>
 
   <section class="info">
-    <div class="info__seasons">
-      <app-seasons [performance]="performance"></app-seasons>
-    </div>
+    <app-seasons class="info__seasons" *ngIf="performance" [performance]="performance"></app-seasons>
 
     <ngb-tabset>
       <ngb-tab title="Actors" i18n-title="@@actors" *ngIf="roles?.length">

@@ -88,6 +88,11 @@
   }
 }
 
+:host ::ng-deep .info__seasons .seasons {
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
 .info {
   margin-bottom: 10px;
   width: 970px;
