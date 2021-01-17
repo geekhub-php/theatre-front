@@ -22,6 +22,10 @@
   </section>
 
   <section class="info">
+    <div class="info__seasons">
+      <app-seasons [performance]="performance"></app-seasons>
+    </div>
+
     <ngb-tabset>
       <ngb-tab title="Actors" i18n-title="@@actors" *ngIf="roles?.length">
         <ng-template ngbTabContent>

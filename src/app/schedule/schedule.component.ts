@@ -39,6 +39,9 @@ export class ScheduleComponent implements OnInit {
     this.viewMode = JSON.parse(localStorage.getItem('viewMode')) || ScheduleViewModes.LIST;
     this.date = new Date();
     this.getPerformanceEvents();
+    this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
     this.gateway.updateCanonicalURL();
   }
 

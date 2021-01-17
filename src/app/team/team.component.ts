@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../core/services/gateway.service';
 import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
-import { EmployeesListResponse } from '../core/model/employee/EmployeesListResponse';
 
 @Component({
   selector: 'app-team',
@@ -20,8 +19,11 @@ export class TeamComponent implements OnInit {
 
   constructor(
     private httpGatewayService: GatewayService,
-    private loaderService: LoaderService
+    private loaderService: LoaderService,
   ) {
+    this.httpGatewayService.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Персоналії Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/uk/assets/images/persons.jpg');
   }
 
   ngOnInit() {

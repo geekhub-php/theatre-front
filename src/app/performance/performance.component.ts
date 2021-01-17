@@ -30,6 +30,9 @@ export class PerformanceComponent implements OnInit {
   getPerformanceBySlug(slug: string) {
     this.gateway.getPerformanceBySlug(slug).subscribe((res) => {
       this.performance = res.body;
+      this.gateway.updateMeta(this.performance.title,
+        this.performance.description,
+        this.performance.mainPicture.performance_big.url);
       this.loaderService.stop('performance-page');
     }, err => this.loaderService.stop('performance-page'));
     this.loaderService.start('performance-page');

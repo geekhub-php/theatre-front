@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { NewsItem } from '../core/model/news/NewsItem';
 import { GatewayService } from '../core/services/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements OnInit, AfterViewChecked {
   limit = '5';
   page: number;
   listPost: Array<NewsItem> = [];
@@ -31,8 +31,14 @@ export class NewsComponent implements OnInit {
     this.gatewayService.updateCanonicalURL();
   }
 
+  ngAfterViewChecked() {
+    this.gatewayService.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Новини Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
+  }
+
   goToPage(page: number) {
-    const params = {page};
+    const params = { page };
     this.page = page;
     this.appRoutes.navigate([], {
       relativeTo: this.active,
