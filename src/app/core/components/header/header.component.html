@@ -16,6 +16,12 @@
 
       <div class="navbar-collapse" [class.collapse]="collapse">
         <app-main-nav></app-main-nav>
+
+        <!--<div class="search-box" [ngbCollapse]="!isCollapsed">-->
+          <!--<input type="text" class="search-input">-->
+          <!--<button class="search-button" i18n="@@search">Search</button>-->
+        <!--</div>-->
+
         <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
            class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
       </div>
@@ -27,6 +33,11 @@
           <use href="assets/images/sprite.svg#eye"></use>
         </svg>
       </button>
+      <!--<button class="u-unstyled-btn search-icon-button" aria-controls="collapseExample" (click)="collapseMenu()" [attr.aria-expanded]="!isCollapsed">-->
+        <!--<svg class="u-svg-icon" width="20" height="20">-->
+          <!--<use href="assets/images/sprite.svg#search"></use>-->
+        <!--</svg>-->
+      <!--</button>-->
     </nav>
   </div>
 </header>

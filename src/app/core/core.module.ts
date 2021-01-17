@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VisuallyImpairedComponent } from './components/visually-impaired/visual
   imports: [
     CommonModule,
     RouterModule,
-    SpinnerModule
+    SpinnerModule,
+    NgbCollapseModule
   ],
   exports: [
     HeaderComponent,

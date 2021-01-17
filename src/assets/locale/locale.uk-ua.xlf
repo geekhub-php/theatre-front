@@ -90,6 +90,10 @@
         <source>Buy ticket</source>
         <target>Купити квиток</target>
       </trans-unit>
+      <trans-unit id="search" datatype="html">
+        <source>Search</source>
+        <target>Пошук</target>
+      </trans-unit>
       <trans-unit id="seasons" datatype="html">
         <source>Seasons</source>
         <target>Сезони</target>
