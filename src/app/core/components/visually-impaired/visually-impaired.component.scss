@@ -1,16 +1,28 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
+@import "~assets/styles/utilities";
+
+$white-color: #fff;
+$black-color: #000;
+$yellow-color: #fff150;
+$blue-color: #1f5080;
+$green-color: #0e670b;
+$sepia-bg: #f4e0c1;
+$sepia-color: #80502b;
+$inversion-bg: #88c2f7;
+$inversion-color: #0f2c57;
+
+:host {
+  display: block;
+  border-bottom: 1px solid rgba($white-color, .2);
+}
 
 .visually-impaired {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 1.1rem 0 1.3rem;
   font-size: 1.1rem;
-
-  svg {
-    fill: $white-color;
-  }
 }
 
 .color-schemes {
@@ -40,9 +52,8 @@
   }
 
   &__button {
-    appearance: none;
-    background: none;
-    border: none;
+    @extend .u-unstyled-btn;
+
     color: $white-color;
 
     &.--black-white,
@@ -64,7 +75,7 @@
         left: -1rem;
         min-width: 10.714rem;
         max-width: 21.429rem;
-        background-color: $primary-color;
+        background-color: $secondary-color;
         color: $white-color;
         border-radius: 5px;
       }
@@ -82,7 +93,7 @@
           height: .714rem;
           z-index: -1;
           transform: rotate(135deg);
-          background-color: $primary-color;
+          background-color: $secondary-color;
         }
       }
     }
@@ -155,9 +166,9 @@
   }
 
   &__button {
+    @extend .u-unstyled-btn;
+
     position: relative;
-    appearance: none;
-    background: none;
     border: 1px solid $white-color;
     margin: 0 5px;
     color: $white-color;
@@ -171,7 +182,7 @@
       left: -14px;
       min-width: 10.714rem;
       max-width: 21.429rem;
-      background-color: $primary-color;
+      background-color: $secondary-color;
       color: $white-color;
       border-radius: 5px;
     }
@@ -189,12 +200,12 @@
         height: .714rem;
         z-index: -1;
         transform: rotate(135deg);
-        background-color: $primary-color;
+        background-color: $secondary-color;
       }
     }
 
     &:hover {
-      background-color: $white-hover-color;
+      background-color: rgba($white-color, .3);
     }
   }
 }
@@ -209,14 +220,13 @@
   }
 
   &__button {
-    appearance: none;
-    background: none;
-    border: none;
+    @extend .u-unstyled-btn;
+
     margin: 0 5px;
     color: $white-color;
 
     &:hover {
-      background-color: $white-hover-color;
+      background-color: rgba($white-color, .3);
     }
   }
 }

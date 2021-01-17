@@ -1,12 +1,13 @@
 <header class="header">
+  <ng-container *ngIf="trigger | async">
+    <app-visually-impaired></app-visually-impaired>
+  </ng-container>
   <div class="container">
-    <ng-container *ngIf="trigger | async">
-      <app-visually-impaired></app-visually-impaired>
-    </ng-container>
-
     <nav class="navbar navbar-expand-lg navbar-dark">
       <h1 class="header-logo" aria-label="Cherkassy theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
-        <img routerLink="/" src="assets/images/logo.png" alt="logo">
+        <a routerLink="/">
+          <img src="assets/images/logo.png" alt="logo" width="190" height="70">
+        </a>
         Cherkassy theatre of Taras Shevchenko
       </h1>
 
@@ -15,30 +16,29 @@
       </button>
 
       <div class="navbar-collapse" [class.collapse]="collapse">
-        <app-main-nav [class.opacity]="isCollapsed"></app-main-nav>
-        <div class="search-box" [ngbCollapse]="!isCollapsed">
-          <input type="text" class="search-input">
-          <button class="search-button" i18n="@@search">Search</button>
-        </div>
-        <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank" class="header-button" [class.opacity]="isCollapsed">
-          <div class="btn btn-success">
-            <ng-container i18n="@@buyTicket" class="ticket_p">Buy ticket</ng-container>
-          </div>
-        </a>
+        <app-main-nav></app-main-nav>
+
+        <!--<div class="search-box" [ngbCollapse]="!isCollapsed">-->
+          <!--<input type="text" class="search-input">-->
+          <!--<button class="search-button" i18n="@@search">Search</button>-->
+        <!--</div>-->
+
+        <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
+           class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
       </div>
 
       <a class="language d-none d-lg-block" [href]="langRedirectUrl" i18n="@@lang">Укр</a>
 
-      <button class="visually-impaired-button d-none d-lg-block" (click)="trigger.next(!trigger.value);">
-        <svg width="24" height="24">
-          <use href="assets/images/visibility-black-18dp.svg#visibility"></use>
+      <button class="u-unstyled-btn visually-impaired-button d-none d-lg-block" (click)="trigger.next(!trigger.value);">
+        <svg class="u-svg-icon" width="24" height="24">
+          <use href="assets/images/sprite.svg#eye"></use>
         </svg>
       </button>
-      <button class="search-icon-button" aria-controls="collapseExample" (click)="collapseMenu()" [attr.aria-expanded]="!isCollapsed">
-        <svg width="20" height="20">
-          <use href="assets/images/search.svg#search"></use>
-        </svg>
-      </button>
+      <!--<button class="u-unstyled-btn search-icon-button" aria-controls="collapseExample" (click)="collapseMenu()" [attr.aria-expanded]="!isCollapsed">-->
+        <!--<svg class="u-svg-icon" width="20" height="20">-->
+          <!--<use href="assets/images/sprite.svg#search"></use>-->
+        <!--</svg>-->
+      <!--</button>-->
     </nav>
   </div>
 </header>

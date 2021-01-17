@@ -106,6 +106,38 @@
         <source>Archive</source>
         <target>Архів</target>
       </trans-unit>
+      <trans-unit id="audience" datatype="html">
+        <source>Audience</source>
+        <target>Аудиторія</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/seasons/seasons.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="allAudience" datatype="html">
+        <source>All</source>
+        <target>Всі</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/seasons/seasons.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="for_kids" datatype="html">
+        <source>For Kids</source>
+        <target>Для Дітей</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/seasons/seasons.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="for_adult" datatype="html">
+        <source>For Adult</source>
+        <target>Для Дорослих</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/seasons/seasons.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="donate" datatype="html">
         <source>Donate</source>
         <target>Підтримати театр</target>
@@ -432,14 +464,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/core/components/page-not-found/page-not-found.component.html</context>
           <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="tryAgain" datatype="html">
-        <source>Please, try again</source>
-        <target>Cпробуйте ще раз</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/core/components/page-not-found/page-not-found.component.html</context>
-          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="mainPage" datatype="html">

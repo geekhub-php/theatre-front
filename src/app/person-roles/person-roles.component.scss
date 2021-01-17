@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
 .roles {
   display: flex;
@@ -17,12 +17,12 @@
   margin-bottom: 4px;
 
   &__link {
-    color: $dark-grayish-red;
+    color: $secondary-color-lighter;
     transition: .3s ease;
 
     &:hover {
       text-decoration: none;
-      color: $hover-color;
+      color: $main-color-darker;
       transition: .3s ease;
     }
   }
