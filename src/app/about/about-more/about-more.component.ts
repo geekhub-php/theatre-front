@@ -25,7 +25,10 @@ export class AboutMoreComponent implements OnInit {
       (res) => {
         this.history = res;
         this.loaderService.stop('about-more');
-      },
+        this.gateway.updateMeta(this.history.title,
+          this.history.text,
+          this.history.mainPicture.history_small.url);
+        },
       err => this.loaderService.stop('about-more')
     );
     this.gateway.updateCanonicalURL();

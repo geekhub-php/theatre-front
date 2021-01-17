@@ -18,7 +18,7 @@ export class PersonComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private gatewayService: GatewayService,
-    private loaderService: LoaderService
+    private loaderService: LoaderService,
   ) {
   }
 
@@ -49,6 +49,8 @@ export class PersonComponent implements OnInit {
       res => {
         this.person = plainToClass(Employee, res);
         this.loaderService.stop('person');
+        this.gatewayService.updateMeta(`${this.person.first_name} ${this.person.last_name}`,
+          this.person.biography, this.person.avatar.employee_small.url);
       },
       err => this.loaderService.stop('person')
     );
