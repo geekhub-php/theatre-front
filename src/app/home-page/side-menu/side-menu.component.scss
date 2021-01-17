@@ -1,44 +1,25 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
-ul {
+.side-menu {
   list-style-type: none;
+  padding: 0;
+  margin-top: 2.286rem;
   text-transform: uppercase;
   font-size: 1.286rem;
   line-height: 2.714rem;
-  margin-top: 32px;
-  font-family: $main-font;
-  margin-left: -45px;
-
-  li {
-
-    a {
-      color: $primary-color;
-      cursor: pointer;
-
-      &:hover {
-        text-decoration: none;
-        color: $hover-color;
-        fill: $hover-color;
-      }
-
-      svg {
-        margin-right: 8px;
-      }
-    }
-  }
-}
-
-@media (max-width: 992px) {
-
-  ul {
-    display: none;
-  }
-}
-
-.side-menu {
 
   &__link {
     display: flex;
     align-items: center;
+    color: $secondary-color;
+
+    &:hover {
+      text-decoration: none;
+      color: $main-color-darker;
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
   }
 }

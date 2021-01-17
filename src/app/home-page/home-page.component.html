@@ -1,12 +1,14 @@
 <app-slider></app-slider>
+
 <app-spinner name="home"></app-spinner>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
       <app-side-menu></app-side-menu>
     </div>
     <div class="col-lg-9" *ngIf="listPost.length">
-      <h3 i18n="@@news">News</h3>
+      <h3 class="page-title" i18n="@@news">News</h3>
       <app-news-item *ngFor="let item of listPost" [item]="item"></app-news-item>
     </div>
   </div>

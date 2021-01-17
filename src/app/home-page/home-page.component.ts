@@ -1,16 +1,19 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { GatewayService } from '../core/services/gateway.service';
 import { NewsItem } from '../core/model/news/NewsItem';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit, AfterViewChecked {
   limit = '3';
   listPost: Array<NewsItem> = [];
+  readonly canonicalUrl = environment.canonicalUrl;
+
   constructor(private gatewayService: GatewayService,
               private loaderService: LoaderService) { }
 
@@ -23,5 +26,11 @@ export class HomePageComponent implements OnInit {
       err => this.loaderService.stop('home')
     );
     this.gatewayService.updateCanonicalURL();
+  }
+
+  ngAfterViewChecked() {
+    this.gatewayService.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Черкаський академічний музично-драматичний театр імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
   }
 }

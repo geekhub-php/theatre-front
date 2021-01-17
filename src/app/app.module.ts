@@ -7,7 +7,7 @@ import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbModule, NgbPaginationModule, NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -71,7 +71,7 @@ import { environment } from '../environments/environment';
     NgbPaginationModule,
     WidgetModule,
     NgbPaginationModule,
-    NgbAccordionModule,
+    NgbCollapseModule,
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule
  ],

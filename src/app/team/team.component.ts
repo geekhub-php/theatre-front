@@ -20,8 +20,11 @@ export class TeamComponent implements OnInit {
 
   constructor(
     private httpGatewayService: GatewayService,
-    private loaderService: LoaderService
+    private loaderService: LoaderService,
   ) {
+    this.httpGatewayService.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Персоналії Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/uk/assets/images/persons.jpg');
   }
 
   ngOnInit() {

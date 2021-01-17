@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { WidgetModule } from '../widget/widget.module';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('PerformanceComponent', () => {
   let component: PerformanceComponent;
@@ -20,7 +21,8 @@ describe('PerformanceComponent', () => {
         RouterTestingModule,
         SpinnerModule,
         WidgetModule
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));

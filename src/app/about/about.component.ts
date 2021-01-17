@@ -10,11 +10,13 @@ import { LoaderService } from '../shared/spinner/loader.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
   listHistories: Array<History>;
 
   constructor(private getway: GatewayService, private loaderService: LoaderService) {
-  }
+    this.getway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Історія Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
+   }
 
   ngOnInit() {
     this.loaderService.start('about');

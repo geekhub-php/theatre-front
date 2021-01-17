@@ -12,7 +12,7 @@
                i18n-aria-label="@@facebookPage"
                href="https://www.facebook.com/pg/%D0%A7%D0%B5%D1%80%D0%BA%D0%B0%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D1%96%D1%87%D0%BD%D0%B8%D0%B9-%D0%BC%D1%83%D0%B7%D0%B8%D1%87%D0%BD%D0%BE-%D0%B4%D1%80%D0%B0%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9-%D1%82%D0%B5%D0%B0%D1%82%D1%80-%D1%96%D0%BC%D0%B5%D0%BD%D1%96-%D0%A2%D0%B0%D1%80%D0%B0%D1%81%D0%B0-%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%B0-1672281213013382">
               <svg width="20" height="20" class="footer__icon">
-                <use href="assets/images/facebook.svg#facebook"></use>
+                <use href="assets/images/sprite.svg#facebook"></use>
               </svg>
             </a>
           </li>
@@ -21,24 +21,25 @@
                target="_blank"
                class="footer__link"
                aria-label="Geekhub">
-              <img src="assets/images/GeekHub.png" width="24" height="16" alt="GeekHub logo">
+              <img src="assets/images/GeekHub.png" width="24" height="16" alt="GeekHub logo" title="GeekHub logo">
+            </a>
+          </li>
+          <li>
+            <a href="https://ucf.in.ua/"
+               target="_blank"
+               aria-label="Ukrainian Cultural Foundation"
+               class="footer__link footer__link_ucf">
+              <svg class="footer__icon" width="80" height="40">
+                <use xlink:href="assets/images/sprite.svg#ucf"></use>
+              </svg>
             </a>
           </li>
         </ul>
       </div>
       <div class="copy">
-        <span class="text">© Copyright 2019 Powered by </span>
+        <span class="text">© Copyright <span class="text-font">2021</span> Powered by </span>
         <a routerLink="developers-team">GeekHub Team</a>
       </div>
     </div>
-    <a href="https://ucf.in.ua/"
-       target="_blank"
-       aria-label="Ukrainian Cultural Foundation"
-       class="footer__link footer__link_ucf">
-      <svg class="footer__icon" width="80" height="40">
-        <use xlink:href="assets/images/ucf.svg#ucf"></use>
-      </svg>
-    </a>
-
   </div>
 </footer>

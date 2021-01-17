@@ -12,6 +12,7 @@ import { VisuallyImpairedService } from '../../services/visually-impaired/visual
 export class HeaderComponent {
   collapse = false;
   trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
+  isCollapsed = false;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -29,5 +30,9 @@ export class HeaderComponent {
 
   toogleMenu() {
     this.collapse = !this.collapse;
+  }
+
+  collapseMenu() {
+    this.isCollapsed = !this.isCollapsed;
   }
 }

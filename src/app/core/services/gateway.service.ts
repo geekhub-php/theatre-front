@@ -20,6 +20,7 @@ import { WidgetResType } from '../model/widget/WidgetResType';
 import { Season } from '../model/season/Season';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,8 @@ export class GatewayService {
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string,
               @Inject(DOCUMENT) private doc,
-              private router: Router) {
+              private router: Router,
+              private meta: Meta) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
   }
@@ -46,11 +48,16 @@ export class GatewayService {
     return this.http.get<Array<Season>>(`${this.baseUrl}/${this.seasonListUrl}`, {});
   }
 
-  getSeasonPerformances(seasonNumber: number, locale: string = this.localeId): Observable<Array<Performance>> {
+  getSeasonPerformances(
+    seasonNumber: number,
+    audience?: 'kids' | 'adults' | null,
+    locale: string = this.localeId,
+  ): Observable<Array<Performance>> {
+    let params: { locale: string, audience?: string } = { locale };
+    if (!!audience) params = { locale, audience};
+
     return this.http.get<Array<Performance>>(
-      `${this.baseUrl}/${this.seasonListUrl}/${seasonNumber}/${this.performanceListUrl}`,
-      {params: {locale}}
-      );
+      `${this.baseUrl}/${this.seasonListUrl}/${seasonNumber}/${this.performanceListUrl}`, {params});
   }
 
   getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = this.localeId): Observable<ScheduleListResponse> {
@@ -180,6 +187,16 @@ export class GatewayService {
     if (this.doc.getElementById('canonical')) {
       this.doc.getElementById('canonical').setAttribute('href', `${this.canonicalUrl}${this.localeId}${this.router.url}`);
     }
+  }
+
+  updateMeta(title, description, image) {
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: description
+    });
+    this.meta.updateTag({ property: 'og:image', content: image });
+    this.meta.updateTag({ property: 'og:url', content: `${this.canonicalUrl}${this.localeId}${this.router.url}` });
   }
 
   /* tslint:disable:no-console */

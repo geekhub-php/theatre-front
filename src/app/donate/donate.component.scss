@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
 .donate {
   display: flex;
@@ -11,10 +11,6 @@
   }
 
   &__title {
-    text-align: center;
-    font-size: $main-font-size;
-    color: $hover-color;
-    font-family: $main-font;
     margin-bottom: 30px;
 
     @media (max-width: 576px) {
@@ -24,10 +20,9 @@
 
   &__text {
     padding: 0 20px;
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
     line-height: 1.8;
-    color: $primary-color;
 
     @media (max-width: 576px) {
       font-size: 12px;
