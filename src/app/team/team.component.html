@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 i18n="@@persons">Persons</h2>
+  <h2 class="page-title text-center" i18n="@@persons">Persons</h2>
   <img class="persons-photo" src="assets/images/persons.jpg" alt="collectives">
   <div *ngFor="let listEmployee of employeesStatus">
     <h3 *ngIf="employeesStatus[0].length && listEmployee === artCoreEmployees" class="persons-title" i18n="@@artCore">Art-core</h3>

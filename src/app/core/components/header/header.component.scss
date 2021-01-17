@@ -1,15 +1,12 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
 .header {
-  background: linear-gradient(to right, $header-color-up 0, $header-color-down 100%);
+  background: $main-color;
+  background: linear-gradient(120deg, $main-color-lighter 0%, $main-color 33%, $main-color-darker 100%);
   font-size: .857rem;
-
-  svg {
-    fill: $white-color;
-  }
 
   .header-logo {
     margin: 4px 5px;
@@ -35,45 +32,34 @@ $navLinkActiveBorderTop: 3px;
 
   .language {
     cursor: pointer;
-    padding: 30.5px 0;
+    padding: 2.179rem 0;
     text-decoration: none;
     color: #fff;
+    font-size: .857rem;
+    transition: .3s ease;
 
     &:hover {
-      color: $primary-color;
+      color: #fff;
     }
   }
 }
 
 .header-button {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: auto 10px;
 
   @media (max-width: 990px) {
     margin-left: auto;
     margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: none;
   }
 }
 
 .visually-impaired-button {
-  appearance: none;
-  background: none;
-  border: none;
+  padding: 5px;
   margin: 0 5px;
   color: $white-color;
 
   &:hover {
-    background-color: $white-hover-color;
+    background-color: rgba($white-color, .3);
   }
 }
 
@@ -87,7 +73,11 @@ $navLinkActiveBorderTop: 3px;
     }
 
     .nav-link {
+      transition: .3s ease;
       white-space: nowrap;
+      font-size: 1rem;
+      text-transform: capitalize;
+      cursor: pointer;
     }
 
     .mobile-language {
@@ -98,15 +88,15 @@ $navLinkActiveBorderTop: 3px;
     .mobile-language {
       padding: $navLinkPaddingTop 11px;
       color: #fff;
+      border-top: $navLinkActiveBorderTop solid transparent;
 
       &:hover {
         background: #fff;
-        color: $primary-color;
+        color: $secondary-color;
       }
 
       &.active {
-        border-top: $navLinkActiveBorderTop solid #fff;
-        padding-top: $navLinkPaddingTop - $navLinkActiveBorderTop;
+        border-color: #fff;
       }
     }
 

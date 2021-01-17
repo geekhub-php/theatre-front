@@ -1,4 +1,4 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 .theme-black-white, .theme-white-black {
   filter: grayscale(100%) !important;
@@ -74,7 +74,7 @@
     border-top-color: $black-color !important;
   }
 
-  .buy-button, .btn-success {
+  .tickets-button {
     background: $white-color !important;
     color: $black-color !important;
     border-color: 1px solid $black-color !important;
@@ -144,7 +144,7 @@
     border-top-color: $white-color !important;
   }
 
-  .buy-button, .btn-success {
+  .tickets-button {
     background: $black-color !important;
     color: $white-color !important;
     border-color: $white-color !important;
@@ -170,7 +170,7 @@
   .widget-wrap,
   .widget-item,
   .person,
-  .btn-success,
+  .tickets-button,
   .histories__list-footer,
   .navbar-toggler,
   .hover:hover {

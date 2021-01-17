@@ -48,11 +48,16 @@ export class GatewayService {
     return this.http.get<Array<Season>>(`${this.baseUrl}/${this.seasonListUrl}`, {});
   }
 
-  getSeasonPerformances(seasonNumber: number, locale: string = this.localeId): Observable<Array<Performance>> {
+  getSeasonPerformances(
+    seasonNumber: number,
+    audience?: 'kids' | 'adults' | null,
+    locale: string = this.localeId,
+  ): Observable<Array<Performance>> {
+    let params: { locale: string, audience?: string } = { locale };
+    if (!!audience) params = { locale, audience};
+
     return this.http.get<Array<Performance>>(
-      `${this.baseUrl}/${this.seasonListUrl}/${seasonNumber}/${this.performanceListUrl}`,
-      {params: {locale}}
-      );
+      `${this.baseUrl}/${this.seasonListUrl}/${seasonNumber}/${this.performanceListUrl}`, {params});
   }
 
   getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = this.localeId): Observable<ScheduleListResponse> {

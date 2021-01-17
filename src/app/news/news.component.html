@@ -1,10 +1,15 @@
 <div class="container">
-  <h2 i18n="@@news">News</h2>
+  <h2 class="page-title text-center" i18n="@@news">News</h2>
+
   <app-spinner name="news"></app-spinner>
-  <div *ngIf="listPost">
-    <app-widget class="widget"></app-widget>
-    <app-news-item *ngFor="let item of listPost" [item]="item">
-    </app-news-item>
+
+  <div class="news__wrapper" *ngIf="listPost">
+    <div class="news__content">
+      <app-news-item *ngFor="let item of listPost" [item]="item"></app-news-item>
+    </div>
+
+    <app-widget></app-widget>
+
     <ngb-pagination class="pagination d-flex justify-content-center"
                     [collectionSize]="collectionSize"
                     [(page)]="page" [boundaryLinks]="false"

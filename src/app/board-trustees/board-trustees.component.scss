@@ -1,19 +1,9 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 .trustee {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px auto;
-  font-family: robotolight, sans-serif;
-
-  &__title {
-    color: $hover-color;
-    text-align: center;
-    font-family: $main-font;
-    font-size: $main-font-size;
-    margin-bottom: 20px;
-  }
 
   &__list {
     display: flex;
@@ -30,8 +20,8 @@
     max-width: calc(100% / 4 - 20px);
     width: 100%;
     margin: 10px;
-    box-shadow: 0 0 10px 7px #e8e8e8;
-    background-color: $light-grayish-red;
+    box-shadow: $typical-box-shadow;
+    border: 1px solid $border-color;
     border-radius: 5px;
     overflow: hidden;
 
@@ -73,7 +63,7 @@
     margin-bottom: 10px;
     padding: 0 12px;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
 
     @media (max-width: 476px) {
