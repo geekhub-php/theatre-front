@@ -1,12 +1,5 @@
 @import "~assets/styles/variables";
 
-.heading {
-  margin: 20px 0;
-  font-size: $main-font-size;
-  text-align: center;
-  color: $hover-color;
-}
-
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -15,8 +8,8 @@
   .list-item {
     position: relative;
     padding: 1.429rem 1.571rem 0 0;
-    flex-basis: 50%;
-    border-right: 3px solid $light-grayish-red;
+    flex: 0 0 50%;
+    border-right: 2px solid $border-color;
 
     &:last-child {
       padding-bottom: 20px;
@@ -30,10 +23,10 @@
       position: relative;
       z-index: 1;
       max-width: 30.714rem;
-      border: 1px solid $light-gray;
+      border: 1px solid $border-color;
       border-radius: 2px;
       padding: 12px;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
+      box-shadow: $typical-box-shadow;
       margin: 0 1.286rem 0 0;
 
       &::after {
@@ -46,21 +39,17 @@
         right: -.714rem;
         background-color: $white-color;
         transform: rotate(45deg);
-        border-top: 1px solid $light-gray;
-        border-left: 1px solid transparent;
-        border-right: 1px solid $light-gray;
-        border-bottom: 1px solid transparent;
+        border: 1px solid;
+        border-color: $border-color $border-color transparent transparent;
       }
 
       .histories__list-heading {
-        color: $primary-color;
+        color: $secondary-color;
         font-size: 1.286rem;
       }
 
       .histories__list-main .histories__list-main_text {
-        color: $new-secondary-color;
-        //color: $dark-grayish-red;
-
+        color: $secondary-text-color;
         font-size: 1rem;
       }
 
@@ -77,7 +66,7 @@
       border-radius: 50%;
       width: 3.571rem;
       height: 3.571rem;
-      background-color: $hover-color;
+      background-color: $main-color;
       top: 3rem;
       right: -1.929rem;
     }
@@ -105,10 +94,8 @@
         left: -.714rem;
         background-color: $white-color;
         transform: rotate(45deg);
-        border-top: 1px solid transparent;
-        border-left: 1px solid $light-gray;
-        border-right: 1px solid transparent;
-        border-bottom: 1px solid $light-gray;
+        border: 1px solid;
+        border-color: transparent transparent $border-color $border-color;
       }
 
       .histories__list-footer {
@@ -131,7 +118,7 @@
 
     .list-item {
       padding: 1.429rem 0 0;
-      border-left: 3px solid $light-grayish-red;
+      border-left: 3px solid $border-color;
       border-right: none;
 
       .histories__list-body {
@@ -141,10 +128,8 @@
 
       .histories__list-body::after {
         left: -.714rem;
-        border-top: 1px solid transparent;
-        border-left: 1px solid $light-gray;
-        border-right: 1px solid transparent;
-        border-bottom: 1px solid $light-gray;
+        border: 1px solid;
+        border-color: transparent transparent $border-color $border-color;
       }
 
       .histories__list-footer {

@@ -6,17 +6,15 @@
     margin: 24px 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     flex-wrap: wrap;
 
     .history-heading {
       margin: 0;
-      font-size: 1.714rem;
-      color: $hover-color;
     }
 
     .history-date {
-      color: $dark-grayish-red;
+      color: $secondary-text-color;
       margin: 0;
       font-size: 1.286rem;
       font-weight: 500;
@@ -57,7 +55,7 @@
 
   .list-item .title {
     font-size: .857rem;
-    background-color: #2a2a2a;
+    background-color: $secondary-color;
     display: flex;
     height: 4.286rem;
     margin-bottom: 0;
@@ -68,11 +66,6 @@
     color: $white-color;
     margin: auto;
   }
-}
-
-.history-main_text {
-  color: $dark-grayish-red;
-  font-size: 1rem;
 }
 
 @media screen and (max-width: 767px) {

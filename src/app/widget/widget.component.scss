@@ -1,9 +1,7 @@
 @import "~assets/styles/variables";
 
-.widget {
-  margin: 0 auto;
-  max-width: 25rem;
-  min-width: 17.143rem;
+:host {
+  display: block;
 }
 
 .widget-list {
@@ -14,8 +12,8 @@
   .widget-item {
     min-height: 5.143rem;
     box-sizing: border-box;
-    border-bottom: 1px dashed #adadad;
-    background-color: $bg-widget;
+    border-bottom: 1px dashed $border-color;
+    background-color: rgba($secondary-color, .9);
     border-radius: 3px;
     overflow: hidden;
 
@@ -42,21 +40,21 @@
     }
 
     .week {
-      color: $dark-grayish-red;
       font-size: 1.286rem;
       line-height: 1.286rem;
+      color: rgba($white-color, .8);
     }
 
     .day {
       font-size: 2.143rem;
-      color: $white-color;
       line-height: 2.286rem;
+      color: $white-color;
     }
 
     .month {
-      color: $dark-grayish-red;
       font-size: 1rem;
       line-height: 1rem;
+      color: rgba($white-color, .8);
     }
   }
 
@@ -99,32 +97,31 @@
   color: $white-color;
 }
 
-.hover:hover {
-  background-color: $hover-color;
+.hover {
+  transition: all 1s ease-out;
 
-  .link {
-    cursor: pointer;
-  }
-}
-
-.hover:hover .widget-date {
-
-  .week {
-    color: $white-color;
-  }
-
-  .month {
-    color: $white-color;
+  &:hover {
+    background-color: $main-color-darker;
   }
 }
 
 .bg-line {
-  background: url("~assets/images/play-stick-menu.png") right center no-repeat;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 5px;
+    bottom: 5px;
+    display: block;
+    width: 1px;
+    background-color: rgba($white-color, .2);
+  }
 }
 
 .bg-news-code {
-  background: url("~/assets/images/news-code.png") 97% center no-repeat, $new-secondary-color;
-  //background: url("~assets/images/news-code.png") 97% center no-repeat, $bg-widget;
+  background: url("~/assets/images/news-code.png") 97% center no-repeat;
 }
 
 .mrg10px {
@@ -148,4 +145,8 @@
 
 .flex-center {
   margin: auto;
+}
+
+.link {
+  cursor: pointer;
 }

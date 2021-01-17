@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class WidgetComponent implements OnInit {
   listEvents: Array<PerformanceEvent> = [];
   slug: string;
+  loading = true;
 
   constructor(private gateway: GatewayService, private router: ActivatedRoute) { }
 
@@ -19,6 +20,7 @@ export class WidgetComponent implements OnInit {
 
     this.gateway.getPerformanceEvents(this.slug).subscribe((res) => {
       this.listEvents = res.performance_events;
+      this.loading = false;
     });
   }
 }
