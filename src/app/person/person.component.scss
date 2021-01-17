@@ -1,79 +1,73 @@
 @import "~assets/styles/variables";
 
-.container {
-  width: 1000px;
+.page-title {
+  margin-top: 0;
+}
 
-  .person {
-    display: flex;
-    flex-direction: column;
+.person {
+  display: flex;
+  flex-direction: column;
 
-    section {
-      margin-top: 45px;
+  section {
+    margin-top: 45px;
 
-      img {
-        width: 300px;
-        margin-right: 42px;
-        float: left;
-      }
-
-      .about {
-        font-size: 1rem;
-
-        h2 {
-          font-size: $main-font-size;
-          color: $hover-color;
-          margin-bottom: 30px;
-        }
-
-        .biography {
-          color: $dark-grayish-red;
-        }
-      }
+    img {
+      width: 300px;
+      margin-right: 42px;
+      float: left;
     }
 
-    ngx-gallery ::ng-deep {
+    .about {
+      font-size: 1rem;
 
-      .ngx-gallery-preview-img-wrapper img {
-        max-width: 600px;
-        max-height: 550px;
-        border: 10px solid $light-grayish-red;
-        border-radius: 3px;
-      }
-
-      .ngx-gallery-arrow-left .ngx-gallery-arrow {
-        width: 40px;
-        height: 40px;
-        background-image: url("~assets/images/left-icon.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 40px 40px;
-        margin-left: 230px;
-      }
-
-      .ngx-gallery-arrow-right .ngx-gallery-arrow {
-        width: 40px;
-        height: 40px;
-        background-image: url("~assets/images/right-icon.png");
-        background-position: center;
-        background-size: 40px 40px;
-        background-repeat: no-repeat;
-        margin-right: 230px;
-      }
-
-      .ngx-gallery-active {
-        background-color: $transparent-black;
-      }
-
-      ngx-gallery-action i {
-        width: 40px;
-        height: 40px;
-        background-image: url("~assets/images/close-icon.png");
-        background-position: center;
-        background-size: 40px 40px;
-        background-repeat: no-repeat;
-        margin: 10px 10px 0 0;
+      .biography {
+        color: $secondary-text-color;
       }
     }
+  }
+}
+
+ngx-gallery ::ng-deep {
+
+  .ngx-gallery-preview-img-wrapper img {
+    max-width: 600px;
+    max-height: 550px;
+    border: 10px solid $white-color;
+    border-radius: 3px;
+  }
+
+  .ngx-gallery-arrow-left .ngx-gallery-arrow {
+    width: 40px;
+    height: 40px;
+    background-image: url("~assets/images/left-icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    margin-left: 230px;
+  }
+
+  .ngx-gallery-arrow-right .ngx-gallery-arrow {
+    width: 40px;
+    height: 40px;
+    background-image: url("~assets/images/right-icon.png");
+    background-position: center;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-right: 230px;
+  }
+
+  .ngx-gallery-active {
+    background-color: rgba($secondary-color, .9);
+  }
+
+  ngx-gallery-action i {
+    width: 40px;
+    height: 40px;
+    background-image: url("~assets/images/close-icon.png");
+    background-position: center;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin: 10px 10px 0 0;
   }
 }
 
@@ -129,12 +123,12 @@
         margin-top: 10px;
 
         .ngx-gallery-thumbnails a {
-          border: 2px solid $hover-color;
+          border: 2px solid $main-color;
         }
 
         .ngx-gallery-preview-img-wrapper img {
           max-width: 380px !important;
-          border: 7px solid $light-grayish-red;
+          border: 7px solid $white-color;
         }
 
         .ngx-gallery-arrow-left .ngx-gallery-arrow {

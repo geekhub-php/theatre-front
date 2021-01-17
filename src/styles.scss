@@ -48,11 +48,10 @@ body, html {
   font-size: 14px;
   font-family: $main-font;
   color: $secondary-color;
+}
 
-  //svg {
-  //  width: 1.143rem;
-  //  height: 1.143rem;
-  //}
+.spinner-grow {
+  color: $main-color-darker;
 }
 
 @media (min-width: 1200px) {
