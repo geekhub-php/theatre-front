@@ -3,7 +3,8 @@
     <ng-template ngFor let-item [ngForOf]="sliderList">
       <div *ngIf="item.id === slideId" class="slider-img"
            [ngClass]="{'active': item.id === slideId}">
-        <img class="img" [src]="item.performance.sliderImage.slider_slider.url" alt="pic">
+        <img class="img" [src]="item.performance.sliderImage.slider_slider.url" alt="pic"
+             [title]="item.performance.sliderImage.slider_slider.properties.title">
         <a [routerLink]="['', 'performance', item.performance.slug]" class="link_response"></a>
       </div>
     </ng-template>

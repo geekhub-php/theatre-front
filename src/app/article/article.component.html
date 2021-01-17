@@ -4,7 +4,7 @@
   <ng-template [ngIf]="item">
     <div class="img">
       <img *ngIf="item.mainPicture" src='{{ item.mainPicture.post_big.url }}'
-           alt="{{item.short_description}}">
+           alt="{{item.short_description}}" [title]="item.mainPicture.post_big.properties.title">
     </div>
     <h2 class="page-title text-center">{{ item.title }}</h2>
     <div class="post-text" [innerHtml]=item.text></div>
