@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SeasonsComponent } from './seasons.component';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
@@ -9,7 +9,7 @@ describe('SeasonsComponent', () => {
   let component: SeasonsComponent;
   let fixture: ComponentFixture<SeasonsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ SeasonsComponent ],
       imports: [
@@ -17,9 +17,8 @@ describe('SeasonsComponent', () => {
         SpinnerModule,
         RouterTestingModule
       ]
-    })
-    .compileComponents();
-  }));
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SeasonsComponent);
