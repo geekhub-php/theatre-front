@@ -1,16 +1,18 @@
 @import "~assets/styles/variables";
+@import "~assets/styles/utilities";
+
+:host {
+  display: block;
+  border-bottom: 1px solid rgba($white-color, .2);
+}
 
 .visually-impaired {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 1.1rem 0 1.3rem;
   font-size: 1.1rem;
-
-  svg {
-    fill: $white-color;
-  }
 }
 
 .color-schemes {
@@ -40,9 +42,8 @@
   }
 
   &__button {
-    appearance: none;
-    background: none;
-    border: none;
+    @extend .u-unstyled-btn;
+
     color: $white-color;
 
     &.--black-white,
@@ -155,9 +156,8 @@
   }
 
   &__button {
+    @extend .u-unstyled-btn;
     position: relative;
-    appearance: none;
-    background: none;
     border: 1px solid $white-color;
     margin: 0 5px;
     color: $white-color;
@@ -209,9 +209,7 @@
   }
 
   &__button {
-    appearance: none;
-    background: none;
-    border: none;
+    @extend .u-unstyled-btn;
     margin: 0 5px;
     color: $white-color;
 

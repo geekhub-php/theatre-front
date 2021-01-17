@@ -4,15 +4,9 @@ $navLinkPaddingTop: 30.5px;
 $navLinkActiveBorderTop: 3px;
 
 .header {
-  background: linear-gradient(36deg, $new-primary-color, $new-secondary-color 100%);
-  //background: linear-gradient(to right, $header-color-up 0, $header-color-down 100%);
-
-  color: #c33d50;
+  background: $main-color;
+  background: linear-gradient(120deg, $main-color-lighter 0%, $main-color 33%, $main-color-darker 100%);
   font-size: .857rem;
-
-  svg {
-    fill: $white-color;
-  }
 
   .header-logo {
     margin: 4px 5px;
@@ -71,9 +65,7 @@ $navLinkActiveBorderTop: 3px;
 }
 
 .visually-impaired-button {
-  appearance: none;
-  background: none;
-  border: none;
+  padding: 5px;
   margin: 0 5px;
   color: $white-color;
 

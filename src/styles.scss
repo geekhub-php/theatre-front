@@ -37,6 +37,10 @@
 @import "../node_modules/bootstrap/scss/spinners";
 //@import "../node_modules/bootstrap/scss/print";
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+@import "assets/styles/utilities";
+@import "assets/styles/typography";
+
 @import "assets/styles/themes";
 
 body, html {
