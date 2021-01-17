@@ -35,18 +35,18 @@ export class TeamComponent implements OnInit {
     this.loaderService.start('load-team');
     this.httpGatewayService.getEmployees().subscribe((persons) => {
       this.employees = this.employees.concat(persons);
-      this.artCoreEmployees = this.getEmployeesStatus('art-core');
-      this.artProductionEmployees = this.getEmployeesStatus('art-production');
-      this.administrativeEmployees = this.getEmployeesStatus('administrative');
-      this.creativeEmployees = this.getEmployeesStatus('creative');
-      this.invitedActorEmployees = this.getEmployeesStatus('invited');
+      this.artCoreEmployees = this.filterEmployeesByStatus('art-core');
+      this.artProductionEmployees = this.filterEmployeesByStatus('art-production');
+      this.administrativeEmployees = this.filterEmployeesByStatus('administrative');
+      this.creativeEmployees = this.filterEmployeesByStatus('creative');
+      this.invitedActorEmployees = this.filterEmployeesByStatus('invited');
       this.employeesStatus = [this.artCoreEmployees, this.artProductionEmployees, this.administrativeEmployees,
         this.creativeEmployees, this.invitedActorEmployees];
       this.loaderService.stop('load-team');
     });
   }
 
-  getEmployeesStatus(status) {
+  filterEmployeesByStatus(status) {
     return this.employees.filter((person) => person.staff === status);
   }
 }
