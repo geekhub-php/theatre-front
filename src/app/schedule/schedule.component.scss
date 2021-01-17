@@ -1,13 +1,4 @@
-@import "~assets/variables";
-
-h2 {
-  color: $hover-color;
-  font-family: roboto,sans-serif;
-}
-
-h3 {
-  font-family: roboto,sans-serif;
-}
+@import "~assets/styles/variables";
 
 a:hover {
   text-decoration: none;
@@ -22,21 +13,19 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
 
-.btn {
-  color: $hover-color;
-  border: 1px solid $hover-color;
-  background-color: $white-color;
-}
+  .btn {
+    margin: 0 5px;
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    background-color: $white-color;
+    box-shadow: none !important;
 
-.btn:hover {
-  color: $white-color;
-  background-color: $hover-color;
-}
-
-.btn:focus {
-  box-shadow: none;
+    &:hover {
+      color: $main-color-darker;
+      border: 1px solid $main-color-darker;
+    }
+  }
 }
 
 table {
@@ -55,9 +44,8 @@ table {
 }
 
 .day-of-week {
-  background-color: $hover-color;
+  background-color: rgba($secondary-color, .9);
   color: $white-color;
-  font-family: robotothin,sans-serif;
   font-size: 1rem;
   border-right: 1px solid $white-color;
   padding: 11px 0;
@@ -71,7 +59,7 @@ table {
   overflow: hidden;
   height: 10.143rem;
   padding: 34px 0 0;
-  border: 1px solid $light-gray;
+  border: 1px solid $border-color;
   vertical-align: bottom;
 }
 
@@ -83,7 +71,7 @@ table {
   display: block;
   margin: 0 0 0 7px;
   font-size: 1.286rem;
-  color: $hover-color;
+  color: $main-color;
   background-color: $white-color;
   border-radius: 3px;
   line-height: 1;
@@ -116,7 +104,7 @@ table {
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: $primary-color;
+  background-color: rgba($secondary-color, .6);
   display: none;
   opacity: 0;
   overflow: hidden;
@@ -164,10 +152,10 @@ table {
   &_double,
   &_triple {
     padding-top: 4px;
-    background-color: $dark-grayish-red;
+    background-color: rgba($secondary-color, .6);
 
     &:hover {
-      background-color: $hover-color;
+      background-color: $main-color-darker;
     }
   }
 
@@ -186,7 +174,8 @@ table {
 .popover-date {
   text-align: center;
   font-size: 1.143rem;
-  color: $hover-color;
+  font-weight: 600;
+  color: $secondary-color;
 }
 
 .popover-time {
@@ -238,7 +227,7 @@ table {
 
   &__title {
     margin-bottom: 16px;
-    color: $primary-color;
+    color: $white-color;
     font-size: 1.857rem;
   }
 
@@ -253,7 +242,7 @@ table {
   &__info {
     font-size: 1rem;
     align-items: center;
-    color: $primary-color;
+    color: $white-color;
   }
 
   &__day {
@@ -265,7 +254,7 @@ table {
   }
 
   &__date {
-    color: $primary-color;
+    color: rgba($white-color, .8);
   }
 
   &__time {
@@ -285,15 +274,6 @@ table {
   &__button {
     margin-top: 26px;
     margin-bottom: 14px;
-
-    .btn-success {
-      padding: 5px 15px;
-      border-radius: 3px;
-
-      p {
-        margin: 0;
-      }
-    }
   }
 
   &__img {
@@ -316,9 +296,9 @@ table {
     display: flex;
     padding: 20px;
     border-radius: 14px;
-    box-shadow: 0 0 10px 5px rgb(128 117 117 / 70%);
+    box-shadow: $typical-box-shadow;
     overflow: hidden;
-    color: $bg-widget;
+    color: $white-color;
     cursor: pointer;
 
     &:focus,
@@ -334,7 +314,7 @@ table {
       width: 2px;
       height: 80%;
       transform: translateY(-50%);
-      border-left: thin dashed $bg-widget;
+      border-left: 1px dashed $border-color;
       transition: .3s ease;
     }
 
@@ -346,17 +326,15 @@ table {
       right: 0;
       bottom: 0;
       z-index: -1;
-      opacity: .7;
       transition: .3s ease;
-      background-color: rgb(212 132 132 / 70%);
+      background-color: rgb($secondary-color, .9);
     }
 
     &:hover {
       color: $white-color;
 
       &::before {
-        background-color: rgb(74 64 64 / 70%);
-        opacity: 1;
+        background-color: rgba($main-color-darker, .75);
       }
 
       &::after {
@@ -376,28 +354,57 @@ table {
   }
 }
 
-.mobile {
+.poster-view {
   display: flex;
+  align-items: center;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: $secondary-color;
+  transition: .3s ease;
+
+  &:hover {
+    color: $main-color-darker;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 71.429rem) {
+
+  .desktop, .poster-view {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
+  max-width: 34rem;
+  padding-left: 1.714rem;
+  margin: 2.857rem auto 0;
 
   .schedule-time {
-    color: $hover-color;
+    color: $main-color;
     text-align: center;
-    font-size: 1rem;
+    font-weight: 600;
   }
 
   .schedule-place {
     text-align: center;
-    color: $primary-color;
-    font-size: 1rem;
+    color: $secondary-color-lighter;
+    font-weight: 600;
   }
 
   .schedule-event {
     position: relative;
-    padding: 20px 22px 0 0;
-    flex-basis: 50%;
-    border-right: 3px solid $light-grayish-red;
+    padding: 1.429rem 0 0 1.429rem;
+    border-left: 2px solid $border-color;
 
     &:last-child {
       padding-bottom: 20px;
@@ -405,17 +412,17 @@ table {
 
     .schedule-link {
       text-decoration: none;
-      color: $hover-color;
+      color: $main-color;
     }
 
     .schedule-body {
       position: relative;
       max-width: 28.571rem;
-      border: 1px solid $light-gray;
+      border: 1px solid $border-color;
       border-radius: 2px;
       padding: .857rem;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
-      margin: 0 18px 0 0;
+      box-shadow: $typical-box-shadow;
+      margin: 0 0 0 1.286rem;
     }
 
     .schedule-body::after {
@@ -424,17 +431,15 @@ table {
       width: 1.429rem;
       height: 1.429rem;
       top: 2.571rem;
-      right: -.714rem;
+      left: -.714rem;
       background-color: $white-color;
       transform: rotate(45deg);
-      border-top: 1px solid $light-gray;
-      border-left: 1px solid transparent;
-      border-right: 1px solid $light-gray;
-      border-bottom: 1px solid transparent;
+      border: 1px solid;
+      border-color: transparent transparent $border-color $border-color;
     }
 
     .schedule-title {
-      color: $primary-color;
+      color: $secondary-color;
       font-size: 1.286rem;
       text-align: center;
     }
@@ -452,141 +457,33 @@ table {
     border-radius: 50%;
     width: 3.571rem;
     height: 3.571rem;
-    background-color: $hover-color;
+    background-color: $main-color;
     top: 3rem;
-    right: -1.929rem;
+    left: -1.929rem;
   }
 
   .day {
     display: block;
     margin-top: .857rem;
     font-size: 1.286rem;
-    font-weight: 900;
+    font-weight: 600;
     color: $white-color;
     text-align: center;
   }
 
-  .schedule-button {
+  .tickets-button {
+    border: 1px solid $secondary-color;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 60rem) {
+
+  .list-view {
+    display: none;
+  }
+
+  .mobile {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 10px auto 0;
-
-    .btn-success {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 10px;
-      border-radius: 4px;
-
-      .ticket_p {
-        margin: 0;
-        text-align: center;
-        font-size: 1rem;
-      }
-    }
-  }
-}
-
-.poster-view {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  background-color: transparent;
-  border: none;
-
-  &__icon {
-    fill: $hover-color;
-    transition: .3s ease;
-  }
-
-  &:hover {
-
-    .poster-view__icon {
-      fill: $primary-color;
-    }
-  }
-
-  &:focus,
-  &:active {
-    outline: none;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-
-  .list-view,
-  .poster-view {
-    display: none;
-  }
-
-  .mobile {
-    padding-left: 1.714rem;
-    justify-content: flex-start;
-    flex-direction: column;
-    max-width: 19.286rem;
-    margin: 2.857rem auto 0;
-
-    .schedule-event {
-      padding: 1.429rem 0 0;
-      border-left: 3px solid $light-grayish-red;
-      border-right: none;
-
-      .schedule-body {
-        margin: 0 0 0 1.286rem;
-      }
-
-      .schedule-body::after {
-        left: -.714rem;
-        border-top: 1px solid transparent;
-        border-left: 1px solid $light-gray;
-        border-right: 1px solid transparent;
-        border-bottom: 1px solid $light-gray;
-      }
-
-      .schedule-day {
-        left: -1.929rem;
-      }
-
-      &:nth-child(2n) {
-        padding: 1.429rem 0 0;
-
-        .schedule-body {
-          transform: translateY(0);
-          margin: 0 0 0 1.286rem;
-        }
-
-        .schedule-day {
-          top: 3rem;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 71.429rem) {
-
-  .mobile {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 40rem) {
-
-  .mobile {
-    max-width: 28.571rem;
-
-    .schedule-button {
-      width: 50%;
-    }
-  }
-}
-
-@media screen and (max-width: 71.429rem) {
-
-  .desktop {
-    display: none;
   }
 }

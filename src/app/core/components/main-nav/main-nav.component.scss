@@ -1,22 +1,17 @@
-@import "~assets/variables";
+@import "~assets/styles/variables";
 
 .navbar-nav {
   font-size: .857rem;
-  font-family: $main-font;
   text-transform: uppercase;
   display: flex;
   align-items: center;
 }
 
 .visually-impaired-button {
-  appearance: none;
-  background: none;
-  border: none;
   margin: 0 5px;
   color: $white-color;
-  fill: $white-color;
 
   &:hover {
-    background-color: $white-hover-color;
+    background-color: rgba($white-color, .3);
   }
 }
