@@ -11,12 +11,12 @@
       color: $new-dark-color;
 
       &:hover {
-        color: $hover-color;
+        color: $main-color-darker;
       }
     }
 
     .active {
-      color: $hover-color;
+      color: $main-color-darker;
     }
   }
 
@@ -28,11 +28,12 @@
 .footer {
   font-size: 12px;
   margin-top: 50px;
-  padding-bottom: 1px;
+  padding-bottom: 10px;
   width: 100%;
+
   background-repeat: no-repeat;
   background-size: 100% 4px;
-  background-image: linear-gradient(to right, $new-primary-color 0, $new-primary-color 100%);
+  background-image: linear-gradient(120deg, $main-color-lighter 0%, $main-color 33%, $main-color-darker 100%);
 
   &__row {
     display: flex;
@@ -62,7 +63,7 @@
     align-items: center;
     opacity: .5;
     font-size: 14px;
-    color: $new-dark-color;
+    color: $secondary-color;
 
     .text::after {
       content: " ";
@@ -70,7 +71,7 @@
     }
 
     a {
-      color: $hover-color;
+      color: $main-color-darker;
     }
   }
 
@@ -145,10 +146,7 @@
   width: 42px;
   height: 42px;
   border-radius: 4px;
-  background-color: $danger;
-  background-image: url("~assets/images/arrow.png");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background: $main-color-darker 50% 50% url("~assets/images/arrow.png") no-repeat;
   border: none;
   outline: none;
   cursor: pointer;

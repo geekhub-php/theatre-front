@@ -11,9 +11,6 @@
   }
 
   &__title {
-    text-align: center;
-    font-size: $main-font-size;
-    color: $hover-color;
     margin-bottom: 30px;
 
     @media (max-width: 576px) {
@@ -26,7 +23,6 @@
     font-size: 18px;
     text-align: center;
     line-height: 1.8;
-    color: $primary-color;
 
     @media (max-width: 576px) {
       font-size: 12px;
