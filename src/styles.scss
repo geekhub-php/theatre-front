@@ -42,9 +42,16 @@
 @import "assets/styles/buttons";
 @import "assets/styles/themes";
 
+html {
+  font-size: 14px;
+}
+
+body {
+  font-size: 1rem;
+}
+
 body, html {
   height: 100%;
-  font-size: 14px;
   font-family: $main-font;
   color: $secondary-color;
 }
@@ -54,10 +61,8 @@ body, html {
 }
 
 @media (min-width: 1200px) {
-
   .container {
     max-width: 71.429rem !important;
-    overflow: hidden;
   }
 }
 

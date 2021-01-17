@@ -59,13 +59,11 @@ export class SeasonsComponent implements OnInit, OnDestroy {
   }
 
   loadSeason(seasonNumber: number) {
-    if (this.viewMode) return;
-
     this.activeSeasonNumber = seasonNumber;
     const queryParams: { season: number, audience?: string } = { season: this.activeSeasonNumber };
 
     if (!!this.activeAudience) queryParams.audience = this.activeAudience;
-    this.appRoutes.navigate([], { relativeTo: this.activatedRoute, queryParams });
+    this.appRoutes.navigate(['repertoire'], { queryParams });
   }
 
   filterAudience(audienceType: EAudience) {
