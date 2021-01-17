@@ -430,14 +430,6 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="tryAgain" datatype="html">
-        <source>Please, try again</source>
-        <target>Cпробуйте ще раз</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/core/components/page-not-found/page-not-found.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="mainPage" datatype="html">
         <source>Main page</source>
         <target>Головна</target>

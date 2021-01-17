@@ -5,68 +5,57 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  h2 {
-    font-size: $main-font-size;
-    color: $hover-color;
-    margin: 20px 0;
-  }
-
-  h3 {
-    font-size: 1.357rem;
-    margin: 20px 0;
-  }
-
-  .persons-list {
-    width: 57.143rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    .person {
-      width: 10.429rem;
-      height: 18.286rem;
-      border: 1px solid $light-gray;
-      position: relative;
-      margin: 0 0 6px 9px;
-      box-shadow: 0 5px 5px 3px #e8e8e8;
-      background-color: $light-grayish-red;
-      font-size: .857rem;
-      color: $primary-color;
-      border-radius: 5px;
-      text-decoration: none;
-      text-align: center;
-      overflow: hidden;
-      cursor: pointer;
-      transition: .3s ease;
-
-      img {
-        width: 100%;
-        height: 14.286rem;
-      }
-
-      h4 {
-        font-size: 1.286rem;
-        font-weight: 400;
-        padding: 5px;
-      }
-    }
-
-    .person:hover {
-      box-shadow: 0 0 10px 5px #bdbdbd;
-      color: $hover-color;
-    }
-  }
-
-  .persons-title {
-    margin-bottom: 10px;
-    margin-top: 20px;
-    padding-left: 10px;
-    font-size: 1rem;
-    font-weight: 100;
-  }
 }
 
+.persons-title {
+  margin: 20px 0;
+  padding-left: 10px;
+
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.persons-list {
+  width: 57.143rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.person {
+  position: relative;
+
+  width: 10.429rem;
+  height: 18.286rem;
+
+  margin: 0 0 6px 9px;
+
+  border: 1px solid $border-color;
+  box-shadow: $typical-box-shadow;
+
+  font-size: .857rem;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 14.286rem;
+  }
+
+  h4 {
+    padding: 5px;
+    font-size: 1.286rem;
+    font-weight: 400;
+
+    color: $secondary-color;
+  }
+
+  &:hover h4 {
+    color: $main-color-darker;
+  }
+}
 
 @media screen and (max-width: 768px) {
 
@@ -81,7 +70,7 @@
       width: 420px !important;
     }
 
-    h3 {
+    .persons-title {
       margin: 10px 0;
     }
 

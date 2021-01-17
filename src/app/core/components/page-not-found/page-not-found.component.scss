@@ -3,10 +3,9 @@
 .container, .col-xl-6 {
   margin: 0 auto;
   text-align: center;
+}
 
-  p {
-    font-size: 1.286rem;
-    margin-top: 15px;
-    color: $hover-color;
-  }
+p:not(.page-title) {
+  font-size: 1.286rem;
+  margin-top: 15px;
 }

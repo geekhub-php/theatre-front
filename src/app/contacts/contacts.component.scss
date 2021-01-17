@@ -1,9 +1,7 @@
 @import "~assets/styles/variables";
 
 @media screen and (max-device-width: 640px) {
-
-  ul.contacts-items-wrapper {
-
+  .contacts-items-wrapper {
     li {
       flex-direction: column;
       align-items: flex-end;
@@ -28,23 +26,6 @@
   }
 }
 
-.container {
-  font-size: 14px;
-  color: #868b8c;
-
-  h2 {
-    font-size: $main-font-size;
-  }
-}
-
-.page-title {
-  color: $hover-color;
-  font-size: 24px;
-  font-weight: 400;
-  text-align: center;
-  margin: 20px 0;
-}
-
 .contacts-items-wrapper {
   display: flex;
   flex-direction: column;
@@ -56,7 +37,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
-    border-bottom: 1px solid #c8c8c8;
+    border-bottom: 1px solid $border-color;
     padding-bottom: 10px;
     padding-top: 10px;
     width: 100%;
@@ -65,28 +46,23 @@
 
 .contact-item-name {
   width: 45%;
-  font-size: 1rem;
   font-weight: 600;
   text-align: right;
 }
 
 .contact-item-pic {
-  margin: 0 5px;
-  fill: $hover-color;
+  margin: 0 10px;
+  opacity: .6;
 }
 
 .contact-item-content {
   width: 45%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 1rem;
+  opacity: .6;
 
   a {
     display: block;
     box-sizing: border-box;
     text-decoration: none;
-    font-size: 1rem;
     color: inherit;
   }
 }

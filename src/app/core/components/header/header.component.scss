@@ -70,7 +70,7 @@ $navLinkActiveBorderTop: 3px;
   color: $white-color;
 
   &:hover {
-    background-color: $white-hover-color;
+    background-color: rgba($white-color, .3);
   }
 }
 
