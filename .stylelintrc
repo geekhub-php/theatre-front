@@ -96,7 +96,8 @@
           "include",
           "mixin",
           "content",
-          "at-root"
+          "at-root",
+          "extend"
         ]
       }
     ],
