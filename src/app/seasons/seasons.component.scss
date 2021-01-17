@@ -1,25 +1,20 @@
 @import "~assets/styles/variables";
 
-.seasons {
-  margin-bottom: 5px;
-  font-size: 1rem;
-
-  span.active {
-    background-color: $new-primary-color;
-    cursor: default;
-  }
+:host {
+  display: block;
 }
 
 .season-badge {
   margin-right: 3px;
-  background-color: $new-primary-color;
+  background-color: $main-color;
   cursor: pointer;
-  opacity: .7;
   transition: .3s ease;
-}
 
-.season-badge:hover {
-  opacity: 1;
-  background-color: $new-primary-color;
-}
+  &:hover, &.active {
+    background-color: $main-color-darker;
+  }
 
+  &.active {
+    cursor: default;
+  }
+}

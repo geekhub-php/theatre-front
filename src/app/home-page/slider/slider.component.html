@@ -40,11 +40,8 @@
               >
                 <span class="c">{{ item.performance.type }}</span>
               </span>
-              <a href="{{ item.buy_ticket_link }}" target="_blank" class="col-md-4" *ngIf="item.buy_ticket_link">
-                <div class="btn btn-success buy-button">
-                  <ng-container i18n="@@buyTicket" class="ticket_p">Buy ticket</ng-container>
-                </div>
-              </a>
+              <a *ngIf="item.buy_ticket_link" [href]="item.buy_ticket_link" target="_blank"
+                 class="col-md-4 btn btn-success buy-button" i18n="@@buyTicket">Buy ticket</a>
             </div>
             <p [routerLink]="['', 'performance', item.performance.slug]" class="ticket_p">
               <ng-container i18n="@@venue">Venue:</ng-container> <span>{{ item.venue }}</span>

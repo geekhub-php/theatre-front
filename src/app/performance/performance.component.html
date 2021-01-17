@@ -1,6 +1,6 @@
 <div class="container">
   <app-spinner name="performance-page"></app-spinner>
-  <h2 class="page-title"> {{ performance?.title }} </h2>
+  <h2 class="page-title text-center"> {{ performance?.title }} </h2>
   <h4 class="page-sub-title">{{ performance?.type }}</h4>
 
   <section class="preview" *ngIf="performance">
@@ -9,9 +9,9 @@
         <img [src]="performance.mainPicture.performance_big.url" [alt]="performance.mainPicture.performance_big.alt">
       </div>
     </div>
-    <div class="performance-widget">
-      <div class="future-list"><app-widget></app-widget></div>
-    </div>
+
+    <app-widget class="performance-widget"></app-widget>
+
     <div class="slider" *ngIf="performance.gallery">
       <ngb-carousel>
         <ng-template ngbSlide *ngFor="let image of performance.gallery">
