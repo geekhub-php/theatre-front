@@ -3,6 +3,14 @@ import { GatewayService } from '../core/services/gateway.service';
 import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
 
+enum EmployeeStatuses {
+  CORE = 'art-core',
+  PRODUCTION = 'art-production',
+  ADMIN = 'administrative',
+  CREATIVE = 'creative',
+  GUESTS = 'invited'
+}
+
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -10,12 +18,10 @@ import { LoaderService } from '../shared/spinner/loader.service';
 })
 export class TeamComponent implements OnInit {
   employees: Array<Employee> = [];
-  artCoreEmployees: Array<Employee>;
-  artProductionEmployees: Array<Employee>;
-  administrativeEmployees: Array<Employee>;
-  creativeEmployees: Array<Employee>;
-  invitedActorEmployees: Array<Employee>;
-  employeesStatus;
+  tagsList = [EmployeeStatuses.ADMIN, EmployeeStatuses.PRODUCTION, EmployeeStatuses.CREATIVE, EmployeeStatuses.CORE, EmployeeStatuses.GUESTS];
+  selectedTag: EmployeeStatuses;
+  filteredEmployees: Array<Employee> = [];
+  statuses = EmployeeStatuses;
 
   constructor(
     private httpGatewayService: GatewayService,
@@ -33,17 +39,27 @@ export class TeamComponent implements OnInit {
 
   getEmployees() {
     this.loaderService.start('load-team');
+
     this.httpGatewayService.getEmployees().subscribe((persons) => {
       this.employees = this.employees.concat(persons);
-      this.artCoreEmployees = this.filterEmployeesByStatus('art-core');
-      this.artProductionEmployees = this.filterEmployeesByStatus('art-production');
-      this.administrativeEmployees = this.filterEmployeesByStatus('administrative');
-      this.creativeEmployees = this.filterEmployeesByStatus('creative');
-      this.invitedActorEmployees = this.filterEmployeesByStatus('invited');
-      this.employeesStatus = [this.artCoreEmployees, this.artProductionEmployees, this.administrativeEmployees,
-        this.creativeEmployees, this.invitedActorEmployees];
+      this.switchTag(this.tagsList[0]);
+
       this.loaderService.stop('load-team');
     });
+  }
+
+  switchTag(tag) {
+    if (this.selectedTag === tag) return;
+
+    this.selectedTag = tag;
+
+    if (!tag) {
+      this.filteredEmployees = this.employees;
+
+      return;
+    }
+
+    this.filteredEmployees = this.filterEmployeesByStatus(tag);
   }
 
   filterEmployeesByStatus(status) {

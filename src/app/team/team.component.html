@@ -1,19 +1,39 @@
 <div class="container">
   <h2 class="page-title text-center" i18n="@@persons">Persons</h2>
   <img class="persons-photo" src="assets/images/persons.jpg" alt="collectives">
-  <div *ngFor="let listEmployee of employeesStatus">
-    <h3 *ngIf="employeesStatus[0].length && listEmployee === artCoreEmployees" class="persons-title" i18n="@@artCore">Art-core</h3>
-    <h3 *ngIf="employeesStatus[1].length && listEmployee === artProductionEmployees" class="persons-title" i18n="@@artProduction">Art-production</h3>
-    <h3 *ngIf="employeesStatus[2].length && listEmployee === administrativeEmployees" class="persons-title" i18n="@@administrative">Administrative</h3>
-    <h3 *ngIf="employeesStatus[3].length && listEmployee === creativeEmployees" class="persons-title" i18n="@@creative">Creative</h3>
-    <h3 *ngIf="employeesStatus[4].length && listEmployee === invitedActorEmployees" class="persons-title" i18n="@@invitedActor">Invited actor</h3>
-    <app-person *ngIf="1 == listEmployee.length" [person]="listEmployee[0]"></app-person>
-    <section *ngIf="1 < listEmployee.length" class="persons-list">
-      <a class="person" *ngFor="let person of listEmployee" [routerLink]="[person.slug]">
-        <img src="{{ person.avatar.employee_big.url }}" alt="photo" [title]="person.avatar.employee_big.properties.title">
-        <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
-      </a>
-    </section>
-  </div>
+
+  <ul class="u-unstyled-list persons-tags">
+    <li *ngFor="let tag of tagsList">
+      <button type="button" class="u-unstyled-btn" [class.active]="tag === selectedTag" (click)="switchTag(tag)">
+        <ng-container [ngSwitch]="tag">
+          <ng-container *ngSwitchCase="statuses.CORE" i18n="@@artCore">Art-core</ng-container>
+          <ng-container *ngSwitchCase="statuses.PRODUCTION" i18n="@@artProduction">Art-production</ng-container>
+          <ng-container *ngSwitchCase="statuses.ADMIN" i18n="@@administrative">Administrative</ng-container>
+          <ng-container *ngSwitchCase="statuses.CREATIVE" i18n="@@creative">Creative</ng-container>
+          <ng-container *ngSwitchCase="statuses.GUESTS" i18n="@@invitedActor">Invited actor</ng-container>
+        </ng-container>
+      </button>
+    </li>
+  </ul>
+
+  <h3 class="page-title persons-title" *ngIf="filteredEmployees.length > 1">
+    <ng-container [ngSwitch]="selectedTag">
+      <ng-container *ngSwitchCase="statuses.CORE" i18n="@@artCore">Art-core</ng-container>
+      <ng-container *ngSwitchCase="statuses.PRODUCTION" i18n="@@artProduction">Art-production</ng-container>
+      <ng-container *ngSwitchCase="statuses.ADMIN" i18n="@@administrative">Administrative</ng-container>
+      <ng-container *ngSwitchCase="statuses.CREATIVE" i18n="@@creative">Creative</ng-container>
+      <ng-container *ngSwitchCase="statuses.GUESTS" i18n="@@invitedActor">Invited actor</ng-container>
+    </ng-container>
+  </h3>
+
+  <app-person *ngIf="filteredEmployees.length === 1" [person]="filteredEmployees[0]"></app-person>
+
+  <section *ngIf="filteredEmployees.length > 1" class="persons-list">
+    <a class="person" *ngFor="let person of filteredEmployees" [routerLink]="[person.slug]">
+      <img src="{{ person.avatar.employee_big.url }}" alt="photo" [title]="person.avatar.employee_big.properties.title">
+      <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+    </a>
+  </section>
+
   <app-spinner name="load-team"></app-spinner>
 </div>

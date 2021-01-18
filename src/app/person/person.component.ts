@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { plainToClass } from 'class-transformer';
-import { NgxGalleryOptions, NgxGalleryImage } from 'ngx-gallery';
+import { NgxGalleryOptions } from 'ngx-gallery';
 import { GatewayService } from '../core/services/gateway.service';
 import { Employee } from '../core/model/employee/Employee';
 import { LoaderService } from '../shared/spinner/loader.service';
@@ -39,7 +39,11 @@ export class PersonComponent implements OnInit {
   ngOnInit() {
     this.gatewayService.updateCanonicalURL();
 
-    if (this.person) return;
+    if (this.person) {
+      this.person = plainToClass(Employee, this.person);
+
+      return;
+    }
 
     const slug = this.router.snapshot.paramMap.get('slug');
     this.getPerson(slug);

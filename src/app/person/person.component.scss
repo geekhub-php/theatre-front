@@ -19,11 +19,16 @@
 
     .about {
       font-size: 1rem;
-
-      .biography {
-        color: $secondary-color-lighter;
-      }
     }
+  }
+}
+
+:host ::ng-deep .biography {
+  color: $secondary-color-lighter;
+
+  p {
+    margin-bottom: 5px;
+    font-size: 1rem;
   }
 }
 
