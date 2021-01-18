@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { GatewayService } from '../core/services/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { plainToClass } from 'class-transformer';
-
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -29,8 +28,10 @@ export class ArticleComponent implements OnInit {
     this.gateAway.getNewsBySlug(slug).subscribe((res) => {
         this.item = plainToClass(NewsItem, res);
         this.loaderService.stop('article');
+        this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture.post_big.url);
       },
       err => this.loaderService.stop('article')
     );
+    this.gateAway.updateCanonicalURL();
   }
 }

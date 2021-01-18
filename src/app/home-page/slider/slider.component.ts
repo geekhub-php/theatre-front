@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../../core/services/gateway.service';
 import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
 
@@ -19,7 +19,7 @@ export class SliderComponent implements OnInit {
   ngOnInit() {
     this.gateway.getPerformanceEventList().subscribe(res => {
       this.sliderList = res.performance_events;
-      this.slideId = this.sliderList[this.count].id;
+      this.slideId = this.sliderList.length > 0 ? this.sliderList[this.count].id : null;
     });
   }
 

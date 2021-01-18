@@ -1,70 +1,78 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
+
+.persons-tags {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  button {
+    margin: 0 10px 0 0;
+    font-size: 1.5rem;
+    outline: none !important;
+
+    &.active, &:hover {
+      color: $main-color-darker;
+    }
+
+    &.active {
+      cursor: default;
+    }
+  }
+}
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  h2 {
-    font-size: $main-font-size;
-    font-family: $main-font;
-    color: $hover-color;
-    margin: 20px 0;
-  }
-
-  h3 {
-    font-family: $main-font_light;
-    font-size: 19px;
-    margin: 20px 0;
-  }
-
-  .persons-list {
-    width: 800px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    .person {
-      width: 146px;
-      height: 256px;
-      border: 1px solid $light-gray;
-      background-color: $light-grayish-red;
-      font-size: 12px;
-      color: $primary-color;
-      text-decoration: none;
-      font-family: $main-font;
-      text-align: center;
-      margin: 0 0 6px 9px;
-      border-radius: 5px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-
-      img {
-        width: 100%;
-        height: 200px;
-      }
-
-      h4 {
-        font-size: 18px;
-        font-weight: 400;
-        padding: 5px;
-      }
-    }
-
-    .person:hover {
-      box-shadow: 0 0 1px $transparent-black;
-      color: $hover-color;
-    }
-  }
 }
 
+.persons-list {
+  width: 57.143rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.person {
+  position: relative;
+  width: 10.429rem;
+  height: 18.286rem;
+  margin: 0 0 6px 9px;
+  border: 1px solid $border-color;
+  box-shadow: $typical-box-shadow;
+  font-size: .857rem;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 14.286rem;
+  }
+
+  h4 {
+    padding: 5px;
+    font-size: 1.286rem;
+    font-weight: 400;
+    color: $secondary-color;
+  }
+
+  &:hover h4 {
+    color: $main-color-darker;
+  }
+}
 
 @media screen and (max-width: 768px) {
 
   .container {
-    width: 450px !important;
+    width: 32.143rem !important;
 
     h2 {
       margin: 10px 0;
@@ -74,17 +82,17 @@
       width: 420px !important;
     }
 
-    h3 {
+    .persons-title {
       margin: 10px 0;
     }
 
     .persons-list {
-      width: 380px !important;
+      width: 27.143rem !important;
 
       .person {
         width: 115px !important;
         height: 205px !important;
-        font-size: 10px;
+        font-size: .714rem;
 
         h4 {
           font-size: 15.5px !important;
@@ -117,6 +125,10 @@
 
     .persons-list {
       width: 248px !important;
+    }
+
+    .persons-title {
+      max-width: 250px;
     }
   }
 }

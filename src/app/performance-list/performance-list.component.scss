@@ -1,64 +1,59 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
 .container {
   padding: 0;
+}
 
-  .page-title {
-    color: $hover-color;
-    text-align: center;
-    font-family: $main-font;
-    font-size: $main-font-size;
-    margin-top: 20px;
-    margin-bottom: 20px;
+app-seasons {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.perfomances {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  list-style: none;
+}
+
+.perfomance-item {
+  height: 16.429rem;
+  width: 11.643rem;
+  margin-bottom: 6.214rem;
+  cursor: pointer;
+
+  .image-wraper {
+    height: 16.429rem;
+
+    .image {
+      width: 100%;
+      max-height: 16.429rem;
+    }
   }
 
-  .perfomances {
+  .perfomance-title {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0;
-    list-style: none;
+    height: 4.786rem;
+    margin: auto;
+    background-color: #2a2a2a;
+    font-size: 1.143rem;
+    font-weight: 300;
+    color: $white-color;
+    text-align: center;
+  }
 
-    .perfomance-item {
-      height: 230px;
-      width: 163px;
-      margin-bottom: 87px;
-      cursor: pointer;
+  a {
+    color: $white-color;
+    margin: auto;
 
-      .image-wraper {
-        height: 230px;
-
-        .image {
-          width: 100%;
-          max-height: 230px;
-        }
-      }
-
-      .perfomance-title {
-        font-family: $main-font_light;
-        height: 67px;
-        font-size: 16px;
-        background-color: #2a2a2a;
-        font-weight: 100;
-        color: #fff;
-        margin: auto;
-        text-align: center;
-        display: flex;
-
-        a {
-          color: #fff;
-          margin: auto;
-        }
-
-        a:hover {
-          text-decoration: none;
-        }
-      }
-    }
-
-    .blank-item {
-      height: 0;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
 
+.blank-item {
+  height: 0;
+}

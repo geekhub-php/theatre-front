@@ -1,31 +1,40 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
-h2 {
-  font-size: $main-font-size;
-  font-family: $main-font;
-  color: $hover-color;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
+.news__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  ngb-pagination {
+    flex: 0 0 100%;
+  }
 }
 
-.widget {
-  float: right;
+app-widget {
+  flex: 0 0 25rem;
 }
 
-ngb-pagination ::ng-deep ul {
+.news__content {
+  flex: 0 0 calc(100% - 26rem);
+}
+
+:host ::ng-deep ngb-pagination ul {
 
   li a {
-    color: $primary-color;
+    color: $secondary-color;
     outline: none;
-    font-family: $main-font;
     border: transparent;
+    border-radius: 5px;
+
+    &:hover {
+      color: $secondary-color;
+    }
   }
 
   li.active a {
-    background-color: $hover-color !important;
+    background-color: $main-color !important;
     outline: none;
-    color: $primary-color;
+    color: $white-color;
     border: transparent;
 
     span {
@@ -35,8 +44,13 @@ ngb-pagination ::ng-deep ul {
     .page-item.active .page-link {
       border-color: transparent;
       outline: transparent !important;
+      padding: 7px 11px !important;
     }
   }
+}
+
+.pagination {
+  font-size: .9rem;
 }
 
 @media (max-width: 992px) {

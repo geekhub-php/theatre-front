@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PerformanceListComponent } from './performance-list/performance-list.component';
@@ -14,21 +14,22 @@ import { APP_BASE_HREF } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PartnersComponent } from './partners/partners.component';
+import { DonateComponent } from './donate/donate.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
 import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgxGalleryModule } from 'ngx-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
 import { WidgetModule } from './widget/widget.module';
 import { SeasonsComponent } from './seasons/seasons.component';
+import { PersonRolesComponent } from './person-roles/person-roles.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
@@ -39,10 +40,11 @@ describe('AppComponent', () => {
         NewsComponent,
         AboutComponent,
         PersonComponent,
+        PersonRolesComponent,
         ArticleComponent,
         TeamComponent,
         ContactsComponent,
-        PartnersComponent,
+        DonateComponent,
         BoardTrusteesComponent,
         AboutMoreComponent,
         DevTeamComponent,
@@ -66,7 +68,7 @@ describe('AppComponent', () => {
       ]
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
+  it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();

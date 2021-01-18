@@ -1,36 +1,75 @@
-@import "../../assets/variables";
-@import "../team/team.component.scss";
+@import "~assets/styles/variables";
 
+:host {
+  display: block;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.357rem;
+  margin: 20px 0;
+}
 
 .persons-list {
   width: auto !important;
-  max-width: 620px !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 44.286rem;
+  margin: 0 auto;
 
   .person {
-    width: 150px;
-    height: 261px;
-    margin: 0 4.5px 6px;
+    width: 10.429rem;
+    height: 14.286rem;
+    margin: 0 .75rem 1rem;
+    position: relative;
+    box-shadow: $typical-box-shadow;
+    border: 1px solid $border-color;
+    font-size: .857rem;
+    color: $secondary-color-lighter;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
 
     img {
       width: 100%;
-      height: auto !important;
+      height: auto;
     }
 
     h4 {
-      padding: 5px 0 0 !important;
+      font-size: 1.286rem;
+      font-weight: 400;
+      padding: 5px 0 0;
+      color: $secondary-color;
     }
   }
+
+  .person:hover h4 {
+    color: $main-color-darker;
+  }
+}
+
+.persons-title {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  padding-left: 10px;
+  font-size: 1rem;
+  font-weight: 100;
 }
 
 
 @media screen and (max-width: 768px) {
 
   .container {
-    width: 520px !important;
+    width: 37.143rem !important;
 
     .persons-list {
       width: auto !important;
-      max-width: 380px !important;
+      max-width: 27.143rem !important;
 
       .person {
         height: 217px !important;
@@ -46,14 +85,14 @@
 @media screen and (max-width: 479px) {
 
   .container {
-    width: 320px !important;
+    width: 22.857rem !important;
 
     h2 {
       display: block;
     }
 
     .persons-list {
-      width: 267px !important;
+      width: 19.071rem !important;
 
       .person {
         width: 120px !important;

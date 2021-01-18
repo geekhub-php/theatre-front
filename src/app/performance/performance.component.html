@@ -1,37 +1,43 @@
 <div class="container">
   <app-spinner name="performance-page"></app-spinner>
-  <h2 class="page-title"> {{ performance?.title }} </h2>
+  <h2 class="page-title text-center"> {{ performance?.title }} </h2>
   <h4 class="page-sub-title">{{ performance?.type }}</h4>
 
   <section class="preview" *ngIf="performance">
     <div class="performance-poster">
       <div class="future-img">
-        <img [src]="performance.mainPicture.performance_big.url" [alt]="performance.mainPicture.performance_big.alt">
+        <img [src]="performance.mainPicture.performance_big.url" [alt]="performance.mainPicture.performance_big.alt"
+        [title]="performance.mainPicture.performance_big.properties.title">
       </div>
     </div>
-    <div class="performance-widget">
-      <div class="future-list"><app-widget></app-widget></div>
-    </div>
+
+    <app-widget class="performance-widget"></app-widget>
+
     <div class="slider" *ngIf="performance.gallery">
       <ngb-carousel>
         <ng-template ngbSlide *ngFor="let image of performance.gallery">
-          <img [src]="image.images.performance_big.url" [alt]="image.images.performance_big.properties.alt">
+          <img [src]="image.images.performance_big.url" [alt]="image.images.performance_big.properties.alt"
+               [title]="image.images.performance_big.properties.title">
         </ng-template>
       </ngb-carousel>
     </div>
   </section>
 
   <section class="info">
-    <ngb-tabset>
-      <ngb-tab title="Actors" i18n-title="@@actors" *ngIf="roles?.length">
-        <ng-template ngbTabContent>
+    <app-seasons class="info__seasons" *ngIf="performance" [performance]="performance"></app-seasons>
+
+    <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">
+      <li [ngbNavItem]="'actors'" *ngIf="roles?.length">
+        <a ngbNavLink i18n="@@actors">Actors</a>
+        <ng-template ngbNavContent>
           <div class="wrap">
             <ul class="employees-list">
               <li *ngFor="let role of roles">
                 <a class="item" [routerLink]="['', 'persons', role.employee.slug]">
                   <img class="photo"
                        src="{{ role.employee.avatar.employee_big.url }}"
-                       alt="{{ role.title }} | {{ role.employee.first_name }} {{ role.employee.last_name }}">
+                       alt="{{ role.title }} | {{ role.employee.first_name }} {{ role.employee.last_name }}"
+                       [title]="role.employee.avatar.employee_big.properties.title">
                   <div class="name">
                     <span>{{ role.title }} </span>
                     <p>{{ role.employee.first_name }} {{ role.employee.last_name }}</p>
@@ -41,13 +47,14 @@
             </ul>
           </div>
         </ng-template>
-      </ngb-tab>
-      <ngb-tab *ngIf="performance">
-        <ng-template ngbTabTitle i18n="@@performanceDetails">Description</ng-template>
-        <ng-template ngbTabContent>
-          <div [innerHtml]="performance.description"></div>
+      </li>
+      <li [ngbNavItem]="'performance'" *ngIf="performance">
+        <a ngbNavLink i18n="@@performanceDetails">Description</a>
+        <ng-template ngbNavContent>
+          <div class="post-text" [innerHtml]="performance.description"></div>
         </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
   </section>
 </div>

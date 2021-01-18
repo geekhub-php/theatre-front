@@ -13,7 +13,7 @@
 
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
-    "unit-whitelist": ["px", "%", "deg"],
+    "unit-whitelist": ["px", "%", "deg", "s", "rem"],
 
     "color-hex-case": "lower",
     "color-named": "never",
@@ -44,7 +44,9 @@
     "unit-case": "lower",
 
     "value-keyword-case": "lower",
-    "value-no-vendor-prefix": true,
+    "value-no-vendor-prefix": [ true, {
+      "ignoreValues": "box"
+    }],
 
     "max-empty-lines": 2,
     "indentation": [ 2, {
@@ -90,10 +92,12 @@
       true,
       {
         "ignoreAtRules": [
+          "extend",
           "include",
           "mixin",
           "content",
-          "at-root"
+          "at-root",
+          "extend"
         ]
       }
     ],

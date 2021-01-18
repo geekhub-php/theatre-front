@@ -1,5 +1,5 @@
 import { Type } from 'class-transformer';
-import { INgxGalleryImage } from 'ngx-gallery';
+import { INgxGalleryImage } from '@kolkov/ngx-gallery';
 import { GalleryImageCollection } from './GalleryImageCollection';
 
 export class GalleryImage implements INgxGalleryImage {

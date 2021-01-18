@@ -1,45 +1,32 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
-.card {
-  max-width: 605px;
-  font-family: $main-font;
-  color: $primary-color;
+:host {
+  display: block;
+  margin-bottom: 20px;
+  border: 1px solid $border-color;
+  box-shadow: $typical-box-shadow;
   font-weight: 600;
-  margin-bottom: 40px;
-
-  a {
-    text-decoration: none;
-    color: $primary-color;
-
-    h2 {
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    p {
-      font-size: 14px;
-      font-weight: 300;
-      color: $dark-grayish-red;
-    }
-
-    .list-group-item {
-      border-width: 1px 0 0;
-      text-align: right;
-      font-size: 12px;
-    }
-  }
 }
 
-@media (max-width: 1199px) {
-
-  .card {
-    max-width: 580px;
-  }
+a {
+  text-decoration: none;
+  color: $secondary-color;
 }
 
-@media (max-width: 992px) {
+h2 {
+  font-size: 1.286rem;
+  font-weight: 500;
+}
 
-  .card {
-    max-width: 100%;
-  }
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: $secondary-color-lighter;
+}
+
+.list-group-item {
+  border-width: 1px 0 0;
+  border-color: $border-color;
+  text-align: right;
+  font-size: .857rem;
 }

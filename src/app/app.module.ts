@@ -7,7 +7,7 @@ import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -21,17 +21,20 @@ import { ArticleComponent } from './article/article.component';
 import { PersonComponent } from './person/person.component';
 import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { PartnersComponent } from './partners/partners.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgxGalleryModule } from 'ngx-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { WidgetModule } from './widget/widget.module';
 import { AboutMoreComponent } from './about/about-more/about-more.component';
 import { DevTeamComponent } from './dev-team/dev-team.component';
 import { SeasonsComponent } from './seasons/seasons.component';
+import { PersonRolesComponent } from './person-roles/person-roles.component';
+import { DonateComponent } from './donate/donate.component';
+import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,16 +46,17 @@ import { SeasonsComponent } from './seasons/seasons.component';
     ContactsComponent,
     ArticleComponent,
     PersonComponent,
+    PersonRolesComponent,
     NewsComponent,
     HomePageComponent,
-    PartnersComponent,
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
     SeasonsComponent,
+    DonateComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
@@ -66,9 +70,12 @@ import { SeasonsComponent } from './seasons/seasons.component';
     ScheduleModule,
     NgbPaginationModule,
     WidgetModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgbCollapseModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.ga),
+    NgxGoogleAnalyticsRouterModule
  ],
-  providers: [],
+  providers: [GoogleAnalyticsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

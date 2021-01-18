@@ -1,36 +1,25 @@
-@import "../../../assets/variables";
+@import "~assets/styles/variables";
 
-ul {
+.side-menu {
   list-style-type: none;
+  padding: 0;
+  margin-top: 2.286rem;
   text-transform: uppercase;
-  font-size: 18px;
-  line-height: 38px;
-  margin-top: 32px;
-  font-family: $main-font;
-  margin-left: -45px;
+  font-size: 1.286rem;
+  line-height: 2.714rem;
 
-  li {
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $secondary-color;
 
-    a {
-      color: $primary-color;
-      cursor: pointer;
-
-      &:hover {
-        text-decoration: none;
-        color: $hover-color;
-        fill: $hover-color;
-      }
-
-      svg {
-        margin-right: 8px;
-      }
+    &:hover {
+      text-decoration: none;
+      color: $main-color-darker;
     }
   }
-}
 
-@media (max-width: 992px) {
-
-  ul {
-    display: none;
+  &__icon {
+    margin-right: 8px;
   }
 }

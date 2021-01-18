@@ -1,9 +1,13 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
-.widget {
-  margin: 0 auto;
-  max-width: 350px;
-  min-width: 240px;
+:host {
+  display: block;
+}
+
+.tickets-button {
+  padding: 0 10px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 .widget-list {
@@ -12,10 +16,12 @@
   margin: 0;
 
   .widget-item {
-    min-height: 72px;
+    min-height: 5.143rem;
     box-sizing: border-box;
-    border-bottom: 1px dashed $primary-color;
-    background-color: $bg-widget;
+    border-bottom: 1px dashed $border-color;
+    background-color: rgba($secondary-color, .9);
+    border-radius: 3px;
+    overflow: hidden;
 
     &:last-child {
       border-bottom: none;
@@ -27,34 +33,34 @@
       justify-content: flex-start;
       box-sizing: border-box;
       padding: 6px 0;
+      transition: .3s ease;
     }
 
     .widget-date {
-      min-width: 75px;
+      min-width: 5.357rem;
       margin-right: 5px;
       box-sizing: border-box;
       position: relative;
       text-align: center;
-      font-family: $main-font;
+      transition: .3s ease;
     }
 
     .week {
-      color: $dark-grayish-red;
-      font-size: 18px;
-      line-height: 18px;
+      font-size: 1.286rem;
+      line-height: 1.286rem;
+      color: rgba($white-color, .8);
     }
 
     .day {
-      font-family: $main-font_light;
-      font-size: 30px;
+      font-size: 2.143rem;
+      line-height: 2.286rem;
       color: $white-color;
-      line-height: 32px;
     }
 
     .month {
-      color: $dark-grayish-red;
-      font-size: 14px;
-      line-height: 14px;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: rgba($white-color, .8);
     }
   }
 
@@ -66,27 +72,19 @@
     flex-grow: 1;
     text-align: left;
 
-    .btn-success {
-      padding: 0 10px;
-      margin-right: 10px;
-      margin-top: 5px;
-    }
-
     .ticket_p {
       margin: 0;
     }
 
     .time {
       margin: 5px 0 0;
-      font-family: $main-font;
-      font-size: 12px;
+      font-size: .857rem;
       color: $white-color;
     }
   }
 
   .widget-about h3.widget-heading {
-    font-family: $main-font;
-    font-size: 18px;
+    font-size: 1.286rem;
     color: $white-color;
     margin-bottom: 0;
   }
@@ -94,35 +92,36 @@
 
 .widget-item .widget-about .type {
   margin: 0;
-  font-family: $main-font_light;
-  font-size: 12px;
+  font-size: .857rem;
+  font-weight: 300;
   color: $white-color;
 }
 
-.hover:hover {
-  background-color: $hover-color !important;
-  .link {
-    cursor: pointer;
-  }
-}
+.hover {
+  transition: all 1s ease-out;
 
-.hover:hover .widget-date {
-
-  .week {
-    color: $white-color;
-  }
-
-  .month {
-    color: $white-color;
+  &:hover {
+    background-color: $main-color-darker;
   }
 }
 
 .bg-line {
-  background: url("../../assets/images/play-stick-menu.png") right center no-repeat;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 5px;
+    bottom: 5px;
+    display: block;
+    width: 1px;
+    background-color: rgba($white-color, .2);
+  }
 }
 
 .bg-news-code {
-  background: url("../../assets/images/news-code.png") 97% center no-repeat, $bg-widget;
+  background: url("~assets/images/ticket/news-code.png") 97% center no-repeat;
 }
 
 .mrg10px {
@@ -146,4 +145,8 @@
 
 .flex-center {
   margin: auto;
+}
+
+.link {
+  cursor: pointer;
 }
