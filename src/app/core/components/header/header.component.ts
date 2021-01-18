@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
-
 import { LangService } from '../../services/lang.service';
-
 import { filter } from 'rxjs/operators';
-
+import { VisuallyImpairedService } from '../../services/visually-impaired/visually-impaired.service';
 
 @Component({
   selector: 'app-header',
@@ -12,14 +10,19 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  collapse = true;
+  collapse = false;
+  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
+  isCollapsed = false;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
   }
 
-  constructor(private router: Router,
-              private langService: LangService) {
+  constructor(
+    private router: Router,
+    private langService: LangService,
+    private visuallyImpairedService: VisuallyImpairedService
+  ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
       .subscribe(() => this.collapse = true);
@@ -27,5 +30,9 @@ export class HeaderComponent {
 
   toogleMenu() {
     this.collapse = !this.collapse;
+  }
+
+  collapseMenu() {
+    this.isCollapsed = !this.isCollapsed;
   }
 }

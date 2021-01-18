@@ -1,9 +1,9 @@
-@import "../../../assets/variables";
+@import "~assets/styles/variables";
 
 .slider-img {
   position: relative;
   height: 500px;
-  background: $dark-grayish-red;
+  background: $secondary-color-lighter;
 
   img {
     position: absolute;
@@ -20,6 +20,12 @@
   }
 }
 
+.tickets-button {
+  position: absolute;
+  right: 30px;
+  bottom: 15px;
+}
+
 .slider {
   max-height: 100%;
   max-width: initial;
@@ -34,7 +40,7 @@
     .tickets {
       width: 100%;
       bottom: 18px;
-      height: 93px;
+      height: 6.643rem;
       position: absolute;
       z-index: 99;
       cursor: default;
@@ -58,65 +64,65 @@
         cursor: pointer;
         border: none;
         outline: none;
-        width: 92px;
-        height: 93px;
+        width: 6.571rem;
+        height: 6.643rem;
         background-color: transparent;
         text-align: center;
         margin: 0 -1px;
-        background-image: url("../../../assets/images/ticket.png");
+        background-image: url("~assets/images/ticket/ticket.png");
         background-repeat: no-repeat;
-        color: #fff;
-        font-family: "robotothin", serif;
-        font-size: 24px;
+        background-size: cover;
+        color: $white-color;
+        font-size: 1.714rem;
         padding: 0 11px;
         line-height: 1.2;
 
         .ticket-day {
           padding: 3px;
-          font-size: 16px;
-          color: #7d7c7c;
+          font-size: 1.143rem;
+          color: rgba($white-color, .8);
           text-transform: capitalize;
         }
 
         .ticket-number {
-          margin-top: -8px;
-          font-family: "robotolight";
-          font-size: 44px;
-          border-bottom: 1px solid #7d7c7c;
+          margin-top: -.571rem;
+          font-size: 3.143rem;
+          border-bottom: 1px solid rgba($white-color, .8);
         }
 
         .ticket-month {
-          margin-top: 2px;
-          font-size: 14px;
-          color: #7d7c7c;
+          margin-top: .143rem;
+          font-size: 1rem;
+          color: rgba($white-color, .8);
         }
       }
 
       .ticket-active {
-        background-image: url("../../../assets/images/orange-ticket.png");
+        position: relative;
+        background-image: url("~assets/images/ticket/active-ticket.png");
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 5px;
+          bottom: 5px;
+          display: block;
+          width: 1px;
+          background-color: rgba($white-color, .2);
+        }
 
         .ticket-day {
-          color: #fff !important;
+          color: $white-color ;
         }
 
         .ticket-number {
-          color: #fff !important;
-          border-bottom: 1px solid #fff;
+          color: $white-color ;
+          border-bottom: 1px solid $white-color;
         }
 
         .ticket-month {
-          color: #fff !important;
-        }
-      }
-
-      .buy-button {
-        position: absolute;
-        right: 30px;
-        top: -15px;
-
-        p.ticket_p {
-          padding: 0;
-          margin: 0 !important;
+          color: $white-color;
         }
       }
 
@@ -126,37 +132,37 @@
         display: none;
         justify-content: space-between;
         align-items: flex-end;
-        width: 463px;
-        height: 93px;
+        width: 33.071rem;
+        height: 6.643rem;
         background-color: transparent;
         padding: 11px;
-        background-image: url("../../../assets/images/tick.png");
+        background-image: url("~assets/images/ticket/active-tick.png");
         background-repeat: no-repeat;
+        background-size: cover;
 
         .ticket_link {
           position: absolute;
-          width: 463px;
-          height: 93px;
+          width: 33.071rem;
+          height: 6.643rem;
           top: 0;
           right: 0;
           text-decoration: none;
         }
 
         .ticket_link, .ticket_h2 {
-          color: #fff;
-          font-family: "robotothin", serif;
+          color: $white-color;
           text-align: left;
-          font-size: 23px;
+          font-size: 1.643rem;
           margin-bottom: 15px;
           text-transform: capitalize;
           margin-left: 15px;
+          cursor: pointer;
         }
 
         .ticket_h2_small {
-          color: #fff;
-          font-family: "robotothin", serif;
+          color: $white-color;
           text-align: left;
-          font-size: 20px;
+          font-size: 1.429rem;
           margin-bottom: 15px;
           margin-top: 2px;
           text-transform: capitalize;
@@ -164,9 +170,8 @@
         }
 
         .ticket_link .ticket_p {
-          color: #fff;
-          font-family: "robotoregular", serif;
-          font-size: 13px;
+          color: $white-color;
+          font-size: .929rem;
           margin: 0 0 0 15px;
         }
       }
@@ -214,50 +219,6 @@
       height: 100%;
       width: 100%;
       margin: 0 auto;
-    }
-
-    .buttons {
-      visibility: visible;
-      position: absolute;
-      width: 100%;
-      height: 36px;
-      bottom: 46.5%;
-      display: flex;
-      justify-content: space-between;
-
-      .slider-button {
-        width: 36px;
-        height: 36px;
-        top: 50%;
-        bottom: 50%;
-        border: none;
-        border-radius: 3px;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
-        background-color: #4c4c4c;
-        margin: 0 10px;
-
-        &:hover {
-          background-color: #e54b2b;
-        }
-
-        .arrow-prev {
-          width: 9px;
-          height: 19px;
-          background-image: url("../../../assets/images/arrow-left.png");
-          background-repeat: no-repeat;
-          background-size: auto;
-          margin: 0 0 0 6px;
-        }
-
-        .arrow-next {
-          width: 9px;
-          height: 19px;
-          background-image: url("../../../assets/images/arrow-right.png");
-          background-repeat: no-repeat;
-          background-size: auto;
-          margin: 0 0 0 8px;
-        }
-      }
     }
 
     .tickets {
@@ -319,52 +280,6 @@
         height: 100%;
         width: 100%;
         margin: 0 auto;
-      }
-
-      .buttons {
-        visibility: visible;
-        position: absolute;
-        width: 100%;
-        height: 36px;
-        bottom: 46.5%;
-        display: flex;
-        justify-content: space-between;
-
-        .slider-button {
-          width: 36px;
-          height: 36px;
-          top: 50%;
-          bottom: 50%;
-          border: none;
-          border-radius: 3px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
-          background-color: #4c4c4c;
-          margin: 0 10px;
-          padding-right: 14px;
-          padding-left: 0;
-
-          &:hover {
-            background-color: #e54b2b;
-          }
-
-          .arrow-prev {
-            width: 9px;
-            height: 19px;
-            background-image: url("../../../assets/images/arrow-left.png");
-            background-repeat: no-repeat;
-            background-size: auto;
-            margin-left: 12px;
-          }
-
-          .arrow-next {
-            width: 9px;
-            height: 19px;
-            background-image: url("../../../assets/images/arrow-right.png");
-            background-repeat: no-repeat;
-            background-size: auto;
-            margin-left: 14px;
-          }
-        }
       }
 
       .active {
@@ -435,51 +350,6 @@
         margin: 0 auto;
       }
 
-      .buttons {
-        visibility: visible;
-        position: absolute;
-        width: 100%;
-        height: 36px;
-        bottom: 46.5%;
-        display: flex;
-        justify-content: space-between;
-
-        .slider-button {
-          width: 36px;
-          height: 36px;
-          top: 50%;
-          bottom: 50%;
-          border: none;
-          border-radius: 3px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
-          background-color: #4c4c4c;
-          margin: 0 10px;
-          padding-right: 14px;
-          padding-left: 0;
-
-          &:hover {
-            background-color: #e54b2b;
-          }
-
-          .arrow-prev {
-            width: 9px;
-            height: 19px;
-            background-image: url("../../../assets/images/arrow-left.png");
-            background-repeat: no-repeat;
-            background-size: auto;
-            margin-left: 12px;
-          }
-
-          .arrow-next {
-            width: 9px;
-            height: 19px;
-            background-image: url("../../../assets/images/arrow-right.png");
-            background-repeat: no-repeat;
-            background-size: auto;
-            margin-left: 14px;
-          }
-        }
-      }
 
       .active {
         width: 100%;
@@ -551,52 +421,6 @@
         margin: 0 auto;
       }
 
-      .buttons {
-        visibility: visible;
-        position: absolute;
-        width: 100%;
-        height: 36px;
-        bottom: 46.5%;
-        display: flex;
-        justify-content: space-between;
-
-        .slider-button {
-          width: 36px;
-          height: 36px;
-          top: 50%;
-          bottom: 50%;
-          border: none;
-          border-radius: 3px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
-          background-color: #4c4c4c;
-          margin: 0 10px;
-          padding-right: 14px;
-          padding-left: 0;
-
-          &:hover {
-            background-color: #e54b2b;
-          }
-
-          .arrow-prev {
-            width: 9px;
-            height: 19px;
-            background-image: url("../../../assets/images/arrow-left.png");
-            background-repeat: no-repeat;
-            background-size: auto;
-            margin-left: 12px;
-          }
-
-          .arrow-next {
-            width: 9px;
-            height: 19px;
-            background-image: url("../../../assets/images/arrow-right.png");
-            background-repeat: no-repeat;
-            background-size: auto;
-            margin-left: 14px;
-          }
-        }
-      }
-
       .active {
         width: 100%;
         height: 250px;
@@ -663,52 +487,6 @@
         height: 100%;
         width: 100%;
         margin: 0 auto;
-      }
-
-      .buttons {
-        visibility: visible;
-        position: absolute;
-        width: 100%;
-        height: 36px;
-        bottom: 46.5%;
-        display: flex;
-        justify-content: space-between;
-
-        .slider-button {
-          width: 36px;
-          height: 36px;
-          top: 50%;
-          bottom: 50%;
-          border: none;
-          border-radius: 3px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
-          background-color: #4c4c4c;
-          margin: 0 10px;
-          padding-right: 14px;
-          padding-left: 0;
-
-          &:hover {
-            background-color: #e54b2b;
-          }
-
-          .arrow-prev {
-            width: 9px;
-            height: 19px;
-            background-image: url("../../../assets/images/arrow-left.png");
-            background-repeat: no-repeat;
-            background-size: auto;
-            margin-left: 12px;
-          }
-
-          .arrow-next {
-            width: 9px;
-            height: 19px;
-            background-image: url("../../../assets/images/arrow-right.png");
-            background-repeat: no-repeat;
-            background-size: auto;
-            margin-left: 14px;
-          }
-        }
       }
 
       .active {

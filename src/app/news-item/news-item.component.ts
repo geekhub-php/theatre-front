@@ -10,9 +10,12 @@ import { GatewayService } from '../core/services/gateway.service';
 export class NewsItemComponent implements OnInit {
   @Input() item: NewsItem;
 
-  constructor(private gateway: GatewayService) { }
+  constructor(private gatewayService: GatewayService) { }
 
   ngOnInit() {
-    this.gateway.updateCanonicalURL();
+    this.gatewayService.updateMeta(this.item.title,
+      this.item.short_description,
+      this.item.mainPicture.post_big.url);
+    this.gatewayService.updateCanonicalURL();
   }
 }

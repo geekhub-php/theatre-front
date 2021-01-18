@@ -1,99 +1,96 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
-::ng-deep .carousel-control-prev .sr-only, ::ng-deep .carousel-control-next .sr-only {
+.page-sub-title {
+  color: $secondary-color-lighter;
+  font-size: 1.143rem;
+  text-align: center;
+  margin: -10px 0 25px;
+}
+
+.preview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.performance-widget {
+  max-width: 25rem;
+  min-width: 17.143rem;
+  order: 2;
+}
+
+.performance-poster {
+  width: 16.786rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+// Slider
+
+.slider {
+  width: 45%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  order: 1;
+  background-color: $secondary-color-lighter;
+  text-align: center;
+}
+
+:host ::ng-deep .slider img {
+  height: 21.429rem;
+  max-width: 100%;
+  vertical-align: middle !important;
+  margin: auto;
+}
+
+:host ::ng-deep .carousel-control-prev .sr-only,
+:host ::ng-deep .carousel-control-next .sr-only {
   display: none;
 }
 
-::ng-deep .tab-pane {
-  border-left: 1px solid $light-gray;
-  border-right: 1px solid $light-gray;
-  border-bottom: 1px solid $light-gray;
+:host ::ng-deep .slider img {
+  max-height: 21.429rem;
+  max-width: 32.143rem;
+}
+
+
+// Performance details
+
+:host ::ng-deep .tab-pane {
+  border: 1px solid $border-color;
+  border-top: none;
   padding: 10px;
   text-align: center;
   width: 970px;
   margin: 0 auto;
+  font-size: 1rem;
 }
 
-::ng-deep .info .nav-link {
-  color: $dark-grayish-red;
-  border-color: $light-gray;
+:host ::ng-deep .info .nav-link {
+  font-size: 1.2rem;
+  color: $secondary-color-lighter;
+  border-color: $border-color;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
 
-::ng-deep .info .nav-link:hover {
-  color: $dark-grayish-red;
-  border-color: $light-gray;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-::ng-deep .info .nav-tabs, ::ng-deep .info .nav-tabs .nav-link.active {
-  border-color: $light-gray;
-}
-
-::ng-deep .info .nav-tabs .nav-link.active {
-  border-bottom: 1px solid #fff;
-}
-
-::ng-deep .slider img {
-  max-height: 300px;
-  max-width: 450px;
-}
-
-.container {
-
-  .page-title {
-    color: $hover-color;
-    font-size: $main-font-size;
-    text-align: center;
-    margin-top: 25px;
-    font-family: $main-font;
+  &:hover, &.active {
+    color: $secondary-color;
+    border-color: $border-color;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
-  .page-sub-title {
-    color: $hover-color;
-    font-size: 16px;
-    text-align: center;
-    margin: 10px 0 25px;
+  &.active {
+    border-bottom: 1px solid $white-color;
   }
+}
 
-  .preview {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    overflow: hidden;
-    height: 300px;
-
-    .performance-widget {
-      min-width: 240px;
-      order: 2;
-      box-sizing: border-box;
-      margin: 0 10px;
-    }
-
-    .performance-poster {
-      width: 235px;
-      box-sizing: border-box;
-      margin: 0 10px;
-      text-align: center;
-    }
-
-    .slider {
-      width: 45%;
-      overflow: hidden;
-      order: 1;
-      background-color: $light-gray;
-      text-align: center;
-    }
-
-    ::ng-deep .slider img {
-      height: 300px;
-      max-width: 100%;
-      vertical-align: middle !important;
-      margin: auto;
-    }
-  }
+:host ::ng-deep .info__seasons .seasons {
+  justify-content: flex-start;
+  margin-bottom: 10px;
 }
 
 .info {
@@ -101,22 +98,22 @@
   width: 970px;
 
   .nav-info {
-    margin-top: 20px;
-    margin-bottom: -2px;
+    margin-top: 1.429rem;
+    margin-bottom: -.143rem;
     box-sizing: border-box;
 
     .nav-item {
       display: inline-block;
       padding: 5px 10px;
       margin: 15px 0 0;
-      border: 1px solid $light-gray;
+      border: 1px solid $border-color;
       border-bottom: none;
-      background-color: #fff;
+      background-color: $white-color;
       cursor: pointer;
     }
 
     .hidden-item {
-      border-bottom: 1px solid $light-gray;
+      border-bottom: 1px solid $border-color;
     }
   }
 
@@ -124,57 +121,66 @@
     margin: auto;
   }
 
-  .employees-list {
-    max-width: 800px;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-
-    li {
-      border: 1px solid $light-gray;
-      margin: 5px;
-      border-radius: 5px;
-      overflow: hidden;
-      background: #f8f5f5;
-
-      .item {
-        text-decoration: none;
-        width: 146px;
-        height: 256px;
-        display: inline-block;
-        text-align: center;
-        cursor: pointer;
-
-        .name {
-          color: $primary-color;
-        }
-
-        &:hover .name {
-          color: $hover-color;
-        }
-
-        .photo {
-          width: 146px;
-          height: 200px;
-        }
-      }
-    }
-  }
-
   .performances {
     padding: 10px;
     text-align: justify;
-    border: 1px solid $light-gray;
+    border: 1px solid $border-color;
     border-bottom: none;
   }
 
   .press {
     padding: 10px;
     text-align: justify;
-    border: 1px solid $light-gray;
+    border: 1px solid $border-color;
     border-bottom: none;
+  }
+}
+
+.employees-list {
+  max-width: 57.143rem;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+
+  li {
+    margin: 5px;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      box-shadow: $typical-box-shadow;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      text-decoration: none;
+      width: 10.429rem;
+      height: 19.286rem;
+      text-align: center;
+      color: $secondary-color;
+      cursor: pointer;
+      overflow: hidden;
+      transition: .3s ease;
+
+      .name {
+        padding: 0 4px;
+        margin: auto 0;
+        font-weight: 300;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      &:hover .name {
+        color: $main-color-darker;
+      }
+
+      .photo {
+        width: 10.429rem;
+        height: 14.286rem;
+      }
+    }
   }
 }
 
@@ -185,7 +191,6 @@
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
   .preview, .slider {
-    height: 285px;
     overflow: hidden;
   }
 
@@ -194,7 +199,7 @@
   }
 
   .preview .performance-widget {
-    min-width: 240px;
+    min-width: 17.143rem;
   }
 }
 
@@ -204,7 +209,6 @@
     display: inline-block;
     width: 100%;
     text-align: center;
-    height: auto;
   }
 
   .container .preview .performance-poster {
@@ -213,7 +217,7 @@
   }
 
   .container .preview .performance-widget {
-    min-width: 240px;
+    min-width: 17.143rem;
     margin: 10px;
   }
 
@@ -231,7 +235,8 @@
     }
   }
 
-  ::ng-deep .tab-pane {
+  :host ::ng-deep .tab-pane {
+    font-size: 1rem;
     width: 655px;
   }
 }
@@ -239,7 +244,7 @@
 @media (min-width: 576px) and (max-width: 767.98px) {
 
   .item p, .item span {
-    font-size: 15px;
+    font-size: 1.071rem;
   }
 
   .container .preview {
@@ -254,7 +259,7 @@
   }
 
   .container .preview .performance-widget {
-    min-width: 240px;
+    min-width: 17.143rem;
     text-align: center;
     margin: 10px auto;
   }
@@ -264,7 +269,7 @@
     width: auto !important;
   }
 
-  ::ng-deep .carousel {
+  :host ::ng-deep .carousel {
     width: auto;
   }
 
@@ -278,16 +283,16 @@
     }
 
     .item {
-      width: 140px;
+      width: 10rem;
     }
 
     li .photo {
       width: 100%;
-      height: 157px;
+      height: 11.214rem;
     }
   }
 
-  ::ng-deep .tab-pane {
+  :host ::ng-deep .tab-pane {
     width: 500px;
   }
 }
@@ -313,17 +318,17 @@
     .employees-list {
 
       .item {
-        width: 115px;
+        width: 8.214rem;
       }
 
       li .photo {
         width: 100%;
-        height: 157px;
+        height: 11.214rem;
       }
     }
   }
 
-  ::ng-deep .tab-pane {
+  :host ::ng-deep .tab-pane {
     width: 405px;
   }
 
@@ -334,7 +339,7 @@
   .preview .slider {
     margin: 0 auto;
     width: 80% !important;
-    height: 200px;
+    height: 14.286rem;
   }
 
   .container .preview .performance-poster {
@@ -343,12 +348,12 @@
 
   .container .preview .performance-widget {
     margin: 10px;
-    min-width: 240px;
+    min-width: 17.143rem;
     text-align: center;
   }
 
-  ::ng-deep .slider img {
-    max-height: 200px;
+  :host ::ng-deep .slider img {
+    max-height: 14.286rem;
     max-width: 100%;
   }
 }
@@ -374,17 +379,17 @@
     .employees-list {
 
       .item {
-        width: 115px;
+        width: 8.214rem;
       }
 
       li .photo {
         width: 100%;
-        height: 157px;
+        height: 11.214rem;
       }
     }
   }
 
-  ::ng-deep .tab-pane {
+  :host ::ng-deep .tab-pane {
     width: 275px;
   }
 
@@ -399,7 +404,7 @@
 
   .container .preview .performance-widget {
     margin: 10px;
-    min-width: 240px;
+    min-width: 17.143rem;
     text-align: center;
   }
 
@@ -407,11 +412,11 @@
     margin: 0 auto;
     width: 90% !important;
     text-align: center;
-    height: 200px;
+    height: 14.286rem;
   }
 
-  ::ng-deep .slider img {
-    max-height: 200px;
+  :host ::ng-deep .slider img {
+    max-height: 14.286rem;
     max-width: 100%;
   }
 }
@@ -437,17 +442,17 @@
     .employees-list {
 
       .item {
-        width: 115px;
+        width: 8.214rem;
       }
 
       li .photo {
         width: 100%;
-        height: 157px;
+        height: 11.214rem;
       }
     }
   }
 
-  ::ng-deep .tab-pane {
+  :host ::ng-deep .tab-pane {
     width: 275px;
   }
 
@@ -462,18 +467,18 @@
 
   .container .preview .performance-widget {
     margin: 10px;
-    min-width: 240px;
+    min-width: 17.143rem;
     text-align: center;
   }
 
   .preview .slider {
     margin: 0 auto;
-    height: 150px !important;
+    height: 10.714rem !important;
     width: 90% !important;
   }
 
-  ::ng-deep .slider img {
-    max-height: 150px;
+  :host ::ng-deep .slider img {
+    max-height: 10.714rem;
     max-width: 100%;
   }
 }

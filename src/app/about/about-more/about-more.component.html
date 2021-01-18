@@ -2,16 +2,18 @@
   <app-spinner name="about-more"></app-spinner>
   <div class="history" *ngIf="history">
     <div class="history-title">
-      <h2 class="history-heading">{{ history.title }}</h2>
+      <h2 class="page-title history-heading">{{ history.title }}</h2>
       <p class="history-date">{{ history.created_at | date:"dd.MM.yyyy" }}</p>
     </div>
     <div class="history-main_img">
-      <img class="img" [src]='history.mainPicture.reference.url' alt="picture">
+      <img class="img" [src]='history.mainPicture.reference.url' [alt]="history.mainPicture.reference.properties.alt"
+           [title]="history.mainPicture.reference.properties.title">
     </div>
     <div class="performance">
       <ul class="performance-list" *ngIf="history.performances">
         <li class="list-item" *ngFor="let item of history.performances" [routerLink]="[ '/performance', item.slug ]">
-          <img class="img" [src]="item.mainPicture.performance_big.url" alt="performance picture">
+          <img class="img" [src]="item.mainPicture.performance_big.url" alt="performance picture"
+               [title]="item.mainPicture.performance_big.properties.title">
           <p class="title"><span class="span">{{ item.title }}</span></p>
         </li>
       </ul>

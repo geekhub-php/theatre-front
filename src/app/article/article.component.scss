@@ -1,36 +1,26 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
 
-:host ::ng-deep .post-text {
-
-  p {
-    margin-bottom: -3px;
-    color: $dark-grayish-red;
-  }
+:host ::ng-deep .post-text p {
+  margin-bottom: 5px;
 }
 
 .container {
-  font-family: $main-font;
   margin-bottom: -30px;
 
-  .row {
+  .img {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-    .img {
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
+  .post-date {
+    margin-top: 1rem;
+    text-align: right;
+    color: $secondary-color-lighter;
+  }
 
-    h2 {
-      color: $primary-color;
-      font-size: $main-font-size;
-      text-align: center;
-    }
-
-    .post-date {
-      color: $dark-grayish-red;
-      text-align: right;
-      margin-top: 15px;
-    }
+  .post-text {
+    font-size: 1.143rem;
   }
 }
 
@@ -38,16 +28,9 @@
 
   .container {
 
-    .row {
-
-      .img {
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
+    .img {
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
   }
 }

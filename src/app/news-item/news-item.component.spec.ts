@@ -8,6 +8,7 @@ import { NewsItem } from '../core/model/news/NewsItem';
 import { NewsItemImage } from '../core/model/news/NewsItemImage';
 import { Image } from '../core/model/Image';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { ImageProperties } from '../core/model/ImageProperties';
 
 describe('NewsItemComponent', () => {
   let component: NewsItemComponent;
@@ -32,6 +33,8 @@ describe('NewsItemComponent', () => {
     component.item = new NewsItem();
     component.item.mainPicture = new NewsItemImage();
     component.item.mainPicture.post_big = new Image();
+    component.item.mainPicture.post_big.properties = new ImageProperties();
+    component.item.mainPicture.post_big.properties.title = 'Hello World!';
     fixture.detectChanges();
   });
 

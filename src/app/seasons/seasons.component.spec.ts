@@ -17,9 +17,8 @@ describe('SeasonsComponent', () => {
         SpinnerModule,
         RouterTestingModule
       ]
-    })
-    .compileComponents();
-  }));
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SeasonsComponent);

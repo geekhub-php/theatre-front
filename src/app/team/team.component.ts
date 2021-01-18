@@ -10,31 +10,43 @@ import { LoaderService } from '../shared/spinner/loader.service';
 })
 export class TeamComponent implements OnInit {
   employees: Array<Employee> = [];
-  limit: string;
-  page: number;
-  collectionSize: number;
+  artCoreEmployees: Array<Employee>;
+  artProductionEmployees: Array<Employee>;
+  administrativeEmployees: Array<Employee>;
+  creativeEmployees: Array<Employee>;
+  invitedActorEmployees: Array<Employee>;
+  employeesStatus;
 
   constructor(
     private httpGatewayService: GatewayService,
-    private loaderService: LoaderService
-  ) { }
+    private loaderService: LoaderService,
+  ) {
+    this.httpGatewayService.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Персоналії Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/uk/assets/images/persons.jpg');
+  }
 
   ngOnInit() {
-    this.getEmployees(this.limit, this.page);
+    this.getEmployees();
     this.httpGatewayService.updateCanonicalURL();
   }
 
-  getEmployees(limit, page) {
+  getEmployees() {
     this.loaderService.start('load-team');
-    this.httpGatewayService.getEmployees(limit, page).subscribe((res) => {
-      this.employees = this.employees.concat(res.employees);
-      this.collectionSize = res.total_count;
-      this.page = res.page;
+    this.httpGatewayService.getEmployees().subscribe((persons) => {
+      this.employees = this.employees.concat(persons);
+      this.artCoreEmployees = this.getEmployeesStatus('art-core');
+      this.artProductionEmployees = this.getEmployeesStatus('art-production');
+      this.administrativeEmployees = this.getEmployeesStatus('administrative');
+      this.creativeEmployees = this.getEmployeesStatus('creative');
+      this.invitedActorEmployees = this.getEmployeesStatus('invited');
+      this.employeesStatus = [this.artCoreEmployees, this.artProductionEmployees, this.administrativeEmployees,
+        this.creativeEmployees, this.invitedActorEmployees];
+      this.loaderService.stop('load-team');
     });
   }
 
-  onScroll() {
-    if (this.employees.length < this.collectionSize) this.getEmployees(this.limit, this.page + 1);
-    if (this.employees.length === this.collectionSize) this.loaderService.stop('load-team');
+  getEmployeesStatus(status) {
+    return this.employees.filter((person) => person.staff === status);
   }
 }

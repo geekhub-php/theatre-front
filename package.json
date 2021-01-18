@@ -5,23 +5,19 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build -c production-uk",
     "test": "ng test",
     "lint": "ng lint",
     "lint-css": "stylelint --config .stylelintrc 'src/**/*.scss' --fix",
     "e2e": "ng e2e",
     "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json",
-
     "build:uk-ua": "ng build -c production-uk",
     "build:en-us": "ng build -c production-en",
-
     "dev:ssr": "ng run theatre-front:serve-ssr",
     "build:ssr:uk-ua": "ng build -c production-uk && ng run theatre-front:server:production-uk",
     "build:ssr:en-us": "ng build -c production-en && ng run theatre-front:server:production-en",
-
     "serve:ssr": "env PORT=4040 LANGUAGE=en node dist/theatre-front/server/en/main.js",
     "serve:ssr:uk": "env PORT=4041 LANGUAGE=uk node dist/theatre-front/server/uk/main.js",
-
     "prerender": "ng run theatre-front:prerender"
   },
   "private": true,
@@ -45,6 +41,8 @@
     "core-js": "^3.1.4",
     "date-fns": "^2.0.0-beta.3",
     "express": "^4.15.2",
+    "ngx-gallery": "^5.10.0",
+    "ngx-google-analytics": "^11.1.0",
     "ngx-infinite-scroll": "^7.1.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.6.3",

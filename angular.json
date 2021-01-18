@@ -149,7 +149,10 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "theatre-front:build"
+            "browserTarget": "theatre-front:build",
+            "outputPath": "src/assets/locale",
+            "outFile": "locale.xlf",
+            "format": "xlf"
           }
         },
         "test": {

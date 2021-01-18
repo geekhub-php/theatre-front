@@ -1,21 +1,31 @@
-@import "../../assets/variables";
+@import "~assets/styles/variables";
+
+:host {
+  display: block;
+}
 
 .seasons {
-  margin-bottom: 5px;
-
-  span.active {
-    background-color: $header-color-down;
-    cursor: default;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .season-badge {
-  margin-right: 3px;
-  background-color: $header-color-up;
+  padding: .25rem .5rem .15rem;
+  margin: 3px;
+  background-color: $main-color;
+  transition: .3s ease;
+}
+
+.seasons:not(.view-mode) .season-badge {
   cursor: pointer;
-}
 
-.season-badge:hover {
-  background-color: $header-color-down;
-}
+  &:hover, &.active {
+    background-color: $main-color-darker;
+  }
 
+  &.active {
+    cursor: default;
+  }
+}

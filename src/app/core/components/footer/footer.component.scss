@@ -1,4 +1,4 @@
-@import "../../../../assets/variables";
+@import "~assets/styles/variables";
 
 :host ::ng-deep {
 
@@ -8,15 +8,15 @@
 
     .nav-link {
       padding: 15px;
-      color: $primary-color;
+      color: $secondary-color;
 
       &:hover {
-        color: $hover-color;
+        color: $main-color-darker;
       }
     }
 
     .active {
-      color: $hover-color;
+      color: $main-color-darker;
     }
   }
 
@@ -28,38 +28,31 @@
 .footer {
   font-size: 12px;
   margin-top: 50px;
+  padding-bottom: 10px;
   width: 100%;
-  height: 70px;
   background-repeat: no-repeat;
   background-size: 100% 4px;
-  background-image: linear-gradient(to right, rgba(236, 83, 42, 1) 0, rgba(196, 36, 46, 1) 100%);
+  background-image: linear-gradient(120deg, $main-color-lighter 0%, $main-color 33%, $main-color-darker 100%);
+
+  &__row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 0;
+  }
 
   .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     .social {
-      list-style: none;
-      padding-top: 15px;
       display: flex;
       flex-direction: row;
       align-items: center;
-
-      .fa-icon {
-        width: 20px;
-        height: 20px;
-        display: block;
-        color: #00f;
-        border: none;
-        opacity: .8;
-        margin-right: 5px;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
   }
 
@@ -68,7 +61,8 @@
     justify-content: center;
     align-items: center;
     opacity: .5;
-    margin-bottom: 20px;
+    font-size: 14px;
+    color: $secondary-color;
 
     .text::after {
       content: " ";
@@ -76,9 +70,40 @@
     }
 
     a {
-      color: $hover-color;
+      color: $main-color-darker;
     }
   }
+
+  &__icon {
+    transition: .3s ease;
+  }
+
+  &__link {
+    display: flex;
+    margin-left: 10px;
+
+    &_ucf {
+      @media (max-width: 476px) {
+
+        .footer__icon {
+          width: 50px;
+          height: 40px;
+        }
+      }
+
+      &:hover .footer__icon {
+        fill: #ffcc2d;
+      }
+    }
+
+    &:hover {
+
+      .footer__icon {
+        fill-opacity: .8;
+      }
+    }
+  }
+
 
   @media (max-width: 991.98px) {
 
@@ -93,30 +118,20 @@
     .copy {
       padding-top: 5px;
     }
-  }
 
-  &__icon {
-    transition: .3s ease;
-  }
-
-  &__link {
-    display: flex;
-    margin-left: 10px;
-
-    &:hover {
-
-      .footer__icon {
-        fill-opacity: .8;
-      }
+    &__row {
+      justify-content: center;
     }
 
-    &_ucf {
-      &:hover {
+    &__link {
+      margin-top: 14px;
+    }
+  }
 
-        .footer__icon {
-          fill: #ffcc2d;
-        }
-      }
+  .copy {
+    @media (max-width: 476px) {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
@@ -130,10 +145,7 @@
   width: 42px;
   height: 42px;
   border-radius: 4px;
-  background-color: $danger;
-  background-image: url("../../../../assets/images/arrow.png");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background: $main-color-darker 50% 50% url("~assets/images/arrow.png") no-repeat;
   border: none;
   outline: none;
   cursor: pointer;

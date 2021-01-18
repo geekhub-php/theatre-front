@@ -7,6 +7,11 @@ import { PerformanceEvent } from '../core/model/schedule/PerformanceEvent';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { CalendarService } from './calendar.service';
 
+enum ScheduleViewModes {
+  CALENDAR = 'Calendar',
+  LIST = 'List'
+}
+
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
@@ -20,6 +25,9 @@ export class ScheduleComponent implements OnInit {
   date: Date;
   weeks: Array<Array<Date>>;
 
+  viewMode: ScheduleViewModes;
+  views = ScheduleViewModes;
+
   constructor(
     private datePipe: DatePipe,
     private gateway: GatewayService,
@@ -28,8 +36,12 @@ export class ScheduleComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.viewMode = JSON.parse(localStorage.getItem('viewMode')) || ScheduleViewModes.LIST;
     this.date = new Date();
     this.getPerformanceEvents();
+    this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
     this.gateway.updateCanonicalURL();
   }
 
@@ -57,7 +69,6 @@ export class ScheduleComponent implements OnInit {
     this.date.setMonth(this.date.getMonth() - 1);
 
     this.getPerformanceEvents();
-
   }
 
   nextMonth() {
@@ -89,4 +100,8 @@ export class ScheduleComponent implements OnInit {
     );
   }
 
+  changeView() {
+    this.viewMode = this.viewMode === ScheduleViewModes.LIST ? ScheduleViewModes.CALENDAR : ScheduleViewModes.LIST;
+    localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
+  }
 }

@@ -8,18 +8,22 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
+import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     MainNavComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    VisuallyImpairedComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    SpinnerModule
+    SpinnerModule,
+    NgbCollapseModule
   ],
   exports: [
     HeaderComponent,

@@ -1,13 +1,4 @@
-@import "../../assets/variables";
-
-h2 {
-  color: $hover-color;
-  font-family: roboto,sans-serif;
-}
-
-h3 {
-  font-family: roboto,sans-serif;
-}
+@import "~assets/styles/variables";
 
 a:hover {
   text-decoration: none;
@@ -22,21 +13,19 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
 
-.btn {
-  color: $hover-color;
-  border: 1px solid $hover-color;
-  background-color: $white-color;
-}
+  .btn {
+    margin: 0 5px;
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    background-color: $white-color;
+    box-shadow: none !important;
 
-.btn:hover {
-  color: $white-color;
-  background-color: $hover-color;
-}
-
-.btn:focus {
-  box-shadow: none;
+    &:hover {
+      color: $main-color-darker;
+      border: 1px solid $main-color-darker;
+    }
+  }
 }
 
 table {
@@ -45,7 +34,7 @@ table {
 }
 
 .desktop {
-  max-width: 1000px;
+  max-width: 71.429rem;
   margin: auto;
 }
 
@@ -55,13 +44,12 @@ table {
 }
 
 .day-of-week {
-  background-color: $hover-color;
+  background-color: rgba($secondary-color, .9);
   color: $white-color;
-  font-family: robotothin,sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
   border-right: 1px solid $white-color;
   padding: 11px 0;
-  width: 141px;
+  width: 10.071rem;
   text-align: center;
   text-transform: capitalize;
 }
@@ -69,9 +57,9 @@ table {
 .day-of-month {
   position: relative;
   overflow: hidden;
-  height: 142px;
+  height: 10.143rem;
   padding: 34px 0 0;
-  border: 1px solid $light-gray;
+  border: 1px solid $border-color;
   vertical-align: bottom;
 }
 
@@ -82,33 +70,41 @@ table {
   z-index: 5;
   display: block;
   margin: 0 0 0 7px;
-  font-size: 18px;
-  color: $hover-color;
+  font-size: 1.286rem;
+  color: $main-color;
   background-color: $white-color;
   border-radius: 3px;
   line-height: 1;
   padding: 2px 0;
-  min-width: 25px;
+  min-width: 1.786rem;
   text-align: center;
 }
 
 .contain {
-  width: 40px;
-  margin-bottom: 50px;
+  width: 2.857rem;
+  margin-bottom: 3.571rem;
   float: left;
 }
 
 .calendar-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 142px;
+  z-index: 2;
+}
+
+.calendar-photo {
   width: 100%;
-  height: inherit;
-  margin-top: -140px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .panel {
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: $primary-color;
+  background-color: rgba($secondary-color, .6);
   display: none;
   opacity: 0;
   overflow: hidden;
@@ -117,7 +113,7 @@ table {
 .panel p {
   color: $white-color;
   text-align: center;
-  font-size: 14px;
+  font-size: 1rem;
   margin: 5px auto 0;
 }
 
@@ -131,65 +127,284 @@ table {
 }
 
 .more {
-  background-color: $dark-grayish-red;
+  position: relative;
   height: inherit;
-  margin-top: -40px;
+  margin-top: -2.857rem;
+  z-index: 2;
 }
 
 .events {
-  height: 50%;
+  display: block;
+  height: 100%;
   color: $white-color;
   text-align: center;
-  font-size: 14px;
-  display: block;
+  font-size: .857rem;
+  transition: .2s ease;
 
-  &:hover {
-    background-color: $hover-color;
+  &_double {
+    height: 50%;
+  }
+
+  &_triple {
+    height: 32%;
+  }
+
+  &_double,
+  &_triple {
+    padding-top: 4px;
+    background-color: rgba($secondary-color, .6);
+
+    &:hover {
+      background-color: $main-color-darker;
+    }
+  }
+
+  &_triple:first-of-type {
+    height: 36%;
   }
 }
 
 .events p {
   text-align: center;
-  font-size: 14px;
+  font-size: .857rem;
+  line-height: 1.3;
+}
+
+.popover-time,
+.popover-date {
+  text-align: center;
+  font-size: 1.143rem;
+  font-weight: 600;
+  color: $secondary-color;
 }
 
 .popover-time {
-  text-align: center;
-  font-size: 16px;
-  color: $hover-color;
+  margin-bottom: 0;
+}
+
+.popover-date {
+  margin-bottom: 6px;
 }
 
 .popover-venue {
+  margin-bottom: 10px;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.143rem;
 }
 
 .popover-img {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   max-width: 150px;
 }
 
-.mobile {
+.list-view {
   display: flex;
+  flex-direction: column;
+  max-width: 78.571rem;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 40px;
+
+  &__item {
+    margin: 10px 0;
+  }
+
+  &__date-wrapper,
+  &__info {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    width: 100%;
+    transition: .3s ease;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 0 30px;
+    transition: .3s ease;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    color: $white-color;
+    font-size: 1.857rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+
+  &__info {
+    font-size: 1rem;
+    align-items: center;
+    color: $white-color;
+  }
+
+  &__day {
+    font-size: 2.857rem;
+  }
+
+  &__day-type {
+    padding-left: 6px;
+  }
+
+  &__date {
+    color: rgba($white-color, .8);
+  }
+
+  &__time {
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
+
+  &__place {
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  &__type {
+    text-align: center;
+  }
+
+  &__button {
+    margin-top: 26px;
+    margin-bottom: 14px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    z-index: -2;
+    transition: .3s ease;
+    opacity: 0;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: $typical-box-shadow;
+    overflow: hidden;
+    color: $white-color;
+    cursor: pointer;
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 200px;
+      top: 50%;
+      width: 2px;
+      height: 80%;
+      transform: translateY(-50%);
+      border-left: 1px dashed $border-color;
+      transition: .3s ease;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      transition: .3s ease;
+      background-color: rgb($secondary-color, .9);
+    }
+
+    &:hover {
+      color: $white-color;
+
+      &::before {
+        background-color: rgba($main-color-darker, .75);
+      }
+
+      &::after {
+        border-color: $white-color;
+      }
+
+      .list-view__title,
+      .list-view__info,
+      .list-view__date {
+        color: $white-color;
+      }
+
+      .list-view__img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.poster-view {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: $secondary-color;
+  transition: .3s ease;
+
+  &:hover {
+    color: $main-color-darker;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 71.429rem) {
+
+  .desktop, .poster-view {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
+  max-width: 34rem;
+  padding-left: 1.714rem;
+  margin: 2.857rem auto 0;
 
   .schedule-time {
-    color: $hover-color;
+    color: $main-color;
     text-align: center;
+    font-weight: 600;
   }
 
   .schedule-place {
     text-align: center;
-    color: $primary-color;
+    color: $secondary-color-lighter;
+    font-weight: 600;
   }
 
   .schedule-event {
     position: relative;
-    padding: 20px 22px 0 0;
-    flex-basis: 50%;
-    border-right: 3px solid $light-grayish-red;
+    padding: 1.429rem 0 0 1.429rem;
+    border-left: 2px solid $border-color;
 
     &:last-child {
       padding-bottom: 20px;
@@ -197,38 +412,35 @@ table {
 
     .schedule-link {
       text-decoration: none;
-      color: $hover-color;
+      color: $main-color;
     }
 
     .schedule-body {
       position: relative;
-      max-width: 400px;
-      border: 1px solid $light-gray;
+      max-width: 28.571rem;
+      border: 1px solid $border-color;
       border-radius: 2px;
-      padding: 12px;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, .175);
-      margin: 0 18px 0 0;
+      padding: .857rem;
+      box-shadow: $typical-box-shadow;
+      margin: 0 0 0 1.286rem;
     }
 
     .schedule-body::after {
       content: "";
       position: absolute;
-      width: 20px;
-      height: 20px;
-      top: 36px;
-      right: -10px;
-      border: 1px solid $light-gray;
+      width: 1.429rem;
+      height: 1.429rem;
+      top: 2.571rem;
+      left: -.714rem;
       background-color: $white-color;
       transform: rotate(45deg);
-      border-top: 1px solid $light-gray;
-      border-left: 1px solid transparent;
-      border-right: 1px solid $light-gray;
-      border-bottom: 1px solid transparent;
+      border: 1px solid;
+      border-color: transparent transparent $border-color $border-color;
     }
 
     .schedule-title {
-      color: $primary-color;
-      font-size: 18px;
+      color: $secondary-color;
+      font-size: 1.286rem;
       text-align: center;
     }
 
@@ -243,109 +455,35 @@ table {
     position: absolute;
     content: "";
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: $hover-color;
-    top: 42px;
-    right: -27px;
+    width: 3.571rem;
+    height: 3.571rem;
+    background-color: $main-color;
+    top: 3rem;
+    left: -1.929rem;
   }
 
   .day {
     display: block;
-    margin-top: 12px;
-    font-size: 18px;
-    font-weight: 900;
+    margin-top: .857rem;
+    font-size: 1.286rem;
+    font-weight: 600;
     color: $white-color;
     text-align: center;
   }
 
-  .schedule-button {
+  .tickets-button {
+    border: 1px solid $secondary-color;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 60rem) {
+
+  .list-view {
+    display: none;
+  }
+
+  .mobile {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 10px auto 0;
-
-    .btn-success {
-      width: 100%;
-      padding: 10px;
-      border-radius: 4px;
-
-      .ticket_p {
-        margin: 0;
-        text-align: center;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1000px) {
-
-  .mobile {
-    padding-left: 24px;
-    justify-content: flex-start;
-    flex-direction: column;
-    max-width: 270px;
-    margin: 40px auto 0;
-
-    .schedule-event {
-      padding: 20px 0 0;
-      border-left: 3px solid $light-grayish-red;
-      border-right: none;
-
-      .schedule-body {
-        margin: 0 0 0 60px;
-      }
-
-      .schedule-body::after {
-        left: -10px;
-        border-top: 1px solid transparent;
-        border-left: 1px solid $light-gray;
-        border-right: 1px solid transparent;
-        border-bottom: 1px solid $light-gray;
-      }
-
-      .schedule-day {
-        left: -27px;
-      }
-
-      &:nth-child(2n) {
-        padding: 20px 0 0;
-
-        .schedule-body {
-          transform: translateY(0);
-          margin: 0 0 0 60px;
-        }
-
-        .schedule-day {
-          top: 42px;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1000px) {
-
-  .mobile {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 560px) {
-
-  .mobile {
-    max-width: 400px;
-
-    .schedule-button {
-      width: 50%;
-    }
-  }
-}
-
-@media screen and (max-width: 1000px) {
-
-  .desktop {
-    display: none;
   }
 }

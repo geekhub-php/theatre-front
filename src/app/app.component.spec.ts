@@ -14,7 +14,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PartnersComponent } from './partners/partners.component';
+import { DonateComponent } from './donate/donate.component';
 import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
 import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
 import { CoreModule } from './core/core.module';
@@ -44,7 +44,7 @@ describe('AppComponent', () => {
         ArticleComponent,
         TeamComponent,
         ContactsComponent,
-        PartnersComponent,
+        DonateComponent,
         BoardTrusteesComponent,
         AboutMoreComponent,
         DevTeamComponent,

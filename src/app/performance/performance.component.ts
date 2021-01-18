@@ -38,6 +38,10 @@ export class PerformanceComponent implements OnInit {
       this.performance = performance.body;
       this.roles = roles;
 
+      this.gateway.updateMeta(this.performance.title,
+        this.performance.description,
+        this.performance.mainPicture.performance_big.url);
+
       this.activeId = this.roles.length ? 'actors' : 'performance';
 
       this.loaderService.stop('performance-page');

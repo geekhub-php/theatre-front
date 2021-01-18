@@ -1,7 +1,17 @@
-@import "../../../../assets/variables";
+@import "~assets/styles/variables";
 
 .navbar-nav {
-  font-size: 12px;
-  font-family: $main-font;
+  font-size: .857rem;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.visually-impaired-button {
+  margin: 0 5px;
+  color: $white-color;
+
+  &:hover {
+    background-color: rgba($white-color, .3);
+  }
 }
