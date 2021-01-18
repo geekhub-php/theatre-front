@@ -53,7 +53,6 @@
       display: flex;
 
       a {
-        cursor: pointer;
         text-decoration: none;
       }
 
@@ -61,7 +60,6 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        cursor: pointer;
         border: none;
         outline: none;
         width: 6.571rem;
@@ -76,6 +74,7 @@
         font-size: 1.714rem;
         padding: 0 11px;
         line-height: 1.2;
+        cursor: pointer;
 
         .ticket-day {
           padding: 3px;
@@ -100,6 +99,7 @@
       .ticket-active {
         position: relative;
         background-image: url("~assets/images/ticket/active-ticket.png");
+        cursor: default;
 
         &::after {
           content: "";
@@ -153,9 +153,12 @@
           color: $white-color;
           text-align: left;
           font-size: 1.643rem;
-          margin-bottom: 15px;
           text-transform: capitalize;
           margin-left: 15px;
+        }
+
+        .ticket_h2 {
+          outline: none;
           cursor: pointer;
         }
 
@@ -171,8 +174,7 @@
 
         .ticket_link .ticket_p {
           color: $white-color;
-          font-size: .929rem;
-          margin: 0 0 0 15px;
+          font-size: 1rem;
         }
       }
     }
