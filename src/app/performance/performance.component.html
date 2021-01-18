@@ -51,7 +51,7 @@
       <li [ngbNavItem]="'performance'" *ngIf="performance">
         <a ngbNavLink i18n="@@performanceDetails">Description</a>
         <ng-template ngbNavContent>
-          <div [innerHtml]="performance.description"></div>
+          <div class="post-text" [innerHtml]="performance.description"></div>
         </ng-template>
       </li>
     </ul>

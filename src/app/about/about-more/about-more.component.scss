@@ -1,5 +1,10 @@
 @import "~assets/styles/variables";
 
+:host ::ng-deep .post-text p {
+  margin-bottom: 5px;
+  font-size: 1.143rem;
+}
+
 .history {
 
   .history-title {
