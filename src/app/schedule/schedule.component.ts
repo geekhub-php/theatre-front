@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { DatePipe, isPlatformBrowser } from '@angular/common';
 import { GatewayService } from '../core/services/gateway.service';
 import { ScheduleListResponse } from '../core/model/schedule/ScheduleListResponse';
 import { plainToClass } from 'class-transformer';
@@ -32,11 +32,15 @@ export class ScheduleComponent implements OnInit {
     private datePipe: DatePipe,
     private gateway: GatewayService,
     private loaderService: LoaderService,
-    private calendar: CalendarService
+    private calendar: CalendarService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
-    this.viewMode = JSON.parse(localStorage.getItem('viewMode')) || ScheduleViewModes.LIST;
+    if (isPlatformBrowser(this.platformId)) {
+      this.viewMode = JSON.parse(localStorage.getItem('viewMode')) || ScheduleViewModes.LIST;
+    }
+
     this.date = new Date();
     this.getPerformanceEvents();
     this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
@@ -102,6 +106,8 @@ export class ScheduleComponent implements OnInit {
 
   changeView() {
     this.viewMode = this.viewMode === ScheduleViewModes.LIST ? ScheduleViewModes.CALENDAR : ScheduleViewModes.LIST;
-    localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
+    }
   }
 }

@@ -7,11 +7,18 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "uk": "src/assets/locale/locale.uk-ua.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "aot": true,
+            "outputPath": "dist/theatre-front/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -26,28 +33,62 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "production-en": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "localize": ["en"]
             },
-            "staging": {
+            "production-uk": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "localize": ["uk"]
+            },
+            "staging-en": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": true,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -59,6 +100,29 @@
                   "with": "src/environments/environment.staging.ts"
                 }
               ]
+            },
+            "staging-uk": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "localize": ["uk"]
             }
           }
         },
@@ -68,15 +132,27 @@
             "browserTarget": "theatre-front:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "theatre-front:build:production"
+            "production-en": {
+              "browserTarget": "theatre-front:build:production-en"
+            },
+            "production-uk": {
+              "browserTarget": "theatre-front:build:production-uk"
+            },
+            "staging": {
+              "browserTarget": "theatre-front:build:staging-en"
+            },
+            "uk": {
+              "browserTarget": "theatre-front:build:staging-uk"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "theatre-front:build"
+            "browserTarget": "theatre-front:build",
+            "outputPath": "src/assets/locale",
+            "outFile": "locale.xlf",
+            "format": "xlf"
           }
         },
         "test": {
@@ -101,11 +177,74 @@
           "options": {
             "tsConfig": [
               "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "src/tsconfig.spec.json",
+              "src/tsconfig.server.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/theatre-front/server",
+            "main": "server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production-en": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "localize": ["en"]
+            },
+            "production-uk": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "localize": ["uk"]
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "theatre-front:build",
+            "serverTarget": "theatre-front:server"
+          },
+          "configurations": {
+            "production-en": {
+              "browserTarget": "theatre-front:build:production-en",
+              "serverTarget": "theatre-front:server:production-en"
+            },
+            "production-uk": {
+              "browserTarget": "theatre-front:build:production-uk",
+              "serverTarget": "theatre-front:server:production-uk"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "theatre-front:build:production",
+            "serverTarget": "theatre-front:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }
@@ -140,7 +279,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

@@ -1,13 +1,18 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class LangService {
+  readonly canonicalUrl = environment.canonicalUrl;
   redirectLang: string;
 
-  constructor(@Inject(LOCALE_ID) private localeId: string) {
+  constructor(@Inject(LOCALE_ID) private localeId: string,
+              private router: Router) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
 
@@ -16,6 +21,6 @@ export class LangService {
   }
 
   getLangRedirectUrl() {
-    return window.location.href.replace(`/${this.localeId}/`, `/${this.redirectLang}/`);
+    return `${this.canonicalUrl}${this.redirectLang}${this.router.url}`;
   }
 }

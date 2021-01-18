@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { DonateComponent } from './donate.component';
@@ -9,7 +9,7 @@ describe('DonateComponent', () => {
   let fixture: ComponentFixture<DonateComponent>;
   let httpMock: HttpTestingController;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DonateComponent ],
       imports: [

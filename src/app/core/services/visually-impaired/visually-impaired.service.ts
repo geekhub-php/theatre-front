@@ -1,5 +1,5 @@
-import { Inject, Injectable } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
 
 interface IVisuallyImpaired {
@@ -20,12 +20,14 @@ export class VisuallyImpairedService {
   private readonly htmlDomEl: HTMLElement;
   private visuallyImpaired: IVisuallyImpaired;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: Object) {
     this.htmlDomEl = this.document.querySelector('html');
     this.checkLocalStorage();
   }
 
   checkLocalStorage() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.visuallyImpaired = JSON.parse(localStorage.getItem('visually-impaired'));
     this.localStorageVI = this.visuallyImpaired ? this.visuallyImpaired : this.localStorageVI;
 
@@ -52,6 +54,8 @@ export class VisuallyImpairedService {
   }
 
   setZoomFont() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.localStorageVI.fontSize = '24px';
 
     this.setStylesOnElement({ fontSize: this.localStorageVI.fontSize} , this.htmlDomEl);
@@ -59,6 +63,8 @@ export class VisuallyImpairedService {
   }
 
   setReduceFont() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.localStorageVI.fontSize = '14px';
 
     this.setStylesOnElement({ fontSize: this.localStorageVI.fontSize} , this.htmlDomEl);
@@ -66,6 +72,8 @@ export class VisuallyImpairedService {
   }
 
   inverseColors() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.removeClassList();
     this.localStorageVI.colorSchema = 'invert';
     this.setStylesOnElement({ filter: 'invert(100%)'} , this.htmlDomEl);
@@ -73,6 +81,8 @@ export class VisuallyImpairedService {
   }
 
   setSepia() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.removeClassList();
     this.localStorageVI.colorSchema = 'sepia';
     this.setStylesOnElement({ filter: 'sepia(100%)'} , this.htmlDomEl);
@@ -80,6 +90,8 @@ export class VisuallyImpairedService {
   }
 
   setBlackWhite() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.removeClassList();
     this.localStorageVI.colorSchema = 'black-white';
     this.htmlDomEl.classList.add('theme-black-white');
@@ -87,6 +99,8 @@ export class VisuallyImpairedService {
   }
 
   setWhiteBlack() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.removeClassList();
     this.localStorageVI.colorSchema = 'white-black';
     this.htmlDomEl.classList.add('theme-white-black');
@@ -94,6 +108,8 @@ export class VisuallyImpairedService {
   }
 
   resetSettings() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.setStylesOnElement({ fontSize: `${DEFAULT_FONT_SIZE}`, filter: 'none'}, this.htmlDomEl);
     this.removeClassList();
     localStorage.removeItem('visually-impaired');

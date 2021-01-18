@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { DevTeamComponent } from './dev-team.component';
@@ -9,7 +9,7 @@ describe('DevTeamComponent', () => {
   let fixture: ComponentFixture<DevTeamComponent>;
   let httpMock: HttpTestingController;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DevTeamComponent ],
       imports: [

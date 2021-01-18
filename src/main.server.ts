@@ -1,8 +1,12 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import 'reflect-metadata';
+/***************************************************************************************************
+ * Load `$localize` onto the global scope - used if i18n tags appear in Angular templates.
+*/
+import '@angular/localize/init';
 
-import { AppModule } from './app/app.module';
+import { enableProdMode } from '@angular/core';
+export { renderModule, renderModuleFactory } from '@angular/platform-server';
+
+export { AppServerModule } from './app/app.server.module';
 import { environment } from './environments/environment';
 
 import localeUk from '@angular/common/locales/uk';
@@ -13,8 +17,3 @@ registerLocaleData(localeUk, 'uk-UA', localeUkExtra);
 if (environment.production) {
   enableProdMode();
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
-});

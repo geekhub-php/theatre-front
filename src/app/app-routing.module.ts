@@ -40,13 +40,16 @@ const appRoutes: Routes = [
     {path: 'board-trustees', component: BoardTrusteesComponent},
     {path: 'donate', component: DonateComponent},
     {path: 'developers-team', component: DevTeamComponent},
-    {path: '**', component: PageNotFoundComponent}
+  // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {
+      relativeLinkResolution: 'legacy',
+      scrollPositionRestoration : 'top'
+    })
   ],
   exports: [
       RouterModule
