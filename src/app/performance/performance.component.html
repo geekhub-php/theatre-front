@@ -50,7 +50,7 @@
       <ngb-tab *ngIf="performance">
         <ng-template ngbTabTitle i18n="@@performanceDetails">Description</ng-template>
         <ng-template ngbTabContent>
-          <div [innerHtml]="performance.description"></div>
+          <div class="post-text" [innerHtml]="performance.description"></div>
         </ng-template>
       </ngb-tab>
     </ngb-tabset>

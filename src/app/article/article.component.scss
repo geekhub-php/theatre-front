@@ -2,6 +2,7 @@
 
 :host ::ng-deep .post-text p {
   margin-bottom: 5px;
+  font-size: 1.143rem;
 }
 
 .container {
@@ -17,10 +18,6 @@
     margin-top: 1rem;
     text-align: right;
     color: $secondary-color-lighter;
-  }
-
-  .post-text {
-    font-size: 1.143rem;
   }
 }
 
