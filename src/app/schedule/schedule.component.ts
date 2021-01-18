@@ -25,7 +25,7 @@ export class ScheduleComponent implements OnInit {
   date: Date;
   weeks: Array<Array<Date>>;
 
-  viewMode: ScheduleViewModes;
+  viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
   views = ScheduleViewModes;
 
   constructor(
