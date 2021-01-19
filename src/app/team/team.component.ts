@@ -5,6 +5,7 @@ import { LoaderService } from '../shared/spinner/loader.service';
 
 enum EmployeeStatuses {
   CORE = 'art-core',
+  DIRECTOR = 'art-director',
   PRODUCTION = 'art-production',
   ADMIN = 'administrative',
   CREATIVE = 'creative',
@@ -18,7 +19,8 @@ enum EmployeeStatuses {
 })
 export class TeamComponent implements OnInit {
   employees: Array<Employee> = [];
-  tagsList = [EmployeeStatuses.ADMIN, EmployeeStatuses.PRODUCTION, EmployeeStatuses.CREATIVE, EmployeeStatuses.CORE, EmployeeStatuses.GUESTS];
+  tagsList = [ EmployeeStatuses.DIRECTOR, EmployeeStatuses.ADMIN, EmployeeStatuses.CORE, EmployeeStatuses.CREATIVE,
+    EmployeeStatuses.PRODUCTION, EmployeeStatuses.GUESTS];
   selectedTag: EmployeeStatuses;
   filteredEmployees: Array<Employee> = [];
   statuses = EmployeeStatuses;
