@@ -11,7 +11,6 @@ import { History } from '../model/history/History';
 import { environment } from '../../../environments/environment';
 import { Role } from '../model/Role';
 import { Performance } from '../model/performance/Performance';
-import { EmployeesListResponse } from '../model/employee/EmployeesListResponse';
 import { Employee } from '../model/employee/Employee';
 import { NewsListResponse } from '../model/news/NewsListResponse';
 import { NewsItem } from '../model/news/NewsItem';
