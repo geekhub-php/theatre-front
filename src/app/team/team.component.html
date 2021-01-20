@@ -8,6 +8,7 @@
         <ng-container [ngSwitch]="tag">
           <ng-container *ngSwitchCase="statuses.CORE" i18n="@@artCore">Art-core</ng-container>
           <ng-container *ngSwitchCase="statuses.PRODUCTION" i18n="@@artProduction">Art-production</ng-container>
+          <ng-container *ngSwitchCase="statuses.DIRECTOR" i18n="@@artDirector">Art-director</ng-container>
           <ng-container *ngSwitchCase="statuses.ADMIN" i18n="@@administrative">Administrative</ng-container>
           <ng-container *ngSwitchCase="statuses.CREATIVE" i18n="@@creative">Creative</ng-container>
           <ng-container *ngSwitchCase="statuses.GUESTS" i18n="@@invitedActor">Invited actor</ng-container>
@@ -19,6 +20,7 @@
   <h3 class="page-title persons-title" *ngIf="filteredEmployees.length > 1">
     <ng-container [ngSwitch]="selectedTag">
       <ng-container *ngSwitchCase="statuses.CORE" i18n="@@artCore">Art-core</ng-container>
+      <ng-container *ngSwitchCase="statuses.DIRECTOR" i18n="@@artDirector">Art-director</ng-container>
       <ng-container *ngSwitchCase="statuses.PRODUCTION" i18n="@@artProduction">Art-production</ng-container>
       <ng-container *ngSwitchCase="statuses.ADMIN" i18n="@@administrative">Administrative</ng-container>
       <ng-container *ngSwitchCase="statuses.CREATIVE" i18n="@@creative">Creative</ng-container>
