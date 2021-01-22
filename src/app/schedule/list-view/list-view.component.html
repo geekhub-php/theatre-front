@@ -2,7 +2,7 @@
   <div class="list-view__item" *ngFor="let event of events">
     <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
       <div class="list-view__date-wrapper">
-        <div class="list-view__date" *ngIf="event.month == date.getMonth() + 1">
+        <div class="list-view__date">
           <div class="list-view__day">{{ event.date_time | date: 'dd.MM' }}</div>
           <div class="list-view__day-type">{{ event.date_time | date: 'EEEE' }}</div>
         </div>

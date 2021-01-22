@@ -7,7 +7,7 @@
 </div>
 
 <div class="btn-group btn-switch">
-  <button class="btn btn-prev" (click)="prevMonth()" i18n="@@prev">Previous</button>
+  <button *ngIf="viewMode === views.CALENDAR || !isToday" class="btn btn-prev" (click)="prevMonth()" i18n="@@prev">Previous</button>
   <button class="btn btn-now" (click)="now()" i18n="@@now">Today</button>
   <button class="btn btn-next" (click)="nextMonth()" i18n="@@next">Next</button>
 

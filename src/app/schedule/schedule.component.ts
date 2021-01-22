@@ -17,6 +17,7 @@ enum ScheduleViewModes {
 })
 export class ScheduleComponent implements OnInit {
   date: Date;
+  isToday: boolean;
 
   viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
   views = ScheduleViewModes;
@@ -70,6 +71,7 @@ export class ScheduleComponent implements OnInit {
   ngOnInit() {
     this.loaderService.start('poster');
     this.date = this.calendar.currentDate;
+    this.isToday = this.calendar.isToday(this.date);
 
     this.viewMode = this.savedLocale;
     this.onResize();
@@ -82,14 +84,17 @@ export class ScheduleComponent implements OnInit {
 
   prevMonth() {
     this.date = this.calendar.prevMonth();
+    this.isToday = this.calendar.isToday(this.date);
   }
 
   nextMonth() {
     this.date = this.calendar.nextMonth();
+    this.isToday = this.calendar.isToday(this.date);
   }
 
   now() {
     this.date = this.calendar.today();
+    this.isToday = this.calendar.isToday(this.date);
   }
 
   changeView() {
