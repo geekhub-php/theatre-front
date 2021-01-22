@@ -71,7 +71,11 @@
         <target>Художньо-керівний склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/team.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/team/team.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="artProduction" datatype="html">
@@ -79,7 +83,11 @@
         <target>Художньо-постановчий склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/team.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/team/team.component.html</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="administrative" datatype="html">
@@ -87,7 +95,11 @@
         <target>Aдміністративно-управлінський склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/team.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/team/team.component.html</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="creative" datatype="html">
@@ -95,7 +107,11 @@
         <target>Творчий склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/team.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/team/team.component.html</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="invitedActor" datatype="html">
@@ -103,7 +119,11 @@
         <target>Запрошені артисти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/team.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/team/team.component.html</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsTitle" datatype="html">
@@ -306,14 +326,6 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="prev" datatype="html">
-        <source>Previous</source>
-        <target>Попереднiй</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="now" datatype="html">
         <source>Today</source>
         <target>Зараз</target>
@@ -330,73 +342,41 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="monday" datatype="html">
-        <source>Monday</source>
-        <target>Понеділок</target>
+      <trans-unit id="listView" datatype="html">
+        <source>List view</source>
+        <target>Список</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="tuesday" datatype="html">
-        <source>Tuesday</source>
-        <target>Вівторок</target>
+      <trans-unit id="calendarView" datatype="html">
+        <source>Calendar view</source>
+        <target>Календар</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="wednesday" datatype="html">
-        <source>Wednesday</source>
-        <target>Середа</target>
+      <trans-unit id="prev" datatype="html">
+        <source>Previous</source>
+        <target>Попереднiй</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="thursday" datatype="html">
-        <source>Thursday</source>
-        <target>Четвер</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="friday" datatype="html">
-        <source>Friday</source>
-        <target>П&apos;ятниця</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">29</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="saturday" datatype="html">
-        <source>Saturday</source>
-        <target>Субота</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="sunday" datatype="html">
-        <source>Sunday</source>
-        <target>Неділя</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="buyTicket" datatype="html">
         <source>Buy ticket</source>
         <target>Купити квиток</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">96</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">123</context>
-        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widget/widget.component.html</context>
           <context context-type="linenumber">16</context>
@@ -407,11 +387,19 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/slider/slider.component.html</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">42</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/mobile-view/mobile-view.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/list-view/list-view.component.html</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="noPerformances" datatype="html">
@@ -427,7 +415,7 @@
         <target>Місце проведення:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/slider/slider.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="theatreName" datatype="html">
@@ -503,7 +491,7 @@
         <target>Контакти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="pageNotFound" datatype="html">
@@ -576,6 +564,62 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="monday" datatype="html">
+        <source>Monday</source>
+        <target>Понеділок</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tuesday" datatype="html">
+        <source>Tuesday</source>
+        <target>Вівторок</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="wednesday" datatype="html">
+        <source>Wednesday</source>
+        <target>Середа</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="thursday" datatype="html">
+        <source>Thursday</source>
+        <target>Четвер</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="friday" datatype="html">
+        <source>Friday</source>
+        <target>П&apos;ятниця</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="saturday" datatype="html">
+        <source>Saturday</source>
+        <target>Субота</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sunday" datatype="html">
+        <source>Sunday</source>
+        <target>Неділя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ngb.alert.close" datatype="html">
