@@ -26,11 +26,13 @@ export class ScheduleComponent implements OnInit {
     private loaderService: LoaderService,
     private calendar: CalendarService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) {
+    this.onResize();
+  }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    const innerWidth = event.target.innerWidth;
+  onResize(event?) {
+    const innerWidth = window.innerWidth;
     const calendarBreakpointWidth = 1020;
     const listBreakpointWidth = 975;
 
@@ -52,27 +54,25 @@ export class ScheduleComponent implements OnInit {
         if (savedMode === ScheduleViewModes.CALENDAR && innerWidth >= calendarBreakpointWidth) {
           this.viewMode = ScheduleViewModes.CALENDAR;
 
-          return;
+          break;
         }
 
         if (savedMode === ScheduleViewModes.LIST && innerWidth >= listBreakpointWidth) {
           this.viewMode = ScheduleViewModes.LIST;
-
-          return;
         }
         break;
 
       default:
         break;
     }
-
-
   }
 
   ngOnInit() {
+    this.loaderService.start('poster');
     this.date = this.calendar.currentDate;
 
     this.viewMode = this.savedLocale;
+    this.onResize();
 
     this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
       'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
