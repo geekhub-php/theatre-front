@@ -1,10 +1,22 @@
 /* tslint:disable */
-import { TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CalendarService } from './calendar.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
+import { GatewayService } from '../core/services/gateway.service';
 
 describe('CalendarService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule,
+        RouterTestingModule
+      ],
+      providers: [GatewayService]
+    });
+  }));
 
   it('should be created', () => {
     const service: CalendarService = TestBed.get(CalendarService);
