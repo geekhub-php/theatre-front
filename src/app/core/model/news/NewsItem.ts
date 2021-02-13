@@ -1,4 +1,6 @@
 import { NewsItemImage } from './NewsItemImage';
+import { GalleryImage } from './GalleryImage';
+import { Type } from 'class-transformer';
 
 export class NewsItem {
   title: string;
@@ -8,4 +10,6 @@ export class NewsItem {
   short_description: string;
   updated_at: string;
   created_at: string;
+  @Type(() => GalleryImage)
+  gallery: Array<GalleryImage>;
 }

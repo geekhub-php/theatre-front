@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsItem } from '../core/model/news/NewsItem';
 import { ActivatedRoute } from '@angular/router';
+import { NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import { GatewayService } from '../core/services/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { plainToClass } from 'class-transformer';
@@ -11,7 +12,21 @@ import { plainToClass } from 'class-transformer';
 })
 export class ArticleComponent implements OnInit {
   item: NewsItem;
-  posts: Array<NewsItem>;
+  galleryOptions: Array<NgxGalleryOptions> = [
+      {
+        image: false,
+        thumbnailsRemainingCount: true,
+        height: '100px',
+        previewCloseOnEsc: true,
+        previewAnimation: false
+      },
+      {
+        breakpoint: 770,
+        width: '100%',
+        thumbnailsColumns: 1,
+        imageSize: 'cover'
+      }
+    ];
 
   constructor(private router: ActivatedRoute,
               private gateAway: GatewayService,

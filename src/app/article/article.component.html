@@ -8,6 +8,11 @@
     </div>
     <h2 class="page-title text-center">{{ item.title }}</h2>
     <div class="post-text" [innerHtml]=item.text></div>
+    <ngx-gallery
+      *ngIf="item.gallery"
+      [options]="galleryOptions"
+      [images]="item.gallery">
+    </ngx-gallery>
     <p class="post-date">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
   </ng-template>
 </div>
