@@ -22,7 +22,7 @@ jobs:
         uses: github/super-linter@v3
         env:
           DEFAULT_BRANCH: master
-          VALIDATE_ALL_CODEBASE: false
+#          VALIDATE_ALL_CODEBASE: false
           CSS_FILE_NAME: .stylelintrc
           VALIDATE_BASH: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
