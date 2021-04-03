@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgxGalleryModule } from 'ngx-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 import { TeamComponent } from './team.component';
 import { SpinnerModule } from '../partials/spinner/spinner.module';
