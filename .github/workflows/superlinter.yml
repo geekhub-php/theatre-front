@@ -21,8 +21,11 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v3
         env:
-          DEFAULT_BRANCH: master
           VALIDATE_ALL_CODEBASE: false
-          CSS_FILE_NAME: ${DEFAULT_WORKSPACE}/.stylelintrc
-          VALIDATE_BASH: false
+          DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          LINTER_RULES_PATH: /
+          CSS_FILE_NAME: .stylelintrc
+          VALIDATE_BASH: false
+          VALIDATE_CSS: true
