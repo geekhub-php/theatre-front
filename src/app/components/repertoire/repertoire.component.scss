@@ -1,0 +1,53 @@
+@import "~assets/styles/variables";
+
+.container {
+  padding: 0;
+}
+
+.perfomances {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  list-style: none;
+}
+
+.perfomance-item {
+  height: 16.429rem;
+  width: 11.643rem;
+  margin-bottom: 6.214rem;
+  cursor: pointer;
+
+  .image-wraper {
+    height: 16.429rem;
+
+    .image {
+      width: 100%;
+      max-height: 16.429rem;
+    }
+  }
+
+  .perfomance-title {
+    display: flex;
+    height: 4.786rem;
+    margin: auto;
+    background-color: #2a2a2a;
+    font-size: 1.143rem;
+    font-weight: 300;
+    color: $white-color;
+    text-align: center;
+  }
+
+  a {
+    color: $white-color;
+    margin: auto;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.blank-item {
+  height: 0;
+}
