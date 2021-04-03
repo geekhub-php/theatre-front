@@ -27,5 +27,4 @@ jobs:
 
           LINTER_RULES_PATH: /
           CSS_FILE_NAME: .stylelintrc
-          VALIDATE_BASH: false
           VALIDATE_CSS: true
