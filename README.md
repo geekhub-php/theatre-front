@@ -1,5 +1,6 @@
 # TheatreFront
 
+[![GitHub Super-Linter](https://github.com/geekhub-php/theatre-front/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 [![Build Status](https://travis-ci.org/geekhub-php/theatre-front.svg?branch=master)](https://travis-ci.org/geekhub-php/theatre-front)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/?branch=master)
