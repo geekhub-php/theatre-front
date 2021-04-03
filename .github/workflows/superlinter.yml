@@ -1,4 +1,5 @@
-name: Super-Linter
+- name: Super-Linter
+  uses: github/super-linter@v3.15.5
 
 # Run this workflow every time a new commit pushed to your repository
 on: push
@@ -22,4 +23,7 @@ jobs:
         uses: github/super-linter@v3
         env:
           DEFAULT_BRANCH: master
+          VALIDATE_ALL_CODEBASE: false
+          CSS_FILE_NAME: .stylelintrc
+          VALIDATE_BASH: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
