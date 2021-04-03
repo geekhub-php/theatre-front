@@ -30,3 +30,7 @@ jobs:
           LINTER_RULES_PATH: /
           CSS_FILE_NAME: .stylelintrc
           VALIDATE_CSS: true
+          VALIDATE_JSX: true
+          VALIDATE_TSX: true
+          VALIDATE_TYPESCRIPT_ES: true
+          VALIDATE_TYPESCRIPT_STANDARD: true
