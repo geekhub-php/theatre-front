@@ -7,9 +7,8 @@ DOMAIN_PROD="http://theatre-shevchenko.ck.ua"
 DOMAIN_STAGING="http://develop.theatre.pp.ua"
 SSH_HOST="deploybot@104.248.253.61"
 
-npm i
-npm run lint
-npm run lint-css
+#npm run lint
+#npm run lint-css
 ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
 ng e2e
 

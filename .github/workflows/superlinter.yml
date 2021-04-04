@@ -62,8 +62,14 @@ jobs:
           if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
       - name: ng install
         run: npm install -g @angular/cli
+      - name: Angular linter
+        run: npm run lint
+        shell: bash
+      - name: Lint CSS
+        run: npm run lint-css
+        shell: bash
       - name: deploy
         run: bash deploy.sh
         shell: bash
         env:
-          BRANCH: ${{ GITHUB_HEAD_REF }}
+          BRANCH: ${{ env.GITHUB_HEAD_REF }}
