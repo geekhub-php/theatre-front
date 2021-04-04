@@ -23,9 +23,12 @@ script:
   - if [ "$BRANCH" = "master" ]; then DOMAIN="https://theatre-shevchenko.ck.ua"; else DOMAIN="http://develop.theatre.pp.ua/$BRANCH"; fi
   - if [ "$BRANCH" = "master" ]; then ENV="production"; else ENV="staging"; fi
   - if [ "$BRANCH" = "master" ]; then BASE_HREF="/"; else BASE_HREF="/$BRANCH/"; fi
-  - ng build --configuration=$ENV --deploy-url=$DOMAIN/uk/ --base-href="$BASE_HREF"uk/ --aot true --vendor-chunk true --output-path 'dist/uk/' --i18n-file src/assets/locale/locale.uk-ua.xlf --i18n-format xlf --i18n-locale uk-UA --verbose --i18n-missing-translation=error
-  - ng build --configuration=$ENV --deploy-url=$DOMAIN/en/ --base-href="$BASE_HREF"en/ --aot true --vendor-chunk true --output-path 'dist/en/'
-  - npm run build:ssr
+  - ng build -c "$ENV"-uk && ng run theatre-front:server:"$ENV"-uk
+  - mv dist/theatre-front/browser/uk dist/browser_uk
+  - mv dist/theatre-front/server/uk dist/server_uk
+  - ng build -c "$ENV"-en && ng run theatre-front:server:"$ENV"-en
+  - mv dist/browser_uk dist/theatre-front/browser/uk
+  - mv dist/server_uk dist/theatre-front/server/uk  - npm run build:ssr
 
 notifications:
   email:
