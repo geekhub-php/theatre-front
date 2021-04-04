@@ -15,14 +15,15 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
-#      - name: Cache node modules
-#        uses: actions/cache@v1
-#        with:
-#          path: ~/.npm
-#          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-#          restore-keys: |
-#            ${{ runner.os }}-node-
+      - name: npm install
+        run: npm i
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Node ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
