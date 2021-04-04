@@ -18,7 +18,7 @@ ng e2e
 if [ "$BRANCH" = "master" ]; then DOMAIN=$DOMAIN_PROD; else DOMAIN="$DOMAIN_STAGING/$BRANCH"; fi
 if [ "$BRANCH" = "master" ]; then ENV="production"; else ENV="staging"; fi
 if [ "$BRANCH" = "master" ]; then BASE_HREF="/"; else BASE_HREF="/$BRANCH/"; fi
-ng build --configuration=$ENV \
+ng build --configuration=${ENV}-uk \
   --deploy-url=$DOMAIN/uk/ \
   --base-href="$BASE_HREF"uk/ \
   --aot true --vendor-chunk true \
@@ -29,7 +29,7 @@ ng build --configuration=$ENV \
   --verbose \
   --i18n-missing-translation=error
 
-ng build --configuration=$ENV \
+ng build --configuration=${ENV}-en \
   --deploy-url=$DOMAIN/en/ \
   --base-href="$BASE_HREF"en/ \
   --aot true \
