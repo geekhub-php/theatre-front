@@ -45,11 +45,12 @@ after_script:
 after_success:
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_PULL_REQUEST_BRANCH
+  - ls -l ~/.ssh
 #  - openssl aes-256-cbc -K $encrypted_40387a6d5956_key -iv $encrypted_40387a6d5956_iv -in deploy/key.enc -out ./deployment -d
 #  - mv deployment ~/.ssh/id_rsa
-  - echo ${DEPLOYBOT_KEY} > ~/.ssh/id_rsa
-  - chmod 600 ~/.ssh/id_rsa
-  - ssh-add ~/.ssh/id_rsa
+#  - echo ${DEPLOYBOT_KEY} > ~/.ssh/id_rsa
+#  - chmod 600 ~/.ssh/id_rsa
+#  - ssh-add ~/.ssh/id_rsa
   - ssh deploybot@104.248.253.61 "pwd"
 
   - mkdir ./dist # only for tests
