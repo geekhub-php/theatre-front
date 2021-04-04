@@ -1,12 +1,10 @@
 #!/bin/bash
-set -e
-set -o errexit
+set -euo
 
 rm -rf dist
 
 DOMAIN_PROD="http://theatre-shevchenko.ck.ua"
 DOMAIN_STAGING="http://develop.theatre.pp.ua"
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
 SSH_HOST="deploybot@104.248.253.61"
 
 npm i
@@ -15,6 +13,7 @@ npm run lint-css
 ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
 ng e2e
 
+if [ "$BRANCH" = "" ]; then BRANCH=$(git rev-parse --abbrev-ref HEAD); fi
 if [ "$BRANCH" = "master" ]; then DOMAIN=$DOMAIN_PROD; else DOMAIN="$DOMAIN_STAGING/$BRANCH"; fi
 if [ "$BRANCH" = "master" ]; then ENV="production"; else ENV="staging"; fi
 if [ "$BRANCH" = "master" ]; then BASE_HREF="/"; else BASE_HREF="/$BRANCH/"; fi

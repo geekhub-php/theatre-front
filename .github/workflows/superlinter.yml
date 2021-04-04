@@ -60,5 +60,5 @@ jobs:
           if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
       - name: ng install
         run: npm install -g @angular/cli
-      - name: deploy
+      - name: BRANCH=GITHUB_HEAD_REF deploy
         run: bash deploy.sh
