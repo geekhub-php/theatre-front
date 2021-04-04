@@ -51,6 +51,10 @@ jobs:
         run: npm run lint
       - name: Lint CSS
         run: npm run lint-css
+      - name: Unit tests
+        run: ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
+      - name: E2E tests
+        run: ng e2e
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2

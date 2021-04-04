@@ -9,8 +9,8 @@ SSH_HOST="deploybot@104.248.253.61"
 
 #npm run lint
 #npm run lint-css
-ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
-ng e2e
+#ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
+#ng e2e
 
 if [ "$BRANCH" = "" ]; then BRANCH=$(git rev-parse --abbrev-ref HEAD); fi
 if [ "$BRANCH" = "master" ]; then DOMAIN=$DOMAIN_PROD; else DOMAIN="$DOMAIN_STAGING/$BRANCH"; fi
