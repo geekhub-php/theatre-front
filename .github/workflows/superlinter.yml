@@ -64,4 +64,4 @@ jobs:
         run: bash deploy.sh
         shell: bash
         env:
-          BRANCH: ${GITHUB_HEAD_REF}
+          BRANCH: github-linter-2
