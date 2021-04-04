@@ -9,6 +9,7 @@ DOMAIN_STAGING="http://develop.theatre.pp.ua"
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 SSH_HOST="deploybot@104.248.253.61"
 
+npm i
 npm run lint
 npm run lint-css
 ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
