@@ -20,7 +20,7 @@ export class CalendarService {
     let date: Date = this.getFrom();
     const endDate = this.getTo();
 
-    const weeks = [];
+    const weeks = []
     while (endDate > date) {
       const week = [];
       for (let i = 1; i <= this.daysInWeek; i++) {
