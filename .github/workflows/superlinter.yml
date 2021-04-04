@@ -34,3 +34,13 @@ jobs:
           VALIDATE_TSX: true
           VALIDATE_TYPESCRIPT_ES: true
           VALIDATE_TYPESCRIPT_STANDARD: true
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEPLOY_BOT_SSH }}
+          name: id_rsa # optional
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+#          config: ${{ secrets.CONFIG }} # ssh_config; optional
+          if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
+      - name: rsync over ssh
+        run: ssh deploybot@104.248.253.61 "pwd"
