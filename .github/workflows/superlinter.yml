@@ -20,22 +20,20 @@ jobs:
           fetch-depth: 0
 
       # Runs the Super-Linter action
-#      - name: Run Super-Linter
-#        uses: github/super-linter@v3
-#        env:
-#          VALIDATE_ALL_CODEBASE: false
-#          DEFAULT_BRANCH: develop
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#
-#          LINTER_RULES_PATH: /
-#          CSS_FILE_NAME: .stylelintrc
-#          VALIDATE_CSS: true
-#          VALIDATE_JSX: true
-#          VALIDATE_TSX: true
-#          VALIDATE_TYPESCRIPT_ES: true
-#          VALIDATE_TYPESCRIPT_STANDARD: true
-      - name: ng lint
-        run: npm run lint
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: develop
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          LINTER_RULES_PATH: /
+          CSS_FILE_NAME: .stylelintrc
+          VALIDATE_CSS: true
+          VALIDATE_JSX: true
+          VALIDATE_TSX: true
+          VALIDATE_TYPESCRIPT_ES: true
+          VALIDATE_TYPESCRIPT_STANDARD: true
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
