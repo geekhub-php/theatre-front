@@ -17,23 +17,26 @@ ng e2e
 if [ "$BRANCH" = "master" ]; then DOMAIN=$DOMAIN_PROD; else DOMAIN="$DOMAIN_STAGING/$BRANCH"; fi
 if [ "$BRANCH" = "master" ]; then ENV="production"; else ENV="staging"; fi
 if [ "$BRANCH" = "master" ]; then BASE_HREF="/"; else BASE_HREF="/$BRANCH/"; fi
-ng build --configuration=$ENV \
+ng build --configuration="$ENV"-uk \
   --deploy-url=$DOMAIN/uk/ \
-  --base-href="$BASE_HREF"uk/ \
+  --base-href="$BASE_HREF" \
   --aot true --vendor-chunk true \
-  --output-path 'dist/uk/' \
+  --output-path 'dist/' \
   --i18n-file src/assets/locale/locale.uk-ua.xlf \
   --i18n-format xlf \
   --i18n-locale uk-UA \
   --verbose \
   --i18n-missing-translation=error
 
-ng build --configuration=$ENV \
+mv dist/uk ./uk
+
+ng build --configuration="$ENV"-en \
   --deploy-url=$DOMAIN/en/ \
-  --base-href="$BASE_HREF"en/ \
+  --base-href="$BASE_HREF" \
   --aot true \
   --vendor-chunk true \
-  --output-path "dist/en/"
+  --output-path "dist/"
+  mv ./uk dist/uk
 
 cp ./deploy/branch.conf ./dist/
 cp ./deploy/index.html ./dist/

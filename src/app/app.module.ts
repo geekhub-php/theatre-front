@@ -34,6 +34,9 @@ import { DonateComponent } from './components/donate/donate.component';
 import { StripHtmlModule } from './pipes/strip-html.module';
 
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { CalendarComponent } from './components/schedule/calendar/calendar.component';
+import { ListViewComponent } from './components/schedule/list-view/list-view.component';
+import { MobileViewComponent } from './components/schedule/mobile-view/mobile-view.component';
 import { CalendarService } from './components/schedule/calendar.service';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
@@ -58,7 +61,7 @@ import { environment } from '../environments/environment';
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent,
+    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent,
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,

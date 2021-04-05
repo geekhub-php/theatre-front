@@ -1,115 +1,116 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { DatePipe, isPlatformBrowser } from '@angular/common';
-
-import { plainToClass } from 'class-transformer';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 import { GatewayService } from '../../services/gateway.service';
-import { ScheduleListResponse } from '../../store/schedule/ScheduleListResponse';
-import { PerformanceEvent } from '../../store/schedule/PerformanceEvent';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { CalendarService } from './calendar.service';
 
 enum ScheduleViewModes {
   CALENDAR = 'Calendar',
-  LIST = 'List'
+  LIST = 'List',
+  MOBILE = 'Mobile'
 }
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss'],
-  providers: [ DatePipe ]
 })
 export class ScheduleComponent implements OnInit {
-
-  scheduleList: Array<PerformanceEvent>;
-  dayPerformances: Array<PerformanceEvent>;
   date: Date;
-  weeks: Array<Array<Date>>;
+  isToday: boolean;
 
   viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
   views = ScheduleViewModes;
 
   constructor(
-    private datePipe: DatePipe,
     private gateway: GatewayService,
     private loaderService: LoaderService,
     private calendar: CalendarService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) {
+    this.onResize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    const innerWidth = window.innerWidth;
+    const calendarBreakpointWidth = 1020;
+    const listBreakpointWidth = 975;
+
+    switch (this.viewMode) {
+      case ScheduleViewModes.CALENDAR:
+        if (innerWidth < calendarBreakpointWidth) {
+          this.viewMode = ScheduleViewModes.MOBILE;
+        }
+        break;
+
+      case ScheduleViewModes.LIST:
+        if (innerWidth < listBreakpointWidth) {
+          this.viewMode = ScheduleViewModes.MOBILE;
+        }
+        break;
+
+      case ScheduleViewModes.MOBILE:
+        const savedMode = this.savedLocale;
+        if (savedMode === ScheduleViewModes.CALENDAR && innerWidth >= calendarBreakpointWidth) {
+          this.viewMode = ScheduleViewModes.CALENDAR;
+
+          break;
+        }
+
+        if (savedMode === ScheduleViewModes.LIST && innerWidth >= listBreakpointWidth) {
+          this.viewMode = ScheduleViewModes.LIST;
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
 
   ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.viewMode = JSON.parse(localStorage.getItem('viewMode')) || ScheduleViewModes.LIST;
-    }
+    this.loaderService.start('poster');
+    this.date = this.calendar.currentDate;
+    this.isToday = this.calendar.isToday(this.date);
 
-    this.date = new Date();
-    this.getPerformanceEvents();
+    this.viewMode = this.savedLocale;
+    this.onResize();
+
     this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
       'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
       'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
     this.gateway.updateCanonicalURL();
   }
 
-  transformDate(date) {
-    return this.datePipe.transform(date, 'MM-yyyy');
-  }
-
-  hasPerformanceByDate(date: Date): boolean {
-    this.dayPerformances = this.getPerformancesByDate(date);
-
-    return this.dayPerformances.length > 0;
-  }
-
-  getPerformancesByDate(date: Date): Array<PerformanceEvent> {
-    if (!this.scheduleList) return [];
-
-    return this.scheduleList.filter((event: PerformanceEvent) => {
-      return +event.month === date.getMonth() + 1
-        && +event.day === date.getDate();
-    });
-  }
-
   prevMonth() {
-    this.date = new Date(this.date);
-    this.date.setMonth(this.date.getMonth() - 1);
-
-    this.getPerformanceEvents();
+    this.date = this.calendar.prevMonth();
+    this.isToday = this.calendar.isToday(this.date);
   }
 
   nextMonth() {
-    this.date = new Date(this.date);
-    this.date.setMonth(this.date.getMonth() + 1);
-
-    this.getPerformanceEvents();
+    this.date = this.calendar.nextMonth();
+    this.isToday = this.calendar.isToday(this.date);
   }
 
   now() {
-    this.date = new Date();
-
-    this.getPerformanceEvents();
-  }
-
-  getPerformanceEvents() {
-    this.loaderService.start('poster');
-    this.calendar.setDate(this.date);
-    this.weeks = this.calendar.getWeeks();
-    const from = this.calendar.getFrom();
-    const to = this.calendar.getTo();
-
-    this.gateway.getSchedulesList(from, to).subscribe(
-      (res: ScheduleListResponse) => {
-        this.scheduleList = plainToClass(ScheduleListResponse, res).performance_events;
-        this.loaderService.stop('poster');
-      },
-      err => this.loaderService.stop('poster')
-    );
+    this.date = this.calendar.today();
+    this.isToday = this.calendar.isToday(this.date);
   }
 
   changeView() {
     this.viewMode = this.viewMode === ScheduleViewModes.LIST ? ScheduleViewModes.CALENDAR : ScheduleViewModes.LIST;
+
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
+  }
+
+  get savedLocale() {
+    if (isPlatformBrowser(this.platformId)) {
+      return JSON.parse(localStorage.getItem('viewMode')) || ScheduleViewModes.LIST;
+    }
+
+    return ScheduleViewModes.LIST;
   }
 }

@@ -11,7 +11,6 @@ import { PerformanceListResponse } from '../store/performance/PerformanceListRes
 import { HistoryListResponse } from '../store/history/HistoryListResponse';
 import { ScheduleListResponse } from '../store/schedule/ScheduleListResponse';
 import { History } from '../store/history/History';
-import { environment } from '../../environments/environment';
 import { Role } from '../store/Role';
 import { Performance } from '../store/performance/Performance';
 import { EmployeesListResponse } from '../store/employee/EmployeesListResponse';
@@ -22,6 +21,7 @@ import { PerformanceEventResponse } from '../store/widget/PerformanceEventRespon
 import { WidgetResType } from '../store/widget/WidgetResType';
 import { Season } from '../store/season/Season';
 
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

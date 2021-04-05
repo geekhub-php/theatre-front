@@ -1,14 +1,26 @@
 import { Injectable } from '@angular/core';
 
+import { plainToClass } from 'class-transformer';
+
+import { GatewayService } from '../../services/gateway.service';
+
+import { PerformanceEvent } from '../../store/schedule/PerformanceEvent';
+import { ScheduleListResponse } from '../../store/schedule/ScheduleListResponse';
+
+import { map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CalendarService {
-
   currentDate: Date;
   daysInWeek = 7;
   Sun = 0;
-  constructor() {
+
+  events: BehaviorSubject<Array<PerformanceEvent>> = new BehaviorSubject([]);
+
+  constructor(private gateway: GatewayService) {
     this.currentDate = new Date();
   }
 
@@ -16,9 +28,16 @@ export class CalendarService {
     this.currentDate = date;
   }
 
-  getWeeks(): Array<Array<Date>> {
-    let date: Date = this.getFrom();
-    const endDate = this.getTo();
+  getPerformanceEvents() {
+    return this.gateway.getSchedulesList(this.dateFrom, this.dateTo)
+      .pipe(map((res: ScheduleListResponse) => {
+        this.events.next(plainToClass(ScheduleListResponse, res).performance_events);
+      })).toPromise();
+  }
+
+  get weeks(): Array<Array<Date>> {
+    let date: Date = this.dateFrom;
+    const endDate = this.dateTo;
 
     const weeks = [];
     while (endDate > date) {
@@ -34,27 +53,30 @@ export class CalendarService {
     return weeks;
   }
 
-  prevMonth(): CalendarService {
+  prevMonth(): Date {
     this.currentDate = new Date(this.currentDate);
     this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+    this.getPerformanceEvents();
 
-    return this;
+    return this.currentDate;
   }
 
-  nextMonth(): CalendarService {
+  nextMonth(): Date {
     this.currentDate = new Date(this.currentDate);
     this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+    this.getPerformanceEvents();
 
-    return this;
+    return this.currentDate;
   }
 
-  today() {
+  today(): Date {
     this.currentDate = new Date();
+    this.getPerformanceEvents();
 
-    return this;
+    return this.currentDate;
   }
 
-  getFrom() {
+  get dateFrom() {
     const from = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
 
     let day: number;
@@ -65,7 +87,7 @@ export class CalendarService {
     return from;
   }
 
-  getTo() {
+  get dateTo() {
     let lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
 
     if (this.Sun === lastDay.getDay()) return lastDay;
@@ -73,5 +95,13 @@ export class CalendarService {
     lastDay = new Date(lastDay.getFullYear(), lastDay.getMonth() + 1, (this.daysInWeek - lastDay.getDay()));
 
     return lastDay;
+  }
+
+  isToday(someDate) {
+    const today = new Date();
+
+    return someDate.getDate() === today.getDate() &&
+      someDate.getMonth() === today.getMonth() &&
+      someDate.getFullYear() === today.getFullYear();
   }
 }
