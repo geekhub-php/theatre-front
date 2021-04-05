@@ -64,7 +64,12 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           #          config: ${{ secrets.CONFIG }} # ssh_config; optional
           if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
-      - name: deploy
+      - name: Build front
+        run: bash build-front.sh
+        shell: bash
+        env:
+          BRANCH: ${{ env.GITHUB_HEAD_REF }}
+      - name: Deploy
         run: bash deploy.sh
         shell: bash
         env:
