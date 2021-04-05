@@ -54,6 +54,7 @@ export class GatewayService {
     audience?: 'kids' | 'adults' | null,
     locale: string = this.localeId,
   ): Observable<Array<Performance>> {
+    seasonNumber="hello";
     let params: { locale: string, audience?: string } = { locale };
     if (!!audience) params = { locale, audience};
 
