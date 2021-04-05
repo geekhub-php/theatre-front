@@ -18,7 +18,8 @@
     "build:ssr:en-us": "ng build -c production-en && ng run theatre-front:server:production-en",
     "serve:ssr": "env PORT=4040 LANGUAGE=en node dist/theatre-front/server/en/main.js",
     "serve:ssr:uk": "env PORT=4041 LANGUAGE=uk node dist/theatre-front/server/uk/main.js",
-    "prerender": "ng run theatre-front:prerender"
+    "prerender": "ng run theatre-front:prerender",
+    "i18n": "ng run theatre-front:extract-i18n"
   },
   "private": true,
   "dependencies": {

@@ -6,13 +6,19 @@ import { CalendarService } from './calendar.service';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { RouterModule } from '@angular/router';
 import { StripHtmlModule } from '../shared/pipes/strip-html/strip-html.module';
+import { MobileViewComponent } from './mobile-view/mobile-view.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ListViewComponent } from './list-view/list-view.component';
 
 @NgModule({
   providers: [
     CalendarService,
   ],
   declarations: [
-    ScheduleComponent
+    ScheduleComponent,
+    MobileViewComponent,
+    CalendarComponent,
+    ListViewComponent
   ],
   imports: [
     NgbModule,
