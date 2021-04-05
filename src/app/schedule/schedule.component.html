@@ -7,125 +7,25 @@
 </div>
 
 <div class="btn-group btn-switch">
-  <button class="btn btn-prev" (click)="prevMonth()" i18n="@@prev">Previous</button>
+  <button *ngIf="viewMode === views.CALENDAR || !isToday" class="btn btn-prev" (click)="prevMonth()" i18n="@@prev">Previous</button>
   <button class="btn btn-now" (click)="now()" i18n="@@now">Today</button>
   <button class="btn btn-next" (click)="nextMonth()" i18n="@@next">Next</button>
 
   <button (click)="changeView()" class="poster-view">
-    <svg width="20" height="20" class="u-svg-icon">
+    <svg *ngIf="viewMode === views.CALENDAR" title="List view" i18n-title="@@listView" width="20" height="20" class="u-svg-icon">
       <use xlink:href="assets/images/sprite.svg#list-grid"></use>
+    </svg>
+
+    <svg *ngIf="viewMode === views.LIST" title="Calendar view" i18n-title="@@calendarView" width="20" height="20" class="u-svg-icon">
+      <use xlink:href="assets/images/sprite.svg#calendar"></use>
     </svg>
   </button>
 </div>
 
-<div class="desktop">
-  <table *ngIf="viewMode === views.CALENDAR" class="calendar">
-    <thead>
-    <tr>
-      <th class="day-of-week" i18n="@@monday">Monday</th>
-      <th class="day-of-week" i18n="@@tuesday">Tuesday</th>
-      <th class="day-of-week" i18n="@@wednesday">Wednesday</th>
-      <th class="day-of-week" i18n="@@thursday">Thursday</th>
-      <th class="day-of-week" i18n="@@friday">Friday</th>
-      <th class="day-of-week" i18n="@@saturday">Saturday</th>
-      <th class="day-of-week" i18n="@@sunday">Sunday</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let week of weeks">
-      <td *ngFor="let day of week" class="day-of-month">
-        <span class="day-number">{{ day | date: 'd' }}</span>
-        <div class="calendar-img">
-          <img *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1"
-               [src]=dayPerformances[0].performance.mainPicture.performance_big.url
-               [alt]="dayPerformances[0].performance.title"
-               [title]="dayPerformances[0].performance.title"
-               class="calendar-photo">
-        </div>
-        <div class="more" *ngIf="hasPerformanceByDate(day)">
-          <div class="contain"></div>
-          <a
-            triggers="mouseenter:mouseleave"
-            [ngbPopover]="popContent"
-            [popoverTitle]="popTitle"
-            popoverClass="popover-poster"
-            container="body"
-            class="events"
-            [routerLink]="['', 'performance', event.performance.slug]"
-            *ngFor="let event of dayPerformances"
-            [class.events_double]="dayPerformances.length === 2"
-            [class.events_triple]="dayPerformances.length === 3">
-            <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title | striphtml:[40, '...'] }}</p>
-            <ng-template #popTitle>{{ event.performance.title }}</ng-template>
-            <ng-template #popContent>
-              <img src="{{ event.performance.mainPicture.performance_big.url }}"
-              		 [title]="event.performance.mainPicture.performance_big.properties.title" class="popover-img">
-              <p class="popover-time">{{ event.time }}</p>
-              <p class="popover-date">
-                <span>{{ event.date_time | date: 'd MMMM' }}</span>,
-                <span>{{ event.date_time | date: 'EEEE' }}</span>
-              </p>
-              <p class="popover-venue">{{ event.venue }}</p>
-            </ng-template>
-          </a>
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+<app-spinner name="poster"></app-spinner>
 
-<div *ngIf="viewMode === views.LIST" class="list-view">
-  <div class="list-view__item" *ngFor="let event of scheduleList">
-    <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
-      <div class="list-view__date-wrapper">
-        <div class="list-view__date" *ngIf="event.month == date.getMonth() + 1">
-          <div class="list-view__day">{{ event.date_time | date: 'dd.MM' }}</div>
-          <div class="list-view__day-type">{{ event.date_time | date: 'EEEE' }}</div>
-        </div>
-      </div>
-      <div class="list-view__content">
-        <div class="list-view__title">{{ event.performance.title }}</div>
-        <div class="list-view__description" [innerHtml]="event.performance.description"></div>
-      </div>
-      <div class="list-view__info">
-        <div class="list-view__time">{{ event.time }}</div>
-        <div class="list-view__place">{{ event.venue }}</div>
-        <div class="list-view__type">{{ event.performance.type }}</div>
-        <a *ngIf="event.buy_ticket_link" [href]="event.buy_ticket_link" target="_blank"
-           class="list-view__button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
-      </div>
-      <img [src]="event.performance.sliderImage.slider_slider.url"
-           [alt]="event.performance.title"
-           [title]="event.performance.title"
-           class="list-view__img">
-    </div>
-  </div>
-</div>
+<app-calendar *ngIf="viewMode === views.CALENDAR"></app-calendar>
 
+<app-list-view *ngIf="viewMode === views.LIST"></app-list-view>
 
-<div class="mobile">
-  <app-spinner name="poster"></app-spinner>
-  <ng-container *ngFor="let event of scheduleList">
-    <section *ngIf="event.month == date.getMonth() + 1" class="schedule-event">
-      <div class="schedule-body">
-        <a [routerLink]="['', 'performance', event.performance.slug]">
-          <h2 class="schedule-title">{{ event.performance.title }}</h2>
-          <p class="schedule-time">{{ event.time }}</p>
-          <p class="schedule-place">{{ event.venue }}</p>
-          <div class="schedule-main">
-            <img class="schedule-small_img" [src]="event.performance.mainPicture.performance_small.url"
-                 [alt]="event.performance.title" [title]="event.performance.title">
-          </div>
-        </a>
-        <div class="text-center">
-          <a *ngIf="event.buy_ticket_link" [href]="event.buy_ticket_link" target="_blank"
-             class="btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
-        </div>
-      </div>
-      <div *ngIf="event.month == date.getMonth() + 1" class="schedule-day">
-        <span class="day">{{ event.day }}</span>
-      </div>
-    </section>
-  </ng-container>
-</div>
+<app-mobile-view *ngIf="viewMode === views.MOBILE"></app-mobile-view>

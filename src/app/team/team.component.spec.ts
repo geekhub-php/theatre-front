@@ -7,7 +7,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SpinnerModule } from '../shared/spinner/spinner.module';
 import { PersonComponent } from '../person/person.component';
 import { PersonRolesComponent } from '../person-roles/person-roles.component';
-import { NgxGalleryModule } from 'ngx-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 describe('TeamComponent', () => {
   let component: TeamComponent;

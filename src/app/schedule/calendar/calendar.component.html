@@ -1,0 +1,55 @@
+<table class="calendar">
+  <thead>
+    <tr>
+      <th class="day-of-week" i18n="@@monday">Monday</th>
+      <th class="day-of-week" i18n="@@tuesday">Tuesday</th>
+      <th class="day-of-week" i18n="@@wednesday">Wednesday</th>
+      <th class="day-of-week" i18n="@@thursday">Thursday</th>
+      <th class="day-of-week" i18n="@@friday">Friday</th>
+      <th class="day-of-week" i18n="@@saturday">Saturday</th>
+      <th class="day-of-week" i18n="@@sunday">Sunday</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let week of weeks">
+      <td *ngFor="let day of week" class="day-of-month">
+        <span class="day-number">{{ day | date: 'd' }}</span>
+        <div class="calendar-img">
+          <img *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1"
+               [src]=dayPerformances[0].performance.mainPicture.performance_big.url
+               [alt]="dayPerformances[0].performance.title"
+               [title]="dayPerformances[0].performance.title"
+               class="calendar-photo">
+        </div>
+        <div class="more" *ngIf="hasPerformanceByDate(day)">
+          <div class="contain"></div>
+          <a triggers="mouseenter:mouseleave"
+             [ngbPopover]="popContent" [popoverTitle]="popTitle"
+             popoverClass="popover-poster" container="body"
+             class="events"
+             [routerLink]="['', 'performance', event.performance.slug]"
+             *ngFor="let event of dayPerformances"
+             [class.events_double]="dayPerformances.length === 2"
+             [class.events_triple]="dayPerformances.length === 3">
+
+            <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title | striphtml:[40, '...'] }}</p>
+
+            <ng-template #popTitle>{{ event.performance.title }}</ng-template>
+
+            <ng-template #popContent>
+              <img src="{{ event.performance.mainPicture.performance_big.url }}"
+                   [title]="event.performance.mainPicture.performance_big.properties.title" class="popover-img">
+              <p class="popover-time">{{ event.time }}</p>
+              <p class="popover-date">
+                <span>{{ event.date_time | date: 'd MMMM' }}</span>,
+                <span>{{ event.date_time | date: 'EEEE' }}</span>
+              </p>
+              <p class="popover-venue">{{ event.venue }}</p>
+            </ng-template>
+          </a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
