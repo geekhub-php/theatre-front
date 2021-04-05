@@ -4,7 +4,7 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { CalendarService } from './calendar.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { GatewayService } from '../core/services/gateway.service';
+import { GatewayService } from '../../services/gateway.service';
 
 describe('CalendarService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
