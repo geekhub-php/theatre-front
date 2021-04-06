@@ -9,7 +9,6 @@ import { GatewayService } from '../core/services/gateway.service';
 })
 export class NewsItemComponent implements OnInit {
   @Input() item: NewsItem;
-
   defaultImg = '../../assets/images/cats.gif';
 
   constructor(private gatewayService: GatewayService) {
