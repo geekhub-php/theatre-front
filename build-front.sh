@@ -23,7 +23,7 @@ rm -rf dist
 
 ng build --configuration="${ENV}-en" \
   --deploy-url="${DOMAIN}/en/" \
-  --base-href="${BASE_HREF}en/" \
+  --base-href="${BASE_HREF}" \
   --aot true \
   --vendor-chunk true \
   --output-path "dist/"
