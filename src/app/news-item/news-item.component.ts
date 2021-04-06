@@ -10,7 +10,10 @@ import { GatewayService } from '../core/services/gateway.service';
 export class NewsItemComponent implements OnInit {
   @Input() item: NewsItem;
 
-  constructor(private gatewayService: GatewayService) { }
+  defaultImg = '../../assets/images/cats.gif';
+
+  constructor(private gatewayService: GatewayService) {
+  }
 
   ngOnInit() {
     this.gatewayService.updateMeta(this.item.title,

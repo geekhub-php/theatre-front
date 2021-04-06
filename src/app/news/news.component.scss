@@ -1,61 +1,84 @@
 @import "~assets/styles/variables";
 
-.news__wrapper {
+h2 {
+  font-family: KobzarKS-Regular;
+  font-size: 72px;
+  line-height: 72px;
+  color: #b49864;
+  padding-top: 80px;
+  margin-bottom: 64px;
+}
+
+.news-page {
+  background-color: #0e0c08;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  ngb-pagination {
-    flex: 0 0 100%;
-  }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-app-widget {
-  flex: 0 0 25rem;
+.news__wrapper {
+  width: 1504px;
+  border-bottom: .5px solid #323232;
+  margin-bottom: 35px;
 }
 
-.news__content {
-  flex: 0 0 calc(100% - 26rem);
-}
-
-:host ::ng-deep ngb-pagination ul {
-
-  li a {
-    color: $secondary-color;
-    outline: none;
-    border: transparent;
-    border-radius: 5px;
-
-    &:hover {
-      color: $secondary-color;
-    }
-  }
-
-  li.active a {
-    background-color: $main-color !important;
-    outline: none;
-    color: $white-color;
-    border: transparent;
-
-    span {
-      display: none;
-    }
-
-    .page-item.active .page-link {
-      border-color: transparent;
-      outline: transparent !important;
-      padding: 7px 11px !important;
-    }
-  }
-}
-
-.pagination {
-  font-size: .9rem;
-}
-
-@media (max-width: 992px) {
-
-  .widget {
-    display: none;
-  }
-}
+//.news__wrapper {
+//  display: flex;
+//  flex-wrap: wrap;
+//  justify-content: space-between;
+//
+//  ngb-pagination {
+//    flex: 0 0 100%;
+//  }
+//}
+//
+//app-widget {
+//  flex: 0 0 25rem;
+//}
+//
+//.news__content {
+//  flex: 0 0 calc(100% - 26rem);
+//}
+//
+//:host ::ng-deep ngb-pagination ul {
+//
+//  li a {
+//    color: $secondary-color;
+//    outline: none;
+//    border: transparent;
+//    border-radius: 5px;
+//
+//    &:hover {
+//      color: $secondary-color;
+//    }
+//  }
+//
+//  li.active a {
+//    background-color: $main-color !important;
+//    outline: none;
+//    color: $white-color;
+//    border: transparent;
+//
+//    span {
+//      display: none;
+//    }
+//
+//    .page-item.active .page-link {
+//      border-color: transparent;
+//      outline: transparent !important;
+//      padding: 7px 11px !important;
+//    }
+//  }
+//}
+//
+//.pagination {
+//  font-size: .9rem;
+//}
+//
+//@media (max-width: 992px) {
+//
+//  .widget {
+//    display: none;
+//  }
+//}

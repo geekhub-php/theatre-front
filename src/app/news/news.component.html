@@ -1,24 +1,33 @@
-<div class="container">
+<div class="news-page">
   <h2 class="page-title text-center" i18n="@@news">News</h2>
-
-  <app-spinner name="news"></app-spinner>
-
   <div class="news__wrapper" *ngIf="listPost">
     <div class="news__content">
       <app-news-item *ngFor="let item of listPost" [item]="item"></app-news-item>
     </div>
-
-    <app-widget></app-widget>
-
-    <ngb-pagination class="pagination d-flex justify-content-center"
-                    [collectionSize]="collectionSize"
-                    [(page)]="page" [boundaryLinks]="false"
-                    (pageChange)="goToPage($event)"
-                    [pageSize]="5">
-      <ng-template ngbPaginationFirst>&#171;</ng-template>
-      <ng-template ngbPaginationPrevious>&#8249;</ng-template>
-      <ng-template ngbPaginationNext>&#8250;</ng-template>
-      <ng-template ngbPaginationLast>&#187;</ng-template>
-    </ngb-pagination>
   </div>
 </div>
+
+<!--<div class="container">-->
+<!--  <h2 class="page-title text-center" i18n="@@news">News</h2>-->
+
+<!--  <app-spinner name="news"></app-spinner>-->
+
+<!--  <div class="news__wrapper" *ngIf="listPost">-->
+<!--    <div class="news__content">-->
+<!--      <app-news-item *ngFor="let item of listPost" [item]="item"></app-news-item>-->
+<!--    </div>-->
+
+<!--    <app-widget></app-widget>-->
+
+<!--    <ngb-pagination class="pagination d-flex justify-content-center"-->
+<!--                    [collectionSize]="collectionSize"-->
+<!--                    [(page)]="page" [boundaryLinks]="false"-->
+<!--                    (pageChange)="goToPage($event)"-->
+<!--                    [pageSize]="5">-->
+<!--      <ng-template ngbPaginationFirst>&#171;</ng-template>-->
+<!--      <ng-template ngbPaginationPrevious>&#8249;</ng-template>-->
+<!--      <ng-template ngbPaginationNext>&#8250;</ng-template>-->
+<!--      <ng-template ngbPaginationLast>&#187;</ng-template>-->
+<!--    </ngb-pagination>-->
+<!--  </div>-->
+<!--</div>-->

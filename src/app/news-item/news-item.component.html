@@ -1,10 +1,30 @@
 <a routerLink="../news/{{item.slug}}">
-  <img *ngIf="item.mainPicture" src='{{ item.mainPicture.post_big.url }}'
-       class="card-img-top" alt="{{item.short_description}}" [title]="item.mainPicture.post_big.properties.title">
-  <div class="card-body">
-    <h2>{{ item.title }}</h2>
-    <p class="card-text">{{ item.short_description }}</p>
+  <div class="news-item">
+    <div class="image">
+      <!--      <img *ngIf="item.mainPicture; else elseImg" [src]="item.mainPicture != undefined ? item.mainPicture.post_main.url : myImgUrl">-->
+      <img *ngIf="item.mainPicture; else elseImg" [src]="item.mainPicture.post_main.url"
+           alt="{{item.short_description}}">
+      <ng-template #elseImg>
+        <img [src]="defaultImg">
+      </ng-template>
+    </div>
+
+    <div class="text">
+      <h3>{{ item.title }}</h3>
+      <div class="date">{{ item.created_at | date: 'd.MM.yyyy'}}</div>
+      <div class="text">{{ item.short_description }}</div>
+    </div>
   </div>
-  <p class="list-group-item">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
 </a>
+
+
+<!--<a routerLink="../news/{{item.slug}}">-->
+<!--  <img *ngIf="item.mainPicture" src='{{ item.mainPicture.post_big.url }}'-->
+<!--       class="card-img-top" alt="{{item.short_description}}" [title]="item.mainPicture.post_big.properties.title">-->
+<!--  <div class="card-body">-->
+<!--    <h2>{{ item.title }}</h2>-->
+<!--    <p class="card-text">{{ item.short_description }}</p>-->
+<!--  </div>-->
+<!--  <p class="list-group-item">{{ item.created_at | date: 'd.MM.yyyy' }}</p>-->
+<!--</a>-->
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { NewsItem } from '../core/model/news/NewsItem';
@@ -51,6 +51,7 @@ export class NewsComponent implements OnInit, AfterViewChecked {
         this.collectionSize = res.total_count;
         this.page = res.page;
         this.loaderService.stop('news');
+        console.log(res);
       },
       err => this.loaderService.stop('news')
     );
