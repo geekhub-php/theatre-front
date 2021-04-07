@@ -1,0 +1,145 @@
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  height: 864px;
+  display: flex;
+  justify-content: center;
+  background-color: #0e0c08;
+}
+
+ngb-carousel {
+  outline: none;
+}
+
+ngb-carousel .carousel-indicators {
+  align-items: center;
+  bottom: -70px ;
+}
+
+ngb-carousel {
+  width: 1504px;
+  height: 688px;
+}
+
+ngb-carousel .carousel-indicators li {
+  background-color: #868583;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+ngb-carousel img {
+  padding-top: 64px;
+  width: 1504px;
+  height: 688px;
+}
+
+ngb-carousel .carousel-indicators .active {
+  background-color: #b49864;
+  width: 16px;
+  height: 16px;
+}
+
+ngb-carousel .carousel-control-prev {
+  width: 48px;
+  height: 48px;
+  top: 320px;
+  left: -48px;
+}
+
+ngb-carousel .carousel-control-next {
+  width: 48px;
+  height: 48px;
+  top: 320px;
+  right: -48px;
+}
+
+ngb-carousel .carousel-control-prev-icon {
+  width: 48px;
+  height: 48px;
+  background-image: url("~assets/images/home-slider/chevron-left.svg");
+}
+
+ngb-carousel .carousel-control-next-icon {
+  width: 48px;
+  height: 48px;
+  background-image: url("~assets/images/home-slider/chevron-right.svg");
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.performance-title {
+  height: 63px;
+  margin: 0 127px 9px 128px;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.container__performance {
+  display: flex;
+  flex-direction: row;
+  margin-right: 12px;
+  margin-bottom: 15px;
+}
+
+.image {
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.button-ticket {
+  color: #fff;
+  border: solid 1px #fff;
+  border-radius: 2px;
+  width: 197px;
+  height: 48px;
+  padding: 12px 24px;
+  margin: 22px 0;
+}
+
+.button-ticket:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.performance__venue {
+  color: #fff;
+  line-height: 1.5;
+  width: 268px;
+  height: 27px;
+  font-family: Montserrat;
+  font-size: 18px;
+  margin: 0 0 0 6px;
+  text-align: left;
+}
+
+.performance__type {
+  height: 27px;
+  margin: 0 0 0 8px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.tickets-month {
+  margin-left: 2px;
+  font-size: 18px;
+}
+
+.tickets-day {
+  font-size: 18px;
+}
