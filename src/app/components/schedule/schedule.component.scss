@@ -1,0 +1,56 @@
+@import "~assets/styles/variables";
+
+:host ::ng-deep a:hover {
+  text-decoration: none;
+}
+
+.title {
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.btn-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .btn {
+    margin: 0 5px;
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    background-color: $white-color;
+    box-shadow: none !important;
+
+    &:hover {
+      color: $main-color-darker;
+      border: 1px solid $main-color-darker;
+    }
+  }
+}
+
+.poster-view {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: $secondary-color;
+  transition: .3s ease;
+
+  &:hover {
+    color: $main-color-darker;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+
+  .poster-view {
+    display: none;
+  }
+}

@@ -3,79 +3,92 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CoreModule } from './core/core.module';
-import { HomePageModule } from './home-page/home-page.module';
+import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+
+import { CoreModule } from './modules/core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
-import { PerformanceListComponent } from './performance-list/performance-list.component';
-import { PerformanceComponent } from './performance/performance.component';
+import { RepertoireComponent } from './components/repertoire/repertoire.component';
+import { PerformanceComponent } from './components/performance/performance.component';
 
-import { AboutComponent } from './about/about.component';
-import { TeamComponent } from './team/team.component';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ArticleComponent } from './article/article.component';
-import { PersonComponent } from './person/person.component';
-import { NewsComponent } from './news/news.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
-import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-import { SpinnerModule } from './shared/spinner/spinner.module';
-import { ScheduleModule } from './schedule/schedule.module';
-import { WidgetModule } from './widget/widget.module';
-import { AboutMoreComponent } from './about/about-more/about-more.component';
-import { DevTeamComponent } from './dev-team/dev-team.component';
-import { SeasonsComponent } from './seasons/seasons.component';
-import { PersonRolesComponent } from './person-roles/person-roles.component';
-import { DonateComponent } from './donate/donate.component';
-import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { AboutComponent } from './components/about/about.component';
+import { TeamComponent } from './components/team/team.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { ArticleComponent } from './components/article/article.component';
+import { PersonComponent } from './components/person/person.component';
+import { NewsComponent } from './components/news/news.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { BoardTrusteesComponent } from './components/board-trustees/board-trustees.component';
+import { SpinnerModule } from './components/partials/spinner/spinner.module';
+import { AboutMoreComponent } from './components/about/about-more/about-more.component';
+import { DevTeamComponent } from './components/dev-team/dev-team.component';
+import { RolesComponent } from './components/person/roles/roles.component';
+import { DonateComponent } from './components/donate/donate.component';
+
+import { StripHtmlModule } from './pipes/strip-html.module';
+
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { CalendarComponent } from './components/schedule/calendar/calendar.component';
+import { ListViewComponent } from './components/schedule/list-view/list-view.component';
+import { MobileViewComponent } from './components/schedule/mobile-view/mobile-view.component';
+import { CalendarService } from './components/schedule/calendar.service';
+
+import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
+import { SliderComponent } from './components/home-page/slider/slider.component';
+import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
+
 import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PerformanceListComponent,
+    RepertoireComponent,
     PerformanceComponent,
     AboutComponent,
     TeamComponent,
     ContactsComponent,
     ArticleComponent,
     PersonComponent,
-    PersonRolesComponent,
+    RolesComponent,
     NewsComponent,
     HomePageComponent,
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    SeasonsComponent,
+    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent,
     DonateComponent,
+    ScheduleComponent,
+    SideMenuComponent,
+    SliderComponent,
+    NewsListItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    CoreModule,
     BrowserAnimationsModule,
-    HomePageModule,
     NgbModule,
     StripHtmlModule,
     InfiniteScrollModule,
     NgxGalleryModule,
-    SpinnerModule,
-    ScheduleModule,
     NgbPaginationModule,
-    WidgetModule,
     NgbPaginationModule,
     NgbCollapseModule,
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
-    NgxGoogleAnalyticsRouterModule
- ],
-  providers: [GoogleAnalyticsService],
+    NgxGoogleAnalyticsRouterModule,
+    CoreModule,
+    SpinnerModule,
+  ],
+  providers: [
+    CalendarService,
+    GoogleAnalyticsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

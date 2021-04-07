@@ -1,0 +1,98 @@
+@import "~assets/styles/variables";
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 34rem;
+  padding-left: 1.714rem;
+  margin: 2.857rem auto 0;
+}
+
+.schedule-time {
+  color: $main-color;
+  text-align: center;
+  font-weight: 600;
+}
+
+.schedule-place {
+  text-align: center;
+  color: $secondary-color-lighter;
+  font-weight: 600;
+}
+
+.schedule-event {
+  position: relative;
+  padding: 1.429rem 0 0 1.429rem;
+  border-left: 2px solid $border-color;
+
+  &:last-child {
+    padding-bottom: 20px;
+  }
+
+  .schedule-link {
+    text-decoration: none;
+    color: $main-color;
+  }
+
+  .schedule-body {
+    position: relative;
+    max-width: 28.571rem;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+    padding: .857rem;
+    box-shadow: $typical-box-shadow;
+    margin: 0 0 0 1.286rem;
+  }
+
+  .schedule-body::after {
+    content: "";
+    position: absolute;
+    width: 1.429rem;
+    height: 1.429rem;
+    top: 2.571rem;
+    left: -.714rem;
+    background-color: $white-color;
+    transform: rotate(45deg);
+    border: 1px solid;
+    border-color: transparent transparent $border-color $border-color;
+  }
+
+  .schedule-title {
+    color: $secondary-color;
+    font-size: 1.286rem;
+    text-align: center;
+  }
+
+  .schedule-main .schedule-small_img {
+    display: block;
+    margin: 0 auto;
+    max-height: 300px;
+  }
+}
+
+.schedule-day {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  width: 3.571rem;
+  height: 3.571rem;
+  background-color: $main-color;
+  top: 3rem;
+  left: -1.929rem;
+}
+
+.day {
+  display: block;
+  margin-top: .857rem;
+  font-size: 1.286rem;
+  font-weight: 600;
+  color: $white-color;
+  text-align: center;
+}
+
+.tickets-button {
+  border: 1px solid $secondary-color;
+  margin: 10px auto;
+}
