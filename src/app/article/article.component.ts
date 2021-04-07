@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GatewayService } from '../core/services/gateway.service';
 import { LoaderService } from '../shared/spinner/loader.service';
 import { plainToClass } from 'class-transformer';
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -12,6 +13,7 @@ import { plainToClass } from 'class-transformer';
 export class ArticleComponent implements OnInit {
   item: NewsItem;
   posts: Array<NewsItem>;
+  defaultImg = '../../assets/images/cats.gif';
 
   constructor(private router: ActivatedRoute,
               private gateAway: GatewayService,
