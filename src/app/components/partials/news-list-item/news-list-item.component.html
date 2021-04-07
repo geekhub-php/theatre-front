@@ -2,7 +2,7 @@
   <div class="news-item">
     <div class="image">
       <img *ngIf="item.mainPicture; else elseImg" [src]="item.mainPicture.post_main.url"
-           alt="{{item.title}}">
+           alt="{{ item.title }}">
       <ng-template #elseImg>
         <img [src]="defaultImg">
       </ng-template>
@@ -10,7 +10,7 @@
 
     <div class="text">
       <h3>{{ item.title }}</h3>
-      <div class="date">{{ item.created_at | date: 'd.MM.yyyy'}}</div>
+      <div class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</div>
       <div class="text">{{ item.short_description }}</div>
     </div>
   </div>
