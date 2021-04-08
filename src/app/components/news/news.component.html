@@ -4,9 +4,7 @@
   <app-spinner name="news"></app-spinner>
 
   <div *ngIf="listPost" class="news_wrapper">
-    <div>
       <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
-    </div>
   </div>
 </div>
 
