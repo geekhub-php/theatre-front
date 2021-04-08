@@ -4,7 +4,7 @@
   <div *ngIf="item" class="article">
     <div class="img">
       <img *ngIf="item.mainPicture; else elseImg" [src]="item.mainPicture.post_big.url"
-           alt="{{item.short_description}}">
+           alt="{{ item.short_description }}">
       <ng-template #elseImg>
         <img [src]="defaultImg">
       </ng-template>
@@ -12,10 +12,13 @@
 
     <div>
       <h2>{{ item.title }}</h2>
-      <div class="date">{{ item.created_at | date: 'd.MM.yyyy'}}</div>
+      <div class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</div>
       <div [innerHtml]=item.text class="text"></div>
     </div>
   </div>
+
+
 </div>
 
+<app-photogallery *ngIf="gallery" [gallery]="gallery"></app-photogallery>
 

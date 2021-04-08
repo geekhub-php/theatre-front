@@ -1,0 +1,6 @@
+<div *ngIf="gallery">
+  <div *ngFor="let photo of gallery">
+    <img [alt]="photo.decription" [src]="photo.images.post_main.url">
+  </div>
+</div>
+
