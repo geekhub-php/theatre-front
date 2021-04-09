@@ -12,13 +12,13 @@
 
     <div>
       <h2>{{ item.title }}</h2>
-      <div class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</div>
+      <p class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
       <div [innerHtml]=item.text class="text"></div>
     </div>
   </div>
 
-
+  <app-photogallery *ngIf="gallery" [gallery]="gallery"></app-photogallery>
 </div>
 
-<app-photogallery *ngIf="gallery" [gallery]="gallery"></app-photogallery>
+
 
