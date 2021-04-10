@@ -10,63 +10,58 @@
   background-color: #0e0c08;
 }
 
-ngb-carousel {
-  outline: none;
+gallery {
+  margin-top: 64px;
+  margin-bottom: 112px;
 }
 
-ngb-carousel .carousel-indicators {
-  align-items: center;
-  bottom: -70px ;
-}
-
-ngb-carousel {
-  width: 1504px;
+.custom {
   height: 688px;
+  width: 1504px;
 }
 
-ngb-carousel .carousel-indicators li {
-  background-color: #868583;
+:host ::ng-deep gallery gallery-nav .ng-star-inserted {
+  width: 48px;
+  height: 48px;
+}
+
+:host ::ng-deep gallery gallery-dots .ng-star-inserted {
+  position: relative;
+  bottom: -10px;
+}
+
+:host ::ng-deep gallery gallery-dots .ng-star-inserted .g-dot {
   width: 12px;
   height: 12px;
-  border-radius: 50%;
 }
 
-ngb-carousel img {
-  padding-top: 64px;
-  width: 1504px;
-  height: 688px;
-}
-
-ngb-carousel .carousel-indicators .active {
-  background-color: #b49864;
+:host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
+  background-color: #868583;
   width: 16px;
   height: 16px;
 }
 
-ngb-carousel .carousel-control-prev {
-  width: 48px;
-  height: 48px;
-  top: 320px;
-  left: -48px;
+:host ::ng-deep gallery gallery-dots .ng-star-inserted .g-dot-inner {
+  background-color: #b49864;
+  width: 12px;
+  height: 12px;
 }
 
-ngb-carousel .carousel-control-next {
-  width: 48px;
-  height: 48px;
-  top: 320px;
-  right: -48px;
+:host ::ng-deep gallery gallery-dots .ng-star-inserted .g-dot .g-dot-inner {
+  background-color: #868583;
 }
 
-ngb-carousel .carousel-control-prev-icon {
-  width: 48px;
-  height: 48px;
-  background-image: url("~assets/images/home-slider/chevron-left.svg");
-}
-
-ngb-carousel .carousel-control-next-icon {
-  width: 48px;
-  height: 48px;
-  background-image: url("~assets/images/home-slider/chevron-right.svg");
+.age-restrictions {
+  padding: 10px 8px 10px 9px;
+  position: absolute;
+  top: -480px;
+  left: -225px;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #b49864;
+  line-height: 1.5;
 }
 
 .container {
@@ -77,10 +72,8 @@ ngb-carousel .carousel-control-next-icon {
 
 .performance-title {
   height: 63px;
-  margin: 0 127px 9px 128px;
-  font-family: Montserrat;
+  font-family: Montserrat-SemiBold;
   font-size: 40px;
-  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
@@ -92,10 +85,11 @@ ngb-carousel .carousel-control-next-icon {
   flex-direction: row;
   margin-right: 12px;
   margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .image {
-  padding: 0;
+  margin: 0 11px 0 0;
   width: 24px;
   height: 24px;
 }
@@ -120,16 +114,14 @@ ngb-carousel .carousel-control-next-icon {
   line-height: 1.5;
   width: 268px;
   height: 27px;
-  font-family: Montserrat;
+  font-family: Montserrat-SemiBold;
   font-size: 18px;
-  margin: 0 0 0 6px;
   text-align: left;
 }
 
 .performance__type {
   height: 27px;
-  margin: 0 0 0 8px;
-  font-family: Montserrat;
+  font-family: Montserrat-SemiBold;
   font-size: 18px;
   line-height: 1.5;
   text-align: left;
@@ -141,5 +133,8 @@ ngb-carousel .carousel-control-next-icon {
 }
 
 .tickets-day {
+  color: #fff;
   font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
 }

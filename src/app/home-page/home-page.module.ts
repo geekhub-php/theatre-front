@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GalleryModule } from 'ng-gallery';
 
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SliderComponent } from './slider/slider.component';
@@ -20,7 +21,8 @@ import { PerformanceSliderComponent } from './performance-slider/performance-sli
     CommonModule,
     RouterModule,
     NgbModule,
-    IvyCarouselModule
+    BrowserAnimationsModule,
+    GalleryModule
   ],
   exports: [
     SliderComponent,
