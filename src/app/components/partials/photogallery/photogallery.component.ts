@@ -7,10 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PhotogalleryComponent implements OnInit {
   @Input() gallery = [];
+  selectedPhoto: string;
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  showLargePhoto(i) {
+    this.selectedPhoto = this.gallery[i].images.post_big.url;
   }
 }

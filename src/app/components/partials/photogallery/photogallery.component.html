@@ -2,9 +2,13 @@
   <h3 class="title">Фотогалерея</h3>
 
   <div *ngIf="gallery" class="gallery">
-    <div *ngFor="let photo of gallery">
-      <img [alt]="photo.decription" [src]="photo.images.post_main.url">
+    <div (click)="showLargePhoto(i)" *ngFor="let photo of gallery; let i = index">
+      <img [alt]="photo.decription" [src]="photo.images.post_main.url" class="gallery_image">
     </div>
+  </div>
+
+  <div (click)="selectedPhoto = ''" *ngIf="selectedPhoto" class="selected_image">
+    <img [src]="selectedPhoto">
   </div>
 </section>
 
