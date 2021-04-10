@@ -31,7 +31,7 @@ export class ArticleComponent implements OnInit {
     this.gateAway.getNewsBySlug(slug).subscribe((res) => {
         this.item = plainToClass(NewsItem, res);
         this.loaderService.stop('article');
-        this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture.post_big.url);
+        this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture?.post_big?.url);
       },
       err => this.loaderService.stop('article')
     );
