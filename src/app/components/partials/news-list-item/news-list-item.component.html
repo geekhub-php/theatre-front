@@ -1,6 +1,6 @@
 <a class="news-item" routerLink="../news/{{item.slug}}">
   <div class="image">
-    <img *ngIf="item.mainPicture.post_main; else elseImg" [src]="item.mainPicture.post_main.url"
+    <img *ngIf="item.mainPicture && item.mainPicture.post_main; else elseImg" [src]="item.mainPicture.post_main.url"
          alt="{{ item.title }}">
     <ng-template #elseImg>
       <img [src]="defaultImg">
