@@ -1,4 +1,5 @@
 <a class="news-item" routerLink="../news/{{item.slug}}">
+
   <div class="image">
     <img *ngIf="item.mainPicture && item.mainPicture.post_main; else elseImg" [src]="item.mainPicture.post_main.url"
          alt="{{ item.title }}">
@@ -7,11 +8,16 @@
     </ng-template>
   </div>
 
-  <div class="text">
+  <div class="content">
     <h3>{{ item.title }}</h3>
-      <div class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</div>
-      <div class="text">{{ item.short_description }}</div>
+    <div class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</div>
+    <div class="text">{{ item.short_description }}</div>
+
+    <div class="arrow-right">
+      <img class="arrow-right" src="../../../../assets/images/arrow-right.svg">
     </div>
+  </div>
+
 </a>
 
 
