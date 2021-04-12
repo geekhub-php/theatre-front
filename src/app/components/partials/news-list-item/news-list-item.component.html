@@ -9,9 +9,11 @@
   </div>
 
   <div class="content">
-    <h3>{{ item.title }}</h3>
-    <div class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</div>
-    <div class="text">{{ item.short_description }}</div>
+    <div>
+      <h3>{{ item.title }}</h3>
+      <div class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</div>
+      <div class="text">{{ item.short_description }}</div>
+    </div>
 
     <div class="arrow-right">
       <img class="arrow-right" src="../../../../assets/images/arrow-right.svg">

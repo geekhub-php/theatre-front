@@ -4,18 +4,22 @@
   <app-spinner name="news"></app-spinner>
 
   <div *ngIf="listPost" class="news_wrapper">
-      <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
+    <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
+
+    <div class="pagination">
+      <ngb-pagination (pageChange)="goToPage($event)"
+                      [(page)]="page"
+                      [boundaryLinks]="false" [collectionSize]="collectionSize"
+                      [pageSize]="5"
+      >
+        <ng-template ngbPaginationFirst>&#171;</ng-template>
+        <ng-template ngbPaginationPrevious>&#8249;</ng-template>
+        <ng-template ngbPaginationNext>&#8250;</ng-template>
+        <ng-template ngbPaginationLast>&#187;</ng-template>
+      </ngb-pagination>
+    </div>
   </div>
+
 </div>
 
-<ngb-pagination (pageChange)="goToPage($event)"
-                [(page)]="page"
-                [boundaryLinks]="false" [collectionSize]="collectionSize"
-                [pageSize]="5"
-                class="pagination">
-  <ng-template ngbPaginationFirst>&#171;</ng-template>
-  <ng-template ngbPaginationPrevious>&#8249;</ng-template>
-  <ng-template ngbPaginationNext>&#8250;</ng-template>
-  <ng-template ngbPaginationLast>&#187;</ng-template>
-</ngb-pagination>
 
