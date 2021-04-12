@@ -2,8 +2,10 @@
 
 <app-spinner name="home"></app-spinner>
 
-<section>
-  <h3 i18n="@@news">News</h3>
+<section class="news_wrapper">
+  <h3 class="section_title" i18n="@@news">News</h3>
   <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
+  <div class="link">
+    <a routerLink="../news">Більше новин</a>
+  </div>
 </section>
-
