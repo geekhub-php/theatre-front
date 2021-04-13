@@ -34,16 +34,16 @@ gallery {
   background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
 }
 
-:host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
-  background-color: #b49864 ;
-  width: 16px;
-  height: 16px;
-}
-
 :host ::ng-deep gallery gallery-dots .g-dot-inner {
   background-color: #868583;
   width: 12px;
   height: 12px;
+}
+
+:host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
+  background-color: #b49864 ;
+  width: 16px;
+  height: 16px;
 }
 
 .age-restrictions {
