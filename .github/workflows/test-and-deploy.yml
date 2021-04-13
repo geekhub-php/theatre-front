@@ -31,8 +31,6 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - uses: browser-actions/setup-chrome@latest
       - run: chrome --version
-        with:
-          chrome-version: 848897
       # Runs the Super-Linter action
 #      - name: Run Super-Linter
 #        uses: github/super-linter@v3
