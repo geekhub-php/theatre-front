@@ -1,4 +1,4 @@
-<div class="container">
+<div class="article_container">
   <app-spinner name="article"></app-spinner>
 
   <h1 i18n="@@news">News</h1>
@@ -13,7 +13,7 @@
     </div>
 
     <div>
-      <h2>{{ item.title }}</h2>
+      <h2 class="item_title">{{ item.title }}</h2>
       <p class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
       <div [innerHtml]=item.text class="text"></div>
     </div>

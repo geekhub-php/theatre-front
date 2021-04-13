@@ -6,10 +6,12 @@
       <img [alt]="photo.decription" [src]="photo.images.post_main.url" class="gallery_image">
     </div>
   </div>
-
-  <div (click)="selectedPhoto = ''" *ngIf="selectedPhoto" class="selected_image">
-    <img [src]="selectedPhoto">
-  </div>
 </section>
+
+<div (click)="selectedPhoto = ''" *ngIf="selectedPhoto" class="selected_wrapper">
+  <div class="selected_content">
+    <img [src]="selectedPhoto" class="selected_image">
+  </div>
+</div>
 
 
