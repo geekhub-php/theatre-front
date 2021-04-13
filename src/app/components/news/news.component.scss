@@ -1,57 +1,54 @@
 @import "~assets/styles/variables";
 
-.news__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  ngb-pagination {
-    flex: 0 0 100%;
-  }
+h2 {
+  font-family: KobzarKS;
+  font-size: 72px;
+  line-height: 72px;
+  color: #b49864;
+  padding-top: 80px;
+  margin-bottom: 64px;
+  text-align: center;
 }
 
-.news__content {
-  flex: 0 0 calc(100% - 26rem);
+.page {
+  background-color: #0e0c08;
 }
 
-:host ::ng-deep ngb-pagination ul {
-
-  li a {
-    color: $secondary-color;
-    outline: none;
-    border: transparent;
-    border-radius: 5px;
-
-    &:hover {
-      color: $secondary-color;
-    }
-  }
-
-  li.active a {
-    background-color: $main-color !important;
-    outline: none;
-    color: $white-color;
-    border: transparent;
-
-    span {
-      display: none;
-    }
-
-    .page-item.active .page-link {
-      border-color: transparent;
-      outline: transparent !important;
-      padding: 7px 11px !important;
-    }
-  }
+.news_container {
+  max-width: 1504px;
+  margin: 0 auto;
+  padding-bottom: 184px;
 }
 
-.pagination {
-  font-size: .9rem;
+.news_wrapper {
+  border-bottom: .5px solid #323232;
+  margin-bottom: 35px;
 }
 
-@media (max-width: 992px) {
+.pagination_wrapper {
+  float: right;
+}
 
-  .widget {
-    display: none;
-  }
+ngb-pagination ::ng-deep li:not(.active) a {
+  font-family: Montserrat !important;
+  font-size: 18px !important;
+  line-height: 18px !important;
+  background-color: #0e0c08 !important;
+  color: #868583 !important;
+  border: none;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+ngb-pagination ::ng-deep ul > li.active > a {
+  font-family: Montserrat !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  line-height: 18px !important;
+  background-color: #0e0c08 !important;
+  color: #fff !important;
+  border-radius: 2px !important;
+  border: solid 2px #868583 !important;
+  width: 32px !important;
+  height: 32px !important;
 }

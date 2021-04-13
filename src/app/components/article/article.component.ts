@@ -34,7 +34,7 @@ export class ArticleComponent implements OnInit {
         this.item = plainToClass(NewsItem, res);
         this.gallery = res.gallery;
         this.loaderService.stop('article');
-        this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture.post_big.url);
+        this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture?.post_big?.url);
       },
       err => this.loaderService.stop('article')
     );

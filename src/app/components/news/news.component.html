@@ -1,22 +1,36 @@
-<div class="container">
-  <h2 class="page-title text-center" i18n="@@news">News</h2>
+<div class="page">
+  <h2 i18n="@@news">News</h2>
 
   <app-spinner name="news"></app-spinner>
 
-  <div class="news__wrapper" *ngIf="listPost">
-    <div class="news__content">
+  <div class="news_container">
+
+    <div *ngIf="listPost" class="news_wrapper">
       <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
     </div>
 
-    <ngb-pagination class="pagination d-flex justify-content-center"
-                    [collectionSize]="collectionSize"
-                    [(page)]="page" [boundaryLinks]="false"
-                    (pageChange)="goToPage($event)"
-                    [pageSize]="5">
-      <ng-template ngbPaginationFirst>&#171;</ng-template>
-      <ng-template ngbPaginationPrevious>&#8249;</ng-template>
-      <ng-template ngbPaginationNext>&#8250;</ng-template>
-      <ng-template ngbPaginationLast>&#187;</ng-template>
-    </ngb-pagination>
+    <div class="pagination_wrapper">
+      <ngb-pagination (pageChange)="goToPage($event)"
+                      [(page)]="page"
+                      [boundaryLinks]="false" [collectionSize]="collectionSize"
+                      [pageSize]="5"
+                      [maxSize]="5"
+      >
+        <ng-template ngbPaginationPrevious>
+          <svg fill="none" height="8" viewBox="0 0 19 8" width="19" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4L4 0V3H19V5H4V8L0 4Z" fill="#868583"/>
+          </svg>
+        </ng-template>
+        <ng-template ngbPaginationNext>
+          <svg fill="none" height="8" viewBox="0 0 19 8" width="19" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 4l-4-4v3H0v2h15v3l4-4z" fill="#868583"/>
+          </svg>
+        </ng-template>
+
+      </ngb-pagination>
+    </div>
+
   </div>
 </div>
+
+

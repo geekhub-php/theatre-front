@@ -2,14 +2,10 @@
 
 <app-spinner name="home"></app-spinner>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-3">
-      <app-side-menu></app-side-menu>
-    </div>
-    <div class="col-lg-9" *ngIf="listPost.length">
-      <h3 class="page-title" i18n="@@news">News</h3>
-      <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
-    </div>
+<section class="news_wrapper">
+  <h3 class="section_title" i18n="@@news">News</h3>
+  <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
+  <div class="link">
+    <a routerLink="../news">Більше новин</a>
   </div>
-</div>
+</section>
