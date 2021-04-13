@@ -35,7 +35,21 @@
        [href]="langRedirectUrl" i18n="@@lang">&nbsp;Eng</a>
     <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
        class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
+
+    <ng-container *ngIf="trigger | async">
+      <!--<app-visually-impaired></app-visually-impaired>-->
+    </ng-container>
   </nav>
+
+  <button class="u-unstyled-btn d-none d-lg-block">
+    <img src="assets/images/eye_settings@3x.png" class="visual-aid-button" alt="Color schemes" title="Color schemes"
+         (click)="trigger.next(!trigger.value);">
+  </button>
+
+  <button class="u-unstyled-btn d-none d-lg-block">
+    <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" title="Donate"
+         (click)="trigger.next(!trigger.value);">
+  </button>
 </div>
 
 

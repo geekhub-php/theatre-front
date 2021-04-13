@@ -121,3 +121,22 @@
     }
   }
 }
+
+.visual-aid-button {
+  margin-top: 340px;
+}
+
+.donate-button {
+  margin-top: 413px;
+}
+
+.visual-aid-button, .donate-button {
+  margin-left: 1450px;
+  position: fixed;
+
+  @include box(64, 64);
+
+  &:hover {
+    @include border(2, solid, $border-color-light, 2px);
+  }
+}

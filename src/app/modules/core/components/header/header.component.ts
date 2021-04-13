@@ -17,6 +17,9 @@ export class HeaderComponent {
   isCollapsed = false;
   search_text = 'Enter your search key word/words';
 
+
+  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
+
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
   }
