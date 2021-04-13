@@ -1,5 +1,7 @@
-<div class="slider">
-  <gallery id="basic-test" class="custom"
+<div *ngIf="sliderList.length > 0; else noPerformance"  class="slider">
+  <gallery
+    id="slider"
+    class="gallery-container"
     [imageSize]='cover'
     [itemTemplate]="itemTemplate"
     fluid
@@ -22,47 +24,29 @@
       <div class="container__performance">
         <img src="../../../assets/images/home-slider/performance-data.svg" alt="due date image" class="image">
         <p class="tickets-day">{{ data.date | date: 'EEE, dd' }}</p>
-        <p class="tickets-month">{{ data.date | date: 'MMMM' | lowercase}}</p>
+        <p class="tickets-month">{{ data.date | date: 'MMMM' | lowercase }}</p>
       </div>
       <div class="container__performance">
         <img src="../../../assets/images/home-slider/performance.venue.svg" alt="performance venue image" class="image">
         <p class="performance__venue">{{ data.venuePerformance }}</p>
       </div>
     </div>
-    <a [href]="data.ticket" class="button-ticket" >Купити квиток</a>
+    <div class="container__button">
+      <a [href]="data.ticket" class="button-ticket" >Купити квиток</a>
+    </div>
     <span class="age-restrictions">12+</span>
   </div>
 </ng-template>
 
+<ng-template #noPerformance>
+  <div class="container-no-performance">
+    <img src="../../../assets/images/home-slider/no-performancex.png" alt="No performance" class="no-performance__image" >
+    <div class="no-performance__container-text">
+      <p class="no-performance__text">Наразі вистав немає</p>
+    </div>
+  </div>
+</ng-template>
 
-<div class="slider">
-  <ngb-carousel #carousel>
-    <ng-template ngbSlide *ngFor="let item of sliderList">
-      <div class="picsum-img-wrapper">
-        <img [src]="item.performance.sliderImage.slider_slider.url" alt="Random first slide">
-      </div>
-      <div class="carousel-caption">
-        <h3 class="performance-title">{{ item.performance.title }}</h3>
-        <div class="container">
-          <div class="container__performance">
-            <img src="../../../assets/images/home-slider/performance-type.svg" alt="performance type image" class="image">
-            <p class="performance__type">{{ item.performance.type }}</p>
-          </div>
-          <div class="container__performance">
-            <img src="../../../assets/images/home-slider/performance-data.svg" alt="due date image" class="image">
-            <p class="tickets-day">{{ item.date_time | date: 'EEE, dd' }}</p>
-            <p class="tickets-month">{{ item.date_time | date: 'MMMM' | lowercase}}</p>
-          </div>
-          <div class="container__performance">
-            <img src="../../../assets/images/home-slider/performance.venue.svg" alt="performance venue image" class="image">
-            <p class="performance__venue">{{ item.venue }}</p>
-          </div>
-        </div>
-        <a [href]="item.buy_ticket_link" class="button-ticket" >Купити квиток</a>
-      </div>
-    </ng-template>
-  </ngb-carousel>
-</div>
 
 
 

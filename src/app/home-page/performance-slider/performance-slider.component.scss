@@ -15,7 +15,7 @@ gallery {
   margin-bottom: 112px;
 }
 
-.custom {
+.gallery-container {
   height: 688px;
   width: 1504px;
 }
@@ -25,37 +25,32 @@ gallery {
   height: 48px;
 }
 
-:host ::ng-deep gallery gallery-dots .ng-star-inserted {
-  position: relative;
-  bottom: -10px;
-}
-
-:host ::ng-deep gallery gallery-dots .ng-star-inserted .g-dot {
-  width: 12px;
-  height: 12px;
+.carousel-caption {
+  padding: 0;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 64%;
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
 }
 
 :host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
-  background-color: #868583;
+  background-color: #b49864 ;
   width: 16px;
   height: 16px;
 }
 
-:host ::ng-deep gallery gallery-dots .ng-star-inserted .g-dot-inner {
-  background-color: #b49864;
+:host ::ng-deep gallery gallery-dots .g-dot-inner {
+  background-color: #868583;
   width: 12px;
   height: 12px;
-}
-
-:host ::ng-deep gallery gallery-dots .ng-star-inserted .g-dot .g-dot-inner {
-  background-color: #868583;
 }
 
 .age-restrictions {
   padding: 10px 8px 10px 9px;
   position: absolute;
-  top: -480px;
-  left: -225px;
+  top: -250px;
+  left: 0;
   width: 56px;
   height: 56px;
   font-size: 24px;
@@ -68,10 +63,21 @@ gallery {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: absolute;
+  bottom: 140px;
+  right: 0;
+  left: 0;
+  width: 100%;
 }
 
 .performance-title {
+  position: absolute;
+  bottom: 190px;
   height: 63px;
+  width: 100%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
   font-family: Montserrat-SemiBold;
   font-size: 40px;
   font-stretch: normal;
@@ -94,6 +100,13 @@ gallery {
   height: 24px;
 }
 
+.container__button {
+  position: absolute;
+  bottom: 60px;
+  margin: 22px 0;
+  width: 100%;
+}
+
 .button-ticket {
   color: #fff;
   border: solid 1px #fff;
@@ -101,12 +114,17 @@ gallery {
   width: 197px;
   height: 48px;
   padding: 12px 24px;
-  margin: 22px 0;
 }
 
 .button-ticket:hover {
   color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
   text-decoration: none;
+}
+
+.button-ticket:active {
+  color: #0e0c08;
+  background-color: #fff;
 }
 
 .performance__venue {
@@ -137,4 +155,93 @@ gallery {
   font-size: 18px;
   line-height: 1.5;
   text-align: left;
+}
+
+.container-no-performance {
+  height: 864px;
+  display: flex;
+  justify-content: center;
+  background-color: #0e0c08;
+}
+
+.no-performance__image {
+  width: 1504px;
+  height: 688px;
+  margin-top: 64px;
+  margin-bottom: 112px;
+}
+
+.no-performance__container-text {
+  position: absolute;
+  top: 430px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 408px;
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
+}
+
+.no-performance__text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+@media( max-width: 1560px ) {
+  .gallery-container {
+    width: 1400px;
+  }
+
+  .no-performance__image {
+    width: 1400px;
+  }
+}
+
+@media( max-width: 1430px ) {
+  .gallery-container {
+    width: 1300px;
+  }
+
+  .no-performance__image {
+    width: 1300px;
+  }
+}
+
+@media( max-width: 1330px ) {
+  .gallery-container {
+    width: 1200px;
+  }
+
+  .no-performance__image {
+    width: 1200px;
+  }
+}
+
+@media ( max-width: 1230px ) {
+  .gallery-container {
+    width: 1100px;
+  }
+
+  .performance-title {
+    font-weight: 400;
+  }
+
+  .no-performance__image {
+    width: 1100px;
+  }
+}
+
+@media ( max-width: 1130px ) {
+  .gallery-container {
+    width: 1000px;
+  }
+
+  .performance-title {
+    bottom: 250px;
+  }
+
+  .no-performance__image {
+    width: 1000px;
+  }
 }

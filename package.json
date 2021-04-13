@@ -35,7 +35,7 @@
     "@angular/platform-server": "^11.0.7",
     "@angular/router": "^11.0.7",
     "@kolkov/ngx-gallery": "^1.2.3",
-    "@ng-bootstrap/ng-bootstrap": "^8.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^9.1.0",
     "@nguniversal/express-engine": "^11.0.1",
     "angular-calendar": "^0.28.22",
     "bootstrap": "^4.3.1",
