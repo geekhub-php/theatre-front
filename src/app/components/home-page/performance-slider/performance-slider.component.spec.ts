@@ -1,4 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { PerformanceSliderComponent } from './performance-slider.component';
 
@@ -6,12 +9,17 @@ describe('PerformanceSliderComponent', () => {
   let component: PerformanceSliderComponent;
   let fixture: ComponentFixture<PerformanceSliderComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ PerformanceSliderComponent ]
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ PerformanceSliderComponent ],
+      imports: [
+        HttpClientModule,
+        RouterModule,
+        RouterTestingModule,
+      ]
     })
-    .compileComponents();
-  });
+      .compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PerformanceSliderComponent);
