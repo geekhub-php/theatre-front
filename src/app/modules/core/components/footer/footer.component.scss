@@ -14,7 +14,7 @@
     gap: 40px;
     font-size: $font-size-small;
     color: $font-color-primary;
-    border-top: 0.05px solid $font-color-dark;
+    border-top: .05px solid $font-color-dark;
 
     @include flex-center;
   }
@@ -25,7 +25,7 @@
     a {
       color: $font-color-primary;
       text-decoration: underline;
-      text-underline-offset: 0.3em;
+      text-underline-offset: 16px;
     }
   }
 
