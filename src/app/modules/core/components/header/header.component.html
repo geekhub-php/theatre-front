@@ -1,9 +1,9 @@
 <div class="container">
   <nav class="header navbar fixed-top navbar-expand-lg">
-    <h1 class="header-logo" aria-label="Cherkassy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
+    <h1 class="header-logo" aria-label="Cherkasy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
       <a routerLink="/">
         <img src="assets/images/logo theatre@3x.png"
-             alt="Theatre logo" title="Cherkassy Theatre of Taras Shevchenko" width="130" height="48">
+             alt="Theatre logo" title="Cherkasy Theatre of Taras Shevchenko" width="130" height="48">
       </a>
     </h1>
 
@@ -22,7 +22,7 @@
     </button>
 
     <div class="search-box" [ngbCollapse]="!isCollapsed">
-      <input type="text" class="search-input" placeholder="{{search_text}}" name="search">
+        <input type="submit" class="search-input" placeholder="{{search_text}}" name="search">
       <img src="assets/images/Union.svg" class="search-button" alt="Search button" title="Search"
            i18n="@@search" (click)="searchSubmit()">
       <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Delete"
@@ -37,7 +37,7 @@
        class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
 
     <ng-container *ngIf="trigger | async">
-      <!--<app-visually-impaired></app-visually-impaired>-->
+<!--      <app-visually-impaired></app-visually-impaired>-->
     </ng-container>
   </nav>
 
