@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { trigger } from '@angular/animations';
 import { Gallery, GalleryRef } from 'ng-gallery';
 
-import { PerformanceEvent } from '../../core/model/schedule/PerformanceEvent';
-import { GatewayService } from '../../core/services/gateway.service';
+import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
+import { GatewayService } from '../../../services/gateway.service';
 
 @Component({
   selector: 'app-performance-slider',
