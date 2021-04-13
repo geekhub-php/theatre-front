@@ -29,7 +29,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
-
+      - uses: browser-actions/setup-chrome@latest
+      - run: chrome --version
       # Runs the Super-Linter action
 #      - name: Run Super-Linter
 #        uses: github/super-linter@v3
@@ -54,7 +55,7 @@ jobs:
       - name: Unit tests
         run: ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
       - name: E2E tests
-        run: ng e2e
+        run: CHROMIUM_BIN=$(which chrome) ng e2e
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
