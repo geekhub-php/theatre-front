@@ -15,7 +15,7 @@ import { GalleryItem } from '../../store/news/GalleryItem';
 export class ArticleComponent implements OnInit {
   item: NewsItem;
   posts: Array<NewsItem>;
-  defaultImg = '../../assets/images/cats.gif';
+  defaultImg = '../../assets/images/default.jpg';
   gallery: Array<GalleryItem>;
 
   constructor(private router: ActivatedRoute,
