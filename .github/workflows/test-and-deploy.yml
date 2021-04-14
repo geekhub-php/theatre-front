@@ -49,16 +49,14 @@ jobs:
       - name: ng install
         run: npm install -g @angular/cli
 
-        # TEMPORARY DISABLED
-#      - name: Angular linter
-#        run: npm run lint
-#      - name: Lint CSS
-#        run: npm run lint-css
-#      - name: Unit tests
-#        run: ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
-#      - name: E2E tests
-#        run: node_modules/.bin/webdriver-manager update --versions.chrome=92 && CHROME_BIN=$(which chrome) ng e2e
-        # TEMPORARY DISABLED
+      - name: Angular linter
+        run: npm run lint
+      - name: Lint CSS
+        run: npm run lint-css
+      - name: Unit tests
+        run: ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
+      - name: E2E tests
+        run: node_modules/.bin/webdriver-manager update --versions.chrome=92 && CHROME_BIN=$(which chrome) ng e2e
       - name: Export envirorment variables
         run: . ./deploy/build-env.github.sh
       - name: Use the value
