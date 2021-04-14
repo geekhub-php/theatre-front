@@ -78,9 +78,13 @@ jobs:
         run: bash build-front.sh
         shell: bash
         env:
-          BRANCH: ${{ env.GITHUB_HEAD_REF }}
+          BRANCH: ${{ env.BRANCH }}
+          BASE_HREF: ${{ env.BASE_HREF }}
+          DOMAIN: ${{ env.DOMAIN }}
+          ENV: ${{ env.ENV }}
       - name: Deploy
         run: bash deploy.sh
         shell: bash
         env:
-          BRANCH: ${{ env.GITHUB_HEAD_REF }}
+          BRANCH: ${{ env.BRANCH }}
+          DOMAIN: ${{ env.DOMAIN }}
