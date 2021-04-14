@@ -1,0 +1,21 @@
+<p>slider works!</p>
+
+<div *ngFor="let image of randomEmployees">
+<!--  <img [src]="image.avatar.employee_big.url">-->
+  <h2>{{image.first_name}}</h2>
+</div>
+
+<div class="slider">
+  <ngu-carousel #myCarousel [inputs]="carouselTile"  [dataSource]="imageArray">
+    <ngu-tile *nguCarouselDef="let item">
+      <div class="tile" [style.background]="'url(' + item + ')'" style="min-height: 200px">
+
+      </div>
+    </ngu-tile>
+    <button NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">&lt;</button>
+    <button NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">&gt;</button>
+
+  </ngu-carousel>
+</div>
+
+
