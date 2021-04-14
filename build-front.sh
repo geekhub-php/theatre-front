@@ -22,8 +22,8 @@ TMPDIR=$(mktemp -d)
 #mv ./dist/uk "${TMPDIR}/"
 
 ng build --configuration="${ENV}-en" \
-  --deploy-url="${DOMAIN}/en/" \
-  --base-href="${BASE_HREF}en/" \
+  --deploy-url="${DOMAIN}" \
+  --base-href="${BASE_HREF}" \
   --aot true \
   --vendor-chunk true \
   --output-path "dist/"
@@ -32,6 +32,6 @@ ng build --configuration="${ENV}-en" \
 rm -rf "${TMPDIR}"
 
 
-echo "Base href: ${BASE_HREF}en/"
-echo "Domain: ${DOMAIN}/en/"
+echo "Base href: ${BASE_HREF}"
+echo "Domain: ${DOMAIN}"
 echo "Environment: ${ENV}-en"
