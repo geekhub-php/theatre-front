@@ -1,13 +1,3 @@
-<!-- <div class="container"> -->
-<!-- <h2 class="page-title text-center" i18n="@@aboutTitle">About</h2> -->
-<!-- <div>
-    <p>navigation</p>
-    <div>history</div>
-    <div>festivals</div>
-    <div>epoha</div>
-    <div>visit to theatre</div>
-  </div> -->
-
 <app-about-header></app-about-header>
 
 <div class="myContainer">
@@ -21,18 +11,20 @@
   <app-spinner name="about"></app-spinner>
   <div class="list">
     <section class="list-item" *ngFor="let item of listHistories | slice: 0:3; index as i">
+
       <div class="histories__list-footer">
         <span class="year">{{ item.year }}</span>
       </div>
+
       <div class="histories__list-body" [routerLink]="[item.slug]">
         <h2 class="histories__list-heading">{{ item.title }}</h2>
-
         <div class="histories__list-main">
-          <!-- <img class="histories__list-main_img" [src]='item.mainPicture.history_big.url' alt="picture"
-                 [title]="item.mainPicture.history_big.properties.title"> -->
-        </div>
 
+          <img class="histories__list-main_img" [src]="item.mainPicture.history_big.url" alt="picture" [title]="item.mainPicture.history_big.properties.title"/>
+
+        </div>
       </div>
+
     </section>
   </div>
 </div>

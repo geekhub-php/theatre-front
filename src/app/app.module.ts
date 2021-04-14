@@ -30,8 +30,14 @@ import { AboutMoreComponent } from './components/about/about-more/about-more.com
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
+import { FestivalsComponent } from './components/about/festivals/festivals.component';
+import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component'; 
+import { AboutHeaderComponent } from './components/about/about-header/about-header.component'; 
+import { EpochComponent } from './components/about/epoch/epoch.component';  
+import { VisitComponent } from './components/about/visit/visit.component';  
 
 import { StripHtmlModule } from './pipes/strip-html.module';
+import { AboutNavModule } from './components/about/about-nav/about-nav.module';
 
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CalendarComponent } from './components/schedule/calendar/calendar.component';
@@ -66,7 +72,12 @@ import { environment } from '../environments/environment';
     ScheduleComponent,
     SideMenuComponent,
     SliderComponent,
-    NewsListItemComponent
+    NewsListItemComponent,
+    FestivalsComponent,
+    TheatreHistoryComponent,
+    AboutHeaderComponent,
+    EpochComponent,
+    VisitComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -84,6 +95,7 @@ import { environment } from '../environments/environment';
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
     SpinnerModule,
+    AboutNavModule
   ],
   providers: [
     CalendarService,

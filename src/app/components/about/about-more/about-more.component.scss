@@ -1,100 +1,142 @@
-@import "~assets/styles/variables";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
-:host ::ng-deep .post-text p {
-  margin-bottom: 5px;
-  font-size: 1.143rem;
+.myContainer {
+  background-color: #0e0c08;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  min-height: 700px;
 }
 
-.history {
-
-  .history-title {
-    margin: 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-    .history-heading {
-      margin: 0;
-    }
-
-    .history-date {
-      color: $secondary-color-lighter;
-      margin: 0;
-      font-size: 1.286rem;
-      font-weight: 500;
-    }
-  }
-
-  .history-main_img .img {
-    display: block;
-    margin: 0 auto 10px 0;
-    max-height: 446px;
-  }
-}
-
-.performance-list {
+.fest-navigation {
+  margin-left: 10%;
+  margin-top: 20px;
+  color: #b6b6b4;
+  font-family: 'Montserrat';
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 0;
-  list-style: none;
+  flex-direction: row;
 
-  .list-item {
-    cursor: pointer;
-    height: 15.571rem;
-    width: 7.571rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-right: 2px;
-
-    &:last-child {
-      margin-right: 0;
-    }
+  h3 {
+    font-size: 15px;
   }
 
-  .list-item .img {
-    width: 100%;
-  }
-
-  .list-item .title {
-    font-size: .857rem;
-    background-color: $secondary-color;
-    display: flex;
-    height: 4.286rem;
-    margin-bottom: 0;
-  }
-
-  .list-item .title .span {
-    text-align: center;
-    color: $white-color;
-    margin: auto;
+  .fest-navigation-bold {
+    font-weight: bold;
+    color: white;
   }
 }
 
-@media screen and (max-width: 767px) {
-
-  .history .history-main_img {
-    flex-wrap: wrap;
-  }
-
-  .performance {
-    margin: 0 auto;
-    width: 23.143rem;
-  }
+.festTitle {
+  font-size: 72px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b49864;
+  margin-bottom: 60px;
+  margin-top: -10px;
 }
 
-@media screen and (max-width: 576px) {
 
-  .history .history-main_img .img {
-    margin: 0 auto;
-  }
-}
 
-@media screen and (max-width: 349px) {
+// @import "~assets/styles/variables";
 
-  .performance {
-    width: 15.429rem;
-  }
-}
+// :host ::ng-deep .post-text p {
+//   margin-bottom: 5px;
+//   font-size: 1.143rem;
+// }
+
+// .history {
+
+//   .history-title {
+//     margin: 24px 0;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     flex-wrap: wrap;
+
+//     .history-heading {
+//       margin: 0;
+//     }
+
+//     .history-date {
+//       color: $secondary-color-lighter;
+//       margin: 0;
+//       font-size: 1.286rem;
+//       font-weight: 500;
+//     }
+//   }
+
+//   .history-main_img .img {
+//     display: block;
+//     margin: 0 auto 10px 0;
+//     max-height: 446px;
+//   }
+// }
+
+// .performance-list {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: flex-start;
+//   padding: 0;
+//   list-style: none;
+
+//   .list-item {
+//     cursor: pointer;
+//     height: 15.571rem;
+//     width: 7.571rem;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     margin-right: 2px;
+
+//     &:last-child {
+//       margin-right: 0;
+//     }
+//   }
+
+//   .list-item .img {
+//     width: 100%;
+//   }
+
+//   .list-item .title {
+//     font-size: .857rem;
+//     background-color: $secondary-color;
+//     display: flex;
+//     height: 4.286rem;
+//     margin-bottom: 0;
+//   }
+
+//   .list-item .title .span {
+//     text-align: center;
+//     color: $white-color;
+//     margin: auto;
+//   }
+// }
+
+// @media screen and (max-width: 767px) {
+
+//   .history .history-main_img {
+//     flex-wrap: wrap;
+//   }
+
+//   .performance {
+//     margin: 0 auto;
+//     width: 23.143rem;
+//   }
+// }
+
+// @media screen and (max-width: 576px) {
+
+//   .history .history-main_img .img {
+//     margin: 0 auto;
+//   }
+// }
+
+// @media screen and (max-width: 349px) {
+
+//   .performance {
+//     width: 15.429rem;
+//   }
+// }

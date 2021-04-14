@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { GatewayService } from "../../services/gateway.service";
-import { History } from "../../store/history/History";
-import { HistoryListResponse } from "../../store/history/HistoryListResponse";
-import { LoaderService } from "../partials/spinner/loader.service";
+import { Component, OnInit } from '@angular/core';
+import { GatewayService } from "../../../services/gateway.service";
+import { Employee } from "../../../store/employee/Employee";
+import { EmployeesListResponse } from "../../../store/employee/EmployeesListResponse";
+import { LoaderService } from "../../partials/spinner/loader.service";
 
 @Component({
-  selector: "app-about",
-  templateUrl: "./about.component.html",
-  styleUrls: ["./about.component.scss"],
+  selector: 'app-visit',
+  templateUrl: './visit.component.html',
+  styleUrls: ['./visit.component.scss']
 })
-export class AboutComponent implements OnInit {
-  listHistories: Array<History>;
+export class VisitComponent implements OnInit {
+  listEmployees: Array<Employee>;;
 
   constructor(
     private getway: GatewayService,
@@ -25,16 +25,18 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.loaderService.start("about");
-    this.getway.getHistoriesList().subscribe(
-      (res: HistoryListResponse) => {
-        this.listHistories = res.history;
-        // console.log(this.listHistories); // del
+    this.getway.getEmployeesList().subscribe(
+      (res: EmployeesListResponse) => {
+        this.listEmployees = res.employees;
+
+        // console.log(this.listEmployees[0]); // del
+        
         this.loaderService.stop("about");
       },
       (err) => this.loaderService.stop("about") // TODO: error handler
     );
     this.loaderService.start("about");
     this.getway.updateCanonicalURL();
-
   }
+
 }

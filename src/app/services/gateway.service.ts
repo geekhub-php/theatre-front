@@ -101,10 +101,18 @@ export class GatewayService {
   }
 
   getEmployees(locale: string = this.localeId): Observable<Employee> {
-    return this.http.get<Employee>(
+    return this.http.get<Employee>( 
       `${this.baseUrl}/${this.employeesListUrl}`, {params: {locale}}
     ).pipe(
       catchError(this.handleError('get Employees list', new Employee()))
+    );
+  }
+
+  getEmployeesList(locale: string = this.localeId): Observable<EmployeesListResponse> { // was Observable<Employee>
+    return this.http.get<EmployeesListResponse>(  
+      `${this.baseUrl}/${this.employeesListUrl}`, {params: {locale}}
+    ).pipe(
+      catchError(this.handleError('get Employees list', new EmployeesListResponse())) 
     );
   }
 
@@ -143,39 +151,63 @@ export class GatewayService {
     return `${day}-${month}-${year}`;
   }
 
-  getPerformanceEvents(performance?: string,
-                       fromDate: Date = new Date(),
-                       limit: string = '5',
-                       locale: string = this.localeId): Observable<PerformanceEventResponse> {
-    const options: WidgetResType = { fromDate: fromDate.toString(), limit, locale };
-    if (performance) options.performance = performance;
+  getPerformanceEvents(
+    performance?: string,
+    fromDate: Date = new Date(),
+    limit: string = '5',
+    locale: string = this.localeId
+  ): Observable<PerformanceEventResponse> {
+    const options: WidgetResType = { 
+      fromDate: fromDate.toString(), 
+      limit, 
+      locale 
+    };
+    if (performance) { 
+      options.performance = performance;
+    }
 
     let params = new HttpParams();
     Object.keys(options).forEach((key) => params = params.set(key, options[key]));
 
-    return this.http.get<PerformanceEventResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {params: params})
+    return this.http
+      .get<PerformanceEventResponse>(
+        `${this.baseUrl}/${this.performanceEventsListUrl}`, 
+        { params: params }
+      )
       .pipe(
         catchError(this.handleError('get list of PerformanceEvent', new PerformanceEventResponse()))
       );
     }
 
   getHistoryBySlug(slug: string, locale: string =  this.localeId): Observable<History> {
-    return this.http.get<History>(`${this.baseUrl}/histories/${slug}`, {params: {locale}})
+    return this.http
+      .get<History>(
+        `${this.baseUrl}/histories/${slug}`, 
+        { params: { locale } }
+      )
       .pipe(
         catchError(this.handleError('get History', new History()))
       );
   }
 
-  getNews(limit: string = '10', page: number = 1, locale: string = this.localeId): Observable<NewsListResponse> {
-    return this.http.get<NewsListResponse>(`${this.baseUrl}/${this.newsListUrl}`, {
-      params: {limit, page: page.toString(), locale}
-    })
+  getNews(
+    limit: string = '10', 
+    page: number = 1, 
+    locale: string = this.localeId
+  ): Observable<NewsListResponse> {
+    return this.http
+      .get<NewsListResponse>(
+        `${this.baseUrl}/${this.newsListUrl}`, 
+        {
+          params: {limit, page: page.toString(), locale}
+        }
+      )
       .pipe(
         catchError(this.handleError('get list of News', new NewsListResponse()))
       );
   }
 
-  getNewsBySlug(slug, locale: string =  this.localeId): Observable<NewsItem> {
+  getNewsBySlug(slug, locale: string = this.localeId): Observable<NewsItem> {
     return this.http.get<NewsItem>(
       `${this.baseUrl}/posts/${slug}`, {params: {slug, locale}}
     )

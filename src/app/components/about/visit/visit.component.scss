@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+
+.myContainer {
+  background-color: #0e0c08;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  min-height: 700px;
+}
+
+.visit-navigation {
+  margin-left: 10%;
+  margin-top: 20px;
+  color: #b6b6b4;
+  font-family: 'Montserrat';
+  width: 310px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .visit-navigation-bold {
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.visitTitle {
+  font-size: 72px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b49864;
+  margin-bottom: 60px;
+  margin-top: -10px;
+}

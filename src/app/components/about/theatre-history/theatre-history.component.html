@@ -1,0 +1,25 @@
+<app-about-header></app-about-header>
+
+<div class="myContainer">
+  <div class="history-navigation">
+    <h3>Головна / Про театр /</h3>
+    <h3 class="history-navigation-bold">&nbsp;Історія театру</h3>
+  </div>
+
+  <h2 class="historyTitle">Історія театру</h2>
+
+  <app-spinner name="about"></app-spinner>
+  <div class="list">
+    <section class="list-item" *ngFor="let item of listHistories | slice: 3:4; index as i">
+
+      <span class="histories__list-text">
+
+        <img class="histories__list-main_img" [src]="item.mainPicture.history_big.url" alt="picture" [title]="item.mainPicture.history_big.properties.title"/>
+
+        {{ item.text }}
+        
+      </span>
+
+    </section> 
+  </div>
+</div>

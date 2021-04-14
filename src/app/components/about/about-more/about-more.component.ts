@@ -20,18 +20,21 @@ export class AboutMoreComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // console.log('abot more component________'); // del
     const slug = this.route.snapshot.params.slug;
     this.loaderService.start('about-more');
-    this.gateway.getHistoryBySlug(slug).subscribe(
-      (res) => {
-        this.history = res;
-        this.loaderService.stop('about-more');
-        this.gateway.updateMeta(this.history.title,
-          this.history.text,
-          this.history.mainPicture.history_small.url);
-        },
-      err => this.loaderService.stop('about-more')
-    );
+    this.gateway
+      .getHistoryBySlug(slug)
+      .subscribe(
+        (res) => {
+          this.history = res;
+          this.loaderService.stop('about-more');
+          this.gateway.updateMeta(this.history.title,
+            this.history.text,
+            this.history.mainPicture.history_small.url);
+          },
+        err => this.loaderService.stop('about-more')
+      );
     this.gateway.updateCanonicalURL();
   }
 }

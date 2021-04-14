@@ -1,15 +1,15 @@
 import { Component, OnInit } from "@angular/core";
-import { GatewayService } from "../../services/gateway.service";
-import { History } from "../../store/history/History";
-import { HistoryListResponse } from "../../store/history/HistoryListResponse";
-import { LoaderService } from "../partials/spinner/loader.service";
+import { GatewayService } from "../../../services/gateway.service";
+import { History } from "../../../store/history/History";
+import { HistoryListResponse } from "../../../store/history/HistoryListResponse";
+import { LoaderService } from "../../partials/spinner/loader.service";
 
 @Component({
-  selector: "app-about",
-  templateUrl: "./about.component.html",
-  styleUrls: ["./about.component.scss"],
+  selector: "app-theatre-history",
+  templateUrl: "./theatre-history.component.html",
+  styleUrls: ["./theatre-history.component.scss"],
 })
-export class AboutComponent implements OnInit {
+export class TheatreHistoryComponent implements OnInit {
   listHistories: Array<History>;
 
   constructor(
@@ -23,18 +23,16 @@ export class AboutComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    this.loaderService.start("about");
+  ngOnInit(): void {
+    this.loaderService.start("about-history");
     this.getway.getHistoriesList().subscribe(
       (res: HistoryListResponse) => {
         this.listHistories = res.history;
-        // console.log(this.listHistories); // del
-        this.loaderService.stop("about");
+        this.loaderService.stop("about-history");
       },
-      (err) => this.loaderService.stop("about") // TODO: error handler
+      (err) => this.loaderService.stop("about-history")
     );
-    this.loaderService.start("about");
+    this.loaderService.start("about-history");
     this.getway.updateCanonicalURL();
-
   }
 }

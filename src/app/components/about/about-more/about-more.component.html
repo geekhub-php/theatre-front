@@ -1,9 +1,19 @@
-<div class="container">
+<app-about-header></app-about-header>
+
+<div class="myContainer">
   <app-spinner name="about-more"></app-spinner>
+
+  <div class="fest-navigation">
+    <h3>Головна / Про театр / Фестивалі /</h3>
+    <h3 class="fest-navigation-bold">&nbsp;Фестиваль</h3>
+  </div>
+
+  <h2 class="festTitle">Фестиваль</h2>
+
+
   <div class="history" *ngIf="history">
     <div class="history-title">
       <h2 class="page-title history-heading">{{ history.title }}</h2>
-      <p class="history-date">{{ history.created_at | date:"dd.MM.yyyy" }}</p>
     </div>
     <div class="history-main_img">
       <img class="img" [src]='history.mainPicture.reference.url' [alt]="history.mainPicture.reference.properties.alt"

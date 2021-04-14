@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.myContainer {
+  background-color: #0e0c08;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  min-height: 700px;
+}
+
+.fest-navigation {
+  margin-left: 10%;
+  margin-top: 20px;
+  color: #b6b6b4;
+  font-family: 'Montserrat';
+  width: 306px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .fest-navigation-bold {
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.festTitle {
+  font-size: 72px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b49864;
+  margin-bottom: 60px;
+  margin-top: -10px;
+}
+
+.histories__list-body,
+.histories__list-footer {
+  display: flex;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.list {
+
+  .list-item {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 215px;
+    background-color: #323232;
+    color: white;
+    display: table;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .histories__list-body {
+    text-decoration: none;
+    outline: none;
+    height: 100%;
+    text-align: left;
+    padding-left: 80px;
+    padding-right: 160px;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 1.25;
+
+    .histories__list-heading {
+      color: white;
+      font-size: 32px;
+      font-family: 'Montserrat', sans-serif;
+      outline: none;
+      font-weight: 600;
+    }
+  }
+
+  .histories__list-footer { 
+    width: 18%;
+    outline: none;
+    padding-left: 50px;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 1;
+    color: #868583;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .histories__list-main_img {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    filter: saturate(300%);   
+    filter: brightness(40%); 
+  }
+
+  .list-item:hover {
+    .histories__list-main_img {
+      display: block;
+    }
+  }
+}

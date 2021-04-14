@@ -1,0 +1,26 @@
+.about_seconHeader_container {
+  background-color: #b49864;
+  height: 56px;
+  display: flex;
+  flex-grow: 0;
+  justify-content: center;
+  object-fit: contain;
+
+  .item {
+    color: #0e0c08;
+    text-decoration: none;
+    font-family: Montserrat;  
+    font-size: 18px;
+    line-height: 1.5;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-self: center;
+  }
+
+  .item:hover {
+    height: 56px;
+    line-height: 1.39;
+    padding-top: 16px;
+    background-color: #c7b28b;
+  }
+}
