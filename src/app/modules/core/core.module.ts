@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { SpinnerModule } from '../../components/partials/spinner/spinner.module';
 
 import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
+import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { VisuallyImpairedComponent } from './components/visually-impaired/visual
     MainNavComponent,
     FooterComponent,
     PageNotFoundComponent,
-    VisuallyImpairedComponent
+    VisuallyImpairedComponent,
+    FooterNavComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { VisuallyImpairedComponent } from './components/visually-impaired/visual
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FooterNavComponent
   ]
 })
 export class CoreModule {

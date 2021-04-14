@@ -12,16 +12,18 @@ $inversion-bg: #88c2f7;
 $inversion-color: #0f2c57;
 
 :host {
-  display: block;
   border-bottom: 1px solid rgba($white-color, .2);
 }
 
 .visually-impaired {
+  width: 335px;
+  height: 1020px;
+  margin-top: 300px;
+  background-color: $background-color-accent;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1.1rem 0 1.3rem;
   font-size: 1.1rem;
 }
 
@@ -41,6 +43,8 @@ $inversion-color: #0f2c57;
 
   &__buttons {
     margin: 0 5px;
+    width: 30px;
+    height: 30px;
 
     &:first-child {
       margin-left: 0;
@@ -52,8 +56,6 @@ $inversion-color: #0f2c57;
   }
 
   &__button {
-    @extend .u-unstyled-btn;
-
     color: $white-color;
 
     &.--black-white,
@@ -163,6 +165,8 @@ $inversion-color: #0f2c57;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+
+    @include box(40, 40);
   }
 
   &__button {
