@@ -3,6 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { GalleryModule } from 'ng-gallery';
+
 import { PerformanceSliderComponent } from './performance-slider.component';
 
 describe('PerformanceSliderComponent', () => {
@@ -16,6 +18,7 @@ describe('PerformanceSliderComponent', () => {
         HttpClientModule,
         RouterModule,
         RouterTestingModule,
+        GalleryModule,
       ]
     })
       .compileComponents();
