@@ -31,6 +31,7 @@ ng build --configuration="${ENV}-en" \
 mv "${TMPDIR}/uk" ./dist/
 rm -rf "${TMPDIR}"
 
+
 echo "Base href: ${BASE_HREF}"
 echo "Domain: ${DOMAIN}/"
 echo "Environment: ${ENV}-{language}"
