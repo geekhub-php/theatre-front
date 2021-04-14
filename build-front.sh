@@ -32,6 +32,6 @@ ng build --configuration="${ENV}-en" \
 rm -rf "${TMPDIR}"
 
 
-echo "Base href: ${BASE_HREF}"
-echo "Domain: ${DOMAIN}/"
-echo "Environment: ${ENV}-{language}"
+echo "Base href: ${BASE_HREF}en/"
+echo "Domain: ${DOMAIN}/en/"
+echo "Environment: ${ENV}-en"
