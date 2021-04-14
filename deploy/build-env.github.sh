@@ -2,10 +2,9 @@
 
 set -euo
 
-ENV=$1
+DOMAIN_PROD="http://theatre-shevchenko.ck.ua"
+DOMAIN_STAGING="http://develop.theatre.pp.ua"
 
-echo "action_state=yellow" >> $GITHUB_ENV
-export $(xargs < .env)
-export BRANCH="github-linter-2"
-export DOMAIN="http://develop.theatre.pp.ua/github-linter-2/en/"
-export BASE_HREF="/github-linter-2/"
+echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/} | tr / -)" >> $GITHUB_ENV
+echo "DOMAIN=${DOMAIN_STAGING}/${BRANCH}/en/" >> $GITHUB_ENV
+echo "BASE_HREF=/${BRANCH}/" >> $GITHUB_ENV

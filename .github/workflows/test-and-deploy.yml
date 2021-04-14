@@ -60,9 +60,12 @@ jobs:
 #        run: node_modules/.bin/webdriver-manager update --versions.chrome=92 && CHROME_BIN=$(which chrome) ng e2e
         # TEMPORARY DISABLED
       - name: Export envirorment variables
-        run: . ./deploy/build-env.github.sh staging
+        run: . ./deploy/build-env.github.sh
       - name: Use the value
-        run: echo "${{ env.action_state }}"
+        run: |
+          echo "${{ env.BRANCH }}"
+          echo "${{ env.DOMAIN }}"
+          echo "${{ env.BASE_HREF }}"
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:

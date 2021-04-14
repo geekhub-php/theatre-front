@@ -1,5 +1,6 @@
 #!/bin/bash
 set -euo
+SSH_HOST="deploybot@104.248.253.61"
 
 cp ./deploy/branch.conf ./dist/
 cp ./deploy/index.html ./dist/
