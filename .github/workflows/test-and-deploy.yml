@@ -59,9 +59,12 @@ jobs:
 #      - name: E2E tests
 #        run: node_modules/.bin/webdriver-manager update --versions.chrome=92 && CHROME_BIN=$(which chrome) ng e2e
         # TEMPORARY DISABLED
-      - uses: lukka/set-shell-env@v1
-        name: Export envirorment variables
-        shell: ./deploy/build-env.github.sh staging
+      - name: Export envirorment variables
+        run: . ./deploy/build-env.github.sh staging
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}" # This will output 'yellow'
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
