@@ -1,5 +1,10 @@
 <div class="container">
   <nav class="header navbar fixed-top navbar-expand-lg">
+
+    <ng-container *ngIf="trigger | async">
+      <app-visually-impaired></app-visually-impaired>
+    </ng-container>
+
     <h1 class="header-logo" aria-label="Cherkasy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
       <a routerLink="/">
         <img src="assets/images/logo theatre@3x.png"
@@ -22,7 +27,7 @@
     </button>
 
     <div class="search-box" [ngbCollapse]="!isCollapsed">
-        <input type="submit" class="search-input" placeholder="{{search_text}}" name="search">
+      <input type="submit" class="search-input" placeholder="{{search_text}}" name="search">
       <img src="assets/images/Union.svg" class="search-button" alt="Search button" title="Search"
            i18n="@@search" (click)="searchSubmit()">
       <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Delete"
@@ -35,22 +40,32 @@
        [href]="langRedirectUrl" i18n="@@lang">&nbsp;Eng</a>
     <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
        class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
-
-    <ng-container *ngIf="trigger | async">
-<!--      <app-visually-impaired></app-visually-impaired>-->
-    </ng-container>
   </nav>
 
   <button class="u-unstyled-btn d-none d-lg-block">
     <img src="assets/images/eye_settings@3x.png" class="visual-aid-button" alt="Color schemes" title="Color schemes"
          (click)="trigger.next(!trigger.value);">
   </button>
-
   <button class="u-unstyled-btn d-none d-lg-block">
     <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" title="Donate"
-         (click)="trigger.next(!trigger.value);">
+         *ngIf="!donateBlockVisible" (click)="donateBlockVisible = true">
   </button>
+
+  <div *ngIf="donateBlockVisible" class="donate-block">
+    <div class="donate-information">
+      <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
+      <p class="donate-title">Are you ready to help the Theater?</p>
+      <div class="donate-requisites">
+        <pre><b>Р/р</b> UA883052990000026007021609497
+          <b>ЄДРПОУ</b> 02225915
+          АТ КБ «ПРИВАТБАНК»
+          <b>МФО</b> 305299
+        </pre>
+      </div>
+      <img src="assets/images/Group 505@3x.jpg" class="qr-code" alt="QR Code">
+      <button class="close-disable__button" (click)="donateBlockVisible = false">
+        <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close settings">
+      </button>
+    </div>
+  </div>
 </div>
-
-
-
