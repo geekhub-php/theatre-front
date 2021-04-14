@@ -1,8 +1,6 @@
 #!/bin/bash
 set -euo
 
-export $(xargs < .env)
-
 cp ./deploy/branch.conf ./dist/
 cp ./deploy/index.html ./dist/
 cd dist/ && tar -zcvf ../dist.tar.gz * && cd -

@@ -1,10 +1,7 @@
 #!/bin/bash
 
-ENV=${1:-}
-
 set -euo
 
-export $(xargs < .env)
 rm -rf dist
 TMPDIR=$(mktemp -d)
 
