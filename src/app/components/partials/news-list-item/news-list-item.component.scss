@@ -15,7 +15,7 @@ a {
 
 .news-item {
   display: grid;
-  grid-template-columns: 352px 1118px;
+  grid-template-columns: minmax(80px, 352px) minmax(300px, 1118px);
   padding: 32px 1px 27px 0;
   column-gap: 32px;
   border-top: .5px solid #323232;

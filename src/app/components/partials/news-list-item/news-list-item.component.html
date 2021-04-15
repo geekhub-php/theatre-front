@@ -4,7 +4,7 @@
     <img *ngIf="item.mainPicture && item.mainPicture.post_main; else elseImg" [src]="item.mainPicture.post_main.url"
          alt="{{ item.title }}">
     <ng-template #elseImg>
-      <img [src]="defaultImg">
+      <img [src]="defaultImg" alt="default image">
     </ng-template>
   </div>
 
@@ -16,7 +16,7 @@
     </div>
 
     <div class="arrow-right">
-      <img class="arrow-right" src="../../../../assets/images/arrow-right.svg">
+      <img alt="arrow" class="arrow-right" src="../../../../assets/images/news/arrow-right.svg">
     </div>
   </div>
 

@@ -9,7 +9,7 @@ import { GatewayService } from '../../../services/gateway.service';
 })
 export class NewsListItemComponent implements OnInit {
   @Input() item: NewsItem;
-  defaultImg = '../../assets/images/cats.gif';
+  defaultImg = '../../assets/images/news/mask.jpg';
 
   constructor(private gatewayService: GatewayService) {
   }
