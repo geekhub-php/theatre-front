@@ -1,7 +1,6 @@
 #!/bin/bash
 set -euo
-
-export $(xargs < .env)
+SSH_HOST="deploybot@104.248.253.61"
 
 cp ./deploy/branch.conf ./dist/
 cp ./deploy/index.html ./dist/

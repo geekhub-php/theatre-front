@@ -1,4 +1,4 @@
-name: Super-Linter
+name: Test and Deploy
 
 # Run this workflow every time a new commit pushed to your repository
 on: push
@@ -29,7 +29,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
-
+#      - uses: browser-actions/setup-chrome@latest
+#      - run: chrome --version
       # Runs the Super-Linter action
 #      - name: Run Super-Linter
 #        uses: github/super-linter@v3
@@ -47,6 +48,7 @@ jobs:
 #          VALIDATE_TYPESCRIPT_STANDARD: true
       - name: ng install
         run: npm install -g @angular/cli
+
       - name: Angular linter
         run: npm run lint
       - name: Lint CSS
@@ -54,8 +56,14 @@ jobs:
       - name: Unit tests
         run: ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
       - name: E2E tests
-        run: ng e2e
-
+        run: node_modules/.bin/webdriver-manager update --versions.chrome=92 && CHROME_BIN=$(which chrome) ng e2e
+      - name: Export envirorment variables
+        run: . ./deploy/build-env.github.sh
+      - name: Use the value
+        run: |
+          echo "${{ env.BRANCH }}"
+          echo "${{ env.DOMAIN }}"
+          echo "${{ env.BASE_HREF }}"
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -68,9 +76,13 @@ jobs:
         run: bash build-front.sh
         shell: bash
         env:
-          BRANCH: ${{ env.GITHUB_HEAD_REF }}
+          BRANCH: ${{ env.BRANCH }}
+          BASE_HREF: ${{ env.BASE_HREF }}
+          DOMAIN: ${{ env.DOMAIN }}
+          ENV: ${{ env.ENV }}
       - name: Deploy
         run: bash deploy.sh
         shell: bash
         env:
-          BRANCH: ${{ env.GITHUB_HEAD_REF }}
+          BRANCH: ${{ env.BRANCH }}
+          DOMAIN: ${{ env.DOMAIN }}
