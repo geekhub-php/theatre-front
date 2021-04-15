@@ -1,5 +1,16 @@
 @import "~assets/styles/variables";
 
+.ngx-gallery {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  max-width: 352px;
+  max-height: 240px;
+}
+
+
 :host ::ng-deep .post-text p {
   margin-bottom: 5px;
   font-size: 1.143rem;

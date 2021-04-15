@@ -1,4 +1,4 @@
-import { Injectable, Inject, LOCALE_ID } from '@angular/core';
+import { Inject, Injectable, LOCALE_ID } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
@@ -13,7 +13,6 @@ import { ScheduleListResponse } from '../store/schedule/ScheduleListResponse';
 import { History } from '../store/history/History';
 import { Role } from '../store/Role';
 import { Performance } from '../store/performance/Performance';
-import { EmployeesListResponse } from '../store/employee/EmployeesListResponse';
 import { Employee } from '../store/employee/Employee';
 import { NewsListResponse } from '../store/news/NewsListResponse';
 import { NewsItem } from '../store/news/NewsItem';
@@ -191,13 +190,15 @@ export class GatewayService {
   }
 
   updateMeta(title, description, image) {
-    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({property: 'og:title', content: title});
     this.meta.updateTag({
       property: 'og:description',
       content: description
     });
-    this.meta.updateTag({ property: 'og:image', content: image });
-    this.meta.updateTag({ property: 'og:url', content: `${this.canonicalUrl}${this.localeId}${this.router.url}` });
+    if (image) {
+      this.meta.updateTag({property: 'og:image', content: image});
+    }
+    this.meta.updateTag({property: 'og:url', content: `${this.canonicalUrl}${this.localeId}${this.router.url}`});
   }
 
   /* tslint:disable:no-console */
