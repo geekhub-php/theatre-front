@@ -6,7 +6,7 @@
   padding: $container-padding;
   box-shadow: $box-shadow;
   background-color: $background-main-color-darker;
-  z-index: 0;
+  z-index: 20;
 
 
   .language, .separation, .tickets-button {
@@ -146,7 +146,7 @@
   background-color: rgba($background-color-black, .7);
   position: fixed;
   margin-left: -405px;
-  z-index: 1;
+  z-index: 90;
 
   @include box(1920, 1020);
 
@@ -164,9 +164,10 @@
     }
 
     .donate-requisites {
+      text-align: center;
       margin-top: 16px;
 
-      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 19px, normal);
+      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.36, normal);
     }
 
     .donate-wallet-image {

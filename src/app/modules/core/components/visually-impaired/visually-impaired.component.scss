@@ -16,6 +16,7 @@ $inversion-color: #0f2c57;
   margin-top: -40px;
   background-color: rgba($background-color-black, .7);
   position: absolute;
+  z-index: 100;
 
   @include box(1920, 1020);
 }
