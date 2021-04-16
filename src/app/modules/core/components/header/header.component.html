@@ -30,12 +30,11 @@
       <input type="submit" class="search-input" placeholder="{{search_text}}" name="search">
       <img src="assets/images/Union.svg" class="search-button" alt="Search button" title="Search"
            i18n="@@search" (click)="searchSubmit()">
-      <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Delete"
-           i18n="@@delete" (click)="clearSubmit()">
+      <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Close"
+           i18n="@@ngb.alert.close" (click)="clearSubmit()">
     </div>
 
-    <a class="language d-none d-lg-block ukr"
-       [href]="langRedirectUrl" i18n="@@lang">Укр&nbsp;</a> <span class="separation">|</span>
+    <a class="language d-none d-lg-block ukr" i18n="@@lang">Укр&nbsp;</a> <span class="separation">|</span>
     <a class="language d-none d-lg-block eng"
        [href]="langRedirectUrl" i18n="@@lang">&nbsp;Eng</a>
     <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
@@ -44,10 +43,10 @@
 
   <button class="u-unstyled-btn d-none d-lg-block">
     <img src="assets/images/eye_settings@3x.png" class="visual-aid-button" alt="Color schemes" title="Color schemes"
-         (click)="trigger.next(!trigger.value);">
+         i18n="@@color-schemes" (click)="trigger.next(!trigger.value);">
   </button>
   <button class="u-unstyled-btn d-none d-lg-block">
-    <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" title="Donate"
+    <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n="@@donate" title="Donate"
          *ngIf="!donateBlockVisible" (click)="donateBlockVisible = true">
   </button>
 

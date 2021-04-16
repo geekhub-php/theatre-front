@@ -513,7 +513,7 @@
         <source>Up</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
-          <context context-type="linenumber">1</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="facebookPage" datatype="html">
@@ -576,11 +576,27 @@
           <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="cooperationBtn" datatype="html">
+       <source>Cooperation</source>
+       <target>До співпраці</target>
+         <context-group purpose="location">
+           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+           <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="pageNotFound" datatype="html">
         <source>Sorry, page not found</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/page-not-found/page-not-found.component.html</context>
           <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="createdWithHelp" datatype="html">
+        <source>Site has been created with the help of</source>
+        <target>Сайт створено за підтримки</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="color-schemes" datatype="html">
@@ -934,6 +950,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/src/toast/toast.ts</context>
           <context context-type="linenumber">78,85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="search" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
     </body>

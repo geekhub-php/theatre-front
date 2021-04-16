@@ -69,7 +69,7 @@
       </trans-unit>
       <trans-unit id="performances" datatype="html">
         <source>All performances</source>
-        <target>Усі вистави</target>
+        <target>Всі вистави</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
           <context context-type="linenumber">20</context>
@@ -85,7 +85,7 @@
       </trans-unit>
       <trans-unit id="aboutTitle" datatype="html">
         <source>About</source>
-        <target>Про Театр</target>
+        <target>Про театр</target>
            <context-group purpose="location">
            <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
         <context context-type="linenumber">10</context>
@@ -145,7 +145,7 @@
       </trans-unit>
       <trans-unit id="administrative" datatype="html">
         <source>Administrative</source>
-        <target>Aдміністративно-управлінський склад</target>
+        <target>Aдміністрація</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/team.component.html</context>
           <context context-type="linenumber">11</context>
@@ -267,6 +267,14 @@
              <context context-type="linenumber">67</context>
            </context-group>
          </trans-unit>
+      <trans-unit id="cooperationBtn" datatype="html">
+       <source>Cooperation</source>
+       <target>До співпраці</target>
+         <context-group purpose="location">
+           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+           <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="partners" datatype="html">
         <source>Partners</source>
         <target>Партнери</target>
@@ -393,7 +401,7 @@
       </trans-unit>
       <trans-unit id="for_kids" datatype="html">
         <source>For Kids</source>
-        <target>Для Дітей</target>
+        <target>Для дітей</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/seasons/seasons.component.html</context>
           <context context-type="linenumber">28</context>
@@ -401,7 +409,7 @@
       </trans-unit>
       <trans-unit id="for_adult" datatype="html">
         <source>For Adult</source>
-        <target>Для Дорослих</target>
+        <target>Для дорослих</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/seasons/seasons.component.html</context>
           <context context-type="linenumber">32</context>
@@ -580,7 +588,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="theatreName" datatype="html">
-        <source>Cherkassy theatre of Taras Shevchenko</source>
+        <source>Cherkasy Theatre of Taras Shevchenko</source>
         <target>Театр імені Т.Г. Шевченка</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
@@ -612,7 +620,7 @@
         <target>Вгору</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
-          <context context-type="linenumber">1</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="facebookPage" datatype="html">
@@ -661,6 +669,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/page-not-found/page-not-found.component.html</context>
           <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="createdWithHelp" datatype="html">
+        <source>Site has been created with the help of</source>
+        <target>Сайт створено за підтримки</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="color-schemes" datatype="html">
@@ -781,6 +797,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
           <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="search" datatype="html">
+        <source>Search</source>
+        <target>Пошук</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ngb.alert.close" datatype="html">
