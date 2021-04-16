@@ -37,7 +37,6 @@ import { EpochComponent } from './components/about/epoch/epoch.component';
 import { VisitComponent } from './components/about/visit/visit.component';  
 
 import { StripHtmlModule } from './pipes/strip-html.module';
-import { AboutNavModule } from './components/about/about-nav/about-nav.module';
 
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CalendarComponent } from './components/schedule/calendar/calendar.component';
@@ -94,8 +93,7 @@ import { environment } from '../environments/environment';
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
-    SpinnerModule,
-    AboutNavModule
+    SpinnerModule
   ],
   providers: [
     CalendarService,
