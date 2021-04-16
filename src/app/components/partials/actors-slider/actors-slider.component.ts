@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, AfterContentChecked, ChangeDetectorRef } from '@angular/core';
 
 import { NguCarouselConfig } from '@ngu/carousel';
 import { GatewayService } from '../../../services/gateway.service';
@@ -9,12 +9,11 @@ import { Employee } from '../../../store/employee/Employee';
   templateUrl: './actors-slider.component.html',
   styleUrls: ['./actors-slider.component.scss']
 })
-export class ActorsSliderComponent implements OnInit, AfterViewInit {
+export class ActorsSliderComponent implements OnInit, AfterContentChecked {
   randomEmployees: Array<Employee>;
-  imageArray: Array<string> = [];
 
   carouselTile: NguCarouselConfig = {
-    grid: { xs: 3, sm: 3, md: 3, lg: 3, all: 0 },
+    grid: { xs: 1, sm: 2, md: 3, lg: 4, all: 0 },
     slide: 1,
     speed: 250,
     point: {
@@ -23,7 +22,7 @@ export class ActorsSliderComponent implements OnInit, AfterViewInit {
     loop: true,
     load: 2,
     velocity: 0,
-    touch: true,
+    touch: false,
     easing: 'cubic-bezier(0, 0, 0.2, 1)'
   };
 
@@ -33,7 +32,7 @@ export class ActorsSliderComponent implements OnInit, AfterViewInit {
 
   ) { }
 
-  ngAfterViewInit() {
+  ngAfterContentChecked(): void {
     this._cdr.detectChanges();
   }
 
@@ -42,8 +41,6 @@ export class ActorsSliderComponent implements OnInit, AfterViewInit {
       .subscribe((data: any) => {
         this.randomEmployees = data.employees;
         console.log(this.randomEmployees, 'data');
-        this.randomEmployees.map(item => this.imageArray.push(item.avatar.employee_big.url));
-        console.log(this.imageArray);
       });
   }
 }

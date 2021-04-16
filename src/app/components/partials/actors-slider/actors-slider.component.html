@@ -1,21 +1,32 @@
-<p>slider works!</p>
-
-<div *ngFor="let image of randomEmployees">
-<!--  <img [src]="image.avatar.employee_big.url">-->
-  <h2>{{image.first_name}}</h2>
-</div>
-
-<div class="slider">
-  <ngu-carousel #myCarousel [inputs]="carouselTile"  [dataSource]="imageArray">
-    <ngu-tile *nguCarouselDef="let item">
-      <div class="tile" [style.background]="'url(' + item + ')'" style="min-height: 200px">
-
+<div class="wrapped">
+  <h3 class="title">Актори театру</h3>
+  <ngu-carousel
+    #myCarousel
+    [inputs]="carouselTile"
+    [dataSource]="randomEmployees"
+    class="slider"
+    *ngIf="randomEmployees?.length > 0"
+  >
+    <ngu-tile *nguCarouselDef="let item" >
+      <div
+        class="image"
+        [style.background]="'url(' + item.avatar.employee_big.url + ')'"
+        [routerLink]="['', 'persons', item.slug]"
+      >
       </div>
     </ngu-tile>
-    <button NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">&lt;</button>
-    <button NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">&gt;</button>
-
+    <ul class="myPoint" NguCarouselPoint>
+      <li
+        *ngFor="let j of myCarousel.pointNumbers;
+        let i = index"
+        [class.active]="j===myCarousel.activePoint"
+        (click)="myCarousel.moveTo(i)"
+      ></li>
+    </ul>
+    <div NguCarouselPrev class="left"></div>
+    <div NguCarouselNext class="right"></div>
   </ngu-carousel>
+  <div class="all-prersons">
+    <a routerLink="/persons" class="link-persons">Показати більше</a>
+  </div>
 </div>
-
-
