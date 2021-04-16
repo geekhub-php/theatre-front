@@ -56,7 +56,7 @@ export class VisuallyImpairedService {
   setZoomFont() {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.localStorageVI.fontSize = '24px';
+    this.localStorageVI.fontSize = '18px';
 
     this.setStylesOnElement({ fontSize: this.localStorageVI.fontSize} , this.htmlDomEl);
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
@@ -65,7 +65,7 @@ export class VisuallyImpairedService {
   setReduceFont() {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.localStorageVI.fontSize = '18px';
+    this.localStorageVI.fontSize = '24px';
 
     this.setStylesOnElement({ fontSize: this.localStorageVI.fontSize} , this.htmlDomEl);
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
