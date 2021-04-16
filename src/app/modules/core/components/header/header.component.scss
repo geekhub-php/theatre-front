@@ -117,6 +117,8 @@
       border-top: 1px solid $background-main-color-darker;
 
       &.active {
+        color: $font-color-white;
+        font-weight: $font-weight-bold;
         border-color: $background-on-hover;
       }
     }

@@ -23,6 +23,11 @@
     &:hover {
       color: $font-color-white;
       background-color: rgba($background-on-hover, .05);
+      text-decoration: none;
+    }
+
+    &.active {
+      text-decoration: none;
     }
   }
 }
