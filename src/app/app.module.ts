@@ -42,6 +42,7 @@ import { CalendarService } from './components/schedule/calendar.service';
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { SliderComponent } from './components/home-page/slider/slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
+import { CooperationComponent } from './components/cooperation/cooperation.component';
 
 import { environment } from '../environments/environment';
 
@@ -66,7 +67,8 @@ import { environment } from '../environments/environment';
     ScheduleComponent,
     SideMenuComponent,
     SliderComponent,
-    NewsListItemComponent
+    NewsListItemComponent,
+    CooperationComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
