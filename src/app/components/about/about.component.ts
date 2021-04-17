@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { GatewayService } from "../../services/gateway.service";
 import { History } from "../../store/history/History";
-import { HistoryListResponse } from "../../store/history/HistoryListResponse";
 import { LoaderService } from "../partials/spinner/loader.service";
 
 @Component({
@@ -25,16 +24,6 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.loaderService.start("about");
-    this.getway.getHistoriesList().subscribe(
-      (res: HistoryListResponse) => {
-        this.listHistories = res.history;
-        // console.log(this.listHistories); // del
-        this.loaderService.stop("about");
-      },
-      (err) => this.loaderService.stop("about") // TODO: error handler
-    );
-    this.loaderService.start("about");
     this.getway.updateCanonicalURL();
-
   }
 }

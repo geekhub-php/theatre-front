@@ -20,7 +20,6 @@ export class AboutMoreComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // console.log('abot more component________'); // del
     const slug = this.route.snapshot.params.slug;
     this.loaderService.start('about-more');
     this.gateway
