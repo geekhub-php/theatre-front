@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cooperation.component.scss']
 })
 export class CooperationComponent implements OnInit {
+  popupOpen = false;
 
   constructor() {
   }
