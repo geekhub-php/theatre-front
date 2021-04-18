@@ -1,9 +1,15 @@
 @import "~assets/styles/variables";
 
+$background-cell-color: rgba(50, 50, 50, 1);
+$background-cell-color-opacity: rgba(50, 50, 50, 0.5);
+$border-cell-color: #242424;
+$popup-shadow-color: rgb(0, 0, 0, .25);
+$popup-bg-color: #868583;
+$popup-border-color: #b6b6b4;
+
 :host {
-  display: block;
-  max-width: 71.429rem;
-  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 table {
@@ -34,36 +40,53 @@ table {
 }
 
 .day-of-week {
-  background-color: rgba($secondary-color, .9);
-  color: $white-color;
-  font-size: 1rem;
-  border-right: 1px solid $white-color;
+  border-right: 4px solid $background-main-color;
   padding: 11px 0;
-  width: 10.071rem;
-  text-align: center;
   text-transform: capitalize;
+  width: 96px;
+  height: 32px;
+  margin: 32px 86px 12px 7px;
+  font-family: $Montserrat;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: .48px;
+  text-align: left;
+  color: #b49864;
 }
 
-.day-of-month {
+.day_of_month {
+  font-weight: 600;
+  width: 213px;
+  height: 229px;
   position: relative;
-  overflow: hidden;
-  height: 10.143rem;
-  padding: 34px 0 0;
-  border: 1px solid $border-color;
-  vertical-align: bottom;
+  border: 4px solid $background-main-color;
+  background-color: $background-cell-color;
+}
+
+.another_month {
+  background-color: $background-cell-color-opacity;
+
+  & .day-number {
+    opacity: 50%;
+  }
+
+  & .more_items .day_performances p {
+    opacity: 50%;
+  }
 }
 
 .day-number {
+  font-family: Montserrat;
   position: absolute;
-  top: 5px;
-  left: 0;
+  top: 15px;
+  left: 7px;
   z-index: 5;
-  display: block;
-  margin: 0 0 0 7px;
-  font-size: 1.286rem;
-  color: $main-color;
-  background-color: $white-color;
-  border-radius: 3px;
+  font-size: 40px;
+  color: $font-color-gold;
+  border-radius: 30px;
   line-height: 1;
   padding: 2px 0;
   min-width: 1.786rem;
@@ -71,9 +94,9 @@ table {
 }
 
 .contain {
-  width: 2.857rem;
+  width: 100%;
+  height: 100%;
   margin-bottom: 3.571rem;
-  float: left;
 }
 
 .calendar-img {
@@ -100,76 +123,203 @@ table {
 }
 
 .more {
-  position: relative;
-  height: inherit;
-  margin-top: -2.857rem;
-  z-index: 2;
+  padding: 0 8px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.more_items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & .day_performances {
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    border-bottom: $border-cell-color 1px solid;
+  }
+
+  & .day_performances:last-child {
+    border-bottom: none;
+  }
 }
 
 .events {
-  display: block;
-  height: 100%;
   color: $white-color;
-  text-align: center;
-  font-size: .857rem;
-  transition: .2s ease;
+  margin: auto 0;
+  padding: 0;
 
-  &_double {
-    height: 50%;
-  }
-
-  &_triple {
-    height: 32%;
-  }
-
-  &_double,
-  &_triple {
-    padding-top: 4px;
-    background-color: rgba($secondary-color, .6);
-
-    &:hover {
-      background-color: $main-color-darker;
-    }
-  }
-
-  &_triple:first-of-type {
-    height: 36%;
+  & .events_performance_title {
+    margin: auto 0;
+    font-family: $Montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0;
   }
 }
 
-.events p {
-  text-align: center;
-  font-size: .857rem;
-  line-height: 1.3;
-}
-
-.popover {
-
-  &-time {
-    margin-bottom: 0;
-  }
-
-  &-date {
-    margin-bottom: 6px;
-  }
-
-  &-time,
-  &-date {
-    text-align: center;
-    font-size: 1.143rem;
+.calendar_show_more {
+  & span {
+    margin: auto 0;
+    padding: 0;
+    color: $font-color-gold;
+    font-family: $Montserrat;
     font-weight: 600;
-    color: $secondary-color;
+    cursor: pointer;
+  }
+}
+
+.calendar_popup_show_more {
+  padding: 0 8px;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 210px;
+  background-color: $popup-bg-color;
+  z-index: 8;
+  overflow: visible;
+  opacity: 100%;
+  transition: ease-in 200ms;
+
+  & .popup_day_number {
+    padding-top: 13px;
+    align-items: center;
+    height: 50px;
+    font-family: $Montserrat;
+    font-size: 40px;
+    color: $white-color;
+    border-radius: 30px;
+    line-height: 1;
   }
 
-  &-venue {
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 1.143rem;
+  & .popup_day_performances {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    border-bottom: $popup-border-color 1px solid;
+    cursor: pointer;
   }
 
-  &-img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
+  & .popup_day_performances:hover {
+    color: $white-color;
+  }
+
+  & .popup_day_performances:last-child {
+    margin: 0 auto;
+    border: none;
+    font-weight: 600;
+  }
+}
+
+.another_month {
+  //opacity: 50%;
+}
+
+//
+//:host ::ng-deep .popover {
+//  background-color: transparent;
+//  width: 480px;
+//  height: 288px;
+//  &-img {
+//    width: 185px;
+//    height: 256px;
+//  }
+//
+//  &-body {
+//    display: flex;
+//    margin-left: -109px;
+//    width: 480px;
+//    height: 288px;
+//    background-color: $font-color-gold;
+//    padding: 16px;
+//    border-radius: 8px;
+//  }
+//  & .arrow {
+//    border-top-color: $font-color-gold;
+//  }
+//}
+
+:host ::ng-deep .bs-popover-top {
+  background-color: transparent;
+
+  & .arrow::after {
+    border-top-color: $font-color-gold;
+  }
+}
+
+:host ::ng-deep .bs-popover-left {
+  background-color: transparent;
+
+  & .arrow::after {
+    border-left-color: $font-color-gold;
+  }
+}
+
+.popup_events_performance_title {
+  margin: auto 0;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0;
+  color: $background-main-color;
+}
+
+:host ::ng-deep .popover-poster {
+  & .popover-body {
+    display: flex;
+    margin-left: -140px;
+    width: 480px;
+    height: 288px;
+    background-color: $font-color-gold;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    & .popover-img {
+      width: 185px;
+      height: 256px;
+    }
+
+    & .popover-content {
+      width: 100%;
+      padding-left: 16px;
+      text-align: left;
+      font-family: Montserrat;
+      font-size: 18px;
+
+      & img {
+        margin-top: 4px;
+        width: 18px;
+        height: 18px;
+      }
+
+      & p {
+        margin: auto 0;
+        padding-left: 8px;
+      }
+
+      & .popover-title {
+        padding-left: 0;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.39;
+        letter-spacing: normal;
+        color: $white-color;
+        margin-bottom: 22px;
+      }
+
+      & .popover-info {
+        display: flex;
+        flex-direction: row;
+        line-height: 1.5;
+        color: $background-main-color;
+        margin-bottom: 12px;
+      }
+    }
   }
 }

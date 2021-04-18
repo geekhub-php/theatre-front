@@ -1,0 +1,45 @@
+@import "~assets/styles/variables";
+
+.popover-data {
+  display: flex;
+  flex-direction: row;
+
+  & .popover-content {
+    width: 100%;
+    padding-left: 16px;
+    text-align: left;
+    font-family: $Montserrat;
+    font-size: 18px;
+
+    & img {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+    }
+
+    & p {
+      margin: auto 0;
+      padding-left: 8px;
+    }
+
+    & .popover-title {
+      padding-left: 0;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.39;
+      letter-spacing: normal;
+      color: $white-color;
+      margin-bottom: 22px;
+    }
+
+    & .popover-info {
+      display: flex;
+      flex-direction: row;
+      line-height: 1.5;
+      color: $background-main-color;
+      margin-bottom: 12px;
+    }
+  }
+}
+

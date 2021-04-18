@@ -8,7 +8,7 @@ import { PerformanceEvent } from '../../store/schedule/PerformanceEvent';
 import { ScheduleListResponse } from '../../store/schedule/ScheduleListResponse';
 
 import { map } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,7 @@ export class CalendarService {
   Sun = 0;
 
   events: BehaviorSubject<Array<PerformanceEvent>> = new BehaviorSubject([]);
+  selectedDate$: Subject<Date> = new Subject();
 
   constructor(private gateway: GatewayService) {
     this.currentDate = new Date();
@@ -57,6 +58,7 @@ export class CalendarService {
     this.currentDate = new Date(this.currentDate);
     this.currentDate.setMonth(this.currentDate.getMonth() - 1);
     this.getPerformanceEvents();
+    this.selectedDate$.next(this.currentDate);
 
     return this.currentDate;
   }
@@ -65,6 +67,7 @@ export class CalendarService {
     this.currentDate = new Date(this.currentDate);
     this.currentDate.setMonth(this.currentDate.getMonth() + 1);
     this.getPerformanceEvents();
+    this.selectedDate$.next(this.currentDate);
 
     return this.currentDate;
   }
@@ -72,8 +75,13 @@ export class CalendarService {
   today(): Date {
     this.currentDate = new Date();
     this.getPerformanceEvents();
+    this.selectedDate$.next(this.currentDate);
 
     return this.currentDate;
+  }
+
+  selectedDate() {
+    return this.selectedDate$.asObservable();
   }
 
   get dateFrom() {

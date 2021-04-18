@@ -44,6 +44,7 @@ import { SliderComponent } from './components/home-page/slider/slider.component'
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 
 import { environment } from '../environments/environment';
+import { CalPopupComponent } from './components/schedule/calendar/cal-popup/cal-popup.component';
 
 @NgModule({
   declarations: [
@@ -61,12 +62,12 @@ import { environment } from '../environments/environment';
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent,
+    ScheduleComponent, CalendarComponent, CalPopupComponent, ListViewComponent, MobileViewComponent,
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
     SliderComponent,
-    NewsListItemComponent
+    NewsListItemComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
