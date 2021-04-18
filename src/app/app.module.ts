@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { NguCarouselModule } from '@ngu/carousel';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
 import { CoreModule } from './modules/core/core.module';
@@ -84,6 +85,7 @@ import { environment } from '../environments/environment';
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
     SpinnerModule,
+    NguCarouselModule
   ],
   providers: [
     CalendarService,
