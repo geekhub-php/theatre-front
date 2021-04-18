@@ -45,6 +45,7 @@ import { SliderComponent } from './components/home-page/slider/slider.component'
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 
 import { environment } from '../environments/environment';
+import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
 
 @NgModule({
   declarations: [
@@ -62,12 +63,16 @@ import { environment } from '../environments/environment';
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent,
+    ScheduleComponent,
+    CalendarComponent,
+    MonthsCarouselComponent,
+    ListViewComponent,
+    MobileViewComponent,
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
     SliderComponent,
-    NewsListItemComponent
+    NewsListItemComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

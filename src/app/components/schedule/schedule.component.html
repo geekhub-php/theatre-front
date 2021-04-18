@@ -6,6 +6,8 @@
   </h2>
 </div>
 
+<app-months-carousel></app-months-carousel>
+
 <div class="btn-group btn-switch">
   <button *ngIf="viewMode === views.CALENDAR || !isToday" class="btn btn-prev" (click)="prevMonth()" i18n="@@prev">Previous</button>
   <button class="btn btn-now" (click)="now()" i18n="@@now">Today</button>
