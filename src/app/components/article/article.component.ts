@@ -5,7 +5,8 @@ import { NewsItem } from '../../store/news/NewsItem';
 import { GatewayService } from '../../services/gateway.service';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { plainToClass } from 'class-transformer';
-import { NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import { GalleryItem } from '../../store/news/GalleryItem';
 
 @Component({
   selector: 'app-article',
@@ -15,19 +16,22 @@ import { NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
 export class ArticleComponent implements OnInit {
   item: NewsItem;
   posts: Array<NewsItem>;
-  gallery: any;
-  newGallery: Array<string>;
+  gallery: Array<GalleryItem> = [];
+  galleryColumns = 4;
+  galleryRows = 3;
   galleryOptions: Array<NgxGalleryOptions> = [
     {
       image: false,
       width: '1504px',
-      thumbnailsColumns: 4,
+      thumbnailsColumns: this.galleryColumns,
+      thumbnailsRows: this.galleryRows,
       thumbnailMargin: 32,
-      thumbnailClasses: ['thumbnail'],
-      thumbnailsRemainingCount: true,
-      height: '240px',
+      thumbnailSize: NgxGalleryImageSize.Contain,
       previewCloseOnEsc: true,
-      previewAnimation: false
+      previewAnimation: false,
+      previewFullscreen: true,
+      previewInfinityMove: true,
+      previewBullets: true
     },
     {
       breakpoint: 770,
@@ -37,28 +41,7 @@ export class ArticleComponent implements OnInit {
     }
   ];
 
-  galleryImages: Array<NgxGalleryImage> = [
-    {
-      small: 'https://preview.ibb.co/jrsA6R/img12.jpg',
-      medium: 'https://preview.ibb.co/jrsA6R/img12.jpg',
-      big: 'https://preview.ibb.co/jrsA6R/img12.jpg'
-    },
-    {
-      small: 'https://preview.ibb.co/kPE1D6/clouds.jpg',
-      medium: 'https://preview.ibb.co/kPE1D6/clouds.jpg',
-      big: 'https://preview.ibb.co/kPE1D6/clouds.jpg'
-    },
-    {
-      small: 'https://preview.ibb.co/mwsA6R/img7.jpg',
-      medium: 'https://preview.ibb.co/mwsA6R/img7.jpg',
-      big: 'https://preview.ibb.co/mwsA6R/img7.jpg'
-    },
-    {
-      small: 'https://preview.ibb.co/kZGsLm/img8.jpg',
-      medium: 'https://preview.ibb.co/kZGsLm/img8.jpg',
-      big: 'https://preview.ibb.co/kZGsLm/img8.jpg'
-    },
-  ];
+  galleryImages: Array<NgxGalleryImage> = [];
 
   constructor(private router: ActivatedRoute,
               private gateAway: GatewayService,
@@ -74,12 +57,23 @@ export class ArticleComponent implements OnInit {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateAway.getNewsBySlug(slug).subscribe((res) => {
         this.item = plainToClass(NewsItem, res);
+
         if (res.gallery) {
           this.gallery = res.gallery;
-          console.log('gallery', this.gallery);
+
           if (this.gallery.length) {
-            this.gallery.map(item => this.newGallery.push(item.images.post_main.url));
-            console.log('newGallery', this.newGallery);
+            // this.galleryRows = Math.ceil(this.gallery.length / this.galleryColumns);
+            // this.galleryOptions[0].thumbnailsRows = Math.ceil(this.gallery.length / this.galleryColumns);
+            // console.log('rows', this.galleryRows);
+            this.gallery.map(item => {
+              this.galleryImages.push(
+                {
+                  small: item.images.post_main.url,
+                  medium: item.images.post_main.url,
+                  big: item.images.post_big.url,
+                }
+              );
+            });
           }
         }
         this.loaderService.stop('article');

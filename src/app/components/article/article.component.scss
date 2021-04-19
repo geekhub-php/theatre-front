@@ -7,38 +7,5 @@
 
 .thumbnail {
   max-width: 352px;
-  max-height: 240px;
-}
-
-
-:host ::ng-deep .post-text p {
-  margin-bottom: 5px;
-  font-size: 1.143rem;
-}
-
-.container {
-  margin-bottom: -30px;
-
-  .img {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .post-date {
-    margin-top: 1rem;
-    text-align: right;
-    color: $secondary-color-lighter;
-  }
-}
-
-@media (max-width: 576px) {
-
-  .container {
-
-    .img {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
+  height: 240px;
 }
