@@ -1,16 +1,13 @@
 #!/bin/bash
 
-ENV=${1:-}
-
 set -euo
 
-export $(xargs < .env)
 rm -rf dist
 TMPDIR=$(mktemp -d)
 
 ng build --configuration="${ENV}-uk" \
-  --deploy-url="${DOMAIN}/uk/" \
-  --base-href="${BASE_HREF}uk/" \
+  --deploy-url="${DOMAIN}uk/" \
+  --base-href="${BASE_HREF}" \
   --aot true --vendor-chunk true \
   --output-path 'dist/' \
   --i18n-file src/assets/locale/locale.uk-ua.xlf \
@@ -22,8 +19,8 @@ ng build --configuration="${ENV}-uk" \
 mv ./dist/uk "${TMPDIR}/"
 
 ng build --configuration="${ENV}-en" \
-  --deploy-url="${DOMAIN}/en/" \
-  --base-href="${BASE_HREF}en/" \
+  --deploy-url="${DOMAIN}en/" \
+  --base-href="${BASE_HREF}" \
   --aot true \
   --vendor-chunk true \
   --output-path "dist/"
@@ -31,6 +28,7 @@ ng build --configuration="${ENV}-en" \
 mv "${TMPDIR}/uk" ./dist/
 rm -rf "${TMPDIR}"
 
+
 echo "Base href: ${BASE_HREF}"
-echo "Domain: ${DOMAIN}/"
-echo "Environment: ${ENV}-{language}"
+echo "Domain: ${DOMAIN}"
+echo "Environment: ${ENV}"
