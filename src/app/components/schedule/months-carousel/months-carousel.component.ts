@@ -7,19 +7,19 @@ import { NguCarouselConfig } from "@ngu/carousel";
   styleUrls: ['./months-carousel.component.scss']
 })
 export class MonthsCarouselComponent implements OnInit {
-  imgags = [
-    'text1',
-    'text2',
-    'text3',
-    'text4',
-    'text5',
-    'text6',
-    'text7',
-    'text8',
-    'text9',
-    'text10',
-    'text11',
-    'text12'
+  images = [
+    'Січень',
+    'Лютий',
+    'Березень',
+    'Квітень',
+    'Травень',
+    'Черевень',
+    'Липень',
+    'Серпень',
+    'Вересень',
+    'Жовтень',
+    'Листопад',
+    'Грудень'
   ];
   public carouselTileItems: Array<any> = [0, 1, 2, 3, 4, 5];
   public carouselTiles = {
@@ -36,7 +36,7 @@ export class MonthsCarouselComponent implements OnInit {
     11: [],
   };
   public carouselTile: NguCarouselConfig = {
-    grid: { xs: 5, sm: 5, md: 5, lg: 5, xl:5, all: 0, },
+    grid: { xs: 5, sm: 5, md: 5, lg: 5, xl:5, all:0 },
     slide: 1,
     speed: 250,
     point: {
@@ -62,7 +62,7 @@ export class MonthsCarouselComponent implements OnInit {
     if (len <= 30) {
       for (let i = len; i < len + 15; i++) {
         this.carouselTiles[j].push(
-          this.imgags[Math.floor(Math.random() * this.imgags.length)]
+          this.images[Math.floor(Math.random() * this.images.length)]
         );
       }
     }

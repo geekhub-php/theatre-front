@@ -1,49 +1,101 @@
+@import "~assets/styles/variables";
+
+
 .months-carousel {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
 }
+
 .title {
   width: 200px;
   height: 100px;
 }
 
 .carousel_btn_left {
+  background-color: transparent;
+  border: none;
+  outline: none;
   position: absolute;
   margin: auto;
   top: 0;
   bottom: 0;
-  width: 50px;
-  height: 50px;
-  box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
-  border-radius: 999px;
   left: 0;
   z-index: 1;
+  width: 48px;
+  height: 48px;
+  flex-grow: 0;
+  object-fit: contain;
 }
 
 .carousel_btn_right {
+  border: none;
+  outline: none;
+  background-color: transparent;
   position: absolute;
   margin: auto;
   top: 0;
   bottom: 0;
-  width: 50px;
-  height: 50px;
-  box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
-  border-radius: 999px;
   right: 0;
   z-index: 1;
+  width: 48px;
+  height: 48px;
+  flex-grow: 0;
+  object-fit: contain;
 }
 
 
 .month_item {
+  text-align: center;
+  width: 212px;
+  height: 64px;
+  flex-grow: 0;
+  font-family: Montserrat;
+  font-size: 40px;
+  //font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  color: #323232;
+  font-weight: 400;
+
+  &:hover {
+    color: #868583;
+  }
+
+  &_active {
+    font-weight: 800;
+    color: #fff;
+  }
+}
+
+
+:host ::ng-deep .ngucarousel {
+  max-width: 1504px;
+  //padding: 0 47px;
+}
+
+
+:host ::ng-deep .tile {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+:host ::ng-deep .item {
+  box-shadow: none;
   width: 212px;
 }
 
+//
 .month_item_title {
-  width: 212px;
-
+  width: 212px !important;
 }
+
+
 //.ngucarouselPoint {
 //  list-style-type: none;
 //  text-align: center;

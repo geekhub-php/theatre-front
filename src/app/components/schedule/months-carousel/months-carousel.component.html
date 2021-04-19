@@ -1,15 +1,10 @@
-<ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="imgags" class="months-carousel">
-    <button NguCarouselPrev class="carousel_btn_left">&lt;</button>
-    <ngu-tile *nguCarouselDef="let item; let j = index" [class]="'month_item_title'">
-      <div class="month_item" style="min-height: 200px">
-        <h1>{{item}}</h1>
-      </div>
-    </ngu-tile>
-    <button NguCarouselNext class="carousel_btn_right" [style.opacity]="myCarousel.isLast ? 0.5:1">&gt;</button>
-<!--<button NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">&lt;</button>-->
-<!--<button NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">&gt;</button>-->
-<!--<ul class="myPoint" NguCarouselPoint>-->
-<!--  <li *ngFor="let i of myCarousel.pointNumbers; let ind = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(ind)"-->
-<!--      [style.background]="'url(' + carouselTileItems[ind] + ')'"></li>-->
-<!--</ul>-->
+<ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="images" class="months-carousel">
+  <button NguCarouselPrev class="carousel_btn_left"><img src="assets/images/calendar/chevron-left.svg" alt=""></button>
+  <ngu-tile *nguCarouselDef="let item; let j = index" class="month_item_title">
+    <div class="month_item">
+      <span>{{item}}</span>
+    </div>
+  </ngu-tile>
+  <button NguCarouselNext class="carousel_btn_right" [style.opacity]="myCarousel.isLast ? 0.5:1"><img
+    src="assets/images/calendar/chevron-right.svg" alt=""></button>
 </ngu-carousel>
