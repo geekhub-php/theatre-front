@@ -11,7 +11,7 @@
     <p class="post-date">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
   </ng-template>
 
-  <ngx-gallery [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
+  <ngx-gallery *ngIf="loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
   </ngx-gallery>
 
 </div>

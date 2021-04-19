@@ -17,8 +17,9 @@ export class ArticleComponent implements OnInit {
   item: NewsItem;
   posts: Array<NewsItem>;
   gallery: Array<GalleryItem> = [];
+  loading = false;
   galleryColumns = 4;
-  galleryRows = 3;
+  galleryRows = 1;
   galleryOptions: Array<NgxGalleryOptions> = [
     {
       image: false,
@@ -62,9 +63,10 @@ export class ArticleComponent implements OnInit {
           this.gallery = res.gallery;
 
           if (this.gallery.length) {
-            // this.galleryRows = Math.ceil(this.gallery.length / this.galleryColumns);
+            this.galleryRows = Math.ceil(this.gallery.length / this.galleryColumns);
             // this.galleryOptions[0].thumbnailsRows = Math.ceil(this.gallery.length / this.galleryColumns);
-            // console.log('rows', this.galleryRows);
+            console.log('rows', this.galleryRows);
+            console.log('this.galleryRows', this.galleryRows);
             this.gallery.map(item => {
               this.galleryImages.push(
                 {
@@ -76,6 +78,7 @@ export class ArticleComponent implements OnInit {
             });
           }
         }
+        this.loading = true;
         this.loaderService.stop('article');
         this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture?.post_big?.url);
       },
