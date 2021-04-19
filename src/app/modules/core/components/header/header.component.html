@@ -1,5 +1,6 @@
-<div class="container">
-  <nav class="header navbar fixed-top navbar-expand-lg">
+<header class="header">
+
+<nav class="navbar navbar-expand-lg">
 
     <ng-container *ngIf="trigger | async">
       <app-visually-impaired></app-visually-impaired>
@@ -41,6 +42,8 @@
        class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
   </nav>
 
+</header>
+
   <button class="u-unstyled-btn d-none d-lg-block">
     <img src="assets/images/eye_settings@3x.png" class="visual-aid-button" alt="Color schemes" title="Color schemes"
          i18n="@@color-schemes" (click)="trigger.next(!trigger.value);">
@@ -48,6 +51,10 @@
   <button class="u-unstyled-btn d-none d-lg-block">
     <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n="@@donate" title="Donate"
          *ngIf="!donateBlockVisible" (click)="donateBlockVisible = true">
+  </button>
+  <button class="u-unstyled-btn d-none d-lg-block">
+    <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n="@@donate" title="Donate"
+         *ngIf="donateBlockVisible" (click)="donateBlockVisible = false">
   </button>
 
   <div *ngIf="donateBlockVisible" class="donate-block">
@@ -65,4 +72,4 @@
            (click)="donateBlockVisible = false">
     </div>
   </div>
-</div>
+

@@ -1,33 +1,39 @@
 @import "~assets/styles/variables";
 
-.footer-nav {
+.footer-nav-block {
   padding-top: 49px;
-  margin: $container-margin;
   background-color: $background-main-color-darker;
+  margin: $container-margin;
 
   @include box(1504, 319.5);
-  @include flex-space-between;
-  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 35px, normal);
 
-  .footer-nav__header {
-    @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 27px, normal);
+  .footer-nav {
+    width: 100%;
 
-    &:hover {
-      color: $font-color-white;
-      text-decoration: none;
-    }
-  }
+    @include flex-space-between;
+    @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 35px, normal);
 
-  .footer-nav__item {
+    .footer-nav__header {
+      @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 27px, normal);
 
-    &:hover {
-      color: $font-color-white;
-      background-color: rgba($background-on-hover, .05);
-      text-decoration: none;
+      &:hover {
+        color: $font-color-white;
+        text-decoration: none;
+      }
     }
 
-    &.active {
-      text-decoration: none;
+    .footer-nav__item {
+
+      &:hover {
+        color: $font-color-white;
+        background-color: rgba($background-on-hover, .05);
+        text-decoration: none;
+      }
+
+      &.active {
+        text-decoration: none;
+      }
     }
   }
 }
+

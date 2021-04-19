@@ -2,10 +2,15 @@
 
 /* Block with "what we offer" */
 
-.we-offer {
+.we-offer-block {
   height: 480px;
+  margin: $container-margin;
   width: $container-width;
-  padding: 81px 208px;
+  background-color: $background-main-color-darker;
+  padding: 80px 0;
+}
+
+.we-offer {
   background-color: $background-main-color-darker;
   text-align: center;
 
@@ -51,8 +56,12 @@
 .home-page-text__advantages {
   height: 843px;
   width: $container-width;
-  padding: 80px 208px 10px;
   background-color: $background-color-black;
+
+  .advantages-content {
+    width: 1504px;
+    margin: $container-margin;
+  }
 
   table {
     width: 880px;
@@ -63,14 +72,13 @@
     }
 
     .advantage-text {
-      padding-left: 50px;
-
       @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
     }
   }
 
   .advantages-title {
     text-align: center;
+    padding-top: 96px;
 
     @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
   }
@@ -80,33 +88,11 @@
   }
 
   .phone-image {
-    float: right;
-    margin-top: -86px;
-    object-fit: contain;
+    position: absolute;
+    margin-left: 1153px;
+    margin-top: -90px;
     box-shadow: $box-shadow;
 
     @include box(384, 746);
   }
 }
-
-/*For viewing purpose, will be deleted =============================*/
-
-.for-viewing-purpose1 {
-  background-color: #0e0c08;
-  width: 100%;
-  height: 864px;
-}
-
-.for-viewing-purpose2 {
-  background-color: #0e0c08;
-  width: 100%;
-  height: 897px;
-}
-
-.for-viewing-purpose3 {
-  background-color: #242424;
-  width: 100%;
-  height: 1232px;
-}
-
-/*===================================================================*/

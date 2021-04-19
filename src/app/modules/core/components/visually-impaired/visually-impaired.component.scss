@@ -12,17 +12,19 @@ $inversion-bg: #88c2f7;
 $inversion-color: #0f2c57;
 
 .visual-aid-container {
-  margin-left: -208px;
-  margin-top: -40px;
-  background-color: rgba($background-color-black, .7);
   position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, 0);
+  background-color: rgba($background-color-black, .7);
   z-index: 100;
 
   @include box(1920, 1020);
 }
 
 .visually-impaired {
-  margin-left: 1585px;
+  float: right;
   background-color: $background-color-accent;
 
   @include box(335, 1020);

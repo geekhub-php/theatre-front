@@ -3,8 +3,6 @@
 .footer {
   height: 392px;
   width: $container-width;
-  margin: $container-margin;
-  padding: $container-padding;
   background-color: $background-main-color-darker;
 
   .footer__links {
@@ -49,17 +47,15 @@
 .scrollToTop {
   z-index: 20;
   position: absolute;
-  bottom: 67px;
+  margin-top: -500px;
   right: 1%;
   border-radius: 50%;
   border: none;
   outline: none;
   cursor: pointer;
-  flex-grow: 0;
-  margin-right: 32px;
-  margin-bottom: 372px;
   object-fit: contain;
-  font-size: 22px;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: $background-color-accent;
 
   @include box(48, 48);
