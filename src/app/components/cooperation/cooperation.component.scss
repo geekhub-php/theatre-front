@@ -148,7 +148,7 @@
   align-items: center;
 }
 
-.icons {
+.icons_container {
   display: flex;
   width: 345px;
   justify-content: space-between;
@@ -164,6 +164,7 @@
   padding-top: 56px;
   padding-bottom: 44px;
   text-align: center;
+  margin: 0;
 }
 
 .size {
