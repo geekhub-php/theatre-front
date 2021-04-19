@@ -13,7 +13,13 @@ export class ActorsSliderComponent implements OnInit, AfterContentChecked {
   randomEmployees: Array<Employee>;
 
   carouselTile: NguCarouselConfig = {
-    grid: { xs: 1, sm: 2, md: 3, lg: 4, all: 0 },
+    grid: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6, all: 0 },
+    gridBreakpoints: {
+      sm: 1100,
+      md: 1500,
+      lg: 1800,
+      xl: 2200,
+    },
     slide: 1,
     speed: 250,
     point: {
@@ -40,7 +46,6 @@ export class ActorsSliderComponent implements OnInit, AfterContentChecked {
     this.getway.getRandomEmployees()
       .subscribe((data: any) => {
         this.randomEmployees = data.employees;
-        console.log(this.randomEmployees, 'data');
       });
   }
 }

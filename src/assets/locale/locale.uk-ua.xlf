@@ -30,6 +30,22 @@
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="theaterActors" datatype="html">
+        <source>Theater actors</source>
+        <target>Актори театру</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/partials/actors-slider/actors-slider.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="showMore" datatype="html">
+        <source>Show more</source>
+        <target>Показати більше</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/partials/actors-slider/actors-slider.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="actors" datatype="html">
         <source>Actors</source>
         <target>Актори</target>

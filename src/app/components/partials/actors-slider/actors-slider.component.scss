@@ -22,7 +22,6 @@ a {
   color: #ffffff;
 }
 
-
 .all-prersons {
   display: flex;
   justify-content: center;
@@ -37,29 +36,7 @@ a {
   font-style: normal;
   line-height: 1.39;
   letter-spacing: normal;
-  text-align: right;
-}
-
-.bannerStyle div {
-  background-color: #ccc;
-  background-size: cover !important;
-  height: 100%;
-}
-
-.bannerStyle img {
-  width: 100%;
-  height: 100%;
-}
-
-.bannerStyle h1 {
   text-align: center;
-  background: rgba(0, 0, 0, 0.32);
-  color: white;
-  margin: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .image {
@@ -68,42 +45,29 @@ a {
   background-size: cover !important;
   width: 352px;
   height: 528px;
-  -o-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
-.tile {
-  box-shadow: none;
-}
-
-ngu-tile .tile {
-  box-shadow: none !important;
-}
-
 .image:hover {
-  -webkit-filter: none;
-  -moz-filter: none;
-  -ms-filter: none;
-  -o-filter: none;
   filter: none;
 }
 
-
 .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   position: absolute;
-  top: 270px;
   bottom: 0;
-  width: 48px;
-  height: 48px;
-  background-image: url("~assets/images/slider/chevron-left.svg");
-  left: 5px;
+  width: 70px;
   z-index: 1;
   -webkit-transition: all 0.3s ease;;
   -moz-transition: all 0.3s ease;;
   -o-transition: all 0.3s ease;;
   transition: all 0.3s ease;
   opacity: 1;
+  height: 100%;
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
 }
 
 .left:hover {
@@ -114,19 +78,21 @@ ngu-tile .tile {
 }
 
 .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 270px;
   bottom: 0;
-  width: 48px;
-  height: 48px;
+  width: 70px;
+  height: 100%;
   right: 5px;
-  background-image: url("~assets/images/slider/chevron-right.svg");
   z-index: 1;
   -webkit-transition: all 0.3s ease;;
   -moz-transition: all 0.3s ease;;
   -o-transition: all 0.3s ease;;
   transition: all 0.3s ease;
   opacity: 1;
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
 }
 
 .right:hover {
@@ -144,6 +110,9 @@ ngu-tile .tile {
   white-space: nowrap;
   overflow: auto;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .myPoint  li {
@@ -153,7 +122,7 @@ ngu-tile .tile {
   width: 12px;
   height: 12px;
   padding: 4px;
-  margin: 0 3px;
+  margin: 0 10px;
   transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
   transition: 0.4s;
   cursor: pointer;
@@ -162,4 +131,6 @@ ngu-tile .tile {
 .myPoint  li.active {
   background-color: #b49864;
   transform: scale(1.2);
+  width: 16px;
+  height: 16px;
 }

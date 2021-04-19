@@ -1,5 +1,5 @@
 <div class="wrapped">
-  <h3 class="title">Актори театру</h3>
+  <h3 class="title" i18n="@@theaterActors">Theater actors</h3>
   <ngu-carousel
     #myCarousel
     [inputs]="carouselTile"
@@ -21,12 +21,17 @@
         let i = index"
         [class.active]="j===myCarousel.activePoint"
         (click)="myCarousel.moveTo(i)"
-      ></li>
+      >
+      </li>
     </ul>
-    <div NguCarouselPrev class="left"></div>
-    <div NguCarouselNext class="right"></div>
+    <div NguCarouselPrev class="left">
+      <img alt="chevron-left" src="assets/images/slider/chevron-left.svg">
+    </div>
+    <div NguCarouselNext class="right">
+      <img alt="chevron-rigth" src="assets/images/slider/chevron-right.svg">
+    </div>
   </ngu-carousel>
   <div class="all-prersons">
-    <a routerLink="/persons" class="link-persons">Показати більше</a>
+    <a routerLink="/persons" class="link-persons" i18n="@@showMore">Show more</a>
   </div>
 </div>

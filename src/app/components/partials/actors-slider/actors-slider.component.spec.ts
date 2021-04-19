@@ -1,17 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+import { NguCarouselModule } from '@ngu/carousel';
 
 import { ActorsSliderComponent } from './actors-slider.component';
 
-describe('SliderComponent', () => {
+describe('PerformanceSliderComponent', () => {
   let component: ActorsSliderComponent;
   let fixture: ComponentFixture<ActorsSliderComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ActorsSliderComponent ]
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ ActorsSliderComponent ],
+      imports: [
+        HttpClientModule,
+        RouterModule,
+        RouterTestingModule,
+        NguCarouselModule,
+      ]
     })
-    .compileComponents();
-  });
+      .compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ActorsSliderComponent);

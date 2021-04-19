@@ -109,7 +109,7 @@ export class GatewayService {
   }
 
   getRandomEmployees(
-    limit: string = '6',
+    limit: string = '10',
     page: string = 'middle',
     locale: string = this.localeId
   ): Observable<Employee> {
