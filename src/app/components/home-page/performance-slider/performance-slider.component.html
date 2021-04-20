@@ -18,21 +18,21 @@
     <h3 class="performance-title">{{ data.title }}</h3>
     <div class="container">
       <div class="container__performance">
-        <img src="../../../assets/images/home-slider/performance-type.svg" alt="performance type image" class="image">
+        <img src="assets/images/home-slider/performance-type.svg" alt="performance type image" class="image">
         <p class="performance__type">{{ data.type }}</p>
       </div>
       <div class="container__performance">
-        <img src="../../../assets/images/home-slider/performance-data.svg" alt="due date image" class="image">
+        <img src="assets/images/home-slider/performance-data.svg" alt="due date image" class="image">
         <p class="tickets-day">{{ data.date | date: 'EEE, dd' }}</p>
         <p class="tickets-month">{{ data.date | date: 'MMMM' | lowercase }}</p>
       </div>
       <div class="container__performance">
-        <img src="../../../assets/images/home-slider/performance.venue.svg" alt="performance venue image" class="image">
+        <img src="assets/images/home-slider/performance.venue.svg" alt="performance venue image" class="image">
         <p class="performance__venue">{{ data.venuePerformance }}</p>
       </div>
     </div>
     <div class="container__button">
-      <a [href]="data.ticket" class="button-ticket" >Купити квиток</a>
+      <a [href]="data.ticket" class="button-ticket" i18n="@@buyTicket">Buy ticket</a>
     </div>
     <span class="age-restrictions">12+</span>
   </div>
@@ -40,9 +40,9 @@
 
 <ng-template #noPerformance>
   <div class="container-no-performance">
-    <img src="../../../assets/images/home-slider/no-performancex.png" alt="No performance" class="no-performance__image" >
+    <img src="../../../../assets/images/home-slider/no-performances.png" alt="No performance" class="no-performance__image" >
     <div class="no-performance__container-text">
-      <p class="no-performance__text">Наразі вистав немає</p>
+      <p class="no-performance__text" i18n="@@noPerformances">There are currently no events scheduled</p>
     </div>
   </div>
 </ng-template>
