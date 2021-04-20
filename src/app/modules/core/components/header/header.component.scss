@@ -2,7 +2,8 @@
 
 .header {
   height: 80px;
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: $container-width;
   box-shadow: $box-shadow;
   background-color: $background-main-color-darker;
@@ -131,15 +132,15 @@
 }
 
 .visual-aid-button {
-  margin-top: 340px;
+  margin-top: 240px;
 }
 
 .donate-button {
-  margin-top: 413px;
+  margin-top: 313px;
 }
 
 .visual-aid-button, .donate-button {
-  position: absolute;
+  position: fixed;
   right: 1%;
 
   @include box(64, 64);

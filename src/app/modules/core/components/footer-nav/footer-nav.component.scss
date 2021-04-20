@@ -11,7 +11,6 @@
     width: 100%;
 
     @include flex-space-between;
-    @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 35px, normal);
 
     .footer-nav__header {
       @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 27px, normal);
@@ -23,6 +22,10 @@
     }
 
     .footer-nav__item {
+      display: flex;
+      margin-top: 10px;
+
+      @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
 
       &:hover {
         color: $font-color-white;

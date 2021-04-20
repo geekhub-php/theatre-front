@@ -575,6 +575,14 @@
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="theatreWithYou" datatype="html">
+        <source>Theatre is always with you</source>
+        <target>Театр завжди з тобою</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="venue" datatype="html">
         <source>Venue:</source>
         <target>Місце проведення:</target>

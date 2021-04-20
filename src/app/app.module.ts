@@ -69,7 +69,7 @@ import { environment } from '../environments/environment';
     NewsListItemComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -83,7 +83,7 @@ import { environment } from '../environments/environment';
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
-    SpinnerModule,
+    SpinnerModule
   ],
   providers: [
     CalendarService,
@@ -91,5 +91,6 @@ import { environment } from '../environments/environment';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 

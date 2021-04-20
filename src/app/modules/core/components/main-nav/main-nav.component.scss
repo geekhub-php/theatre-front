@@ -3,6 +3,8 @@
 .header-nav {
   width: 826px;
   margin-left: 100px;
+  list-style-type: none;
+  padding-top: 16px;
 
   @include flex-space-between;
 

@@ -46,16 +46,14 @@
 
 .scrollToTop {
   z-index: 20;
-  position: absolute;
-  margin-top: -500px;
+  position: fixed;
+  bottom: 10%;
   right: 1%;
   border-radius: 50%;
   border: none;
   outline: none;
   cursor: pointer;
   object-fit: contain;
-  overflow-y: auto;
-  overflow-x: hidden;
   background-color: $background-color-accent;
 
   @include box(48, 48);
