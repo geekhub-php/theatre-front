@@ -151,15 +151,12 @@
 }
 
 .donate-block {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin: 0 -50% 0 0;
-  transform: translate(-50%, 0);
+  position: fixed;
   background-color: rgba($background-color-black, .7);
+  width: $container-width;
+  top: 0;
+  right: 0;
   z-index: 100;
-
-  @include box(1920, 1020);
 
   .donate-information {
     float: right;
@@ -191,6 +188,11 @@
       margin-left: 96px;
 
       @include box(144, 144);
+
+      &:hover {
+        @include border(2, solid, $border-color-active, 2px);
+        @include box(145, 145);
+      }
     }
 
     .closing-button {
