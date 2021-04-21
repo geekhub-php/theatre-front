@@ -44,6 +44,10 @@ import { SliderComponent } from './components/home-page/slider/slider.component'
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 
 import { environment } from '../environments/environment';
+import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
+import { ArchiveComponent } from './components/repertoire/archive/archive.component';
+import { ForKidsComponent } from './components/repertoire/for-kids/for-kids.component';
+import { ForAdultsComponent } from './components/repertoire/for-adults/for-adults.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import { environment } from '../environments/environment';
     ScheduleComponent,
     SideMenuComponent,
     SliderComponent,
-    NewsListItemComponent
+    NewsListItemComponent,
+    RepertoireNavHeaderComponent,
+    ArchiveComponent,
+    ForKidsComponent,
+    ForAdultsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
