@@ -1,8 +1,11 @@
 @import "~assets/styles/variables";
+$font-color-gray:#b6b6b4;
+$font-color-gold: #b49864;
 
 :host ::ng-deep a:hover {
   text-decoration: none;
 }
+
 
 .title {
   margin: 60px auto 0;
@@ -24,6 +27,57 @@
     &:hover {
       color: $main-color-darker;
       border: 1px solid $main-color-darker;
+    }
+  }
+}
+
+.poster__title {
+  margin: 0 auto;
+  max-width: 1504px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  h2 {
+    color: $font-color-gold;
+    font-size: 80px;
+  }
+}
+
+.poster__toggle {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__btn {
+    padding: 0;
+    margin-right: 8px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__text {
+    margin-right: 13px;
+    font-family: $Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $font-color-gray;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    &__active span {
+      color: $white-color;
     }
   }
 }
