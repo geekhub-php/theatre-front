@@ -1,6 +1,5 @@
 @import "~assets/styles/variables";
 
-
 .months-carousel {
   display: flex;
   flex-direction: row;
@@ -47,6 +46,7 @@
 
 
 .month_item {
+  cursor: pointer;
   text-align: center;
   width: 212px;
   height: 64px;
@@ -69,9 +69,12 @@
     font-weight: 800;
     color: #fff;
   }
+  &_active:hover {
+    color: #fff;
+  }
 }
 
-
+//
 :host ::ng-deep .ngucarousel {
   max-width: 1504px;
   //padding: 0 47px;
@@ -94,27 +97,3 @@
 .month_item_title {
   width: 212px !important;
 }
-
-
-//.ngucarouselPoint {
-//  list-style-type: none;
-//  text-align: center;
-//  padding: 12px;
-//  margin: 0;
-//  white-space: nowrap;
-//  overflow: auto;
-//  box-sizing: border-box;
-//}
-//.ngucarouselPoint li {
-//  display: inline-block;
-//  border-radius: 50%;
-//  border: 2px solid rgba(0, 0, 0, 0.55);
-//  padding: 4px;
-//  margin: 0 3px;
-//  transition-timing-function: cubic-bezier(.17, .67, .83, .67);
-//  transition: .4s;
-//}
-//.ngucarouselPoint li.active {
-//  background: #6b6b6b;
-//  transform: scale(1.2);
-//}
