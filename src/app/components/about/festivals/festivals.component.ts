@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { GatewayService } from "../../../services/gateway.service";
 import { History } from "../../../store/history/History";
 import { HistoryListResponse } from "../../../store/history/HistoryListResponse";
 import { LoaderService } from "../../partials/spinner/loader.service";
-
 @Component({
   selector: 'app-festivals',
   templateUrl: './festivals.component.html',
@@ -28,14 +27,11 @@ export class FestivalsComponent implements OnInit {
     this.getway.getHistoriesList().subscribe(
       (res: HistoryListResponse) => {
         this.listHistories = res.history;
-        // console.log(this.listHistories[0].text); // del
         this.loaderService.stop("about-festivals");
       },
-      (err) => this.loaderService.stop("about-festivals") // TODO: error handler
+      (err) => this.loaderService.stop("about-festivals") 
     );
     this.loaderService.start("about-festivals");
     this.getway.updateCanonicalURL();
-
   }
-
 }

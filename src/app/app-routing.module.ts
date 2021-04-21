@@ -27,12 +27,6 @@ import { DonateComponent } from './components/donate/donate.component';
 import { PageNotFoundComponent } from './modules/core/components/page-not-found/page-not-found.component';
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 
-// const aboutRoutes: Routes = [
-//   { path: 'visit', component: VisitComponent},
-//   { path: 'epoch', component: EpochComponent},
-//   { path: 'theatre-history', component: TheatreHistoryComponent},   // del all
-//   { path: 'festivals', component: FestivalsComponent}
-// ];
 
 const appRoutes: Routes = [
     {path: '', component: HomePageComponent},
@@ -41,7 +35,6 @@ const appRoutes: Routes = [
     {path: 'performance/:slug', component: PerformanceComponent},
     {path: 'news', component: NewsComponent},
     {path: 'news/:slug', component: ArticleComponent},
-    // { path: 'about', component: AboutComponent, children: aboutRoutes},
     {path: 'about', component: TheatreHistoryComponent},
     {path: 'about/theatre-history', component: TheatreHistoryComponent},
     {path: 'about/epoch', component: EpochComponent},
