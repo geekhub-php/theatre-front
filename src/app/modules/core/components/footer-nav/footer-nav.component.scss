@@ -8,7 +8,7 @@
   @include box(1504, 319.5);
 
   .footer-nav {
-    width: 100%;
+    width: $container-width;
 
     @include flex-space-between;
 

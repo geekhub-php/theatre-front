@@ -18,12 +18,13 @@ export class HeaderComponent {
   donateBlockVisible = false;
   bankDataIsDisplayed = false;
   search_text = 'Enter your search key word/words';
-  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
-
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
   }
+
+
+  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
 
   constructor(
     private router: Router,

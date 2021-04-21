@@ -3,17 +3,16 @@
 /* Block with "what we offer" */
 
 .we-offer-block {
-  height: 480px;
-  margin: $container-margin;
-  width: $container-width;
   background-color: $background-main-color-darker;
-  padding: 80px 0;
 }
 
 .we-offer {
-  background-color: $background-main-color-darker;
   text-align: center;
+  margin: $container-margin;
+  padding: 80px 0;
+  background-color: $background-main-color-darker;
 
+  @include box(1504, 480);
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
 
   .we-offer__title {
@@ -54,13 +53,21 @@
 /* Block with the advantages of using the mobile version */
 
 .home-page-text__advantages {
-  height: 843px;
-  width: $container-width;
+  width: 100%;
   background-color: $background-color-black;
 
   .advantages-content {
-    width: 1504px;
     margin: $container-margin;
+    background-color: $background-color-black;
+
+    @include box(1504, 843);
+
+    .advantages-title {
+      text-align: center;
+      padding-top: 96px;
+
+      @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+    }
   }
 
   ul {
@@ -91,21 +98,14 @@
     }
   }
 
-  .advantages-title {
-    text-align: center;
-    padding-top: 96px;
-
-    @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
-  }
 
   .advantage-number {
     @include font($body-font-family, 100px, $font-color-dark, $font-weight-semi-bold, 100px, normal);
   }
 
   .phone-image {
-    position: absolute;
-    margin-left: 1153px;
-    margin-top: -90px;
+    float: right;
+    margin-top: -95px;
     box-shadow: $box-shadow;
 
     @include box(384, 746);
@@ -114,16 +114,39 @@
 
 /*For the viewing purpose, can be deleted*/
 
-.poster-slider, .actors-carousel {
+.poster-slider {
+  width: $container-width;
   background-color: $background-color-black;
-  height: 864px;
+
+  &__component {
+    margin: $container-margin;
+    background-color: $background-color-black;
+
+    @include box(1504, 864);
+  }
 }
 
 .actors-carousel {
-  height: 897px;
+  width: $container-width;
+  background-color: $background-color-black;
+
+  &__component {
+    margin: $container-margin;
+    background-color: $background-color-black;
+
+    @include box(1504, 897);
+  }
 }
 
+
 .latest-news {
+  width: $container-width;
   background-color: $background-main-color-darker;
-  height: 1232px;
+
+  &__component {
+    margin: $container-margin;
+    background-color: $background-main-color-darker;
+
+    @include box(1504, 1232);
+  }
 }

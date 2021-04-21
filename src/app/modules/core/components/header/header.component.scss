@@ -11,6 +11,7 @@
 
   .navbar {
     margin: $container-margin;
+    background-color: $background-main-color-darker;
 
     @include box(1504, 80);
   }

@@ -2,19 +2,20 @@
 
 .footer {
   height: 392px;
-  width: $container-width;
   background-color: $background-main-color-darker;
 
   .footer__links {
-    height: 71.5px;
     flex-direction: row;
     list-style: none;
     gap: 40px;
     font-size: $font-size-small;
     color: $font-color-primary;
+    margin: $container-margin;
+    background-color: $background-main-color-darker;
     border-top: .05px solid $font-color-dark;
 
     @include flex-center;
+    @include box(1504, 71.5);
   }
 
   .copy {
