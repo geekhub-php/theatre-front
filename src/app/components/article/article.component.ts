@@ -5,7 +5,7 @@ import { NewsItem } from '../../store/news/NewsItem';
 import { GatewayService } from '../../services/gateway.service';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { plainToClass } from 'class-transformer';
-import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
 import { GalleryItem } from '../../store/news/GalleryItem';
 
 @Component({
@@ -19,7 +19,7 @@ export class ArticleComponent implements OnInit {
   gallery: Array<GalleryItem> = [];
   loading = false;
   galleryColumns = 4;
-  galleryRows = 1;
+  galleryRows = 2;
   galleryOptions: Array<NgxGalleryOptions> = [
     {
       image: false,
@@ -32,7 +32,9 @@ export class ArticleComponent implements OnInit {
       previewAnimation: false,
       previewFullscreen: true,
       previewInfinityMove: true,
-      previewBullets: true
+      previewBullets: true,
+      thumbnailsOrder: NgxGalleryOrder.Page,
+      thumbnailClasses: ['test']
     },
     {
       breakpoint: 770,
