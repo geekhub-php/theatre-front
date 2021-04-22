@@ -4,11 +4,13 @@
   <app-spinner name="about-more"></app-spinner>
 
   <div class="fest-navigation">
-    <h3>Головна / Про театр / Фестивалі /</h3>
-    <h3 class="fest-navigation-bold">&nbsp;Фестиваль</h3>
+    <h3  i18n="@@mainPage">Main page /</h3>
+    <h3 i18n="@@aboutTitle">&nbsp;About /</h3>
+    <h3 i18n="@@festivals">&nbsp;Festivals /</h3>
+    <h3 class="fest-navigation-bold" i18n="@@festival">&nbsp;Festival</h3>
   </div>
 
-  <h2 class="festTitle">Фестиваль</h2>
+  <h2 class="festTitle" i18n="@@festival">Festival</h2>
 
   <div class="history" *ngIf="history">
     <div class="history-title">
@@ -40,41 +42,39 @@
       <!--  -->
       
 
-      <div class="wrapped">
+      <!-- <div class="wrapped">
+ 
         <ngu-carousel
-          #myCarousel
-          [inputs]="carouselTile"
-          [dataSource]="history.performances"
-          class="slider"
-          *ngIf="history.performances?.length > 0"
-        >
-          <ngu-tile *nguCarouselDef="let item" >
-            <div
-              class="image"
-              [style.background]="'url(' + item.mainPicture.performance_big.url + ')'"
-              [routerLink]="['/performance', item.slug]"
-            >
-            </div>
-          </ngu-tile>
-          <ul class="myPoint" NguCarouselPoint>
-            <li
-              *ngFor="let j of myCarousel.pointNumbers;
-              let i = index"
-              [class.active]="j===myCarousel.activePoint"
-              (click)="myCarousel.moveTo(i)"
-            >
-            </li>
-          </ul>
-          <div NguCarouselPrev class="left">
-            <!-- <img alt="chevron-left" src="assets/images/slider/chevron-left.svg"> -->
-            left
+        #myCarousel
+        [inputs]="carouselTile"
+        [dataSource]="history.performances"
+        class="slider"
+      >
+        <ngu-tile *nguCarouselDef="let item" >
+          <div
+            class="image"
+            [style.background]="'url(' + item.mainPicture.performance_big.url + ')'"
+          >
           </div>
-          <div NguCarouselNext class="right">
-            <!-- <img alt="chevron-rigth" src="assets/images/slider/chevron-right.svg"> -->
-            right
-          </div>
-        </ngu-carousel>
-      </div>
+        </ngu-tile>
+        <ul class="myPoint" NguCarouselPoint>
+          <li
+            *ngFor="let j of myCarousel.pointNumbers;
+            let i = index"
+            [class.active]="j===myCarousel.activePoint"
+            (click)="myCarousel.moveTo(i)"
+          >
+          </li>
+        </ul>
+        <div NguCarouselPrev class="left">
+          left
+        </div>
+        <div NguCarouselNext class="right">
+          right
+        </div>
+      </ngu-carousel>
+
+      </div> -->
 
     </div>
   </div>
