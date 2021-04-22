@@ -4,13 +4,17 @@
 
   <app-spinner name="repertoire"></app-spinner>
 
-  <ul class="perfomances">
-    <li class="perfomance-item" *ngFor="let item of perfomances" [routerLink]="['', 'performance', item.slug]">
+  <p *ngIf="audience === null && !seasonNumber" i18n="@@allPerformances">All performances</p>
+  <p *ngIf="audience=== 'adults'" i18n="@@adults">For adults</p>
+  <p *ngIf="audience=== 'kids'" i18n="@@kids">For kids</p>
+  <p *ngIf="seasonNumber" i18n="@@archive">Archive</p>
+
+  <div class="perfomances">
+    <div class="perfomance-item" *ngFor="let item of perfomances">
       <div class="image-wraper" [routerLink]="['', 'performance', item.slug]">
         <img class="image" [src]="item.mainPicture.performance_big.url"
-             [alt]="item.mainPicture.performance_small.properties.alt"
-             [title]="item.mainPicture.performance_small.properties.title">
+             [alt]="item.mainPicture.performance_small.properties.alt" >
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>

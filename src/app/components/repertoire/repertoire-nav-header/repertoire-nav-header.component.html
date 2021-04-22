@@ -1,6 +1,34 @@
 <div class="nav-header-container">
-  <a class="item" routerLink="/repertoire/" routerLinkActive="active">All performance</a>
-  <a class="item" routerLink="/repertoire/for-adults" routerLinkActive="active">For adults</a>
-  <a class="item" routerLink="/repertoire/for-kids" routerLinkActive="active">For kids</a>
-  <a class="item" routerLink="/repertoire/archive" routerLinkActive="active">Archive</a>
+  <a class="item"
+    routerLink="/repertoire/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}"
+     i18n="@@allPerformances"
+  >
+    All performances
+  </a>
+  <a class="item"
+     routerLink="/repertoire/for-adults"
+     [queryParams]="{ audience: 'adults'}"
+     routerLinkActive="active"
+     i18n="@@adults"
+  >
+    For adults
+  </a>
+  <a class="item"
+     routerLink="/repertoire/kids"
+     [queryParams]="{ audience: 'kids'}"
+     routerLinkActive="active"
+     i18n="@@kids"
+  >
+    For kids
+  </a>
+  <a class="item"
+     routerLink="/repertoire/archive"
+     [queryParams]="{ season: -2 }"
+     routerLinkActive="active"
+     i18n="@@archive"
+  >
+    Archive
+  </a>
 </div>

@@ -29,7 +29,7 @@ export class RepertoireComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.seasonNumber = +this.activatedRoute.snapshot.queryParamMap.get('season') || this.CURRENT_SEASON;
+    this.seasonNumber = +this.activatedRoute.snapshot.paramMap.get('season') || this.CURRENT_SEASON;
     this.activatedRoute.queryParams.subscribe(params => {
       this.seasonNumber = params['season'] || this.CURRENT_SEASON;
       this.audience = params['audience'] || this.CURRENT_AUDIENCE;

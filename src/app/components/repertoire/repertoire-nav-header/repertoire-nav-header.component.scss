@@ -1,26 +1,31 @@
 .nav-header-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: #b49864;
   height: 56px;
 }
 
 .item {
+  padding: 0 15px;
+  font-family: 'Montserrat';
+  display: flex;
+  align-items: center;
   font-size: 18px;
-  height: 27px;
+  height: 56px;
   line-height: 1.5;
   color: #0e0c08;
+  font-weight: normal;
+
+  &.active {
+    line-height: 1.39;
+    background-color: #c7b28b;
+    font-weight: bold;
+  }
 }
 
 .nav-header-container a {
   text-decoration: none;
 }
 
-.item:active {
-  height: 25px;
-  background-color: #c7b28b;
-  line-height: 1.39;
-}
 
 

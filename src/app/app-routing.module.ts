@@ -13,9 +13,6 @@ import { TeamComponent } from './components/team/team.component';
 import { PersonComponent } from './components/person/person.component';
 
 import { RepertoireComponent } from './components/repertoire/repertoire.component';
-import { ArchiveComponent } from './components/repertoire/archive/archive.component';
-import { ForAdultsComponent } from './components/repertoire/for-adults/for-adults.component';
-import { ForKidsComponent } from './components/repertoire/for-kids/for-kids.component';
 import { PerformanceComponent } from './components/performance/performance.component';
 
 import { NewsComponent } from './components/news/news.component';
@@ -32,9 +29,7 @@ const appRoutes: Routes = [
     {path: '', component: HomePageComponent},
     {path: 'poster', component: ScheduleComponent},
     {path: 'repertoire', component: RepertoireComponent},
-    {path: 'repertoire/for-adults', component: ForAdultsComponent},
-    {path: 'repertoire/for-kids', component: ForKidsComponent},
-    {path: 'repertoire/archive', component: ArchiveComponent},
+    {path: 'repertoire/:slug', component: RepertoireComponent},
     {path: 'performance/:slug', component: PerformanceComponent},
     {path: 'news', component: NewsComponent},
     {path: 'news/:slug', component: ArticleComponent},
