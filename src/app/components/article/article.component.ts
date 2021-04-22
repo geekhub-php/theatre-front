@@ -17,24 +17,25 @@ export class ArticleComponent implements OnInit {
   item: NewsItem;
   posts: Array<NewsItem>;
   gallery: Array<GalleryItem> = [];
-  loading = false;
+  loading = true;
   galleryColumns = 4;
-  galleryRows = 2;
+  galleryRows = null;
+  thumbnailHeight = 240;
   galleryOptions: Array<NgxGalleryOptions> = [
     {
       image: false,
-      width: '1504px',
+      width: '100%',
       thumbnailsColumns: this.galleryColumns,
       thumbnailsRows: this.galleryRows,
       thumbnailMargin: 32,
-      thumbnailSize: NgxGalleryImageSize.Contain,
+      thumbnailSize: NgxGalleryImageSize.Cover,
       previewCloseOnEsc: true,
       previewAnimation: false,
       previewFullscreen: true,
-      previewInfinityMove: true,
       previewBullets: true,
       thumbnailsOrder: NgxGalleryOrder.Page,
-      thumbnailClasses: ['test']
+      arrowPrevIcon: 'fa fa-chevron-left',
+      arrowNextIcon: 'fa fa-chevron-right',
     },
     {
       breakpoint: 770,
@@ -65,10 +66,9 @@ export class ArticleComponent implements OnInit {
           this.gallery = res.gallery;
 
           if (this.gallery.length) {
-            this.galleryRows = Math.ceil(this.gallery.length / this.galleryColumns);
-            // this.galleryOptions[0].thumbnailsRows = Math.ceil(this.gallery.length / this.galleryColumns);
-            console.log('rows', this.galleryRows);
-            console.log('this.galleryRows', this.galleryRows);
+            this.galleryOptions[0].thumbnailsRows = Math.ceil(this.gallery.length / this.galleryColumns);
+            this.galleryRows = this.galleryOptions[0].thumbnailsRows;
+            this.galleryOptions[0].height = `${this.galleryRows * this.thumbnailHeight}px`;
             this.gallery.map(item => {
               this.galleryImages.push(
                 {
@@ -80,7 +80,7 @@ export class ArticleComponent implements OnInit {
             });
           }
         }
-        this.loading = true;
+        this.loading = false;
         this.loaderService.stop('article');
         this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture?.post_big?.url);
       },
