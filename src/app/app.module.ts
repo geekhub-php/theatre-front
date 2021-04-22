@@ -7,6 +7,7 @@ import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { CoreModule } from './modules/core/core.module';
 
@@ -86,6 +87,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
     SpinnerModule,
+    NgxPaginationModule
   ],
   providers: [
     CalendarService,

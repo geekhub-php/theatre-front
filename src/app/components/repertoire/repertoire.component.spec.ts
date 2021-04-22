@@ -1,26 +1,28 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { RepertoireComponent } from './repertoire.component';
-import { SpinnerModule } from '../partials/spinner/spinner.module';
-import { StripHtmlModule } from '../../pipes/strip-html.module';
+import { RepertoireNavHeaderComponent } from './repertoire-nav-header/repertoire-nav-header.component';
 
-describe('PerformanceListComponent', () => {
+describe('RepertoireComponent', () => {
   let component: RepertoireComponent;
   let fixture: ComponentFixture<RepertoireComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        RepertoireComponent,
-      ],
-      imports: [HttpClientModule,
+      declarations: [ RepertoireComponent, RepertoireNavHeaderComponent ],
+      imports: [
+        HttpClientModule,
+        RouterModule,
         RouterTestingModule,
-        SpinnerModule,
-        StripHtmlModule]
+        NgxPaginationModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

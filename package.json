@@ -44,6 +44,7 @@
     "express": "^4.15.2",
     "ngx-google-analytics": "^11.1.0",
     "ngx-infinite-scroll": "^7.1.1",
+    "ngx-pagination": "^5.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.6.3",
     "rxjs-compat": "^6.5.2",

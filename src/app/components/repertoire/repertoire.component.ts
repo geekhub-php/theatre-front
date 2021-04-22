@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { GatewayService } from '../../services/gateway.service';
@@ -13,6 +13,7 @@ import { LoaderService } from '../partials/spinner/loader.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RepertoireComponent implements OnInit {
+  p = 1;
   response: PerformanceListResponse;
   perfomances: Array<Performance>;
   seasonNumber: number;
@@ -35,10 +36,6 @@ export class RepertoireComponent implements OnInit {
       this.audience = params['audience'] || this.CURRENT_AUDIENCE;
       this.getPerformances(this.seasonNumber, this.audience);
     });
-    this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
-      'Репертуар Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
-      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
-    this.gateway.updateCanonicalURL();
   }
 
   getPerformances(seasonNumber: number, audience: 'kids' | 'adults' | null) {

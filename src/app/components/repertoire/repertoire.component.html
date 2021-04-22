@@ -1,20 +1,23 @@
 <app-repertoire-nav-header></app-repertoire-nav-header>
-<div class="container">
-  <h2 class="page-title text-center" i18n="@@repertoire">Repertoire</h2>
+<div class="wrapped">
+  <h2 class="wrapped__title" i18n="@@repertoire">Repertoire</h2>
 
   <app-spinner name="repertoire"></app-spinner>
 
-  <p *ngIf="audience === null && !seasonNumber" i18n="@@allPerformances">All performances</p>
-  <p *ngIf="audience=== 'adults'" i18n="@@adults">For adults</p>
-  <p *ngIf="audience=== 'kids'" i18n="@@kids">For kids</p>
-  <p *ngIf="seasonNumber" i18n="@@archive">Archive</p>
+  <p class="wrapped__active-nav" *ngIf="audience === null && !seasonNumber" i18n="@@allPerformances">All performances</p>
+  <p class="wrapped__active-nav" *ngIf="audience=== 'adults'" i18n="@@adults">For adults</p>
+  <p class="wrapped__active-nav" *ngIf="audience=== 'kids'" i18n="@@kids">For kids</p>
+  <p class="wrapped__active-nav" *ngIf="seasonNumber" i18n="@@archive">Archive</p>
 
-  <div class="perfomances">
-    <div class="perfomance-item" *ngFor="let item of perfomances">
-      <div class="image-wraper" [routerLink]="['', 'performance', item.slug]">
-        <img class="image" [src]="item.mainPicture.performance_big.url"
-             [alt]="item.mainPicture.performance_small.properties.alt" >
+  <div class="wrapped__perfomances">
+    <div class="perfomance__item" *ngFor="let item of perfomances | paginate: { itemsPerPage: 16, currentPage: p }">
+      <div class="item__container" [routerLink]="['', 'performance', item.slug]">
+        <img class="image-performance" [src]="item.mainPicture.performance_big.url"
+             [alt]="item.mainPicture.performance_small.properties.alt">
+        <span class="age-restrictions">12+</span>
       </div>
     </div>
   </div>
+
+  <pagination-controls (pageChange)="p = $event" directionLinks="true"></pagination-controls>
 </div>
