@@ -14,18 +14,15 @@
   height: 56px;
   line-height: 1.5;
   color: #0e0c08;
-  font-weight: normal;
+  font-weight: 400;
 
   &.active {
     line-height: 1.39;
     background-color: #c7b28b;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 
 .nav-header-container a {
   text-decoration: none;
 }
-
-
-
