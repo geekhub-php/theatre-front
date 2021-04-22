@@ -4,16 +4,15 @@
   height: 80px;
   position: sticky;
   top: 0;
-  width: $container-width;
+  width: $body-width;
   box-shadow: $box-shadow;
   background-color: $background-main-color-darker;
   z-index: 20;
 
   .navbar {
+    width: $container-width;
     margin: $container-margin;
     background-color: $background-main-color-darker;
-
-    @include box(1504, 80);
   }
 
   .language, .separation, .tickets-button {
@@ -152,12 +151,12 @@
 }
 
 .donate-block {
-  position: fixed;
-  background-color: rgba($background-color-black, .7);
-  width: $container-width;
+  width: $body-width;
   top: 0;
   right: 0;
   z-index: 100;
+  position: fixed;
+  background-color: rgba($background-color-black, .7);
 
   .donate-information {
     float: right;
@@ -166,15 +165,15 @@
     @include box(335, 1020);
 
     .donate-title {
-      text-align: center;
       margin-top: 52px;
+      text-align: center;
 
       @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 1.5, .36px);
     }
 
     .donate-requisites {
-      text-align: center;
       margin-top: 16px;
+      text-align: center;
 
       @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.36, normal);
     }

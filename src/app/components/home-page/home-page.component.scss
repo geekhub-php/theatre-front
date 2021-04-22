@@ -7,146 +7,87 @@
 }
 
 .we-offer {
-  text-align: center;
+  width: $container-width;
   margin: $container-margin;
   padding: 80px 0;
+  text-align: center;
   background-color: $background-main-color-darker;
 
-  @include box(1504, 480);
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
 
   .we-offer__title {
-    @include font($creative-font, 72px, $font-color-accent, $font-weight-normal, 1.5, normal);
+    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1.5, normal);
   }
 
   .we-offer__text {
-    width: 832px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: 18px 312px;
+    display: block;
     text-align: justify-all;
-  }
-
-  .we-offer__button {
-    margin-top: 25px;
-    background: transparent;
-
-    @include box(178, 48);
-    @include border(1, solid, $border-color-accent, 2px);
-
-    &:hover {
-      background: rgba($background-on-hover, .1);
-    }
-
-    a {
-      text-decoration: none;
-
-      @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5, normal);
-
-      &:hover {
-        color: $font-color-white;
-      }
-    }
   }
 }
 
 /* Block with the advantages of using the mobile version */
 
 .home-page-text__advantages {
-  width: 100%;
+  width: $body-width;
   background-color: $background-color-black;
 
   .advantages-content {
+    width: $container-width;
     margin: $container-margin;
     background-color: $background-color-black;
 
-    @include box(1504, 843);
-
     .advantages-title {
-      text-align: center;
       padding-top: 96px;
+      text-align: center;
 
       @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
     }
   }
 
-  ul {
-    width: 880px;
-    list-style: none;
+  .advantages {
     margin: 0;
-    padding: 0;
+    padding-right: 400px;
+    list-style: none;
 
-    li {
-      padding-top: 72px;
+    &__item-number {
+      justify-content: center;
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-      div {
-        justify-content: center;
-        display: inline-block;
-        vertical-align: middle;
-
-        span {
-          display: table-cell;
-          vertical-align: middle;
-        }
-      }
+    span {
+      display: table-cell;
+      vertical-align: middle;
     }
 
     .advantage-text {
-      padding-left: 33px;
+      padding: 72px 250px 0 30px;
 
       @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
     }
   }
 
-
   .advantage-number {
+    padding-top: 72px;
+
     @include font($body-font-family, 100px, $font-color-dark, $font-weight-semi-bold, 100px, normal);
+  }
+
+
+  .clearfix::after {
+    content: "";
+    clear: both;
   }
 
   .phone-image {
     float: right;
-    margin-top: -95px;
-    box-shadow: $box-shadow;
+    margin-top: -80px;
+    margin-bottom: 54px;
 
     @include box(384, 746);
   }
 }
 
-/*For the viewing purpose, can be deleted*/
-
-.poster-slider {
-  width: $container-width;
-  background-color: $background-color-black;
-
-  &__component {
-    margin: $container-margin;
-    background-color: $background-color-black;
-
-    @include box(1504, 864);
-  }
-}
-
-.actors-carousel {
-  width: $container-width;
-  background-color: $background-color-black;
-
-  &__component {
-    margin: $container-margin;
-    background-color: $background-color-black;
-
-    @include box(1504, 897);
-  }
-}
-
-
-.latest-news {
-  width: $container-width;
-  background-color: $background-main-color-darker;
-
-  &__component {
-    margin: $container-margin;
-    background-color: $background-main-color-darker;
-
-    @include box(1504, 1232);
-  }
-}

@@ -1,11 +1,11 @@
 @import "~assets/styles/variables";
 
 .footer-nav-block {
-  padding-top: 49px;
-  background-color: $background-main-color-darker;
+  width: $container-width;
   margin: $container-margin;
-
-  @include box(1504, 319.5);
+  padding-top: 48px;
+  padding-bottom: 20px;
+  background-color: $background-main-color-darker;
 
   .footer-nav {
     width: $container-width;

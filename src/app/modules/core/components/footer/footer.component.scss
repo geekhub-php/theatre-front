@@ -1,10 +1,11 @@
 @import "~assets/styles/variables";
 
 .footer {
-  height: 392px;
   background-color: $background-main-color-darker;
 
   .footer__links {
+    width: $container-width;
+    padding: 22px 0;
     flex-direction: row;
     list-style: none;
     gap: 40px;
@@ -15,7 +16,6 @@
     border-top: .05px solid $font-color-dark;
 
     @include flex-center;
-    @include box(1504, 71.5);
   }
 
   .copy {

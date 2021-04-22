@@ -50,10 +50,11 @@ body, html {
   height: 100%;
   font-family: $body-font-family;
   color: $font-color-primary;
+  background-color: $background-color-black;
 }
 
 body {
-  width: 100%;
+  width: $body-width;
 }
 
 .spinner-grow {

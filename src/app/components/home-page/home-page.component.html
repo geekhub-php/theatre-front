@@ -12,7 +12,7 @@
       <h1 class="we-offer__title">Offer for you</h1>
       <div class="we-offer__text">
 
-        <!--The appropriate "Offer for you" text needs to be added here; the translation of it should be executed in "locale" files-->
+        <!--TODO: The appropriate "Offer for you" text needs to be added here; the translation of it should be executed in "locale" files-->
 
         <p>Щоб ви не пропустили жодного концерту від улюблених зірок, змогли потрапити на важливу
           театральну прем'єру і встигли купити квитки на краще дійство для дітей ми створили цей сайт.
@@ -20,9 +20,8 @@
         </p>
         <p>Також запрошуємо до співпраці колективи, організації, виставки.</p>
       </div>
-      <button class="we-offer__button" routerLink="/donate" routerLinkActive="active">
-        <a class="we-offer__link" i18n="@@cooperationBtn">Cooperation</a>
-      </button>
+      <a class="link-buttons" routerLink="/donate" routerLinkActive="active"
+         i18n="@@cooperationBtn">Cooperation</a>
     </div>
   </div>
 
@@ -41,48 +40,50 @@
   <div class="home-page-text__advantages">
     <div class="advantages-content">
       <div class="advantages-title" i18n="theatreWithYou">Theatre is always with you</div>
-      <img src="assets/images/Group%20305/Group 305@3x.png" alt="Phone with invitation to the theatre on the screen"
-           title="Cherkassy Theatre of Taras Shevchenko welcomes you!" class="phone-image">
-      <ul class="advantages">
-        <li>
-          <div class="in">
-            <span class="advantage-number">1</span>
+      <div class="clearfix">
+        <img src="assets/images/Group%20305/Group 305@3x.png" alt="Phone with invitation to the theatre on the screen"
+             title="Cherkassy Theatre of Taras Shevchenko welcomes you!" class="phone-image">
+        <ul class="advantages">
+          <li class="advantages__item">
+            <div class="advantage__item-number">
+              <span class="advantage-number">1</span>
 
-            <!--New "advantage text" should be created-->
+              <!--TODO: New "advantage text" should be created-->
 
-            <span class="advantage-text">
+              <span class="advantage-text">
             Ви завжди зможете купити квитки we denounce with righteous indignation
             and dislike men who are so beguiled and demoralized by the charms of the pleasure of the moment, so blinded by desire.
             </span>
-          </div>
-        </li>
-        <li>
-          <div>
-            <span class="advantage-number">2</span>
+            </div>
+          </li>
+          <li class="advantages__item">
+            <div class="advantage__item-number">
+              <span class="advantage-number">2</span>
 
-            <!--New "advantage text" should be created-->
+              <!--TODO: New "advantage text" should be created-->
 
-            <span class="advantage-text">
+              <span class="advantage-text">
             Ми викладуємо актуальну інформацію the other hand, we denounce with righteous indignation
             and dislike men who are so beguiled and demoralized by the charms of the pleasure of the moment, so blinded by desire,
             that they cannot foresee the pain and trouble that are bound to ensue.
             </span>
-          </div>
-        </li>
+            </div>
+          </li>
 
-        <li>
-          <div>
-            <span class="advantage-number">3</span>
+          <li class="advantages__item">
+            <div class="advantage__item-number">
+              <span class="advantage-number">3</span>
 
-            <!--New "advantage text" should be created-->
+              <!--TODO: New "advantage text" should be created-->
 
-            <span class="advantage-text">
+              <span class="advantage-text">
             Чекаємо вас на наших виставах n the other hand, we denounce with righteous indignation
             and dislike men.
             </span>
-          </div>
-        </li>
-      </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
