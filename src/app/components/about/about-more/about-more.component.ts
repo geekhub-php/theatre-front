@@ -1,6 +1,6 @@
-import { Component, OnInit,  AfterContentChecked, ChangeDetectorRef  } from '@angular/core';
+import { Component, OnInit, AfterContentChecked, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NguCarouselConfig } from '@ngu/carousel'; 
+import { NguCarouselConfig } from '@ngu/carousel';
 
 import { GatewayService } from '../../../services/gateway.service';
 import { History } from '../../../store/history/History';
@@ -14,16 +14,8 @@ import { LoaderService } from '../../partials/spinner/loader.service';
 })
 export class AboutMoreComponent implements OnInit, AfterContentChecked  {
   history: History;
-  performanses: any;
 
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    private route: ActivatedRoute,
-    private gateway: GatewayService,
-    private loaderService: LoaderService
-  ) { }
-
-  public carouselTile: NguCarouselConfig = {
+  carouselTile: NguCarouselConfig = {
     grid: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6, all: 0 },
     gridBreakpoints: {
       sm: 1100,
@@ -43,12 +35,17 @@ export class AboutMoreComponent implements OnInit, AfterContentChecked  {
     easing: 'cubic-bezier(0, 0, 0.2, 1)'
   };
 
+  constructor(
+    private _cdr: ChangeDetectorRef,
+    private route: ActivatedRoute,
+    private gateway: GatewayService,
+    private loaderService: LoaderService
+  ) { }
+
   ngAfterContentChecked(): void {
     this._cdr.detectChanges();
-    // console.log('ngAfterContentChecked');
-    // console.log(this.history);
   }
-  
+
   ngOnInit() {
     const slug = this.route.snapshot.params.slug;
     this.loaderService.start('about-more');
@@ -66,5 +63,4 @@ export class AboutMoreComponent implements OnInit, AfterContentChecked  {
       );
     this.gateway.updateCanonicalURL();
   }
-  
 }

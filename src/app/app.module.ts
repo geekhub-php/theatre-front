@@ -31,10 +31,10 @@ import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
 import { FestivalsComponent } from './components/about/festivals/festivals.component';
-import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component'; 
-import { AboutHeaderComponent } from './components/about/about-header/about-header.component'; 
-import { EpochComponent } from './components/about/epoch/epoch.component';  
-import { VisitComponent } from './components/about/visit/visit.component';  
+import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component';
+import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
+import { EpochComponent } from './components/about/epoch/epoch.component';
+import { VisitComponent } from './components/about/visit/visit.component';
 
 import { StripHtmlModule } from './pipes/strip-html.module';
 

@@ -101,18 +101,18 @@ export class GatewayService {
   }
 
   getEmployees(locale: string = this.localeId): Observable<Employee> {
-    return this.http.get<Employee>( 
+    return this.http.get<Employee>(
       `${this.baseUrl}/${this.employeesListUrl}`, {params: {locale}}
     ).pipe(
       catchError(this.handleError('get Employees list', new Employee()))
     );
   }
 
-  getEmployeesList(locale: string = this.localeId): Observable<EmployeesListResponse> { // was Observable<Employee>
-    return this.http.get<EmployeesListResponse>(  
+  getEmployeesList(locale: string = this.localeId): Observable<EmployeesListResponse> {
+    return this.http.get<EmployeesListResponse>(
       `${this.baseUrl}/${this.employeesListUrl}`, {params: {locale}}
     ).pipe(
-      catchError(this.handleError('get Employees list', new EmployeesListResponse())) 
+      catchError(this.handleError('get Employees list', new EmployeesListResponse()))
     );
   }
 
@@ -157,12 +157,12 @@ export class GatewayService {
     limit: string = '5',
     locale: string = this.localeId
   ): Observable<PerformanceEventResponse> {
-    const options: WidgetResType = { 
-      fromDate: fromDate.toString(), 
-      limit, 
-      locale 
+    const options: WidgetResType = {
+      fromDate: fromDate.toString(),
+      limit,
+      locale
     };
-    if (performance) { 
+    if (performance) {
       options.performance = performance;
     }
 
@@ -171,7 +171,7 @@ export class GatewayService {
 
     return this.http
       .get<PerformanceEventResponse>(
-        `${this.baseUrl}/${this.performanceEventsListUrl}`, 
+        `${this.baseUrl}/${this.performanceEventsListUrl}`,
         { params: params }
       )
       .pipe(
@@ -182,7 +182,7 @@ export class GatewayService {
   getHistoryBySlug(slug: string, locale: string =  this.localeId): Observable<History> {
     return this.http
       .get<History>(
-        `${this.baseUrl}/histories/${slug}`, 
+        `${this.baseUrl}/histories/${slug}`,
         { params: { locale } }
       )
       .pipe(
@@ -191,13 +191,13 @@ export class GatewayService {
   }
 
   getNews(
-    limit: string = '10', 
-    page: number = 1, 
+    limit: string = '10',
+    page: number = 1,
     locale: string = this.localeId
   ): Observable<NewsListResponse> {
     return this.http
       .get<NewsListResponse>(
-        `${this.baseUrl}/${this.newsListUrl}`, 
+        `${this.baseUrl}/${this.newsListUrl}`,
         {
           params: {limit, page: page.toString(), locale}
         }

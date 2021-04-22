@@ -6,9 +6,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 
 import { AboutMoreComponent } from './components/about/about-more/about-more.component';
 import { FestivalsComponent } from './components/about/festivals/festivals.component';
-import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component'; 
-import { EpochComponent } from './components/about/epoch/epoch.component';  
-import { VisitComponent } from './components/about/visit/visit.component';  
+import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component';
+import { EpochComponent } from './components/about/epoch/epoch.component';
+import { VisitComponent } from './components/about/visit/visit.component';
 
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
@@ -39,7 +39,7 @@ const appRoutes: Routes = [
     {path: 'about/theatre-history', component: TheatreHistoryComponent},
     {path: 'about/epoch', component: EpochComponent},
     {path: 'about/festivals', component: FestivalsComponent},
-    {path: 'about/visit', component: VisitComponent},    
+    {path: 'about/visit', component: VisitComponent},
     {path: 'about/festivals/:slug', component: AboutMoreComponent},
     {path: 'persons', component: TeamComponent},
     {path: 'persons/:slug', component: PersonComponent},
