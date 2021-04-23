@@ -21,9 +21,8 @@ import { ArticleComponent } from './components/article/article.component';
 import { BoardTrusteesComponent } from './components/board-trustees/board-trustees.component';
 import { DonateComponent } from './components/donate/donate.component';
 
-import { PageNotFoundComponent } from './modules/core/components/page-not-found/page-not-found.component';
+/*import { PageNotFoundComponent } from './modules/core/components/page-not-found/page-not-found.component';*/
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
-import { PartnersComponent } from './components/partners/partners.component';
 
 
 const appRoutes: Routes = [
@@ -40,8 +39,7 @@ const appRoutes: Routes = [
     {path: 'contacts', component: ContactsComponent},
     {path: 'board-trustees', component: BoardTrusteesComponent},
     {path: 'donate', component: DonateComponent},
-    {path: 'developers-team', component: DevTeamComponent},
-    {path: 'partners', component: PartnersComponent}
+    {path: 'developers-team', component: DevTeamComponent}
   // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup
 ];
 
