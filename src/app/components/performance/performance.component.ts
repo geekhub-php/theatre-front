@@ -8,6 +8,7 @@ import { LoaderService } from '../partials/spinner/loader.service';
 import { GatewayService } from '../../services/gateway.service';
 import { Performance } from '../../store/performance/Performance';
 import { Role } from '../../store/Role';
+import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
 
 
 @Component({
@@ -19,8 +20,25 @@ export class PerformanceComponent implements OnInit {
   performance: Performance;
   slug: string;
   roles: Array<Role>;
-
   activeId: string;
+  galleryImages: Array<NgxGalleryImage> = [];
+  galleryOptions: Array<NgxGalleryOptions> = [
+    {
+      image: false,
+      width: '100%',
+      thumbnailsColumns: 4,
+      thumbnailsRows: 1,
+      thumbnailMargin: 30,
+      thumbnailSize: NgxGalleryImageSize.Cover,
+      previewCloseOnEsc: true,
+      previewAnimation: false,
+      previewFullscreen: true,
+      previewBullets: true,
+      thumbnailsOrder: NgxGalleryOrder.Page,
+      arrowPrevIcon: 'fa fa-chevron-left',
+      arrowNextIcon: 'fa fa-chevron-right',
+    },
+  ];
 
   constructor(private gateway: GatewayService,
               private router: ActivatedRoute,
@@ -37,7 +55,17 @@ export class PerformanceComponent implements OnInit {
       this.gateway.getPerformanceRoles(slug)
     ]).subscribe(([performance, roles]) => {
       this.performance = performance.body;
+      console.log(this.performance);
       this.roles = roles;
+      // this.performance.sliderImage.map(item => {
+      //   this.galleryImages.push(
+      //     {
+      //       small: item.images.post_main.url,
+      //       medium: item.images.post_main.url,
+      //       big: item.images.post_big.url,
+      //     }
+      //   );
+      // });
 
       this.gateway.updateMeta(this.performance.title,
         this.performance.description,
