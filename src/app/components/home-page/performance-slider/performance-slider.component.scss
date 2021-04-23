@@ -82,7 +82,7 @@ gallery {
   font-weight: 600;
   display: flex;
   justify-content: center;
-  font-family: Montserrat-SemiBold;
+  font-family: 'Montserrat', serif;
   font-size: 40px;
   font-stretch: normal;
   font-style: normal;
@@ -112,6 +112,11 @@ gallery {
 }
 
 .button-ticket {
+  font-size: 18px;
+  font-family: 'Montserrat', serif;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.36px;
   color: #fff;
   border: solid 1px #fff;
   border-radius: 2px;
@@ -135,14 +140,14 @@ gallery {
   color: #fff;
   line-height: 1.5;
   height: 27px;
-  font-family: Montserrat-SemiBold;
+  font-family: 'Montserrat', serif;
   font-size: 18px;
   text-align: left;
 }
 
 .performance__type {
   height: 27px;
-  font-family: Montserrat-SemiBold;
+  font-family: 'Montserrat', serif;
   font-size: 18px;
   line-height: 1.5;
   text-align: left;
