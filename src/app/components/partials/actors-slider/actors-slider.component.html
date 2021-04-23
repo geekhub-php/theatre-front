@@ -17,9 +17,8 @@
     </ngu-tile>
     <ul class="myPoint" NguCarouselPoint>
       <li
-        *ngFor="let j of myCarousel.pointNumbers;
-        let i = index"
-        [class.active]="j===myCarousel.activePoint"
+        *ngFor="let j of myCarousel.pointNumbers; let i = index"
+        [class.active]="j === myCarousel.activePoint"
         (click)="myCarousel.moveTo(i)"
       >
       </li>
