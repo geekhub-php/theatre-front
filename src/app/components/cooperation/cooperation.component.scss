@@ -150,7 +150,7 @@
 
 .icons_container {
   display: flex;
-  width: 345px;
+  max-width: 345px;
   justify-content: space-between;
 }
 
@@ -188,6 +188,7 @@
   background-color: #323232;
   border-radius: 2px;
   border: solid 1px #fff;
+  text-decoration: none;
 }
 
 .load_as {
