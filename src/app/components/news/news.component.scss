@@ -38,6 +38,9 @@ ngb-pagination ::ng-deep li:not(.active) a {
   border: none;
   width: 32px !important;
   height: 32px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 ngb-pagination ::ng-deep ul > li.active > a {
@@ -51,4 +54,7 @@ ngb-pagination ::ng-deep ul > li.active > a {
   border: solid 2px #868583 !important;
   width: 32px !important;
   height: 32px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
