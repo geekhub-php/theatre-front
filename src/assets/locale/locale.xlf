@@ -27,6 +27,10 @@
           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="actors" datatype="html">
         <source>Actors</source>
@@ -125,7 +129,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="artProduction" datatype="html">
@@ -140,7 +144,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">55</context>
        </context-group>
       </trans-unit>
       <trans-unit id="administrative" datatype="html">
@@ -212,7 +216,7 @@
         <source>Documentation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsDirector" datatype="html">
