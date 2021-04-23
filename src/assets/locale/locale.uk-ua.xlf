@@ -583,7 +583,7 @@
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="@@ukrainianCulturalFoundation" datatype="html">
+      <trans-unit id="ukrainianCulturalFoundation" datatype="html">
         <source>Ukrainian Cultural Foundation</source>
         <target>Український культурний фонд</target>
         <context-group purpose="location">
