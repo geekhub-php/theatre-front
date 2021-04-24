@@ -45,6 +45,7 @@ import { SliderComponent } from './components/home-page/slider/slider.component'
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 
 import { environment } from '../environments/environment';
+import { BreadcrumbComponent } from './components/partials/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { environment } from '../environments/environment';
     SideMenuComponent,
     SliderComponent,
     NewsListItemComponent,
-    PartnersComponent
+    PartnersComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
