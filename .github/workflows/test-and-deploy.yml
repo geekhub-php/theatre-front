@@ -62,8 +62,8 @@ jobs:
         run: npm run lint-css
       - name: Unit tests
         run: ng test --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage=true
-      - name: E2E tests
-        run: node_modules/.bin/webdriver-manager update --versions.chrome=92 && CHROME_BIN=$(which chrome) ng e2e
+#      - name: E2E tests
+#        run: node_modules/.bin/webdriver-manager update --versions.chrome=92 && CHROME_BIN=$(which chrome) ng e2e
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         if: ${{ always() }}
