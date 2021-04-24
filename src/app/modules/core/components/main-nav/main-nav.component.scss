@@ -1,12 +1,19 @@
 @import "~assets/styles/variables";
 
+:host {
+  margin: 0 auto;
+}
+
 .header-nav {
-  width: 826px;
-  margin-left: 100px;
   list-style-type: none;
-  padding-top: 16px;
+  margin: 0;
+  padding: 16px 0;
 
   @include flex-space-between;
+
+  li + li {
+    margin-left: 30px;
+  }
 
   .header-nav__link {
     flex-direction: row;
