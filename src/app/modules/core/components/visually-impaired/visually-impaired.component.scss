@@ -11,141 +11,84 @@ $sepia-color: #80502b;
 $inversion-bg: #88c2f7;
 $inversion-color: #0f2c57;
 
-:host {
-  display: block;
-  border-bottom: 1px solid rgba($white-color, .2);
+.visual-aid-container {
+  position: fixed;
+  background-color: rgba($background-color-black, .7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .visually-impaired {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.1rem 0 1.3rem;
-  font-size: 1.1rem;
+  float: right;
+  background-color: $background-color-accent;
+
+  width: 335px;
+  height: 100%;
+
+  .opera-glasses {
+    margin-top: 139px;
+    margin-left: 64px;
+
+    @include box(208, 205);
+  }
+
+  text-align: center;
+
+  img {
+    @include box(48, 32);
+  }
 }
 
 .color-schemes {
 
   &__text {
-    text-align: center;
-    margin-bottom: 5px;
-    color: $white-color;
-  }
+    margin-top: 13px;
 
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__buttons {
-    margin: 0 5px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
+    @include font($body-font-family, 1.1rem, $font-color-white, $font-weight-bold, $line-height-basic, normal)
   }
 
   &__button {
-    @extend .u-unstyled-btn;
+    margin-left: 140px;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: none;
+    outline: none;
+    border: none;
 
-    color: $white-color;
+    & > .hover {
+      min-width: 10.714rem;
+      max-width: 21.429rem;
+      top: 2.5rem;
+      left: -1rem;
+      z-index: 99;
+      display: none;
+      position: absolute;
+      color: $font-color-white;
+      background-color: $background-color-active;
 
-    &.--black-white,
-    &.--white-black,
-    &.--yellow-black,
-    &.--black-yellow,
-    &.--blue-yellow,
-    &.--green-white,
-    &.--white-green,
-    &.--sepia,
-    &.--inversion {
-      position: relative;
+      @include border(.5, solid, $background-main-color-lighter, 5px)
+    }
 
-      & > .hover {
-        display: none;
-        position: absolute;
-        z-index: 99;
-        top: 2.5rem;
-        left: -1rem;
-        min-width: 10.714rem;
-        max-width: 21.429rem;
-        background-color: $secondary-color;
-        color: $white-color;
-        border-radius: 5px;
-      }
+    &:hover > .hover {
+      display: block;
 
-      &:hover > .hover {
+      &::before {
+        width: .714rem;
+        height: .714rem;
+        top: -.286rem;
+        left: 1.571rem;
+        z-index: -1;
         display: block;
-
-        &::before {
-          display: block;
-          content: "";
-          position: absolute;
-          top: -.286rem;
-          left: 1.571rem;
-          width: .714rem;
-          height: .714rem;
-          z-index: -1;
-          transform: rotate(135deg);
-          background-color: $secondary-color;
-        }
+        content: "";
+        position: absolute;
+        transform: rotate(135deg);
+        background-color: $background-color-active;
       }
-    }
-
-    &.--black-white {
-      background-color: $black-color;
-      color: $white-color;
-    }
-
-    &.--white-black {
-      background-color: $white-color;
-      color: $black-color;
-    }
-
-    &.--yellow-black {
-      background-color: $black-color;
-      color: $yellow-color;
-    }
-
-    &.--black-yellow {
-      background-color: $yellow-color;
-      color: $black-color;
-    }
-
-    &.--yellow-blue {
-      background-color: $yellow-color;
-      color: $blue-color;
-    }
-
-    &.--blue-yellow {
-      background-color: $blue-color;
-      color: $yellow-color;
-    }
-
-    &.--green-white {
-      background-color: $green-color;
-      color: $white-color;
-    }
-
-    &.--white-green {
-      background-color: $white-color;
-      color: $green-color;
-    }
-
-    &.--sepia {
-      background-color: $sepia-bg;
-      color: $sepia-color;
-    }
-
-    &.--inversion {
-      background-color: $inversion-bg;
-      color: $inversion-color;
     }
   }
 }
@@ -153,38 +96,41 @@ $inversion-color: #0f2c57;
 .size-fonts {
 
   &__text {
-    text-align: center;
-    margin-bottom: 5px;
-    color: $white-color;
+    margin-top: 75px;
+
+    @include font($body-font-family, 1.1rem, $font-color-white, $font-weight-bold, $line-height-basic, normal)
   }
 
   &__buttons {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 16px;
+    margin-right: 138px;
+    background: none;
+    outline: none;
+    border: none;
   }
 
   &__button {
     @extend .u-unstyled-btn;
 
     position: relative;
-    border: 1px solid $white-color;
-    margin: 0 5px;
-    color: $white-color;
-    min-width: 36px;
+    margin-left: 144px;
+    min-width: 48px;
 
     & > .hover-font {
-      display: none;
-      position: absolute;
-      z-index: 99;
-      top: 2.5rem;
-      left: -14px;
       min-width: 10.714rem;
       max-width: 21.429rem;
-      background-color: $secondary-color;
-      color: $white-color;
-      border-radius: 5px;
+      top: 2.5rem;
+      left: -1rem;
+      z-index: 99;
+      display: none;
+      position: absolute;
+      color: $font-color-white;
+      background-color: $background-color-active;
+
+      @include border(.5, solid, $background-main-color-lighter, 5px)
     }
 
     &:hover > .hover-font {
@@ -200,33 +146,40 @@ $inversion-color: #0f2c57;
         height: .714rem;
         z-index: -1;
         transform: rotate(135deg);
-        background-color: $secondary-color;
+        background-color: $background-color-active;
       }
-    }
-
-    &:hover {
-      background-color: rgba($white-color, .3);
     }
   }
 }
 
 .close-disable {
 
-  &__buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
+  &__button {
+    color: $font-color-white;
+
+    @extend .u-unstyled-btn;
   }
 
-  &__button {
-    @extend .u-unstyled-btn;
+  .closing-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    transition: .3s ease;
 
-    margin: 0 5px;
-    color: $white-color;
+    @include box(48, 48);
 
     &:hover {
-      background-color: rgba($white-color, .3);
+      @include border(2, solid, $border-color-light, 2px);
     }
+  }
+}
+
+.reset-button {
+  position: absolute;
+  right: 154px;
+  bottom: 392px;
+
+  &:hover {
+    color: $font-color-dark;
   }
 }
