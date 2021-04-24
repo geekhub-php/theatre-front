@@ -14,7 +14,7 @@
           <context context-type="linenumber">2</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
@@ -27,20 +27,28 @@
           <context context-type="linenumber">2</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="personalities" datatype="html">
        <source>Personalities</source>
        <target>Персоналії</target>
        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
             <context context-type="linenumber">9</context>
             </context-group>
           <context-group purpose="location">
-            <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+            <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
             <context context-type="linenumber">40</context>
+          </context-group>
+          <context-group purpose="location">
+            <context context-type="sourcefile">src/app/components/board-trustees/board-trustees.component.html</context>
+            <context context-type="linenumber">28</context>
           </context-group>
       </trans-unit>
       <trans-unit id="actors" datatype="html">
@@ -55,7 +63,7 @@
         <source>Orchestra</source>
         <target>Оркестр</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
@@ -63,7 +71,7 @@
         <source>Ballet</source>
         <target>Балет</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
@@ -71,7 +79,7 @@
         <source>All performances</source>
         <target>Всі вистави</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
@@ -87,11 +95,11 @@
         <source>About</source>
         <target>Про театр</target>
            <context-group purpose="location">
-           <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
         <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
-           <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
            <context context-type="linenumber">28</context>
         </context-group>
         <context-group purpose="location">
@@ -107,7 +115,7 @@
           <context context-type="linenumber">2</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
@@ -123,8 +131,8 @@
           <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="artProduction" datatype="html">
@@ -139,8 +147,8 @@
           <context context-type="linenumber">22</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="administrative" datatype="html">
@@ -179,7 +187,7 @@
         <source>Deputies</source>
         <target>Заступники</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
@@ -227,7 +235,7 @@
            <context context-type="linenumber">11</context>
          </context-group>
           <context-group purpose="location">
-            <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+            <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
             <context context-type="linenumber">57</context>
           </context-group>
       </trans-unit>
@@ -235,7 +243,7 @@
        <source>Accounting</source>
        <target>Бухгалтерія</target>
          <context-group purpose="location">
-           <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
            <context context-type="linenumber">59</context>
          </context-group>
         </trans-unit>
@@ -251,7 +259,7 @@
         <source>Connections</source>
         <target>Звʼязки</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
@@ -259,7 +267,7 @@
         <source>Cooperation</source>
         <target>Співпраця</target>
            <context-group purpose="location">
-             <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+             <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
              <context context-type="linenumber">67</context>
            </context-group>
          </trans-unit>
@@ -274,9 +282,29 @@
       <trans-unit id="partners" datatype="html">
         <source>Partners</source>
         <target>Партнери</target>
+          <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/partners/partners.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="kindPeople" datatype="html">
+        <source>Kind people</source>
+        <target>Добрі люди</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/partners/partners.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companies" datatype="html">
+        <source>Companies</source>
+        <target>Компанії</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/partners/partners.component.html</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsEmail" datatype="html">
@@ -331,11 +359,11 @@
           <context context-type="linenumber">7</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
@@ -415,7 +443,7 @@
         <source>History</source>
         <target>Історія театру</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
@@ -423,7 +451,7 @@
         <source>Festivals</source>
         <target>Фестивалі</target>
          <context-group purpose="location">
-           <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
            <context context-type="linenumber">29</context>
          </context-group>
       </trans-unit>
@@ -431,7 +459,7 @@
         <source>Epoch</source>
         <target>Епоха</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
@@ -439,7 +467,7 @@
         <source>Visit</source>
         <target>Візит до театру</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">31</context>
          </context-group>
       </trans-unit>
@@ -447,8 +475,8 @@
         <source>Documentation</source>
         <target>Документація</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer-nav.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="roles" datatype="html">
@@ -479,7 +507,7 @@
           <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
@@ -555,7 +583,7 @@
           <context context-type="linenumber">42</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/header/header.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
         <context-group purpose="location">
@@ -583,7 +611,7 @@
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="@@ukrainianCulturalFoundation" datatype="html">
+      <trans-unit id="ukrainianCulturalFoundation" datatype="html">
         <source>Ukrainian Cultural Foundation</source>
         <target>Український культурний фонд</target>
         <context-group purpose="location">
@@ -603,7 +631,7 @@
         <source>Cherkasy Theatre of Taras Shevchenko</source>
         <target>Театр імені Т.Г. Шевченка</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/header/header.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
@@ -611,7 +639,7 @@
         <source>Menu</source>
         <target>Меню</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/header/header.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
@@ -619,11 +647,11 @@
         <source>Укр</source>
         <target>Eng</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/header/header.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
@@ -631,7 +659,7 @@
         <source>Up</source>
         <target>Вгору</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
@@ -639,7 +667,7 @@
         <source>Facebook page</source>
         <target>Сторінка в Facebook</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
@@ -647,7 +675,7 @@
         <source>Main page</source>
         <target>Головна</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
@@ -655,7 +683,7 @@
         <source>Poster</source>
         <target>Афіша</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
@@ -663,7 +691,7 @@
         <source>About</source>
         <target>Про театр</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
@@ -671,7 +699,7 @@
         <source>Contacts</source>
         <target>Контакти</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
@@ -687,7 +715,7 @@
         <source>Site has been created with the help of</source>
         <target>Сайт створено за підтримки</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
@@ -695,7 +723,7 @@
         <source>Color schemes</source>
         <target>Кольорові схеми</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
@@ -703,7 +731,7 @@
         <source>Black on White</source>
         <target>Чорне на Білому</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
@@ -711,7 +739,7 @@
         <source>White on Black</source>
         <target>Біле на Чорному</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
@@ -719,7 +747,7 @@
         <source>Sepia</source>
         <target>Сепія</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
@@ -727,7 +755,7 @@
         <source>Inversion</source>
         <target>Інверсія</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
@@ -735,7 +763,7 @@
         <source>Font size</source>
         <target>Розмір шрифта</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
@@ -743,7 +771,7 @@
         <source>Reduce Font</source>
         <target>Зменшити Шрифт</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
@@ -751,7 +779,7 @@
         <source>Zoom Font</source>
         <target>Збільшити Шрифт</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/visually-impaired/visually-impaired.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/visually-impaired/visually-impaired.component.html</context>
           <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
@@ -815,7 +843,7 @@
         <source>Search</source>
         <target>Пошук</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="sourcefile">src/app/modules/core/components/header/header.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>

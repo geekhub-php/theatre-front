@@ -14,7 +14,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">17,18</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="actors" datatype="html">
@@ -25,7 +25,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="performanceDetails" datatype="html">
@@ -47,7 +47,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="persons" datatype="html">
@@ -69,7 +69,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">47,48</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="artProduction" datatype="html">
@@ -84,7 +84,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">50,51</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="artDirector" datatype="html">
@@ -110,7 +110,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="creative" datatype="html">
@@ -143,7 +143,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">70,71</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsDirector" datatype="html">
@@ -210,7 +210,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cooperationBtn" datatype="html">
@@ -220,13 +220,12 @@
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="bb198cf1d45fbccb33a723f7b6613b5490da492b" datatype="html">
+      <trans-unit id="theatreWithYou" datatype="html">
         <source>Theatre is always with you</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
           <context context-type="linenumber">42</context>
         </context-group>
-        <note priority="1" from="description">theatreWithYou</note>
       </trans-unit>
       <trans-unit id="trustees" datatype="html">
         <source>Board of trustees</source>
@@ -240,7 +239,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">77,78</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectTeam" datatype="html">
@@ -283,7 +282,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="posterFor" datatype="html">
@@ -448,10 +447,11 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ukrainianCulturalFoundation" datatype="html">
-        <source>Ukrainian Cultural Foundation</source>
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg class=&quot;footer__icon&quot; width=&quot;44&quot; height=&quot;37&quot;&gt;
+          "/><x id="START_TAG__SVG_USE" ctype="x-_svg_use" equiv-text="&lt;use xlink:href=&quot;assets/images/sprite.svg#ucf&quot;&gt;"/><x id="CLOSE_TAG__SVG_USE" ctype="x-_svg_use" equiv-text="&lt;/use&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer/footer.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">19,21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="facebookPage" datatype="html">
@@ -498,7 +498,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cooperation" datatype="html">
@@ -509,7 +509,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">72,73</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contacts" datatype="html">
@@ -583,108 +583,108 @@
         </context-group>
       </trans-unit>
       <trans-unit id="performances" datatype="html">
-        <source>All performances </source>
+        <source>All performances</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">20,21</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="for_adult" datatype="html">
-        <source>For adults </source>
+        <source>For adults</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">22,23</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="for_kids" datatype="html">
         <source>For kids</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="history" datatype="html">
         <source>History</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="festivals" datatype="html">
-        <source>Festivals </source>
+        <source>Festivals</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">30,31</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="epoch" datatype="html">
         <source>Epoch</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="visit" datatype="html">
         <source>Visit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="documentation" datatype="html">
-        <source>Documentation </source>
+        <source>Documentation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">36,37</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ballet" datatype="html">
         <source>Ballet</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="orchestra" datatype="html">
         <source>Orchestra</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="deputies" datatype="html">
-        <source>Deputies </source>
+        <source>Deputies</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">57,58</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="administration" datatype="html">
-        <source>Administration </source>
+        <source>Administration</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">60,61</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="accounting" datatype="html">
-        <source> Accounting </source>
+        <source>Accounting</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">63,64</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="connections" datatype="html">
         <source>Connections</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="partners" datatype="html">
-        <source>Partners </source>
+        <source>Partners</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-          <context context-type="linenumber">74,75</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ngb.alert.close" datatype="html">
