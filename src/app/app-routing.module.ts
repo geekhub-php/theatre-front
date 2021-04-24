@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from './components/home-page/home-page.component';
 
+import { AboutComponent } from './components/about/about.component';
 import { AboutMoreComponent } from './components/about/about-more/about-more.component';
 import { FestivalsComponent } from './components/about/festivals/festivals.component';
 import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component';
@@ -36,12 +37,17 @@ const appRoutes: Routes = [
   {path: 'performance/:slug', component: PerformanceComponent},
   {path: 'news', component: NewsComponent},
   {path: 'news/:slug', component: ArticleComponent},
-  {path: 'about', component: TheatreHistoryComponent},
-  {path: 'about/theatre-history', component: TheatreHistoryComponent},
-  {path: 'about/epoch', component: EpochComponent},
-  {path: 'about/festivals', component: FestivalsComponent},
-  {path: 'about/visit', component: VisitComponent},
-  {path: 'about/festivals/:slug', component: AboutMoreComponent},
+  {
+    path: 'about', component: AboutComponent,
+    children: [
+      {path: '', redirectTo: 'theatre-history', pathMatch: 'full'},
+      {path: 'theatre-history', component: TheatreHistoryComponent},
+      {path: 'epoch', component: EpochComponent},
+      {path: 'festivals', component: FestivalsComponent},
+      {path: 'visit', component: VisitComponent},
+      {path: 'festivals/:slug', component: AboutMoreComponent},
+    ]
+  },
   {path: 'persons', component: TeamComponent},
   {path: 'persons/:slug', component: PersonComponent},
   {path: 'contacts', component: ContactsComponent},
