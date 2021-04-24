@@ -14,9 +14,10 @@ $inversion-color: #0f2c57;
 .visual-aid-container {
   position: fixed;
   background-color: rgba($background-color-black, .7);
-  width: $body-width;
   top: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 100;
 }
 
@@ -24,7 +25,8 @@ $inversion-color: #0f2c57;
   float: right;
   background-color: $background-color-accent;
 
-  @include box(335, 1020);
+  width: 335px;
+  height: 100%;
 
   .opera-glasses {
     margin-top: 139px;

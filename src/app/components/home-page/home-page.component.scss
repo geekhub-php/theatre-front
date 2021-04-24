@@ -7,7 +7,7 @@
 }
 
 .we-offer {
-  width: $container-width;
+  width: 875px;
   margin: $container-margin;
   padding: 80px 0;
   text-align: center;
@@ -20,9 +20,7 @@
   }
 
   .we-offer__text {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 18px 312px;
+    padding: 18px 0;
     display: block;
     text-align: justify-all;
   }
@@ -31,6 +29,8 @@
 /* Block with the advantages of using the mobile version */
 
 .home-page-text__advantages {
+  padding-top: 95px;
+  padding-bottom: 55px;
 
   .advantages-content {
     width: $container-width;
@@ -38,7 +38,7 @@
     background-color: $background-color-black;
 
     .advantages-title {
-      padding-top: 96px;
+      padding: 0 400px;
       text-align: center;
 
       @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
@@ -46,8 +46,8 @@
   }
 
   .advantages {
+    overflow: hidden;
     margin: 0;
-    padding-right: 400px;
     list-style: none;
 
     &__item-number {
@@ -83,7 +83,6 @@
   .phone-image {
     float: right;
     margin-top: -80px;
-    margin-bottom: 54px;
 
     @include box(384, 746);
   }

@@ -38,14 +38,12 @@ import { CalendarComponent } from './components/schedule/calendar/calendar.compo
 import { ListViewComponent } from './components/schedule/list-view/list-view.component';
 import { MobileViewComponent } from './components/schedule/mobile-view/mobile-view.component';
 import { CalendarService } from './components/schedule/calendar.service';
-import { PartnersComponent } from './components/partners/partners.component';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { SliderComponent } from './components/home-page/slider/slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 
 import { environment } from '../environments/environment';
-import { BreadcrumbComponent } from './components/partials/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -69,8 +67,6 @@ import { BreadcrumbComponent } from './components/partials/breadcrumb/breadcrumb
     SideMenuComponent,
     SliderComponent,
     NewsListItemComponent,
-    PartnersComponent,
-    BreadcrumbComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
