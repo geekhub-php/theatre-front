@@ -1,14 +1,8 @@
 @import "_variables.scss";
 
 .tickets-button {
-  width: 197px;
-  height: 48px;
-  padding: 12px 24px;
-  gap: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  padding: 10px 50px;
+  border-radius: 2px;
   object-fit: contain;
   outline: none !important;
   box-shadow: none !important;
@@ -23,5 +17,19 @@
   &:active {
     color: $font-color-white;
     background-color: $background-color-active;
+  }
+}
+
+.link-buttons {
+  padding: 10px 30px;
+  background: transparent;
+
+  @include border(1, solid, $border-color-accent, 2px);
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5, normal);
+
+  &:hover {
+    color: $font-color-white;
+    background: rgba($background-on-hover, .1);
+    text-decoration: none;
   }
 }

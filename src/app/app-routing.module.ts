@@ -26,28 +26,30 @@ import { DonateComponent } from './components/donate/donate.component';
 
 import { PageNotFoundComponent } from './modules/core/components/page-not-found/page-not-found.component';
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
+import { PartnersComponent } from './components/partners/partners.component';
 
 
 const appRoutes: Routes = [
-    {path: '', component: HomePageComponent},
-    {path: 'poster', component: ScheduleComponent},
-    {path: 'repertoire', component: RepertoireComponent},
-    {path: 'performance/:slug', component: PerformanceComponent},
-    {path: 'news', component: NewsComponent},
-    {path: 'news/:slug', component: ArticleComponent},
-    {path: 'about', component: TheatreHistoryComponent},
-    {path: 'about/theatre-history', component: TheatreHistoryComponent},
-    {path: 'about/epoch', component: EpochComponent},
-    {path: 'about/festivals', component: FestivalsComponent},
-    {path: 'about/visit', component: VisitComponent},
-    {path: 'about/festivals/:slug', component: AboutMoreComponent},
-    {path: 'persons', component: TeamComponent},
-    {path: 'persons/:slug', component: PersonComponent},
-    {path: 'contacts', component: ContactsComponent},
-    {path: 'board-trustees', component: BoardTrusteesComponent},
-    {path: 'donate', component: DonateComponent},
-    {path: 'developers-team', component: DevTeamComponent},
-  // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup
+  {path: '', component: HomePageComponent},
+  {path: 'poster', component: ScheduleComponent},
+  {path: 'repertoire', component: RepertoireComponent},
+  {path: 'performance/:slug', component: PerformanceComponent},
+  {path: 'news', component: NewsComponent},
+  {path: 'news/:slug', component: ArticleComponent},
+  {path: 'about', component: TheatreHistoryComponent},
+  {path: 'about/theatre-history', component: TheatreHistoryComponent},
+  {path: 'about/epoch', component: EpochComponent},
+  {path: 'about/festivals', component: FestivalsComponent},
+  {path: 'about/visit', component: VisitComponent},
+  {path: 'about/festivals/:slug', component: AboutMoreComponent},
+  {path: 'persons', component: TeamComponent},
+  {path: 'persons/:slug', component: PersonComponent},
+  {path: 'contacts', component: ContactsComponent},
+  {path: 'board-trustees', component: BoardTrusteesComponent},
+  {path: 'donate', component: DonateComponent},
+  {path: 'developers-team', component: DevTeamComponent},
+  {path: 'partners', component: PartnersComponent}
+/*  // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup*/
 ];
 
 @NgModule({
@@ -55,12 +57,13 @@ const appRoutes: Routes = [
     CommonModule,
     RouterModule.forRoot(appRoutes, {
       relativeLinkResolution: 'legacy',
-      scrollPositionRestoration : 'top'
+      scrollPositionRestoration: 'top'
     })
   ],
   exports: [
-      RouterModule
+    RouterModule
   ],
   declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

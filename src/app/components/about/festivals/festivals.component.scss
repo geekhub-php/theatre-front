@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import "~assets/styles/_variables";
 
 .myContainer {
-  background-color: #0e0c08;
+  background-color: $font-color-black;
   padding-top: 10px;
   padding-bottom: 50px;
   min-height: 700px;
@@ -10,15 +10,15 @@
 .fest-navigation {
   margin-left: 10%;
   margin-top: 20px;
-  color: #b6b6b4;
-  font-family: 'Montserrat';
-  width: 306px;
+  color: $font-color-primary;
+  font-family: $body-font-family;
+  width: 310px;
   height: 32px;
   display: flex;
   flex-direction: row;
 
   h3 {
-    font-size: 15px;
+    font-size: $font-size-small;
   }
 
   .fest-navigation-bold {
@@ -28,17 +28,17 @@
 }
 
 .festTitle {
-  font-size: 72px;
+  font-size: $font-largest;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
   letter-spacing: normal;
   text-align: center;
-  color: #b49864;
+  color: $font-color-accent;
   margin-bottom: 60px;
   margin-top: -10px;
-  font-family: "KobzarKS";
+  font-family: $creative-font;
 }
 
 .histories__list-body,
@@ -57,8 +57,8 @@
     margin-left: auto;
     margin-right: auto;
     height: 215px;
-    background-color: #323232;
-    color: white;
+    background-color: $background-main-color-lighter;
+    color: $font-color-white;
     display: table;
     cursor: pointer;
     background-repeat: no-repeat;
@@ -80,11 +80,11 @@
     line-height: 1.25;
 
     .histories__list-heading {
-      color: white;
-      font-size: 32px;
-      font-family: 'Montserrat', sans-serif;
+      color: $font-color-white;
+      font-size: $font-size-x-large;
+      font-family: $body-font-family;
       outline: none;
-      font-weight: 600;
+      font-weight: $font-weight-semi-bold;
     }
   }
 
@@ -93,11 +93,11 @@
     outline: none;
     padding-left: 50px;
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $body-font-family;
     font-size: 100px;
-    font-weight: 600;
+    font-weight: $font-weight-semi-bold;
     line-height: 1;
-    color: #868583;
+    color: $background-color-disabled;
     display: table-cell;
     vertical-align: middle;
   }

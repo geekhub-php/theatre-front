@@ -2,111 +2,89 @@
 
 /* Block with "what we offer" */
 
-.we-offer {
-  height: 480px;
-  width: $container-width;
-  padding: 81px 208px;
+.we-offer-block {
   background-color: $background-main-color-darker;
+}
+
+.we-offer {
+  width: 875px;
+  margin: $container-margin;
+  padding: 80px 0;
   text-align: center;
+  background-color: $background-main-color-darker;
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
 
   .we-offer__title {
-    @include font($creative-font, 72px, $font-color-accent, $font-weight-normal, 1.5, normal);
+    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1.5, normal);
   }
 
   .we-offer__text {
-    width: 832px;
+    padding: 18px 0;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     text-align: justify-all;
-  }
-
-  .we-offer__button {
-    margin-top: 25px;
-    background: transparent;
-
-    @include box(178, 48);
-    @include border(1, solid, $border-color-accent, 2px);
-
-    &:hover {
-      background: rgba($background-on-hover, .1);
-    }
-
-    a {
-      text-decoration: none;
-
-      @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5, normal);
-
-      &:hover {
-        color: $font-color-white;
-      }
-    }
   }
 }
 
 /* Block with the advantages of using the mobile version */
 
 .home-page-text__advantages {
-  height: 843px;
-  width: $container-width;
-  padding: 80px 208px 10px;
-  background-color: $background-color-black;
+  padding-top: 95px;
+  padding-bottom: 55px;
 
-  table {
-    width: 880px;
+  .advantages-content {
+    width: $container-width;
+    margin: $container-margin;
+    background-color: $background-color-black;
 
-    tr {
+    .advantages-title {
+      padding: 0 400px;
+      text-align: center;
+
+      @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+    }
+  }
+
+  .advantages {
+    overflow: hidden;
+    margin: 0;
+    list-style: none;
+
+    &__item-number {
+      justify-content: center;
       display: inline-block;
-      margin-top: 63px;
+      vertical-align: middle;
+    }
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
     }
 
     .advantage-text {
-      padding-left: 50px;
+      padding: 72px 250px 0 30px;
 
       @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
     }
   }
 
-  .advantages-title {
-    text-align: center;
+  .advantage-number {
+    padding-top: 72px;
 
-    @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+    @include font($body-font-family, 100px, $font-color-dark, $font-weight-semi-bold, 100px, normal);
   }
 
-  .advantage-number {
-    @include font($body-font-family, 100px, $font-color-dark, $font-weight-semi-bold, 100px, normal);
+
+  .clearfix::after {
+    content: "";
+    clear: both;
   }
 
   .phone-image {
     float: right;
-    margin-top: -86px;
-    object-fit: contain;
-    box-shadow: $box-shadow;
+    margin-top: -80px;
 
     @include box(384, 746);
   }
 }
 
-/*For viewing purpose, will be deleted =============================*/
-
-.for-viewing-purpose1 {
-  background-color: #0e0c08;
-  width: 100%;
-  height: 864px;
-}
-
-.for-viewing-purpose2 {
-  background-color: #0e0c08;
-  width: 100%;
-  height: 897px;
-}
-
-.for-viewing-purpose3 {
-  background-color: #242424;
-  width: 100%;
-  height: 1232px;
-}
-
-/*===================================================================*/

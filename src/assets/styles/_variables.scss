@@ -1,7 +1,7 @@
 /*Previously created variables that need to be replaced with the new ones (the intention of not deleting them yet is not to
 brake the code)*/
 
-$main-font: "Source Sans Pro", sans-serif;
+$main-font: "Source Sans Pro", sans-serif; 
 $white-color: #fff;
 $black-color: #000;
 $main-color-lighter: #fa231c;
@@ -41,8 +41,7 @@ $typical-box-shadow: 0 0 9px 0 rgba(126, 126, 126, .16);
   justify-content: center;
 }
 
-$container-width: 1920px;
-$container-padding: 0 208px;
+$container-width: 1500px;
 $container-margin: 0 auto;
 
 /*Fonts*/
@@ -63,8 +62,8 @@ $container-margin: 0 auto;
   font-style: normal;
 }
 
-$body-font-family: "Monteserrat", sans-serif;
-$creative-font: "KobzarKS";
+$body-font-family: "Monteserrat", "Arial", "Helvetica", sans-serif;
+$creative-font: "KobzarKS", "Brush Script MT", "Brush Script Std", cursive;
 
 $font-size-x-small: 10px;
 $font-size-small: 14px;
@@ -72,6 +71,7 @@ $font-size-medium: 18px;
 $font-size-large: 24px;
 $font-size-x-large: 32px;
 $font-size-xxx-large: 40px;
+$font-largest: 72px;
 
 $font-color-white: #fff;
 $font-color-primary: #b6b6b4;
@@ -98,6 +98,7 @@ $line-height-basic: 27px;
 $border-color-light: #fff;
 $border-color-dark: #0e0c08;
 $border-color-accent: #b49864;
+$border-color-active: #8e7444;
 
 /*Backgrounds*/
 

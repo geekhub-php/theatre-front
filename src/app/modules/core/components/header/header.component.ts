@@ -15,14 +15,16 @@ import { VisuallyImpairedService } from '../../../../services/visually-impaired.
 export class HeaderComponent {
   collapse = false;
   isCollapsed = false;
+  donateBlockVisible = false;
+  bankDataIsDisplayed = false;
   search_text = 'Enter your search key word/words';
-
-
-  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
   }
+
+
+  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
 
   constructor(
     private router: Router,
@@ -49,5 +51,9 @@ export class HeaderComponent {
 
   clearSubmit(): void {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  openPDF(): void {
+  window.open('assets/images/Приложение плакат QR.pdf', '_blank');
   }
 }

@@ -48,14 +48,10 @@ html {
 
 body, html {
   height: 100%;
+  width: 100%;
   font-family: $body-font-family;
   color: $font-color-primary;
-}
-
-body {
-  width: 100%;
-  min-width: $container-width;
-  margin: $container-margin;
+  background-color: $background-color-black;
 }
 
 .spinner-grow {

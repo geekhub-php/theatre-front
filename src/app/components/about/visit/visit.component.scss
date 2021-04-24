@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-
+@import "~assets/styles/_variables";
 
 .myContainer {
-  background-color: #0e0c08;
+  background-color: $font-color-black;
   padding-top: 10px;
   padding-bottom: 50px;
   min-height: 700px;
@@ -11,33 +10,33 @@
 .visit-navigation {
   margin-left: 10%;
   margin-top: 20px;
-  color: #b6b6b4;
-  font-family: 'Montserrat';
+  color: $font-color-primary;
+  font-family: $body-font-family;
   width: 310px;
   height: 32px;
   display: flex;
   flex-direction: row;
 
   h3 {
-    font-size: 15px;
+    font-size: $font-size-small;
   }
 
   .visit-navigation-bold {
-    font-weight: bold;
-    color: white;
+    font-weight: $font-weight-semi-bold;
+    color: $font-color-white;
   }
 }
 
 .visitTitle {
-  font-size: 72px;
+  font-size: $font-largest;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
   letter-spacing: normal;
   text-align: center;
-  color: #b49864;
+  color: $font-color-accent;
   margin-bottom: 60px;
   margin-top: -10px;
-  font-family: "KobzarKS";
+  font-family: $creative-font;
 }
