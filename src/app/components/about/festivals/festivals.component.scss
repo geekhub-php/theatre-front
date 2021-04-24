@@ -29,11 +29,6 @@
 
 .festTitle {
   font-size: $font-largest;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
   text-align: center;
   color: $font-color-accent;
   margin-bottom: 60px;
@@ -63,7 +58,7 @@
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 100;
+    z-index: 10;
     position: relative;
     overflow: hidden;
   }
