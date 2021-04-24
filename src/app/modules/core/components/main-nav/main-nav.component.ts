@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { LangService } from '../../../../services/lang.service';
-import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -8,14 +7,11 @@ import { VisuallyImpairedService } from '../../../../services/visually-impaired.
   styleUrls: ['./main-nav.component.scss']
 })
 export class MainNavComponent {
-  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
   }
 
-  constructor(
-    private langService: LangService,
-    private visuallyImpairedService: VisuallyImpairedService
-  ) { }
+  constructor(private langService: LangService) {
+  }
 }
