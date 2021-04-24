@@ -1,6 +1,7 @@
 import {
+  AfterViewChecked,
   AfterViewInit,
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy, ChangeDetectorRef,
   Component,
   HostListener,
   Inject,
@@ -111,7 +112,7 @@ export class MonthsCarouselComponent implements AfterViewInit {
     loop: true,
   };
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private cd: ChangeDetectorRef
   ) {
     // this.onResize();
   }
@@ -157,5 +158,6 @@ export class MonthsCarouselComponent implements AfterViewInit {
   ngAfterViewInit() {
     //preventing After Init Error
     this.onResize();
+    this.cd.detectChanges();
   }
 }
