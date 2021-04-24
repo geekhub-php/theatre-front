@@ -23,6 +23,11 @@ export class ScheduleComponent implements OnInit {
   viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
   views = ScheduleViewModes;
 
+  activeComp = {
+    calendarActive: false,
+    listActive: true
+  };
+
   constructor(
     private gateway: GatewayService,
     private loaderService: LoaderService,
@@ -98,13 +103,28 @@ export class ScheduleComponent implements OnInit {
     this.isToday = this.calendar.isToday(this.date);
   }
 
-  changeView() {
-    this.viewMode = this.viewMode === ScheduleViewModes.LIST ? ScheduleViewModes.CALENDAR : ScheduleViewModes.LIST;
+
+
+  changeViewToCalendar() {
+    this.viewMode = ScheduleViewModes.CALENDAR;
+    if (this.activeComp.listActive) this.activeComp.listActive = false
+    this.activeComp.calendarActive = true
 
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
   }
+
+  changeViewToList() {
+    this.viewMode = ScheduleViewModes.LIST;
+    if (this.activeComp.calendarActive) this.activeComp.calendarActive = false
+    this.activeComp.listActive = true
+
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
+    }
+  }
+
 
   get savedLocale() {
     if (isPlatformBrowser(this.platformId)) {

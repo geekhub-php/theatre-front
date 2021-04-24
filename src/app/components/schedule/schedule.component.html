@@ -4,16 +4,20 @@
   </h2>
   <div class="poster__toggle">
     <div class="poster__toggle__item">
-      <button class="poster__toggle__btn">
+      <button
+        (click)="changeViewToCalendar()"
+        class="poster__toggle__btn"
+        [class.poster__toggle__item__active]="activeComp.calendarActive"
+      >
         <img src="assets/images/calendar/calendar-2-line.svg" alt="">
+        <span class="poster__toggle__text">Клендар</span>
       </button>
-      <span class="poster__toggle__text">Клендар</span>
     </div>
-    <div class="poster__toggle__item" [class.poster__toggle__item__active]="true">
-      <button class="poster__toggle__btn">
+    <div class="poster__toggle__item" [class.poster__toggle__item__active]="activeComp.listActive">
+      <button (click)="changeViewToList()" class="poster__toggle__btn">
         <img src="assets/images/calendar/bxs-grid.svg" alt="">
+        <span class="poster__toggle__text">Список</span>
       </button>
-      <span class="poster__toggle__text">Список</span>
     </div>
   </div>
 </div>
@@ -31,17 +35,6 @@
   </button>
   <button class="btn btn-now" (click)="now()" i18n="@@now">Today</button>
   <button class="btn btn-next" (click)="nextMonth()" i18n="@@next">Next</button>
-
-  <button (click)="changeView()" class="poster-view">
-    <svg *ngIf="viewMode === views.CALENDAR" title="List view" i18n-title="@@listView" width="20" height="20"
-         class="u-svg-icon">
-      <use xlink:href="assets/images/sprite.svg#list-grid"></use>
-    </svg>
-    <svg *ngIf="viewMode === views.LIST" title="Calendar view" i18n-title="@@calendarView" width="20" height="20"
-         class="u-svg-icon">
-      <use xlink:href="assets/images/sprite.svg#calendar"></use>
-    </svg>
-  </button>
 </div>
 
 <app-spinner name="poster"></app-spinner>

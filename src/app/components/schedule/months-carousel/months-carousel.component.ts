@@ -1,18 +1,20 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
-  Input,
-  ViewChild,
+  HostListener,
   Inject,
+  Input,
   PLATFORM_ID,
-  HostListener
+  ViewChild
 } from '@angular/core';
 import { NguCarouselConfig } from "@ngu/carousel";
 
 @Component({
   selector: 'app-months-carousel',
   templateUrl: './months-carousel.component.html',
-  styleUrls: ['./months-carousel.component.scss']
+  styleUrls: ['./months-carousel.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MonthsCarouselComponent implements AfterViewInit {
   @Input() onNextMonth;
@@ -65,37 +67,34 @@ export class MonthsCarouselComponent implements AfterViewInit {
 
 
   public selectMonth(index: number) {
-    index = this.currentSize === 'xl' ? index - 2 : index - 1;
+    index -= this.currentSize === 'xl' ? 2 : 1;
+
+    const changeSlide = (onChangeSlide) => {
+      let count = 0;
+      difference = Math.abs(difference);
+      while (count < difference) {
+        onChangeSlide();
+        count++;
+      }
+    };
 
     let difference = index - this.currentIndex;
-    let count = 0;
-    if (difference > 0) {
+    if (difference) {
+      changeSlide(difference > 0 ? this.onNext.bind(this) : this.onPrev.bind(this));
       difference = Math.abs(difference);
-      do {
-        this.onNext();
-        count++;
-      } while (count < difference);
-    } else if (difference < 0) {
-      difference = Math.abs(difference);
-      do {
-        this.onPrev();
-        count++;
-      } while (count < difference);
     }
-
+    // make it with if else
     if (index === -1) index = 11;
     if (index === -2) index = 10;
     if (index === 12) index = 0;
     if (index === 13) index = 1;
-
     this.currentIndex = index;
 
     return index;
   }
 
   public activeMonth(index: number) {
-    if (this.currentSize === 'xl') return index === (this.currentIndex + 2);
-    return index === (this.currentIndex + 1);
+    return index === (this.currentIndex + (this.currentSize === 'xl' ? 2 : 1));
   }
 
   public carouselTile: NguCarouselConfig = {
@@ -114,7 +113,7 @@ export class MonthsCarouselComponent implements AfterViewInit {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.onResize();
+    // this.onResize();
   }
 
   @HostListener('window:resize') onResize() {
@@ -123,10 +122,12 @@ export class MonthsCarouselComponent implements AfterViewInit {
     const mdBreakPoint = 767;
 
     if ((innerWidth >= xlBreakPoint) && !(this.currentSize === 'xl')) {
-      this.currentSize = 'xl';
+      this.currentSize = 'xl'
+      console.log(2131)
       this.setIndexes(1);
     } else if ((innerWidth >= mdBreakPoint && innerWidth < xlBreakPoint) && !(this.currentSize === 'md')) {
       this.currentSize = 'md';
+      console.log(345346)
       this.setIndexes(0);
     }
   }
@@ -144,36 +145,17 @@ export class MonthsCarouselComponent implements AfterViewInit {
     this.currentIndex = activePoint;
   }
 
-  // setStartIndex(size) {
-  //   console.log(size);
-  //   switch (size) {
-  //     case 'xl' :
-  //       this.currentIndex = 0;
-  //       break;
-  //     case 'md' :
-  //       this.currentIndex = 0;
-  //       break;
-  //     default:
-  //       this.currentIndex = 0;
-  //       break;
-  //   }
-  // }
-
   ngOnInit() {
   }
 
   setIndexes(positionDependency: number) {
     this.currentNumberOfMonth = Number(this.currentMonth) - positionDependency;
     this.currentIndex = this.currentNumberOfMonth;
-    setTimeout(() => {
-      this.carousel.moveTo(this.currentNumberOfMonth);
-    });
+    this.carousel.moveTo(this.currentNumberOfMonth);
   }
 
   ngAfterViewInit() {
     //preventing After Init Error
-    setTimeout(() => {
-      this.setIndexes(1);
-    });
+    this.onResize();
   }
 }

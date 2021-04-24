@@ -2,10 +2,6 @@
 $font-color-gray:#b6b6b4;
 $font-color-gold: #b49864;
 
-:host ::ng-deep a:hover {
-  text-decoration: none;
-}
-
 
 .title {
   margin: 60px auto 0;
@@ -33,12 +29,13 @@ $font-color-gold: #b49864;
 
 .poster__title {
   margin: 0 auto;
-  max-width: 1504px;
+  max-width: 1500px;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: row;
   position: relative;
+
   h2 {
     color: $font-color-gold;
     font-size: 80px;
@@ -51,8 +48,12 @@ $font-color-gold: #b49864;
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 15px;
 
   &__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 0;
     margin-right: 8px;
     background-color: transparent;
@@ -65,7 +66,7 @@ $font-color-gold: #b49864;
   }
 
   &__text {
-    margin-right: 13px;
+    //margin-right: 15px;
     font-family: $Montserrat;
     font-size: 18px;
     font-weight: 400;

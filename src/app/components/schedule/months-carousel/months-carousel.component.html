@@ -1,10 +1,13 @@
-<ngu-carousel #myCarousel [inputs]="carouselTile" [style]="{width: '100%'}" [dataSource]="months"
-              (onMove)="onMove(myCarousel.currentSlide, myCarousel)"
-              class="months-carousel"
-
+<ngu-carousel
+  #myCarousel
+  class="months-carousel"
+  [inputs]="carouselTile"
+  [style]="{width: '100%'}"
+  [dataSource]="months"
+  (onMove)="onMove(myCarousel.currentSlide, myCarousel)"
 >
   <button NguCarouselPrev (click)="onPrev()" class="carousel_btn_left"><img src="assets/images/calendar/chevron-left.svg" alt=""></button>
-  <ngu-tile *nguCarouselDef="let item;  let j = index"
+  <ngu-tile *nguCarouselDef="let item; let j = index"
             class="month_item_title"
             (click)="myCarousel.moveTo(selectMonth(j))">
     <div class="month_item"

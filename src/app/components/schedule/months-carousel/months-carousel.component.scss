@@ -48,12 +48,11 @@
 .month_item {
   cursor: pointer;
   text-align: center;
-  width: 212px;
+  width: 210px;
   height: 64px;
   flex-grow: 0;
   font-family: Montserrat;
   font-size: 40px;
-  //font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
@@ -74,26 +73,23 @@
   }
 }
 
-//
-:host ::ng-deep .ngucarousel {
-  max-width: 1504px;
-  //padding: 0 47px;
+::ng-deep .ngucarousel {
+  max-width: 1500px;
 }
 
 
-:host ::ng-deep .tile {
+::ng-deep .tile {
   display: flex;
   justify-content: center;
   background-color: transparent;
   box-shadow: none !important;
 }
 
-:host ::ng-deep .item {
+::ng-deep .item {
   box-shadow: none;
-  width: 212px;
+  width: 210px;
 }
 
-//
 .month_item_title {
-  width: 212px !important;
+  width: 210px !important;
 }
