@@ -2,7 +2,7 @@
   <app-spinner name="about-more"></app-spinner>
 
   <div class="fest-navigation">
-    <h3  i18n="@@mainPage">Main page /</h3>
+    <h3 i18n="@@mainPage">Main page /</h3>
     <h3 i18n="@@aboutTitle">&nbsp;About /</h3>
     <h3 i18n="@@festivals">&nbsp;Festivals /</h3>
     <h3 class="fest-navigation-bold" i18n="@@festival">&nbsp;Festival</h3>
@@ -16,63 +16,62 @@
     </div>
     <div class="history-fest-contain">
       <div class="history-main_img">
-        <img class="img" [src]="history.mainPicture.reference.url" [alt]="history.mainPicture.reference.properties.alt" [title]="history.mainPicture.reference.properties.title"/>
+        <img class="img" [src]="history.mainPicture.reference.url" [alt]="history.mainPicture.reference.properties.alt"
+             [title]="history.mainPicture.reference.properties.title"/>
       </div>
       <div class="post-text" [innerHtml]="history.text"></div>
 
 
-
-
     </div>
-    <div *ngIf="history.performances">
-
-      <!--  -->
-      <!-- <div class="performance">
-        <ul class="performance-list" *ngIf="history.performances">
-          <li class="list-item" *ngFor="let item of history.performances" [routerLink]="['/performance', item.slug]">
-            <img class="img" [src]="item.mainPicture.performance_big.url" alt="performance picture" [title]="item.mainPicture.performance_big.properties.title" />
-            <p class="title">
-              <span class="span">{{ item.title }}</span>
-            </p>
-          </li>
-        </ul>
-      </div>   -->
-      <!--  -->
+    <div *ngIf="history.performances.length > 0">
 
 
-      <!-- <div class="wrapped">
+<!--      <div class="performance">-->
+<!--        <ul class="performance-list" *ngIf="history.performances">-->
+<!--          <li class="list-item" *ngFor="let item of history.performances" [routerLink]="['/performance', item.slug]">-->
+<!--            <img class="img" [src]="item.mainPicture.performance_big.url" alt="performance picture" [title]="item.mainPicture.performance_big.properties.title" />-->
+<!--            <p class="title">-->
+<!--              <span class="span">{{ item.title }}</span>-->
+<!--            </p>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+
+
+
+      <div class="wrapped">
 
         <ngu-carousel
-        #myCarousel
-        [inputs]="carouselTile"
-        [dataSource]="history.performances"
-        class="slider"
-      >
-        <ngu-tile *nguCarouselDef="let item" >
-          <div
-            class="image"
-            [style.background]="'url(' + item.mainPicture.performance_big.url + ')'"
-          >
-          </div>
-        </ngu-tile>
-        <ul class="myPoint" NguCarouselPoint>
-          <li
-            *ngFor="let j of myCarousel.pointNumbers;
+          #myCarousel
+          [inputs]="carouselTile"
+          [dataSource]="history.performances"
+          class="slider"
+        >
+          <ngu-tile *nguCarouselDef="let item">
+            <div
+              class="image"
+              [style.background]="'url(' + item.mainPicture.performance_big.url + ')'"
+            >
+            </div>
+          </ngu-tile>
+          <ul class="myPoint" NguCarouselPoint>
+            <li
+              *ngFor="let j of myCarousel.pointNumbers;
             let i = index"
-            [class.active]="j===myCarousel.activePoint"
-            (click)="myCarousel.moveTo(i)"
-          >
-          </li>
-        </ul>
-        <div NguCarouselPrev class="left">
-          left
-        </div>
-        <div NguCarouselNext class="right">
-          right
-        </div>
-      </ngu-carousel>
+              [class.active]="j===myCarousel.activePoint"
+              (click)="myCarousel.moveTo(i)"
+            >
+            </li>
+          </ul>
+          <div NguCarouselPrev class="left">
+            left
+          </div>
+          <div NguCarouselNext class="right">
+            right
+          </div>
+        </ngu-carousel>
 
-      </div> -->
+      </div>
 
     </div>
   </div>
