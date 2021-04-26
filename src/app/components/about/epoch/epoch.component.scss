@@ -1,38 +1,22 @@
 @import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
 
 .myContainer {
-  background-color: $font-color-black;
-  padding-top: 10px;
-  padding-bottom: 50px;
-  min-height: 700px;
+  @include _container;
 }
 
 .epoch-navigation {
-  margin-left: 10%;
-  margin-top: 20px;
-  color: $font-color-primary;
-  font-family: $body-font-family;
-  width: 310px;
-  height: 32px;
-  display: flex;
-  flex-direction: row;
+  @include breadcrumbs-nav;
 
   h3 {
     font-size: $font-size-small;
   }
 
   .epoch-navigation-bold {
-    font-weight: $font-weight-semi-bold;
-    color: $font-color-white;
+    @include breadcrumbs-nav-bold;
   }
 }
 
 .epochTitle { 
-  font-size: $font-largest;
-  text-align: center;
-  @include flex-center;
-  color: $font-color-accent;
-  margin-bottom: 60px;
-  margin-top: -10px;
-  font-family: $creative-font;
+  @include about-title;
 }
