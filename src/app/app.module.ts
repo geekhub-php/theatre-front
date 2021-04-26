@@ -70,7 +70,7 @@ import { CalPopupComponent } from './components/schedule/calendar/cal-popup/cal-
     NewsListItemComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -84,7 +84,7 @@ import { CalPopupComponent } from './components/schedule/calendar/cal-popup/cal-
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
-    SpinnerModule,
+    SpinnerModule
   ],
   providers: [
     CalendarService,
@@ -92,5 +92,6 @@ import { CalPopupComponent } from './components/schedule/calendar/cal-popup/cal-
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 

@@ -1,23 +1,23 @@
 <table class="calendar">
   <thead>
   <tr>
-    <th class="day-of-week" i18n="@@monday">Monday</th>
-    <th class="day-of-week" i18n="@@tuesday">Tuesday</th>
-    <th class="day-of-week" i18n="@@wednesday">Wednesday</th>
-    <th class="day-of-week" i18n="@@thursday">Thursday</th>
-    <th class="day-of-week" i18n="@@friday">Friday</th>
-    <th class="day-of-week" i18n="@@saturday">Saturday</th>
-    <th class="day-of-week" i18n="@@sunday">Sunday</th>
+    <th class="day__of__week" i18n="@@monday">Monday</th>
+    <th class="day__of__week" i18n="@@tuesday">Tuesday</th>
+    <th class="day__of__week" i18n="@@wednesday">Wednesday</th>
+    <th class="day__of__week" i18n="@@thursday">Thursday</th>
+    <th class="day__of__week" i18n="@@friday">Friday</th>
+    <th class="day__of__week" i18n="@@saturday">Saturday</th>
+    <th class="day__of__week" i18n="@@sunday">Sunday</th>
   </tr>
   </thead>
 
   <tbody>
   <tr *ngFor="let week of weeks">
     <td *ngFor="let day of week"
-        class="day_of_month {{(day | date: 'MM') === (selectedDate | date: 'MM') ? '' : 'another_month'}}">
-      <span class="day-number">{{ day | date: 'dd' }}</span>
+        class="day__of__month {{(day | date: 'MM') === (selectedDate | date: 'MM') ? '' : 'another__month'}}">
+      <span class="day__number">{{ day | date: 'dd' }}</span>
       <div class="more" *ngIf="hasPerformanceByDate(day)">
-        <div class="more_items">
+        <div class="more__items">
           <ng-container *ngFor="let event of dayPerformances; let eventIndex = index">
 
             <ng-template #popContent>
@@ -29,28 +29,30 @@
             </ng-template>
 
             <ng-container *ngIf="dayPerformances.length <= 3 || (dayPerformances.length > 3 && eventIndex < 2)">
-              <div class="day_performances">
+              <div class="day__performances">
                 <a
                   class="events"
                   [routerLink]="['', 'performance', event.performance.slug]">
                   <p
-                    class="events_performance_title"
+                    class="events__performance__title"
                     triggers="mouseenter:mouseleave"
                     animation="{{true}}"
                     [ngbPopover]="popContent"
                     placement="top"
-                    popoverClass="popover-poster"
-                    *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">{{ event.performance.title | striphtml:['40', '...'] }}</p>
+                    popoverClass="popover__poster"
+                    *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">
+                    {{ event.performance.title | striphtml:['40', '...'] }}
+                  </p>
                 </a>
               </div>
             </ng-container>
 
           </ng-container>
-          <div *ngIf="dayPerformances.length > 3" (click)="onShowMore(day)" class="day_performances calendar_show_more">
-            <span>Показати більше (+{{ dayPerformances.length - 2 }})</span>
+          <div *ngIf="dayPerformances.length > 3" class="day__performances calendar__show__more">
+            <button (click)="onShowMore(day)">Показати більше (+{{ dayPerformances.length - 2 }})</button>
           </div>
-          <div class="more_items calendar_popup_show_more" *ngIf="showMore && day === activeDay">
-            <div class="popup_day_number ">
+          <div class="more__items calendar__popup__show__more" *ngIf="showMore && day === activeDay">
+            <div class="popup__day__number ">
               <span>{{ day | date: 'dd' }}</span>
             </div>
             <ng-container *ngFor="let event of dayPerformances">
@@ -63,23 +65,23 @@
                 ></app-cal-popup>
               </ng-template>
 
-              <div class="popup_day_performances">
+              <div class="popup__day__performances">
                 <a
                   class="events"
                   [routerLink]="['', 'performance', event.performance.slug]">
                   <p
-                    class="popup_events_performance_title"
+                    class="popup__events__performance__title"
                     triggers="mouseenter:mouseleave"
                     [ngbPopover]="popContent"
                     placement="top"
-                    popoverClass="popover-poster"
+                    popoverClass="popover__poster"
                     *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">{{ event.performance.title | striphtml:['40', '...'] }}</p>
                 </a>
               </div>
             </ng-container>
 
-            <div class="popup_day_performances" (click)="onShowMore(null)">
-              <span>Показати менше</span>
+            <div class="popup__day__performances" >
+              <button (click)="onShowMore(null)">Показати менше</button>
             </div>
           </div>
         </div>

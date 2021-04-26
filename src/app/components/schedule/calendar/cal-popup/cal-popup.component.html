@@ -1,29 +1,29 @@
-<div class="popover-data">
+<div class="popover__data">
   <img src="{{ url }}"
        [title]="img_title"
-       class="popover-img"
+       class="popover__img"
        alt=""
   >
-  <div class="popover-content">
+  <div class="popover__content">
     <div>
-      <p class="popover-title">{{ title }}</p>
+      <p class="popover__title">{{ title }}</p>
     </div>
-    <div class="popover-info">
+    <div class="popover__info">
       <img src="assets/images/calendar/bx-calendar-event.svg" alt="">
       <p>
         <span>{{ date_time | date: 'dd/MM' }}</span>,
         <span>{{ date_time | date: 'EEEE' }}</span>
       </p>
     </div>
-    <div class="popover-info">
+    <div class="popover__info">
       <img src="assets/images/calendar/time-fill.svg" alt="">
       <p>{{ time }}</p>
     </div>
-    <div class="popover-info">
+    <div class="popover__info">
       <img src="assets/images/calendar/bx-hourglass.svg" alt="">
       <p>{{ duration }}</p>
     </div>
-    <div class="popover-info">
+    <div class="popover__info">
       <img src="assets/images/calendar/map-pin-2-fill.svg" alt="">
       <p>{{ venue }}</p>
     </div>
