@@ -27,9 +27,10 @@
   }
 }
 
-.epochTitle {
+.epochTitle { 
   font-size: $font-largest;
   text-align: center;
+  @include flex-center;
   color: $font-color-accent;
   margin-bottom: 60px;
   margin-top: -10px;
