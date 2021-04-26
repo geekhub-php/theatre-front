@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { GatewayService } from '../../services/gateway.service';
 import { PerformanceListResponse } from '../../store/performance/PerformanceListResponse';
@@ -17,7 +17,6 @@ export class RepertoireComponent implements OnInit {
   page = 1;
   collectionSize: number;
 
-
   response: PerformanceListResponse;
   perfomances: Array<Performance>;
   seasonNumber: number;
@@ -30,8 +29,6 @@ export class RepertoireComponent implements OnInit {
     private gateway: GatewayService,
     private loaderService: LoaderService,
     private activatedRoute: ActivatedRoute,
-    private active: ActivatedRoute,
-    private router: Router
   ) {
   }
 
@@ -55,7 +52,6 @@ export class RepertoireComponent implements OnInit {
     getSeasonPerformancesSub$
       .subscribe((performances) => {
         this.perfomances = performances;
-        console.log('performances', performances);
         this.collectionSize = performances.length;
         this.changeDetector.markForCheck();
         this.loaderService.stop('repertoire');
