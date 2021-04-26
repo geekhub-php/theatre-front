@@ -106,7 +106,6 @@ $popup-border-color: #b6b6b4;
     background-color: $popup-bg-color;
     z-index: 8;
     overflow: visible;
-    opacity: 100%;
     transition: ease-in .2s;
 
     & .popup__day__number {
@@ -226,15 +225,15 @@ $popup-border-color: #b6b6b4;
     background-color: $background-cell-color-opacity;
 
     & .day__number {
-      opacity: 50%;
+      opacity: .5;
     }
 
     & .more .more__items .day__performances p {
-      opacity: 50%;
+      opacity: .5;
     }
 
     & .more .more__items .calendar__show__more button {
-      opacity: 50%;
+      opacity: .5;
     }
   }
 
