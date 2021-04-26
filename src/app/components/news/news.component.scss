@@ -24,11 +24,11 @@ h2 {
 }
 
 ngb-pagination ::ng-deep li:not(.active) a {
-  font-family: Montserrat !important;
-  font-size: 18px !important;
+  font-family: $body-font-family !important;
+  font-size: $font-size-medium !important;
   line-height: 18px !important;
-  background-color: #0e0c08 !important;
-  color: #868583 !important;
+  background-color: $background-color-black !important;
+  color: $background-color-disabled !important;
   border: none;
   width: 40px !important;
   height: 32px !important;
@@ -38,14 +38,14 @@ ngb-pagination ::ng-deep li:not(.active) a {
 }
 
 ngb-pagination ::ng-deep ul > li.active > a {
-  font-family: Montserrat !important;
-  font-weight: 700 !important;
-  font-size: 18px !important;
+  font-family: $body-font-family !important;
+  font-weight: $font-weight-bold !important;
+  font-size: $font-size-medium !important;
   line-height: 18px !important;
-  background-color: #0e0c08 !important;
-  color: #fff !important;
+  background-color: $background-color-black !important;
+  color: $font-color-white !important;
   border-radius: 2px !important;
-  border: solid 2px #868583 !important;
+  border: solid 2px $background-color-disabled !important;
   width: 32px !important;
   height: 32px !important;
   display: flex !important;
