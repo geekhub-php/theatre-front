@@ -28,7 +28,7 @@ export class AboutMoreComponent implements OnInit, AfterContentChecked  {
     point: {
       visible: true
     },
-    loop: true,
+    loop: false,
     load: 2,
     velocity: 0,
     touch: false,

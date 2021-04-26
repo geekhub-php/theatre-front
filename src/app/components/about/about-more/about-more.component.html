@@ -28,21 +28,9 @@
     </div>
     <div *ngIf="history.performances.length > 0">
 
-
-<!--      <div class="performance">-->
-<!--        <ul class="performance-list" *ngIf="history.performances">-->
-<!--          <li class="list-item" *ngFor="let item of history.performances" [routerLink]="['/performance', item.slug]">-->
-<!--            <img class="img" [src]="item.mainPicture.performance_big.url" alt="performance picture" [title]="item.mainPicture.performance_big.properties.title" />-->
-<!--            <p class="title">-->
-<!--              <span class="span">{{ item.title }}</span>-->
-<!--            </p>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-
-
-
       <div class="wrapped">
+
+        <h2 class="performansesListTitle" i18n="@@performances">Performance</h2>
 
         <ngu-carousel
           #myCarousel
@@ -53,6 +41,7 @@
           <ngu-tile *nguCarouselDef="let item">
             <div
               class="image"
+              [routerLink]="['/performance', item.slug]"
               [style.background]="'url(' + item.mainPicture.performance_big.url + ')'"
             >
             </div>
@@ -67,10 +56,10 @@
             </li>
           </ul>
           <div NguCarouselPrev class="left">
-            left
+            <img alt="chevron-left" src="assets/images/slider/chevron-left.svg">
           </div>
           <div NguCarouselNext class="right">
-            right
+            <img alt="chevron-rigth" src="assets/images/slider/chevron-right.svg">
           </div>
         </ngu-carousel>
 

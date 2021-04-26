@@ -74,13 +74,75 @@ a {
   color: $background-color-white;
 }
 
-.all-prersons {
+.performansesListTitle{
+  @include flex-center;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  font-weight: $font-weight-semi-bold;
+  margin-bottom: 30px;
+}
+
+// ________________ slider _________
+
+$background-colors: #0e0c08;
+$dots-active-color: #b49864;
+$dots-color: #868583;
+$position: absolute;
+
+@mixin opacity {
+  -webkit-transition: all 0.3s ease;;
+  -moz-transition: all 0.3s ease;;
+  -o-transition: all 0.3s ease;;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+@mixin hover_opacity {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+
+@mixin display {
   display: flex;
   justify-content: center;
 }
 
+@mixin gradient {
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
+}
+
+.wrapped {
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: $background-colors;
+}
+
+a {
+  color: $dots-active-color;
+  text-decoration: none;
+}
+
+.title {
+  height: 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: $background-color-white;
+}
+
+.all-prersons {
+  @include display;
+}
+
 .link-persons {
-  width: 167px;
+  width: 170px;
   height: 25px;
   font-size: 18px;
   font-stretch: normal;
@@ -91,71 +153,44 @@ a {
 }
 
 .image {
-  margin: 32px;
-  min-height: 200px;
-  width: auto;
-  height: auto;
-  z-index: 3;
-}
-
-.image:hover {
-  filter: none;
+  background-size: cover !important;
+  height: 470px;
+  margin-left: 17px;
+  margin-right: 17px;
 }
 
 .left {
-  display: flex;
-  justify-content: center;
+  @include display;
+  @include gradient;
+  @include opacity;
+  position: $position;
   align-items: center;
   cursor: pointer;
-  position: absolute;
   bottom: 0;
   width: 70px;
   z-index: 1;
-  -webkit-transition: all 0.3s ease;
-  ;
-  -moz-transition: all 0.3s ease;
-  ;
-  -o-transition: all 0.3s ease;
-  ;
-  transition: all 0.3s ease;
-  opacity: 1;
   height: 100%;
-  background: linear-gradient($background-color-black, $background-color-black, $background-color-black, $background-color-black);
 }
 
 .left:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-  opacity: 0.6;
+  @include hover_opacity;
 }
 
 .right {
-  display: flex;
-  justify-content: center;
+  @include display;
+  @include opacity;
+  @include gradient;
+  position: $position;
   align-items: center;
-  position: absolute;
   bottom: 0;
   width: 70px;
   height: 100%;
   right: 5px;
   z-index: 1;
-  -webkit-transition: all 0.3s ease;
-  ;
-  -moz-transition: all 0.3s ease;
-  ;
-  -o-transition: all 0.3s ease;
-  ;
-  transition: all 0.3s ease;
-  opacity: 1;
-  background: linear-gradient($background-color-black, $background-color-black, $background-color-black, $background-color-black);
 }
 
 .right:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-  opacity: 0.6;
+  @include hover_opacity;
 }
 
 .myPoint {
@@ -171,8 +206,8 @@ a {
   align-items: center;
 }
 
-.myPoint li {
-  background-color: #868583;
+.myPoint  li {
+  background-color: $dots-color;
   display: inline-block;
   border-radius: 50%;
   width: 12px;
@@ -184,9 +219,14 @@ a {
   cursor: pointer;
 }
 
-.myPoint li.active {
-  background-color: #b49864;
+.myPoint  li.active {
+  background-color: $dots-active-color;
   transform: scale(1.2);
   width: 16px;
   height: 16px;
 }
+
+// .image{
+//   width: 352px;
+//   height: 495px;
+// }
