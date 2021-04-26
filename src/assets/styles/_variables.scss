@@ -16,3 +16,104 @@ $secondary-color-lighter: #777;
 
 $border-color: #e7e7e7;
 $typical-box-shadow: 0 0 9px 0 rgba(126,126,126,.16);
+
+//______________________________________________________________________________________________________________________
+
+/*NEW*/
+
+/*Dimensions and display method*/
+
+@mixin box($width, $height) {
+  width: $width * 1px;
+  height: $height * 1px;
+}
+
+@mixin container($container-width, $height, $container-padding, $container-margin) {
+  width: $container-width;
+  height: $height * 1px;
+  padding: $container-padding;
+  margin: $container-margin;
+}
+
+@mixin flex-space-between {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$container-width: 1500px;
+$container-margin: 0 auto;
+
+/*Fonts*/
+
+@mixin font($font-family, $font-size, $font-color, $font-weight, $line-height, $letter-spacing: normal) {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $font-color;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@font-face {
+  font-family: "KobzarKS";
+  src: url("../fonts/8926.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+$body-font-family: "Monteserrat", "Arial", "Helvetica", sans-serif;
+$creative-font: "KobzarKS", "Brush Script MT", "Brush Script Std", cursive;
+
+$font-size-x-small: 10px;
+$font-size-small: 14px;
+$font-size-medium: 18px;
+$font-size-large: 24px;
+$font-size-x-large: 32px;
+$font-size-xxx-large: 40px;
+$font-largest: 72px;
+
+$font-color-white: #fff;
+$font-color-primary: #b6b6b4;
+$font-color-dark: #323232;
+$font-color-accent: #b49864;
+$font-color-alert: #eb5757;
+$font-color-black: #0e0c08;
+
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+$line-height-basic: 27px;
+
+/*Borders*/
+
+@mixin border($border-width, $border-style: solid, $border-color, $border-radius: 2px) {
+  border-width: $border-width * 1px;
+  border-style: $border-style;
+  border-color: $border-color;
+  border-radius: $border-radius;
+}
+
+$border-color-light: #fff;
+$border-color-dark: #0e0c08;
+$border-color-accent: #b49864;
+$border-color-active: #8e7444;
+
+/*Backgrounds*/
+
+$background-color-white: #fff;
+$background-main-color-lighter: #323232;
+$background-main-color-darker: #242424;
+$background-color-black: #0e0c08;
+$background-color-accent: #b49864;
+$background-color-active: #8e7444;
+$background-color-disabled: #868583;
+$secondary-background-color: #b6b6b4;
+$background-on-hover: #c7b28b;
+$box-shadow: 0 8px 18px 0 rgba(0, 0, 0, .25);

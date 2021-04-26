@@ -3,11 +3,11 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
 
 interface IVisuallyImpaired {
-  fontSize: '14px' | '24px';
+  fontSize: '18px' | '24px';
   colorSchema: 'invert' | 'sepia' | 'black-white' | 'white-black' | 'none';
 }
 
-const DEFAULT_FONT_SIZE = '14px';
+const DEFAULT_FONT_SIZE = '18px';
 
 @Injectable({
   providedIn: 'root'
@@ -65,7 +65,7 @@ export class VisuallyImpairedService {
   setReduceFont() {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.localStorageVI.fontSize = '14px';
+    this.localStorageVI.fontSize = '18px';
 
     this.setStylesOnElement({ fontSize: this.localStorageVI.fontSize} , this.htmlDomEl);
     localStorage.setItem('visually-impaired', JSON.stringify(this.localStorageVI));
