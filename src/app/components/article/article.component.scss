@@ -1,19 +1,17 @@
 @import "~assets/styles/variables";
 
 h1 {
-  font-family: KobzarKS-Regular;
-  font-size: 72px;
-  line-height: 72px;
-  color: #b49864;
-  margin-bottom: 64px;
+  margin-bottom: 60px;
   text-align: center;
-  padding-top: 32px;
+  padding-top: 30px;
+
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
 }
 
 .article {
-  max-width: 1504px;
+  max-width: 1500px;
   margin: 0 auto 80px;
-  min-height: 473px;
+  min-height: 470px;
 }
 
 .img {
@@ -30,27 +28,17 @@ h1 {
 }
 
 .item_title {
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 60px;
-  letter-spacing: .8px;
   margin-bottom: 16px;
-  color: #fff;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
 }
 
 .date {
-  font-family: Montserrat;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 25px;
   margin-bottom: 16px;
-  color: #b49864;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 25px, normal)
 }
 
 .text {
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 27px;
-  color: #b6b6b4;
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
