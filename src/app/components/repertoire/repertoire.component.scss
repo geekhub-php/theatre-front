@@ -1,29 +1,23 @@
+@import "~assets/styles/variables";
+
 .wrapped {
-  background-color: #0e0c08;
+  background-color: $background-color-black;
 }
 
 .wrapped__title {
   height: 80px;
-  //font-family: KobzarKS;
-  font-size: 72px;
-  line-height: 1;
-  color: #b49864;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
 }
 
 .wrapped__active-nav {
   margin: 10px;
-  font-family: 'Montserrat', serif;
-  font-size: 40px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 0.8px;
   text-align: center;
-  color: #ffffff;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, 0.8);
 }
 
 .wrapped__perfomances {
@@ -38,13 +32,11 @@
 }
 
 .item__wraper {
-  width: 350px;
-  height: 500px;
+  @include box(350, 500);
 }
 
 .image-performance {
-  width: 350px;
-  height: 500px;
+  @include box(350, 500);
 }
 
 .item__container {
@@ -53,34 +45,31 @@
 }
 
 .age-restrictions {
-  padding: 10px 8px 10px 9px;
   position: absolute;
   left: 0;
-  width: 56px;
-  height: 56px;
-  font-size: 24px;
-  color: #fff;
-  background-color: #b49864;
-  line-height: 1.5;
+  font-size: $font-size-large;
+  color: $font-color-white;
+  background-color: $background-color-accent;
+
+  @include container(56px, 56, 10px 8px 10px 9px, 0);
 }
 .pagination {
   margin-right: 210px;
   padding-bottom: 30px;
-  font-size: 18px;
+  font-size: $font-size-medium;
 }
 
 :host ::ng-deep ngb-pagination .page-item .page-link {
-  background-color: #0e0c08;
+  background-color: $background-color-black;
+  color: $font-color-gray;
   border: none;
-  color: #868583;
 }
 
 :host ::ng-deep ngb-pagination .page-item.active .page-link {
-  background-color: #0e0c08;
-  color: #ffffff;
-  border: 2px solid #868583;
-  font-weight: 700;
-  font-size: 18px;
+  background-color: $background-color-black;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 1.5, normal);
+  @include border(2, solid, $border-color-gray, 2px);
 }
 
 :host ::ng-deep ngb-pagination :focus {
