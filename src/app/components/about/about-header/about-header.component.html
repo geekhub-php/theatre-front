@@ -1,6 +1,6 @@
 <div class="about_seconHeader_container">
-    <a class="item" routerLink="/about/theatre-history" i18n="@@theatreHistory">History of theatre</a>
-    <a class="item" routerLink="/about/festivals" i18n="@@festivals">Festivals</a> 
-    <a class="item" routerLink="/about/epoch" i18n="@@epoch">Epoch</a>
-    <a class="item" routerLink="/about/visit" i18n="@@theatreVisit">Visit to the theater</a>
+    <a class="item" routerLink="/about/theatre-history"  [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" i18n="@@theatreHistory">History of theatre</a>
+    <a class="item" routerLink="/about/festivals" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" i18n="@@festivals">Festivals</a> 
+    <a class="item" routerLink="/about/epoch" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" i18n="@@epoch">Epoch</a>
+    <a class="item" routerLink="/about/visit" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" i18n="@@theatreVisit">Visit to the theater</a>
 </div> 

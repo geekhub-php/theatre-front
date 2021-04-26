@@ -17,6 +17,13 @@
     padding-left: 15px;
     padding-right: 15px;
     align-self: center;
+
+    &.active {
+      height: 56px;
+      line-height: 1.39;
+      padding-top: 16px;
+      background-color: $background-on-hover;
+    }
   }
 
   .item:hover {
