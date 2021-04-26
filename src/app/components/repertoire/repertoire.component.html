@@ -10,7 +10,7 @@
   <p class="wrapped__active-nav" *ngIf="seasonNumber" i18n="@@archive">Archive</p>
 
   <div class="wrapped__perfomances">
-    <div class="perfomance__item" *ngFor="let item of perfomances | paginate: { itemsPerPage: 16, currentPage: p }">
+    <div class="perfomance__item" *ngFor="let item of perfomances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
       <div class="item__container" [routerLink]="['', 'performance', item.slug]">
         <img class="image-performance" [src]="item.mainPicture.performance_big.url"
              [alt]="item.mainPicture.performance_small.properties.alt">
@@ -19,5 +19,15 @@
     </div>
   </div>
 
-  <pagination-controls (pageChange)="p = $event" directionLinks="true"></pagination-controls>
+  <ngb-pagination class="pagination d-flex justify-content-end"
+    [collectionSize]="collectionSize"
+    [(page)]="page"
+    [boundaryLinks]="false"
+    [rotate]="true"
+    [pageSize]="pageSize"
+  >
+    <ng-template ngbPaginationPrevious>&#8592;</ng-template>
+    <ng-template ngbPaginationNext>&#8594;</ng-template>
+  </ngb-pagination>
+
 </div>

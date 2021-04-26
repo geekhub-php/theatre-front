@@ -63,15 +63,26 @@
   background-color: #b49864;
   line-height: 1.5;
 }
-:host ::ng-deep .ngx-pagination {
-  display: flex;
-  justify-content: flex-end;
+.pagination {
   margin-right: 210px;
   padding-bottom: 30px;
+  font-size: 18px;
 }
 
-:host ::ng-deep .ngx-pagination .current {
+:host ::ng-deep ngb-pagination .page-item .page-link {
+  background-color: #0e0c08;
+  border: none;
+  color: #868583;
+}
+
+:host ::ng-deep ngb-pagination .page-item.active .page-link {
   background-color: #0e0c08;
   color: #ffffff;
   border: 2px solid #868583;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+:host ::ng-deep ngb-pagination :focus {
+  outline: none !important;
 }

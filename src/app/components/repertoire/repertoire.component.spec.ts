@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { RepertoireComponent } from './repertoire.component';
 import { RepertoireNavHeaderComponent } from './repertoire-nav-header/repertoire-nav-header.component';
@@ -19,7 +19,7 @@ describe('RepertoireComponent', () => {
         HttpClientModule,
         RouterModule,
         RouterTestingModule,
-        NgxPaginationModule
+        NgbPaginationModule
       ]
     })
       .compileComponents();
