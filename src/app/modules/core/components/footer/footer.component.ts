@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
-  constructor() { }
+  constructor() {
+  }
 
   scrollToTop() {
     // tslint:disable-next-line:only-arrow-functions
