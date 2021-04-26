@@ -196,7 +196,9 @@ export class GatewayService {
       property: 'og:description',
       content: description
     });
-    this.meta.updateTag({ property: 'og:image', content: image });
+    if (image) {
+      this.meta.updateTag({ property: 'og:image', content: image });
+    }
     this.meta.updateTag({ property: 'og:url', content: `${this.canonicalUrl}${this.localeId}${this.router.url}` });
   }
 
