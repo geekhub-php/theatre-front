@@ -20,7 +20,10 @@ import { ArticleComponent } from './components/article/article.component';
 
 import { BoardTrusteesComponent } from './components/board-trustees/board-trustees.component';
 import { DonateComponent } from './components/donate/donate.component';
+
+import { PageNotFoundComponent } from './modules/core/components/page-not-found/page-not-found.component';
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
+import { PartnersComponent } from './components/partners/partners.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
 
 
@@ -39,8 +42,9 @@ const appRoutes: Routes = [
   {path: 'board-trustees', component: BoardTrusteesComponent},
   {path: 'donate', component: DonateComponent},
   {path: 'developers-team', component: DevTeamComponent},
+  {path: 'partners', component: PartnersComponent},
   {path: 'cooperation', component: CooperationComponent}
-  // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup
+/*  // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup*/
 ];
 
 @NgModule({

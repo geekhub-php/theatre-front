@@ -1,17 +1,34 @@
 @import "~assets/styles/variables";
 
-.navbar-nav {
-  font-size: .857rem;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
+:host {
+  margin: 0 auto;
 }
 
-.visually-impaired-button {
-  margin: 0 5px;
-  color: $white-color;
+.header-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 16px 0;
 
-  &:hover {
-    background-color: rgba($white-color, .3);
+  @include flex-space-between;
+
+  li + li {
+    margin-left: 30px;
+  }
+
+  .header-nav__link {
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+  }
+
+  a {
+    color: $font-color-primary;
+    font-size: $font-size-medium;
+
+    &:hover {
+      color: $font-color-white;
+      text-decoration: none;
+      background-color: rgba($background-on-hover, .05);
+    }
   }
 }
