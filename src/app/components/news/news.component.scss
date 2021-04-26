@@ -1,17 +1,11 @@
 @import "~assets/styles/variables";
 
 h2 {
-  font-family: KobzarKS;
-  font-size: 72px;
-  line-height: 72px;
-  color: #b49864;
   padding-top: 80px;
-  margin-bottom: 64px;
+  margin-bottom: 60px;
   text-align: center;
-}
 
-.page {
-  background-color: #0e0c08;
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
 }
 
 .news_container {
@@ -21,7 +15,7 @@ h2 {
 }
 
 .news_wrapper {
-  border-bottom: .5px solid #323232;
+  border-bottom: .5px solid $font-color-dark;
   margin: 0 5px 35px;
 }
 
