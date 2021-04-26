@@ -1,4 +1,13 @@
-<div class="page">
+<svg display="none">
+  <symbol id="arrow-left" viewBox="0 0 19 8">
+    <path d="M0 4L4 0V3H19V5H4V8L0 4Z" fill="#868583"/>
+  </symbol>
+  <symbol id="arrow-right" viewBox="0 0 19 8">
+    <path d="M19 4l-4-4v3H0v2h15v3l4-4z" fill="#868583"/>
+  </symbol>
+</svg>
+
+<div>
   <h2 i18n="@@news">News</h2>
 
   <app-spinner name="news"></app-spinner>
@@ -17,13 +26,13 @@
                       [maxSize]="5"
       >
         <ng-template ngbPaginationPrevious>
-          <svg fill="none" height="8" viewBox="0 0 19 8" width="19" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 4L4 0V3H19V5H4V8L0 4Z" fill="#868583"/>
+          <svg>
+            <use xlink:href="#arrow-left"></use>
           </svg>
         </ng-template>
         <ng-template ngbPaginationNext>
-          <svg fill="none" height="8" viewBox="0 0 19 8" width="19" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 4l-4-4v3H0v2h15v3l4-4z" fill="#868583"/>
+          <svg>
+            <use xlink:href="#arrow-right"></use>
           </svg>
         </ng-template>
 

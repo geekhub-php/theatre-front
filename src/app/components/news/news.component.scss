@@ -1,28 +1,22 @@
 @import "~assets/styles/variables";
 
 h2 {
-  font-family: KobzarKS;
-  font-size: 72px;
-  line-height: 72px;
-  color: #b49864;
   padding-top: 80px;
-  margin-bottom: 64px;
+  margin-bottom: 60px;
   text-align: center;
-}
 
-.page {
-  background-color: #0e0c08;
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
 }
 
 .news_container {
-  max-width: 1504px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding-bottom: 184px;
+  padding-bottom: 140px;
 }
 
 .news_wrapper {
-  border-bottom: .5px solid #323232;
-  margin-bottom: 35px;
+  border-bottom: .5px solid $border-color-lighter;
+  margin: 0 5px 35px;
 }
 
 .pagination_wrapper {
@@ -30,25 +24,31 @@ h2 {
 }
 
 ngb-pagination ::ng-deep li:not(.active) a {
-  font-family: Montserrat !important;
-  font-size: 18px !important;
+  font-family: $body-font-family !important;
+  font-size: $font-size-medium !important;
   line-height: 18px !important;
-  background-color: #0e0c08 !important;
-  color: #868583 !important;
+  background-color: $background-color-black !important;
+  color: $background-color-disabled !important;
   border: none;
-  width: 32px !important;
+  width: 40px !important;
   height: 32px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 ngb-pagination ::ng-deep ul > li.active > a {
-  font-family: Montserrat !important;
-  font-weight: 700 !important;
-  font-size: 18px !important;
+  font-family: $body-font-family !important;
+  font-weight: $font-weight-bold !important;
+  font-size: $font-size-medium !important;
   line-height: 18px !important;
-  background-color: #0e0c08 !important;
-  color: #fff !important;
+  background-color: $background-color-black !important;
+  color: $font-color-white !important;
   border-radius: 2px !important;
-  border: solid 2px #868583 !important;
+  border: solid 2px $background-color-disabled !important;
   width: 32px !important;
   height: 32px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
