@@ -106,8 +106,8 @@ export class MonthsCarouselComponent implements AfterViewInit {
       visible: true,
     },
     load: 10,
-    velocity: 0,
-    touch: false,
+    velocity: 5,
+    // touch: true,
     easing: 'cubic-bezier(0, 0, 0.2, 1)',
     loop: true,
   };
@@ -124,7 +124,6 @@ export class MonthsCarouselComponent implements AfterViewInit {
 
     if ((innerWidth >= xlBreakPoint) && !(this.currentSize === 'xl')) {
       this.currentSize = 'xl'
-      console.log(2131)
       this.setIndexes(1);
     } else if ((innerWidth >= mdBreakPoint && innerWidth < xlBreakPoint) && !(this.currentSize === 'md')) {
       this.currentSize = 'md';
@@ -147,6 +146,7 @@ export class MonthsCarouselComponent implements AfterViewInit {
   }
 
   ngOnInit() {
+
   }
 
   setIndexes(positionDependency: number) {

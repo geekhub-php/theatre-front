@@ -33,7 +33,7 @@
              [class.events_double]="dayPerformances.length === 2"
              [class.events_triple]="dayPerformances.length === 3">
 
-            <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title | striphtml:[40, '...'] }}</p>
+            <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title | striphtml:['40', '...'] }}</p>
 
             <ng-template #popTitle>{{ event.performance.title }}</ng-template>
 
