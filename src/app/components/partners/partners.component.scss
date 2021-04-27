@@ -1,0 +1,133 @@
+@import "~assets/styles/variables";
+
+.partners-container {
+  width: $container-width;
+  margin: $container-margin;
+
+  .partners {
+    padding: 80px 0;
+    text-align: center;
+
+    @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
+
+    &__title {
+      @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1.5, normal);
+    }
+
+    &__text {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 32px 312px;
+      display: block;
+      text-align: justify-all;
+    }
+  }
+
+  .partners-persons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 46px;
+
+    &__title {
+      text-align: center;
+
+      @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .partner {
+
+      &__person {
+        display: flex;
+        flex-direction: column;
+        width: 224px;
+        margin: 12px;
+        overflow: hidden;
+      }
+    }
+
+    .person {
+
+      &__img-wrapper {
+        width: 100%;
+        height: 300px;
+      }
+
+      &__img {
+        height: 100%;
+        object-fit: cover;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+
+        &:hover {
+          -webkit-filter: none;
+          -ms-filter: none;
+          filter: none;
+        }
+      }
+
+      &__person-title {
+        width: 46%;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        text-align: left;
+
+        @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 25px, normal);
+      }
+
+      &__person-subtitle {
+        @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, normal);
+      }
+    }
+  }
+
+  .partners-companies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 46px;
+
+    &__title {
+      text-align: center;
+
+      @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .partner {
+
+      &__company {
+        display: flex;
+        flex-direction: column;
+        margin: 12px;
+        overflow: hidden;
+
+        @include box(224, 224);
+      }
+    }
+  }
+
+  .company {
+
+    &__img-wrapper {
+      width: 100%;
+      height: 244px;
+    }
+  }
+}
+
