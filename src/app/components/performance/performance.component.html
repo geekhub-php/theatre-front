@@ -88,8 +88,15 @@
 
   <section class="gallery">
     <h2 class="performance_title">Фотогалерея</h2>
+
     <ngx-gallery *ngIf="!loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
     </ngx-gallery>
+
+    <ngx-gallery *ngIf="!loadingFull" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
+    </ngx-gallery>
+
+    <button (click)="openGallery()" *ngIf="!loading" class="more">Більше фото</button>
+    <button (click)="closeGallery()" *ngIf="!loadingFull" class="more">Згорнути</button>
   </section>
 </div>
 

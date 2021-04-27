@@ -77,6 +77,9 @@
 .gallery {
   background-color: #242424;
   padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ngx-gallery {
@@ -84,6 +87,21 @@
   margin-bottom: 20px;
 }
 
+.more {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: .36px;
+  color: #b49864;
+  background-color: #242424;
+  margin: 30px 0 80px;
+  border: none;
+}
+
+.more:active {
+  border: 1px solid #242424;
+}
 
 //:host ::ng-deep .post-text p {
 //  margin-bottom: 5px;

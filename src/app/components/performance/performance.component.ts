@@ -21,13 +21,20 @@ export class PerformanceComponent implements OnInit {
   slug: string;
   roles: Array<Role>;
   activeId: string;
+  loading = true;
+  loadingFull = true;
+  galleryRows = 1;
+  galleryColumns = 4;
+  thumbnailHeight = 240;
   galleryImages: Array<NgxGalleryImage> = [];
   galleryOptions: Array<NgxGalleryOptions> = [
     {
       image: false,
       width: '100%',
-      thumbnailsColumns: 4,
-      thumbnailsRows: 1,
+      height: '240px',
+      //height: this.galleryHeight,
+      thumbnailsColumns: this.galleryColumns,
+      thumbnailsRows: this.galleryRows,
       thumbnailMargin: 30,
       thumbnailSize: NgxGalleryImageSize.Cover,
       previewCloseOnEsc: true,
@@ -57,16 +64,16 @@ export class PerformanceComponent implements OnInit {
       this.performance = performance.body;
       console.log(this.performance);
       this.roles = roles;
-      // this.performance.sliderImage.map(item => {
-      //   this.galleryImages.push(
-      //     {
-      //       small: item.images.post_main.url,
-      //       medium: item.images.post_main.url,
-      //       big: item.images.post_big.url,
-      //     }
-      //   );
-      // });
-
+      this.performance.gallery.map(item => {
+        this.galleryImages.push(
+          {
+            small: item.images.performance_small.url,
+            medium: item.images.performance_big.url,
+            big: item.images.performance_big.url,
+          }
+        );
+      });
+      this.loading = false;
       this.gateway.updateMeta(this.performance.title,
         this.performance.description,
         this.performance.mainPicture.performance_big.url);
@@ -77,5 +84,20 @@ export class PerformanceComponent implements OnInit {
     }, err => this.loaderService.stop('performance-page'));
 
     this.gateway.updateCanonicalURL();
+  }
+
+  openGallery() {
+    this.loading = true;
+    this.galleryOptions[0].thumbnailsRows = Math.ceil(this.galleryImages.length / this.galleryColumns);
+    this.galleryRows = this.galleryOptions[0].thumbnailsRows;
+    this.galleryOptions[0].height = `${this.galleryRows * this.thumbnailHeight}px`;
+    this.loadingFull = false;
+  }
+
+  closeGallery() {
+    this.loadingFull = true;
+    this.galleryOptions[0].thumbnailsRows = 1;
+    this.galleryOptions[0].height = `${this.thumbnailHeight}px`;
+    this.loading = false;
   }
 }
