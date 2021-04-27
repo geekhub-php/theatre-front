@@ -32,11 +32,11 @@ export class ArticleComponent implements OnInit {
       thumbnailSize: NgxGalleryImageSize.Cover,
       previewCloseOnEsc: true,
       previewAnimation: false,
-      previewFullscreen: true,
       previewBullets: true,
       thumbnailsOrder: NgxGalleryOrder.Page,
       arrowPrevIcon: 'fa fa-chevron-left',
       arrowNextIcon: 'fa fa-chevron-right',
+      closeIcon: 'fas fa-times'
     },
     {
       breakpoint: 770,
