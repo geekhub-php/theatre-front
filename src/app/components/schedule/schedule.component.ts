@@ -14,7 +14,7 @@ enum ScheduleViewModes {
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss'],
+  styleUrls: ['./schedule.component.scss']
 })
 export class ScheduleComponent implements OnInit {
   date: Date;
@@ -98,17 +98,21 @@ export class ScheduleComponent implements OnInit {
     this.isToday = this.calendar.isToday(this.date);
   }
 
+  selectMonth(date) {
+    this.date = this.calendar.getPerformanceByDate(date);
+    this.isToday = this.calendar.isToday(this.date);
+  }
+
   now() {
     this.date = this.calendar.today();
     this.isToday = this.calendar.isToday(this.date);
   }
 
 
-
   changeViewToCalendar() {
     this.viewMode = ScheduleViewModes.CALENDAR;
-    if (this.activeComp.listActive) this.activeComp.listActive = false
-    this.activeComp.calendarActive = true
+    if (this.activeComp.listActive) this.activeComp.listActive = false;
+    this.activeComp.calendarActive = true;
 
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
@@ -117,8 +121,8 @@ export class ScheduleComponent implements OnInit {
 
   changeViewToList() {
     this.viewMode = ScheduleViewModes.LIST;
-    if (this.activeComp.calendarActive) this.activeComp.calendarActive = false
-    this.activeComp.listActive = true
+    if (this.activeComp.calendarActive) this.activeComp.calendarActive = false;
+    this.activeComp.listActive = true;
 
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));

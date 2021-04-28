@@ -37,6 +37,7 @@ $font-color-gold: #b49864;
   position: relative;
 
   h2 {
+    user-select: none;
     color: $font-color-gold;
     font-family: $creative-font;
     font-size: 80px;
@@ -60,14 +61,18 @@ $font-color-gold: #b49864;
     background-color: transparent;
     border: none;
     outline: none;
+
     & img {
+      user-select: none;
       width: 24px;
       height: 24px;
     }
   }
 
   &__text {
+    user-select: none;
     //margin-right: 15px;
+
     font-family: $Montserrat;
     font-size: 18px;
     font-weight: 400;
@@ -78,6 +83,7 @@ $font-color-gold: #b49864;
   &__item {
     display: flex;
     align-items: center;
+
     &__active span {
       color: $white-color;
     }

@@ -1,95 +1,92 @@
 @import "~assets/styles/variables";
 
-.months-carousel {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
+.slider__months__container {
+  user-select: none;
+  position: relative;
+  width: $container-width;
+  margin: 40px auto;
 
-.title {
-  width: 200px;
-  height: 100px;
-}
-
-.carousel_btn_left {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: 48px;
-  height: 48px;
-  flex-grow: 0;
-  object-fit: contain;
-}
-
-.carousel_btn_right {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  width: 48px;
-  height: 48px;
-  flex-grow: 0;
-  object-fit: contain;
-}
+  .slider__months {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 
 
-.month_item {
-  cursor: pointer;
-  text-align: center;
-  width: 210px;
-  height: 64px;
-  flex-grow: 0;
-  font-family: Montserrat;
-  font-size: 40px;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 0.8px;
-  color: #323232;
-  font-weight: 400;
+    &__item {
+      display: flex;
+      user-select: none;
+      height: 100%;
+      min-width: 300px;
 
-  &:hover {
-    color: #868583;
-  }
+      &__active span {
+        font-weight: 800;
+        color: #fff;
+      }
 
-  &_active {
-    font-weight: 800;
-    color: #fff;
-  }
-  &_active:hover {
-    color: #fff;
+      &__month__name {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        cursor: pointer;
+        font-family: $Montserrat;
+        font-size: 40px;
+        line-height: 1.5;
+        color: #323232;
+        font-weight: 400;
+      }
+    }
+
+    &__btn {
+      user-select: none;
+      position: absolute;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      top: 6px;
+      z-index: 1;
+      flex-grow: 0;
+      object-fit: contain;
+      padding: 0;
+      margin: 0;
+
+      & img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    &__btn__left {
+      left: 0;
+    }
+
+    &__btn__right {
+      right: 0;
+    }
   }
 }
 
-::ng-deep .ngucarousel {
-  max-width: 1500px;
+@media (max-width: 1499px) {
+
+  .slider__months__container {
+    width: 900px;
+  }
 }
 
+@media (hover: none) and (pointer: coarse) {
 
-::ng-deep .tile {
-  display: flex;
-  justify-content: center;
-  background-color: transparent;
-  box-shadow: none !important;
-}
+  .slider__months__container {
+    max-width: 1200px;
 
-::ng-deep .item {
-  box-shadow: none;
-  width: 210px;
-}
+    .slider__months {
+      overflow-x: auto;
+      scroll-behavior: smooth;
 
-.month_item_title {
-  width: 210px !important;
+      &__item {
+        max-width: 300px;
+      }
+    }
+  }
 }

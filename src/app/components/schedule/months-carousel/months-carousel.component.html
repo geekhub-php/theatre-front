@@ -1,21 +1,27 @@
-<ngu-carousel
-  #myCarousel
-  class="months-carousel"
-  [inputs]="carouselTile"
-  [style]="{width: '100%'}"
-  [dataSource]="months"
-  (onMove)="onMove(myCarousel.currentSlide, myCarousel)"
->
-  <button NguCarouselPrev (click)="onPrev()" class="carousel_btn_left"><img src="assets/images/calendar/chevron-left.svg" alt=""></button>
-  <ngu-tile *nguCarouselDef="let item; let j = index"
-            class="month_item_title"
-            (click)="myCarousel.moveTo(selectMonth(j))">
-    <div class="month_item"
-         [class.month_item_active]="activeMonth(j)"
-    >
-      <span>{{item}}</span>
+<div class="slider__months__container" draggable="false">
+  <button
+    (click)="onPrev($event)"
+    class="slider__months__btn slider__months__btn__left">
+    <img src="assets/images/calendar/chevron-left.svg" alt="">
+  </button>
+  <div #monthsSlider class="slider__months" draggable="false">
+    <div
+      #monthItem
+      draggable="false"
+      class="slider__months__item"
+      *ngFor="let monthItem of monthList; let i = index"
+      [class.slider__months__item__active]="monthName.id === month.activeMonth">
+      <span
+        #monthName
+        [id]="monthItem.id"
+        class="slider__months__item__month__name">
+          {{ monthItem.name }}
+      </span>
     </div>
-  </ngu-tile>
-  <button NguCarouselNext (click)="onNext()" class="carousel_btn_right" [style.opacity]="myCarousel.isLast ? 0.5:1"><img
-    src="assets/images/calendar/chevron-right.svg" alt=""></button>
-</ngu-carousel>
+  </div>
+  <button
+    (click)="onNext($event)"
+    class="slider__months__btn slider__months__btn__right">
+    <img src="assets/images/calendar/chevron-right.svg" alt="">
+  </button>
+</div>
