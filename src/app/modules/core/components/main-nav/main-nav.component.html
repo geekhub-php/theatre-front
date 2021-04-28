@@ -1,29 +1,14 @@
-<ul class="navbar-nav">
-  <li><a class="nav-link" routerLink="/" routerLinkActive="active"
-         [routerLinkActiveOptions]="{ exact: true }" i18n="@@mainPage">Main page</a></li>
-  <li><a class="nav-link" routerLink="/poster" routerLinkActive="active" i18n="@@poster">Poster</a></li>
-  <li>
-    <a
-      class="nav-link"
-      routerLink="/repertoire"
-      routerLinkActive="active"
-      i18n="@@repertoire"
-    >Repertoire</a>
-  </li>
-  <li><a class="nav-link" routerLink="/news" routerLinkActive="active" i18n="@@news">News</a></li>
-  <li><a class="nav-link" routerLink="/about" routerLinkActive="active" i18n="@@about">About</a></li>
-  <li><a class="nav-link" routerLink="/persons" routerLinkActive="active" i18n="@@persons">Persons</a></li>
-  <li><a class="nav-link" routerLink="/contacts" routerLinkActive="active" i18n="@@contacts">Contacts</a></li>
-  <!--for mobile-->
-  <li><a class="nav-link d-lg-none" routerLink="/board-trustees" routerLinkActive="active" i18n="@@trustees">Board of trustees</a></li>
-  <li><a class="nav-link d-lg-none" routerLink="/donate" routerLinkActive="active" i18n="@@donate">Donate</a></li>
-  <!--language-->
-  <li><a class="mobile-language d-lg-none" [href]="langRedirectUrl" i18n="@@lang">Укр</a></li>
-  <li>
-    <button class="u-unstyled-btn visually-impaired-button d-lg-none" (click)="trigger.next(!trigger.value);">
-      <svg class="u-svg-icon" width="24" height="24">
-        <use href="assets/images/sprite.svg#eye"></use>
-      </svg>
-    </button>
-  </li>
+<ul class="header-nav">
+
+  <!--Some of the routerLinks will be modified when all components are created-->
+
+  <li><a class="header-nav__link" routerLink="/" routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }" i18n="@@mainPage">Main</a></li>
+  <li><a class="header-nav__link" routerLink="/poster" routerLinkActive="active" i18n="@@poster">Poster</a></li>
+  <li><a class="header-nav__link" routerLink="/repertoire" routerLinkActive="active" i18n="@@repertoire">Repertoire</a></li>
+  <li><a class="header-nav__link" routerLink="/persons" routerLinkActive="active" i18n="@@personalities">Personalities</a></li>
+  <li><a class="header-nav__link" routerLink="/about" routerLinkActive="active" i18n="@@aboutTitle">About</a></li>
+  <li><a class="header-nav__link" routerLink="/donate" routerLinkActive="active" i18n="@@cooperation">Cooperation</a></li>
+  <li><a class="header-nav__link" routerLink="/contacts" routerLinkActive="active" i18n="@@contacts">Contacts</a></li>
+
 </ul>

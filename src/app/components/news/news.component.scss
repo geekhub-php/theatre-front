@@ -1,57 +1,54 @@
 @import "~assets/styles/variables";
 
-.news__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+h2 {
+  padding-top: 80px;
+  margin-bottom: 60px;
+  text-align: center;
 
-  ngb-pagination {
-    flex: 0 0 100%;
-  }
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
 }
 
-.news__content {
-  flex: 0 0 calc(100% - 26rem);
+.news_container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-bottom: 140px;
 }
 
-:host ::ng-deep ngb-pagination ul {
-
-  li a {
-    color: $secondary-color;
-    outline: none;
-    border: transparent;
-    border-radius: 5px;
-
-    &:hover {
-      color: $secondary-color;
-    }
-  }
-
-  li.active a {
-    background-color: $main-color !important;
-    outline: none;
-    color: $white-color;
-    border: transparent;
-
-    span {
-      display: none;
-    }
-
-    .page-item.active .page-link {
-      border-color: transparent;
-      outline: transparent !important;
-      padding: 7px 11px !important;
-    }
-  }
+.news_wrapper {
+  border-bottom: .5px solid $border-color-lighter;
+  margin: 0 5px 35px;
 }
 
-.pagination {
-  font-size: .9rem;
+.pagination_wrapper {
+  float: right;
 }
 
-@media (max-width: 992px) {
+ngb-pagination ::ng-deep li:not(.active) a {
+  font-family: $body-font-family !important;
+  font-size: $font-size-medium !important;
+  line-height: 18px !important;
+  background-color: $background-color-black !important;
+  color: $background-color-disabled !important;
+  border: none;
+  width: 40px !important;
+  height: 32px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 
-  .widget {
-    display: none;
-  }
+ngb-pagination ::ng-deep ul > li.active > a {
+  font-family: $body-font-family !important;
+  font-weight: $font-weight-bold !important;
+  font-size: $font-size-medium !important;
+  line-height: 18px !important;
+  background-color: $background-color-black !important;
+  color: $font-color-white !important;
+  border-radius: 2px !important;
+  border: solid 2px $background-color-disabled !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }

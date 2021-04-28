@@ -1,13 +1,22 @@
-<div class="container">
+<div class="article_container">
   <app-spinner name="article"></app-spinner>
 
-  <ng-template [ngIf]="item">
+  <h1 i18n="@@newsItem">News</h1>
+
+  <div *ngIf="item" class="article">
     <div class="img">
-      <img *ngIf="item.mainPicture" src='{{ item.mainPicture.post_big.url }}'
-           alt="{{item.short_description}}" [title]="item.mainPicture.post_big.properties.title">
+      <img *ngIf="item.mainPicture; else elseImg" [src]="item.mainPicture.post_big.url"
+           alt="{{ item.short_description }}">
+      <ng-template #elseImg>
+        <img [src]="defaultImg">
+      </ng-template>
     </div>
-    <h2 class="page-title text-center">{{ item.title }}</h2>
-    <div class="post-text" [innerHtml]=item.text></div>
-    <p class="post-date">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
-  </ng-template>
+
+    <div>
+      <h2 class="item_title">{{ item.title }}</h2>
+      <p class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</p>
+      <div [innerHtml]=item.text class="text"></div>
+    </div>
+  </div>
+
 </div>

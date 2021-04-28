@@ -5,6 +5,8 @@ import { NewsItem } from '../../store/news/NewsItem';
 import { GatewayService } from '../../services/gateway.service';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { plainToClass } from 'class-transformer';
+import { GalleryItem } from '../../store/news/GalleryItem';
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -13,6 +15,8 @@ import { plainToClass } from 'class-transformer';
 export class ArticleComponent implements OnInit {
   item: NewsItem;
   posts: Array<NewsItem>;
+  defaultImg = '../../assets/images/default.jpg';
+  gallery: Array<GalleryItem>;
 
   constructor(private router: ActivatedRoute,
               private gateAway: GatewayService,
@@ -28,8 +32,9 @@ export class ArticleComponent implements OnInit {
     const slug = this.router.snapshot.paramMap.get('slug');
     this.gateAway.getNewsBySlug(slug).subscribe((res) => {
         this.item = plainToClass(NewsItem, res);
+        this.gallery = res.gallery;
         this.loaderService.stop('article');
-        this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture.post_big.url);
+        this.gateAway.updateMeta(this.item.title, this.item.text, this.item.mainPicture?.post_big?.url);
       },
       err => this.loaderService.stop('article')
     );
