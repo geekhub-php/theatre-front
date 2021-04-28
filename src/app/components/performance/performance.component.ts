@@ -32,7 +32,6 @@ export class PerformanceComponent implements OnInit {
       image: false,
       width: '100%',
       height: '240px',
-      //height: this.galleryHeight,
       thumbnailsColumns: this.galleryColumns,
       thumbnailsRows: this.galleryRows,
       thumbnailMargin: 30,
@@ -62,18 +61,19 @@ export class PerformanceComponent implements OnInit {
       this.gateway.getPerformanceRoles(slug)
     ]).subscribe(([performance, roles]) => {
       this.performance = performance.body;
-      console.log(this.performance);
       this.roles = roles;
-      this.performance.gallery.map(item => {
-        this.galleryImages.push(
-          {
-            small: item.images.performance_small.url,
-            medium: item.images.performance_big.url,
-            big: item.images.performance_big.url,
-          }
-        );
-      });
-      this.loading = false;
+      if (this.performance.gallery) {
+        this.performance.gallery.map(item => {
+          this.galleryImages.push(
+            {
+              small: item.images.performance_small.url,
+              medium: item.images.performance_big.url,
+              big: item.images.performance_big.url,
+            }
+          );
+        });
+        this.loading = false;
+      }
       this.gateway.updateMeta(this.performance.title,
         this.performance.description,
         this.performance.mainPicture.performance_big.url);

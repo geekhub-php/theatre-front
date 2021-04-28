@@ -36,6 +36,9 @@
     <div class="performance_poster">
       <img [alt]="performance.mainPicture.performance_big.alt" [src]="performance.mainPicture.performance_big.url"
            [title]="performance.mainPicture.performance_big.properties.title">
+      <div class="limit">
+        {{ performance.age_limit + '+' }}
+      </div>
     </div>
 
     <div class="performance_info">
@@ -86,7 +89,7 @@
     </div>
   </section>
 
-  <section class="gallery">
+  <section *ngIf="galleryImages.length" class="gallery">
     <h2 class="performance_title">Фотогалерея</h2>
 
     <ngx-gallery *ngIf="!loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
@@ -95,53 +98,7 @@
     <ngx-gallery *ngIf="!loadingFull" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
     </ngx-gallery>
 
-    <button (click)="openGallery()" *ngIf="!loading" class="more">Більше фото</button>
-    <button (click)="closeGallery()" *ngIf="!loadingFull" class="more">Згорнути</button>
+    <a (click)="openGallery()" *ngIf="!loading" class="more">Більше фото</a>
+    <a (click)="closeGallery()" *ngIf="!loadingFull" class="more">Згорнути</a>
   </section>
 </div>
-
-<!--    <div class="slider" *ngIf="performance.gallery">-->
-<!--      <ngb-carousel>-->
-<!--        <ng-template ngbSlide *ngFor="let image of performance.gallery">-->
-<!--          <img [src]="image.images.performance_big.url" [alt]="image.images.performance_big.properties.alt"-->
-<!--               [title]="image.images.performance_big.properties.title">-->
-<!--        </ng-template>-->
-<!--      </ngb-carousel>-->
-<!--    </div>-->
-<!--  -->
-
-<!--  <section class="info">-->
-<!--    <app-seasons class="info__seasons" *ngIf="performance" [performance]="performance"></app-seasons>-->
-
-<!--    <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">-->
-<!--      <li [ngbNavItem]="'actors'" *ngIf="roles?.length">-->
-<!--        <a ngbNavLink i18n="@@actors">Actors</a>-->
-<!--        <ng-template ngbNavContent>-->
-<!--          <div class="wrap">-->
-<!--            <ul class="employees-list">-->
-<!--              <li *ngFor="let role of roles">-->
-<!--                <a class="item" [routerLink]="['', 'persons', role.employee.slug]">-->
-<!--                  <img class="photo"-->
-<!--                       src="{{ role.employee.avatar.employee_big.url }}"-->
-<!--                       alt="{{ role.title }} | {{ role.employee.first_name }} {{ role.employee.last_name }}"-->
-<!--                       [title]="role.employee.avatar.employee_big.properties.title">-->
-<!--                  <div class="name">-->
-<!--                    <span>{{ role.title }} </span>-->
-<!--                    <p>{{ role.employee.first_name }} {{ role.employee.last_name }}</p>-->
-<!--                  </div>-->
-<!--                </a>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </ng-template>-->
-<!--      </li>-->
-<!--      <li [ngbNavItem]="'performance'" *ngIf="performance">-->
-<!--        <a ngbNavLink i18n="@@performanceDetails">Description</a>-->
-<!--        <ng-template ngbNavContent>-->
-<!--          <div class="post-text" [innerHtml]="performance.description"></div>-->
-<!--        </ng-template>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--    <div [ngbNavOutlet]="nav"></div>-->
-<!--  </section>-->
-<!--</div>-->
