@@ -25,6 +25,7 @@ export class PerformanceComponent implements OnInit {
   loadingFull = true;
   galleryRows = 1;
   galleryColumns = 4;
+  amount = 0;
   thumbnailHeight = 240;
   galleryImages: Array<NgxGalleryImage> = [];
   galleryOptions: Array<NgxGalleryOptions> = [
@@ -38,11 +39,12 @@ export class PerformanceComponent implements OnInit {
       thumbnailSize: NgxGalleryImageSize.Cover,
       previewCloseOnEsc: true,
       previewAnimation: false,
-      previewFullscreen: true,
       previewBullets: true,
-      thumbnailsOrder: NgxGalleryOrder.Page,
+      thumbnailsArrows: false,
+      thumbnailsOrder: NgxGalleryOrder.Row,
       arrowPrevIcon: 'fa fa-chevron-left',
       arrowNextIcon: 'fa fa-chevron-right',
+      closeIcon: 'fas fa-times'
     },
   ];
 
@@ -72,6 +74,7 @@ export class PerformanceComponent implements OnInit {
             }
           );
         });
+        this.amount = this.galleryImages.length - this.galleryColumns;
         this.loading = false;
       }
       this.gateway.updateMeta(this.performance.title,
