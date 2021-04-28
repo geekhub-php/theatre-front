@@ -1,13 +1,5 @@
 @import "~assets/styles/variables";
 
-.page_container {
-  background-color: #0e0c08;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
 .page_title {
   font-family: KobzarKS;
   font-size: 72px;
@@ -37,7 +29,8 @@
   line-height: 27px;
   color: #b6b6b4;
   padding-bottom: 85px;
-  margin-top: 30px;
+  max-width: 1500px;
+  margin: 30px auto 0;
 }
 
 .main-info {
@@ -76,7 +69,7 @@
 
 .gallery {
   background-color: #242424;
-  padding: 80px 10px 0;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,4 +116,19 @@
   letter-spacing: .48px;
   text-align: center;
   color: #fff;
+}
+
+.section_title {
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: .8px;
+  text-align: center;
+  color: #fff;
+  margin: 80px 0 30px;
+}
+
+.gallery_container {
+  max-width: 1500px;
 }

@@ -26,7 +26,7 @@
   </symbol>
 </svg>
 
-<div class="page_container">
+<div>
   <app-spinner name="performance-page"></app-spinner>
 
   <h1 class="page_title" i18n="@@performance">Performance</h1>
@@ -90,17 +90,27 @@
   </section>
 
   <section *ngIf="galleryImages.length" class="gallery">
-    <h2 class="performance_title">Фотогалерея</h2>
+    <h2 class="section_title">Фотогалерея</h2>
 
-    <ngx-gallery *ngIf="!loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
-    </ngx-gallery>
+    <div class="gallery_container">
 
-    <ngx-gallery *ngIf="!loadingFull" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
-    </ngx-gallery>
+      <ngx-gallery *ngIf="!loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
+      </ngx-gallery>
+
+      <ngx-gallery *ngIf="!loadingFull" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
+      </ngx-gallery>
+
+    </div>
 
     <a (click)="openGallery()" *ngIf="!loading" class="more">
       Більше фото ({{amount > 0 ? '+ ' + amount : '+ 0'}})
     </a>
     <a (click)="closeGallery()" *ngIf="!loadingFull" class="more">Згорнути</a>
+
+  </section>
+
+  <section class="recommendation">
+    <h2 class="section_title">Також вас може зацікавити</h2>
+
   </section>
 </div>
