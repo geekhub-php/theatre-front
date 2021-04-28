@@ -74,7 +74,6 @@
     @include font($body-font-family, 100px, $font-color-dark, $font-weight-semi-bold, 100px, normal);
   }
 
-
   .clearfix::after {
     content: "";
     clear: both;
@@ -86,5 +85,29 @@
 
     @include box(384, 746);
   }
+}
+
+.news_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background-main-color-darker;
+}
+
+.link {
+  padding-bottom: 80px;
+  padding-top: 30px;
+  text-decoration: none;
+  text-align: center;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 25px, normal)
+}
+
+.section_title {
+  text-align: center;
+  padding-top: 80px;
+  margin-bottom: 30px;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
 }
 
