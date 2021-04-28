@@ -23,9 +23,7 @@
 </div>
 
 <app-months-carousel
-  [onNextMonth]="nextMonth.bind(this)"
-  [onPrevMonth]="prevMonth.bind(this)"
-  [selectMonth]="selectMonth.bind(this)"
+  (selectedMonth)="selectMonth($event)"
 ></app-months-carousel>
 
 <app-spinner name="poster"></app-spinner>

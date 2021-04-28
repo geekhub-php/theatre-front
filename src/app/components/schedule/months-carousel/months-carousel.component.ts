@@ -4,9 +4,10 @@ import {
   AfterViewInit, OnDestroy, OnInit,
   ChangeDetectionStrategy,
   ViewChild, ViewChildren,
+  EventEmitter,
   HostListener,
   Component,
-  Input
+  Output
 } from '@angular/core';
 import {
   TMonthProperty,
@@ -22,9 +23,7 @@ import {
 })
 
 export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
-  @Input() onNextMonth;
-  @Input() onPrevMonth;
-  @Input() selectMonth;
+  @Output() selectedMonth = new EventEmitter();
 
   @ViewChild('monthsSlider') monthsSlider;
   @ViewChildren('monthItem') monthItems;
@@ -178,7 +177,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   getMonthData(id) {
     this.monthList.forEach(month => {
       if (month.id === id) {
-        this.selectMonth(month.date);
+        this.selectedMonth.emit(month.date);
       }
     });
   }
