@@ -57,6 +57,7 @@
         <svg class="icon">
           <use xlink:href="#hourglass"></use>
         </svg>
+        <p class="info">{{performance.duration_in_min + ' хвилин'}}</p>
       </div>
       <div class="main-info">
         <svg class="icon">
@@ -67,10 +68,11 @@
         <svg class="icon">
           <use xlink:href="#book"></use>
         </svg>
+        <p class="info">{{performance.type}}</p>
       </div>
 
       <div class="details">
-        <span class="bold">Режисер:</span>
+        <p><span class="bold">Режисер:</span>{{performance.ext_producer}}</p>
       </div>
 
       <div class="details">

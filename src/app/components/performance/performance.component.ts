@@ -62,6 +62,7 @@ export class PerformanceComponent implements OnInit {
       this.gateway.getPerformanceBySlug(slug),
       this.gateway.getPerformanceRoles(slug)
     ]).subscribe(([performance, roles]) => {
+      console.log('performance', performance);
       this.performance = performance.body;
       this.roles = roles;
       if (this.performance.gallery) {

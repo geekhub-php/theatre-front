@@ -35,12 +35,16 @@
 
 .main-info {
   margin: 0 20px 25px 0;
+  display: flex;
 }
 
 .icon {
-  width: 18px;
-  height: 20px;
+  margin-right: 16px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
+
 
 .details {
   margin-top: 40px;
@@ -130,5 +134,16 @@
 }
 
 .gallery_container {
-  max-width: 1500px;
+  width: 1500px;
+  max-width: 100%;
+  margin: 0 auto;
 }
+
+.info {
+  margin: 0;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #b6b6b4;
+}
+
