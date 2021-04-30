@@ -89,6 +89,9 @@ import { environment } from '../environments/environment';
     CalendarService,
     GoogleAnalyticsService,
   ],
+  exports: [
+    DonateComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

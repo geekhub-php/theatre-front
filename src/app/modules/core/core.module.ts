@@ -31,8 +31,10 @@ import { FooterNavComponent } from './components/footer-nav/footer-nav.component
   exports: [
     HeaderComponent,
     FooterComponent,
-    FooterNavComponent
+    FooterNavComponent,
+    VisuallyImpairedComponent
   ]
 })
+
 export class CoreModule {
 }

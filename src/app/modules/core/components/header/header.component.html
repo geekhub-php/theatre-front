@@ -1,11 +1,5 @@
 <header class="header">
-
   <nav class="navbar navbar-expand-lg">
-
-    <ng-container *ngIf="trigger | async">
-      <app-visually-impaired></app-visually-impaired>
-    </ng-container>
-
     <h1 class="header-logo" aria-label="Cherkasy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
       <a routerLink="/">
         <img src="assets/images/logo theatre@3x.png"
@@ -41,35 +35,5 @@
     <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
        class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
   </nav>
-
 </header>
-
-  <button class="u-unstyled-btn d-none d-lg-block">
-    <img src="assets/images/eye_settings@3x.png" class="visual-aid-button" alt="Color schemes" title="Color schemes"
-         i18n-title="@@color-schemes" (click)="trigger.next(!trigger.value);">
-  </button>
-  <button class="u-unstyled-btn d-none d-lg-block">
-    <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
-         *ngIf="!donateBlockVisible" (click)="donateBlockVisible = true">
-  </button>
-  <button class="u-unstyled-btn d-none d-lg-block">
-    <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
-         *ngIf="donateBlockVisible" (click)="donateBlockVisible = false">
-  </button>
-
-  <div *ngIf="donateBlockVisible" class="donate-block">
-    <div class="donate-information">
-      <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
-      <p class="donate-title">Are you ready to help the Theater?</p>
-      <div class="donate-requisites">
-        <p><b>Р/р</b> UA883052990000026007021609497</p>
-        <p><b>ЄДРПОУ</b> 02225915</p>
-        <p>АТ КБ «ПРИВАТБАНК»</p>
-        <b>МФО</b> 305299
-      </div>
-      <img src="assets/images/Group 505@3x.jpg" class="qr-code" alt="QR Code" (click)="openPDF()">
-      <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close settings"
-           (click)="donateBlockVisible = false">
-    </div>
-  </div>
 

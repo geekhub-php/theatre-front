@@ -1,31 +1,75 @@
 @import "~assets/styles/variables";
 
-.donate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 60px;
+.donate-block {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  position: absolute;
+  background-color: rgba($background-color-black, .7);
 
-  @media (max-width: 576px) {
-    margin-top: 20px;
-  }
+  .donate-information {
+    float: right;
+    width: 336px;
+    padding-top: 116px;
+    padding-bottom: 134px;
+    background-color: $background-color-accent;
 
-  &__title {
-    margin-bottom: 30px;
+    .donate-title {
+      margin-top: 52px;
+      text-align: center;
 
-    @media (max-width: 576px) {
-      margin-bottom: 10px;
+      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 1.5, .36px);
+    }
+
+    .donate-requisites {
+      margin-top: 16px;
+      text-align: center;
+
+      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.36, normal);
+    }
+
+    .donate-wallet-image {
+      margin-left: 63px;
+    }
+
+    .qr-code {
+      margin-top: 59px;
+      margin-left: 96px;
+
+      @include box(144, 144);
+
+      &:hover {
+        @include border(2, solid, $border-color-active, 2px);
+        @include box(145, 145);
+      }
+    }
+
+    .closing-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      transition: .3s ease;
+
+      @include box(48, 48);
+
+      &:hover {
+        @include border(2, solid, $border-color-light, 2px);
+      }
     }
   }
+}
 
-  &__text {
-    padding: 0 20px;
-    font-size: 18px;
-    text-align: center;
-    line-height: 1.8;
+.donate-button {
+  margin-top: 313px;
+  z-index: 40;
+  right: 1%;
+  position: fixed;
 
-    @media (max-width: 576px) {
-      font-size: 12px;
-    }
+  @include box(64, 64);
+
+  &:hover {
+    @include border(2, solid, $border-color-light, 2px);
   }
 }

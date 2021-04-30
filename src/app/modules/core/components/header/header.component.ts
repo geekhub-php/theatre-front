@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
-
 import { filter } from 'rxjs/operators';
-
+import { Router, NavigationStart } from '@angular/router';
 import { LangService } from '../../../../services/lang.service';
-import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +12,6 @@ import { VisuallyImpairedService } from '../../../../services/visually-impaired.
 export class HeaderComponent {
   collapse = false;
   isCollapsed = false;
-  donateBlockVisible = false;
   bankDataIsDisplayed = false;
   search_text = 'Enter your search key word/words';
 
@@ -23,13 +19,9 @@ export class HeaderComponent {
     return this.langService.getLangRedirectUrl();
   }
 
-
-  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
-
   constructor(
     private router: Router,
-    private langService: LangService,
-    private visuallyImpairedService: VisuallyImpairedService
+    private langService: LangService
   ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
@@ -51,9 +43,5 @@ export class HeaderComponent {
 
   clearSubmit(): void {
     this.isCollapsed = !this.isCollapsed;
-  }
-
-  openPDF(): void {
-  window.open('assets/images/Приложение плакат QR.pdf', '_blank');
   }
 }

@@ -12,82 +12,79 @@ $inversion-bg: #88c2f7;
 $inversion-color: #0f2c57;
 
 .visual-aid-container {
-  position: fixed;
-  background-color: rgba($background-color-black, .7);
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 100;
-}
+  position: absolute;
+  background-color: rgba($background-color-black, .7);
 
-.visually-impaired {
-  float: right;
-  background-color: $background-color-accent;
+  .visually-impaired {
+    float: right;
+    width: 336px;
+    padding-top: 116px;
+    padding-bottom: 134px;
+    background-color: $background-color-accent;
 
-  width: 335px;
-  height: 100%;
-
-  .opera-glasses {
-    margin-top: 139px;
-    margin-left: 64px;
-
-    @include box(208, 205);
-  }
-
-  text-align: center;
-
-  img {
-    @include box(48, 32);
-  }
-}
-
-.color-schemes {
-
-  &__text {
-    margin-top: 13px;
-
-    @include font($body-font-family, 1.1rem, $font-color-white, $font-weight-bold, $line-height-basic, normal)
-  }
-
-  &__button {
-    margin-left: 140px;
-    margin-top: 14px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background: none;
-    outline: none;
-    border: none;
-
-    & > .hover {
-      min-width: 10.714rem;
-      max-width: 21.429rem;
-      top: 2.5rem;
-      left: -1rem;
-      z-index: 99;
-      display: none;
-      position: absolute;
-      color: $font-color-white;
-      background-color: $background-color-active;
-
-      @include border(.5, solid, $background-main-color-lighter, 5px)
+    .opera-glasses {
+      @include box(208, 205);
     }
 
-    &:hover > .hover {
-      display: block;
+    text-align: center;
 
-      &::before {
-        width: .714rem;
-        height: .714rem;
-        top: -.286rem;
-        left: 1.571rem;
-        z-index: -1;
-        display: block;
-        content: "";
+    .scheme {
+      @include box(48, 32);
+    }
+  }
+
+  .color-schemes {
+
+    &__text {
+      margin-top: 14px;
+
+      @include font($body-font-family, 1.1rem, $font-color-white, $font-weight-bold, $line-height-basic, normal)
+    }
+
+    &__button {
+      margin-left: 140px;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: none;
+      outline: none;
+      border: none;
+
+      & > .hover {
+        min-width: 10.714rem;
+        max-width: 21.429rem;
+        top: 2.5rem;
+        left: -1rem;
+        z-index: 99;
+        display: none;
         position: absolute;
-        transform: rotate(135deg);
+        color: $font-color-white;
         background-color: $background-color-active;
+
+        @include border(.5, solid, $background-main-color-lighter, 5px)
+      }
+
+      &:hover > .hover {
+        display: block;
+
+        &::before {
+          width: .714rem;
+          height: .714rem;
+          top: -.286rem;
+          left: 1.571rem;
+          z-index: -1;
+          display: block;
+          content: "";
+          position: absolute;
+          transform: rotate(135deg);
+          background-color: $background-color-active;
+        }
       }
     }
   }
@@ -96,7 +93,7 @@ $inversion-color: #0f2c57;
 .size-fonts {
 
   &__text {
-    margin-top: 75px;
+    margin-top: 76px;
 
     @include font($body-font-family, 1.1rem, $font-color-white, $font-weight-bold, $line-height-basic, normal)
   }
@@ -132,23 +129,19 @@ $inversion-color: #0f2c57;
 
       @include border(.5, solid, $background-main-color-lighter, 5px)
     }
+  }
+}
 
-    &:hover > .hover-font {
-      display: block;
+.closing-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  transition: .3s ease;
 
-      &::before {
-        display: block;
-        content: "";
-        position: absolute;
-        top: -.286rem;
-        left: 1.571rem;
-        width: .714rem;
-        height: .714rem;
-        z-index: -1;
-        transform: rotate(135deg);
-        background-color: $background-color-active;
-      }
-    }
+  @include box(48, 48);
+
+  &:hover {
+    @include border(2, solid, $border-color-light, 2px);
   }
 }
 
@@ -159,27 +152,27 @@ $inversion-color: #0f2c57;
 
     @extend .u-unstyled-btn;
   }
-
-  .closing-button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    transition: .3s ease;
-
-    @include box(48, 48);
-
-    &:hover {
-      @include border(2, solid, $border-color-light, 2px);
-    }
-  }
 }
 
 .reset-button {
-  position: absolute;
-  right: 154px;
-  bottom: 392px;
+  position: relative;
+  padding-top: 26px;
 
   &:hover {
     color: $font-color-dark;
   }
 }
+
+.visual-aid-button {
+  margin-top: 240px;
+  right: 1%;
+  z-index: 40;
+  position: fixed;
+
+  @include box(64, 64);
+
+  &:hover {
+    @include border(2, solid, $border-color-light, 2px);
+  }
+}
+
