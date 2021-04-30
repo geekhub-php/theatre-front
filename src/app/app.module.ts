@@ -46,6 +46,7 @@ import { CooperationComponent } from './components/cooperation/cooperation.compo
 
 import { environment } from '../environments/environment';
 
+
 @NgModule({
   declarations: [
     AppComponent,

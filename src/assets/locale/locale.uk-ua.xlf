@@ -26,7 +26,14 @@
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
-
+      <trans-unit id="newsItem" datatype="html">
+        <source>News</source>
+        <target>Новина</target>
+        <context-group purpose="location">
+            <context context-type="sourcefile">src/app/components/article.component.html</context>
+            <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="repertoire" datatype="html">
         <source>Repertoire</source>
         <target>Репертуар</target>
