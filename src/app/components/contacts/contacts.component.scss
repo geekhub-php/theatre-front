@@ -1,70 +1,54 @@
 @import "~assets/styles/variables";
 
-@media screen and (max-device-width: 640px) {
-
-  .contacts-items-wrapper {
-
-    li {
-      flex-direction: column;
-      align-items: flex-end;
-
-      .contact-item-content {
-        justify-content: flex-end;
-        width: auto;
-        margin-right: 5%;
-        text-align: right;
-      }
-
-      .contact-item-pic {
-        align-self: flex-start;
-        margin-left: 10%;
-      }
-
-      .contact-item-name {
-        width: auto;
-        margin-right: 5%;
-      }
-    }
-  }
+.map_wrapper {
+  max-width: 735px;
+  height: 423px;
 }
 
-.contacts-items-wrapper {
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(200px, 480px) minmax(400px, 735px);
+  grid-gap: 30px;
+  padding-bottom: 100px;
+}
+
+.page_title {
+  text-align: center;
+  padding-top: 32px;
+  margin-bottom: 70px;
+
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
+}
+
+.info_item {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 16px;
-    border-bottom: 1px solid $border-color;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    width: 100%;
-  }
 }
 
-.contact-item-name {
-  width: 45%;
-  font-weight: 600;
-  text-align: right;
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
 }
 
-.contact-item-pic {
-  margin: 0 10px;
-  opacity: .6;
+.text {
+  margin-right: 7px;
+  margin-bottom: 18px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 
-.contact-item-content {
-  width: 45%;
-  opacity: .6;
-
-  a {
-    display: block;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: inherit;
-  }
+.info {
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, normal)
 }
+
