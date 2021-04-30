@@ -100,6 +100,7 @@ import { environment } from '../environments/environment';
   providers: [
     CalendarService,
     GoogleAnalyticsService,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })
