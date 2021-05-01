@@ -37,14 +37,13 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CalendarComponent } from './components/schedule/calendar/calendar.component';
 import { ListViewComponent } from './components/schedule/list-view/list-view.component';
 import { MobileViewComponent } from './components/schedule/mobile-view/mobile-view.component';
-import { CalendarService } from './components/schedule/calendar.service';
+import { CalendarPopupComponent } from './components/schedule/calendar/calendar-popup/calendar-popup.component';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { SliderComponent } from './components/home-page/slider/slider.component';
-import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 
+import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 import { environment } from '../environments/environment';
-import { CalPopupComponent } from './components/schedule/calendar/cal-popup/cal-popup.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +61,7 @@ import { CalPopupComponent } from './components/schedule/calendar/cal-popup/cal-
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent, CalendarComponent, CalPopupComponent, ListViewComponent, MobileViewComponent,
+    ScheduleComponent, CalendarComponent, CalendarPopupComponent, ListViewComponent, MobileViewComponent,
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
@@ -87,7 +86,7 @@ import { CalPopupComponent } from './components/schedule/calendar/cal-popup/cal-
     SpinnerModule
   ],
   providers: [
-    CalendarService,
+    CalendarPopupComponent,
     GoogleAnalyticsService,
   ],
   bootstrap: [AppComponent]

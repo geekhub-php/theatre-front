@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
 import { GatewayService } from '../../../services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';

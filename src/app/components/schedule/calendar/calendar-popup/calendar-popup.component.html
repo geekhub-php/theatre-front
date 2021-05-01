@@ -1,31 +1,31 @@
 <div class="popover__data">
-  <img src="{{ url }}"
-       [title]="img_title"
+  <img src="{{ event && event.performance.mainPicture.performance_big.url }}"
+       [title]="event && event.performance.title"
        class="popover__img"
        alt=""
   >
   <div class="popover__content">
     <div>
-      <p class="popover__title">{{ title }}</p>
+      <p class="popover__title">{{ event && event.performance.title }}</p>
     </div>
     <div class="popover__info">
       <img src="assets/images/calendar/bx-calendar-event.svg" alt="">
       <p>
-        <span>{{ date_time | date: 'dd/MM' }}</span>,
-        <span>{{ date_time | date: 'EEEE' }}</span>
+        <span>{{ event && event.date_time | date: 'dd/MM' }}</span>,
+        <span>{{ event && event.date_time | date: 'EEEE' }}</span>
       </p>
     </div>
     <div class="popover__info">
       <img src="assets/images/calendar/time-fill.svg" alt="">
-      <p>{{ time }}</p>
+      <p>{{ event && event.time }}</p>
     </div>
     <div class="popover__info">
       <img src="assets/images/calendar/bx-hourglass.svg" alt="">
-      <p>{{ duration }}</p>
+      <p>{{ '2 год. 30 хв.' }}</p>
     </div>
     <div class="popover__info">
       <img src="assets/images/calendar/map-pin-2-fill.svg" alt="">
-      <p>{{ venue }}</p>
+      <p>{{ event && event.venue }}</p>
     </div>
   </div>
 </div>

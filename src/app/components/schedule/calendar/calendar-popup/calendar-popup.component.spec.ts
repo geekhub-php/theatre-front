@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CalPopupComponent } from './cal-popup.component';
+import { CalendarPopupComponent } from './calendar-popup.component';
 
-describe('CalPopupComponent', () => {
-  let component: CalPopupComponent;
-  let fixture: ComponentFixture<CalPopupComponent>;
+describe('CalendarPopupComponent', () => {
+  let component: CalendarPopupComponent;
+  let fixture: ComponentFixture<CalendarPopupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalPopupComponent ]
+      declarations: [ CalendarPopupComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CalPopupComponent);
+    fixture = TestBed.createComponent(CalendarPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

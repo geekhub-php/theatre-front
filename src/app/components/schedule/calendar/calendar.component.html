@@ -21,11 +21,9 @@
           <ng-container *ngFor="let event of dayPerformances; let eventIndex = index">
 
             <ng-template #popContent>
-              <app-cal-popup
-                [img_title]="event.performance.mainPicture.performance_big.properties.title"
-                [url]="event.performance.mainPicture.performance_big.url" [title]="event.performance.title"
-                [date_time]="event.date_time" [duration]="'2 год. 30 хв.'" [time]="event.time" [venue]="event.venue"
-              ></app-cal-popup>
+              <app-calendar-popup
+                [event]="event"
+              ></app-calendar-popup>
             </ng-template>
 
             <ng-container *ngIf="dayPerformances.length <= 3 || (dayPerformances.length > 3 && eventIndex < 2)">
@@ -58,11 +56,9 @@
             <ng-container *ngFor="let event of dayPerformances">
 
               <ng-template #popContent>
-                <app-cal-popup
-                  [img_title]="event.performance.mainPicture.performance_big.properties.title"
-                  [url]="event.performance.mainPicture.performance_big.url" [title]="event.performance.title"
-                  [date_time]="event.date_time" [duration]="'2 год. 30 хв.'" [time]="event.time" [venue]="event.venue"
-                ></app-cal-popup>
+                <app-calendar-popup
+                  [event]="event"
+                ></app-calendar-popup>
               </ng-template>
 
               <div class="popup__day__performances">
