@@ -1,16 +1,18 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { VisitComponent } from './visit.component';
 
-describe('FestivalsComponent', () => {
+describe('VisitComponent', () => {
   let component: VisitComponent;
   let fixture: ComponentFixture<VisitComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VisitComponent ]
-    })
-    .compileComponents();
+      declarations: [VisitComponent],
+      imports: [HttpClientTestingModule, RouterTestingModule]
+    }).compileComponents();
   });
 
   beforeEach(() => {

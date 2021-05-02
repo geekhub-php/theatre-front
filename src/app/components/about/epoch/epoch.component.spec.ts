@@ -1,14 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { EpochComponent } from './epoch.component';
 
-describe('FestivalsComponent', () => {
+describe('EpochComponent', () => {
   let component: EpochComponent;
   let fixture: ComponentFixture<EpochComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EpochComponent ]
+      declarations: [ EpochComponent ],
+      imports: [HttpClientTestingModule, RouterTestingModule]
     })
     .compileComponents();
   });

@@ -1,16 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AboutHeaderComponent } from './about-header.component';
 
-describe('FestivalsComponent', () => {
+describe('AboutHeaderComponent', () => {
   let component: AboutHeaderComponent;
   let fixture: ComponentFixture<AboutHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AboutHeaderComponent ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      declarations: [ AboutHeaderComponent ]
     })
     .compileComponents();
   });
