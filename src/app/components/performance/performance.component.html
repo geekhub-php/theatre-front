@@ -84,9 +84,10 @@
         <h6 class="details_title">Дійові особи та виконавці</h6>
       </div>
 
-      <div class="details">
-        <span class="bold">Сезони:</span>
-        <a *ngFor="let season of performance.seasons" class="seasons" href="#">{{season.name}}</a>
+
+      <div class="details flex">
+        <span class="bold" i18n="@@seasons">Seasons:</span>
+        <app-seasons *ngIf="performance" [performance]="performance"></app-seasons>
       </div>
     </div>
   </section>

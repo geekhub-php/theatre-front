@@ -59,16 +59,11 @@
 
 .bold {
   font-weight: 700;
-  margin-right: 20px;
+  margin-right: 16px;
 }
 
-.seasons {
-  padding: 2px 8px;
-  border-radius: 2px;
-  background-color: rgba(180, 152, 100, .2);
-  margin-right: 10px;
-  text-decoration: none;
-  color: #b49864;
+.flex {
+  display: flex;
 }
 
 .gallery {
