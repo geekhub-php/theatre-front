@@ -113,3 +113,31 @@ $background-color-disabled: #868583;
 $secondary-background-color: #b6b6b4;
 $background-on-hover: #c7b28b;
 $box-shadow: 0 8px 18px 0 rgba(0, 0, 0, .25);
+
+/*Opacity*/
+
+@mixin opacity($-webkit-transition, $-moz-transition, $-o-transition, $transition, $opacity: 1) {
+  -webkit-transition: $-webkit-transition;
+  -moz-transition: $-moz-transition;
+  -o-transition: $-o-transition;
+  transition: $transition;
+  opacity: $opacity;
+}
+
+@mixin hover-opacity($-webkit-transform, $-ms-transform, $transform, $opacity) {
+  -webkit-transform: $-webkit-transform;
+  -ms-transform: $-ms-transform;
+  transform: $transform;
+  opacity: $opacity;
+}
+
+/*Gradient*/
+
+@mixin gradient {
+  background: linear-gradient($background-color-light, $background-color-gray, $background-color-dark, $background-color-black);
+}
+
+$background-color-light: rgba(14, 12, 8, 0);
+$background-color-gray: rgba(14, 12, 8, 0.5);
+$background-color-dark: rgba(14, 12, 8, 0.75);
+$background-color-black: #0e0c08;
