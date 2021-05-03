@@ -3,19 +3,21 @@
 .list-view {
   display: flex;
   flex-direction: column;
-  max-width: 78.571rem;
+  max-width: 1250px;
   width: 100%;
   margin: 20px auto;
-  padding: 0 40px;
+  padding: 0;
 
   &__item {
     margin: 10px 0;
+    position: relative;
+    background-color: $background-main-color-lighter  ;
   }
 
   &__date-wrapper,
   &__info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     max-width: 200px;
     width: 100%;
     transition: .3s ease;
@@ -87,61 +89,64 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
-    z-index: -2;
+    z-index: 0;
+    opacity: 0.5;
     transition: .3s ease;
-    opacity: 0;
   }
 
   &__link {
     position: relative;
     display: flex;
-    padding: 20px;
-    border-radius: 14px;
+    padding: 30px;
     box-shadow: $typical-box-shadow;
     overflow: hidden;
     color: $white-color;
     cursor: pointer;
+    background-color: $background-main-color-lighter;
+    transition: 0.2s;
+    z-index: 1;
 
     &:focus,
     &:active {
       outline: none;
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 200px;
-      top: 50%;
-      width: 2px;
-      height: 80%;
-      transform: translateY(-50%);
-      border-left: 1px dashed $border-color;
-      transition: .3s ease;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      transition: .3s ease;
-      background-color: rgb($secondary-color, .9);
-    }
+    //&::after {
+    //  content: "";
+    //  position: absolute;
+    //  left: 200px;
+    //  top: 50%;
+    //  width: 2px;
+    //  height: 80%;
+    //  transform: translateY(-50%);
+    //  border-left: 1px dashed $border-color;
+    //  transition: .3s ease;
+    //}
+    //
+    //&::before {
+    //  content: "";
+    //  position: absolute;
+    //  top: 0;
+    //  left: 0;
+    //  right: 0;
+    //  bottom: 0;
+    //  z-index: -1;
+    //  transition: .3s ease;
+    //  background-color: rgb($secondary-color, .9);
+    //}
 
     &:hover {
       color: $white-color;
+      background-color: transparent;
 
-      &::before {
-        background-color: rgba($main-color-darker, .75);
-      }
 
-      &::after {
-        border-color: $white-color;
-      }
+      //&::before {
+      //  background-color: rgba(0, 0, 0, .25);
+      //}
+      //
+      //&::after {
+      //  border-color: rgba(0, 0, 0, .25);
+      //}
 
       .list-view__title,
       .list-view__info,
@@ -149,9 +154,9 @@
         color: $white-color;
       }
 
-      .list-view__img {
-        opacity: 1;
-      }
+      //.list-view__img {
+      //  opacity: 0.8;
+      //}
     }
   }
 }

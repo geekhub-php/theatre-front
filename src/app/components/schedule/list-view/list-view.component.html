@@ -9,19 +9,20 @@
       </div>
       <div class="list-view__content">
         <div class="list-view__title">{{ event.performance.title }}</div>
-        <div class="list-view__description" [innerHtml]="event.performance.description"></div>
+        <div class="list-view__info">
+          <div class="list-view__time">{{ event.time }}</div>
+          <div class="list-view__place">{{ event.venue }}</div>
+          <div class="list-view__type">{{ event.performance.type }}</div>
+        </div>
       </div>
-      <div class="list-view__info">
-        <div class="list-view__time">{{ event.time }}</div>
-        <div class="list-view__place">{{ event.venue }}</div>
-        <div class="list-view__type">{{ event.performance.type }}</div>
+      <div>
         <a *ngIf="event.buy_ticket_link" [href]="event.buy_ticket_link" target="_blank"
            class="list-view__button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
       </div>
-      <img [src]="event.performance.sliderImage.slider_slider.url"
-           [alt]="event.performance.title"
-           [title]="event.performance.title"
-           class="list-view__img">
     </div>
+    <img [src]="event.performance.sliderImage.slider_slider.url"
+         [alt]="event.performance.title"
+         [title]="event.performance.title"
+         class="list-view__img">
   </div>
 </div>
