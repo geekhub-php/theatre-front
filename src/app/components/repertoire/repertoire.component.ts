@@ -13,6 +13,7 @@ import { LoaderService } from '../partials/spinner/loader.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RepertoireComponent implements OnInit {
+
   pageSize = 16;
   page = 1;
   collectionSize: number;

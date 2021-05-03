@@ -1,24 +1,22 @@
+@import "~assets/styles/variables";
+
 .nav-header-container {
-  display: flex;
-  justify-content: center;
-  background-color: #b49864;
+  background-color: $background-color-accent;
   height: 56px;
+
+  @include flex-center;
 }
 
 .item {
   padding: 0 15px;
-  font-family: 'Montserrat';
-  display: flex;
-  align-items: center;
-  font-size: 18px;
   height: 56px;
-  line-height: 1.5;
-  color: #0e0c08;
-  font-weight: 400;
+
+  @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-normal, 1.5, normal);
+  @include flex-center;
 
   &.active {
     line-height: 1.39;
-    background-color: #c7b28b;
+    background-color: $background-on-hover;
     font-weight: 700;
   }
 }
