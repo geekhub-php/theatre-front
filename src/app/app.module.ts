@@ -42,6 +42,7 @@ import { CalendarService } from './components/schedule/calendar.service';
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { SliderComponent } from './components/home-page/slider/slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
+import { CooperationComponent } from './components/cooperation/cooperation.component';
 
 import { environment } from '../environments/environment';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
@@ -69,9 +70,10 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     SliderComponent,
     NewsListItemComponent,
     RepertoireNavHeaderComponent,
+    CooperationComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -85,7 +87,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
-    SpinnerModule,
+    SpinnerModule
   ],
   providers: [
     CalendarService,
@@ -93,5 +95,6 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 
