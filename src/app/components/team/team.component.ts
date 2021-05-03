@@ -37,6 +37,7 @@ export class TeamComponent implements OnInit {
   ngOnInit() {
     this.getEmployees();
     this.httpGatewayService.updateCanonicalURL();
+    // console.log('in team___');
   }
 
   getEmployees() {

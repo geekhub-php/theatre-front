@@ -30,6 +30,10 @@ import { AboutMoreComponent } from './components/about/about-more/about-more.com
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
+import { PersonsHeaderComponent } from './components/team/persons-header/persons-header.component';
+import { AdministrationComponent } from './components/team/administration/administration.component';
+import { ArtisticComponent } from './components/team/artistic/artistic.component';
+import { CreativeComponent } from './components/team/creative/creative.component';
 
 import { StripHtmlModule } from './pipes/strip-html.module';
 
@@ -70,6 +74,10 @@ import { environment } from '../environments/environment';
     SliderComponent,
     NewsListItemComponent,
     CooperationComponent,
+    PersonsHeaderComponent,
+    AdministrationComponent,
+    ArtisticComponent,
+    CreativeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

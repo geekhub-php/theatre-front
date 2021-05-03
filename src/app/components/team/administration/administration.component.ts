@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { LoaderService } from '../../partials/spinner/loader.service';
+import { GatewayService } from '../../../services/gateway.service';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-administration',
+  templateUrl: './administration.component.html',
+  styleUrls: ['./administration.component.scss'],
+})
+export class AdministrationComponent implements OnInit {
+  constructor(
+    private route: ActivatedRoute,
+    private gateway: GatewayService,
+    private loaderService: LoaderService
+  ) {}
+
+  ngOnInit(): void {
+    this.loaderService.start('administration');
+    this.gateway.updateCanonicalURL();
+  }
+}

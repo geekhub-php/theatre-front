@@ -39,6 +39,7 @@ export class PersonComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.gatewayService.updateCanonicalURL();
 
     if (this.person) {
