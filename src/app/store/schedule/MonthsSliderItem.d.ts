@@ -9,14 +9,20 @@ export type TScreenProperty = {
   scrollWidth: number,
   startPoint: number,
   scrollAmount: number,
-  screenWidth: number,
+  screenWidth: number, //can change
   currentPosition: number,
   scrollStep: number,
-  wideScrollStep: number
+  wideScrollStep: number,
+  // default screen sizes
+  wideScreen: number,
+  narrowScreen: number
 }
 
 export type TMonthProperty = {
   activeMonth: null | string,
-  currentDate: string,
+  currentFullDate: Date
 }
 
+export type TMonthsSliderElement = {
+  nativeElement: HTMLDivElement
+}
