@@ -18,6 +18,14 @@
     height: 220px;
   }
 
+  &__date-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
   &__date {
     width: 220px;
     display: flex;
