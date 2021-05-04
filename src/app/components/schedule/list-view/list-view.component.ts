@@ -27,10 +27,7 @@ export class ListViewComponent implements OnInit {
     this.loaderService.start('poster');
 
     this.calendar.events.subscribe((value) => {
-
       this.events = value.filter(({date_time}) => new Date(date_time) >= new Date());
-      this.events = value
-      console.log(this.events)
       this.loaderService.stop('poster');
     }, err => this.loaderService.stop('poster'));
   }

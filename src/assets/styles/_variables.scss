@@ -62,9 +62,9 @@ $container-margin: 0 auto;
   font-style: normal;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 
-
-$body-font-family: "Monteserrat", "Arial", "Helvetica", sans-serif;
+$body-font-family: montserrat, "Arial", "Helvetica", sans-serif;
 $creative-font: "KobzarKS", "Brush Script MT", "Brush Script Std", cursive;
 
 $font-size-x-small: 10px;
@@ -74,6 +74,7 @@ $font-size-large: 24px;
 $font-size-x-large: 32px;
 $font-size-xxx-large: 40px;
 $font-largest: 72px;
+$font-largest-x: 100px;
 
 $font-color-white: #fff;
 $font-color-primary: #b6b6b4;
