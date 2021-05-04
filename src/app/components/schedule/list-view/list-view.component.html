@@ -1,18 +1,37 @@
 <div class="list-view">
   <div class="list-view__item" *ngFor="let event of events">
+    <div  class="list-view__item__age">
+      <span>{{ event.performance.age_limit }}+</span>
+    </div>
     <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
       <div class="list-view__date-wrapper">
         <div class="list-view__date">
-          <div class="list-view__day">{{ event.date_time | date: 'dd.MM' }}</div>
+          <div class="list-view__day">{{ event.date_time | date: 'dd' }}</div>
           <div class="list-view__day-type">{{ event.date_time | date: 'EEEE' }}</div>
         </div>
       </div>
-      <div class="list-view__content">
+      <div class="list-view__link__content">
         <div class="list-view__title">{{ event.performance.title }}</div>
-        <div class="list-view__info">
-          <div class="list-view__time">{{ event.time }}</div>
-          <div class="list-view__place">{{ event.venue }}</div>
-          <div class="list-view__type">{{ event.performance.type }}</div>
+        <div class="list-view__type">{{ event.performance.type }}</div>
+        <div class="list-view__link__info">
+          <div class="list-view__info__item">
+            <img
+              class="list-view__info__icon"
+              src="assets/images/list-view/time-fill.svg" alt="">
+            <span class="list-view__info__time">{{ event.time }}</span>
+          </div>
+          <div class="list-view__info__item">
+            <img
+              class="list-view__info__icon"
+              src="assets/images/list-view/bx-hourglass.svg" alt="">
+            <span class="list-view__info__text">{{ "2:30" }}</span>
+          </div>
+          <div class="list-view__info__item">
+            <img
+              class="list-view__info__icon"
+              src="assets/images/list-view/map-pin-2-fill.svg" alt="">
+            <span class="list-view__info__text">{{ event.venue }}</span>
+          </div>
         </div>
       </div>
       <div>
