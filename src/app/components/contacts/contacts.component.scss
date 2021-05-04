@@ -52,3 +52,11 @@
   @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, normal)
 }
 
+.link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.near {
+  margin-bottom: 4px;
+}
