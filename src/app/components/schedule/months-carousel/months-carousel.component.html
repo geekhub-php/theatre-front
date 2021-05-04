@@ -9,8 +9,8 @@
       #monthItem
       draggable="false"
       class="slider__months__item"
-      *ngFor="let monthItem of monthList; let i = index"
-      [class.slider__months__item__active]="monthName.id === month.activeMonth">
+      *ngFor="let monthItem of monthsList; let i = index"
+      [class.slider__months__item__active]="month && (monthName.id === month.activeMonth)">
       <span
         #monthName
         [id]="monthItem.id"

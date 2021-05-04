@@ -1,19 +1,24 @@
-import { fromEvent, Subscription } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import {
-  AfterViewInit, OnDestroy, OnInit,
   ChangeDetectionStrategy,
-  ViewChild, ViewChildren,
-  EventEmitter,
-  HostListener,
+  ChangeDetectorRef,
+  AfterViewInit,
+  ViewChildren,
+  ViewChild,
+  QueryList,
+  OnDestroy,
+  OnInit,
+  Output,
   Component,
-  Output
+  HostListener,
+  EventEmitter
 } from '@angular/core';
 import {
+  TSliderMonth,
   TMonthProperty,
-  TScreenProperty,
-  TSliderMonth
+  TMonthsSliderElement
 } from '../../../store/schedule/MonthsSliderItem';
+import { MonthsCarouselService } from './months-carousel.service';
 
 @Component({
   selector: 'app-months-carousel',
@@ -25,30 +30,17 @@ import {
 export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @Output() selectedMonth = new EventEmitter();
 
-  @ViewChild('monthsSlider') monthsSlider;
-  @ViewChildren('monthItem') monthItems;
+  @ViewChild('monthsSlider') monthsSlider: TMonthsSliderElement;
+  @ViewChildren('monthItem') monthItems: QueryList<TMonthsSliderElement>;
 
-  queryMonthList = [];
-  monthList: Array<TSliderMonth> = [];
+  monthsList: Array<TSliderMonth> = [];
 
-  onDrug$: Subscription;
+  monthsListSubscription: Subscription;
+  monthsSliderSubscription: Subscription;
+  monthSubscription: Subscription;
 
-  screen: TScreenProperty = {
-    fullScreen: true,
-    scrollWidth: 0,
-    startPoint: 0,
-    scrollAmount: 600,
-    screenWidth: 1500,
-    currentPosition: 0,
-    scrollStep: 300,
-    wideScrollStep: 600
-  };
-
-  month: TMonthProperty = {
-    activeMonth: null,
-    currentDate: ''
-  };
-
+  isSpinnerActive = false;
+  month: TMonthProperty;
   monthsNameList = {
     months: [
       'Січень',
@@ -80,199 +72,77 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     ]
   };
 
+  constructor(
+    private cd: ChangeDetectorRef,
+    private carousel: MonthsCarouselService
+  ) {
+    this.getMonthsList();
+    // for English version
+    this.carousel.createMonthList(this.monthsNameList.monthsEng);
+    // for Ukrainian version
+    // this.carousel.createMonthList(this.monthsNameList.months)
+  }
+
   @HostListener('mousewheel', ['$event']) onScroll(event) {
     event.preventDefault();
-    this.screen.currentPosition = this.calcMonthPosition(
-      this.monthsSlider.nativeElement.scrollLeft, event.deltaY);
-    this.checkPosition();
-    this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-    this.setActiveMonth();
+    this.carousel.onMouseWheel(event);
   }
 
   @HostListener('window:resize') onResize() {
-    const width = window.innerWidth;
-    const wideScreen = 1500;
-    const narrowScreen = 1200;
-    const { fullScreen, scrollStep, wideScrollStep } = this.screen;
-
-    if (!(width >= wideScreen && fullScreen) && !(width < wideScreen && !fullScreen)) {
-      width >= wideScreen ? this.screen.fullScreen = true : this.screen.fullScreen = false;
-      this.screen.screenWidth = this.screen.fullScreen ? wideScreen : narrowScreen;
-      this.screen.startPoint = this.screen.fullScreen ? 0 : scrollStep;
-      this.screen.scrollAmount = this.screen.fullScreen ? wideScrollStep : scrollStep;
-      this.scrollToCurrentMonth();
-    }
+    this.carousel.onResize();
   }
 
-  checkPosition() {
-    if (this.screen.currentPosition < this.screen.startPoint) {
-      this.screen.currentPosition = this.screen.startPoint;
-    } else if (this.screen.currentPosition > this.screen.scrollWidth - this.screen.screenWidth) {
-      this.screen.currentPosition = this.screen.scrollWidth - this.screen.screenWidth;
-    }
+  getCarousel() {
+    this.monthsSliderSubscription = this.carousel.getCarousel().subscribe(carousel => {
+      this.monthsSlider = carousel;
+    });
+  }
+
+  getMonthsList() {
+    this.monthsListSubscription = this.carousel.getMonthsList().subscribe(monthsList => {
+      this.monthsList = monthsList;
+    });
+  }
+
+  getMonth() {
+    this.monthSubscription = this.carousel.getMonth().subscribe(month => {
+      this.month = month;
+      this.selectedMonth.emit(this.month.currentFullDate);
+    });
   }
 
   ngOnInit() {
-    const newDate = new Date();
-    this.createMonthList(this.monthsNameList.monthsEng);
-    this.month.currentDate = `${newDate.getUTCMonth()}/${newDate.getUTCFullYear()}`;
-    this.onResize();
-  }
-
-  createMonthList(monthLng: Array<string>) {
-    let newMonthList: Array<TSliderMonth> = [];
-    const monthCreator = (date, name, id): TSliderMonth => ({ date, name, id });
-    const maxPrevYear = -2;
-    const maxNextYear = 3;
-    const middleDate = 15;
-
-    for (let i = maxPrevYear; i < maxNextYear; i++) {
-      monthLng.forEach((name, j) => {
-        const date = new Date();
-        date.setDate(middleDate);
-        date.setMonth(j);
-        date.setFullYear(date.getFullYear() + i);
-        newMonthList = [
-          ...newMonthList, monthCreator(date, name, `${date.getUTCMonth()}/${date.getUTCFullYear()}`)
-        ];
-      });
-      this.monthList = [...this.monthList, ...newMonthList];
-      newMonthList = [];
-    }
-    const penultimateMonthCount = 2;
-
-    this.monthList = [
-      monthCreator(new Date(), monthLng[monthLng.length - penultimateMonthCount], Date.now().toString()),
-      monthCreator(new Date(), monthLng[monthLng.length - 1], Date.now().toString()),
-      ...this.monthList,
-      monthCreator(new Date(), monthLng[0], Date.now().toString()),
-      monthCreator(new Date(), monthLng[1], Date.now().toString())
-    ];
-  }
-
-  calcMonthPosition(currentPosition: number, deltaY) {
-    const { scrollStep } = this.screen;
-    const direction = deltaY > 0 ? scrollStep : deltaY < 0 ? -scrollStep : 0;
-
-    if (!!direction) {
-      currentPosition = currentPosition + direction;
-      const remainder = currentPosition % scrollStep;
-
-      return remainder === 0 ? currentPosition : currentPosition - remainder + scrollStep;
-    }
-  }
-
-  scrollToCurrentMonth() {
-    this.queryMonthList.forEach(month => {
-      month = month.nativeElement;
-      if (this.month.currentDate === month.firstChild.id) {
-        this.screen.currentPosition = month.offsetLeft - this.screen.scrollAmount;
-        this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-        this.getMonthData(month.firstChild.id);
-        this.setActiveMonth(month.firstChild.id);
-      }
-    });
-  }
-
-  getMonthData(id) {
-    this.monthList.forEach(month => {
-      if (month.id === id) {
-        this.selectedMonth.emit(month.date);
-      }
-    });
+    this.getCarousel();
+    this.getMonth();
+    this.carousel.setDefaultData();
   }
 
   onPrev(event) {
     event.stopPropagation();
-    if (!(this.monthsSlider.nativeElement.scrollLeft <= this.screen.startPoint)) {
-      this.screen.currentPosition -= this.screen.scrollStep;
-      this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-      this.setActiveMonth();
-    }
+    this.carousel.onPrev(event);
   }
 
   onNext(event) {
     event.stopPropagation();
-    if (!(this.screen.scrollWidth - this.monthsSlider.nativeElement.scrollLeft <= this.screen.screenWidth)) {
-      this.screen.currentPosition += this.screen.scrollStep;
-      this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-      this.setActiveMonth();
-    }
+    this.carousel.onNext(event);
   }
 
   ngAfterViewInit() {
-    this.queryMonthList = this.monthItems.toArray();
-    this.screen.scrollWidth = this.monthsSlider.nativeElement.scrollWidth;
-    // Can't give type MouseEvent, because it doesn't have localName in target property
-    const mousedown$ = fromEvent<any>(this.monthsSlider.nativeElement, 'mousedown');
-    const mouseup$ = fromEvent<any>(document, 'mouseup');
-
-    let startPos = 0;
-    const tagData = { name: '', id: '' };
-
-    const onEnd = () => mouseup$.pipe(map(event => startPos - event.clientX));
-
-    this.onDrug$ = mousedown$.pipe(
-      map(event => {
-        event.stopPropagation();
-        tagData.name = event.target.localName;
-        tagData.id = event.target.id;
-        startPos = event.clientX;
-      }),
-      switchMap(onEnd)
-    ).subscribe((leftPosition) => {
-      if (tagData.name !== 'span') {
-        return;
-      }
-      // 50 - reserve count if user's hand shuddered when he wanted click
-      const minCountForClick = 50;
-
-      if (Math.abs(leftPosition) < minCountForClick) {
-        this.queryMonthList.forEach(el => {
-          if (el.nativeElement.firstChild.id === tagData.id) {
-            if (!isNaN(Number(tagData.id))) {
-              return;
-            }
-            this.screen.currentPosition = el.nativeElement.offsetLeft - this.screen.scrollAmount;
-            this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-            this.setActiveMonth(tagData.id);
-          }
-        });
-      } else {
-        // scrollSpeed for increasing scroll speed
-        const scrollSpeed = 2;
-        const { scrollStep } = this.screen;
-
-        leftPosition *= scrollSpeed;
-        const reminder = leftPosition % scrollStep;
-        if (reminder !== 0) {
-          leftPosition = (leftPosition > 0 ? leftPosition + scrollStep : leftPosition - scrollStep) - reminder;
-        }
-        this.screen.currentPosition = this.screen.currentPosition + leftPosition;
-        this.checkPosition();
-        this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-        this.setActiveMonth();
-      }
-      tagData.name = '';
-      tagData.id = '';
-    });
-    this.scrollToCurrentMonth();
+    this.carousel.setCarousel(this.monthsSlider);
+    this.carousel.setQueryMonthsList(this.monthItems);
+    this.carousel.setScreenWidth(this.monthsSlider.nativeElement.scrollWidth);
+    this.carousel.scrollToCurrentMonth();
+    this.carousel.onDrag();
+    this.cd.detectChanges();
   }
 
-  setActiveMonth(id?) {
-    this.queryMonthList.forEach(el => {
-      if (id) {
-        if (el.nativeElement.firstChild.id === id) {
-          this.month.activeMonth = id;
-        }
-      } else if ((el.nativeElement.offsetLeft) === (this.screen.currentPosition + this.screen.scrollAmount)) {
-        this.month.activeMonth = el.nativeElement.firstChild.id;
-      }
-    });
-    this.getMonthData(this.month.activeMonth);
+  unSubscribe() {
+    this.monthsSliderSubscription.unsubscribe();
+    this.monthsListSubscription.unsubscribe();
+    this.monthSubscription.unsubscribe();
   }
 
   ngOnDestroy() {
-    this.onDrug$.unsubscribe();
+    this.unSubscribe();
   }
 }
