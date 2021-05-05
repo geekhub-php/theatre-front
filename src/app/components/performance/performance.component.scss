@@ -1,36 +1,28 @@
 @import "~assets/styles/variables";
 
 .page_title {
-  font-family: KobzarKS;
-  font-size: 72px;
-  line-height: 72px;
-  color: #b49864;
   text-align: center;
   padding-top: 30px;
   margin-bottom: 40px;
+
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
 }
 
 .performance_title {
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 60px;
-  letter-spacing: .8px;
-  color: #fff;
   text-align: center;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
 }
 
 .performance_body {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 30px;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 27px;
-  color: #b6b6b4;
   padding-bottom: 85px;
   max-width: 1500px;
   margin: 30px auto 0;
+
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 
 .main-info {
@@ -51,14 +43,13 @@
 }
 
 .details_title {
-  font-size: 18px;
-  font-weight: 700;
   line-height: 25px;
-  color: #b49864;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 25px, normal)
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   margin-right: 16px;
 }
 
@@ -67,7 +58,7 @@
 }
 
 .gallery {
-  background-color: #242424;
+  background-color: $background-main-color-darker;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
@@ -80,15 +71,11 @@
 }
 
 .more {
-  font-family: Montserrat;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 27px;
-  letter-spacing: .36px;
-  color: #b49864;
   text-decoration: none;
   text-align: center;
   margin: 30px 0 80px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
 }
 
 .more:hover {
@@ -105,40 +92,30 @@
   left: 0;
   width: 56px;
   height: 56px;
-  padding: 10px 7px 10px 8px;
-  object-fit: contain;
-  background-color: #b49864;
-  font-family: Montserrat;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: .48px;
-  text-align: center;
-  color: #fff;
+  background-color: $background-color-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, $line-height-basic, .48px)
 }
 
 .section_title {
-  font-family: Montserrat;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: .8px;
   text-align: center;
-  color: #fff;
   margin: 80px 0 30px;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, $line-height-basic, .8px)
 }
 
 .gallery_container {
-  width: 1500px;
+  width: $container-width;
   max-width: 100%;
   margin: 0 auto;
 }
 
 .info {
   margin: 0;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #b6b6b4;
+
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 

@@ -93,7 +93,7 @@
   </section>
 
   <section *ngIf="galleryImages.length" class="gallery">
-    <h2 class="section_title">Фотогалерея</h2>
+    <h2 class="section_title" i18n="@@photogallery">Photo Gallery</h2>
 
     <div class="gallery_container">
 
@@ -105,10 +105,10 @@
 
     </div>
 
-    <a (click)="openGallery()" *ngIf="!loading" class="more">
-      Більше фото ({{amount > 0 ? '+ ' + amount : '+ 0'}})
+    <a (click)="openGallery()" *ngIf="!loading" class="more" i18n="@@morePhotos">
+      More Photos ({{amount > 0 ? '+ ' + amount : '+ 0'}})
     </a>
-    <a (click)="closeGallery()" *ngIf="!loadingFull" class="more">Згорнути</a>
+    <a (click)="closeGallery()" *ngIf="!loadingFull" class="more" i18n="@@collapse">Collapse</a>
 
   </section>
 
