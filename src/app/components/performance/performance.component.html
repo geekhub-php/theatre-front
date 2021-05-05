@@ -29,8 +29,8 @@
 <div>
   <app-spinner name="performance-page"></app-spinner>
 
-  <h1 class="page_title" i18n="@@performance">Performance</h1>
-  <h2 class="performance_title"> {{ performance?.title | titlecase}} </h2>
+  <h1 class="page_title" i18n="@@performanceItem">Performance</h1>
+  <h2 class="performance_title"> {{ performance?.title | titlecase }} </h2>
 
   <section *ngIf="performance" class="performance_body">
     <div class="performance_poster">
@@ -57,7 +57,7 @@
         <svg class="icon">
           <use xlink:href="#hourglass"></use>
         </svg>
-        <p class="info">{{performance.duration_in_min + ' хвилин'}}</p>
+        <p class="info">{{ performance.duration_in_min + ' хвилин' }}</p>
       </div>
       <div class="main-info">
         <svg class="icon">
@@ -68,11 +68,11 @@
         <svg class="icon">
           <use xlink:href="#book"></use>
         </svg>
-        <p class="info">{{performance.type}}</p>
+        <p class="info">{{ performance.type }}</p>
       </div>
 
       <div class="details">
-        <p><span class="bold">Режисер:</span>{{performance.ext_producer}}</p>
+        <p><span class="bold">Режисер:</span>{{ performance.ext_producer }}</p>
       </div>
 
       <div class="details">
@@ -106,7 +106,7 @@
     </div>
 
     <a (click)="openGallery()" *ngIf="!loading" class="more" i18n="@@morePhotos">
-      More Photos ({{amount > 0 ? '+ ' + amount : '+ 0'}})
+      More Photos ({{ amount > 0 ? '+ ' + amount : '+ 0' }})
     </a>
     <a (click)="closeGallery()" *ngIf="!loadingFull" class="more" i18n="@@collapse">Collapse</a>
 
