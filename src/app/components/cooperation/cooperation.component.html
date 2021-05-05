@@ -264,11 +264,13 @@
 
 <div *ngIf="popupOpen" class="popup_wrapper">
   <div class="popup_container">
-    <svg (click)="popupOpen = false" class="close">
-      <use xlink:href="#close"></use>
-    </svg>
 
     <div class="popup_content">
+
+      <svg (click)="popupOpen = false" class="close">
+        <use xlink:href="#close"></use>
+      </svg>
+
       <p class="popup_description">Обраний файл<br>містить такі формати:</p>
 
       <div class="icons_container">

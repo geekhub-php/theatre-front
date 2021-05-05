@@ -125,15 +125,22 @@
 .close {
   width: 24px;
   height: 24px;
-  object-fit: contain;
   margin-top: 10px;
   margin-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .popup_content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .icons_container {
@@ -165,25 +172,20 @@
   text-decoration: none;
 
   @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
-  @include border(1, solid, $border-color-light, 2px)
+  @include border(1, solid, $border-color-light, 2px);
+
+  &:hover {
+    background-color: $background-color-disabled;
+  }
+
+  &:active {
+    background-color: $background-color-white;
+
+    @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-bold, $line-height-basic, .36px);
+  }
 }
 
 .load_as {
   @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
 }
 
-.download_button:hover {
-  padding: 11px 17px;
-  background-color: $background-color-disabled;
-}
-
-.download_button:active {
-  padding: 11px 19px;
-  background-color: $background-color-white;
-
-  @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-bold, $line-height-basic, .36px);
-}
-
-.close:hover {
-  cursor: pointer;
-}
