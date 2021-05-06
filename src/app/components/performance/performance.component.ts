@@ -42,6 +42,7 @@ export class PerformanceComponent implements OnInit {
       previewBullets: true,
       thumbnailsArrows: false,
       thumbnailsOrder: NgxGalleryOrder.Row,
+      startIndex: null,
       arrowPrevIcon: 'fa fa-chevron-left',
       arrowNextIcon: 'fa fa-chevron-right',
       closeIcon: 'fas fa-times'
@@ -68,7 +69,7 @@ export class PerformanceComponent implements OnInit {
         this.performance.gallery.map(item => {
           this.galleryImages.push(
             {
-              small: item.images.performance_small.url,
+              small: item.images.performance_big.url,
               medium: item.images.performance_big.url,
               big: item.images.performance_big.url,
             }

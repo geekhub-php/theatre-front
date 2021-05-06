@@ -105,7 +105,7 @@
 
     </div>
 
-    <a (click)="openGallery()" *ngIf="!loading" class="more" i18n="@@morePhotos">
+    <a (click)="openGallery()" *ngIf="!loading && galleryImages.length > 4" class="more" i18n="@@morePhotos">
       More Photos ({{ amount > 0 ? '+ ' + amount : '+ 0' }})
     </a>
     <a (click)="closeGallery()" *ngIf="!loadingFull" class="more" i18n="@@collapse">Collapse</a>
