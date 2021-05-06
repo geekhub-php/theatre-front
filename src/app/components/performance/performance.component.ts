@@ -41,7 +41,7 @@ export class PerformanceComponent implements OnInit {
       previewAnimation: false,
       previewBullets: true,
       thumbnailsArrows: false,
-      thumbnailsOrder: NgxGalleryOrder.Row,
+      thumbnailsOrder: NgxGalleryOrder.Page,
       startIndex: null,
       arrowPrevIcon: 'fa fa-chevron-left',
       arrowNextIcon: 'fa fa-chevron-right',
