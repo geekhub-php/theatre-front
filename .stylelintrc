@@ -3,25 +3,26 @@
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always-single-line",
     "at-rule-semicolon-newline-after": "always",
-
     "block-closing-brace-newline-after": "always",
-
     "selector-pseudo-element-colon-notation": "double",
     "selector-pseudo-element-case": "lower",
     "selector-max-specificity": "0,7,2",
     "selector-type-case": "lower",
-
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
-    "unit-whitelist": ["px", "%", "deg", "s", "rem"],
-
+    "unit-whitelist": [
+      "px",
+      "%",
+      "deg",
+      "s",
+      "rem",
+      "fr"
+    ],
     "color-hex-case": "lower",
     "color-named": "never",
     "color-hex-length": "short",
     "color-no-invalid-hex": true,
-
     "font-weight-notation": "numeric",
-
     "function-calc-no-unspaced-operator": true,
     "function-comma-newline-before": "never-multi-line",
     "function-comma-space-before": "never-single-line",
