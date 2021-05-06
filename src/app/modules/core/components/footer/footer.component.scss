@@ -41,14 +41,15 @@
 }
 
 .footer__link {
-  margin-left: 7px;
+  margin-left: 8px;
 }
 
 .scrollToTop {
   z-index: 20;
-  position: fixed;
-  bottom: 10%;
-  right: 1%;
+  float: right;
+  position: relative;
+  margin-right: 1%;
+  margin-top: -70px;
   border-radius: 50%;
   border: none;
   outline: none;
@@ -60,6 +61,15 @@
 
   &:hover {
     background-color: $background-on-hover;
+  }
+}
+
+@media only screen and (max-height: 660px) {
+
+  .scrollToTop {
+    margin-top: 52px;
+
+    @include box(50, 50);
   }
 }
 

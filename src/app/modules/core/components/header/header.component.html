@@ -22,9 +22,10 @@
     </button>
 
     <div class="search-box" [ngbCollapse]="!isCollapsed">
-      <input type="submit" class="search-input" placeholder="{{search_text}}" name="search">
-      <img src="assets/images/Union.svg" class="search-button" alt="Search button" title="Search"
-           i18n-title="@@search" (click)="searchSubmit()">
+      <input [(ngModel)]="textValue" (keydown.enter)="sendRequestOnEnter();false" class="search-input"
+             placeholder="{{search_text}}" type="text"/>
+      <img src="assets/images/Union@3x.png" class="search-button" alt="Search button" title="Search"
+           i18n-title="@@search" (click)="sendRequestOnIconClick()">
       <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Close"
            i18n-title="@@ngb.alert.close" (click)="clearSubmit()">
     </div>
@@ -36,4 +37,5 @@
        class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
   </nav>
 </header>
+
 

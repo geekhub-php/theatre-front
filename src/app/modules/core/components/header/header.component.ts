@@ -12,8 +12,8 @@ import { LangService } from '../../../../services/lang.service';
 export class HeaderComponent {
   collapse = false;
   isCollapsed = false;
-  bankDataIsDisplayed = false;
   search_text = 'Enter your search key word/words';
+  textValue = '';
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -36,9 +36,14 @@ export class HeaderComponent {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  searchSubmit(): void {
-    this.isCollapsed = !this.isCollapsed;
-    /*input value will be sent upon "click"*/
+  sendRequestOnIconClick(): void {
+    /*console.log(this.textValue);*/
+    this.textValue = '';
+  }
+
+  sendRequestOnEnter() {
+/*    console.log(this.textValue);*/
+    this.textValue = '';
   }
 
   clearSubmit(): void {

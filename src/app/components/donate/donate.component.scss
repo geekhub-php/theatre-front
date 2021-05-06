@@ -1,49 +1,29 @@
 @import "~assets/styles/variables";
 
 .donate-block {
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   z-index: 100;
   position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
   background-color: rgba($background-color-black, .7);
 
-  .donate-information {
-    float: right;
+  &__information {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 336px;
-    padding-top: 116px;
-    padding-bottom: 134px;
+    padding-top: 4%;
     background-color: $background-color-accent;
 
     .donate-title {
-      margin-top: 52px;
+      margin-bottom: 24px;
       text-align: center;
 
-      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 1.5, .36px);
-    }
-
-    .donate-requisites {
-      margin-top: 16px;
-      text-align: center;
-
-      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.36, normal);
-    }
-
-    .donate-wallet-image {
-      margin-left: 63px;
-    }
-
-    .qr-code {
-      margin-top: 59px;
-      margin-left: 96px;
-
-      @include box(144, 144);
-
-      &:hover {
-        @include border(2, solid, $border-color-active, 2px);
-        @include box(145, 145);
-      }
+      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 20px, .36px);
     }
 
     .closing-button {
@@ -58,18 +38,48 @@
         @include border(2, solid, $border-color-light, 2px);
       }
     }
+
+    .donate-wallet-image {
+      width: 54%;
+      margin-left: 23%;
+      margin-bottom: 24px;
+    }
+
+    .donate-requisites {
+      text-align: center;
+
+      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 10px, normal);
+
+      .qr-code {
+        width: 42%;
+        margin: 30px 0 auto;
+
+        &:hover {
+          @include border(2, solid, $border-color-active, 2px);
+        }
+      }
+    }
   }
 }
 
 .donate-button {
-  margin-top: 313px;
   z-index: 40;
+  position: fixed;
+  margin-top: 98px;
   right: 1%;
-  position: absolute;
 
   @include box(64, 64);
 
   &:hover {
     @include border(2, solid, $border-color-light, 2px);
+  }
+}
+
+@media only screen and (max-height: 720px) {
+
+  .donate-button {
+    top: 82px;
+
+    @include box(50, 50);
   }
 }

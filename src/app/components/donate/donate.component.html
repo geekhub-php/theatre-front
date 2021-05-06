@@ -7,18 +7,21 @@
        *ngIf="donateBlockVisible" (click)="donateBlockVisible = false">
 </button>
 
+<!--TODO: the correct QR-code needs to be provided-->
+
 <div *ngIf="donateBlockVisible" class="donate-block">
-  <div class="donate-information">
+  <div class="donate-block__information">
+    <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close"
+         i18n-title="@@ngb.alert.close" (click)="donateBlockVisible = false">
     <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
     <p class="donate-title">Are you ready to help the Theater?</p>
     <div class="donate-requisites">
       <p><b>Р/р</b> UA883052990000026007021609497</p>
       <p><b>ЄДРПОУ</b> 02225915</p>
       <p>АТ КБ «ПРИВАТБАНК»</p>
-      <b>МФО</b> 305299
+      <b>МФО</b> 305299<br>
+      <img src="assets/images/Group 505@3x.jpg" class="qr-code" alt="QR Code" (click)="openPDF()">
     </div>
-    <img src="assets/images/Group 505@3x.jpg" class="qr-code" alt="QR Code" (click)="openPDF()">
-    <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close settings"
-         (click)="donateBlockVisible = false">
   </div>
 </div>
+

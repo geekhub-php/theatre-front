@@ -1,54 +1,46 @@
 @import "~assets/styles/variables";
 @import "~assets/styles/utilities";
 
-$white-color: #fff;
-$black-color: #000;
-$yellow-color: #fff150;
-$blue-color: #1f5080;
-$green-color: #0e670b;
-$sepia-bg: #f4e0c1;
-$sepia-color: #80502b;
-$inversion-bg: #88c2f7;
-$inversion-color: #0f2c57;
-
 .visual-aid-container {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   z-index: 100;
   position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
   background-color: rgba($background-color-black, .7);
 
   .visually-impaired {
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 336px;
-    padding-top: 116px;
-    padding-bottom: 134px;
+    padding-top: 3%;
     background-color: $background-color-accent;
 
     .opera-glasses {
-      @include box(208, 205);
+      width: 52%;
     }
 
     text-align: center;
 
     .scheme {
-      @include box(48, 32);
+      @include box(48, 30);
     }
   }
 
   .color-schemes {
 
     &__text {
-      margin-top: 14px;
-
-      @include font($body-font-family, 1.1rem, $font-color-white, $font-weight-bold, $line-height-basic, normal)
+      @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal)
     }
 
     &__button {
-      margin-left: 140px;
-      margin-top: 14px;
+      margin-top: 8px;
+      margin-left: auto;
+      margin-right: auto;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -57,13 +49,13 @@ $inversion-color: #0f2c57;
       border: none;
 
       & > .hover {
-        min-width: 10.714rem;
-        max-width: 21.429rem;
-        top: 2.5rem;
-        left: -1rem;
         z-index: 99;
-        display: none;
         position: absolute;
+        top: 2.1rem;
+        left: -1rem;
+        min-width: 8rem;
+        max-width: 10rem;
+        display: none;
         color: $font-color-white;
         background-color: $background-color-active;
 
@@ -74,16 +66,18 @@ $inversion-color: #0f2c57;
         display: block;
 
         &::before {
+          z-index: -1;
           width: .714rem;
           height: .714rem;
-          top: -.286rem;
-          left: 1.571rem;
-          z-index: -1;
+          top: -.376rem;
+          left: 1.971rem;
           display: block;
           content: "";
           position: absolute;
           transform: rotate(135deg);
           background-color: $background-color-active;
+          border-bottom: .5px solid $background-main-color-lighter;
+          border-left: .5px solid $background-main-color-lighter;
         }
       }
     }
@@ -93,16 +87,14 @@ $inversion-color: #0f2c57;
 .size-fonts {
 
   &__text {
-    margin-top: 76px;
-
-    @include font($body-font-family, 1.1rem, $font-color-white, $font-weight-bold, $line-height-basic, normal)
+    @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal)
   }
 
   &__buttons {
     display: flex;
     flex-direction: column;
     position: relative;
-    gap: 16px;
+    gap: 8px;
     margin-right: 138px;
     background: none;
     outline: none;
@@ -117,22 +109,41 @@ $inversion-color: #0f2c57;
     min-width: 48px;
 
     & > .hover-font {
-      min-width: 10.714rem;
-      max-width: 21.429rem;
-      top: 2.5rem;
-      left: -1rem;
       z-index: 99;
-      display: none;
       position: absolute;
+      top: -2rem;
+      left: -1rem;
+      min-width: 8rem;
+      max-width: 10rem;
+      display: none;
       color: $font-color-white;
       background-color: $background-color-active;
 
       @include border(.5, solid, $background-main-color-lighter, 5px)
     }
+
+    &:hover > .hover-font {
+      display: block;
+
+      &::before {
+        z-index: -1;
+        width: .714rem;
+        height: .714rem;
+        bottom: -.386rem;
+        right: 5.571rem;
+        display: block;
+        content: "";
+        position: absolute;
+        transform: rotate(135deg);
+        background-color: $background-color-active;
+        border-top: .5px solid $background-main-color-lighter;
+        border-right: .5px solid $background-main-color-lighter;
+      }
+    }
   }
 }
 
-.closing-button {
+.close-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -145,18 +156,14 @@ $inversion-color: #0f2c57;
   }
 }
 
-.close-disable {
-
-  &__button {
-    color: $font-color-white;
-
-    @extend .u-unstyled-btn;
-  }
-}
-
 .reset-button {
   position: relative;
-  padding-top: 26px;
+  padding-top: 18px;
+  margin-bottom: 38px;
+  color: $font-color-white;
+  text-align: center;
+
+  @extend .u-unstyled-btn;
 
   &:hover {
     color: $font-color-dark;
@@ -164,15 +171,24 @@ $inversion-color: #0f2c57;
 }
 
 .visual-aid-button {
-  margin-top: 240px;
-  right: 1%;
   z-index: 40;
-  position: absolute;
+  position: fixed;
+  margin-top: 26px;
+  right: 1%;
 
   @include box(64, 64);
 
   &:hover {
     @include border(2, solid, $border-color-light, 2px);
+  }
+}
+
+@media only screen and (max-height: 720px) {
+
+  .visual-aid-button {
+    top: 100px;
+
+    @include box(50, 50);
   }
 }
 
