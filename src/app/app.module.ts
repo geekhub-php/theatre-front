@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -7,8 +7,6 @@ import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
-
-import { CoreModule } from './modules/core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -44,6 +42,7 @@ import { SliderComponent } from './components/home-page/slider/slider.component'
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 
 import { environment } from '../environments/environment';
+import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
   declarations: [
@@ -82,17 +81,18 @@ import { environment } from '../environments/environment';
     NgbCollapseModule,
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
-    CoreModule,
-    SpinnerModule
+    SpinnerModule,
+    CoreModule
   ],
   providers: [
     CalendarService,
-    GoogleAnalyticsService,
+    GoogleAnalyticsService
   ],
   exports: [
     DonateComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {
 }
