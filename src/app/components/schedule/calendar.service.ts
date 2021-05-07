@@ -72,6 +72,14 @@ export class CalendarService {
     return this.currentDate;
   }
 
+  getPerformanceByDate(specialDate: Date) {
+    this.currentDate = new Date(this.currentDate);
+    this.currentDate.setFullYear(specialDate.getFullYear(), specialDate.getMonth());
+    this.getPerformanceEvents();
+
+    return this.currentDate;
+  }
+
   today(): Date {
     this.currentDate = new Date();
     this.getPerformanceEvents();

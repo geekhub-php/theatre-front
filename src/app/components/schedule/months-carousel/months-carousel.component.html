@@ -1,0 +1,27 @@
+<div class="slider__months__container" draggable="false">
+  <button
+    (click)="onPrev($event)"
+    class="slider__months__btn slider__months__btn__left">
+    <img src="assets/images/calendar/chevron-left.svg" alt="">
+  </button>
+  <div #monthsSlider class="slider__months" draggable="false">
+    <div
+      #monthItem
+      draggable="false"
+      class="slider__months__item"
+      *ngFor="let monthItem of monthsList; let i = index"
+      [class.slider__months__item__active]="month && (monthName.id === month.activeMonth)">
+      <span
+        #monthName
+        [id]="monthItem.id"
+        class="slider__months__item__month__name">
+          {{ monthItem.name }}
+      </span>
+    </div>
+  </div>
+  <button
+    (click)="onNext($event)"
+    class="slider__months__btn slider__months__btn__right">
+    <img src="assets/images/calendar/chevron-right.svg" alt="">
+  </button>
+</div>

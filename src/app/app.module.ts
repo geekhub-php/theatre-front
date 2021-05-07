@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { NguCarouselModule } from '@ngu/carousel';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
 import { CoreModule } from './modules/core/core.module';
@@ -39,6 +40,7 @@ import { ListViewComponent } from './components/schedule/list-view/list-view.com
 import { MobileViewComponent } from './components/schedule/mobile-view/mobile-view.component';
 import { CalendarPopupComponent } from './components/schedule/calendar/calendar-popup/calendar-popup.component';
 import { CalendarService } from './components/schedule/calendar.service';
+import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { SliderComponent } from './components/home-page/slider/slider.component';
@@ -69,10 +71,11 @@ import { environment } from '../environments/environment';
     SideMenuComponent,
     SliderComponent,
     NewsListItemComponent,
+    MonthsCarouselComponent,
     CooperationComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'serverApp'}),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -86,7 +89,8 @@ import { environment } from '../environments/environment';
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
-    SpinnerModule
+    SpinnerModule,
+    NguCarouselModule
   ],
   providers: [
     CalendarPopupComponent,
@@ -95,6 +99,5 @@ import { environment } from '../environments/environment';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
 

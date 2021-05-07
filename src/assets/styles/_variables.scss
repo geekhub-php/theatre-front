@@ -1,16 +1,9 @@
+$background-main-color: #0e0c08;
+$font-color-gold: #b49864;
 $main-font: "Source Sans Pro", sans-serif;
 $white-color: #fff;
 $black-color: #000;
 $main-color-lighter: #fa231c;
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
-
-$Montserrat: montserrat;
-
-
-$background-main-color: #0e0c08;
-$font-color-gold: #b49864;
-
 $main-color: #d91213;
 $main-color-darker: #9a0004;
 $secondary-color: #2a2a2a;
@@ -62,7 +55,9 @@ $container-margin: 0 auto;
   font-style: normal;
 }
 
-$body-font-family: "Monteserrat", "Arial", "Helvetica", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+$body-font-family: Monteserrat, "Arial", "Helvetica", sans-serif;
 $creative-font: "KobzarKS", "Brush Script MT", "Brush Script Std", cursive;
 
 $font-size-x-small: 10px;
