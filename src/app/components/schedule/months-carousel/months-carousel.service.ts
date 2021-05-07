@@ -233,7 +233,8 @@ export class MonthsCarouselService {
         this.queryMonthList.forEach(el => {
           if (el.nativeElement.firstChild.id === tagData.id) {
             if (!isNaN(Number(tagData.id))) {
-              this.stopSpinner()
+              this.stopSpinner();
+
               return;
             }
             this.screen.currentPosition = el.nativeElement.offsetLeft - this.screen.scrollAmount;
