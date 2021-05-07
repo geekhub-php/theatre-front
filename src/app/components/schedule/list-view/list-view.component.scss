@@ -1,81 +1,50 @@
 @import "~assets/styles/variables";
 
+
 .list-view {
   display: flex;
   flex-direction: column;
-  max-width: 78.571rem;
+  max-width: 1250px;
   width: 100%;
   margin: 20px auto;
-  padding: 0 40px;
+  padding: 0;
+  font-family: $body-font-family;
+
 
   &__item {
     margin: 10px 0;
+    position: relative;
+    background-color: $background-main-color-lighter;
+    height: 220px;
   }
 
-  &__date-wrapper,
-  &__info {
+  &__date-wrapper {
     display: flex;
     flex-direction: column;
-    max-width: 200px;
-    width: 100%;
-    transition: .3s ease;
-  }
-
-  &__content {
-    flex: 1;
-    padding: 0 30px;
-    transition: .3s ease;
-  }
-
-  &__title {
-    margin-bottom: 16px;
-    color: $white-color;
-    font-size: 1.857rem;
-  }
-
-  &__description {
-    font-size: 1rem;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-  }
-
-  &__info {
-    font-size: 1rem;
     align-items: center;
-    color: $white-color;
-  }
-
-  &__day {
-    font-size: 2.857rem;
-  }
-
-  &__day-type {
-    padding-left: 6px;
+    justify-content: center;
+    height: 100%;
   }
 
   &__date {
-    color: rgba($white-color, .8);
-  }
-
-  &__time {
-    margin-top: 16px;
-    margin-bottom: 6px;
-  }
-
-  &__place {
-    margin-bottom: 6px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-  }
+    justify-content: center;
+    font-weight: $font-weight-semi-bold;
+    font-family: $body-font-family;
 
-  &__type {
-    text-align: center;
-  }
+    &__day {
+      color: $background-color-disabled;
+      font-size: $font-largest-x;
+      line-height: 1;
+    }
 
-  &__button {
-    margin-top: 26px;
-    margin-bottom: 14px;
+    &__day-type {
+      font-size: $font-size-x-large;
+      color: $border-color-accent;
+    }
   }
 
   &__img {
@@ -87,71 +56,151 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
-    z-index: -2;
+    z-index: 0;
+    opacity: .5;
     transition: .3s ease;
-    opacity: 0;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 0 30px;
+    transition: .3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__title {
+      color: $white-color;
+      font-size: $font-size-x-large;
+      font-weight: $font-weight-semi-bold;
+      transition: .3s ease;
+    }
+
+    &__type {
+      color: $border-color-accent;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-semi-bold;
+    }
+
+    &__info {
+      align-items: flex-end;
+      color: $white-color;
+      display: flex;
+      flex-direction: row;
+      font-size: $font-size-medium;
+      gap: 16px;
+      max-height: 90px;
+
+      &__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+
+        &__icon {
+          width: 20px;
+          height: 24px;
+          color: $border-color-accent;
+          padding-bottom: 4px;
+        }
+
+        &__clock {
+          width: 20px;
+          height: 20px;
+        }
+
+        &__time {
+          font-size: $font-size-large;
+          font-weight: $font-weight-semi-bold;
+          color: $secondary-background-color;
+          transition: .3s ease;
+        }
+
+        &__text {
+          color: $secondary-background-color;
+          padding-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  &__button {
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    margin-top: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-semi-bold;
+    color: $border-color-light;
+    border: solid 1px $border-color-light;
+    border-radius: 2px;
+    padding: 12px 24px;
+  }
+
+  &__arrow-right {
+    position: absolute;
+    right: 34px;
+    bottom: 24px;
   }
 
   &__link {
     position: relative;
     display: flex;
-    padding: 20px;
-    border-radius: 14px;
+    flex-direction: row;
+    padding: 24px 34px 24px 56px;
     box-shadow: $typical-box-shadow;
     overflow: hidden;
     color: $white-color;
     cursor: pointer;
+    background-color: $background-main-color-lighter;
+    transition: .3s ease;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
 
-    &:focus,
-    &:active {
-      outline: none;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 200px;
-      top: 50%;
-      width: 2px;
-      height: 80%;
-      transform: translateY(-50%);
-      border-left: 1px dashed $border-color;
-      transition: .3s ease;
-    }
-
-    &::before {
-      content: "";
+    &__age-limit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      transition: .3s ease;
-      background-color: rgb($secondary-color, .9);
+      width: 56px;
+      height: 56px;
+      background-color: $background-color-accent;
+      z-index: 2;
+
+      & span {
+        font-size: 24px;
+        font-weight: $font-weight-semi-bold;
+        color: $border-color-light;
+      }
     }
 
     &:hover {
-      color: $white-color;
+      background-color: transparent;
 
-      &::before {
-        background-color: rgba($main-color-darker, .75);
-      }
+      .list-view {
 
-      &::after {
-        border-color: $white-color;
-      }
+        &__content__info__item__time {
+          color: $white-color;
+        }
 
-      .list-view__title,
-      .list-view__info,
-      .list-view__date {
-        color: $white-color;
-      }
+        &__date__day {
+          color: $white-color;
+        }
 
-      .list-view__img {
-        opacity: 1;
+        &__link__age-limit {
+          background-color: $background-on-hover !important;
+        }
+
+        &__button {
+          background-color: rgba(255, 255, 255, .2);
+        }
       }
     }
   }
 }
+

@@ -3,6 +3,7 @@ import { PerformanceGallery } from './PerformanceGallery';
 import { Season } from '../season/Season';
 
 export class Performance {
+  age_limit: number;
   title: string;
   slug: string;
   description: string;

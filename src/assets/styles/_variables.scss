@@ -11,6 +11,12 @@ $secondary-color-lighter: #777;
 $border-color: #e7e7e7;
 $typical-box-shadow: 0 0 9px 0 rgba(126,126,126,.16);
 
+//______________________________________________________________________________________________________________________
+
+/*NEW*/
+
+/*Dimensions and display method*/
+
 @mixin box($width, $height) {
   width: $width * 1px;
   height: $height * 1px;
@@ -67,6 +73,7 @@ $font-size-large: 24px;
 $font-size-x-large: 32px;
 $font-size-xxx-large: 40px;
 $font-largest: 72px;
+$font-largest-x: 100px;
 
 $font-color-white: #fff;
 $font-color-primary: #b6b6b4;

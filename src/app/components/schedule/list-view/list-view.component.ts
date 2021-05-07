@@ -20,7 +20,6 @@ export class ListViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.date = this.calendar.currentDate;
-
     this.calendar.getPerformanceEvents().then(() => this.getPerformanceEvents());
   }
 
