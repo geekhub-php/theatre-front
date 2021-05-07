@@ -1,4 +1,4 @@
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs'
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -81,11 +81,6 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.carousel.createMonthList(this.monthsNameList.monthsEng);
     // for UK version
     // this.carousel.createMonthList(this.monthsNameList.months)
-  }
-
-  @HostListener('mousewheel', ['$event']) onScroll(event) {
-    event.preventDefault();
-    this.carousel.onMouseWheel(event);
   }
 
   @HostListener('window:resize') onResize() {

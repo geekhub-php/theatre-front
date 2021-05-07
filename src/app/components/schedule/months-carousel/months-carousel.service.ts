@@ -6,8 +6,8 @@ import {
   TMonthsSliderElement,
   TScreenProperty,
   TSliderMonth
-} from '../../../store/schedule/MonthsSliderItem';
-import { LoaderService } from '../../partials/spinner/loader.service';
+} from 'app/store/schedule/MonthsSliderItem';
+import { LoaderService } from 'app/components/partials/spinner/loader.service';
 
 @Injectable({
   providedIn: 'root'
@@ -74,16 +74,6 @@ export class MonthsCarouselService {
 
   setScreenWidth(scrollWidth) {
     this.screen = { ...this.screen, scrollWidth };
-  }
-
-  onMouseWheel(event: WheelEvent) {
-    event.preventDefault();
-    this.screen.currentPosition = this.calcMonthPosition(
-      this.monthsSlider.nativeElement.scrollLeft, event.deltaY);
-    this.checkPosition();
-    this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-    this.setActiveMonth();
-    this.activeSpinner();
   }
 
   onResize() {
@@ -178,15 +168,20 @@ export class MonthsCarouselService {
     this.monthList.forEach(month => {
       if (month.id === id) {
         this.month.currentFullDate = month.date;
+        this.activeSpinner();
       }
     });
     this.month$.next(this.month);
-    this.activeSpinner();
   }
 
   activeSpinner() {
     if (!this.isSpinnerActive) {
       this.spinner.start('poster');
+    }
+  }
+  stopSpinner() {
+    if (this.isSpinnerActive) {
+      this.spinner.stop('poster');
     }
   }
 
@@ -196,8 +191,8 @@ export class MonthsCarouselService {
       this.screen.currentPosition -= this.screen.scrollStep;
       this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
       this.setActiveMonth();
+      this.activeSpinner();
     }
-    this.activeSpinner();
   }
 
   onNext(event) {
@@ -206,8 +201,8 @@ export class MonthsCarouselService {
       this.screen.currentPosition += this.screen.scrollStep;
       this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
       this.setActiveMonth();
+      this.activeSpinner();
     }
-    this.activeSpinner();
   }
 
   onDrag() {
@@ -238,11 +233,13 @@ export class MonthsCarouselService {
         this.queryMonthList.forEach(el => {
           if (el.nativeElement.firstChild.id === tagData.id) {
             if (!isNaN(Number(tagData.id))) {
+              this.stopSpinner()
               return;
             }
             this.screen.currentPosition = el.nativeElement.offsetLeft - this.screen.scrollAmount;
             this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
             this.setActiveMonth(tagData.id);
+            this.activeSpinner();
           }
         });
       } else {
@@ -259,10 +256,10 @@ export class MonthsCarouselService {
         this.checkPosition();
         this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
         this.setActiveMonth();
+        this.activeSpinner();
       }
       tagData.name = '';
       tagData.id = '';
-      this.activeSpinner();
     });
   }
 
@@ -273,6 +270,9 @@ export class MonthsCarouselService {
           this.month.activeMonth = id;
         }
       } else if ((el.nativeElement.offsetLeft) === (this.screen.currentPosition + this.screen.scrollAmount)) {
+        if (!isNaN(Number(el.nativeElement.firstChild.id))) {
+          return;
+        }
         this.month.activeMonth = el.nativeElement.firstChild.id;
       }
     });
