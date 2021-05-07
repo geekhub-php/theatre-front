@@ -39,7 +39,8 @@ export class MonthsCarouselService {
 
   private month: TMonthProperty = {
     activeMonth: null,
-    currentFullDate: new Date()
+    currentFullDate: new Date(),
+    amountOfYears: 20
   };
 
   constructor(private spinner: LoaderService) {
@@ -107,8 +108,10 @@ export class MonthsCarouselService {
   }
 
   setDefaultData() {
+    const {amountOfYears} = this.month;
     const newDate = new Date();
-    this.month.activeMonth = `${newDate.getUTCMonth()}/${newDate.getUTCFullYear()}`;
+    const half =  2;
+    this.month.activeMonth = `${newDate.getUTCMonth()}/${newDate.getUTCFullYear()}/${amountOfYears / half}`;
     this.spinner.subject.subscribe(data => {
       this.isSpinnerActive = data.load;
     });
@@ -119,18 +122,16 @@ export class MonthsCarouselService {
   createMonthList(monthLng: Array<string>) {
     let newMonthList: Array<TSliderMonth> = [];
     const monthCreator = (date, name, id): TSliderMonth => ({ date, name, id });
-    const maxPrevYear = -2;
-    const maxNextYear = 3;
+    const { amountOfYears } = this.month;
     const middleDate = 15;
 
-    for (let i = maxPrevYear; i < maxNextYear; i++) {
+    for (let i = 0; i < amountOfYears; i++) {
       monthLng.forEach((name, j) => {
         const date = new Date();
         date.setDate(middleDate);
         date.setMonth(j);
-        date.setFullYear(date.getFullYear() + i);
         newMonthList = [
-          ...newMonthList, monthCreator(date, name, `${date.getUTCMonth()}/${date.getUTCFullYear()}`)
+          ...newMonthList, monthCreator(date, name, `${date.getUTCMonth()}/${date.getUTCFullYear()}/${i}`)
         ];
       });
       this.monthList = [...this.monthList, ...newMonthList];

@@ -20,7 +20,9 @@ export type TScreenProperty = {
 
 export type TMonthProperty = {
   activeMonth: null | string,
-  currentFullDate: Date
+  currentFullDate: Date,
+  // amountOfYears must even number and more than 2
+  amountOfYears: 20
 }
 
 export type TMonthsSliderElement = {

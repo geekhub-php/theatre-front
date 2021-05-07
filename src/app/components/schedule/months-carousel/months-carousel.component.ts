@@ -77,9 +77,9 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     private carousel: MonthsCarouselService
   ) {
     this.getMonthsList();
-    // for English version
+    // for EN version
     this.carousel.createMonthList(this.monthsNameList.monthsEng);
-    // for Ukrainian version
+    // for UK version
     // this.carousel.createMonthList(this.monthsNameList.months)
   }
 
