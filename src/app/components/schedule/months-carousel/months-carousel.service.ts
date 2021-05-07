@@ -40,7 +40,7 @@ export class MonthsCarouselService {
   private month: TMonthProperty = {
     activeMonth: null,
     currentFullDate: new Date(),
-    amountOfYears: 20
+    amountOfYears: 150
   };
 
   constructor(private spinner: LoaderService) {
