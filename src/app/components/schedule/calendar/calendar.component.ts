@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
 import { GatewayService } from '../../../services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';
@@ -15,13 +15,20 @@ export class CalendarComponent implements OnInit {
   dayPerformances: Array<PerformanceEvent>;
   weeks: Array<Array<Date>>;
   date: Date;
+  showMore = false;
+  activeDay: Date | null = null;
+  selectedDate = new Date();
 
   constructor(private gateway: GatewayService,
               private loaderService: LoaderService,
-              private calendar: CalendarService) { }
+              private calendar: CalendarService) {
+  }
 
   ngOnInit(): void {
-    this.calendar.getPerformanceEvents().then(() => this.getPerformanceEvents());
+    this.calendar.getPerformanceEvents().then(() => {
+      this.getPerformanceEvents();
+    });
+    this.getMonth();
   }
 
   hasPerformanceByDate(date: Date): boolean {
@@ -36,6 +43,17 @@ export class CalendarComponent implements OnInit {
     return this.events.filter((event: PerformanceEvent) => {
       return +event.month === date.getMonth() + 1 && +event.day === date.getDate();
     });
+  }
+
+  getMonth() {
+    this.calendar.selectedDate$.subscribe(date => {
+      this.selectedDate = date;
+    });
+  }
+
+  onShowMore(day: Date) {
+    this.showMore = !this.showMore;
+    this.activeDay = day;
   }
 
   getPerformanceEvents() {
