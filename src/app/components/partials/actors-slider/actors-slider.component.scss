@@ -2,7 +2,6 @@
 
 .wrapped {
   margin: 0;
-  height: 900px;
   padding: 80px 0 90px;
   background-color: $background-color-black;
 }
@@ -19,14 +18,13 @@ a {
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-normal, 1.5, 0.8);
 }
 
-.all-prersons {
+.all-persons {
   @include flex-center;
 }
 
 .link-persons {
-  text-align: center;
+  margin-top: 30px;
 
-  @include box(170, 25);
   @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-normal, 1.5, 1.39);
 }
 
@@ -37,15 +35,14 @@ a {
   filter: grayscale(100%);
 
   @include box(350, 530);
-}
 
-.image:hover {
-  filter: none;
+  &:hover {
+    filter: none;
+  }
 }
 
 .left {
   position: absolute;
-  cursor: pointer;
   bottom: 0;
   width: 70px;
   z-index: 1;
@@ -53,11 +50,11 @@ a {
 
   @include flex-center;
   @include gradient;
-  @include opacity(all 0.3s ease, all 0.3s ease, all 0.3s ease, all 0.3s ease, 1);
+  @include opacity(all .3s ease, all .3s ease, all .3s ease, all .3s ease, 1);
 }
 
 .left:hover {
-  @include hover-opacity(scale(1.2), scale(1.2), scale(1.2), 0.6);
+  @include hover-opacity(scale(1.2), scale(1.2), scale(1.2), .6);
 }
 
 .right {
@@ -70,11 +67,11 @@ a {
   z-index: 1;
 
   @include flex-center;
-  @include opacity(all 0.3s ease, all 0.3s ease, all 0.3s ease, all 0.3s ease, 1);
+  @include opacity(all .3s ease, all .3s ease, all .3s ease, all .3s ease, 1);
 }
 
 .right:hover {
-  @include hover-opacity(scale(1.2), scale(1.2), scale(1.2), 0.6);
+  @include hover-opacity(scale(1.2), scale(1.2), scale(1.2), .6);
 }
 
 .myPoint {
@@ -92,16 +89,18 @@ a {
   background-color: $background-color-disabled;
   display: inline-block;
   border-radius: 50%;
-  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  transition: 0.4s;
+  transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+  transition: .4s;
   cursor: pointer;
 
   @include container(12px, 12, 4px, 0 10px);
 }
 
-.myPoint  li.active {
+.myPoint li.active {
   background-color: $background-color-accent;
-  transform: scale(1.2);
+  transform: scale(1.4);
+}
 
-  @include box(16, 16);
+.chevron {
+  cursor: pointer;
 }
