@@ -54,39 +54,40 @@ export class CalendarService {
     return weeks;
   }
 
-  prevMonth(): Date {
-    this.currentDate = new Date(this.currentDate);
-    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
-    this.getPerformanceEvents();
-    this.selectedDate$.next(this.currentDate);
+  // prevMonth(): Date {
+  //   this.currentDate = new Date(this.currentDate);
+  //   this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+  //   this.getPerformanceEvents();
+  //   this.selectedDate$.next(this.currentDate);
+  //
+  //   return this.currentDate;
+  // }
 
-    return this.currentDate;
-  }
-
-  nextMonth(): Date {
-    this.currentDate = new Date(this.currentDate);
-    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
-    this.getPerformanceEvents();
-    this.selectedDate$.next(this.currentDate);
-
-    return this.currentDate;
-  }
+  // nextMonth(): Date {
+  //   this.currentDate = new Date(this.currentDate);
+  //   this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+  //   this.getPerformanceEvents();
+  //   this.selectedDate$.next(this.currentDate);
+  //
+  //   return this.currentDate;
+  // }
 
   getPerformanceByDate(specialDate: Date) {
     this.currentDate = new Date(this.currentDate);
     this.currentDate.setFullYear(specialDate.getFullYear(), specialDate.getMonth());
-    this.getPerformanceEvents();
-
-    return this.currentDate;
-  }
-
-  today(): Date {
-    this.currentDate = new Date();
-    this.getPerformanceEvents();
     this.selectedDate$.next(this.currentDate);
+    this.getPerformanceEvents();
 
     return this.currentDate;
   }
+
+  // today(): Date {
+  //   this.currentDate = new Date();
+  //   this.getPerformanceEvents();
+  //   this.selectedDate$.next(this.currentDate);
+  //
+  //   return this.currentDate;
+  // }
 
   selectedDate() {
     return this.selectedDate$.asObservable();

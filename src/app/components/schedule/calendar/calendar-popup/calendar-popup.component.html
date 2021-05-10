@@ -19,9 +19,9 @@
       <img src="assets/images/calendar/time-fill.svg" alt="">
       <p>{{ event && event.time }}</p>
     </div>
-    <div class="popover__info">
+    <div *ngIf='!!event.performance.duration_in_min' class="popover__info">
       <img src="assets/images/calendar/bx-hourglass.svg" alt="">
-      <p>{{ '2 год. 30 хв.' }}</p>
+      <p>{{ event.performance.duration_in_min | performanceDuration: 'uk' }}</p>
     </div>
     <div class="popover__info">
       <img src="assets/images/calendar/map-pin-2-fill.svg" alt="">

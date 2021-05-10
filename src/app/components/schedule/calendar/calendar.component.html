@@ -14,7 +14,8 @@
   <tbody>
   <tr *ngFor="let week of weeks">
     <td *ngFor="let day of week"
-        class="day__of__month {{(day | date: 'MM') === (selectedDate | date: 'MM') ? '' : 'another__month'}}">
+        class="day__of__month {{(day | date: 'MM') === (selectedDate | date: 'MM') ? '' : 'another__month'}}"
+    >
       <span class="day__number">{{ day | date: 'dd' }}</span>
       <div class="more" *ngIf="hasPerformanceByDate(day)">
         <div class="more__items">
@@ -49,7 +50,10 @@
           <div *ngIf="dayPerformances.length > 3" class="day__performances calendar__show__more">
             <button (click)="onShowMore(day)">Показати більше (+{{ dayPerformances.length - 2 }})</button>
           </div>
-          <div class="more__items calendar__popup__show__more" *ngIf="showMore && day === activeDay">
+          <div
+            *ngIf="showMore && day === activeDay"
+            class="more__items calendar__popup__show__more"
+          >
             <div class="popup__day__number ">
               <span>{{ day | date: 'dd' }}</span>
             </div>
@@ -71,12 +75,14 @@
                     [ngbPopover]="popContent"
                     placement="top"
                     popoverClass="popover__poster"
-                    *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">{{ event.performance.title | striphtml:['40', '...'] }}</p>
+                    *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">
+                    {{ event.performance.title | striphtml:['40', '...'] }}
+                  </p>
                 </a>
               </div>
             </ng-container>
 
-            <div class="popup__day__performances" >
+            <div class="popup__day__performances">
               <button (click)="onShowMore(null)">Показати менше</button>
             </div>
           </div>

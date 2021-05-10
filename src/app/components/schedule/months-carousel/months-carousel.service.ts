@@ -1,6 +1,6 @@
 import { fromEvent, Subject, Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { Injectable, QueryList } from '@angular/core';
+import { Injectable, OnDestroy, QueryList } from '@angular/core';
 import {
   TMonthProperty,
   TMonthsSliderElement,
@@ -12,16 +12,17 @@ import { LoaderService } from 'app/components/partials/spinner/loader.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MonthsCarouselService {
-  private monthsSlider$ = new Subject<TMonthsSliderElement>();
-  private monthsList$ = new Subject<Array<TSliderMonth>>();
-  private month$ = new Subject<TMonthProperty>();
+export class MonthsCarouselService implements OnDestroy {
+  private monthsSlider$: Subject<TMonthsSliderElement> = new Subject<TMonthsSliderElement>();
+  private month$: Subject<TMonthProperty> = new Subject<TMonthProperty>();
+  private currentMonth$: Subject<Date> = new Subject<Date>();
 
   private monthsSlider: TMonthsSliderElement;
   private queryMonthList = [];
 
   private monthList: Array<TSliderMonth> = [];
-  private onDrug$: Subscription;
+  private onDrugSubscription: Subscription;
+  private scrollSubscription: Subscription;
   private isSpinnerActive = false;
 
   private screen: TScreenProperty = {
@@ -40,32 +41,37 @@ export class MonthsCarouselService {
   private month: TMonthProperty = {
     activeMonth: null,
     currentFullDate: new Date(),
-    amountOfYears: 150
+    amountOfYears: 100
   };
+
+  private currentMonth = new Date();
 
   constructor(private spinner: LoaderService) {
     this.monthsSlider$.subscribe(carousel => {
       this.monthsSlider = carousel;
     });
+
+
     this.spinner.subject.subscribe(data => {
       this.isSpinnerActive = data.load;
     });
-  }
-
-  getCarousel() {
-    return this.monthsSlider$.asObservable();
-  }
-
-  getMonthsList() {
-    return this.monthsList$.asObservable();
   }
 
   getMonth() {
     return this.month$.asObservable();
   }
 
+  getCurrentMonth() {
+    return this.currentMonth$.asObservable();
+  }
+
   setCarousel(carousel: TMonthsSliderElement) {
-    this.monthsSlider$.next(carousel);
+    this.monthsSlider = carousel;
+    this.monthsSlider$.next(this.monthsSlider);
+    this.scrollSubscription = fromEvent(this.monthsSlider.nativeElement, 'scroll')
+      .subscribe(() => {
+        this.currentMonth$.next(this.currentMonth);
+      });
   }
 
   setQueryMonthsList(monthItems: QueryList<TMonthsSliderElement>) {
@@ -98,15 +104,14 @@ export class MonthsCarouselService {
   }
 
   setDefaultData() {
-    const {amountOfYears} = this.month;
+    const { amountOfYears } = this.month;
     const newDate = new Date();
-    const half =  2;
+    const half = 2;
     this.month.activeMonth = `${newDate.getUTCMonth()}/${newDate.getUTCFullYear()}/${amountOfYears / half}`;
     this.spinner.subject.subscribe(data => {
       this.isSpinnerActive = data.load;
     });
     this.onResize();
-    this.month$.next(this.month);
   }
 
   createMonthList(monthLng: Array<string>) {
@@ -124,7 +129,7 @@ export class MonthsCarouselService {
           ...newMonthList, monthCreator(date, name, `${date.getUTCMonth()}/${date.getUTCFullYear()}/${i}`)
         ];
       });
-      this.monthList = [...this.monthList, ...newMonthList];
+      this.monthList = [ ...this.monthList, ...newMonthList ];
       newMonthList = [];
     }
     const penultimateMonthCount = 2;
@@ -136,8 +141,8 @@ export class MonthsCarouselService {
       monthCreator(new Date(), monthLng[0], Date.now().toString()),
       monthCreator(new Date(), monthLng[1], Date.now().toString())
     ];
-    this.monthsList$.next(this.monthList);
     this.setActiveMonth(this.month.activeMonth);
+    return this.monthList
   }
 
   calcMonthPosition(currentPosition: number, deltaY) {
@@ -154,24 +159,26 @@ export class MonthsCarouselService {
 
   scrollToCurrentMonth() {
     this.queryMonthList.forEach(month => {
-      month = month.nativeElement;
-      if (this.month.activeMonth === month.firstChild.id) {
-        this.screen.currentPosition = month.offsetLeft - this.screen.scrollAmount;
+      const { firstChild, offsetLeft } = month.nativeElement;
+      if (this.month.activeMonth === firstChild.id) {
+        this.screen.currentPosition = offsetLeft - this.screen.scrollAmount;
         this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-        this.getMonthData(month.firstChild.id);
-        this.setActiveMonth(month.firstChild.id);
+        this.setActiveMonth(firstChild.id);
+        this.monthsSlider$.next(this.monthsSlider);
       }
     });
   }
 
   getMonthData(id) {
+    this.month.activeMonth = id
     this.monthList.forEach(month => {
       if (month.id === id) {
         this.month.currentFullDate = month.date;
         this.activeSpinner();
+        this.currentMonth = month.date;
+        this.month$.next(this.month);
       }
     });
-    this.month$.next(this.month);
   }
 
   activeSpinner() {
@@ -179,29 +186,30 @@ export class MonthsCarouselService {
       this.spinner.start('poster');
     }
   }
+
   stopSpinner() {
     if (this.isSpinnerActive) {
       this.spinner.stop('poster');
     }
   }
 
-  onPrev(event) {
-    event.stopPropagation();
+  onPrev() {
     if (!(this.monthsSlider.nativeElement.scrollLeft <= this.screen.startPoint)) {
       this.screen.currentPosition -= this.screen.scrollStep;
       this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
       this.setActiveMonth();
       this.activeSpinner();
+      this.monthsSlider$.next(this.monthsSlider);
     }
   }
 
-  onNext(event) {
-    event.stopPropagation();
+  onNext() {
     if (!(this.screen.scrollWidth - this.monthsSlider.nativeElement.scrollLeft <= this.screen.screenWidth)) {
       this.screen.currentPosition += this.screen.scrollStep;
       this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
       this.setActiveMonth();
       this.activeSpinner();
+      this.monthsSlider$.next(this.monthsSlider);
     }
   }
 
@@ -214,7 +222,7 @@ export class MonthsCarouselService {
 
     const onEnd = () => mouseup$.pipe(map(event => startPos - event.clientX));
 
-    this.onDrug$ = mousedown$.pipe(
+    this.onDrugSubscription = mousedown$.pipe(
       map(event => {
         event.stopPropagation();
         tagData.name = event.target.localName;
@@ -226,20 +234,21 @@ export class MonthsCarouselService {
       if (tagData.name !== 'span') {
         return;
       }
-      // 50 - reserve count if user's hand shuddered when he wanted click
+      // 50 - reserve value if user hand shuddered when he wanted to click
       const minCountForClick = 50;
 
       if (Math.abs(leftPosition) < minCountForClick) {
         this.queryMonthList.forEach(el => {
           if (el.nativeElement.firstChild.id === tagData.id) {
-            if (!isNaN(Number(tagData.id))) {
+            if (!isNaN(Number(tagData.id)) || el.nativeElement.firstChild.id === this.month.activeMonth) {
               this.stopSpinner();
 
               return;
             }
             this.screen.currentPosition = el.nativeElement.offsetLeft - this.screen.scrollAmount;
             this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
-            this.setActiveMonth(tagData.id);
+            this.month.activeMonth = tagData.id;
+            this.getMonthData(this.month.activeMonth);
             this.activeSpinner();
           }
         });
@@ -259,6 +268,7 @@ export class MonthsCarouselService {
         this.setActiveMonth();
         this.activeSpinner();
       }
+      this.monthsSlider$.next(this.monthsSlider);
       tagData.name = '';
       tagData.id = '';
     });
@@ -266,18 +276,19 @@ export class MonthsCarouselService {
 
   setActiveMonth(id?) {
     this.queryMonthList.forEach(el => {
-      if (id) {
-        if (el.nativeElement.firstChild.id === id) {
-          this.month.activeMonth = id;
-        }
+      if (id && el.nativeElement.firstChild.id === id) {
+        this.getMonthData(id);
       } else if ((el.nativeElement.offsetLeft) === (this.screen.currentPosition + this.screen.scrollAmount)) {
         if (!isNaN(Number(el.nativeElement.firstChild.id))) {
           return;
         }
-        this.month.activeMonth = el.nativeElement.firstChild.id;
+        this.getMonthData(el.nativeElement.firstChild.id);
       }
     });
-    this.month$.next(this.month);
-    this.getMonthData(this.month.activeMonth);
+  }
+
+  ngOnDestroy() {
+    this.scrollSubscription.unsubscribe();
+    this.onDrugSubscription.unsubscribe();
   }
 }

@@ -48,7 +48,7 @@ $popup-border-color: #b6b6b4;
     text-transform: capitalize;
     width: 90px;
     height: 30px;
-    font-family: $Montserrat;
+    font-family: $body-font-family;
     font-size: 24px;
     font-weight: 700;
     font-stretch: normal;
@@ -71,7 +71,7 @@ $popup-border-color: #b6b6b4;
 
   .day__number {
     cursor: default;
-    font-family: $Montserrat;
+    font-family: $body-font-family;
     position: absolute;
     top: 12px;
     left: 6px;
@@ -94,7 +94,7 @@ $popup-border-color: #b6b6b4;
       margin: auto 0;
       padding: 0;
       color: $font-color-gold;
-      font-family: $Montserrat;
+      font-family: $body-font-family;
       font-weight: 600;
       cursor: pointer;
     }
@@ -115,7 +115,7 @@ $popup-border-color: #b6b6b4;
       padding-top: 12px;
       align-items: center;
       height: 50px;
-      font-family: $Montserrat;
+      font-family: $body-font-family;
       font-size: 40px;
       color: $white-color;
       border-radius: 30px;
@@ -130,7 +130,7 @@ $popup-border-color: #b6b6b4;
 
       & .popup__events__performance__title {
         margin: auto 0;
-        font-family: $Montserrat;
+        font-family: $body-font-family;
         font-weight: 400;
         font-size: 14px;
         padding: 0;
@@ -188,7 +188,7 @@ $popup-border-color: #b6b6b4;
         width: 100%;
         padding-left: 16px;
         text-align: left;
-        font-family: $Montserrat;
+        font-family: $body-font-family;
         font-size: 18px;
 
         & img {
@@ -295,7 +295,7 @@ $popup-border-color: #b6b6b4;
 
     & .events__performance__title {
       margin: auto 0;
-      font-family: $Montserrat;
+      font-family: $body-font-family;
       font-weight: 400;
       font-size: 14px;
       padding: 0;

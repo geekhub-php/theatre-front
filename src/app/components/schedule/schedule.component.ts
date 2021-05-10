@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 import { GatewayService } from '../../services/gateway.service';
@@ -16,7 +16,9 @@ enum ScheduleViewModes {
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss']
 })
-export class ScheduleComponent implements OnInit {
+export class ScheduleComponent implements OnInit, OnDestroy {
+  private timeout;
+
   date: Date;
   isToday: boolean;
 
@@ -88,32 +90,26 @@ export class ScheduleComponent implements OnInit {
     this.gateway.updateCanonicalURL();
   }
 
-  prevMonth() {
-    this.date = this.calendar.prevMonth();
-    this.isToday = this.calendar.isToday(this.date);
-  }
-
-  nextMonth() {
-    this.date = this.calendar.nextMonth();
-    this.isToday = this.calendar.isToday(this.date);
+  delTimeout() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
   }
 
   selectMonth(date) {
-    this.date = this.calendar.getPerformanceByDate(date);
-    this.isToday = this.calendar.isToday(this.date);
+    this.delTimeout();
+    // setTimeout used to prevent requests if user switches months too frequently
+    this.timeout = setTimeout(() => {
+      this.date = this.calendar.getPerformanceByDate(date);
+      this.isToday = this.calendar.isToday(this.date);
+    }, 300)
   }
-
-  now() {
-    this.date = this.calendar.today();
-    this.isToday = this.calendar.isToday(this.date);
-  }
-
 
   changeViewToCalendar() {
     this.viewMode = ScheduleViewModes.CALENDAR;
     if (this.activeComp.listActive) this.activeComp.listActive = false;
     this.activeComp.calendarActive = true;
-
+    
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
@@ -129,6 +125,9 @@ export class ScheduleComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    this.delTimeout()
+  }
 
   get savedLocale() {
     if (isPlatformBrowser(this.platformId)) {

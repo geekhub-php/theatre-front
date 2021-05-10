@@ -18,6 +18,7 @@ export class CalendarComponent implements OnInit {
   showMore = false;
   activeDay: Date | null = null;
   selectedDate = new Date();
+  middleOfMonth = 15
 
   constructor(private gateway: GatewayService,
               private loaderService: LoaderService,
@@ -54,12 +55,15 @@ export class CalendarComponent implements OnInit {
   onShowMore(day: Date) {
     this.showMore = !this.showMore;
     this.activeDay = day;
+    console.log(this.activeDay)
   }
 
   getPerformanceEvents() {
     this.loaderService.start('poster');
     this.calendar.events.subscribe((value) => {
+      if (!!value.length && value.length[this.middleOfMonth]) console.log('here')
       this.events = value;
+      console.log(this.events)
       this.weeks = this.calendar.weeks;
       this.loaderService.stop('poster');
     }, err => this.loaderService.stop('poster'));

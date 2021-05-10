@@ -23,7 +23,7 @@ import { MonthsCarouselService } from './months-carousel.service';
 @Component({
   selector: 'app-months-carousel',
   templateUrl: './months-carousel.component.html',
-  styleUrls: ['./months-carousel.component.scss'],
+  styleUrls: [ './months-carousel.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
@@ -41,6 +41,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
 
   isSpinnerActive = false;
   month: TMonthProperty;
+
   monthsNameList = {
     months: [
       'Січень',
@@ -76,9 +77,9 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     private cd: ChangeDetectorRef,
     private carousel: MonthsCarouselService
   ) {
-    this.getMonthsList();
+    // this.getMonthsList();
     // for EN version
-    this.carousel.createMonthList(this.monthsNameList.monthsEng);
+    this.monthsList = this.carousel.createMonthList(this.monthsNameList.monthsEng);
     // for UK version
     // this.carousel.createMonthList(this.monthsNameList.months)
   }
@@ -87,39 +88,33 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.carousel.onResize();
   }
 
-  getCarousel() {
-    this.monthsSliderSubscription = this.carousel.getCarousel().subscribe(carousel => {
-      this.monthsSlider = carousel;
-    });
-  }
-
-  getMonthsList() {
-    this.monthsListSubscription = this.carousel.getMonthsList().subscribe(monthsList => {
-      this.monthsList = monthsList;
-    });
-  }
-
   getMonth() {
     this.monthSubscription = this.carousel.getMonth().subscribe(month => {
       this.month = month;
-      this.selectedMonth.emit(this.month.currentFullDate);
+      this.selectedMonth.emit(month.currentFullDate);
+    });
+  }
+
+  setActiveMonth() {
+    this.carousel.getCurrentMonth().subscribe(currentMonth => {
+      // this.selectedMonth.emit(currentMonth);
     });
   }
 
   ngOnInit() {
-    this.getCarousel();
     this.getMonth();
+    this.setActiveMonth();
     this.carousel.setDefaultData();
   }
 
   onPrev(event) {
     event.stopPropagation();
-    this.carousel.onPrev(event);
+    this.carousel.onPrev();
   }
 
   onNext(event) {
     event.stopPropagation();
-    this.carousel.onNext(event);
+    this.carousel.onNext();
   }
 
   ngAfterViewInit() {
@@ -132,7 +127,6 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   }
 
   unSubscribe() {
-    this.monthsSliderSubscription.unsubscribe();
     this.monthsListSubscription.unsubscribe();
     this.monthSubscription.unsubscribe();
   }

@@ -12,4 +12,5 @@ export class Performance {
   gallery?: Array<PerformanceGallery>;
   seasons: Array<Season>;
   type?: string;
+  duration_in_min: number;
 }

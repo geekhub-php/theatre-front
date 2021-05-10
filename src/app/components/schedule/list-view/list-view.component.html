@@ -22,11 +22,13 @@
               src="assets/images/list-view/time-fill.svg" alt="">
             <span class="list-view__content__info__item__time">{{ event.time }}</span>
           </div>
-          <div class="list-view__content__info__item">
+          <div *ngIf='!!event.performance.duration_in_min' class="list-view__content__info__item">
             <img
               class="list-view__content__info__item__icon"
               src="assets/images/list-view/bx-hourglass.svg" alt="">
-            <span class="list-view__content__info__item__text">{{ "2:30" }}</span>
+            <span class="list-view__content__info__item__text">
+              {{ event.performance.duration_in_min | performanceDuration: 'en'}}
+            </span>
           </div>
           <div class="list-view__content__info__item">
             <img
