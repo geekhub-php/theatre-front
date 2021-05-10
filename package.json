@@ -19,7 +19,8 @@
     "serve:ssr": "env PORT=4040 LANGUAGE=en node dist/theatre-front/server/en/main.js",
     "serve:ssr:uk": "env PORT=4041 LANGUAGE=uk node dist/theatre-front/server/uk/main.js",
     "prerender": "ng run theatre-front:prerender",
-    "i18n": "ng run theatre-front:extract-i18n"
+    "i18n": "ng run theatre-front:extract-i18n",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
