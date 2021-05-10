@@ -7,7 +7,7 @@ import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
-// import { NguCarouselConfig } from '@ngu/carousel';
+import { NguCarouselModule } from '@ngu/carousel';
 
 import { CoreModule } from './modules/core/core.module';
 
@@ -96,7 +96,7 @@ import { environment } from '../environments/environment';
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
     SpinnerModule,
-    // NguCarouselConfig
+    NguCarouselModule
   ],
   providers: [
     CalendarService,
