@@ -12,17 +12,11 @@ export class PersoneShowmoreComponent implements OnInit {
   constructor(
     private getway: GatewayService,
     private loaderService: LoaderService
-  ) {
-    this.getway.updateMeta(
-      'Черкаський драматичний театр імені Т. Г. Шевченка',
-      'Історія Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
-      'http://theatre-shevchenko.ck.ua/assets/images/logo.png'
-    );
-  }
+  ) {  }
 
   ngOnInit() {
 
-    this.loaderService.start('about');
+    this.loaderService.start('persons');
     this.getway.updateCanonicalURL();
   }
 }

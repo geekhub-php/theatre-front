@@ -10,6 +10,7 @@ import { AboutMoreComponent } from './components/about/about-more/about-more.com
 import { AdministrationComponent } from './components/team/administration/administration.component';
 import { ArtisticComponent } from './components/team/artistic/artistic.component';
 import { CreativeComponent } from './components/team/creative/creative.component';
+import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
 
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
@@ -50,7 +51,9 @@ const appRoutes: Routes = [
       {path: ':slug', component: PersonComponent},
       {path: 'administration/:slug', component: PersonComponent},
       {path: 'creative/:slug', component: PersonComponent},
-      {path: 'artistic/:slug', component: PersonComponent}
+      {path: 'artistic/:slug', component: PersonComponent},
+      {path: 'creative/show/more', component: PersoneShowmoreComponent},
+      {path: 'artistic/show/more', component: PersoneShowmoreComponent}
     ]
   },
   {path: 'contacts', component: ContactsComponent},

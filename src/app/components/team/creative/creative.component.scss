@@ -185,3 +185,14 @@ a{
     }
   }
 }
+
+.all-persons {
+  @include flex-center;
+}
+
+.link-persons {
+  margin-top: 30px;
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-normal, 1.5, 1.39);
+  margin-bottom: 60px;
+
+}
