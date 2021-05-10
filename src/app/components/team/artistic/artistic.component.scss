@@ -1,0 +1,57 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.myContainer {
+  @include _container;
+}
+
+.artisitic-navigation {
+  @include breadcrumbs-nav;
+
+  h3 {
+    font-size: $font-size-small;
+  }
+
+  .persons-navigation-bold {
+    @include breadcrumbs-nav-bold;
+  }
+}
+
+.page-title-name {
+  padding-top: 10px;
+  @include about-title;
+}
+
+.art-core-title,
+.epoch-title {
+  @include flex-center;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: $font-size-medium;
+  font-family: $body-font-family;
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-white;
+}
+
+.list-item {
+  @include flex-center;
+  margin-bottom: 80px;
+}
+
+img {
+  height: 336px;
+  width: 224px;
+}
+
+.art-prod {
+  @include flex-center;
+  background-color: $background-main-color-darker;
+  margin-bottom: 80px;
+  padding-top: 80px;
+
+  h4 {
+    margin-bottom: 80px;
+  }
+}

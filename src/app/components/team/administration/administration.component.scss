@@ -1,0 +1,85 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.myContainer {
+  @include _container;
+}
+
+.administration-navigation {
+  @include breadcrumbs-nav;
+
+  h3 {
+    font-size: $font-size-small;
+  }
+
+  .persons-navigation-bold {
+    @include breadcrumbs-nav-bold;
+  }
+}
+
+.page-title-name {
+  padding-top: 10px;
+  @include about-title;
+}
+
+.director-title,
+.administrative-accounting-title,
+.deputies-title {
+  @include flex-center;
+  break-after: always;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: $font-size-medium;
+  font-family: $body-font-family;
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-white;
+}
+
+.list-item {
+  @include flex-center;
+  flex-direction: row;
+  margin-bottom: 80px;
+}
+
+img {
+  height: 336px;
+  width: 224px;
+  filter: grayscale(100%);
+}
+
+img:hover{
+  filter: none;
+}
+
+.deputies {
+  background-color: $background-main-color-darker;
+  margin-bottom: 80px;
+  padding-top: 80px;
+  h4 {
+    margin-bottom: 80px;
+  }
+  .images {
+    @include flex-center;
+    .histories__list-text {
+      margin-top: 30px;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+}
+
+.images-l{
+  @include flex-center;
+    .histories__list-text {
+      margin-top: 30px;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+}

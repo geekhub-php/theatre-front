@@ -7,6 +7,7 @@ import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+// import { NguCarouselConfig } from '@ngu/carousel';
 
 import { CoreModule } from './modules/core/core.module';
 
@@ -30,6 +31,10 @@ import { AboutMoreComponent } from './components/about/about-more/about-more.com
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
+import { PersonsHeaderComponent } from './components/team/persons-header/persons-header.component';
+import { AdministrationComponent } from './components/team/administration/administration.component';
+import { ArtisticComponent } from './components/team/artistic/artistic.component';
+import { CreativeComponent } from './components/team/creative/creative.component';
 
 import { StripHtmlModule } from './pipes/strip-html.module';
 
@@ -70,6 +75,10 @@ import { environment } from '../environments/environment';
     SliderComponent,
     NewsListItemComponent,
     CooperationComponent,
+    PersonsHeaderComponent,
+    AdministrationComponent,
+    ArtisticComponent,
+    CreativeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -86,7 +95,8 @@ import { environment } from '../environments/environment';
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
-    SpinnerModule
+    SpinnerModule,
+    // NguCarouselConfig
   ],
   providers: [
     CalendarService,

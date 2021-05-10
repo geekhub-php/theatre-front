@@ -1,0 +1,145 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+@import "~assets/styles/_sliderMixins";
+
+.myContainer {
+  @include _container;
+}
+
+.creative-navigation {
+  @include breadcrumbs-nav;
+
+  h3 {
+    font-size: $font-size-small;
+  }
+
+  .persons-navigation-bold {
+    @include breadcrumbs-nav-bold;
+  }
+}
+
+.page-title-name {
+  padding-top: 10px;
+  @include about-title;
+}
+
+.actors-title,
+.orchestra-title {
+  @include flex-center;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: $font-size-medium;
+  font-family: $body-font-family;
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-white;
+}
+
+.list-item {
+  @include flex-center;
+  margin-bottom: 80px;
+}
+
+img {
+  height: 336px;
+  width: 224px;
+}
+
+.ballet {
+  @include flex-center;
+  background-color: $background-main-color-darker;
+  margin-bottom: 80px;
+  padding-top: 80px;
+
+  h4 {
+    margin-bottom: 80px;
+  }
+}
+
+
+.wrapped {
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: $background-colors;
+}
+
+a {
+  color: $dots-active-color;
+  text-decoration: none;
+}
+
+.title {
+  height: 60px;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  @include flex-center;
+  color: $background-color-white;
+}
+
+.all-prersons {
+  @include display;
+}
+
+.link-persons {
+  width: 170px;
+  height: 25px;
+  line-height: 1.39;
+}
+
+.image {
+  background-size: cover !important;
+  height: 470px;
+  margin-left: 17px;
+  margin-right: 17px;
+  cursor: pointer;
+}
+
+.left {
+  @include display;
+  @include gradient;
+  @include opacity;
+  position: $position;
+  align-items: center;
+  cursor: pointer;
+  bottom: 0;
+  width: 70px;
+  z-index: 1;
+  height: 100%;
+}
+
+.left:hover {
+  @include hover_opacity;
+}
+
+.right {
+  @include display;
+  @include opacity;
+  @include gradient;
+  position: $position;
+  align-items: center;
+  bottom: 0;
+  width: 70px;
+  height: 100%;
+  right: 5px;
+  z-index: 1;
+}
+
+.right:hover {
+  @include hover_opacity;
+}
+
+.myPoint {
+  @include myPoint;
+}
+
+.myPoint li {
+  @include myPoint-li;
+}
+
+.myPoint li.active {
+  @include myPoint-li__active;
+}

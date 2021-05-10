@@ -1,14 +1,20 @@
-<div class="container">
+<div class="myContainer">
   <app-spinner name="person"></app-spinner>
-  <div class="person" *ngIf="person">
+  <div class="person_" *ngIf="person">
     <section>
-      <img [src]="person.avatar.employee_big.url" [alt]="person.first_name + person.last_name" [title]="person.first_name + person.last_name">
       <div class="about">
         <h2 class="page-title">{{ person.first_name }} {{ person.last_name }}</h2>
-        <p><ng-container i18n="@@position">Position:</ng-container> {{ person.position }}</p>
-        <p i18n="@@biography">Biography:</p>
-        <div class="biography" [innerHtml]="person.biography"></div>
-        <app-person-roles actorSlug="{{ person.slug }}"></app-person-roles>
+        <div class="main-content">
+          <div class="person-face">
+            <img [src]="person.avatar.employee_big.url" [alt]="person.first_name + person.last_name" [title]="person.first_name + person.last_name">
+          </div>
+          <div class="about-text">
+            <p class="position"><ng-container></ng-container> {{ person.position }}</p>
+            <p class="biography" i18n="@@biography">Biography</p>
+            <div [innerHtml]="person.biography"></div>
+            <app-person-roles actorSlug="{{ person.slug }}"></app-person-roles>
+          </div>
+        </div>
       </div>
     </section>
     <ngx-gallery

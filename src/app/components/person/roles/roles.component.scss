@@ -1,15 +1,24 @@
 @import "~assets/styles/variables";
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.roles__title{
+  color: $font-color-accent;
+}
 
 .roles {
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
+  margin-top: 33px;
 
   &__list {
     display: flex;
     flex-direction: column;
     padding: 0;
     list-style-position: inside;
+    list-style-type: none;
+    text-decoration: underline;
+    line-height: 1.7;
   }
 }
 
@@ -22,7 +31,6 @@
 
     &:hover {
       text-decoration: none;
-      color: $main-color-darker;
       transition: .3s ease;
     }
   }

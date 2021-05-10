@@ -74,6 +74,18 @@
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="theatreActors" datatype="html">
+        <source>Theater actors</source>
+        <target>Актори театру</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performance/performance.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/team/creative/creative.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="orchestra" datatype="html">
         <source>Orchestra</source>
         <target>Оркестр</target>
@@ -88,6 +100,22 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="artCore" datatype="html">
+        <source>Art-Core</source>
+        <target>Художньо-керівний склад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/team/creative/creative.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="artProd" datatype="html">
+        <source>Art-production</source>
+        <target>Художньо-постановчий склад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/team/creative/creative.component.html</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="performances" datatype="html">
@@ -286,8 +314,32 @@
            <context context-type="linenumber">7</context>
          </context-group>
       </trans-unit>
+      <trans-unit id="director" datatype="html">
+         <source>Director</source>
+         <target>Директор</target>
+         <context-group purpose="location">
+           <context context-type="sourcefile">src/app/team/administration/administration.component.html</context>
+           <context context-type="linenumber">7</context>
+         </context-group>
+      </trans-unit>
+      <trans-unit id="сreativeСomposition" datatype="html">
+        <source>Creative composition</source>
+        <target>Художній склад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="artisticComposition" datatype="html">
+        <source>Artistic Composition</source>
+        <target>Творчий склад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="creative" datatype="html">
-        <source>Creative</source>
+        <source>Creative Composition</source>
         <target>Творчий склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/team.component.html</context>
@@ -342,6 +394,14 @@
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="administrativeAccounting" datatype="html">
+        <source>Administrative-accounting</source>
+        <target>Адміністративно-бухгалтерська служба</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/team/administration/administration.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="administration" datatype="html">
         <source>Administration</source>
         <target>Адміністрація</target>
@@ -353,6 +413,10 @@
             <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
             <context context-type="linenumber">57</context>
           </context-group>
+          <context-group purpose="location">
+           <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
+           <context context-type="linenumber">4</context>
+         </context-group>
       </trans-unit>
       <trans-unit id="accounting" datatype="html">
        <source>Accounting</source>
@@ -576,6 +640,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/team/artistic/artistic.component.html</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="visit" datatype="html">
