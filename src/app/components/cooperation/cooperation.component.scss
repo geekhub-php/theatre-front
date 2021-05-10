@@ -149,10 +149,15 @@
   justify-content: space-between;
 }
 
-.popup_description {
-  padding-top: 56px;
-  padding-bottom: 44px;
-  text-align: center;
+.popup_title_file {
+  padding-top: 60px;
+  margin: 0;
+
+  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 36px, .48px)
+}
+
+.popup_title_format {
+  padding-bottom: 40px;
   margin: 0;
 
   @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 36px, .48px)
