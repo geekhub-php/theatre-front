@@ -35,14 +35,13 @@ h4 {
   color: $font-color-white;
 }
 
+h2{
+  color: $font-color-white;
+}
+
 .list-item {
   @include flex-center;
   margin-bottom: 80px;
-}
-
-img {
-  height: 336px;
-  width: 224px;
 }
 
 .art-prod {

@@ -28,6 +28,10 @@
   @include flex-center;
 }
 
+h2{
+  color: $font-color-white;
+}
+
 h4 {
   margin-top: 10px;
   font-size: $font-size-medium;
@@ -41,13 +45,18 @@ h4 {
   margin-bottom: 80px;
 }
 
-img {
-  height: 336px;
-  width: 224px;
+.image {
+  filter: grayscale(100%);
+  background-size: cover !important;
+  height: 470px;
+  cursor: pointer;
+}
+
+.image:hover{
+  filter: none;
 }
 
 .ballet {
-  @include flex-center;
   background-color: $background-main-color-darker;
   margin-bottom: 80px;
   padding-top: 80px;
@@ -60,9 +69,6 @@ img {
 
 .wrapped {
   justify-content: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  background-color: $background-colors;
 }
 
 a {
@@ -88,14 +94,6 @@ a {
   width: 170px;
   height: 25px;
   line-height: 1.39;
-}
-
-.image {
-  background-size: cover !important;
-  height: 470px;
-  margin-left: 17px;
-  margin-right: 17px;
-  cursor: pointer;
 }
 
 .left {
@@ -143,3 +141,29 @@ a {
 .myPoint li.active {
   @include myPoint-li__active;
 }
+
+.ballet {
+  background-color: $background-main-color-darker;
+  margin-bottom: 80px;
+  padding-top: 80px;
+  h4 {
+    margin-bottom: 80px;
+  }
+  .images {
+    .histories__list-text {
+      margin-top: 30px;
+    }
+  }
+}
+
+.images-l{
+    .histories__list-text {
+      margin-top: 30px;
+    }
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+

@@ -37,6 +37,10 @@ h4 {
   color: $font-color-white;
 }
 
+h2{
+  color: $font-color-white;
+}
+
 .list-item {
   @include flex-center;
   flex-direction: row;
@@ -44,8 +48,8 @@ h4 {
 }
 
 img {
-  height: 336px;
-  width: 224px;
+  width: 352px;
+  height: 528px;
   filter: grayscale(100%);
 }
 
