@@ -8,7 +8,7 @@
       <img *ngIf="item.mainPicture; else elseImg" [src]="item.mainPicture.post_big.url"
            alt="{{ item.short_description }}">
       <ng-template #elseImg>
-        <img [src]="defaultImg">
+        <img [src]="defaultImg" alt="default image">
       </ng-template>
     </div>
 
