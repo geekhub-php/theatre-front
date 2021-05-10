@@ -12,7 +12,6 @@
     color: $font-color-black;
     text-decoration: none;
     font-family: $body-font-family;
-    font-weight: $font-weight-semi-bold;
     font-size: $font-size-medium;
     line-height: 1.5;
     padding-left: 15px;
@@ -23,6 +22,7 @@
       height: 56px;
       line-height: 1.39;
       padding-top: 16px;
+      font-weight: $font-weight-semi-bold;
       background-color: $background-on-hover;
     }
   }
