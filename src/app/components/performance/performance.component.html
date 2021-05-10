@@ -72,7 +72,10 @@
       </div>
 
       <div class="details">
-        <p><span class="bold">Режисер:</span>{{ performance.ext_producer }}</p>
+        <p><span class="bold">Режисер:</span>
+          <a
+            routerLink="/persons/{{ performance.producer.slug }}">{{ performance.producer.first_name + ' ' + performance.producer.last_name }}</a>
+        </p>
       </div>
 
       <div class="details">

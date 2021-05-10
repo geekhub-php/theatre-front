@@ -64,6 +64,8 @@ export class PerformanceComponent implements OnInit {
       this.gateway.getPerformanceRoles(slug)
     ]).subscribe(([performance, roles]) => {
       this.performance = performance.body;
+      console.log('performance', performance);
+      console.log('roles', roles);
       this.roles = roles;
       if (this.performance.gallery) {
         this.performance.gallery.map(item => {
