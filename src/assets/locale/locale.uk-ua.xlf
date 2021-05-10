@@ -327,16 +327,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="contactsDirector" datatype="html">
-        <source>Director, Secretary</source>
-        <target>Директор, Секретар</target>
+        <source>Director, Secretary:</source>
+        <target>Директор, Секретар:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsAdmin" datatype="html">
-        <source>Administrator</source>
-        <target>Адміністратор</target>
+        <source>Administrator:</source>
+        <target>Адміністратор:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
           <context context-type="linenumber">51</context>
@@ -363,8 +363,8 @@
          </context-group>
         </trans-unit>
       <trans-unit id="contactsTicketOffice" datatype="html">
-        <source>Ticket office</source>
-        <target>Каса</target>
+        <source>Ticket office:</source>
+        <target>Каса:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
           <context context-type="linenumber">60</context>
