@@ -5,10 +5,10 @@
   <div class="creative-navigation">
 
       <!-- TODO: update after adding secondary parshion  -->
-  
-      <h3 i18n="@@mainPage">Main page</h3> <h3>&nbsp;/&nbsp;</h3>
+
+      <!-- <h3 i18n="@@mainPage">Main page</h3> <h3>&nbsp;/&nbsp;</h3>
       <h3 i18n="@@persons">Persons</h3> <h3>&nbsp;/&nbsp;</h3>
-      <h3 class="persons-navigation-bold" i18n="@@creative">Creative Composition</h3>
+      <h3 class="persons-navigation-bold" i18n="@@creative">Creative Composition</h3> -->
   </div>
   <div class="page-title">
       <h1 i18n="@@creative" class="page-title-name">Creative Composition</h1>
@@ -83,14 +83,14 @@
       <h2 class="orchestra-title" i18n="@@orchestra">Orchestra</h2>
     </div>
     <div class="images-l">
-            <!-- <section class="list-item" *ngFor="let person of directorArr">
+      <section class="list-item" *ngFor="let person of orchestraEmployees" [routerLink]="[person.slug]">
           <span class="histories__list-text">
               <img src="{{ person.avatar.employee_big.url }}" alt="photo"
                   [title]="person.avatar.employee_big.properties.title">
               <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
           </span>
-      </section> -->
-      <div *ngIf="orchestraEmployees.length > 0">
+      </section>
+      <!-- <div *ngIf="orchestraEmployees.length > 0">
         <div class="wrapped">
           <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="orchestraEmployees" class="slider">
             <ngu-tile *nguCarouselDef="let item">
@@ -111,7 +111,7 @@
             </div>
           </ngu-carousel>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

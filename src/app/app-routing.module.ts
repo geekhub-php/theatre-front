@@ -47,11 +47,10 @@ const appRoutes: Routes = [
       {path: 'creative', component: CreativeComponent},
       {path: 'artistic', component: ArtisticComponent},
       {path: 'administration', component: AdministrationComponent},
-      {path: 'persons/:slug', component: PersonComponent}, // ask Yana!!!!!!!!!!
-      // {path: 'administration/:slug', redirectTo: 'persons/:slug'}, // ask Yana!!!!!!!!!!
-      {path: 'administration/:slug', component: PersonComponent}, // ask Yana!!!!!!!!!!
-      {path: 'creative/:slug', redirectTo: 'persons/:slug'}, // ask Yana!!!!!!!!!!
-      {path: 'artistic/:slug', redirectTo: 'persons/:slug'} // ask Yana!!!!!!!!!!
+      {path: ':slug', component: PersonComponent},
+      {path: 'administration/:slug', component: PersonComponent},
+      {path: 'creative/:slug', component: PersonComponent},
+      {path: 'artistic/:slug', component: PersonComponent}
     ]
   },
   {path: 'contacts', component: ContactsComponent},

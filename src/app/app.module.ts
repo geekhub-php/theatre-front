@@ -35,6 +35,7 @@ import { PersonsHeaderComponent } from './components/team/persons-header/persons
 import { AdministrationComponent } from './components/team/administration/administration.component';
 import { ArtisticComponent } from './components/team/artistic/artistic.component';
 import { CreativeComponent } from './components/team/creative/creative.component';
+import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
 
 import { StripHtmlModule } from './pipes/strip-html.module';
 
@@ -78,7 +79,8 @@ import { environment } from '../environments/environment';
     PersonsHeaderComponent,
     AdministrationComponent,
     ArtisticComponent,
-    CreativeComponent
+    CreativeComponent,
+    PersoneShowmoreComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

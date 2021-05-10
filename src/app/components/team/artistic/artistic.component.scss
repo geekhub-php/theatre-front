@@ -1,5 +1,6 @@
 @import "~assets/styles/_variables";
 @import "~assets/styles/aboutStyles";
+@import "~assets/styles/_sliderMixins";
 
 .myContainer {
   @include _container;
@@ -41,16 +42,172 @@ h2{
 
 .list-item {
   @include flex-center;
+  flex-direction: row;
   margin-bottom: 80px;
 }
 
-.art-prod {
-  @include flex-center;
+img {
+  width: 352px;
+  height: 528px;
+  filter: grayscale(100%);
+}
+
+img:hover{
+  filter: none;
+}
+
+.art-core {
   background-color: $background-main-color-darker;
+  margin-bottom: 80px;
+  padding-top: 80px;
+  h4 {
+    margin-bottom: 80px;
+  }
+  .images {
+    @include flex-center;
+    .histories__list-text {
+      margin-top: 30px;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+}
+
+.images-l{
+  @include flex-center;
+    .histories__list-text {
+      margin-top: 30px;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+.image {
+  filter: grayscale(100%);
+  background-size: cover !important;
+  height: 470px;
+  cursor: pointer;
+}
+
+.image:hover{
+  filter: none;
+}
+
+.art-prod {
   margin-bottom: 80px;
   padding-top: 80px;
 
   h4 {
     margin-bottom: 80px;
   }
+}
+
+
+.wrapped {
+  justify-content: center;
+}
+
+a {
+  color: $dots-active-color;
+  text-decoration: none;
+}
+
+.title {
+  height: 60px;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  @include flex-center;
+  color: $background-color-white;
+}
+
+.all-prersons {
+  @include display;
+}
+
+.link-persons {
+  width: 170px;
+  height: 25px;
+  line-height: 1.39;
+}
+
+.left {
+  @include display;
+  @include gradient;
+  @include opacity;
+  position: $position;
+  align-items: center;
+  cursor: pointer;
+  bottom: 0;
+  width: 70px;
+  z-index: 1;
+  height: 100%;
+}
+
+.left:hover {
+  @include hover_opacity;
+}
+
+.right {
+  @include display;
+  @include opacity;
+  @include gradient;
+  position: $position;
+  align-items: center;
+  bottom: 0;
+  width: 70px;
+  height: 100%;
+  right: 5px;
+  z-index: 1;
+}
+
+.right:hover {
+  @include hover_opacity;
+}
+
+.myPoint {
+  @include myPoint;
+}
+
+.myPoint li {
+  @include myPoint-li;
+}
+
+.myPoint li.active {
+  @include myPoint-li__active;
+}
+
+.art-prod {
+  margin-bottom: 80px;
+  padding-top: 80px;
+  h4 {
+    margin-bottom: 80px;
+  }
+  .images {
+    @include flex-center;
+    .histories__list-text {
+      margin-top: 30px;
+      margin-left: 30px;
+      margin-right: 30px;
+      cursor: pointer;
+    }
+  }
+}
+
+.images-l{
+    .histories__list-text {
+      margin-top: 30px;
+    }
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
 }

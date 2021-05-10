@@ -36,7 +36,7 @@ export class CreativeComponent implements OnInit, AfterContentChecked {
       lg: 1800,
       xl: 2200,
     },
-    slide: 1,
+    slide: 4,
     speed: 250,
     point: {
       visible: true
@@ -58,13 +58,11 @@ export class CreativeComponent implements OnInit, AfterContentChecked {
 
     this.httpGatewayService.getEmployeesListByGroupe('ballet').subscribe((persons) => {
       this.balletEmployees = this.balletEmployees.concat(persons.employees);
-      // console.log(this.balletEmployees);
       this.loaderService.stop('load-team');
     });
 
     this.httpGatewayService.getEmployeesListByGroupe('administrative-accounting').subscribe((persons) => {
       this.orchestraEmployees = this.orchestraEmployees.concat(persons.employees);
-      // console.log(this.orchestraEmployees);
       this.loaderService.stop('load-team');
     });
     this.gateway.updateCanonicalURL();
