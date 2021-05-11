@@ -40,8 +40,8 @@
 .search-box {
   position: absolute;
   align-items: center;
-  left: 188px;
-  width: 65%;
+  left: 162px;
+  width: 68%;
 
   &.show {
     display: flex;
@@ -90,8 +90,8 @@
 @media only screen and (max-width: 1460px) {
 
   .search-box {
-    left: 14px;
-    width: 77%;
+    left: 44px;
+    width: 76%;
   }
 }
 
