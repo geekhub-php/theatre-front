@@ -6,12 +6,12 @@
 
 .header-nav {
   list-style-type: none;
-  margin: 0 0 0 24px;
+  padding-top: 16px;
 
   @include flex-space-between;
 
   li + li {
-    margin-left: 28px;
+    margin-left: 32px;
   }
 
   .header-nav__link {
