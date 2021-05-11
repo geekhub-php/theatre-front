@@ -80,7 +80,7 @@
       <div class="details">
         <p><span class="bold">Режисер:</span>
           <a class="link"
-             routerLink="/persons/{{ performance.producer.slug }}">{{ performance.producer.first_name + ' ' + performance.producer.last_name }}</a>
+             routerLink="/persons/{{ performance.producer?.slug }}">{{ performance.producer?.first_name + ' ' + performance.producer?.last_name }}</a>
         </p>
       </div>
 

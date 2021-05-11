@@ -18,10 +18,10 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 30px;
-  padding-bottom: 85px;
   max-width: $container-width;
   margin: 30px auto 0;
   position: relative;
+  padding: 0 5px 85px;
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
 }
