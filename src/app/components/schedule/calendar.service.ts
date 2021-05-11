@@ -9,6 +9,7 @@ import { ScheduleListResponse } from '../../store/schedule/ScheduleListResponse'
 
 import { map } from 'rxjs/operators';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,10 @@ export class CalendarService {
   Sun = 0;
 
   events: BehaviorSubject<Array<PerformanceEvent>> = new BehaviorSubject([]);
-  selectedDate$: Subject<Date> = new Subject();
 
-  constructor(private gateway: GatewayService) {
+  constructor(private gateway: GatewayService, private slider: MonthsCarouselService) {
     this.currentDate = new Date();
+    this.getMonth();
   }
 
   setDate(date: Date) {
@@ -50,47 +51,22 @@ export class CalendarService {
       }
       weeks.push(week);
     }
-
+    console.log(weeks)
     return weeks;
   }
-
-  // prevMonth(): Date {
-  //   this.currentDate = new Date(this.currentDate);
-  //   this.currentDate.setMonth(this.currentDate.getMonth() - 1);
-  //   this.getPerformanceEvents();
-  //   this.selectedDate$.next(this.currentDate);
-  //
-  //   return this.currentDate;
-  // }
-
-  // nextMonth(): Date {
-  //   this.currentDate = new Date(this.currentDate);
-  //   this.currentDate.setMonth(this.currentDate.getMonth() + 1);
-  //   this.getPerformanceEvents();
-  //   this.selectedDate$.next(this.currentDate);
-  //
-  //   return this.currentDate;
-  // }
 
   getPerformanceByDate(specialDate: Date) {
     this.currentDate = new Date(this.currentDate);
     this.currentDate.setFullYear(specialDate.getFullYear(), specialDate.getMonth());
-    this.selectedDate$.next(this.currentDate);
     this.getPerformanceEvents();
-
-    return this.currentDate;
   }
 
-  // today(): Date {
-  //   this.currentDate = new Date();
-  //   this.getPerformanceEvents();
-  //   this.selectedDate$.next(this.currentDate);
-  //
-  //   return this.currentDate;
-  // }
-
-  selectedDate() {
-    return this.selectedDate$.asObservable();
+  getMonth() {
+    this.slider.getMonth().subscribe(month => {
+      if(month && month.currentFullDate) {
+        this.currentDate = month.currentFullDate
+      }
+    })
   }
 
   get dateFrom() {

@@ -95,15 +95,8 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     });
   }
 
-  setActiveMonth() {
-    this.carousel.getCurrentMonth().subscribe(currentMonth => {
-      // this.selectedMonth.emit(currentMonth);
-    });
-  }
-
   ngOnInit() {
     this.getMonth();
-    this.setActiveMonth();
     this.carousel.setDefaultData();
   }
 

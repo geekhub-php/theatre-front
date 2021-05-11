@@ -1,15 +1,17 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
 import { GatewayService } from '../../../services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';
 import { CalendarService } from '../calendar.service';
+import { MonthsCarouselService } from '../months-carousel/months-carousel.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements OnInit, OnDestroy {
 
   events: Array<PerformanceEvent>;
   dayPerformances: Array<PerformanceEvent>;
@@ -17,19 +19,24 @@ export class CalendarComponent implements OnInit {
   date: Date;
   showMore = false;
   activeDay: Date | null = null;
-  selectedDate = new Date();
+  selectedDate = new Date()
   middleOfMonth = 15
+
+  sliderSubscription: Subscription;
+  calendarSubscription: Subscription;
 
   constructor(private gateway: GatewayService,
               private loaderService: LoaderService,
-              private calendar: CalendarService) {
+              private calendar: CalendarService,
+              private slider: MonthsCarouselService) {
+    this.getMonth();
+    this.slider.setActiveMonth();
   }
 
-  ngOnInit(): void {
-    this.calendar.getPerformanceEvents().then(() => {
+  ngOnInit() {
+    this.calendar.getPerformanceEvents().then(() => { 
       this.getPerformanceEvents();
     });
-    this.getMonth();
   }
 
   hasPerformanceByDate(date: Date): boolean {
@@ -47,8 +54,8 @@ export class CalendarComponent implements OnInit {
   }
 
   getMonth() {
-    this.calendar.selectedDate$.subscribe(date => {
-      this.selectedDate = date;
+    this.sliderSubscription = this.slider.getMonth().subscribe(month => {
+      this.selectedDate = month.currentFullDate;
     });
   }
 
@@ -59,13 +66,18 @@ export class CalendarComponent implements OnInit {
   }
 
   getPerformanceEvents() {
+    console.log('getPerformance')
     this.loaderService.start('poster');
-    this.calendar.events.subscribe((value) => {
-      if (!!value.length && value.length[this.middleOfMonth]) console.log('here')
+    this.calendarSubscription = this.calendar.events.subscribe((value) => {
       this.events = value;
       console.log(this.events)
       this.weeks = this.calendar.weeks;
       this.loaderService.stop('poster');
     }, err => this.loaderService.stop('poster'));
+  }
+
+  ngOnDestroy() {
+    this.sliderSubscription.unsubscribe();
+    this.calendarSubscription.unsubscribe();
   }
 }

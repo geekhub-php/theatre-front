@@ -4,6 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { GatewayService } from '../../services/gateway.service';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { CalendarService } from './calendar.service';
+import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 
 enum ScheduleViewModes {
   CALENDAR = 'Calendar',
@@ -34,6 +35,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     private gateway: GatewayService,
     private loaderService: LoaderService,
     private calendar: CalendarService,
+    private slider: MonthsCarouselService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.onResize();
@@ -78,8 +80,8 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loaderService.start('poster');
-    this.date = this.calendar.currentDate;
-    this.isToday = this.calendar.isToday(this.date);
+    // this.date = this.calendar.currentDate;
+    this.getMonth();
 
     this.viewMode = this.savedLocale;
     this.onResize();
@@ -97,10 +99,11 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   }
 
   selectMonth(date) {
+    console.log('selectMonth')
     this.delTimeout();
     // setTimeout used to prevent requests if user switches months too frequently
     this.timeout = setTimeout(() => {
-      this.date = this.calendar.getPerformanceByDate(date);
+      this.calendar.getPerformanceByDate(this.date);
       this.isToday = this.calendar.isToday(this.date);
     }, 300)
   }
@@ -123,6 +126,15 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
+  }
+
+  getMonth() {
+    this.slider.getMonth().subscribe(month => {
+      if(month && month.currentFullDate) {
+        this.date = month.currentFullDate
+        this.isToday = this.calendar.isToday(this.date);
+      }
+    });
   }
 
   ngOnDestroy() {
