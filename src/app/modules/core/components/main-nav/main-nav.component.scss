@@ -11,13 +11,13 @@
   @include flex-space-between;
 
   li + li {
-    margin-left: 32px;
+    margin-left: 34px;
   }
 
   .header-nav__link {
     flex-direction: row;
     text-align: center;
-    align-items: center;
+    justify-content: space-between;
   }
 
   a {
