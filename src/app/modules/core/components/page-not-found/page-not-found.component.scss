@@ -1,11 +1,33 @@
 @import "~assets/styles/variables";
 
-.container, .col-xl-6 {
+.container {
   margin: 0 auto;
   text-align: center;
+  padding: 80px 0 90px;
 }
 
-p:not(.page-title) {
-  font-size: 1.286rem;
-  margin-top: 15px;
+.title {
+  margin-bottom: 30px;
+
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
 }
+
+.picture {
+  width: 478px;
+  height: 288px;
+  margin-bottom: 20px;
+}
+
+.text {
+  margin: 0;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, $line-height-basic, normal)
+}
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, $line-height-basic, normal)
+}
+
