@@ -33,6 +33,9 @@
   <h2 class="performance_title"> {{ performance?.title | titlecase }} </h2>
 
   <section *ngIf="performance" class="performance_body">
+    <a class="ticket_button" href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
+       i18n="@@buyTicket" target="_blank">Buy ticket</a>
+
     <div class="performance_poster">
       <img [alt]="performance.mainPicture.performance_big.alt" [src]="performance.mainPicture.performance_big.url"
            [title]="performance.mainPicture.performance_big.properties.title">
@@ -47,11 +50,13 @@
         <svg class="icon">
           <use xlink:href="#calendar"></use>
         </svg>
+        <p class="info"></p>
       </div>
       <div class="main-info">
         <svg class="icon">
           <use xlink:href="#time"></use>
         </svg>
+        <p class="info"></p>
       </div>
       <div class="main-info">
         <svg class="icon">
@@ -63,6 +68,7 @@
         <svg class="icon">
           <use xlink:href="#pin"></use>
         </svg>
+        <p class="info"></p>
       </div>
       <div class="main-info">
         <svg class="icon">
@@ -73,20 +79,25 @@
 
       <div class="details">
         <p><span class="bold">Режисер:</span>
-          <a
-            routerLink="/persons/{{ performance.producer.slug }}">{{ performance.producer.first_name + ' ' + performance.producer.last_name }}</a>
+          <a class="link"
+             routerLink="/persons/{{ performance.producer.slug }}">{{ performance.producer.first_name + ' ' + performance.producer.last_name }}</a>
         </p>
       </div>
 
       <div class="details">
-        <h6 class="details_title">Короткий зміст вистави</h6>
+        <h4 class="details_title">Короткий зміст вистави</h4>
         <p [innerHtml]="performance.description"></p>
       </div>
 
-      <div class="details">
-        <h6 class="details_title">Дійові особи та виконавці</h6>
-      </div>
+      <!--      TODO actors and roles-->
 
+      <div class="details">
+        <h4 class="details_title">Дійові особи та виконавці</h4>
+        <span></span><a class="link"></a>
+        <span></span><a class="link"></a>
+        <span></span><a class="link"></a>
+        <span></span><a class="link"></a>
+      </div>
 
       <div class="details flex">
         <span class="bold" i18n="@@seasons">Seasons:</span>
@@ -115,8 +126,10 @@
 
   </section>
 
-  <section class="recommendation">
-    <h2 class="section_title">Також вас може зацікавити</h2>
+  <!--   TODO section Recommendation-->
 
-  </section>
+  <!--  <section class="recommendation">-->
+  <!--    <h2 class="section_title">Також вас може зацікавити</h2>-->
+
+  <!--  </section>-->
 </div>

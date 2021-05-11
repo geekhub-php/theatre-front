@@ -19,10 +19,11 @@
   grid-template-columns: 1fr 2fr;
   grid-gap: 30px;
   padding-bottom: 85px;
-  max-width: 1500px;
+  max-width: $container-width;
   margin: 30px auto 0;
+  position: relative;
 
-  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
 }
 
 .main-info {
@@ -118,3 +119,29 @@
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 
+.ticket_button {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  padding: 10px 50px;
+  text-decoration: none;
+
+  @include border(1, solid, $border-color-light, 2px);
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
+
+  &:hover {
+    background-color: $background-main-color-lighter;
+  }
+
+  &:active {
+    background-color: $background-color-white;
+    color: $font-color-black;
+  }
+}
+
+.link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
+}
