@@ -1,7 +1,23 @@
-<h1>in persone show more</h1>
-
-<div class="employees" *ngIf="employees.length > 0">
-    <div>qwqe</div>
-
-
+<div *ngFor="let t of title">
+    <div class="page-title"> {{ t.title }} </div>
 </div>
+
+<!-- done -->
+
+<div class="persons-list">
+    <section class="list-item" *ngFor="let person of employees" [routerLink]="[person.slug]">
+        <span class="histories__list-text">
+            <div class="emplo">
+                <img src="{{ person.avatar.employee_big.url }}" alt="photo"
+                    [title]="person.avatar.employee_big.properties.title">
+                <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+            </div>
+        </span>
+    </section>
+</div>
+
+
+
+
+
+

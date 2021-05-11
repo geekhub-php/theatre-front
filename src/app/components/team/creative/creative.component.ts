@@ -16,18 +16,6 @@ export class CreativeComponent implements OnInit, AfterContentChecked {
   balletEmployees: Array<Employee> = [];
   orchestraEmployees: Array<Employee> = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private gateway: GatewayService,
-    private loaderService: LoaderService,
-    private httpGatewayService: GatewayService,
-    private _cdr: ChangeDetectorRef
-  ) {
-    this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
-      'Персоналії Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
-      'http://theatre-shevchenko.ck.ua/uk/assets/images/persons.jpg');
-  }
-
   carouselTile: NguCarouselConfig = {
     grid: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6, all: 0 },
     gridBreakpoints: {
@@ -48,12 +36,23 @@ export class CreativeComponent implements OnInit, AfterContentChecked {
     easing: 'cubic-bezier(0, 0, 0.2, 1)'
   };
 
+  constructor(
+    private route: ActivatedRoute,
+    private gateway: GatewayService,
+    private loaderService: LoaderService,
+    private httpGatewayService: GatewayService,
+    private _cdr: ChangeDetectorRef
+  ) {
+    this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
+      'Персоналії Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
+      'http://theatre-shevchenko.ck.ua/uk/assets/images/persons.jpg');
+  }
+
   ngOnInit(): void {
     this.loaderService.start('creative');
 
     this.httpGatewayService.getEmployeesListByGroupe('actors').subscribe((persons) => {
       this.actorsEmployees = this.actorsEmployees.concat(persons.employees);
-      console.log(this.actorsEmployees);
       this.loaderService.stop('load-team');
     });
 

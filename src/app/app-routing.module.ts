@@ -52,8 +52,10 @@ const appRoutes: Routes = [
       {path: 'administration/:slug', component: PersonComponent},
       {path: 'creative/:slug', component: PersonComponent},
       {path: 'artistic/:slug', component: PersonComponent},
-      {path: 'creative/show/more', component: PersoneShowmoreComponent},
-      {path: 'artistic/show/more', component: PersoneShowmoreComponent}
+      {path: 'creative/showmore/:slug', component: PersoneShowmoreComponent},
+      {path: 'artistic/showmore/:slug', component: PersoneShowmoreComponent},
+      {path: 'creative/showmore/:slug/:slug', redirectTo: 'creative/:slug'},
+      {path: 'artistic/showmore/:slug/:slug', redirectTo: 'artistic/:slug'}
     ]
   },
   {path: 'contacts', component: ContactsComponent},
