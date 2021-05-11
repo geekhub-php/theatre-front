@@ -3,7 +3,7 @@
 
 .visual-aid-container {
   z-index: 100;
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;
@@ -28,6 +28,10 @@
 
     .scheme {
       @include box(48, 30);
+
+      &:hover {
+        @include border(1, solid, $background-color-active, 3px);
+      }
     }
   }
 
@@ -38,7 +42,7 @@
     }
 
     &__button {
-      margin-top: 8px;
+      margin-top: 6px;
       margin-left: auto;
       margin-right: auto;
       display: flex;
@@ -51,10 +55,10 @@
       & > .hover {
         z-index: 99;
         position: absolute;
-        top: 2.1rem;
+        top: 1.8rem;
         left: -1rem;
         min-width: 8rem;
-        max-width: 10rem;
+        max-width: 11.2rem;
         display: none;
         color: $font-color-white;
         background-color: $background-color-active;
@@ -70,7 +74,7 @@
           width: .714rem;
           height: .714rem;
           top: -.376rem;
-          left: 1.971rem;
+          left: 2.351rem;
           display: block;
           content: "";
           position: absolute;
@@ -90,36 +94,29 @@
     @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal)
   }
 
-  &__buttons {
+  &__button {
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     position: relative;
-    gap: 8px;
-    margin-right: 138px;
     background: none;
     outline: none;
     border: none;
-  }
-
-  &__button {
-    @extend .u-unstyled-btn;
-
-    position: relative;
-    margin-left: 144px;
-    min-width: 48px;
 
     & > .hover-font {
       z-index: 99;
       position: absolute;
-      top: -2rem;
+      top: 1.8rem;
       left: -1rem;
       min-width: 8rem;
-      max-width: 10rem;
+      max-width: 11.2rem;
       display: none;
       color: $font-color-white;
       background-color: $background-color-active;
 
-      @include border(.5, solid, $background-main-color-lighter, 5px)
+      @include border(.5, solid, $background-main-color-lighter, 5px);
     }
 
     &:hover > .hover-font {
@@ -129,15 +126,15 @@
         z-index: -1;
         width: .714rem;
         height: .714rem;
-        bottom: -.386rem;
-        right: 5.571rem;
+        top: -.376rem;
+        left: 2.351rem;
         display: block;
         content: "";
         position: absolute;
         transform: rotate(135deg);
         background-color: $background-color-active;
-        border-top: .5px solid $background-main-color-lighter;
-        border-right: .5px solid $background-main-color-lighter;
+        border-bottom: .5px solid $background-main-color-lighter;
+        border-left: .5px solid $background-main-color-lighter;
       }
     }
   }
@@ -191,4 +188,3 @@
     @include box(50, 50);
   }
 }
-

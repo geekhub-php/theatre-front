@@ -2,7 +2,7 @@
 
 .donate-block {
   z-index: 100;
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;
@@ -20,10 +20,10 @@
     background-color: $background-color-accent;
 
     .donate-title {
-      margin-bottom: 24px;
+      margin: 0 40px 24px;
       text-align: center;
 
-      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 20px, .36px);
+      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
     }
 
     .closing-button {
@@ -48,7 +48,7 @@
     .donate-requisites {
       text-align: center;
 
-      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 10px, normal);
+      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1px, normal);
 
       .qr-code {
         width: 42%;

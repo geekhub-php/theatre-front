@@ -12,7 +12,9 @@ import { SpinnerModule } from '../../components/partials/spinner/spinner.module'
 
 import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
+import { BreadcrumbComponent } from '../../components/partials/breadcrumb/breadcrumb.component';
 import { FormsModule } from '@angular/forms';
+import { TooltipModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -22,20 +24,23 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     VisuallyImpairedComponent,
     FooterNavComponent,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     SpinnerModule,
     NgbCollapseModule,
-    FormsModule
+    FormsModule,
+    TooltipModule,
   ],
   exports: [
     HeaderComponent,
     MainNavComponent,
     FooterComponent,
     FooterNavComponent,
-    VisuallyImpairedComponent
+    VisuallyImpairedComponent,
+    BreadcrumbComponent
   ]
 })
 

@@ -9,8 +9,8 @@
 
 <!--TODO: the correct QR-code needs to be provided-->
 
-<div *ngIf="donateBlockVisible" class="donate-block">
-  <div class="donate-block__information">
+<div *ngIf="donateBlockVisible" (click)="donateBlockVisible = false" class="donate-block">
+  <div class="donate-block__information" (click)="$event.stopPropagation()">
     <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close"
          i18n-title="@@ngb.alert.close" (click)="donateBlockVisible = false">
     <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
@@ -20,7 +20,7 @@
       <p><b>ЄДРПОУ</b> 02225915</p>
       <p>АТ КБ «ПРИВАТБАНК»</p>
       <b>МФО</b> 305299<br>
-      <img src="assets/images/Group 505@3x.jpg" class="qr-code" alt="QR Code" (click)="openPDF()">
+      <img src="assets/images/qr-code.png" class="qr-code" alt="QR Code" (click)="openPDF()">
     </div>
   </div>
 </div>

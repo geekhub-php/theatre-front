@@ -1,38 +1,42 @@
 @import "~assets/styles/variables";
 
-.footer {
+.footer-wrapper {
   background-color: $background-main-color-darker;
 
-  .footer__links {
-    padding: 22px 0;
-    flex-direction: row;
-    list-style: none;
-    gap: 40px;
-    font-size: $font-size-small;
-    color: $font-color-primary;
+  .footer {
+    width: $container-width;
     margin: $container-margin;
     background-color: $background-main-color-darker;
-    border-top: .05px solid $font-color-dark;
 
-    @include flex-center;
-  }
-
-  .copy {
-    opacity: .5;
-
-    a {
+    .footer__links {
+      padding: 22px 0;
+      flex-direction: row;
+      list-style: none;
+      gap: 40px;
+      font-size: $font-size-small;
       color: $font-color-primary;
-      text-decoration: underline;
-      text-underline-offset: 5px;
+      border-top: .05px solid $font-color-dark;
+
+      @include flex-center;
     }
-  }
 
-  & svg {
-    background-color: $background-color-white;
-  }
+    .copy {
+      opacity: .5;
 
-  &__icon {
-    transition: .3s ease;
+      a {
+        color: $font-color-primary;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+
+    & svg {
+      background-color: $background-color-white;
+    }
+
+    &__icon {
+      transition: .3s ease;
+    }
   }
 }
 
@@ -46,10 +50,9 @@
 
 .scrollToTop {
   z-index: 20;
-  float: right;
-  position: relative;
-  margin-right: 1%;
-  margin-top: -70px;
+  position: fixed;
+  bottom: 20%;
+  right: 1%;
   border-radius: 50%;
   border: none;
   outline: none;
@@ -67,7 +70,7 @@
 @media only screen and (max-height: 660px) {
 
   .scrollToTop {
-    margin-top: 52px;
+    bottom: 10%;
 
     @include box(50, 50);
   }

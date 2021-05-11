@@ -1,6 +1,6 @@
 <ng-container *ngIf="trigger | async">
-  <div class="visual-aid-container">
-    <div class="visually-impaired">
+  <div class="visual-aid-container" (click)="trigger.next(false)">
+    <div class="visually-impaired" (click)="$event.stopPropagation()">
       <div class="visually-impaired__color-schemas color-schemes">
         <img src="assets/images/animation_eye_settings @3x.png" class="opera-glasses" alt="Opera glasses">
         <p class="color-schemes__text" i18n="@@color-schemes">Color schemes</p>
@@ -22,7 +22,7 @@
             <img src="assets/images/Group 521@3x.png" class="white-on-black-button scheme" alt="White on black filter">
             <span class="hover" i18n="@@white-on-black">White on Black</span>
           </button>
-          <button class="close-disable__button  reset-button" (click)="resetSettings()" title="Reset settings">
+          <button class="close-disable__button  reset-button" (click)="resetSettings()" title="Reset settings" i18n-title="@@resetSettings">
             <svg class="u-svg-icon" width="24" height="24">
               <use href="assets/images/sprite.svg#eye-off"></use>
             </svg>
@@ -34,7 +34,7 @@
           <div class="size-fonts__buttons">
             <button class="size-fonts__button" (click)="reduceFont()">
               <img src="assets/images/Group 518@3x.png" class="reduce-font-button scheme" alt="Reduce font">
-              <span class="hover-font" i18n="@@reduce-font">Reduce Font</span>
+              <span  class="hover-font" i18n="@@reduce-font">Reduce Font</span>
             </button>
             <button class="size-fonts__button" (click)="zoomFont()">
               <img src="assets/images/Group 519@3x.png" class="increase-font-button scheme" alt="Zoom font size">

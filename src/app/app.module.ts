@@ -82,7 +82,7 @@ import { CoreModule } from './modules/core/core.module';
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
     SpinnerModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [
     CalendarService,
