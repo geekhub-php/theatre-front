@@ -141,6 +141,12 @@ a {
   @include myPoint-li__active;
 }
 
+.images-l{
+  .histories__list-text {
+    margin-top: 30px;
+  }
+}
+
 .ballet {
   background-color: $background-main-color-darker;
   margin-bottom: 40px;
@@ -153,12 +159,6 @@ a {
       margin-top: 30px;
     }
   }
-}
-
-.images-l{
-    .histories__list-text {
-      margin-top: 30px;
-    }
 }
 
 a{
