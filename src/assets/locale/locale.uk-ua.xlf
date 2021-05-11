@@ -230,6 +230,22 @@
           <context context-type="linenumber">263</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="popupTitleFile" datatype="html">
+        <source>Selected file</source>
+        <target>Обраний файл</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">274</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="popupTitleFormat" datatype="html">
+        <source>is available in the following formats:</source>
+        <target>представлений у таких форматах:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">275</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="downloadArchive" datatype="html">
         <source>Download archive</source>
         <target>Скачати архів</target>
@@ -355,23 +371,23 @@
         <target>Контакти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsDirector" datatype="html">
-        <source>Director, Secretary</source>
-        <target>Директор, Секретар</target>
+        <source>Director, secretary:</source>
+        <target>Директор, секретар:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsAdmin" datatype="html">
-        <source>Administrator</source>
-        <target>Адміністратор</target>
+        <source>Administrator:</source>
+        <target>Адміністратор:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="administration" datatype="html">
@@ -395,11 +411,43 @@
          </context-group>
         </trans-unit>
       <trans-unit id="contactsTicketOffice" datatype="html">
-        <source>Ticket office</source>
-        <target>Каса</target>
+        <source>Ticket office:</source>
+        <target>Каса:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsWorkingHours" datatype="html">
+        <source>Ticket office working hours:</source>
+        <target>Графік роботи каси:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsMonFri" datatype="html">
+        <source>Mon-Fri: 09.00 - 18.00</source>
+        <target>Пн-Пт: 09.00 - 18.00</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsSatSun" datatype="html">
+        <source>Sat-Sun: 09.00 - 18.00</source>
+        <target>Сб-Нд: 09.00 - 18.00</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsBankDetails" datatype="html">
+        <source>Bank Details</source>
+        <target>Реквізити театру</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
       <trans-unit id="connections" datatype="html">
@@ -475,7 +523,7 @@
         <target>м. Черкаси, бул. Шевченка, 234</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="position" datatype="html">
