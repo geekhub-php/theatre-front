@@ -1,34 +1,30 @@
 @import "~assets/styles/variables";
 
 .wrapped {
-  background-color: $background-color-black;
+  max-width: $container-width;
+  padding-bottom: 140px;
+  margin: 0 auto;
 }
 
 .wrapped__title {
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  text-align: center;
 
   @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
 }
 
 .wrapped__active-nav {
-  margin: 10px;
   text-align: center;
 
-  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, 0.8);
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8);
 }
 
 .wrapped__perfomances {
-  margin: 0 210px;
+  margin: 0 5px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.perfomance__item {
-  cursor: pointer;
+  justify-content: space-between;
 }
 
 .item__wraper {
@@ -36,6 +32,8 @@
 }
 
 .image-performance {
+  cursor: pointer;
+
   @include box(350, 500);
 }
 
@@ -53,25 +51,8 @@
 
   @include container(56px, 56, 10px 8px 10px 9px, 0);
 }
-.pagination {
-  margin-right: 210px;
-  padding-bottom: 30px;
-  font-size: $font-size-medium;
-}
 
-:host ::ng-deep ngb-pagination .page-item .page-link {
-  background-color: $background-color-black;
-  color: $font-color-gray;
-  border: none;
-}
-
-:host ::ng-deep ngb-pagination .page-item.active .page-link {
-  background-color: $background-color-black;
-
-  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 1.5, normal);
-  @include border(2, solid, $border-color-gray, 2px);
-}
-
-:host ::ng-deep ngb-pagination :focus {
-  outline: none !important;
+.pagination_wrapper {
+  margin-top: 30px;
+  float: right;
 }

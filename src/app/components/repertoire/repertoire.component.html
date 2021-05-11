@@ -1,17 +1,28 @@
+<svg display="none">
+  <symbol id="arrow-left" viewBox="0 0 19 8">
+    <path d="M0 4L4 0V3H19V5H4V8L0 4Z" fill="#868583"/>
+  </symbol>
+  <symbol id="arrow-right" viewBox="0 0 19 8">
+    <path d="M19 4l-4-4v3H0v2h15v3l4-4z" fill="#868583"/>
+  </symbol>
+</svg>
+
 <app-repertoire-nav-header></app-repertoire-nav-header>
 
 <div class="wrapped">
-  <h2 class="wrapped__title" i18n="@@repertoire">Repertoire</h2>
+  <h1 class="wrapped__title" i18n="@@repertoire">Repertoire</h1>
 
   <app-spinner name="repertoire"></app-spinner>
 
-  <p class="wrapped__active-nav" *ngIf="audience === null && !seasonNumber" i18n="@@allPerformances">All performances</p>
+  <p *ngIf="audience === null && !seasonNumber" class="wrapped__active-nav" i18n="@@allPerformances">All
+    performances</p>
   <p class="wrapped__active-nav" *ngIf="audience=== 'adults'" i18n="@@adults">For adults</p>
   <p class="wrapped__active-nav" *ngIf="audience=== 'kids'" i18n="@@kids">For kids</p>
   <p class="wrapped__active-nav" *ngIf="seasonNumber" i18n="@@archive">Archive</p>
 
   <div class="wrapped__perfomances">
-    <div class="perfomance__item" *ngFor="let item of perfomances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+    <div *ngFor="let item of perfomances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
+         class="perfomance__item">
       <div class="item__container" [routerLink]="['', 'performance', item.slug]">
         <img class="image-performance" [src]="item.mainPicture.performance_big.url"
              [alt]="item.mainPicture.performance_small.properties.alt">
@@ -20,15 +31,23 @@
     </div>
   </div>
 
-  <ngb-pagination class="pagination d-flex justify-content-end"
-    [collectionSize]="collectionSize"
-    [(page)]="page"
-    [boundaryLinks]="false"
-    [rotate]="true"
-    [pageSize]="pageSize"
-  >
-    <ng-template ngbPaginationPrevious>&#8592;</ng-template>
-    <ng-template ngbPaginationNext>&#8594;</ng-template>
-  </ngb-pagination>
+  <div *ngIf="collectionSize > pageSize" class="pagination_wrapper">
+    <ngb-pagination [(page)]="page"
+                    [collectionSize]="collectionSize"
+                    [pageSize]="pageSize"
+                    class="pagination"
+    >
+      <ng-template ngbPaginationPrevious>
+        <svg>
+          <use xlink:href="#arrow-left"></use>
+        </svg>
+      </ng-template>
+      <ng-template class="arrows" ngbPaginationNext>
+        <svg>
+          <use xlink:href="#arrow-right"></use>
+        </svg>
+      </ng-template>
+    </ngb-pagination>
+  </div>
 
 </div>
