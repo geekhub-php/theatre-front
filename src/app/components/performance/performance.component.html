@@ -1,3 +1,5 @@
+<app-repertoire-nav-header></app-repertoire-nav-header>
+
 <div class="container">
   <app-spinner name="performance-page"></app-spinner>
   <h2 class="page-title text-center"> {{ performance?.title }} </h2>
@@ -7,7 +9,7 @@
     <div class="performance-poster">
       <div class="future-img">
         <img [src]="performance.mainPicture.performance_big.url" [alt]="performance.mainPicture.performance_big.alt"
-        [title]="performance.mainPicture.performance_big.properties.title">
+             [title]="performance.mainPicture.performance_big.properties.title">
       </div>
     </div>
 
