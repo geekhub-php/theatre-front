@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-import { NguCarouselModule } from '@ngu/carousel';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { NguCarouselModule } from '@ngu/carousel';
 
@@ -69,7 +68,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent, CalendarPopupComponent
+    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent, CalendarPopupComponent,
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
