@@ -51,6 +51,7 @@ import { PerformanceSliderComponent } from './components/home-page/performance-s
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
 import { ActorsSliderComponent } from './components/partials/actors-slider/actors-slider.component';
+import { SeasonsComponent } from './components/performance/seasons/seasons.component';
 
 import { environment } from '../environments/environment';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
@@ -84,7 +85,8 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     ArtisticComponent,
     CreativeComponent,
     PersoneShowmoreComponent,
-    ActorsSliderComponent
+    ActorsSliderComponent,
+    SeasonsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

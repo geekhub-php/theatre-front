@@ -442,6 +442,34 @@
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="photogallery" datatype="html">
+        <source>Photo Gallery</source>
+        <context-group purpose="location">
+         <context context-type="sourcefile">src/app/components/performance.component.html</context>
+         <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="morePhotos" datatype="html">
+        <source>More Photos (<x id="INTERPOLATION" equiv-text="{{ '+ ' + amount }}"/>)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/performance.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="collapse" datatype="html">
+        <source>Collapse</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/performance.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="performanceItem" datatype="html">
+        <source>Performance</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/performance/performance.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="cooperationBtn" datatype="html">
         <source>Cooperation</source>
         <context-group purpose="location">
@@ -615,6 +643,10 @@
       </trans-unit>
       <trans-unit id="buyTicket" datatype="html">
         <source>Buy ticket</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/performance/performance.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/schedule/list-view/list-view.component.html</context>
           <context context-type="linenumber">19</context>
