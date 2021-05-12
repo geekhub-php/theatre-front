@@ -1,0 +1,79 @@
+@import "~assets/styles/variables";
+
+.trustees-container {
+  width: $container-width;
+  margin: $container-margin;
+  background-color: $background-color-black;
+
+  .page-title {
+    margin-top: 80px;
+    margin-bottom: 65px;
+
+    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
+  }
+
+  .trustees-text {
+    margin-bottom: 78px;
+
+    @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, normal);
+
+    img {
+      float: left;
+      margin-right: 34px;
+
+      @include box(733, 489);
+    }
+  }
+
+  .trustee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 46px;
+
+    .personalities-title {
+      @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      width: 224px;
+      margin: 12px;
+      overflow: hidden;
+    }
+
+    &__img-wrapper {
+      width: 100%;
+      height: 300px;
+    }
+
+    &__img {
+      height: 100%;
+      object-fit: cover;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+    }
+
+    &__item-title {
+      width: 46%;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      text-align: left;
+
+      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 25px, normal);
+    }
+
+    &__item-subtitle {
+      @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, normal);
+    }
+  }
+}

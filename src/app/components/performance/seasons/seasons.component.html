@@ -1,0 +1,33 @@
+<app-spinner name="seasons"></app-spinner>
+<div class="seasons" *ngIf="seasons">
+  <span *ngIf="seasons"><span i18n="@@seasons">Seasons</span>: </span>
+
+  <span *ngIf="!viewMode" class="badge badge-pill badge-primary season-badge"
+        [class.active]="ALL_SEASONS == activeSeasonNumber"
+        (click)="loadSeason(ALL_SEASONS)" i18n="@@allSeasons">All Seasons</span>
+
+  <span *ngFor="let season of seasons"
+        class="badge badge-pill badge-primary season-badge"
+        [class.active]="season.number == activeSeasonNumber"
+        (click)="loadSeason(season.number)">{{ season.name }}</span>
+
+  <span *ngIf="!viewMode" class="badge badge-pill badge-primary season-badge"
+        [class.active]="ARCHIVE_SEASON == activeSeasonNumber"
+        (click)="loadSeason(ARCHIVE_SEASON)" i18n="@@archiveSeason">Archive</span>
+</div>
+
+<div class="seasons" *ngIf="!viewMode && seasons">
+  <span><ng-container i18n="@@audience">Audience</ng-container>: </span>
+
+  <span class="badge badge-pill badge-primary season-badge"
+        [class.active]="!EAudience.ALL_AUDIENCE === !activeAudience"
+        (click)="filterAudience(EAudience.ALL_AUDIENCE)" i18n="@@allAudience">All</span>
+
+  <span class="badge badge-pill badge-primary season-badge"
+        [class.active]="EAudience.KIDS_AUDIENCE === activeAudience"
+        (click)="filterAudience(EAudience.KIDS_AUDIENCE)" i18n="@@for_kids">For Kids</span>
+
+  <span class="badge badge-pill badge-primary season-badge"
+        [class.active]="EAudience.ADULT_AUDIENCE === activeAudience"
+        (click)="filterAudience(EAudience.ADULT_AUDIENCE)" i18n="@@for_adult">For Adult</span>
+</div>

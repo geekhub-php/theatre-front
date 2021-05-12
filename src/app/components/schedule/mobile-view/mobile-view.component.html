@@ -1,0 +1,22 @@
+<ng-container *ngFor="let event of events">
+  <section *ngIf="event.month == date.getMonth() + 1" class="schedule-event">
+    <div class="schedule-body">
+      <a [routerLink]="['', 'performance', event.performance.slug]">
+        <h2 class="schedule-title">{{ event.performance.title }}</h2>
+        <p class="schedule-time">{{ event.time }}</p>
+        <p class="schedule-place">{{ event.venue }}</p>
+        <div class="schedule-main">
+          <img class="schedule-small_img" [src]="event.performance.mainPicture.performance_small.url"
+               [alt]="event.performance.title" [title]="event.performance.title">
+        </div>
+      </a>
+      <div class="text-center">
+        <a *ngIf="event.buy_ticket_link" [href]="event.buy_ticket_link" target="_blank"
+           class="btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
+      </div>
+    </div>
+    <div class="schedule-day">
+      <span class="day">{{ event.day }}</span>
+    </div>
+  </section>
+</ng-container>

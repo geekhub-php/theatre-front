@@ -1,0 +1,29 @@
+@import "~assets/styles/variables";
+
+.roles {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-position: inside;
+  }
+}
+
+.role {
+  margin-bottom: 4px;
+
+  &__link {
+    color: $secondary-color-lighter;
+    transition: .3s ease;
+
+    &:hover {
+      text-decoration: none;
+      color: $main-color-darker;
+      transition: .3s ease;
+    }
+  }
+}

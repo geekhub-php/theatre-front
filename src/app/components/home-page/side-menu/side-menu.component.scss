@@ -1,0 +1,25 @@
+@import "~assets/styles/variables";
+
+.side-menu {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2.286rem;
+  text-transform: uppercase;
+  font-size: 1.286rem;
+  line-height: 2.714rem;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $secondary-color;
+
+    &:hover {
+      text-decoration: none;
+      color: $main-color-darker;
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+  }
+}

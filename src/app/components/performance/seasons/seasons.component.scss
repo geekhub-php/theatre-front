@@ -1,0 +1,31 @@
+@import "~assets/styles/variables";
+
+:host {
+  display: block;
+}
+
+.seasons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.season-badge {
+  padding: .25rem .5rem .15rem;
+  margin: 3px;
+  background-color: $main-color;
+  transition: .3s ease;
+}
+
+.seasons:not(.view-mode) .season-badge {
+  cursor: pointer;
+
+  &:hover, &.active {
+    background-color: $main-color-darker;
+  }
+
+  &.active {
+    cursor: default;
+  }
+}

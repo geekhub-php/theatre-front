@@ -1,0 +1,35 @@
+@import "_variables.scss";
+
+.tickets-button {
+  padding: 10px 50px;
+  border-radius: 2px;
+  object-fit: contain;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: $background-color-accent;
+
+  @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-bold, 1.5, normal);
+
+  &:hover {
+    background-color: $background-on-hover;
+  }
+
+  &:active {
+    color: $font-color-white;
+    background-color: $background-color-active;
+  }
+}
+
+.link-buttons {
+  padding: 10px 30px;
+  background: transparent;
+
+  @include border(1, solid, $border-color-accent, 2px);
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5, normal);
+
+  &:hover {
+    color: $font-color-white;
+    background: rgba($background-on-hover, .1);
+    text-decoration: none;
+  }
+}

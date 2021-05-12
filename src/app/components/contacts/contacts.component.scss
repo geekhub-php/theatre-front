@@ -1,0 +1,70 @@
+@import "~assets/styles/variables";
+
+@media screen and (max-device-width: 640px) {
+
+  .contacts-items-wrapper {
+
+    li {
+      flex-direction: column;
+      align-items: flex-end;
+
+      .contact-item-content {
+        justify-content: flex-end;
+        width: auto;
+        margin-right: 5%;
+        text-align: right;
+      }
+
+      .contact-item-pic {
+        align-self: flex-start;
+        margin-left: 10%;
+      }
+
+      .contact-item-name {
+        width: auto;
+        margin-right: 5%;
+      }
+    }
+  }
+}
+
+.contacts-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+  }
+}
+
+.contact-item-name {
+  width: 45%;
+  font-weight: 600;
+  text-align: right;
+}
+
+.contact-item-pic {
+  margin: 0 10px;
+  opacity: .6;
+}
+
+.contact-item-content {
+  width: 45%;
+  opacity: .6;
+
+  a {
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+  }
+}
