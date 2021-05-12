@@ -7,6 +7,7 @@ import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { NguCarouselModule } from '@ngu/carousel';
 
 import { CoreModule } from './modules/core/core.module';
 
@@ -43,6 +44,7 @@ import { SideMenuComponent } from './components/home-page/side-menu/side-menu.co
 import { SliderComponent } from './components/home-page/slider/slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
+import { ActorsSliderComponent } from './components/partials/actors-slider/actors-slider.component';
 
 import { environment } from '../environments/environment';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
@@ -71,6 +73,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     NewsListItemComponent,
     RepertoireNavHeaderComponent,
     CooperationComponent,
+    ActorsSliderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -87,7 +90,8 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
     CoreModule,
-    SpinnerModule
+    SpinnerModule,
+    NguCarouselModule
   ],
   providers: [
     CalendarService,
