@@ -26,3 +26,7 @@
   @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 18px, normal);
   @include border(2, solid, $border-color-disablend !important, 2px)
 }
+
+.disabled {
+  opacity: .5;
+}
