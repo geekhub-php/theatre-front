@@ -78,11 +78,16 @@ img {
 }
 
 ngu-tile {
+
   .tile {
     box-shadow: none !important;
+
     .image {
       margin-left: auto !important;
       margin-right: auto !important;
     }
   }
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
