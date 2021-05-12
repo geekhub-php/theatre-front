@@ -17,22 +17,11 @@
       <div class="title">
           <h2 class="art-core-title" i18n="@@artCore">Art core</h2>
       </div>
-      <div class="images">
-          <!-- delete after persons added -->
-          <section class="list-item" *ngFor="let person of artCoreEmployees" [routerLink]="[person.slug]">
-              <a class="histories__list-text">
-                  <img src="{{ person.avatar.employee_big.url }}" alt="photo"
-                      [title]="person.avatar.employee_big.properties.title">
-                   <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
-              </a>
-          </section>
-      </div>
-      <!-- <div class="images-l">
           <div *ngIf="artCoreEmployees.length > 0">
             <div class="wrapped">
                <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="artCoreEmployees" class="slider">
                   <ngu-tile *nguCarouselDef="let item">
-                    <div class="image" [routerLink]="[item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
+                    <div class="image" [routerLink]="['../../', item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
                 </ngu-tile>
                 <ul class="myPoint" NguCarouselPoint>
                    <li *ngFor="let j of myCarousel.pointNumbers; let i = index"
@@ -50,22 +39,16 @@
               </ngu-carousel>
             </div>
           </div>
-        </div> -->
+          <div class="all-persons">
+            <!-- routs -->
+            <a routerLink="art-core" class="link-persons" i18n="@@showMore">Show more</a>
+          </div>
     </div>
     <div class="art-prod">
         <div class="title">
             <h2 class="art-prod-title" i18n="@@artProd">Art-production</h2>
           </div>
-          <!-- delete after persons added -->
-          <div class="images">
-            <section class="list-item" *ngFor="let person of artProductionEmployees" [routerLink]="[person.slug]">
-                <span class="histories__list-text">
-                    <img src="{{ person.avatar.employee_big.url }}" alt="photo"
-                        [title]="person.avatar.employee_big.properties.title">
-                    <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
-                </span>
-            </section>
-            <!-- <div *ngIf="artProductionEmployees.length > 0">
+            <div *ngIf="artProductionEmployees.length > 0">
               <div class="wrapped">
                 <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="artProductionEmployees" class="slider">
                   <ngu-tile *nguCarouselDef="let item">
@@ -86,7 +69,10 @@
                   </div>
                 </ngu-carousel>
               </div>
-            </div> -->
-          </div>
+            </div>
+            <div class="all-persons">
+              <!-- routs -->
+              <a routerLink="art-production" class="link-persons" i18n="@@showMore">Show more</a>
+            </div>
   </div>
 </div>

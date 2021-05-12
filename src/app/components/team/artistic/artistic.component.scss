@@ -170,6 +170,7 @@ a {
 
 .right:hover {
   @include hover_opacity;
+  cursor: pointer;
 }
 
 .myPoint {
@@ -185,7 +186,7 @@ a {
 }
 
 .art-prod {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   padding-top: 80px;
   h4 {
     margin-bottom: 80px;
@@ -198,6 +199,16 @@ a {
       margin-right: 30px;
       cursor: pointer;
     }
+  }
+}
+
+.all-persons {
+  padding-top: 40px;
+  @include flex-center;
+  padding-bottom: 50px;
+
+  a {
+    @include flex-center;
   }
 }
 

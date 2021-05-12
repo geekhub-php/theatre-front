@@ -125,7 +125,7 @@ export class GatewayService {
     );
   }
 
-  getEmployeesListByGroupe(slug, locale: string = this.localeId): Observable<EmployeesListResponse> {
+  getEmployeesListByGroupe(slug, locale: string = this.localeId, page: string = 'middle'): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
       `${this.baseUrl}/${this.employeesListUrl}?group=${slug}`, {params: {locale}}
     ).pipe(

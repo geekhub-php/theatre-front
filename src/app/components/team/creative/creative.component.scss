@@ -28,7 +28,7 @@
   @include flex-center;
 }
 
-h2{
+h2 {
   color: $font-color-white;
 }
 
@@ -52,7 +52,7 @@ h4 {
   cursor: pointer;
 }
 
-.image:hover{
+.image:hover {
   filter: none;
 }
 
@@ -123,6 +123,7 @@ a {
   height: 100%;
   right: 5px;
   z-index: 1;
+  cursor: pointer;
 }
 
 .right:hover {
@@ -141,7 +142,7 @@ a {
   @include myPoint-li__active;
 }
 
-.images-l{
+.images-l {
   .histories__list-text {
     margin-top: 30px;
   }
@@ -151,9 +152,11 @@ a {
   background-color: $background-main-color-darker;
   margin-bottom: 40px;
   padding-top: 80px;
+
   h4 {
     margin-bottom: 80px;
   }
+
   .images {
     .histories__list-text {
       margin-top: 30px;
@@ -161,26 +164,30 @@ a {
   }
 }
 
-a{
+a {
   cursor: pointer;
   text-decoration: none;
 }
 
 .orchestra {
   padding-top: 80px;
+
   .images-l {
     @include flex-center;
+
     .histories__list-text {
       margin-left: 30px;
       margin-right: 30px;
       cursor: pointer;
     }
+
     img {
       width: 332px;
       height: 508px;
       filter: grayscale(100%);
     }
-    img:hover{
+
+    img:hover {
       filter: none;
     }
   }
@@ -188,6 +195,10 @@ a{
 
 .all-persons {
   @include flex-center;
+
+  a {
+    @include flex-center;
+  }
 }
 
 .link-persons {

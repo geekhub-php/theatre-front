@@ -61,7 +61,7 @@ export class CreativeComponent implements OnInit, AfterContentChecked {
       this.loaderService.stop('load-team');
     });
 
-    this.httpGatewayService.getEmployeesListByGroupe('administrative-accounting').subscribe((persons) => {
+    this.httpGatewayService.getEmployeesListByGroupe('orchestra').subscribe((persons) => {
       this.orchestraEmployees = this.orchestraEmployees.concat(persons.employees);
       this.loaderService.stop('load-team');
     });

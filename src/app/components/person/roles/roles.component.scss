@@ -6,6 +6,13 @@
   color: $font-color-accent;
 }
 
+
+
+a:hover{
+  color: $secondary-background-color;
+}
+
+
 .roles {
   display: flex;
   flex-direction: column;
@@ -19,6 +26,11 @@
     list-style-type: none;
     text-decoration: underline;
     line-height: 1.7;
+  }
+
+  .role__link {
+    text-decoration: none;
+    color: $secondary-background-color !important;
   }
 }
 

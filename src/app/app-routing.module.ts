@@ -48,14 +48,10 @@ const appRoutes: Routes = [
       {path: 'creative', component: CreativeComponent},
       {path: 'artistic', component: ArtisticComponent},
       {path: 'administration', component: AdministrationComponent},
-      {path: ':slug', component: PersonComponent},
-      {path: 'administration/:slug', component: PersonComponent},
-      {path: 'creative/:slug', component: PersonComponent},
-      {path: 'artistic/:slug', component: PersonComponent},
-      {path: 'creative/showmore/:slug', component: PersoneShowmoreComponent},
-      {path: 'artistic/showmore/:slug', component: PersoneShowmoreComponent},
-      {path: 'creative/showmore/:slug/:slug', redirectTo: 'creative/:slug'},
-      {path: 'artistic/showmore/:slug/:slug', redirectTo: 'artistic/:slug'}
+      {path: 'administration/:slug', component: PersoneShowmoreComponent},
+      {path: 'creative/:slug', component: PersoneShowmoreComponent},
+      {path: 'artistic/:slug', component: PersoneShowmoreComponent},
+      {path: ':personId', component: PersonComponent},
     ]
   },
   {path: 'contacts', component: ContactsComponent},
