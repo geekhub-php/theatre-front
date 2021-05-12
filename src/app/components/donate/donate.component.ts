@@ -20,6 +20,6 @@ export class DonateComponent implements OnInit {
   }
 
   openPDF(): void {
-    window.open('assets/images/QR.pdf', '_blank');
+    window.open('/assets/images/QR.pdf', '_blank');
   }
 }
