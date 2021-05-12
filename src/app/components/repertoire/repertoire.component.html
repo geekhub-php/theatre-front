@@ -1,23 +1,53 @@
-<div class="container">
-  <h2 class="page-title text-center" i18n="@@repertoire">Repertoire</h2>
+<svg display="none">
+  <symbol id="arrow-left" viewBox="0 0 19 8">
+    <path d="M0 4L4 0V3H19V5H4V8L0 4Z" fill="#868583"/>
+  </symbol>
+  <symbol id="arrow-right" viewBox="0 0 19 8">
+    <path d="M19 4l-4-4v3H0v2h15v3l4-4z" fill="#868583"/>
+  </symbol>
+</svg>
+
+<app-repertoire-nav-header></app-repertoire-nav-header>
+
+<div class="wrapped">
+  <h1 class="wrapped__title" i18n="@@repertoire">Repertoire</h1>
 
   <app-spinner name="repertoire"></app-spinner>
 
-  <ul class="perfomances">
-    <li class="perfomance-item" *ngFor="let item of perfomances" [routerLink]="['', 'performance', item.slug]">
-      <div class="image-wraper">
-        <img class="image" [src]="item.mainPicture.performance_big.url"
-             [alt]="item.mainPicture.performance_small.properties.alt"
-             [title]="item.mainPicture.performance_small.properties.title">
+  <p *ngIf="audience === null && !seasonNumber" class="wrapped__active-nav" i18n="@@allPerformances">All
+    performances</p>
+  <p class="wrapped__active-nav" *ngIf="audience=== 'adults'" i18n="@@adults">For adults</p>
+  <p class="wrapped__active-nav" *ngIf="audience=== 'kids'" i18n="@@kids">For kids</p>
+  <p class="wrapped__active-nav" *ngIf="seasonNumber" i18n="@@archive">Archive</p>
+
+  <div class="wrapped__performances">
+    <div *ngFor="let item of perfomances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
+         class="perfomance__item">
+      <div class="item__container" [routerLink]="['', 'performance', item.slug]">
+        <img class="image-performance" [src]="item.mainPicture.performance_big.url"
+             [alt]="item.mainPicture.performance_small.properties.alt">
+        <span class="age-restrictions">{{ item.age_limit }}+</span>
       </div>
-      <h3 class="perfomance-title">
-        <a class="link" [routerLink]="['', 'performance', item.slug]">{{ item.title | striphtml:[40, "..."] }}</a>
-      </h3>
-    </li>
-    <li class="perfomance-item blank-item"></li>
-    <li class="perfomance-item blank-item"></li>
-    <li class="perfomance-item blank-item"></li>
-    <li class="perfomance-item blank-item"></li>
-    <li class="perfomance-item blank-item"></li>
-  </ul>
+    </div>
+  </div>
+
+  <div *ngIf="collectionSize > pageSize" class="pagination_wrapper">
+    <ngb-pagination [(page)]="page"
+                    [collectionSize]="collectionSize"
+                    [pageSize]="pageSize"
+                    class="pagination"
+    >
+      <ng-template ngbPaginationPrevious>
+        <svg>
+          <use xlink:href="#arrow-left"></use>
+        </svg>
+      </ng-template>
+      <ng-template class="arrows" ngbPaginationNext>
+        <svg>
+          <use xlink:href="#arrow-right"></use>
+        </svg>
+      </ng-template>
+    </ngb-pagination>
+  </div>
+
 </div>

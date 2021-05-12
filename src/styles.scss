@@ -77,3 +77,13 @@ img {
     padding: 20px 10px;
   }
 }
+
+ngu-tile {
+  .tile {
+    box-shadow: none !important;
+    .image {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+}

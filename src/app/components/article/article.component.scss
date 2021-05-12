@@ -73,3 +73,7 @@
 .gallery {
   padding-bottom: 160px;
 }
+
+::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
+  border: none !important;
+}

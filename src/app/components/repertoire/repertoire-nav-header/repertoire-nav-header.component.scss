@@ -1,0 +1,26 @@
+@import "~assets/styles/variables";
+
+.nav-header-container {
+  background-color: $background-color-accent;
+  height: 56px;
+
+  @include flex-center;
+}
+
+.item {
+  padding: 0 15px;
+  height: 56px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-normal, 1.5, normal);
+  @include flex-center;
+
+  &.active {
+    line-height: 1.39;
+    background-color: $background-on-hover;
+    font-weight: 700;
+  }
+}
+
+.nav-header-container a {
+  text-decoration: none;
+}

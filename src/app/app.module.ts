@@ -8,6 +8,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { NguCarouselModule } from '@ngu/carousel';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { NguCarouselModule } from '@ngu/carousel';
 
 import { CoreModule } from './modules/core/core.module';
 
@@ -47,7 +48,10 @@ import { SliderComponent } from './components/home-page/slider/slider.component'
 
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
+import { ActorsSliderComponent } from './components/partials/actors-slider/actors-slider.component';
+
 import { environment } from '../environments/environment';
+import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 
 @NgModule({
   declarations: [
@@ -65,14 +69,16 @@ import { environment } from '../environments/environment';
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent, CalendarComponent, CalendarPopupComponent, ListViewComponent, MobileViewComponent,
+    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent, CalendarPopupComponent
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
     SliderComponent,
     NewsListItemComponent,
     MonthsCarouselComponent,
+    RepertoireNavHeaderComponent,
     CooperationComponent,
+    ActorsSliderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
