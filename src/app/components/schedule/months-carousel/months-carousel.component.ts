@@ -82,11 +82,8 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     private carousel: MonthsCarouselService,
     @Inject(LOCALE_ID) private localeId: string,
   ) {
-    if (this.localeId === 'en-US') {
-      this.monthsList = this.carousel.createMonthList(this.monthsNameList.monthsEng);
-    } else if (this.localeId === 'uk-UA') {
-      this.carousel.createMonthList(this.monthsNameList.months);
-    }
+    this.localeId === 'en-US' ? this.monthsList = this.carousel.createMonthList(this.monthsNameList.monthsEng)
+    : this.monthsList = this.carousel.createMonthList(this.monthsNameList.months);
   }
 
   @HostListener('window:resize') onResize() {
