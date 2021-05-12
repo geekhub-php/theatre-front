@@ -130,7 +130,6 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.carousel.scrollToCurrentMonth();
     this.carousel.onDrag();
     this.cd.detectChanges();
-    console.log(this.localeId)
   }
 
   unSubscribe() {
