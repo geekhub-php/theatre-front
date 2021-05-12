@@ -80,7 +80,6 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     @Inject(LOCALE_ID) private localeId: string,
     private cd: ChangeDetectorRef,
     private carousel: MonthsCarouselService) {
-    this.monthsList = this.carousel.createMonthList(this.monthsNameList[this.localeId]);
   }
 
   @HostListener('window:resize') onResize() {
@@ -101,6 +100,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   }
 
   ngOnInit() {
+    this.monthsList = this.carousel.createMonthList(this.monthsNameList[this.localeId]);
     this.getMonth();
     this.getActiveMonth();
     this.carousel.setDefaultData();
