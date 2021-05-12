@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { GatewayService } from '../../services/gateway.service';
 import { NewsItem } from '../../store/news/NewsItem';
@@ -19,10 +19,10 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.loaderService.start('home');
-    this.gatewayService.getNews(this.limit, 1, 'uk').subscribe((res: { posts }) => {
-      this.listPost = res.posts;
-      this.loaderService.stop('home');
-    },
+    this.gatewayService.getNews(this.limit, 1).subscribe((res: { posts }) => {
+        this.listPost = res.posts;
+        this.loaderService.stop('home');
+      },
       err => this.loaderService.stop('home')
     );
     this.gatewayService.updateCanonicalURL();
