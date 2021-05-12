@@ -1,4 +1,4 @@
-<div *ngIf="sliderList.length > 0; else noPerformance"  class="slider">
+<div *ngIf="sliderList.length > 0; else noPerformance" class="slider">
   <gallery
     id="slider"
     class="gallery-container"
@@ -13,7 +13,7 @@
   </gallery>
 </div>
 
-<ng-template #itemTemplate let-data="data" >
+<ng-template #itemTemplate let-data="data">
   <div [@slideAnimation] class="carousel-caption">
     <h3 class="performance-title">{{ data.title }}</h3>
     <div class="container">
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="container__button">
-      <a [href]="data.ticket" class="button-ticket" i18n="@@buyTicket">Buy ticket</a>
+      <a [href]="data.ticket" class="button-ticket tickets-button" i18n="@@buyTicket">Buy ticket</a>
     </div>
     <span class="age-restrictions">12+</span>
   </div>
@@ -40,7 +40,8 @@
 
 <ng-template #noPerformance>
   <div class="container-no-performance">
-    <img src="../../../../assets/images/home-slider/no-performances.png" alt="No performance" class="no-performance__image" >
+    <img src="../../../../assets/images/home-slider/no-performances.png" alt="No performance"
+         class="no-performance__image">
     <div class="no-performance__container-text">
       <p class="no-performance__text" i18n="@@noPerformances">There are currently no events scheduled</p>
     </div>

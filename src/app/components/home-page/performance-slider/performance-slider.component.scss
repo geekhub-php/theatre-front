@@ -1,3 +1,5 @@
+@import "~assets/styles/variables";
+
 .carousel {
   display: flex;
   justify-content: center;
@@ -7,7 +9,7 @@
   height: 864px;
   display: flex;
   justify-content: center;
-  background-color: #0e0c08;
+  background-color: $background-color-black;
 }
 
 gallery {
@@ -17,12 +19,11 @@ gallery {
 
 .gallery-container {
   height: 688px;
-  width: 1504px;
+  width: $container-width;
 }
 
 :host ::ng-deep gallery gallery-nav .ng-star-inserted {
-  width: 48px;
-  height: 48px;
+  @include box(48, 48);
 }
 
 .carousel-caption {
@@ -31,7 +32,7 @@ gallery {
   left: 0 !important;
   width: 100% !important;
   height: 64%;
-  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
 }
 
 :host ::ng-deep gallery gallery-dots {
@@ -40,14 +41,14 @@ gallery {
 
 :host ::ng-deep gallery gallery-dots .g-dot-inner {
   background-color: #868583;
-  width: 12px;
-  height: 12px;
+
+  @include box(12, 12);
 }
 
 :host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
-  background-color: #b49864 ;
-  width: 16px;
-  height: 16px;
+  background-color: $background-color-accent;
+
+  @include box(10, 10);
 }
 
 .age-restrictions {
@@ -55,12 +56,10 @@ gallery {
   position: absolute;
   top: -250px;
   left: 0;
-  width: 56px;
-  height: 56px;
-  font-size: 24px;
-  color: #fff;
-  background-color: #b49864;
-  line-height: 1.5;
+  background-color: $background-color-accent;
+
+  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-normal, 1.5, .8px);
+  @include box(56, 56);
 }
 
 .container {
@@ -68,7 +67,7 @@ gallery {
   flex-direction: row;
   justify-content: center;
   position: absolute;
-  bottom: 140px;
+  bottom: 126px;
   right: 0;
   left: 0;
   width: 100%;
@@ -76,104 +75,69 @@ gallery {
 
 .performance-title {
   position: absolute;
-  bottom: 190px;
-  height: 63px;
+  bottom: 170px;
   width: 100%;
-  font-weight: 600;
   display: flex;
   justify-content: center;
-  font-family: 'Montserrat', serif;
-  font-size: 40px;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
   text-align: center;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
 }
 
 .container__performance {
   display: flex;
   flex-direction: row;
-  margin-right: 12px;
-  margin-bottom: 15px;
-  margin-top: 10px;
+  margin-right: 20px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, .8px);
 }
 
 .image {
-  margin: 0 11px 0 0;
-  width: 24px;
-  height: 24px;
+  margin: 0 10px 0 0;
+
+  @include box(24, 24);
 }
 
 .container__button {
   position: absolute;
-  bottom: 60px;
-  margin: 22px 0;
+  bottom: 80px;
   width: 100%;
 }
 
-.button-ticket {
-  font-size: 18px;
-  font-family: 'Montserrat', serif;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.36px;
-  color: #fff;
-  border: solid 1px #fff;
-  border-radius: 2px;
-  width: 197px;
-  height: 48px;
-  padding: 12px 24px;
+.tickets-button {
+  color: $font-color-white;
+  background: transparent;
+
+  @include border(2, solid, $border-color-light, 2px);
 }
 
-.button-ticket:hover {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.2);
+.tickets-button:hover {
+  background-color: rgba(255, 255, 255, .2);
   text-decoration: none;
 }
 
-.button-ticket:active {
-  color: #0e0c08;
-  background-color: #fff;
+.tickets-button:active {
+  color: $font-color-black;
+  background-color: $border-color-light;
 }
 
-.performance__venue {
-  color: #fff;
-  line-height: 1.5;
-  height: 27px;
-  font-family: 'Montserrat', serif;
-  font-size: 18px;
-  text-align: left;
-}
-
-.performance__type {
-  height: 27px;
-  font-family: 'Montserrat', serif;
-  font-size: 18px;
-  line-height: 1.5;
+.performance__venue, .performance__type, .tickets-day {
   text-align: left;
 }
 
 .tickets-month {
-  margin-left: 2px;
-  font-size: 18px;
-}
-
-.tickets-day {
-  color: #fff;
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: left;
+  margin-left: 4px;
 }
 
 .container-no-performance {
   height: 864px;
   display: flex;
   justify-content: center;
-  background-color: #0e0c08;
+  background-color: $background-color-black;
 }
 
 .no-performance__image {
-  width: 1504px;
+  width: $container-width;
   height: 688px;
   margin-top: 64px;
   margin-bottom: 112px;
@@ -181,22 +145,21 @@ gallery {
 
 .no-performance__container-text {
   position: absolute;
-  top: 430px;
   width: 100%;
+  height: 408px;
+  top: 430px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 408px;
-  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
 }
 
 .no-performance__text {
-  color: #fff;
-  font-weight: 600;
-  font-size: 40px;
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-bold, 1.5, normal);
 }
 
-@media( max-width: 1560px ) {
+@media (max-width: 1560px) {
+
   .gallery-container {
     width: 1400px;
   }
@@ -206,7 +169,8 @@ gallery {
   }
 }
 
-@media( max-width: 1430px ) {
+@media (max-width: 1430px) {
+
   .gallery-container {
     width: 1300px;
   }
@@ -216,7 +180,8 @@ gallery {
   }
 }
 
-@media( max-width: 1330px ) {
+@media (max-width: 1330px) {
+
   .gallery-container {
     width: 1200px;
   }
@@ -226,13 +191,14 @@ gallery {
   }
 }
 
-@media ( max-width: 1230px ) {
+@media (max-width: 1230px) {
+
   .gallery-container {
     width: 1100px;
   }
 
   .performance-title {
-    font-weight: 400;
+    font-weight: $font-weight-normal;
   }
 
   .no-performance__image {
@@ -240,7 +206,8 @@ gallery {
   }
 }
 
-@media ( max-width: 1130px ) {
+@media (max-width: 1130px) {
+
   .gallery-container {
     width: 1000px;
   }
