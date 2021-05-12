@@ -91,7 +91,6 @@ import { SeasonsComponent } from './components/performance/seasons/seasons.compo
     NgxGoogleAnalyticsRouterModule,
     SpinnerModule,
     CoreModule,
-    SpinnerModule,
     NguCarouselModule
   ],
   providers: [
