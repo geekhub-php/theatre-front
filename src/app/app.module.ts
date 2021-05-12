@@ -43,8 +43,10 @@ import { CalendarService } from './components/schedule/calendar.service';
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { PerformanceSliderComponent } from './components/home-page/performance-slider/performance-slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
+import { CooperationComponent } from './components/cooperation/cooperation.component';
 
 import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -67,7 +69,8 @@ import { environment } from '../environments/environment';
     ScheduleComponent,
     SideMenuComponent,
     PerformanceSliderComponent,
-    NewsListItemComponent
+    NewsListItemComponent,
+    CooperationComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

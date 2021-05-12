@@ -1,33 +1,70 @@
 @import "~assets/styles/variables";
 
-:host ::ng-deep .post-text p {
-  margin-bottom: 5px;
-  font-size: 1.143rem;
+.page_title {
+  margin-bottom: 60px;
+  text-align: center;
+  padding-top: 30px;
+
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
 }
 
-.container {
-  margin-bottom: -30px;
+.ngx-gallery {
+  display: inline-block;
+  margin-bottom: 20px;
+}
 
-  .img {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+.article {
+  width: 100%;
+  margin-bottom: 80px;
+  min-height: 470px;
+}
 
-  .post-date {
-    margin-top: 1rem;
-    text-align: right;
-    color: $secondary-color-lighter;
+.img {
+  float: left;
+  margin: 15px 30px 5px 0;
+  width: 50%;
+  overflow: hidden;
+
+  img {
+    height: 470px;
+    margin: 0 auto;
+    display: block;
   }
 }
 
-@media (max-width: 576px) {
+.section_title {
+  margin-bottom: 16px;
 
-  .container {
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
+}
 
-    .img {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
+.date {
+  margin-bottom: 16px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 25px, normal)
+}
+
+.text {
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
+}
+
+.article_container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.gallery_title {
+  text-align: center;
+  margin-bottom: 30px;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
+}
+
+.gallery {
+  padding-bottom: 160px;
+}
+
+::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
+  border: none !important;
 }
