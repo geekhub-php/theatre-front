@@ -17,6 +17,20 @@
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="theaterActors" datatype="html">
+        <source>Theater actors</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/partials/actors-slider/actors-slider.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="showMore" datatype="html">
+        <source>Show more</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/partials/actors-slider/actors-slider.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="actors" datatype="html">
         <source>Actors</source>
         <context-group purpose="location">
@@ -26,6 +40,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="buyTicket" datatype="html">
+        <source>Buy ticket</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/performance-slider/performance-slider.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noPerformances" datatype="html">
+        <source>There are currently no events scheduled</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/performance-slider/performance-slider.component.html</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="performanceDetails" datatype="html">
@@ -122,6 +150,20 @@
           <context context-type="linenumber">263</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="popupTitleFile" datatype="html">
+        <source>Selected file</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">274</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="popupTitleFormat" datatype="html">
+        <source>is available in the following formats:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">275</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="downloadArchive" datatype="html">
         <source>Download archive</source>
         <context-group purpose="location">
@@ -142,6 +184,50 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="allPerformances" datatype="html">
+        <source>All performances</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repertoire/repertoire-nav-header/repertoire-nav-header.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repertoire/repertoire.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="adults" datatype="html">
+        <source>For adults</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repertoire/repertoire-nav-header/repertoire-nav-header.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repertoire/repertoire.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="kids" datatype="html">
+        <source>For kids</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repertoire/repertoire-nav-header/repertoire-nav-header.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repertoire/repertoire.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="archive" datatype="html">
+        <source>Archive</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repertoire/repertoire-nav-header/repertoire-nav-header.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repertoire/repertoire.component.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="persons" datatype="html">
@@ -233,7 +319,7 @@
         <source>Contacts</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">33</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
@@ -241,24 +327,52 @@
         </context-group>
       </trans-unit>
       <trans-unit id="contactsDirector" datatype="html">
-        <source>Director, Secretary</source>
+        <source>Director, secretary:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsAdmin" datatype="html">
-        <source>Administrator</source>
+        <source>Administrator:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsTicketOffice" datatype="html">
-        <source>Ticket office</source>
+        <source>Ticket office:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsWorkingHours" datatype="html">
+        <source>Ticket office working hours:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsMonFri" datatype="html">
+        <source>Mon-Fri: 09.00 - 18.00</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsSatSun" datatype="html">
+        <source>Sat-Sun: 09.00 - 18.00</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsBankDetails" datatype="html">
+        <source>Bank Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsEmail" datatype="html">
@@ -319,6 +433,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article.component.html</context>
           <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="photogallery" datatype="html">
+        <source>Photo Gallery</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article.component.html</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cooperationBtn" datatype="html">
