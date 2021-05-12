@@ -4,6 +4,7 @@
 .header-wrapper {
   background-color: $background-main-color-darker;
 }
+
 .header {
   position: sticky;
   top: 0;
@@ -14,6 +15,9 @@
 
   .navbar {
     padding: 8px 0;
+    & .header-logo {
+      flex: 0 0 120px;
+    }
   }
 
   .language {
