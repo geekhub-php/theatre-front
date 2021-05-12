@@ -20,7 +20,7 @@
     background-color: $background-color-accent;
 
     .donate-title {
-      margin: 0 40px 24px;
+      margin: 0 40px 14px;
       text-align: center;
 
       @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
@@ -40,9 +40,9 @@
     }
 
     .donate-wallet-image {
-      width: 54%;
-      margin-left: 23%;
-      margin-bottom: 20px;
+      width: 50%;
+      margin-left: 25%;
+      margin-bottom: 10px;
     }
 
     .donate-requisites {
@@ -52,7 +52,7 @@
 
       .qr-code {
         width: 42%;
-        margin: 30px 0 auto;
+        margin: 20px 0 auto;
 
         &:hover {
           @include border(2, solid, $border-color-active, 2px);
