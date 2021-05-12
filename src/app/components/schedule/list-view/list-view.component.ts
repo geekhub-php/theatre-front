@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
-import { GatewayService } from '../../../services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';
 import { CalendarService } from '../calendar.service';
 import { MonthsCarouselService } from '../months-carousel/months-carousel.service';
@@ -19,8 +18,7 @@ export class ListViewComponent implements OnInit, OnDestroy {
   sliderSubscription: Subscription;
   calendarSubscription: Subscription;
 
-  constructor(private gateway: GatewayService,
-              private slider: MonthsCarouselService,
+  constructor(private slider: MonthsCarouselService,
               private loaderService: LoaderService,
               private calendar: CalendarService) { }
 
@@ -43,9 +41,11 @@ export class ListViewComponent implements OnInit, OnDestroy {
     this.calendarSubscription = this.calendar.events.subscribe((value) => {
       this.events = value.filter(({date_time}) => {
         const resDate = new Date(date_time);
+      if (resDate) {
         const monthsEqual = resDate.getMonth() === this.currentDate.getMonth();
 
         return (resDate >= new Date()) && monthsEqual;
+      }
     });
       this.loaderService.stop('poster');
     }, err => this.loaderService.stop('poster'));
