@@ -13,7 +13,7 @@ describe('theatre-front App', () => {
   it('should navigate to Home', () => {
     page.navigateTo();
     mainMenu.navigateTo('Main page');
-    expect(element(by.css('h3')).getText()).toContain('News');
+    expect(element(by.css('.page-title')).getText()).toContain('News');
   });
 
   it('should navigate to Poster', () => {

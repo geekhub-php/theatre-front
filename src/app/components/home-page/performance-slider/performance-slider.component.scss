@@ -1,0 +1,218 @@
+@import "~assets/styles/variables";
+
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  height: 864px;
+  display: flex;
+  justify-content: center;
+  background-color: $background-color-black;
+}
+
+gallery {
+  margin-top: 64px;
+  margin-bottom: 112px;
+}
+
+.gallery-container {
+  height: 688px;
+  width: $container-width;
+}
+
+:host ::ng-deep gallery gallery-nav .ng-star-inserted {
+  @include box(48, 48);
+}
+
+.carousel-caption {
+  padding: 0;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 64%;
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+}
+
+:host ::ng-deep gallery gallery-dots {
+  z-index: 1;
+}
+
+:host ::ng-deep gallery gallery-dots .g-dot-inner {
+  background-color: #868583;
+
+  @include box(12, 12);
+}
+
+:host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
+  background-color: $background-color-accent;
+
+  @include box(10, 10);
+}
+
+.age-restrictions {
+  padding: 10px 8px 10px 9px;
+  position: absolute;
+  top: -250px;
+  left: 0;
+  background-color: $background-color-accent;
+
+  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-normal, 1.5, .8px);
+  @include box(56, 56);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  bottom: 126px;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+
+.performance-title {
+  position: absolute;
+  bottom: 170px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+}
+
+.container__performance {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, .8px);
+}
+
+.image {
+  margin: 0 10px 0 0;
+
+  @include box(24, 24);
+}
+
+.container__button {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+}
+
+.tickets-button {
+  color: $font-color-white;
+  background: transparent;
+
+  @include border(2, solid, $border-color-light, 2px);
+}
+
+.tickets-button:hover {
+  background-color: rgba(255, 255, 255, .2);
+  text-decoration: none;
+}
+
+.tickets-button:active {
+  color: $font-color-black;
+  background-color: $border-color-light;
+}
+
+.performance__venue, .performance__type, .tickets-day {
+  text-align: left;
+}
+
+.tickets-month {
+  margin-left: 4px;
+}
+
+.container-no-performance {
+  height: 864px;
+  display: flex;
+  justify-content: center;
+  background-color: $background-color-black;
+}
+
+.no-performance__image {
+  width: $container-width;
+  height: 688px;
+  margin-top: 64px;
+  margin-bottom: 112px;
+}
+
+.no-performance__container-text {
+  position: absolute;
+  width: 100%;
+  height: 408px;
+  top: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+}
+
+.no-performance__text {
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-bold, 1.5, normal);
+}
+
+@media (max-width: 1560px) {
+
+  .gallery-container {
+    width: 1400px;
+  }
+
+  .no-performance__image {
+    width: 1400px;
+  }
+}
+
+@media (max-width: 1430px) {
+
+  .gallery-container {
+    width: 1300px;
+  }
+
+  .no-performance__image {
+    width: 1300px;
+  }
+}
+
+@media (max-width: 1330px) {
+
+  .gallery-container {
+    width: 1200px;
+  }
+
+  .no-performance__image {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1230px) {
+
+  .gallery-container {
+    width: 1100px;
+  }
+
+  .performance-title {
+    font-weight: $font-weight-normal;
+  }
+
+  .no-performance__image {
+    width: 1100px;
+  }
+}
+
+@media (max-width: 1130px) {
+
+  .gallery-container {
+    width: 1000px;
+  }
+
+  .no-performance__image {
+    width: 1000px;
+  }
+}
