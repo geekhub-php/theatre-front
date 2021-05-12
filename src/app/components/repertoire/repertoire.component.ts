@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { GatewayService } from '../../services/gateway.service';
@@ -13,6 +13,11 @@ import { LoaderService } from '../partials/spinner/loader.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RepertoireComponent implements OnInit {
+
+  pageSize = 16;
+  page = 1;
+  collectionSize: number;
+
   response: PerformanceListResponse;
   perfomances: Array<Performance>;
   seasonNumber: number;
@@ -24,21 +29,17 @@ export class RepertoireComponent implements OnInit {
     private changeDetector: ChangeDetectorRef,
     private gateway: GatewayService,
     private loaderService: LoaderService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) {
   }
 
   ngOnInit() {
-    this.seasonNumber = +this.activatedRoute.snapshot.queryParamMap.get('season') || this.CURRENT_SEASON;
+    this.seasonNumber = +this.activatedRoute.snapshot.paramMap.get('season') || this.CURRENT_SEASON;
     this.activatedRoute.queryParams.subscribe(params => {
       this.seasonNumber = params['season'] || this.CURRENT_SEASON;
       this.audience = params['audience'] || this.CURRENT_AUDIENCE;
       this.getPerformances(this.seasonNumber, this.audience);
     });
-    this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
-      'Репертуар Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
-      'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
-    this.gateway.updateCanonicalURL();
   }
 
   getPerformances(seasonNumber: number, audience: 'kids' | 'adults' | null) {
@@ -52,6 +53,7 @@ export class RepertoireComponent implements OnInit {
     getSeasonPerformancesSub$
       .subscribe((performances) => {
         this.perfomances = performances;
+        this.collectionSize = performances.length;
         this.changeDetector.markForCheck();
         this.loaderService.stop('repertoire');
       },

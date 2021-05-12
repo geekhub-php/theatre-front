@@ -41,6 +41,7 @@
 @import "assets/styles/typography";
 @import "assets/styles/buttons";
 @import "assets/styles/themes";
+@import "assets/styles/pagination";
 
 html {
   font-size: $font-size-medium;
@@ -73,5 +74,15 @@ img {
 
   .popover-body {
     padding: 20px 10px;
+  }
+}
+
+ngu-tile {
+  .tile {
+    box-shadow: none !important;
+    .image {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
   }
 }

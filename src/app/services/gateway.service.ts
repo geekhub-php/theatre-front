@@ -108,6 +108,18 @@ export class GatewayService {
     );
   }
 
+  getRandomEmployees(
+    limit: string = '10',
+    page: string = 'middle',
+    locale: string = this.localeId
+  ): Observable<Employee> {
+    return this.http.get<Employee>(
+      `${this.baseUrl}/${this.employeesListUrl}?random=1`, {params: {limit: `${limit}`, page: `${page}`, locale}}
+    ).pipe(
+      catchError(this.handleError('get random Employee', new Employee()))
+    );
+  }
+
   getEmployeeBySlug(slug, locale: string = this.localeId): Observable<Employee> {
     return this.http.get<Employee>(
       `${this.baseUrl}/employees/${slug}`, {params: {slug, locale}}
@@ -196,7 +208,9 @@ export class GatewayService {
       property: 'og:description',
       content: description
     });
-    this.meta.updateTag({ property: 'og:image', content: image });
+    if (image) {
+      this.meta.updateTag({ property: 'og:image', content: image });
+    }
     this.meta.updateTag({ property: 'og:url', content: `${this.canonicalUrl}${this.localeId}${this.router.url}` });
   }
 

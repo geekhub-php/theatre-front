@@ -1,57 +1,25 @@
 @import "~assets/styles/variables";
 
-.news__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+h2 {
+  padding-top: 80px;
+  margin-bottom: 60px;
+  text-align: center;
 
-  ngb-pagination {
-    flex: 0 0 100%;
-  }
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
 }
 
-.news__content {
-  flex: 0 0 calc(100% - 26rem);
+.news_container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-bottom: 140px;
 }
 
-:host ::ng-deep ngb-pagination ul {
-
-  li a {
-    color: $secondary-color;
-    outline: none;
-    border: transparent;
-    border-radius: 5px;
-
-    &:hover {
-      color: $secondary-color;
-    }
-  }
-
-  li.active a {
-    background-color: $main-color !important;
-    outline: none;
-    color: $white-color;
-    border: transparent;
-
-    span {
-      display: none;
-    }
-
-    .page-item.active .page-link {
-      border-color: transparent;
-      outline: transparent !important;
-      padding: 7px 11px !important;
-    }
-  }
+.news_wrapper {
+  border-bottom: .5px solid $border-color-lighter;
+  margin: 0 5px 35px;
 }
 
-.pagination {
-  font-size: .9rem;
+.pagination_wrapper {
+  float: right;
 }
 
-@media (max-width: 992px) {
-
-  .widget {
-    display: none;
-  }
-}

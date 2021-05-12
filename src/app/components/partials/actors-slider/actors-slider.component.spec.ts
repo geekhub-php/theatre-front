@@ -3,30 +3,29 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NguCarouselModule } from '@ngu/carousel';
 
-import { RepertoireComponent } from './repertoire.component';
-import { RepertoireNavHeaderComponent } from './repertoire-nav-header/repertoire-nav-header.component';
+import { ActorsSliderComponent } from './actors-slider.component';
 
-describe('RepertoireComponent', () => {
-  let component: RepertoireComponent;
-  let fixture: ComponentFixture<RepertoireComponent>;
+describe('PerformanceSliderComponent', () => {
+  let component: ActorsSliderComponent;
+  let fixture: ComponentFixture<ActorsSliderComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepertoireComponent, RepertoireNavHeaderComponent ],
+      declarations: [ ActorsSliderComponent ],
       imports: [
         HttpClientModule,
         RouterModule,
         RouterTestingModule,
-        NgbPaginationModule
+        NguCarouselModule,
       ]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RepertoireComponent);
+    fixture = TestBed.createComponent(ActorsSliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
