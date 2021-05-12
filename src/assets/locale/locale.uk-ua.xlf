@@ -845,6 +845,10 @@
           <context context-type="sourcefile">src/app/widget/widget.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/list-view/list-view.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="theatreWithYou" datatype="html">
         <source>Theatre is always with you</source>

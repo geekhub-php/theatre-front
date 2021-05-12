@@ -32,19 +32,16 @@ $popup-border-color: #b6b6b4;
     text-transform: capitalize;
     width: 90px;
     height: 30px;
-    font-family: $body-font-family;
-    font-size: 24px;
-    font-weight: 700;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
     line-height: 1.5;
     letter-spacing: .5px;
     text-align: left;
-    color: #b49864;
+    color: $font-color-gold;
   }
 
   .day__of__month {
-    font-weight: 600;
+    font-weight: $font-weight-semi-bold;
     width: 210px;
     height: 230px;
     position: relative;
@@ -55,12 +52,11 @@ $popup-border-color: #b6b6b4;
 
   .day__number {
     cursor: default;
-    font-family: $body-font-family;
     position: absolute;
     top: 12px;
     left: 6px;
     z-index: 5;
-    font-size: 40px;
+    font-size: $font-size-xxx-large;
     color: $font-color-gold;
     border-radius: 30px;
     line-height: 1;
@@ -73,13 +69,13 @@ $popup-border-color: #b6b6b4;
     & button {
       background-color: transparent;
       outline: none;
-      font-size: 14px;
+      font-size: $font-size-small;
       border: none;
       margin: auto 0;
       padding: 0;
       color: $font-color-gold;
       font-family: $body-font-family;
-      font-weight: 600;
+      font-weight: $font-weight-semi-bold;
       cursor: pointer;
     }
   }
@@ -99,8 +95,7 @@ $popup-border-color: #b6b6b4;
       padding-top: 12px;
       align-items: center;
       height: 50px;
-      font-family: $body-font-family;
-      font-size: 40px;
+      font-size: $font-size-xxx-large;
       color: $white-color;
       border-radius: 30px;
       line-height: 1;
@@ -115,8 +110,8 @@ $popup-border-color: #b6b6b4;
       & .popup__events__performance__title {
         margin: auto 0;
         font-family: $body-font-family;
-        font-weight: 400;
-        font-size: 14px;
+        font-weight: $font-weight-normal;
+        font-size: $font-size-small;
         padding: 0;
         color: $background-main-color;
       }
@@ -132,12 +127,12 @@ $popup-border-color: #b6b6b4;
       justify-content: center;
 
       & button {
-        font-weight: 600;
+        font-weight: $font-weight-semi-bold;
         background-color: transparent;
         outline: none;
         border: none;
         color: $background-main-color;
-        font-size: 14px;
+        font-size: $font-size-small;
         cursor: pointer;
       }
 
@@ -188,7 +183,7 @@ $popup-border-color: #b6b6b4;
 
         & .popover__title {
           padding-left: 0;
-          font-weight: 700;
+          font-weight: $font-weight-bold;
           font-stretch: normal;
           font-style: normal;
           line-height: 1.5;
@@ -281,21 +276,20 @@ $popup-border-color: #b6b6b4;
     & .events__performance__title {
       margin: auto 0;
       font-family: $body-font-family;
-      font-weight: 400;
-      font-size: 14px;
+      font-weight: $font-weight-normal;
+      font-size: $font-size-small;
       padding: 0;
     }
   }
+}
 
+:host ::ng-deep .bs-popover-top {
+  background-color: transparent;
 
-  ::ng-deep .bs-popover-top {
-    background-color: transparent;
-
-    & .arrow::after {
-      position: relative;
-      z-index: 5;
-      top: -2px;
-      border-top-color: $font-color-gold;
-    }
+  .arrow::after {
+    position: relative;
+    z-index: 5;
+    top: -2px;
+    border-top-color: $font-color-gold;
   }
 }

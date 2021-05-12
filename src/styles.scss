@@ -41,7 +41,6 @@
 @import "assets/styles/typography";
 @import "assets/styles/buttons";
 @import "assets/styles/themes";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 @import "assets/styles/pagination";
 
 html {
@@ -79,8 +78,10 @@ img {
 }
 
 ngu-tile {
+
   .tile {
     box-shadow: none !important;
+
     .image {
       margin-left: auto !important;
       margin-right: auto !important;

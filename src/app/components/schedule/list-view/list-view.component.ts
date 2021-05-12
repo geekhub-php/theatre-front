@@ -12,11 +12,12 @@ import { Subscription } from 'rxjs';
 })
 export class ListViewComponent implements OnInit, OnDestroy {
 
-  events: Array<PerformanceEvent>;
+  events: Array<PerformanceEvent> = [];
   date: Date;
   currentDate: Date;
   sliderSubscription: Subscription;
   calendarSubscription: Subscription;
+  loader: boolean;
 
   constructor(private slider: MonthsCarouselService,
               private loaderService: LoaderService,
@@ -24,6 +25,9 @@ export class ListViewComponent implements OnInit, OnDestroy {
               @Inject(LOCALE_ID) private localeId: string) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
+   this.loaderService.subject.subscribe(spinner => {
+      this.loader = spinner.load;
+    });
   }
 
   ngOnInit() {
