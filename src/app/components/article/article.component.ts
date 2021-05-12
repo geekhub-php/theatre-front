@@ -34,6 +34,7 @@ export class ArticleComponent implements OnInit {
       previewAnimation: false,
       previewBullets: true,
       thumbnailsOrder: NgxGalleryOrder.Page,
+      startIndex: null,
       arrowPrevIcon: 'fa fa-chevron-left',
       arrowNextIcon: 'fa fa-chevron-right',
       closeIcon: 'fas fa-times'
