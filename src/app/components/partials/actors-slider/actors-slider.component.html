@@ -1,3 +1,14 @@
+<svg display="none">
+  <symbol id="chevron-left" viewBox="0 0 48 48">
+    <path clip-rule="evenodd" d="M29.414 12l-12 12 12 12L28 37.414 14.586 24 28 10.586 29.414 12z" fill="#868583"
+          fill-rule="evenodd"/>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 48 48">
+    <path clip-rule="evenodd" d="M20 10.586L33.414 24 20 37.414 18.586 36l12-12-12-12L20 10.586z" fill="#868583"
+          fill-rule="evenodd"/>
+  </symbol>
+</svg>
+
 <div class="wrapped">
   <h3 class="title" i18n="@@theaterActors">Theater actors</h3>
   <ngu-carousel
@@ -7,7 +18,7 @@
     class="slider"
     *ngIf="randomEmployees?.length > 0"
   >
-    <ngu-tile *nguCarouselDef="let item" >
+    <ngu-tile *nguCarouselDef="let item">
       <div
         class="image"
         [style.background]="'url(' + item.avatar.employee_big.url + ')'"
@@ -23,14 +34,20 @@
       >
       </li>
     </ul>
+
     <div NguCarouselPrev class="left">
-      <img alt="chevron-left" src="assets/images/slider/chevron-left.svg">
+      <svg class="chevron" height="48" width="48">
+        <use xlink:href="#chevron-left"></use>
+      </svg>
     </div>
     <div NguCarouselNext class="right">
-      <img alt="chevron-rigth" src="assets/images/slider/chevron-right.svg">
+      <svg class="chevron" height="48" width="48">
+        <use xlink:href="#chevron-right"></use>
+      </svg>
     </div>
   </ngu-carousel>
-  <div class="all-prersons">
+
+  <div class="all-persons">
     <a routerLink="/persons" class="link-persons" i18n="@@showMore">Show more</a>
   </div>
 </div>

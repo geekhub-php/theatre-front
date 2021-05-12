@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentChecked, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterContentChecked, ChangeDetectorRef, Input } from '@angular/core';
 
 import { NguCarouselConfig } from '@ngu/carousel';
 import { GatewayService } from '../../../services/gateway.service';
@@ -9,8 +9,8 @@ import { Employee } from '../../../store/employee/Employee';
   templateUrl: './actors-slider.component.html',
   styleUrls: ['./actors-slider.component.scss']
 })
-export class ActorsSliderComponent implements OnInit, AfterContentChecked {
-  randomEmployees: Array<Employee>;
+export class ActorsSliderComponent implements AfterContentChecked {
+  @Input() randomEmployees: Array<Employee>;
 
   carouselTile: NguCarouselConfig = {
     grid: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6, all: 0 },
@@ -42,10 +42,4 @@ export class ActorsSliderComponent implements OnInit, AfterContentChecked {
     this._cdr.detectChanges();
   }
 
-  ngOnInit(): void {
-    this.getway.getRandomEmployees()
-      .subscribe((data: any) => {
-        this.randomEmployees = data.employees;
-      });
-  }
 }

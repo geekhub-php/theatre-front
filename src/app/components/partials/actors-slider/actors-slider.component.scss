@@ -1,147 +1,106 @@
-$background-colors: #0e0c08;
-$dots-active-color: #b49864;
-$dots-color: #868583;
-$position: absolute;
-
-@mixin opacity {
-  -webkit-transition: all 0.3s ease;;
-  -moz-transition: all 0.3s ease;;
-  -o-transition: all 0.3s ease;;
-  transition: all 0.3s ease;
-  opacity: 1;
-}
-
-@mixin hover_opacity {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-  opacity: 0.6;
-}
-
-@mixin display {
-  display: flex;
-  justify-content: center;
-}
-
-@mixin gradient {
-  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
-}
+@import "~assets/styles/variables";
 
 .wrapped {
   margin: 0;
-  height: 900px;
-  padding: 83px 0 86px;
-  background-color: $background-colors;
+  padding: 80px 0 90px;
+  background-color: $background-color-black;
 }
 
 a {
-  color: $dots-active-color;
+  color: $background-color-accent;
   text-decoration: none;
 }
 
 .title {
   height: 60px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 0.8px;
   text-align: center;
-  color: #ffffff;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-normal, 1.5, 0.8);
 }
 
-.all-prersons {
-  @include display;
+.all-persons {
+  @include flex-center;
 }
 
 .link-persons {
-  width: 170px;
-  height: 25px;
-  font-size: 18px;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.39;
-  letter-spacing: normal;
-  text-align: center;
+  margin-top: 30px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-normal, 1.5, 1.39);
 }
 
 .image {
   margin: 32px;
   min-height: 200px;
   background-size: cover !important;
-  width: 350px;
-  height: 530px;
   filter: grayscale(100%);
-}
 
-.image:hover {
-  filter: none;
+  @include box(350, 530);
+
+  &:hover {
+    filter: none;
+  }
 }
 
 .left {
-  @include display;
-  @include gradient;
-  @include opacity;
-  position: $position;
-  align-items: center;
-  cursor: pointer;
+  position: absolute;
   bottom: 0;
   width: 70px;
   z-index: 1;
   height: 100%;
+
+  @include flex-center;
+  @include gradient;
+  @include opacity(all .3s ease, all .3s ease, all .3s ease, all .3s ease, 1);
 }
 
 .left:hover {
-  @include hover_opacity;
+  @include hover-opacity(scale(1.2), scale(1.2), scale(1.2), .6);
 }
 
 .right {
-  @include display;
-  @include opacity;
   @include gradient;
-  position: $position;
-  align-items: center;
+  position: absolute;
   bottom: 0;
   width: 70px;
   height: 100%;
   right: 5px;
   z-index: 1;
+
+  @include flex-center;
+  @include opacity(all .3s ease, all .3s ease, all .3s ease, all .3s ease, 1);
 }
 
 .right:hover {
-  @include hover_opacity;
+  @include hover-opacity(scale(1.2), scale(1.2), scale(1.2), .6);
 }
 
 .myPoint {
   list-style-type: none;
-  text-align: center;
   padding: 12px;
   margin: 0;
   white-space: nowrap;
   overflow: auto;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  @include flex-center;
 }
 
 .myPoint  li {
-  background-color: $dots-color;
+  background-color: $background-color-disabled;
   display: inline-block;
   border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  padding: 4px;
-  margin: 0 10px;
-  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  transition: 0.4s;
+  transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+  transition: .4s;
   cursor: pointer;
+
+  @include container(12px, 12, 4px, 0 10px);
 }
 
-.myPoint  li.active {
-  background-color: $dots-active-color;
-  transform: scale(1.2);
-  width: 16px;
-  height: 16px;
+.myPoint li.active {
+  background-color: $background-color-accent;
+  transform: scale(1.4);
+}
+
+.chevron {
+  cursor: pointer;
 }

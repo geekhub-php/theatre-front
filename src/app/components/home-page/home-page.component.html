@@ -1,5 +1,4 @@
 <div class="home-page">
-  <app-actors-slider></app-actors-slider>
 
   <app-spinner name="home"></app-spinner>
 
@@ -27,11 +26,7 @@
     </div>
   </section>
 
-  <section class="actors-carousel">
-    <div class="actors-carousel__component">
-      <!--Background for the "Poster slider", can be modified-->
-    </div>
-  </section>
+  <app-actors-slider [randomEmployees]="randomEmployees"></app-actors-slider>
 
   <section class="news_wrapper">
     <h3 class="section_title" i18n="@@news">News</h3>

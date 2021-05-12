@@ -2,7 +2,9 @@ import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { GatewayService } from '../../services/gateway.service';
 import { NewsItem } from '../../store/news/NewsItem';
+import { Employee } from '../../store/employee/Employee';
 import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-home-page',
@@ -10,6 +12,8 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit, AfterViewChecked {
+  randomEmployees: Array<Employee>;
+
   limit = '3';
   listPost: Array<NewsItem> = [];
   readonly canonicalUrl = environment.canonicalUrl;
@@ -26,6 +30,10 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
       err => this.loaderService.stop('home')
     );
     this.gatewayService.updateCanonicalURL();
+    this.gatewayService.getRandomEmployees()
+      .subscribe((data: any) => {
+        this.randomEmployees = data.employees;
+      });
   }
 
   ngAfterViewChecked() {
