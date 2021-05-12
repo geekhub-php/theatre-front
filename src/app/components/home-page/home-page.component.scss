@@ -3,15 +3,16 @@
 /* Block with "what we offer" */
 
 .we-offer-block {
+  margin: $container-margin;
   background-color: $background-main-color-darker;
 }
 
 .we-offer {
-  width: 875px;
+  width: $container-width;
   margin: $container-margin;
-  padding: 80px 0;
-  text-align: center;
   background-color: $background-main-color-darker;
+  padding: 80px 310px;
+  text-align: center;
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
 

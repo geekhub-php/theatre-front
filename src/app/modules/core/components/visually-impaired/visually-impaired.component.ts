@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
 
-
 @Component({
   selector: 'app-visually-impaired',
   templateUrl: './visually-impaired.component.html',

@@ -1,16 +1,15 @@
 <div class="home-page">
-
   <app-spinner name="home"></app-spinner>
 
   <section class="poster-slider">
     <div class="poster-slider__component">
-      <!--Background for the "Poster slider", can be modified-->
+      <app-performance-slider></app-performance-slider>
     </div>
   </section>
 
   <section class="we-offer-block">
     <div class="we-offer">
-      <h3 class="we-offer__title">Offer for you</h3>
+      <h1 class="we-offer__title" i18n="@@offerForYou">Offer for you</h1>
       <div class="we-offer__text">
 
         <!--TODO: The appropriate "Offer for you" text needs to be added here; the translation of it should be executed in "locale" files-->
@@ -21,25 +20,31 @@
         </p>
         <p>Також запрошуємо до співпраці колективи, організації, виставки.</p>
       </div>
-      <a class="link-buttons" routerLink="/cooperation" routerLinkActive="active"
+      <a class="link-buttons" routerLink="/donate" routerLinkActive="active"
          i18n="@@cooperationBtn">Cooperation</a>
     </div>
   </section>
 
-  <app-actors-slider [randomEmployees]="randomEmployees"></app-actors-slider>
+  <div class="actors-carousel">
+    <div class="actors-carousel__component">
+      <!--Background for the "Poster slider", can be modified-->
+    </div>
+  </div>
 
-  <section class="news_wrapper">
-    <h3 class="section_title" i18n="@@news">News</h3>
-    <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
-    <a class="link" i18n="@@more" routerLink="../news">More</a>
-  </section>
+  <div class="latest-news">
+    <div class="latest-news__component">
+      <!--Background for the "3 latest news", can be modified-->
+    </div>
+  </div>
+  <app-actors-slider [randomEmployees]="randomEmployees"></app-actors-slider>
 
   <section class="home-page-text__advantages">
     <div class="advantages-content">
-      <div class="advantages-title" i18n="@@theatreWithYou">Theatre is always with you</div>
+      <div class="advantages-title">Theatre is always with you</div>
       <div class="clearfix">
         <img src="assets/images/Group%20305/Group 305@3x.png" alt="Phone with invitation to the theatre on the screen"
-             title="Cherkassy Theatre of Taras Shevchenko welcomes you!" class="phone-image">
+             title="Cherkasy Theatre of Taras Shevchenko welcomes you!" class="phone-image"
+             i18n-title="@@theatreWelcomesYou">
         <ul class="advantages">
           <li class="advantages__item">
             <div class="advantage__item-number">
@@ -48,9 +53,9 @@
               <!--TODO: New "advantage text" should be created-->
 
               <span class="advantage-text">
-                Ви завжди зможете купити квитки we denounce with righteous indignation
-                and dislike men who are so beguiled and demoralized by the charms of the pleasure of the moment, so blinded by desire.
-              </span>
+            Ви завжди зможете купити квитки we denounce with righteous indignation
+            and dislike men who are so beguiled and demoralized by the charms of the pleasure of the moment, so blinded by desire.
+            </span>
             </div>
           </li>
           <li class="advantages__item">
@@ -74,9 +79,9 @@
               <!--TODO: New "advantage text" should be created-->
 
               <span class="advantage-text">
-                Чекаємо вас на наших виставах n the other hand, we denounce with righteous indignation
-                and dislike men.
-              </span>
+            Чекаємо вас на наших виставах n the other hand, we denounce with righteous indignation
+            and dislike men.
+            </span>
             </div>
           </li>
         </ul>
@@ -84,3 +89,7 @@
     </div>
   </section>
 </div>
+
+
+
+

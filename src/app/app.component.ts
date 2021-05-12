@@ -10,8 +10,9 @@ export class AppComponent {
 
   constructor(
     private meta: Meta,
-    private titleService: Title,
-  ) {}
+    private titleService: Title
+  ) {
+  }
 
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

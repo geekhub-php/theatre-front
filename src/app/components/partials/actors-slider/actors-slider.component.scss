@@ -15,7 +15,7 @@ a {
   height: 60px;
   text-align: center;
 
-  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-normal, 1.5, 0.8);
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-normal, 1.5, .8);
 }
 
 .all-persons {

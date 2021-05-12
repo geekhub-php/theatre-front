@@ -1,31 +1,85 @@
 @import "~assets/styles/variables";
 
-.donate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 60px;
+.donate-block {
+  z-index: 100;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: rgba($background-color-black, .7);
 
-  @media (max-width: 576px) {
-    margin-top: 20px;
-  }
+  &__information {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 336px;
+    padding-top: 2%;
+    background-color: $background-color-accent;
 
-  &__title {
-    margin-bottom: 30px;
+    .donate-title {
+      margin: 0 40px 14px;
+      text-align: center;
 
-    @media (max-width: 576px) {
+      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
+    }
+
+    .closing-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      transition: .3s ease;
+
+      @include box(48, 48);
+
+      &:hover {
+        @include border(2, solid, $border-color-light, 2px);
+      }
+    }
+
+    .donate-wallet-image {
+      width: 50%;
+      margin-left: 25%;
       margin-bottom: 10px;
     }
-  }
 
-  &__text {
-    padding: 0 20px;
-    font-size: 18px;
-    text-align: center;
-    line-height: 1.8;
+    .donate-requisites {
+      text-align: center;
 
-    @media (max-width: 576px) {
-      font-size: 12px;
+      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1px, normal);
+
+      .qr-code {
+        width: 42%;
+        margin: 20px 0 auto;
+
+        &:hover {
+          @include border(2, solid, $border-color-active, 2px);
+        }
+      }
     }
+  }
+}
+
+.donate-button {
+  z-index: 40;
+  position: fixed;
+  margin-top: 98px;
+  right: 1%;
+
+  @include box(64, 64);
+
+  &:hover {
+    @include border(2, solid, $border-color-light, 2px);
+  }
+}
+
+@media only screen and (max-height: 720px) {
+
+  .donate-button {
+    top: 82px;
+
+    @include box(50, 50);
   }
 }
