@@ -1,11 +1,29 @@
-<div class="container">
-  <div class="donate">
-    <h2 class="donate__title page-title text-center" i18n="@@donate">Donate</h2>
-    <div class="donate__text">
-      Р/р UA883052990000026007021609497<br>
-      ЄДРПОУ 02225915<br>
-      АТ КБ «ПРИВАТБАНК» <br>
-      МФО 305299<br>
+<button class="u-unstyled-btn d-none d-lg-block">
+  <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
+       *ngIf="!donateBlockVisible" (click)="donateBlockVisible = true">
+</button>
+<button class="u-unstyled-btn d-none d-lg-block">
+  <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
+       *ngIf="donateBlockVisible" (click)="donateBlockVisible = false">
+</button>
+
+<!--TODO: the correct QR-code needs to be provided-->
+
+<div *ngIf="donateBlockVisible" (click)="donateBlockVisible = false" class="donate-block">
+  <div class="donate-block__information" (click)="$event.stopPropagation()">
+    <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close"
+         i18n-title="@@ngb.alert.close" (click)="donateBlockVisible = false">
+    <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
+    <p class="donate-title">Are you ready to help the Theater?</p>
+    <div class="donate-requisites">
+      <p><b>Р/р</b> UA883052990000026007021609497</p>
+      <p><b>ЄДРПОУ</b> 02225915</p>
+      <p>АТ КБ «ПРИВАТБАНК»</p>
+      <b>МФО</b> 305299<br>
+      <a href='/assets/images/QR.pdf' download>
+        <img src="assets/images/qr-code.png" class="qr-code" alt="QR Code">
+      </a>
     </div>
   </div>
 </div>
+

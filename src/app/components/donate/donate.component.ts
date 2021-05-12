@@ -7,6 +7,7 @@ import { GatewayService } from '../../services/gateway.service';
   styleUrls: ['./donate.component.scss']
 })
 export class DonateComponent implements OnInit {
+  donateBlockVisible = false;
 
   constructor(private gatewayService: GatewayService) {
   }
