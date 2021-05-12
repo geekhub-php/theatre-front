@@ -14,11 +14,11 @@ export class PerformanceDurationPipe implements PipeTransform {
     h: 0
   };
 
-  transform(value: number, language: 'uk-UA' | 'en-US'): string {
+  transform(value: number, language: 'uk' | 'en'): string {
     this.setTime(value);
     const { min, h } = this.time;
 
-    return language === 'en-US' ? `${h} h. ${min} min.` : `${h} год. ${min} хв.`;
+    return language === 'en' ? `${h} h. ${min} min.` : `${h} год. ${min} хв.`;
   }
 
   setTime(minutes: number) {

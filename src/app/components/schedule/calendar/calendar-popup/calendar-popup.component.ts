@@ -9,5 +9,8 @@ import { PerformanceEvent } from '../../../../store/schedule/PerformanceEvent';
 export class CalendarPopupComponent {
   @Input() event: PerformanceEvent;
 
-  constructor(@Inject(LOCALE_ID) private localeId: string) {}
+  constructor(@Inject(LOCALE_ID) private localeId: string) {
+    const idLength = 2;
+    this.localeId = this.localeId.slice(0, idLength);
+  }
 }

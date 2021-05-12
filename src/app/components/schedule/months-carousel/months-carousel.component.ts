@@ -47,7 +47,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   activeMonth = {id: ''};
 
   monthsNameList = {
-    'uk-UA': [
+    uk: [
       'Січень',
       'Лютий',
       'Березень',
@@ -61,7 +61,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
       'Листопад',
       'Грудень'
     ],
-    'en-US': [
+    en: [
       'January',
       'February',
       'March',
@@ -82,7 +82,8 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     private carousel: MonthsCarouselService,
     @Inject(LOCALE_ID) private localeId: string,
   ) {
-      console.warn(this.localeId);
+      const idLength = 2;
+      this.localeId = this.localeId.slice(0, idLength);
       this.monthsList = this.carousel.createMonthList(this.monthsNameList[this.localeId]);
   }
 

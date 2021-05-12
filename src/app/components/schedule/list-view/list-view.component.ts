@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnDestroy, OnInit } from '@angular/core';
 import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
 import { LoaderService } from '../../partials/spinner/loader.service';
 import { CalendarService } from '../calendar.service';
@@ -20,7 +20,11 @@ export class ListViewComponent implements OnInit, OnDestroy {
 
   constructor(private slider: MonthsCarouselService,
               private loaderService: LoaderService,
-              private calendar: CalendarService) { }
+              private calendar: CalendarService,
+              @Inject(LOCALE_ID) private localeId: string) {
+    const idLength = 2;
+    this.localeId = this.localeId.slice(0, idLength);
+  }
 
   ngOnInit() {
     this.getMonth();

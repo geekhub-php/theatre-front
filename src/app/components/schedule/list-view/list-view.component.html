@@ -27,7 +27,7 @@
               class="list-view__content__info__item__icon"
               src="assets/images/list-view/bx-hourglass.svg" alt="">
             <span class="list-view__content__info__item__text">
-              {{ event.performance.duration_in_min | performanceDuration: 'en-US' }}
+              {{ event.performance.duration_in_min | performanceDuration: localeId }}
             </span>
           </div>
           <div class="list-view__content__info__item">
