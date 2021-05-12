@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
-import { GatewayService } from '../../../services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';
 import { CalendarService } from '../calendar.service';
 import { MonthsCarouselService } from '../months-carousel/months-carousel.service';
@@ -15,21 +14,20 @@ export class CalendarComponent implements OnInit, OnDestroy {
 
   events: Array<PerformanceEvent>;
   dayPerformances: Array<PerformanceEvent>;
-  weeks: Array<Array<Date>>;
-  date: Date;
+  weeks: Array<Array<Date>> | null = null;
   showMore = false;
   activeDay: Date | null = null;
-  selectedDate = new Date()
+  selectedDate: Date
   middleOfMonth = 15
 
   sliderSubscription: Subscription;
   calendarSubscription: Subscription;
 
-  constructor(private gateway: GatewayService,
-              private loaderService: LoaderService,
+  constructor(private loaderService: LoaderService,
               private calendar: CalendarService,
               private slider: MonthsCarouselService) {
     this.getMonth();
+    
     this.slider.setActiveMonth();
   }
 
@@ -66,18 +64,22 @@ export class CalendarComponent implements OnInit, OnDestroy {
   }
 
   getPerformanceEvents() {
-    console.log('getPerformance')
     this.loaderService.start('poster');
     this.calendarSubscription = this.calendar.events.subscribe((value) => {
       this.events = value;
-      console.log(this.events)
       this.weeks = this.calendar.weeks;
       this.loaderService.stop('poster');
     }, err => this.loaderService.stop('poster'));
   }
 
+  delSubscription(subscription: Subscription){
+    if (subscription) {
+      subscription.unsubscribe();
+    }
+  }
+
   ngOnDestroy() {
-    this.sliderSubscription.unsubscribe();
-    this.calendarSubscription.unsubscribe();
+    this.delSubscription(this.sliderSubscription);
+    this.delSubscription(this.calendarSubscription);
   }
 }

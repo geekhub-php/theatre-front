@@ -13,6 +13,7 @@ $popup-border-color: #b6b6b4;
 }
 
 .calendar {
+  margin-bottom: 160px;
 
   table {
     border-spacing: 0;
@@ -22,23 +23,6 @@ $popup-border-color: #b6b6b4;
   .calendar {
     max-width: 100%;
     margin: 35px 0;
-  }
-
-  .panel {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background-color: rgba($secondary-color, .6);
-    display: none;
-    opacity: 0;
-    overflow: hidden;
-
-    p {
-      color: $white-color;
-      text-align: center;
-      font-size: 1rem;
-      margin: 5px auto 0;
-    }
   }
 
   .day__of__week {
@@ -292,6 +276,7 @@ $popup-border-color: #b6b6b4;
     color: $white-color;
     margin: auto 0;
     padding: 0;
+    text-decoration: none;
 
     & .events__performance__title {
       margin: auto 0;

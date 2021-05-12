@@ -1,6 +1,6 @@
 <div class="poster__title" draggable="false">
   <h2 class="page-title">
-    <ng-container i18n="@@posterFor">Афіша</ng-container>
+    <ng-container i18n="@@posterFor">Poster</ng-container>
   </h2>
   <div class="poster__toggle">
     <div class="poster__toggle__item">
@@ -10,26 +10,24 @@
         [class.poster__toggle__item__active]="activeComp.calendarActive"
       >
         <img src="assets/images/calendar/calendar-2-line.svg" alt="">
-        <span class="poster__toggle__text">Календар</span>
+        <span class="poster__toggle__text" i18n="@@calendarView">Calendar view</span>
       </button>
     </div>
     <div class="poster__toggle__item" [class.poster__toggle__item__active]="activeComp.listActive">
       <button (click)="changeViewToList()" class="poster__toggle__btn">
         <img src="assets/images/calendar/bxs-grid.svg" alt="">
-        <span class="poster__toggle__text">Список</span>
+        <span class="poster__toggle__text"  i18n="@@listView">List view</span>
       </button>
     </div>
-  </div>
+  </div>  
+  <app-spinner name="poster" class="poster__spinner"></app-spinner>
 </div>
 
-<app-months-carousel
-  (selectedMonth)="selectMonth($event)"
-></app-months-carousel>
-
-<app-spinner name="poster"></app-spinner>
+<app-months-carousel (selectedMonth)="selectMonth()"></app-months-carousel>
 
 <app-calendar *ngIf="viewMode === views.CALENDAR"></app-calendar>
 
 <app-list-view *ngIf="viewMode === views.LIST"></app-list-view>
 
 <app-mobile-view *ngIf="viewMode === views.MOBILE"></app-mobile-view>
+ 

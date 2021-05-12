@@ -15,14 +15,23 @@ import { LoaderService } from "../../../components/partials/spinner/loader.servi
 export class MonthsCarouselService implements OnDestroy {
   private monthsSlider$: Subject<TMonthsSliderElement> = new Subject<TMonthsSliderElement>();
   private month$: Subject<TMonthProperty> = new Subject<TMonthProperty>();
+  private activeMonth$: Subject<{id: string}> = new Subject<{id: string}>();
 
   private monthsSlider: TMonthsSliderElement;
   private queryMonthList = [];
+  private activeBox: TMonthsSliderElement;
+  private activeMonth = {id: ''};
 
   private monthList: Array<TSliderMonth> = [];
-  private onDrugSubscription: Subscription;
+  private onDragSubscription: Subscription;
   private scrollSubscription: Subscription;
   private isSpinnerActive = false;
+  private plugs = {
+    jan: {id: 'Jan_plug', index: 0},
+    feb: {id: 'Feb_plug', index: 1},
+    nov: {id: 'Nov_plug', index: 10},
+    dec: {id: 'Dec_plug', index: 11}
+  };
 
   private screen: TScreenProperty = {
     fullScreen: true,
@@ -40,7 +49,7 @@ export class MonthsCarouselService implements OnDestroy {
   private month: TMonthProperty = {
     activeMonth: null,
     currentFullDate: new Date(),
-    amountOfYears: 100,
+    amountOfYears: 10,
   };
 
   constructor(private spinner: LoaderService) {
@@ -49,9 +58,13 @@ export class MonthsCarouselService implements OnDestroy {
     });
 
     this.spinner.subject.subscribe((data) => {
-      this.isSpinnerActive = data.load
+      this.isSpinnerActive = data.load;
     });
 
+  }
+
+  getActiveMonth() {
+    return this.activeMonth$.asObservable();
   }
 
   getMonth() {
@@ -61,9 +74,25 @@ export class MonthsCarouselService implements OnDestroy {
   setCarousel(carousel: TMonthsSliderElement) {
     this.monthsSlider = carousel;
     this.monthsSlider$.next(this.monthsSlider);
-    const onScroll = fromEvent(this.monthsSlider.nativeElement, 'scroll').subscribe(event => {
-      console.log(this.queryMonthList)
+    this.scrollSubscription = fromEvent(this.monthsSlider.nativeElement, 'scroll').subscribe(() => {
+      const rectBox = this.activeBox.nativeElement.getBoundingClientRect();
+      this.queryMonthList.forEach(el => {
+        const id = el.nativeElement.firstChild.id;
+        const rect = el.nativeElement.getBoundingClientRect()
+        if (rect.left >= rectBox.left - 150 && rect.left < rectBox.left + 150) {
+          if (this.activeMonth !== id) {
+            this.activeMonth.id = id
+            this.activeMonth$.next(this.activeMonth)
+          }
+        } else if (this.activeMonth === id && (rect.left >= rectBox.left + 50 || rect.left < rectBox.left)){
+          this.activeMonth$.next({id: 'disable'})
+        }
+      })
     })
+  }
+
+  setActiveBox(activeBox: TMonthsSliderElement) {
+    this.activeBox = activeBox
   }
 
   setQueryMonthsList(monthItems: QueryList<TMonthsSliderElement>) {
@@ -104,14 +133,42 @@ export class MonthsCarouselService implements OnDestroy {
 
   checkPosition() {
     if (this.screen.currentPosition < this.screen.startPoint) {
-      this.screen.currentPosition = this.screen.startPoint;
-    } else if (
-      this.screen.currentPosition >
-      this.screen.scrollWidth - this.screen.screenWidth
-    ) {
-      this.screen.currentPosition =
-        this.screen.scrollWidth - this.screen.screenWidth;
+      this.scrollToCurrentMonth(this.checkLastMonth(this.plugs.dec.id));
+    } else if (this.screen.currentPosition > this.screen.scrollWidth - this.screen.screenWidth) {
+      this.scrollToCurrentMonth(this.checkLastMonth(this.plugs.jan.id));
     }
+  }
+
+  dateCreator(index: number) {
+    const middleDate = 15;
+    const half = 2;
+    const date = new Date();
+    date.setDate(middleDate);
+    date.setMonth(index);
+    return `${date.getUTCMonth()}/${date.getUTCFullYear()}/${
+      this.month.amountOfYears / half
+    }`
+  }
+
+  checkLastMonth(id) {
+    switch (id) {
+      case this.plugs.jan.id:
+          id = this.dateCreator(this.plugs.jan.index);
+        break;
+        case this.plugs.dec.id:
+          id = this.dateCreator(this.plugs.dec.index);
+        break;
+        case this.plugs.nov.id:
+          id = this.dateCreator(this.plugs.nov.index);
+        break;
+        case this.plugs.feb.id:
+          id = this.dateCreator(this.plugs.feb.index);
+        break;
+      default:
+        break;
+    }
+
+    return id;
   }
 
   setDefaultData() {
@@ -128,6 +185,7 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   createMonthList(monthLng: Array<string>) {
+    this.monthList = [];
     let newMonthList: Array<TSliderMonth> = [];
     const monthCreator = (date, name, id): TSliderMonth => ({ date, name, id });
     const { amountOfYears } = this.month;
@@ -156,16 +214,16 @@ export class MonthsCarouselService implements OnDestroy {
       monthCreator(
         new Date(),
         monthLng[monthLng.length - penultimateMonthCount],
-        Date.now().toString()
+        this.plugs.nov.id
       ),
       monthCreator(
         new Date(),
         monthLng[monthLng.length - 1],
-        Date.now().toString()
+        this.plugs.dec.id 
       ),
       ...this.monthList,
-      monthCreator(new Date(), monthLng[0], Date.now().toString()),
-      monthCreator(new Date(), monthLng[1], Date.now().toString()),
+      monthCreator(new Date(), monthLng[0], this.plugs.jan.id),
+      monthCreator(new Date(), monthLng[1], this.plugs.feb.id),
     ];
     this.setActiveMonth(this.month.activeMonth);
     return this.monthList;
@@ -185,7 +243,10 @@ export class MonthsCarouselService implements OnDestroy {
     }
   }
 
-  scrollToCurrentMonth() {
+  scrollToCurrentMonth(id?) {
+    if (id) {
+      this.month.activeMonth = id
+    }
     this.queryMonthList.forEach((month) => {
       const { firstChild, offsetLeft } = month.nativeElement;
       if (this.month.activeMonth === firstChild.id) {
@@ -203,7 +264,6 @@ export class MonthsCarouselService implements OnDestroy {
       if (month.id === id) {
         this.month.currentFullDate = month.date;
         this.activeSpinner();
-        console.log(this.month)
         this.month$.next(this.month);
       }
     });
@@ -222,29 +282,26 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   onPrev() {
-    if (
-      !(this.monthsSlider.nativeElement.scrollLeft <= this.screen.startPoint)
-    ) {
+    if (!(this.monthsSlider.nativeElement.scrollLeft <= this.screen.startPoint)) {
       this.screen.currentPosition -= this.screen.scrollStep;
       this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
       this.setActiveMonth();
       this.activeSpinner();
       this.monthsSlider$.next(this.monthsSlider);
+    } else {
+      this.scrollToCurrentMonth(this.checkLastMonth(this.plugs.dec.id))
     }
   }
 
   onNext() {
-    if (
-      !(
-        this.screen.scrollWidth - this.monthsSlider.nativeElement.scrollLeft <=
-        this.screen.screenWidth
-      )
-    ) {
+    if (!(this.screen.scrollWidth - this.monthsSlider.nativeElement.scrollLeft <= this.screen.screenWidth)) {
       this.screen.currentPosition += this.screen.scrollStep;
       this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
       this.setActiveMonth();
       this.activeSpinner();
       this.monthsSlider$.next(this.monthsSlider);
+    } else {
+      this.scrollToCurrentMonth(this.checkLastMonth(this.plugs.jan.id))
     }
   }
 
@@ -260,7 +317,7 @@ export class MonthsCarouselService implements OnDestroy {
 
     const onEnd = () => mouseup$.pipe(map((event) => startPos - event.clientX));
 
-    this.onDrugSubscription = mousedown$
+    this.onDragSubscription = mousedown$
       .pipe(
         map((event) => {
           event.stopPropagation();
@@ -279,15 +336,13 @@ export class MonthsCarouselService implements OnDestroy {
 
         if (Math.abs(leftPosition) < minCountForClick) {
           this.queryMonthList.forEach((el) => {
-            if (el.nativeElement.firstChild.id === tagData.id) {
-              if (
-                !isNaN(Number(tagData.id)) ||
-                el.nativeElement.firstChild.id === this.month.activeMonth
-              ) {
-                this.stopSpinner();
-
-                return;
-              }
+            if (!!tagData.id) {
+            tagData.id = this.checkLastMonth(tagData.id)
+            if (tagData.id === this.month.activeMonth) {
+              // this.stopSpinner()
+              return;
+            }
+            if (el.nativeElement.firstChild.id === tagData.id) {  
               this.screen.currentPosition =
                 el.nativeElement.offsetLeft - this.screen.scrollAmount;
               this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
@@ -295,6 +350,7 @@ export class MonthsCarouselService implements OnDestroy {
               this.getMonthData(this.month.activeMonth);
               this.activeSpinner();
             }
+          }
           });
         } else {
           // scrollSpeed for increasing scroll speed
@@ -330,16 +386,13 @@ export class MonthsCarouselService implements OnDestroy {
         el.nativeElement.offsetLeft ===
         this.screen.currentPosition + this.screen.scrollAmount
       ) {
-        if (!isNaN(Number(el.nativeElement.firstChild.id))) {
-          return;
-        }
-        this.getMonthData(el.nativeElement.firstChild.id);
+        this.getMonthData(this.checkLastMonth(el.nativeElement.firstChild.id));
       }
     });
   }
 
   ngOnDestroy() {
     this.scrollSubscription.unsubscribe();
-    this.onDrugSubscription.unsubscribe();
+    this.onDragSubscription.unsubscribe();
   }
 }

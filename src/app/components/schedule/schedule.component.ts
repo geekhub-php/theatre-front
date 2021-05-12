@@ -5,6 +5,7 @@ import { GatewayService } from '../../services/gateway.service';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { CalendarService } from './calendar.service';
 import { MonthsCarouselService } from './months-carousel/months-carousel.service';
+import { Subscription } from 'rxjs';
 
 enum ScheduleViewModes {
   CALENDAR = 'Calendar',
@@ -25,6 +26,8 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
   views = ScheduleViewModes;
+  sliderSubscription: Subscription
+  
 
   activeComp = {
     calendarActive: false,
@@ -80,7 +83,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loaderService.start('poster');
-    // this.date = this.calendar.currentDate;
     this.getMonth();
 
     this.viewMode = this.savedLocale;
@@ -90,6 +92,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
       'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
       'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
     this.gateway.updateCanonicalURL();
+    this.setViewMode();
   }
 
   delTimeout() {
@@ -98,14 +101,21 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     }
   }
 
-  selectMonth(date) {
-    console.log('selectMonth')
+  selectMonth() {
     this.delTimeout();
     // setTimeout used to prevent requests if user switches months too frequently
     this.timeout = setTimeout(() => {
       this.calendar.getPerformanceByDate(this.date);
       this.isToday = this.calendar.isToday(this.date);
     }, 300)
+  }
+
+  setViewMode() {
+    if  (this.viewMode === ScheduleViewModes.CALENDAR) {
+      this.changeViewToCalendar();
+    } else if (this.viewMode === ScheduleViewModes.LIST) {
+      this.changeViewToList();
+    }
   }
 
   changeViewToCalendar() {
@@ -116,6 +126,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
+    this.onResize();
   }
 
   changeViewToList() {
@@ -126,19 +137,27 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
+    this.onResize();
   }
 
   getMonth() {
-    this.slider.getMonth().subscribe(month => {
+    this.sliderSubscription = this.slider.getMonth().subscribe(month => {
       if(month && month.currentFullDate) {
-        this.date = month.currentFullDate
+        this.date = month.currentFullDate;
         this.isToday = this.calendar.isToday(this.date);
       }
     });
   }
 
+  delSubscription(subscription: Subscription){
+    if (subscription) {
+      subscription.unsubscribe();
+    }
+  }
+
   ngOnDestroy() {
-    this.delTimeout()
+    this.delSubscription(this.sliderSubscription);
+    this.delTimeout();
   }
 
   get savedLocale() {

@@ -8,7 +8,7 @@ import { PerformanceEvent } from '../../store/schedule/PerformanceEvent';
 import { ScheduleListResponse } from '../../store/schedule/ScheduleListResponse';
 
 import { map } from 'rxjs/operators';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 
 @Injectable({
@@ -51,7 +51,6 @@ export class CalendarService {
       }
       weeks.push(week);
     }
-    console.log(weeks)
     return weeks;
   }
 

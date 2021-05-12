@@ -5,6 +5,7 @@ import { LoaderService } from '../../partials/spinner/loader.service';
 import { CalendarService } from '../calendar.service';
 import { MonthsCarouselService } from '../months-carousel/months-carousel.service'
 import { Subscription } from 'rxjs';
+import { isConstructorDeclaration } from 'typescript';
 
 @Component({
   selector: 'app-list-view',
@@ -25,7 +26,6 @@ export class ListViewComponent implements OnInit, OnDestroy {
               private calendar: CalendarService) { }
 
   ngOnInit() {
-    console.log('onInit')
     this.getMonth()
     this.slider.setActiveMonth()
     this.calendar.getPerformanceEvents()
@@ -36,7 +36,6 @@ export class ListViewComponent implements OnInit, OnDestroy {
 
   getMonth() {
     this.sliderSubscription = this.slider.getMonth().subscribe(month => {
-      console.log(month.currentFullDate)  
       this.currentDate = month.currentFullDate;
     })
   }
@@ -44,6 +43,7 @@ export class ListViewComponent implements OnInit, OnDestroy {
   getPerformanceEvents() {
     this.loaderService.start('poster');
     this.calendarSubscription = this.calendar.events.subscribe((value) => {
+      console.log(value)
       this.events = value.filter(({date_time}) => {
         const resDate = new Date(date_time)
         const monthsEqual = resDate.getMonth() === this.currentDate.getMonth()
@@ -53,8 +53,14 @@ export class ListViewComponent implements OnInit, OnDestroy {
     }, err => this.loaderService.stop('poster'));
   }
 
+  delSubscription(subscription: Subscription){
+    if (subscription) {
+      subscription.unsubscribe();
+    }
+  }
+
   ngOnDestroy() {
-    this.sliderSubscription.unsubscribe();
-    this.calendarSubscription.unsubscribe();
+    this.delSubscription(this.sliderSubscription);
+    this.delSubscription(this.calendarSubscription);
   }
 }
