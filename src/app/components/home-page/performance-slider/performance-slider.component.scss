@@ -88,6 +88,8 @@ gallery {
   display: flex;
   flex-direction: row;
   margin-right: 20px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, .8px);
 }
 
 .image {
@@ -121,14 +123,10 @@ gallery {
 
 .performance__venue, .performance__type, .tickets-day {
   text-align: left;
-
-  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, normal);
 }
 
 .tickets-month {
   margin-left: 4px;
-
-  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, normal);
 }
 
 .container-no-performance {
