@@ -3,7 +3,9 @@
 
 .page-title {
   padding-top: 62px;
+
   @include about-title;
+
   padding-bottom: 20px;
 }
 
@@ -32,7 +34,7 @@ img:hover {
 }
 
 h4 {
-    margin-top: 10px;
+  margin-top: 10px;
   color: $font-color-white;
   font-size: $font-size-medium;
 }

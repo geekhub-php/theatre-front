@@ -4,14 +4,17 @@
 
 .myContainer {
   @include _container;
+
   margin-top: 33px;
 }
+
 .page-title {
   margin-top: 0;
 }
 
-.page-title{
+.page-title {
   padding-top: 10px;
+
   @include about-title;
 }
 
@@ -41,21 +44,21 @@
     color: $secondary-background-color;
   }
 
-  a:hover{
+  a:hover {
     color: $secondary-background-color;
   }
 
   margin-bottom: 150px;
 }
 
-.position{
+.position {
   text-transform: capitalize;
   font-family: $body-font-family;
   font-size: $font-size-medium;
   margin-bottom: 30px;
 }
 
-.biography{
+.biography {
   font-family: $body-font-family;
   font-size: $font-size-medium;
   color: $font-color-accent;

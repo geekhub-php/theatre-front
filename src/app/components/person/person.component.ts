@@ -48,7 +48,7 @@ export class PersonComponent implements OnInit {
       return;
     }
 
-    const slug = this.router.snapshot.paramMap.get('slug');
+    const slug = this.router.snapshot.paramMap.get('personId');
     this.getPerson(slug);
   }
 

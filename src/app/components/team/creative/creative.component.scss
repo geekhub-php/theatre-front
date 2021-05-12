@@ -20,6 +20,7 @@
 
 .page-title-name {
   padding-top: 10px;
+
   @include about-title;
 }
 
@@ -42,6 +43,7 @@ h4 {
 
 .list-item {
   @include flex-center;
+
   margin-bottom: 80px;
 }
 
@@ -80,8 +82,10 @@ a {
   font-family: $body-font-family;
   font-size: $font-size-xxx-large;
   line-height: 1.5;
-  letter-spacing: 0.8px;
+  letter-spacing: .8px;
+
   @include flex-center;
+
   color: $background-color-white;
 }
 
@@ -99,6 +103,7 @@ a {
   @include display;
   @include gradient;
   @include opacity;
+
   position: $position;
   align-items: center;
   cursor: pointer;
@@ -116,6 +121,7 @@ a {
   @include display;
   @include opacity;
   @include gradient;
+
   position: $position;
   align-items: center;
   bottom: 0;
@@ -143,6 +149,7 @@ a {
 }
 
 .images-l {
+
   .histories__list-text {
     margin-top: 30px;
   }
@@ -158,6 +165,7 @@ a {
   }
 
   .images {
+
     .histories__list-text {
       margin-top: 30px;
     }
@@ -203,7 +211,8 @@ a {
 
 .link-persons {
   margin-top: 30px;
-  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-normal, 1.5, 1.39);
-  margin-bottom: 60px;
 
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-normal, 1.5, 1.39);
+
+  margin-bottom: 60px;
 }

@@ -2,13 +2,12 @@
 @import "~assets/styles/_variables";
 @import "~assets/styles/aboutStyles";
 
-.roles__title{
+.roles__title {
   color: $font-color-accent;
 }
 
 
-
-a:hover{
+a:hover {
   color: $secondary-background-color;
 }
 
@@ -27,11 +26,6 @@ a:hover{
     text-decoration: underline;
     line-height: 1.7;
   }
-
-  .role__link {
-    text-decoration: none;
-    color: $secondary-background-color !important;
-  }
 }
 
 .role {
@@ -46,4 +40,9 @@ a:hover{
       transition: .3s ease;
     }
   }
+}
+
+.roles .role__link {
+  text-decoration: none;
+  color: $secondary-background-color !important;
 }
