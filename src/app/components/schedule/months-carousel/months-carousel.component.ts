@@ -31,6 +31,7 @@ import { MonthsCarouselService } from './months-carousel.service';
 
 export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @Output() selectedMonth = new EventEmitter();
+
   @ViewChild('activeBox') activeBox: TMonthsSliderElement;
   @ViewChild('monthsSlider') monthsSlider: TMonthsSliderElement;
   @ViewChildren('monthItem') monthItems: QueryList<TMonthsSliderElement>;
@@ -77,9 +78,12 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   };
 
   constructor(
-    @Inject(LOCALE_ID) private localeId: string,
     private cd: ChangeDetectorRef,
-    private carousel: MonthsCarouselService) {
+    private carousel: MonthsCarouselService,
+    @Inject(LOCALE_ID) private localeId: string,
+  ) {
+      console.warn(this.localeId);
+      this.monthsList = this.carousel.createMonthList(this.monthsNameList[this.localeId]);
   }
 
   @HostListener('window:resize') onResize() {
@@ -100,7 +104,6 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   }
 
   ngOnInit() {
-    this.monthsList = this.carousel.createMonthList(this.monthsNameList[this.localeId]);
     this.getMonth();
     this.getActiveMonth();
     this.carousel.setDefaultData();
