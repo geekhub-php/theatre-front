@@ -1,13 +1,15 @@
 @import "~assets/styles/variables";
 
+
+.header-wrapper {
+  background-color: $background-main-color-darker;
+}
 .header {
   position: sticky;
   top: 0;
   box-shadow: none;
   width: $container-width;
   margin: $container-margin;
-  box-shadow: $box-shadow;
-  background-color: $background-main-color-darker;
   z-index: 8;
 
   .navbar {
