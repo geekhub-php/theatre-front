@@ -1,0 +1,40 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.page-title {
+  padding-top: 62px;
+
+  @include about-title;
+
+  padding-bottom: 20px;
+}
+
+img {
+  width: 224px;
+  height: 336px;
+  filter: grayscale(100%);
+}
+
+img:hover {
+  filter: none;
+}
+
+.persons-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.emplo {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-bottom: 62px;
+  cursor: pointer;
+}
+
+h4 {
+  margin-top: 10px;
+  color: $font-color-white;
+  font-size: $font-size-medium;
+}

@@ -9,6 +9,11 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { AboutComponent } from './components/about/about.component';
 import { AboutMoreComponent } from './components/about/about-more/about-more.component';
 
+import { AdministrationComponent } from './components/team/administration/administration.component';
+import { ArtisticComponent } from './components/team/artistic/artistic.component';
+import { CreativeComponent } from './components/team/creative/creative.component';
+import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
+
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { TeamComponent } from './components/team/team.component';
@@ -38,8 +43,19 @@ const appRoutes: Routes = [
   {path: 'news/:slug', component: ArticleComponent},
   {path: 'about', component: AboutComponent},
   {path: 'about/:slug', component: AboutMoreComponent},
-  {path: 'persons', component: TeamComponent},
-  {path: 'persons/:slug', component: PersonComponent},
+  {
+    path: 'persons', component: TeamComponent,
+    children: [
+      {path: '', redirectTo: 'creative', pathMatch: 'full'},
+      {path: 'creative', component: CreativeComponent},
+      {path: 'artistic', component: ArtisticComponent},
+      {path: 'administration', component: AdministrationComponent},
+      {path: 'administration/:slug', component: PersoneShowmoreComponent},
+      {path: 'creative/:slug', component: PersoneShowmoreComponent},
+      {path: 'artistic/:slug', component: PersoneShowmoreComponent},
+      {path: ':personId', component: PersonComponent}
+    ]
+  },
   {path: 'contacts', component: ContactsComponent},
   {path: 'board-trustees', component: BoardTrusteesComponent},
   {path: 'donate', component: DonateComponent},

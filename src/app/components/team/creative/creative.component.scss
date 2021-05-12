@@ -1,0 +1,218 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+@import "~assets/styles/_sliderMixins";
+
+.myContainer {
+  @include _container;
+}
+
+.creative-navigation {
+  @include breadcrumbs-nav;
+
+  h3 {
+    font-size: $font-size-small;
+  }
+
+  .persons-navigation-bold {
+    @include breadcrumbs-nav-bold;
+  }
+}
+
+.page-title-name {
+  padding-top: 10px;
+
+  @include about-title;
+}
+
+.actors-title,
+.orchestra-title {
+  @include flex-center;
+}
+
+h2 {
+  color: $font-color-white;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: $font-size-medium;
+  font-family: $body-font-family;
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-white;
+}
+
+.list-item {
+  @include flex-center;
+
+  margin-bottom: 80px;
+}
+
+.image {
+  filter: grayscale(100%);
+  background-size: cover !important;
+  height: 470px;
+  cursor: pointer;
+}
+
+.image:hover {
+  filter: none;
+}
+
+.ballet {
+  background-color: $background-main-color-darker;
+  margin-bottom: 80px;
+  padding-top: 80px;
+
+  h4 {
+    margin-bottom: 80px;
+  }
+}
+
+.wrapped {
+  justify-content: center;
+}
+
+a {
+  color: $dots-active-color;
+  text-decoration: none;
+}
+
+.title {
+  height: 60px;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  line-height: 1.5;
+  letter-spacing: .8px;
+
+  @include flex-center;
+
+  color: $background-color-white;
+}
+
+.all-prersons {
+  @include display;
+}
+
+.link-persons {
+  width: 170px;
+  height: 25px;
+  line-height: 1.39;
+}
+
+.left {
+  @include display;
+  @include gradient;
+  @include opacity;
+
+  position: $position;
+  align-items: center;
+  cursor: pointer;
+  bottom: 0;
+  width: 70px;
+  z-index: 1;
+  height: 100%;
+}
+
+.left:hover {
+  @include hover_opacity;
+}
+
+.right {
+  @include display;
+  @include opacity;
+  @include gradient;
+
+  position: $position;
+  align-items: center;
+  bottom: 0;
+  width: 70px;
+  height: 100%;
+  right: 5px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.right:hover {
+  @include hover_opacity;
+}
+
+.myPoint {
+  @include myPoint;
+}
+
+.myPoint li {
+  @include myPoint-li;
+}
+
+.myPoint li.active {
+  @include myPoint-li__active;
+}
+
+.images-l {
+
+  .histories__list-text {
+    margin-top: 30px;
+  }
+}
+
+.ballet {
+  background-color: $background-main-color-darker;
+  margin-bottom: 40px;
+  padding-top: 80px;
+
+  h4 {
+    margin-bottom: 80px;
+  }
+
+  .images {
+
+    .histories__list-text {
+      margin-top: 30px;
+    }
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.orchestra {
+  padding-top: 80px;
+
+  .images-l {
+    @include flex-center;
+
+    .histories__list-text {
+      margin-left: 30px;
+      margin-right: 30px;
+      cursor: pointer;
+    }
+
+    img {
+      width: 332px;
+      height: 508px;
+      filter: grayscale(100%);
+    }
+
+    img:hover {
+      filter: none;
+    }
+  }
+}
+
+.all-persons {
+  @include flex-center;
+
+  a {
+    @include flex-center;
+  }
+}
+
+.link-persons {
+  margin-top: 30px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-normal, 1.5, 1.39);
+
+  margin-bottom: 60px;
+}

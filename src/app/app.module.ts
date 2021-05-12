@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -8,6 +8,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { NguCarouselModule } from '@ngu/carousel';
+import { GalleryModule } from 'ng-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -29,6 +30,11 @@ import { AboutMoreComponent } from './components/about/about-more/about-more.com
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
+import { PersonsHeaderComponent } from './components/team/persons-header/persons-header.component';
+import { AdministrationComponent } from './components/team/administration/administration.component';
+import { ArtisticComponent } from './components/team/artistic/artistic.component';
+import { CreativeComponent } from './components/team/creative/creative.component';
+import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
 
 import { StripHtmlModule } from './pipes/strip-html.module';
 
@@ -39,15 +45,15 @@ import { MobileViewComponent } from './components/schedule/mobile-view/mobile-vi
 import { CalendarService } from './components/schedule/calendar.service';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
-import { SliderComponent } from './components/home-page/slider/slider.component';
+import { PerformanceSliderComponent } from './components/home-page/performance-slider/performance-slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
 import { ActorsSliderComponent } from './components/partials/actors-slider/actors-slider.component';
+import { SeasonsComponent } from './components/performance/seasons/seasons.component';
 
 import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
-import { SeasonsComponent } from './components/performance/seasons/seasons.component';
 
 @NgModule({
   declarations: [
@@ -69,11 +75,17 @@ import { SeasonsComponent } from './components/performance/seasons/seasons.compo
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
-    SliderComponent,
+    PerformanceSliderComponent,
     NewsListItemComponent,
     RepertoireNavHeaderComponent,
     CooperationComponent,
-    ActorsSliderComponent, SeasonsComponent
+    PersonsHeaderComponent,
+    AdministrationComponent,
+    ArtisticComponent,
+    CreativeComponent,
+    PersoneShowmoreComponent,
+    ActorsSliderComponent,
+    SeasonsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -91,6 +103,7 @@ import { SeasonsComponent } from './components/performance/seasons/seasons.compo
     NgxGoogleAnalyticsRouterModule,
     SpinnerModule,
     CoreModule,
+    GalleryModule,
     NguCarouselModule
   ],
   providers: [
@@ -100,8 +113,7 @@ import { SeasonsComponent } from './components/performance/seasons/seasons.compo
   exports: [
     DonateComponent
   ],
-  bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
