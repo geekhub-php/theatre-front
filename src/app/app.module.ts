@@ -43,9 +43,11 @@ import { CalendarService } from './components/schedule/calendar.service';
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { SliderComponent } from './components/home-page/slider/slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
+import { CooperationComponent } from './components/cooperation/cooperation.component';
 import { ActorsSliderComponent } from './components/partials/actors-slider/actors-slider.component';
 
 import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -69,10 +71,11 @@ import { environment } from '../environments/environment';
     SideMenuComponent,
     SliderComponent,
     NewsListItemComponent,
+    CooperationComponent,
     ActorsSliderComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -95,5 +98,6 @@ import { environment } from '../environments/environment';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 

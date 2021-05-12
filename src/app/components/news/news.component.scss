@@ -23,32 +23,3 @@ h2 {
   float: right;
 }
 
-ngb-pagination ::ng-deep li:not(.active) a {
-  font-family: $body-font-family !important;
-  font-size: $font-size-medium !important;
-  line-height: 18px !important;
-  background-color: $background-color-black !important;
-  color: $background-color-disabled !important;
-  border: none;
-  width: 40px !important;
-  height: 32px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-ngb-pagination ::ng-deep ul > li.active > a {
-  font-family: $body-font-family !important;
-  font-weight: $font-weight-bold !important;
-  font-size: $font-size-medium !important;
-  line-height: 18px !important;
-  background-color: $background-color-black !important;
-  color: $font-color-white !important;
-  border-radius: 2px !important;
-  border: solid 2px $background-color-disabled !important;
-  width: 32px !important;
-  height: 32px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}

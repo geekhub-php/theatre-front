@@ -49,6 +49,114 @@
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="cooperation" datatype="html">
+        <source>Cooperation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="documentation" datatype="html">
+        <source>Documentation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="download" datatype="html">
+        <source>Download</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">188</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">196</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">204</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">212</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">220</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">228</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">237</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="logos" datatype="html">
+        <source>Logos for posters and media</source>
+          <context-group purpose="location">
+            <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+            <context context-type="linenumber">241</context>
+          </context-group>
+      </trans-unit>
+      <trans-unit id="downloadAs" datatype="html">
+        <source>Download as...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">249</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">256</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">263</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="popupTitleFile" datatype="html">
+        <source>Selected file</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">274</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="popupTitleFormat" datatype="html">
+        <source>is available in the following formats:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">275</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="downloadArchive" datatype="html">
+        <source>Download archive</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
+          <context context-type="linenumber">308</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="aboutTitle" datatype="html">
         <source>About</source>
         <context-group purpose="location">
@@ -153,7 +261,7 @@
         <source>Contacts</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">33</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
@@ -161,24 +269,52 @@
         </context-group>
       </trans-unit>
       <trans-unit id="contactsDirector" datatype="html">
-        <source>Director, Secretary</source>
+        <source>Director, secretary:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsAdmin" datatype="html">
-        <source>Administrator</source>
+        <source>Administrator:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsTicketOffice" datatype="html">
-        <source>Ticket office</source>
+        <source>Ticket office:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsWorkingHours" datatype="html">
+        <source>Ticket office working hours:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsMonFri" datatype="html">
+        <source>Mon-Fri: 09.00 - 18.00</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsSatSun" datatype="html">
+        <source>Sat-Sun: 09.00 - 18.00</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsBankDetails" datatype="html">
+        <source>Bank Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsEmail" datatype="html">
@@ -232,6 +368,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
           <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="newsItem" datatype="html">
+        <source>News</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="photogallery" datatype="html">
+        <source>Photo Gallery</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article.component.html</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cooperationBtn" datatype="html">
