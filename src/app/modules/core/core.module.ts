@@ -12,7 +12,6 @@ import { SpinnerModule } from '../../components/partials/spinner/spinner.module'
 
 import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
-import { BreadcrumbComponent } from '../../components/partials/breadcrumb/breadcrumb.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     VisuallyImpairedComponent,
     FooterNavComponent,
-    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +36,6 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     FooterNavComponent,
     VisuallyImpairedComponent,
-    BreadcrumbComponent
   ]
 })
 
