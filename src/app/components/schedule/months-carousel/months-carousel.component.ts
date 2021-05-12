@@ -100,7 +100,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   getActiveMonth() {
    this.activeMonthSubscription = this.carousel.getActiveMonth().subscribe(activeMonth => {
      this.activeMonth = activeMonth;
-    }) 
+    });
   }
 
   ngOnInit() {

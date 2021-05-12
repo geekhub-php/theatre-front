@@ -51,6 +51,7 @@ export class CalendarService {
       }
       weeks.push(week);
     }
+
     return weeks;
   }
 
@@ -62,10 +63,10 @@ export class CalendarService {
 
   getMonth() {
     this.slider.getMonth().subscribe(month => {
-      if(month && month.currentFullDate) {
-        this.currentDate = month.currentFullDate
+      if (month && month.currentFullDate) {
+        this.currentDate = month.currentFullDate;
       }
-    })
+    });
   }
 
   get dateFrom() {

@@ -1,16 +1,16 @@
-import { fromEvent, Subject, Subscription } from "rxjs";
-import { map, switchMap } from "rxjs/operators";
-import { Injectable, OnDestroy, QueryList } from "@angular/core";
+import { fromEvent, Subject, Subscription } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { Injectable, OnDestroy, QueryList } from '@angular/core';
 import {
   TMonthProperty,
   TMonthsSliderElement,
   TScreenProperty,
   TSliderMonth,
-} from "../../../store/schedule/MonthsSliderItem";
-import { LoaderService } from "../../../components/partials/spinner/loader.service";
+} from '../../../store/schedule/MonthsSliderItem';
+import { LoaderService } from '../../../components/partials/spinner/loader.service';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class MonthsCarouselService implements OnDestroy {
   private monthsSlider$: Subject<TMonthsSliderElement> = new Subject<TMonthsSliderElement>();
@@ -72,27 +72,28 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   setCarousel(carousel: TMonthsSliderElement) {
+    const reserveWidth = { short: 50, long: 150 };
     this.monthsSlider = carousel;
     this.monthsSlider$.next(this.monthsSlider);
     this.scrollSubscription = fromEvent(this.monthsSlider.nativeElement, 'scroll').subscribe(() => {
       const rectBox = this.activeBox.nativeElement.getBoundingClientRect();
       this.queryMonthList.forEach(el => {
         const id = el.nativeElement.firstChild.id;
-        const rect = el.nativeElement.getBoundingClientRect()
-        if (rect.left >= rectBox.left - 150 && rect.left < rectBox.left + 150) {
+        const rect = el.nativeElement.getBoundingClientRect();
+        if (rect.left >= rectBox.left - reserveWidth.long && rect.left < rectBox.left + reserveWidth.long) {
           if (this.activeMonth !== id) {
-            this.activeMonth.id = id
-            this.activeMonth$.next(this.activeMonth)
+            this.activeMonth.id = id;
+            this.activeMonth$.next(this.activeMonth);
           }
-        } else if (this.activeMonth === id && (rect.left >= rectBox.left + 50 || rect.left < rectBox.left)){
-          this.activeMonth$.next({id: 'disable'})
+        } else if (this.activeMonth === id && (rect.left >= rectBox.left + reserveWidth.short || rect.left < rectBox.left)) {
+          this.activeMonth$.next({id: 'disable'});
         }
-      })
-    })
+      });
+    });
   }
 
   setActiveBox(activeBox: TMonthsSliderElement) {
-    this.activeBox = activeBox
+    this.activeBox = activeBox;
   }
 
   setQueryMonthsList(monthItems: QueryList<TMonthsSliderElement>) {
@@ -145,9 +146,10 @@ export class MonthsCarouselService implements OnDestroy {
     const date = new Date();
     date.setDate(middleDate);
     date.setMonth(index);
+
     return `${date.getUTCMonth()}/${date.getUTCFullYear()}/${
       this.month.amountOfYears / half
-    }`
+    }`;
   }
 
   checkLastMonth(id) {
@@ -219,13 +221,14 @@ export class MonthsCarouselService implements OnDestroy {
       monthCreator(
         new Date(),
         monthLng[monthLng.length - 1],
-        this.plugs.dec.id 
+        this.plugs.dec.id
       ),
       ...this.monthList,
       monthCreator(new Date(), monthLng[0], this.plugs.jan.id),
       monthCreator(new Date(), monthLng[1], this.plugs.feb.id),
     ];
     this.setActiveMonth(this.month.activeMonth);
+
     return this.monthList;
   }
 
@@ -245,7 +248,7 @@ export class MonthsCarouselService implements OnDestroy {
 
   scrollToCurrentMonth(id?) {
     if (id) {
-      this.month.activeMonth = id
+      this.month.activeMonth = id;
     }
     this.queryMonthList.forEach((month) => {
       const { firstChild, offsetLeft } = month.nativeElement;
@@ -271,13 +274,13 @@ export class MonthsCarouselService implements OnDestroy {
 
   activeSpinner() {
     if (!this.isSpinnerActive) {
-      this.spinner.start("poster");
+      this.spinner.start('poster');
     }
   }
 
   stopSpinner() {
     if (this.isSpinnerActive) {
-      this.spinner.stop("poster");
+      this.spinner.stop('poster');
     }
   }
 
@@ -289,7 +292,7 @@ export class MonthsCarouselService implements OnDestroy {
       this.activeSpinner();
       this.monthsSlider$.next(this.monthsSlider);
     } else {
-      this.scrollToCurrentMonth(this.checkLastMonth(this.plugs.dec.id))
+      this.scrollToCurrentMonth(this.checkLastMonth(this.plugs.dec.id));
     }
   }
 
@@ -301,19 +304,19 @@ export class MonthsCarouselService implements OnDestroy {
       this.activeSpinner();
       this.monthsSlider$.next(this.monthsSlider);
     } else {
-      this.scrollToCurrentMonth(this.checkLastMonth(this.plugs.jan.id))
+      this.scrollToCurrentMonth(this.checkLastMonth(this.plugs.jan.id));
     }
   }
 
   onDrag() {
     const mousedown$ = fromEvent<any>(
       this.monthsSlider.nativeElement,
-      "mousedown"
+      'mousedown'
     );
-    const mouseup$ = fromEvent<any>(document, "mouseup");
+    const mouseup$ = fromEvent<any>(document, 'mouseup');
 
     let startPos = 0;
-    const tagData = { name: "", id: "" };
+    const tagData = { name: '', id: '' };
 
     const onEnd = () => mouseup$.pipe(map((event) => startPos - event.clientX));
 
@@ -328,7 +331,7 @@ export class MonthsCarouselService implements OnDestroy {
         switchMap(onEnd)
       )
       .subscribe((leftPosition) => {
-        if (tagData.name !== "span") {
+        if (tagData.name !== 'span') {
           return;
         }
         // 50 - reserve value if user hand shuddered when he wanted to click
@@ -337,12 +340,12 @@ export class MonthsCarouselService implements OnDestroy {
         if (Math.abs(leftPosition) < minCountForClick) {
           this.queryMonthList.forEach((el) => {
             if (!!tagData.id) {
-            tagData.id = this.checkLastMonth(tagData.id)
+            tagData.id = this.checkLastMonth(tagData.id);
             if (tagData.id === this.month.activeMonth) {
               // this.stopSpinner()
               return;
             }
-            if (el.nativeElement.firstChild.id === tagData.id) {  
+            if (el.nativeElement.firstChild.id === tagData.id) {
               this.screen.currentPosition =
                 el.nativeElement.offsetLeft - this.screen.scrollAmount;
               this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
@@ -373,8 +376,8 @@ export class MonthsCarouselService implements OnDestroy {
           this.activeSpinner();
         }
         this.monthsSlider$.next(this.monthsSlider);
-        tagData.name = "";
-        tagData.id = "";
+        tagData.name = '';
+        tagData.id = '';
       });
   }
 

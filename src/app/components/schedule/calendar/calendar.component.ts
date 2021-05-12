@@ -17,8 +17,8 @@ export class CalendarComponent implements OnInit, OnDestroy {
   weeks: Array<Array<Date>> | null = null;
   showMore = false;
   activeDay: Date | null = null;
-  selectedDate: Date
-  middleOfMonth = 15
+  selectedDate: Date;
+  middleOfMonth = 15;
 
   sliderSubscription: Subscription;
   calendarSubscription: Subscription;
@@ -27,12 +27,11 @@ export class CalendarComponent implements OnInit, OnDestroy {
               private calendar: CalendarService,
               private slider: MonthsCarouselService) {
     this.getMonth();
-    
     this.slider.setActiveMonth();
   }
 
   ngOnInit() {
-    this.calendar.getPerformanceEvents().then(() => { 
+    this.calendar.getPerformanceEvents().then(() => {
       this.getPerformanceEvents();
     });
   }
@@ -60,7 +59,6 @@ export class CalendarComponent implements OnInit, OnDestroy {
   onShowMore(day: Date) {
     this.showMore = !this.showMore;
     this.activeDay = day;
-    console.log(this.activeDay)
   }
 
   getPerformanceEvents() {
@@ -72,7 +70,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
     }, err => this.loaderService.stop('poster'));
   }
 
-  delSubscription(subscription: Subscription){
+  delSubscription(subscription: Subscription) {
     if (subscription) {
       subscription.unsubscribe();
     }

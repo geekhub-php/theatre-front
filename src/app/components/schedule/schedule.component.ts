@@ -19,20 +19,20 @@ enum ScheduleViewModes {
   styleUrls: ['./schedule.component.scss']
 })
 export class ScheduleComponent implements OnInit, OnDestroy {
-  private timeout;
 
   date: Date;
   isToday: boolean;
 
   viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
   views = ScheduleViewModes;
-  sliderSubscription: Subscription
-  
+  sliderSubscription: Subscription;
 
   activeComp = {
     calendarActive: false,
     listActive: true
   };
+
+  private timeout;
 
   constructor(
     private gateway: GatewayService,
@@ -102,12 +102,13 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   }
 
   selectMonth() {
+    const requestDelay = 300;
     this.delTimeout();
     // setTimeout used to prevent requests if user switches months too frequently
     this.timeout = setTimeout(() => {
       this.calendar.getPerformanceByDate(this.date);
       this.isToday = this.calendar.isToday(this.date);
-    }, 300)
+    }, requestDelay);
   }
 
   setViewMode() {
@@ -122,7 +123,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     this.viewMode = ScheduleViewModes.CALENDAR;
     if (this.activeComp.listActive) this.activeComp.listActive = false;
     this.activeComp.calendarActive = true;
-    
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
@@ -142,14 +142,14 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   getMonth() {
     this.sliderSubscription = this.slider.getMonth().subscribe(month => {
-      if(month && month.currentFullDate) {
+      if (month && month.currentFullDate) {
         this.date = month.currentFullDate;
         this.isToday = this.calendar.isToday(this.date);
       }
     });
   }
 
-  delSubscription(subscription: Subscription){
+  delSubscription(subscription: Subscription) {
     if (subscription) {
       subscription.unsubscribe();
     }

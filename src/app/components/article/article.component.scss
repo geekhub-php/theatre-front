@@ -26,17 +26,18 @@
   .container {
     margin-bottom: -30px;
 
-      .img {
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
+    .img {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
 
-      .post-date {
-        margin-top: 1rem;
-        text-align: right;
-        color: $secondary-color-lighter;
-      }
+    .post-date {
+      margin-top: 1rem;
+      text-align: right;
+      color: $secondary-color-lighter;
+    }
+
     .section_title {
       margin-bottom: 16px;
 
@@ -44,6 +45,7 @@
     }
   }
 }
+
 @media (max-width: 576px) {
 
   .container {

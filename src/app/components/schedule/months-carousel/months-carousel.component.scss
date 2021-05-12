@@ -6,7 +6,7 @@
   width: $container-width;
   margin: 10px auto 40px;
   z-index: 4;
-  transition: ease-out 300ms;
+  transition: ease-out .3s;
 
   .slider__months {
     display: flex;
@@ -22,7 +22,7 @@
       height: 100%;
       top: 0;
       left: 600px;
-      transition: ease-out 300ms;
+      transition: ease-out .3s;
     }
 
 
@@ -30,7 +30,7 @@
       position: relative;
       display: flex;
       user-select: none;
-      min-height: 70px; 
+      min-height: 70px;
       min-width: 300px;
 
       &__active span {
@@ -86,9 +86,10 @@
 
   .slider__months__container {
     width: 900px;
+
     .slider__months__active-box {
-        left: 300px;
-      }
+      left: 300px;
+    }
   }
 }
 

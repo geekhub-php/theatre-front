@@ -3,9 +3,8 @@ import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
 import { GatewayService } from '../../../services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';
 import { CalendarService } from '../calendar.service';
-import { MonthsCarouselService } from '../months-carousel/months-carousel.service'
+import { MonthsCarouselService } from '../months-carousel/months-carousel.service';
 import { Subscription } from 'rxjs';
-import { isConstructorDeclaration } from 'typescript';
 
 @Component({
   selector: 'app-list-view',
@@ -16,9 +15,9 @@ export class ListViewComponent implements OnInit, OnDestroy {
 
   events: Array<PerformanceEvent>;
   date: Date;
-  currentDate: Date
-  sliderSubscription: Subscription
-  calendarSubscription: Subscription
+  currentDate: Date;
+  sliderSubscription: Subscription;
+  calendarSubscription: Subscription;
 
   constructor(private gateway: GatewayService,
               private slider: MonthsCarouselService,
@@ -26,34 +25,33 @@ export class ListViewComponent implements OnInit, OnDestroy {
               private calendar: CalendarService) { }
 
   ngOnInit() {
-    this.getMonth()
-    this.slider.setActiveMonth()
+    this.getMonth();
+    this.slider.setActiveMonth();
     this.calendar.getPerformanceEvents()
       .then(() => this.getPerformanceEvents()
     );
-    // this.date = this.calendar.currentDate;
   }
 
   getMonth() {
     this.sliderSubscription = this.slider.getMonth().subscribe(month => {
       this.currentDate = month.currentFullDate;
-    })
+    });
   }
 
   getPerformanceEvents() {
     this.loaderService.start('poster');
     this.calendarSubscription = this.calendar.events.subscribe((value) => {
-      console.log(value)
       this.events = value.filter(({date_time}) => {
-        const resDate = new Date(date_time)
-        const monthsEqual = resDate.getMonth() === this.currentDate.getMonth()
-        return (resDate >= new Date()) && monthsEqual
-    })
+        const resDate = new Date(date_time);
+        const monthsEqual = resDate.getMonth() === this.currentDate.getMonth();
+
+        return (resDate >= new Date()) && monthsEqual;
+    });
       this.loaderService.stop('poster');
     }, err => this.loaderService.stop('poster'));
   }
 
-  delSubscription(subscription: Subscription){
+  delSubscription(subscription: Subscription) {
     if (subscription) {
       subscription.unsubscribe();
     }
