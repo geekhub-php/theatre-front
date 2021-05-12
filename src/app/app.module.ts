@@ -47,6 +47,7 @@ import { ActorsSliderComponent } from './components/partials/actors-slider/actor
 import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
+import { SeasonsComponent } from './components/performance/seasons/seasons.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     NewsListItemComponent,
     RepertoireNavHeaderComponent,
     CooperationComponent,
-    ActorsSliderComponent
+    ActorsSliderComponent, SeasonsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
