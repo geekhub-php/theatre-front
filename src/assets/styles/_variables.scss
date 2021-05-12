@@ -116,23 +116,6 @@ $secondary-background-color: #b6b6b4;
 $background-on-hover: #c7b28b;
 $box-shadow: 0 8px 18px 0 rgba(0, 0, 0, .25);
 
-/*Opacity*/
-
-@mixin opacity($-webkit-transition, $-moz-transition, $-o-transition, $transition, $opacity: 1) {
-  -webkit-transition: $-webkit-transition;
-  -moz-transition: $-moz-transition;
-  -o-transition: $-o-transition;
-  transition: $transition;
-  opacity: $opacity;
-}
-
-@mixin hover-opacity($-webkit-transform, $-ms-transform, $transform, $opacity) {
-  -webkit-transform: $-webkit-transform;
-  -ms-transform: $-ms-transform;
-  transform: $transform;
-  opacity: $opacity;
-}
-
 /*Gradient*/
 
 @mixin gradient {

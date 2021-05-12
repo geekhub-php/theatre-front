@@ -47,31 +47,33 @@ a {
   width: 70px;
   z-index: 1;
   height: 100%;
+  transition: all .3s ease;
 
   @include flex-center;
   @include gradient;
-  @include opacity(all .3s ease, all .3s ease, all .3s ease, all .3s ease, 1);
-}
 
-.left:hover {
-  @include hover-opacity(scale(1.2), scale(1.2), scale(1.2), .6);
+  &:hover {
+    transform: scale(1.2);
+    opacity: .6;
+  }
 }
 
 .right {
-  @include gradient;
   position: absolute;
   bottom: 0;
   width: 70px;
   height: 100%;
   right: 5px;
   z-index: 1;
+  transition: all .3s ease;
 
   @include flex-center;
-  @include opacity(all .3s ease, all .3s ease, all .3s ease, all .3s ease, 1);
-}
+  @include gradient;
 
-.right:hover {
-  @include hover-opacity(scale(1.2), scale(1.2), scale(1.2), .6);
+  &:hover {
+    transform: scale(1.2);
+    opacity: .6;
+  }
 }
 
 .myPoint {
