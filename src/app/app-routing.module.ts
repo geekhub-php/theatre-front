@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { BrowserModule } from '@angular/platform-browser';
+
 import { HomePageComponent } from './components/home-page/home-page.component';
 
 import { AboutComponent } from './components/about/about.component';
@@ -30,7 +32,6 @@ import { PageNotFoundComponent } from './modules/core/components/page-not-found/
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { PartnersComponent } from './components/partners/partners.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
-
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -67,15 +68,18 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
     RouterModule.forRoot(appRoutes, {
       relativeLinkResolution: 'legacy',
-      scrollPositionRestoration: 'top'
+      scrollPositionRestoration: 'top',
+      onSameUrlNavigation: 'reload'
     })
   ],
   exports: [
-    RouterModule
+    RouterModule,
   ],
-  declarations: []
+  providers: [],
+  declarations: [],
 })
 export class AppRoutingModule {
 }

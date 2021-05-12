@@ -1,9 +1,11 @@
 @import "_variables.scss";
 
 .tickets-button {
-  padding: 10px 50px;
+  padding: 10px 32px;
   border-radius: 2px;
   object-fit: contain;
+  white-space: nowrap;
+  text-align: center;
   outline: none !important;
   box-shadow: none !important;
   background-color: $background-color-accent;

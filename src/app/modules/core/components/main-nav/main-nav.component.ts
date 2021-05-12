@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LangService } from '../../../../services/lang.service';
 
 @Component({
@@ -6,7 +6,8 @@ import { LangService } from '../../../../services/lang.service';
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.scss']
 })
-export class MainNavComponent {
+
+export class MainNavComponent implements OnInit {
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -14,4 +15,9 @@ export class MainNavComponent {
 
   constructor(private langService: LangService) {
   }
+
+
+  ngOnInit() {
+  }
+
 }

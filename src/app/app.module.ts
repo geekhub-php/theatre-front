@@ -10,8 +10,6 @@ import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRou
 import { NguCarouselModule } from '@ngu/carousel';
 import { GalleryModule } from 'ng-gallery';
 
-import { CoreModule } from './modules/core/core.module';
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -54,6 +52,7 @@ import { ActorsSliderComponent } from './components/partials/actors-slider/actor
 import { SeasonsComponent } from './components/performance/seasons/seasons.component';
 
 import { environment } from '../environments/environment';
+import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 
 @NgModule({
@@ -102,14 +101,17 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     NgbCollapseModule,
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
     NgxGoogleAnalyticsRouterModule,
-    CoreModule,
     SpinnerModule,
+    CoreModule,
     GalleryModule,
     NguCarouselModule
   ],
   providers: [
     CalendarService,
-    GoogleAnalyticsService,
+    GoogleAnalyticsService
+  ],
+  exports: [
+    DonateComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
-
 import { filter } from 'rxjs/operators';
-
+import { Router, NavigationStart } from '@angular/router';
 import { LangService } from '../../../../services/lang.service';
-import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
 
 @Component({
   selector: 'app-header',
@@ -15,21 +12,16 @@ import { VisuallyImpairedService } from '../../../../services/visually-impaired.
 export class HeaderComponent {
   collapse = false;
   isCollapsed = false;
-  donateBlockVisible = false;
-  bankDataIsDisplayed = false;
   search_text = 'Enter your search key word/words';
+  textValue = '';
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
   }
 
-
-  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
-
   constructor(
     private router: Router,
-    private langService: LangService,
-    private visuallyImpairedService: VisuallyImpairedService
+    private langService: LangService
   ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
@@ -44,16 +36,17 @@ export class HeaderComponent {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  searchSubmit(): void {
-    this.isCollapsed = !this.isCollapsed;
-    /*input value will be sent upon "click"*/
+  sendRequestOnIconClick(): void {
+    /*console.log(this.textValue);*/
+    this.textValue = '';
+  }
+
+  sendRequestOnEnter() {
+/*    console.log(this.textValue);*/
+    this.textValue = '';
   }
 
   clearSubmit(): void {
     this.isCollapsed = !this.isCollapsed;
-  }
-
-  openPDF(): void {
-  window.open('assets/images/Приложение плакат QR.pdf', '_blank');
   }
 }

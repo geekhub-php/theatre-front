@@ -67,7 +67,7 @@ $creative-font: "KobzarKS", "Brush Script MT", "Brush Script Std", cursive;
 
 $font-size-x-small: 10px;
 $font-size-small: 14px;
-$font-size-medium: 18px;
+$font-size-medium: 1.125rem;
 $font-size-large: 24px;
 $font-size-x-large: 32px;
 $font-size-xxx-large: 40px;
@@ -125,6 +125,6 @@ $box-shadow: 0 8px 18px 0 rgba(0, 0, 0, .25);
 }
 
 $background-color-light: rgba(14, 12, 8, 0);
-$background-color-gray: rgba(14, 12, 8, 0.5);
-$background-color-dark: rgba(14, 12, 8, 0.75);
+$background-color-gray: rgba(14, 12, 8, .5);
+$background-color-dark: rgba(14, 12, 8, .75);
 $background-color-black: #0e0c08;

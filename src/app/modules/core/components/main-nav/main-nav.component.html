@@ -2,7 +2,7 @@
 
   <!--Some of the routerLinks will be modified when all components are created-->
 
-  <li><a class="header-nav__link" routerLink="/" routerLinkActive="active"
+  <li><a class="header-nav__link action-link" [routerLink]="['/']" routerLinkActive="active"
          [routerLinkActiveOptions]="{ exact: true }" i18n="@@mainPage">Main</a></li>
   <li><a class="header-nav__link" routerLink="/poster" routerLinkActive="active" i18n="@@poster">Poster</a></li>
   <li><a class="header-nav__link" routerLink="/repertoire" routerLinkActive="active" i18n="@@repertoire">Repertoire</a></li>
@@ -13,3 +13,7 @@
   <li><a class="header-nav__link" routerLink="/contacts" routerLinkActive="active" i18n="@@contacts">Contacts</a></li>
 
 </ul>
+
+
+
+
