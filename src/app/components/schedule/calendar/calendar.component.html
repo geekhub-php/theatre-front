@@ -48,7 +48,9 @@
 
             </ng-container>
             <div *ngIf="dayPerformances.length > 3" class="day__performances calendar__show__more">
-              <button (click)="onShowMore(day)" i18n="@@showMore">Show more (+{{ dayPerformances.length - 2 }})</button>
+              <button (click)="onShowMore(day)">
+                <span i18n="@@showMore">Show more</span> (+{{ dayPerformances.length - 2 }})
+              </button>
             </div>
             <div
               *ngIf="showMore && day === activeDay"
