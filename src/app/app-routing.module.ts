@@ -31,6 +31,7 @@ const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'poster', component: ScheduleComponent},
   {path: 'repertoire', component: RepertoireComponent},
+  {path: 'repertoire/:slug', component: RepertoireComponent},
   {path: 'performance/:slug', component: PerformanceComponent},
   {path: 'news', component: NewsComponent},
   {path: 'news/:slug', component: ArticleComponent},

@@ -45,7 +45,7 @@ import { NewsListItemComponent } from './components/partials/news-list-item/news
 import { CooperationComponent } from './components/cooperation/cooperation.component';
 
 import { environment } from '../environments/environment';
-
+import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +69,7 @@ import { environment } from '../environments/environment';
     SideMenuComponent,
     SliderComponent,
     NewsListItemComponent,
+    RepertoireNavHeaderComponent,
     CooperationComponent,
   ],
   imports: [
