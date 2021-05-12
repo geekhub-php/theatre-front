@@ -20,11 +20,12 @@
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8);
 }
 
-.wrapped__perfomances {
+.wrapped__performances {
   margin: 0 5px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  grid-template-rows: 490px;
 }
 
 .item__wraper {
