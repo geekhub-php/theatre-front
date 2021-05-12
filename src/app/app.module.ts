@@ -9,7 +9,6 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { NguCarouselModule } from '@ngu/carousel';
 import { GalleryModule } from 'ng-gallery';
-import { CoreModule } from './modules/core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -48,7 +47,6 @@ import { CalendarService } from './components/schedule/calendar.service';
 import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
-import { SliderComponent } from './components/home-page/slider/slider.component';
 import { PerformanceSliderComponent } from './components/home-page/performance-slider/performance-slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
@@ -79,7 +77,6 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
-    SliderComponent,
     PerformanceSliderComponent,
     NewsListItemComponent,
     MonthsCarouselComponent,

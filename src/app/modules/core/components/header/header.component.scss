@@ -14,28 +14,27 @@
     padding: 8px 0;
   }
 
-    .language {
-      text-decoration: none;
-      transition: .3s ease;
-      color: $font-color-primary;
-      font-size: $font-size-medium;
+  .language {
+    text-decoration: none;
+    transition: .3s ease;
+    color: $font-color-primary;
+    font-size: $font-size-medium;
 
-      &.eng {
-        margin-right: 20px;
-      }
-
-      &:hover {
-        color: $font-color-white;
-      }
+    &.eng {
+      margin-right: 20px;
     }
 
-    .separation {
-      font-size: 20px;
+    &:hover {
+      color: $font-color-white;
     }
+  }
 
-    .tickets-button {
-      width: 210px;
-    }
+  .separation {
+    font-size: 20px;
+  }
+
+  .tickets-button {
+    width: 210px;
   }
 }
 
