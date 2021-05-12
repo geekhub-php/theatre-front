@@ -17,6 +17,7 @@ export class ListViewComponent implements OnInit, OnDestroy {
   currentDate: Date;
   sliderSubscription: Subscription;
   calendarSubscription: Subscription;
+  loaderSubscription: Subscription;
   loader: boolean;
 
   constructor(private slider: MonthsCarouselService,
@@ -25,7 +26,7 @@ export class ListViewComponent implements OnInit, OnDestroy {
               @Inject(LOCALE_ID) private localeId: string) {
     const idLength = 2;
     this.localeId = this.localeId.slice(0, idLength);
-   this.loaderService.subject.subscribe(spinner => {
+    this.loaderSubscription = this.loaderService.subject.subscribe(spinner => {
       this.loader = spinner.load;
     });
   }
@@ -68,5 +69,6 @@ export class ListViewComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.delSubscription(this.sliderSubscription);
     this.delSubscription(this.calendarSubscription);
+    this.delSubscription(this.loaderSubscription);
   }
 }
