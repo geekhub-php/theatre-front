@@ -64,6 +64,12 @@ export class ArtisticComponent implements OnInit, AfterContentChecked {
   }
 
   ngAfterContentChecked(): void {
+    // if (this.myCarousel) {
+    //   this.myCarousel.activePoint = 4;
+    // }
+    // if (this.myCarousel2) {
+    //   this.myCarousel2.activePoint = 4;
+    // }
     this._cdr.detectChanges();
   }
 }

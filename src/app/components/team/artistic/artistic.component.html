@@ -21,7 +21,7 @@
             <div class="wrapped">
                <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="artCoreEmployees" class="slider">
                   <ngu-tile *nguCarouselDef="let item">
-                    <div class="image" [routerLink]="['../../', item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
+                    <div class="image" [routerLink]="['../', item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
                 </ngu-tile>
                 <ul class="myPoint" NguCarouselPoint>
                    <li *ngFor="let j of myCarousel.pointNumbers; let i = index"
@@ -52,7 +52,7 @@
               <div class="wrapped">
                 <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="artProductionEmployees" class="slider">
                   <ngu-tile *nguCarouselDef="let item">
-                    <div class="image" [routerLink]="[item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
+                    <div class="image" [routerLink]="['../', item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
                   </ngu-tile>
                   <ul class="myPoint" NguCarouselPoint>
                     <li *ngFor="let j of myCarousel.pointNumbers; let i = index"

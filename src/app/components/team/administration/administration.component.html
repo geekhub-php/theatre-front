@@ -19,7 +19,7 @@
             <h2 class="director-title" i18n="@@director">Director</h2>
         </div>
         <div class="images-l">
-            <section class="list-item" *ngFor="let person of directorEmployees" [routerLink]="[person.slug]">
+            <section class="list-item" *ngFor="let person of directorEmployees" [routerLink]="['../', person.slug]">
                 <a class="histories__list-text">
                     <img class="img" src="{{ person.avatar.employee_big.url }}" alt="photo"
                         [title]="person.avatar.employee_big.properties.title">
@@ -33,7 +33,7 @@
             <h2 class="deputies-title" i18n="@@deputies">Deputies</h2>
         </div>
         <div class="images">
-            <section class="list-item" *ngFor="let person of deputiesEmployees" [routerLink]="[person.slug]">
+            <section class="list-item" *ngFor="let person of deputiesEmployees" [routerLink]="['../', person.slug]">
                 <a class="histories__list-text">
                     <img src="{{ person.avatar.employee_big.url }}" alt="photo"
                         [title]="person.avatar.employee_big.properties.title">
@@ -47,7 +47,7 @@
             <h2 class="administrative-accounting-title" i18n="@@administrativeAccounting">Administrative-accounting</h2>
         </div>
         <div class="images-l">
-            <section class="list-item" *ngFor="let person of adminAccountingEmployees" [routerLink]="[person.slug]">
+            <section class="list-item" *ngFor="let person of adminAccountingEmployees" [routerLink]="['../', person.slug]">
                 <a class="histories__list-text">
                     <img src="{{ person.avatar.employee_big.url }}" alt="photo"
                         [title]="person.avatar.employee_big.properties.title">

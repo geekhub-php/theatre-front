@@ -51,7 +51,7 @@ const appRoutes: Routes = [
       {path: 'administration/:slug', component: PersoneShowmoreComponent},
       {path: 'creative/:slug', component: PersoneShowmoreComponent},
       {path: 'artistic/:slug', component: PersoneShowmoreComponent},
-      {path: ':personId', component: PersonComponent},
+      {path: ':personId', component: PersonComponent}
     ]
   },
   {path: 'contacts', component: ContactsComponent},

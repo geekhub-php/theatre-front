@@ -11,7 +11,7 @@ import { NguCarouselConfig } from '@ngu/carousel';
   styleUrls: ['./creative.component.scss'],
 })
 
-export class CreativeComponent implements OnInit, AfterContentChecked {
+export class CreativeComponent implements OnInit,  AfterContentChecked {
   actorsEmployees: Array<Employee> = [];
   balletEmployees: Array<Employee> = [];
   orchestraEmployees: Array<Employee> = [];
