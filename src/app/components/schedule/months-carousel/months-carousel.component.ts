@@ -31,7 +31,6 @@ import { MonthsCarouselService } from './months-carousel.service';
 
 export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @Output() selectedMonth = new EventEmitter();
-
   @ViewChild('activeBox') activeBox: TMonthsSliderElement;
   @ViewChild('monthsSlider') monthsSlider: TMonthsSliderElement;
   @ViewChildren('monthItem') monthItems: QueryList<TMonthsSliderElement>;
@@ -47,7 +46,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   activeMonth = {id: ''};
 
   monthsNameList = {
-    months: [
+    'uk-UA': [
       'Січень',
       'Лютий',
       'Березень',
@@ -61,7 +60,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
       'Листопад',
       'Грудень'
     ],
-    monthsEng: [
+    'en-US': [
       'January',
       'February',
       'March',
@@ -78,12 +77,10 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   };
 
   constructor(
-    private cd: ChangeDetectorRef,
-    private carousel: MonthsCarouselService,
     @Inject(LOCALE_ID) private localeId: string,
-  ) {
-    this.localeId === 'en-US' ? this.monthsList = this.carousel.createMonthList(this.monthsNameList.monthsEng)
-    : this.monthsList = this.carousel.createMonthList(this.monthsNameList.months);
+    private cd: ChangeDetectorRef,
+    private carousel: MonthsCarouselService) {
+    this.monthsList = this.carousel.createMonthList(this.monthsNameList[localeId]);
   }
 
   @HostListener('window:resize') onResize() {
