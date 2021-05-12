@@ -14,7 +14,6 @@ import { VisuallyImpairedComponent } from './components/visually-impaired/visual
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
 import { BreadcrumbComponent } from '../../components/partials/breadcrumb/breadcrumb.component';
 import { FormsModule } from '@angular/forms';
-import { TooltipModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { TooltipModule } from 'angular-bootstrap-md';
     SpinnerModule,
     NgbCollapseModule,
     FormsModule,
-    TooltipModule,
   ],
   exports: [
     HeaderComponent,
