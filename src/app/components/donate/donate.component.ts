@@ -19,7 +19,7 @@ export class DonateComponent implements OnInit {
       'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
   }
 
-  openPDF(): void {
-    window.open('/assets/images/QR.pdf', '_blank');
+  openPDF(url: string): void {
+    window.open(url, '_blank');
   }
 }
