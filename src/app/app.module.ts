@@ -73,7 +73,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent,CalendarPopupComponent,
+    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent, CalendarPopupComponent,
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
