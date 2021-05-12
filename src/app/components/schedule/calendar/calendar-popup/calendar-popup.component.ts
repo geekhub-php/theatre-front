@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input, LOCALE_ID } from '@angular/core';
 import { PerformanceEvent } from '../../../../store/schedule/PerformanceEvent';
 
 @Component({
@@ -8,7 +8,7 @@ import { PerformanceEvent } from '../../../../store/schedule/PerformanceEvent';
 })
 export class CalendarPopupComponent {
   @Input() event: PerformanceEvent;
-
-  constructor() {
+    
+    constructor(@Inject(LOCALE_ID) private localeId: string) {
   }
 }

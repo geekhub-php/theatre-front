@@ -11,7 +11,9 @@ import {
   Output,
   Component,
   HostListener,
-  EventEmitter
+  EventEmitter,
+  Inject,
+  LOCALE_ID
 } from '@angular/core';
 import {
   TSliderMonth,
@@ -77,13 +79,14 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
 
   constructor(
     private cd: ChangeDetectorRef,
-    private carousel: MonthsCarouselService
+    private carousel: MonthsCarouselService,
+    @Inject(LOCALE_ID) private localeId: string,
   ) {
-    // this.getMonthsList();
-    // for EN version
-    this.monthsList = this.carousel.createMonthList(this.monthsNameList.monthsEng);
-    // for UK version
-    // this.carousel.createMonthList(this.monthsNameList.months)
+    if (this.localeId === 'en-US') {
+      this.monthsList = this.carousel.createMonthList(this.monthsNameList.monthsEng);
+    } else if (this.localeId === 'uk-UA') {
+      this.carousel.createMonthList(this.monthsNameList.months);
+    }
   }
 
   @HostListener('window:resize') onResize() {
@@ -127,6 +130,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.carousel.scrollToCurrentMonth();
     this.carousel.onDrag();
     this.cd.detectChanges();
+    console.log(this.localeId)
   }
 
   unSubscribe() {

@@ -21,7 +21,7 @@
     </div>
     <div *ngIf='event && !!event.performance.duration_in_min' class="popover__info">
       <img src="assets/images/calendar/bx-hourglass.svg" alt="">
-      <p>{{ event && event.performance.duration_in_min | performanceDuration: 'en' }}</p>
+      <p>{{ event && event.performance.duration_in_min | performanceDuration: localeId }}</p>
     </div>
     <div class="popover__info">
       <img src="assets/images/calendar/map-pin-2-fill.svg" alt="">
