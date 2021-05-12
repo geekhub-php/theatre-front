@@ -33,6 +33,9 @@
   <h2 class="performance_title"> {{ performance?.title | titlecase }} </h2>
 
   <section *ngIf="performance" class="performance_body">
+
+    <!--    TODO change ticket button-->
+
     <a class="ticket_button" href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
        i18n="@@buyTicket" target="_blank">Buy ticket</a>
 
@@ -46,30 +49,32 @@
 
     <div class="performance_info">
 
-      <div class="main-info">
-        <svg class="icon">
-          <use xlink:href="#calendar"></use>
-        </svg>
-        <p class="info"></p>
-      </div>
-      <div class="main-info">
-        <svg class="icon">
-          <use xlink:href="#time"></use>
-        </svg>
-        <p class="info"></p>
-      </div>
+      <!--      TODO add info-->
+
+      <!--      <div class="main-info">-->
+      <!--        <svg class="icon">-->
+      <!--          <use xlink:href="#calendar"></use>-->
+      <!--        </svg>-->
+      <!--        <p class="info"></p>-->
+      <!--      </div>-->
+      <!--      <div class="main-info">-->
+      <!--        <svg class="icon">-->
+      <!--          <use xlink:href="#time"></use>-->
+      <!--        </svg>-->
+      <!--        <p class="info"></p>-->
+      <!--      </div>-->
       <div class="main-info">
         <svg class="icon">
           <use xlink:href="#hourglass"></use>
         </svg>
         <p class="info">{{ performance.duration_in_min + ' хвилин' }}</p>
       </div>
-      <div class="main-info">
-        <svg class="icon">
-          <use xlink:href="#pin"></use>
-        </svg>
-        <p class="info"></p>
-      </div>
+      <!--      <div class="main-info">-->
+      <!--        <svg class="icon">-->
+      <!--          <use xlink:href="#pin"></use>-->
+      <!--        </svg>-->
+      <!--        <p class="info"></p>-->
+      <!--      </div>-->
       <div class="main-info">
         <svg class="icon">
           <use xlink:href="#book"></use>
@@ -91,13 +96,13 @@
 
       <!--      TODO actors and roles-->
 
-      <div class="details">
-        <h4 class="details_title">Дійові особи та виконавці</h4>
-        <span></span><a class="link"></a>
-        <span></span><a class="link"></a>
-        <span></span><a class="link"></a>
-        <span></span><a class="link"></a>
-      </div>
+      <!--      <div class="details">-->
+      <!--        <h4 class="details_title">Дійові особи та виконавці</h4>-->
+      <!--        <span></span><a class="link"></a>-->
+      <!--        <span></span><a class="link"></a>-->
+      <!--        <span></span><a class="link"></a>-->
+      <!--        <span></span><a class="link"></a>-->
+      <!--      </div>-->
 
       <div class="details flex">
         <span class="bold" i18n="@@seasons">Seasons:</span>
@@ -120,7 +125,7 @@
     </div>
 
     <a (click)="openGallery()" *ngIf="!loading && galleryImages.length > 4" class="more" i18n="@@morePhotos">
-      More Photos ({{ '+ ' + amount }})
+      More Photos ({{ '+' + amount }})
     </a>
     <a (click)="closeGallery()" *ngIf="!loadingFull" class="more" i18n="@@collapse">Collapse</a>
 
