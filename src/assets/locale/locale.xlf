@@ -641,22 +641,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="listView" datatype="html">
-        <source>List view</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/schedule/schedule.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/schedule/schedule.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="calendarView" datatype="html">
         <source>Calendar view</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/schedule/schedule.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">13</context>
         </context-group>
+      </trans-unit>
+        <source>List view</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/schedule/schedule.component.html</context>
           <context context-type="linenumber">19</context>
@@ -726,7 +718,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/schedule/list-view/list-view.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/schedule/mobile-view/mobile-view.component.html
@@ -1114,6 +1106,17 @@
           <context context-type="linenumber">132,134</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="noPerformances" datatype="html">
+        <source>No performances for now</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widget/widget.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/list-view/list-view.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="ngb.carousel.next" datatype="html">
         <source>Next</source>
         <context-group purpose="location">
@@ -1171,6 +1174,20 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/src/datepicker/datepicker-navigation-select.ts
           </context>
           <context context-type="linenumber">72,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="showMore" datatype="html">
+        <source>Show more</source>
+         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="showLess" datatype="html">
+        <source>Show less</source>
+         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/schedule/calendar/calendar.component.html</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ngb.pagination.first" datatype="html">

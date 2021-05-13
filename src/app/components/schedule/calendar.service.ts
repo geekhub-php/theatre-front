@@ -9,6 +9,7 @@ import { ScheduleListResponse } from '../../store/schedule/ScheduleListResponse'
 
 import { map } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
+import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,9 @@ export class CalendarService {
 
   events: BehaviorSubject<Array<PerformanceEvent>> = new BehaviorSubject([]);
 
-  constructor(private gateway: GatewayService) {
+  constructor(private gateway: GatewayService, private slider: MonthsCarouselService) {
     this.currentDate = new Date();
+    this.getMonth();
   }
 
   setDate(date: Date) {
@@ -53,27 +55,18 @@ export class CalendarService {
     return weeks;
   }
 
-  prevMonth(): Date {
+  getPerformanceByDate(specialDate: Date) {
     this.currentDate = new Date(this.currentDate);
-    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+    this.currentDate.setFullYear(specialDate.getFullYear(), specialDate.getMonth());
     this.getPerformanceEvents();
-
-    return this.currentDate;
   }
 
-  nextMonth(): Date {
-    this.currentDate = new Date(this.currentDate);
-    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
-    this.getPerformanceEvents();
-
-    return this.currentDate;
-  }
-
-  today(): Date {
-    this.currentDate = new Date();
-    this.getPerformanceEvents();
-
-    return this.currentDate;
+  getMonth() {
+    this.slider.getMonth().subscribe(month => {
+      if (month && month.currentFullDate) {
+        this.currentDate = month.currentFullDate;
+      }
+    });
   }
 
   get dateFrom() {

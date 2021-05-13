@@ -42,7 +42,9 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CalendarComponent } from './components/schedule/calendar/calendar.component';
 import { ListViewComponent } from './components/schedule/list-view/list-view.component';
 import { MobileViewComponent } from './components/schedule/mobile-view/mobile-view.component';
+import { CalendarPopupComponent } from './components/schedule/calendar/calendar-popup/calendar-popup.component';
 import { CalendarService } from './components/schedule/calendar.service';
+import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { PerformanceSliderComponent } from './components/home-page/performance-slider/performance-slider.component';
@@ -71,12 +73,13 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent,
+    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent, CalendarPopupComponent,
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
     PerformanceSliderComponent,
     NewsListItemComponent,
+    MonthsCarouselComponent,
     RepertoireNavHeaderComponent,
     CooperationComponent,
     PersonsHeaderComponent,
@@ -88,7 +91,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     SeasonsComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'serverApp'}),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -107,14 +110,11 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     NguCarouselModule
   ],
   providers: [
+    CalendarPopupComponent,
     CalendarService,
     GoogleAnalyticsService
   ],
-  exports: [
-    DonateComponent
-  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
 

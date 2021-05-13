@@ -1,9 +1,11 @@
 @import "~assets/styles/variables";
 
 .footer-nav-block {
+  max-width: $container-width;
+  margin: $container-margin;
   padding-top: 48px;
   padding-bottom: 20px;
-  width: $container-width;
+  background-color: $background-main-color-darker;
 
   @include flex-space-between;
 
