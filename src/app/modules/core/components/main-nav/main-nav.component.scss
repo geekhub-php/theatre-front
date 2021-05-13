@@ -8,12 +8,13 @@
   display: inline-flex;
   list-style-type: none;
   padding-top: 16px;
+  padding-left: 0;
   margin-left: 24px;
   text-align: center;
   white-space: nowrap;
 
   li + li {
-    margin-left: 30px;
+    margin-left: 20px;
   }
 
   .header-nav__link {

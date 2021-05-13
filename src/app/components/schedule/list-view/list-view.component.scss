@@ -149,7 +149,8 @@
     color: $border-color-light;
     border: solid 1px $border-color-light;
     border-radius: 2px;
-    padding: 12px 24px;
+    padding: 12px 10px;
+    white-space: nowrap;
   }
 
   &__arrow-right {

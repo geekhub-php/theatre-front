@@ -15,6 +15,7 @@
 
   .navbar {
     padding: 8px 0;
+
     & .header-logo {
       flex: 0 0 120px;
     }
@@ -37,10 +38,6 @@
 
   .separation {
     font-size: 20px;
-  }
-
-  .tickets-button {
-    width: 210px;
   }
 }
 
@@ -94,6 +91,12 @@
   }
 }
 
+.tickets-button {
+  width: 200px;
+  flex: 0 0 200px;
+  padding: 10px 0;
+}
+
 @media only screen and (max-width: 1460px) {
 
   .search-box {
@@ -104,7 +107,7 @@
 
 .search-icon-button {
   padding: 8px;
-  margin-left: 52px;
+  margin-left: auto;
   margin-right: 10px;
   transition: .3s ease;
   color: $font-color-primary;
