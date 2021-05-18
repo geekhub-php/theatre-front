@@ -7,8 +7,6 @@
 }
 
 .title {
-  margin-bottom: 30px;
-
   @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
 }
 
@@ -31,3 +29,9 @@ a {
   @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, $line-height-basic, normal)
 }
 
+.animation {
+  width: 478px;
+  height: 288px;
+  object-fit: contain;
+  margin: 0 auto;
+}

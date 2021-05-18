@@ -4,6 +4,9 @@ import { RouterModule } from '@angular/router';
 
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+
 import { HeaderComponent } from './components/header/header.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -12,6 +15,10 @@ import { SpinnerModule } from '../../components/partials/spinner/spinner.module'
 
 import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
+
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -26,7 +33,8 @@ import { FooterNavComponent } from './components/footer-nav/footer-nav.component
     CommonModule,
     RouterModule,
     SpinnerModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    LottieModule.forRoot({player: playerFactory})
   ],
   exports: [
     HeaderComponent,
