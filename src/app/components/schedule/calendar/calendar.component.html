@@ -37,7 +37,7 @@
                       triggers="mouseenter:mouseleave"
                       animation="{{true}}"
                       [ngbPopover]="popContent"
-                      placement="top"
+                      placement="auto"
                       popoverClass="popover__poster"
                       *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">
                       {{ event.performance.title | striphtml:['40', '...'] }}
@@ -74,7 +74,7 @@
                       class="popup__events__performance__title"
                       triggers="mouseenter:mouseleave"
                       [ngbPopover]="popContent"
-                      placement="top"
+                      placement="auto"
                       popoverClass="popover__poster"
                       *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">
                       {{ event.performance.title | striphtml:['40', '...'] }}

@@ -143,11 +143,9 @@ $popup-border-color: #b6b6b4;
   }
 
   ::ng-deep .popover__poster {
-    z-index: 10;
     position: relative;
 
     & .popover-body {
-      position: relative;
       right: 100px;
       display: flex;
       width: 480px;
@@ -283,13 +281,36 @@ $popup-border-color: #b6b6b4;
   }
 }
 
-:host ::ng-deep .bs-popover-top {
+:host ::ng-deep .popover {
   background-color: transparent;
+  max-width: 480px;
+  height: 290px;
+}
+
+:host ::ng-deep .bs-popover-top {
 
   .arrow::after {
-    position: relative;
-    z-index: 5;
-    top: -2px;
     border-top-color: $font-color-gold;
+  }
+}
+
+:host ::ng-deep .bs-popover-right {
+
+  .arrow::after {
+    border-right-color: $font-color-gold;
+  }
+}
+
+:host ::ng-deep .bs-popover-bottom {
+
+  .arrow::after {
+    border-bottom-color: $font-color-gold;
+  }
+}
+
+:host ::ng-deep .bs-popover-left {
+
+  .arrow::after {
+    border-left-color: $font-color-gold;
   }
 }
