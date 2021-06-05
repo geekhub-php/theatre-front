@@ -18,8 +18,8 @@ import {
 import {
   TSliderMonth,
   TMonthProperty,
-  TMonthsSliderElement
-} from '../../../store/schedule/MonthsSliderItem';
+  TNativeDivElement
+} from 'app/store/schedule/MonthsSliderItem';
 import { MonthsCarouselService } from './months-carousel.service';
 
 @Component({
@@ -32,9 +32,9 @@ import { MonthsCarouselService } from './months-carousel.service';
 export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @Output() selectedMonth = new EventEmitter();
 
-  @ViewChild('activeBox') activeBox: TMonthsSliderElement;
-  @ViewChild('monthsSlider') monthsSlider: TMonthsSliderElement;
-  @ViewChildren('monthItem') monthItems: QueryList<TMonthsSliderElement>;
+  @ViewChild('activeBox') activeBox: TNativeDivElement;
+  @ViewChild('monthsSlider') monthsSlider: TNativeDivElement;
+  @ViewChildren('monthItem') monthItems: QueryList<TNativeDivElement>;
 
   monthsList: Array<TSliderMonth> = [];
 

@@ -25,6 +25,6 @@ export type TMonthProperty = {
   amountOfYears: 10
 }
 
-export type TMonthsSliderElement = {
+export type TNativeDivElement = {
   nativeElement: HTMLDivElement
 }

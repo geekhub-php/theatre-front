@@ -57,7 +57,7 @@
           class="list-view__img">
     </div>
   <div class="list-view__cat" *ngIf="!events.length && !loader" >
-    <img src="assets/images/calendar/animation_cat.svg" alt="">
+    <app-cat-interactive></app-cat-interactive>
     <p i18n="@@noPerformances">No performances for now</p>
   </div>
 </div>

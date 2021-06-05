@@ -3,7 +3,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { Injectable, OnDestroy, QueryList } from '@angular/core';
 import {
   TMonthProperty,
-  TMonthsSliderElement,
+  TNativeDivElement,
   TScreenProperty,
   TSliderMonth,
 } from '../../../store/schedule/MonthsSliderItem';
@@ -13,13 +13,13 @@ import { LoaderService } from '../../../components/partials/spinner/loader.servi
   providedIn: 'root',
 })
 export class MonthsCarouselService implements OnDestroy {
-  private monthsSlider$: Subject<TMonthsSliderElement> = new Subject<TMonthsSliderElement>();
+  private monthsSlider$: Subject<TNativeDivElement> = new Subject<TNativeDivElement>();
   private month$: Subject<TMonthProperty> = new Subject<TMonthProperty>();
   private activeMonth$: Subject<{id: string}> = new Subject<{id: string}>();
 
-  private monthsSlider: TMonthsSliderElement;
+  private monthsSlider: TNativeDivElement;
   private queryMonthList = [];
-  private activeBox: TMonthsSliderElement;
+  private activeBox: TNativeDivElement;
   private activeMonth = {id: ''};
 
   private monthList: Array<TSliderMonth> = [];
@@ -71,7 +71,7 @@ export class MonthsCarouselService implements OnDestroy {
     return this.month$.asObservable();
   }
 
-  setCarousel(carousel: TMonthsSliderElement) {
+  setCarousel(carousel: TNativeDivElement) {
     const reserveWidth = { short: 50, long: 150 };
     this.monthsSlider = carousel;
     this.monthsSlider$.next(this.monthsSlider);
@@ -92,11 +92,11 @@ export class MonthsCarouselService implements OnDestroy {
     });
   }
 
-  setActiveBox(activeBox: TMonthsSliderElement) {
+  setActiveBox(activeBox: TNativeDivElement) {
     this.activeBox = activeBox;
   }
 
-  setQueryMonthsList(monthItems: QueryList<TMonthsSliderElement>) {
+  setQueryMonthsList(monthItems: QueryList<TNativeDivElement>) {
     this.queryMonthList = monthItems.toArray();
   }
 

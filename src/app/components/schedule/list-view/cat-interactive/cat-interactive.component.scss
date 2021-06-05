@@ -1,0 +1,59 @@
+.cat-interactive {
+  width: 1000px;
+  height: 600px;
+  user-select: none;
+  margin: -30px 0;
+
+  & > img {
+    height: 100%;
+  }
+
+  &__circle {
+    position: relative;
+    height: 21px;
+    width: 21px;
+    border-radius: 50%;
+  }
+
+  &__left-circle {
+    top: 14%;
+    left: 33%;
+  }
+
+  &__right-circle {
+    top: -42%;
+    left: 70%;
+  }
+
+  &__eyes {
+    position: relative;
+    top: -68%;
+    left: 44%;
+    width: 100px;
+    height: 40px;
+  }
+
+  &__eye {
+    position: relative;
+    border-radius: 10px;
+    user-select: none;
+  }
+
+  &__left-eye {
+    top: -27%;
+    left: 10%;
+  }
+
+  &__right-eye {
+    top: -34%;
+    left: 6%;
+  }
+}
+
+
+
+
+
+
+
+
