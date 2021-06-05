@@ -33,7 +33,7 @@ export class CatInteractiveComponent implements AfterViewInit, OnDestroy {
       this.catRightEye.nativeElement.style.left = `${moveStep * relativeX}px`;
       this.catRightEye.nativeElement.style.top = `${moveStep * relativeY}px`;
     });
-    this.cdr.detectChanges()
+    this.cdr.detectChanges();
   }
 
   ngOnDestroy() {
