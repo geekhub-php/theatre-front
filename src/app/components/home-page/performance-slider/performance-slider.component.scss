@@ -36,6 +36,7 @@ gallery {
 }
 
 :host ::ng-deep gallery gallery-dots {
+  margin: 0;
   z-index: 1;
 }
 
@@ -77,10 +78,8 @@ gallery {
   position: absolute;
   bottom: 170px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
 
+  @include flex-center();
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
 }
 
@@ -148,10 +147,9 @@ gallery {
   width: 100%;
   height: 408px;
   top: 430px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+
+  @include flex-center();
 }
 
 .no-performance__text {
