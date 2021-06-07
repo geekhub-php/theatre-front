@@ -28,19 +28,19 @@ export class PerformanceSliderComponent implements OnInit {
   ngOnInit(): void {
     const galleryRef: GalleryRef = this.gallery.ref(this.galleryId);
 
-    this.gateway
-      .getPerformanceEventList()
-      .subscribe(res => {
-        this.sliderList = res.performance_events;
-        this.sliderList.map(item => galleryRef.addImage({
-          src: item.performance.sliderImage.slider_slider.url,
-          title: item.performance.title,
-          type: item.performance.type,
-          date: item.date_time,
-          venuePerformance: item.venue,
-          ticket: item.buy_ticket_link
-        }));
-    });
+    // this.gateway
+    //   .getPerformanceEventList()
+    //   .subscribe(res => {
+    //     this.sliderList = res.performance_events;
+    //     this.sliderList.map(item => galleryRef.addImage({
+    //       src: item.performance.sliderImage.slider_slider.url,
+    //       title: item.performance.title,
+    //       type: item.performance.type,
+    //       date: item.date_time,
+    //       venuePerformance: item.venue,
+    //       ticket: item.buy_ticket_link
+    //     }));
+    // });
   }
 }
 
