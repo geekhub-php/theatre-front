@@ -37,4 +37,9 @@
     }
   }
 }
-
+// added for develop responsive in Poster page
+@media (max-width: 1100px) {
+  .footer-nav-block {
+    display: none;
+  }
+}

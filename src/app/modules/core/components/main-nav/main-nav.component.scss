@@ -34,3 +34,9 @@
   }
 }
 
+// added for develop responsive in Poster page
+@media (max-width: 1400px) {
+ .header-nav {
+   display: none;
+ }
+}
