@@ -96,15 +96,15 @@
         <p [innerHtml]="performance.description"></p>
       </div>
 
-      <!--      TODO actors and roles-->
-
-      <!--      <div class="details">-->
-      <!--        <h4 class="details_title">Дійові особи та виконавці</h4>-->
-      <!--        <span></span><a class="link"></a>-->
-      <!--        <span></span><a class="link"></a>-->
-      <!--        <span></span><a class="link"></a>-->
-      <!--        <span></span><a class="link"></a>-->
-      <!--      </div>-->
+      <div class="details">
+        <h4 class="details_title">Дійові особи та виконавці</h4>
+        <div *ngFor="let role of roles">
+          <span>{{ role.title }} – </span>
+          <a class="link" routerLink="/persons/{{ role.employee.slug }}">
+            {{ role.employee.first_name + ' ' + role.employee.last_name }}
+          </a>
+        </div>
+      </div>
 
       <div class="details flex">
         <span class="bold" i18n="@@seasons">Seasons:</span>
