@@ -93,6 +93,17 @@
   }
 }
 
+@media (max-width: 950px) {
+
+  .slider__months__container {
+    width: 300px;
+
+    .slider__months__active-box {
+      left: 0;
+    }
+  }
+}
+
 @media (hover: none) and (pointer: coarse) {
 
   .slider__months__container {

@@ -26,9 +26,9 @@ export class MobileViewComponent implements OnInit {
 
   getPerformanceEvents() {
     this.loaderService.start('poster');
-
     this.calendar.events.subscribe((value) => {
       this.events = value.filter(({date_time}) => new Date(date_time) >= new Date());
+      this.events.forEach(el => console.log(el.month))
       this.loaderService.stop('poster');
     }, err => this.loaderService.stop('poster'));
   }

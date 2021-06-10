@@ -7,7 +7,7 @@ import { CalendarService } from './calendar.service';
 import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 import { Subscription } from 'rxjs';
 
-enum ScheduleViewModes {
+export enum ScheduleViewModes {
   CALENDAR = 'Calendar',
   LIST = 'List',
   MOBILE = 'Mobile'
@@ -47,8 +47,8 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     const innerWidth = window.innerWidth;
-    const calendarBreakpointWidth = 1020;
-    const listBreakpointWidth = 975;
+    const calendarBreakpointWidth = 1170;
+    const listBreakpointWidth = 1100;
 
     switch (this.viewMode) {
       case ScheduleViewModes.CALENDAR:

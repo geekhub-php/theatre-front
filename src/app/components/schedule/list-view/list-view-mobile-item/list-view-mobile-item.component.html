@@ -1,0 +1,61 @@
+<div *ngIf="!event.dateExist" class="list-view__date">
+  <div class="list-view__date__day">{{ event.date_time | date: 'dd' }}</div>
+  <div class="list-view__date__day-type">{{ event.date_time | date: 'EEEE' }}</div>
+</div>
+<section class="list-view__item">
+  <div  class="list-view__link-wrapper" [routerLink]="['', 'performance', event.performance.slug]">
+    <div  class="list-view__link" >
+      <div class="list-view__link__age-limit">
+        <span>{{ event.performance.age_limit }}+</span>
+      </div>
+      <div class="list-view__date-wrapper">
+      </div>
+      <div class="list-view__content">
+        <div>
+          <div class="list-view__content__title"><span>{{ event.performance.title }}</span></div>
+          <div class="list-view__content__type">{{ event.performance.type }}</div>
+        </div>
+        <div class="list-view__content__info">
+          <div class="list-view__content__info__item">
+            <img
+              class="list-view__content__info__item__clock"
+              src="assets/images/list-view/time-fill.svg" alt="">
+            <span class="list-view__content__info__item__time">{{ event.time }}</span>
+          </div>
+          <div *ngIf='!!event.performance.duration_in_min' class="list-view__content__info__item">
+            <img
+              class="list-view__content__info__item__icon"
+              src="assets/images/list-view/bx-hourglass.svg" alt="">
+            <span class="list-view__content__info__item__text">
+                {{ event.performance.duration_in_min | performanceDuration: localeId }}
+              </span>
+          </div>
+          <div class="list-view__content__info__item">
+            <img
+              class="list-view__content__info__item__icon"
+              src="assets/images/list-view/map-pin-2-fill.svg" alt="">
+            <span class="list-view__content__info__item__venue">{{ event.venue }}</span>
+          </div>
+        </div>
+        <a
+          class="list-view__button"
+          *ngIf="event.buy_ticket_link"
+          [href]="event.buy_ticket_link"
+          target="_blank"
+          (click)="$event.stopPropagation()"
+          i18n="@@buyTicket">
+          Buy ticket
+        </a>
+      </div>
+      <div class="list-view__arrow-right">
+        <img alt="arrow" src="assets/images/news/arrow-right.svg">
+      </div>
+    </div>
+
+      <img [src]="event.performance.sliderImage.slider_slider.url"
+           [alt]="event.performance.title"
+           [title]="event.performance.title"
+           class="list-view__img"
+      >
+  </div>
+</section>

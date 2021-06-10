@@ -1,3 +1,5 @@
+import { screenSize } from '../../components/schedule/months-carousel/months-carousel.service';
+
 export type TSliderMonth = {
   id: string,
   name: string
@@ -11,10 +13,12 @@ export type TScreenProperty = {
   scrollAmount: number,
   screenWidth: number, //can change
   currentPosition: number,
+  currentScreenSize: screenSize | null,
   scrollStep: number,
   wideScrollStep: number,
   // default screen sizes
   wideScreen: number,
+  middleScreen: number,
   narrowScreen: number
 }
 
