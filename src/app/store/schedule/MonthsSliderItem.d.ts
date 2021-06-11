@@ -7,7 +7,6 @@ export type TSliderMonth = {
 }
 
 export type TScreenProperty = {
-  fullScreen: boolean,
   scrollWidth: number,
   startPoint: number,
   scrollAmount: number,

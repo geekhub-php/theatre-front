@@ -24,7 +24,7 @@
   }
 
   &__item {
-    margin: 10px 0;
+    margin: 10px 30px;
     position: relative;
     background-color: $background-main-color-lighter;
     height: 220px;
@@ -186,6 +186,7 @@
       height: 56px;
       background-color: $background-color-accent;
       z-index: 2;
+      transition: .3s ease;
 
       & span {
         font-size: 24px;

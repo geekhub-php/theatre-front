@@ -104,18 +104,18 @@
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
-
-  .slider__months__container {
-    max-width: 1200px;
-
-    .slider__months {
-      overflow-x: auto;
-      scroll-behavior: smooth;
-
-      &__item {
-        max-width: 300px;
-      }
-    }
-  }
-}
+//@media (hover: none) and (pointer: coarse) {
+//
+//  .slider__months__container {
+//    max-width: 1200px;
+//
+//    .slider__months {
+//      overflow-x: auto;
+//      scroll-behavior: smooth;
+//
+//      &__item {
+//        max-width: 300px;
+//      }
+//    }
+//  }
+//}

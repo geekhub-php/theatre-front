@@ -7,7 +7,7 @@ import {
   TScreenProperty,
   TSliderMonth
 } from 'app/store/schedule/MonthsSliderItem';
-import { LoaderService } from '../../../components/partials/spinner/loader.service';
+import { LoaderService } from 'app/components/partials/spinner/loader.service';
 
 export enum screenSize {
   xs = 'xs',
@@ -40,7 +40,6 @@ export class MonthsCarouselService implements OnDestroy {
   };
 
   private screen: TScreenProperty = {
-    fullScreen: true,
     currentScreenSize: null,
     scrollWidth: 0,
     startPoint: 0,
@@ -116,7 +115,6 @@ export class MonthsCarouselService implements OnDestroy {
     const {
       wideScreen,
       middleScreen,
-      fullScreen,
       scrollStep,
       wideScrollStep,
       currentScreenSize,
@@ -298,12 +296,6 @@ export class MonthsCarouselService implements OnDestroy {
   activeSpinner() {
     if (!this.isSpinnerActive) {
       this.spinner.start('poster');
-    }
-  }
-
-  stopSpinner() {
-    if (this.isSpinnerActive) {
-      this.spinner.stop('poster');
     }
   }
 

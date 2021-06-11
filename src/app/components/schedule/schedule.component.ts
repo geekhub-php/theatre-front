@@ -47,8 +47,8 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     const innerWidth = window.innerWidth;
-    const calendarBreakpointWidth = 1170;
-    const listBreakpointWidth = 1100;
+    const calendarBreakpointWidth = 1200;
+    const listBreakpointWidth = 1200;
 
     switch (this.viewMode) {
       case ScheduleViewModes.CALENDAR:
