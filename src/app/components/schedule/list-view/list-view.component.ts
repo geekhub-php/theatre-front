@@ -13,7 +13,7 @@ import { ScheduleViewModes } from '../schedule.component';
 })
 export class ListViewComponent implements OnInit, OnDestroy {
   @Input() viewMode: ScheduleViewModes;
-  views = ScheduleViewModes
+  views = ScheduleViewModes;
 
   events: Array<PerformanceEvent> = [];
   date: Date;
@@ -40,7 +40,6 @@ export class ListViewComponent implements OnInit, OnDestroy {
     this.calendar.getPerformanceEvents()
       .then(() => this.getPerformanceEvents()
       );
-    console.log(this.viewMode);
   }
 
   getMonth() {
@@ -52,7 +51,7 @@ export class ListViewComponent implements OnInit, OnDestroy {
   getPerformanceEvents() {
     this.loaderService.start('poster');
     this.calendarSubscription = this.calendar.events.subscribe((value) => {
-      this.events = value.filter(({date_time}) => {
+      this.events = value.filter(({ date_time }) => {
         const resDate = new Date(date_time);
         if (resDate) {
           const monthsEqual = resDate.getMonth() === this.currentDate.getMonth();
@@ -61,18 +60,18 @@ export class ListViewComponent implements OnInit, OnDestroy {
         }
       });
       this.events = this.events.map((event, i) => {
-        const {day, month} = event
-        const prevEvent = this.events[i - 1]
-        event.dateExist = false
+        const { day, month } = event;
+        const prevEvent = this.events[i - 1];
+        event.dateExist = false;
         if (prevEvent) {
-          const {day: prevDay, month: prevMonth } = prevEvent
+          const { day: prevDay, month: prevMonth } = prevEvent;
           if (day === prevDay && month === prevMonth) {
-            event.dateExist = true
+            event.dateExist = true;
           }
         }
-        return event
-      })
-      console.log(this.events);
+
+        return event;
+      });
       this.loaderService.stop('poster');
     }, err => this.loaderService.stop('poster'));
   }

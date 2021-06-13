@@ -28,6 +28,16 @@ export type TMonthProperty = {
   amountOfYears: 10
 }
 
+export type TInteractiveCat = {
+  currentSize: string | null,
+  moveStep: number | null,
+  wideScreen: 1000,
+  mediumScreen: 500,
+  wideStep: 25,
+  mediumStep: 15,
+  shortStep: 10,
+}
+
 export type TNativeDivElement = {
   nativeElement: HTMLDivElement
 }

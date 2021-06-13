@@ -1,8 +1,8 @@
-<div *ngIf="!event.dateExist" class="list-view__date">
+<div *ngIf="event && !event.dateExist" class="list-view__date">
   <div class="list-view__date__day">{{ event.date_time | date: 'dd' }}</div>
   <div class="list-view__date__day-type">{{ event.date_time | date: 'EEEE' }}</div>
 </div>
-<section class="list-view__item">
+<section *ngIf="event" class="list-view__item">
   <div  class="list-view__link-wrapper" [routerLink]="['', 'performance', event.performance.slug]">
     <div  class="list-view__link" >
       <div class="list-view__link__age-limit">

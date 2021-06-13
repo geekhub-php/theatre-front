@@ -1,31 +1,34 @@
-<div class="slider__months__container" draggable="false">
+<div class="slider__months-carousel" draggable="false">
   <button
     (click)="onPrev($event)"
-    class="slider__months__btn slider__months__btn__left">
+    class="slider__months-carousel__btn slider__months-carousel__btn__left">
     <img src="assets/images/calendar/chevron-left.svg" alt="">
   </button>
-  <div
-    #activeBox
-    class="slider__months__active-box">
-  </div>
-  <div #monthsSlider class="slider__months" draggable="false">
+  <div class="slider__months__container" draggable="false">
     <div
-      #monthItem
-      draggable="false"
-      class="slider__months__item"
-      *ngFor="let monthItem of monthsList; let i = index"
-      [class.slider__months__item__active]="monthName.id === activeMonth.id">
+      #activeBox
+      class="slider__months__active-box">
+    </div>
+    <div #monthsSlider class="slider__months" draggable="false">
+      <div
+        #monthItem
+        draggable="false"
+        class="slider__months__item"
+        *ngFor="let monthItem of monthsList; let i = index"
+        [class.slider__months__item__active]="monthName.id === activeMonth.id">
       <span
         #monthName
         [id]="monthItem.id"
         class="slider__months__item__month__name">
           {{ monthItem.name }}
       </span>
+      </div>
     </div>
   </div>
   <button
     (click)="onNext($event)"
-    class="slider__months__btn slider__months__btn__right">
+    class="slider__months-carousel__btn slider__months-carousel__btn__right">
     <img src="assets/images/calendar/chevron-right.svg" alt="">
   </button>
 </div>
+

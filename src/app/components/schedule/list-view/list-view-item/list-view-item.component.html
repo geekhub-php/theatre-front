@@ -1,4 +1,4 @@
-<div class="list-view__item">
+<div *ngIf="event" class="list-view__item">
   <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
     <div class="list-view__link__age-limit">
       <span>{{ event.performance.age_limit }}+</span>

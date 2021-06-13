@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListViewMobileItemComponent } from './list-view-mobile-item.component';
 
+
 describe('ListViewMobileItemComponent', () => {
   let component: ListViewMobileItemComponent;
   let fixture: ComponentFixture<ListViewMobileItemComponent>;

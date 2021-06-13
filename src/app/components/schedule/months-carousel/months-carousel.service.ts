@@ -26,17 +26,17 @@ export class MonthsCarouselService implements OnDestroy {
   private monthsSlider: TNativeDivElement;
   private queryMonthList = [];
   private activeBox: TNativeDivElement;
-  private activeMonth = {id: ''};
+  private activeMonth = { id: '' };
 
   private monthList: Array<TSliderMonth> = [];
   private onDragSubscription: Subscription;
   private scrollSubscription: Subscription;
   private isSpinnerActive = false;
   private plugs = {
-    jan: {id: 'Jan_plug', index: 0},
-    feb: {id: 'Feb_plug', index: 1},
-    nov: {id: 'Nov_plug', index: 10},
-    dec: {id: 'Dec_plug', index: 11}
+    jan: { id: 'Jan_plug', index: 0 },
+    feb: { id: 'Feb_plug', index: 1 },
+    nov: { id: 'Nov_plug', index: 10 },
+    dec: { id: 'Dec_plug', index: 11 }
   };
 
   private screen: TScreenProperty = {
@@ -79,7 +79,7 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   setCarousel(carousel: TNativeDivElement) {
-    const reserveWidth = {short: 50, long: 150};
+    const reserveWidth = { short: 50, long: 150 };
     this.monthsSlider = carousel;
     this.monthsSlider$.next(this.monthsSlider);
     this.scrollSubscription = fromEvent(this.monthsSlider.nativeElement, 'scroll').subscribe(() => {
@@ -93,7 +93,7 @@ export class MonthsCarouselService implements OnDestroy {
             this.activeMonth$.next(this.activeMonth);
           }
         } else if (this.activeMonth === id && (rect.left >= rectBox.left + reserveWidth.short || rect.left < rectBox.left)) {
-          this.activeMonth$.next({id: 'disable'});
+          this.activeMonth$.next({ id: 'disable' });
         }
       });
     });
@@ -108,7 +108,7 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   setScreenWidth(scrollWidth) {
-    this.screen = {...this.screen, scrollWidth};
+    this.screen = { ...this.screen, scrollWidth };
   }
 
   onResize() {
@@ -121,35 +121,35 @@ export class MonthsCarouselService implements OnDestroy {
       narrowScreen
     } = this.screen;
     const width = window.innerWidth;
-    const setScreenProperties = ({currentScreenSize, screenWidth, startPoint, scrollAmount}) => {
-      this.screen.currentScreenSize = currentScreenSize;
+    const setScreenProperties = ({ currentSize, screenWidth, startPoint, scrollAmount }) => {
+      this.screen.currentScreenSize = currentSize;
       this.screen.screenWidth = screenWidth;
       this.screen.startPoint = startPoint;
-      this.screen.scrollAmount = scrollAmount
+      this.screen.scrollAmount = scrollAmount;
       this.scrollToCurrentMonth();
-    }
+    };
 
     if ((width >= wideScreen) && (currentScreenSize !== screenSize.lg)) {
       setScreenProperties({
-        currentScreenSize: screenSize.lg,
+        currentSize: screenSize.lg,
         screenWidth: wideScreen,
         startPoint: 0,
         scrollAmount: wideScrollStep
-      })
+      });
     } else if (((width >= narrowScreen) && (width < wideScreen)) && (currentScreenSize !== screenSize.md)) {
       setScreenProperties({
-        currentScreenSize: screenSize.md,
+        currentSize: screenSize.md,
         screenWidth: middleScreen,
         startPoint: scrollStep,
         scrollAmount: scrollStep
-      })
+      });
     } else if ((width <= narrowScreen) && (currentScreenSize !== screenSize.xs)) {
       setScreenProperties({
-        currentScreenSize: screenSize.xs,
+        currentSize: screenSize.xs,
         screenWidth: narrowScreen,
         startPoint: wideScrollStep,
         scrollAmount: 0
-      })
+      });
     }
   }
 
@@ -195,7 +195,7 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   setDefaultData() {
-    const {amountOfYears} = this.month;
+    const { amountOfYears } = this.month;
     const newDate = new Date();
     const half = 2;
     this.month.activeMonth = `${newDate.getUTCMonth()}/${newDate.getUTCFullYear()}/${
@@ -210,8 +210,8 @@ export class MonthsCarouselService implements OnDestroy {
   createMonthList(monthLng: Array<string>) {
     this.monthList = [];
     let newMonthList: Array<TSliderMonth> = [];
-    const monthCreator = (date, name, id): TSliderMonth => ({date, name, id});
-    const {amountOfYears} = this.month;
+    const monthCreator = (date, name, id): TSliderMonth => ({ date, name, id });
+    const { amountOfYears } = this.month;
     const middleDate = 15;
 
     for (let i = 0; i < amountOfYears; i++) {
@@ -254,7 +254,7 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   calcMonthPosition(currentPosition: number, deltaY) {
-    const {scrollStep} = this.screen;
+    const { scrollStep } = this.screen;
     const direction = deltaY > 0 ? scrollStep : deltaY < 0 ? -scrollStep : 0;
 
     if (!!direction) {
@@ -272,7 +272,7 @@ export class MonthsCarouselService implements OnDestroy {
       this.month.activeMonth = id;
     }
     this.queryMonthList.forEach((month) => {
-      const {firstChild, offsetLeft} = month.nativeElement;
+      const { firstChild, offsetLeft } = month.nativeElement;
       if (this.month.activeMonth === firstChild.id) {
         this.screen.currentPosition = offsetLeft - this.screen.scrollAmount;
         this.monthsSlider.nativeElement.scrollLeft = this.screen.currentPosition;
@@ -331,7 +331,7 @@ export class MonthsCarouselService implements OnDestroy {
     const mouseup$ = fromEvent<any>(document, 'mouseup');
 
     let startPos = 0;
-    const tagData = {name: '', id: ''};
+    const tagData = { name: '', id: '' };
 
     const onEnd = () => mouseup$.pipe(map((event) => startPos - event.clientX));
 
@@ -373,7 +373,7 @@ export class MonthsCarouselService implements OnDestroy {
         } else {
           // scrollSpeed for increasing scroll speed
           const scrollSpeed = 2;
-          const {scrollStep} = this.screen;
+          const { scrollStep } = this.screen;
 
           leftPosition *= scrollSpeed;
           const reminder = leftPosition % scrollStep;

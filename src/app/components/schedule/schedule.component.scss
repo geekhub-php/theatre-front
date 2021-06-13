@@ -1,7 +1,4 @@
 @import "~assets/styles/variables";
-$font-color-gray:#b6b6b4;
-$font-color-gold: #b49864;
-
 
 .title {
   margin: 80px auto 0;
@@ -38,7 +35,7 @@ $font-color-gold: #b49864;
 
   h2 {
     user-select: none;
-    color: $font-color-gold;
+    color: $border-color-accent;
     font-family: $creative-font;
     font-size: 80px;
   }
@@ -71,13 +68,11 @@ $font-color-gold: #b49864;
 
   &__text {
     user-select: none;
-    //margin-right: 15px;
-
     font-family: $body-font-family;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
-    color: $font-color-gray;
+    color: $secondary-background-color;
   }
 
   &__item {
@@ -115,9 +110,36 @@ $font-color-gold: #b49864;
   position: absolute;
 }
 
+@media (max-width: 1200px) {
+
+  .poster-view {
+    display: none;
+  }
+
+  .poster__spinner {
+    top: 230px;
+    position: absolute;
+  }
+}
+
 @media screen and (max-width: 1020px) {
 
   .poster-view {
     display: none;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .poster__title {
+
+    h2 {
+      font-size: $font-size-xx-large;
+    }
+  }
+
+  .poster__spinner {
+    top: 130px;
+    position: absolute;
   }
 }

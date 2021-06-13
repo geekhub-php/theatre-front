@@ -1,5 +1,5 @@
 <div class="list-view">
-  <div  *ngFor="let event of events">
+  <div *ngFor="let event of events">
     <app-list-view-item
       *ngIf="viewMode === views.LIST"
       [event]="event"></app-list-view-item>
@@ -7,8 +7,5 @@
       *ngIf="viewMode === views.MOBILE"
       [event]="event"></app-list-view-mobile-item>
   </div>
-  <div class="list-view__cat" *ngIf="!events.length && !loader">
-    <app-cat-interactive></app-cat-interactive>
-    <p i18n="@@noPerformances">No performances for now</p>
-  </div>
+  <app-cat-interactive *ngIf="!events.length && !loader"></app-cat-interactive>
 </div>

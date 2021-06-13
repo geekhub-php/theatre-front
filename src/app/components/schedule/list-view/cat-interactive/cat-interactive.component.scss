@@ -2,7 +2,8 @@
   width: 1000px;
   height: 600px;
   user-select: none;
-  margin: -30px 0;
+  margin: -60px auto 0;
+  transition: .3s ease;
 
   & > img {
     height: 100%;
@@ -34,18 +35,116 @@
   }
 
   &__eye {
-    position: relative;
+    position: absolute;
     border-radius: 10px;
     user-select: none;
   }
 
   &__left-eye {
-    top: -27%;
-    left: 10%;
+    top: 20%;
+    left: 20%;
   }
 
   &__right-eye {
-    top: -34%;
-    left: 6%;
+    top: 20%;
+    left: 20%;
+  }
+
+  & > p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 999px) {
+
+  .cat-interactive {
+    margin: -30px auto 0;
+    width: 500px;
+    height: 300px;
+
+    &__circle {
+      position: relative;
+      height: 17px;
+      width: 17px;
+    }
+
+    &__left-circle {
+      top: 30%;
+      left: 18%;
+    }
+
+    &__right-circle {
+      top: -26%;
+      left: 54%;
+    }
+
+    &__eyes {
+      position: relative;
+      top: -71%;
+      left: 45%;
+      width: 50px;
+      height: 33px;
+    }
+
+    &__eye {
+      height: 5px;
+      width: 5px;
+    }
+
+    &__left-eye {
+      top: 35%;
+      left: 40%;
+    }
+
+    &__right-eye {
+      top: 43%;
+      left: 35%;
+    }
+  }
+}
+
+@media (max-width: 499px) {
+
+  .cat-interactive {
+    margin: -30px auto 0;
+    width: 320px;
+    height: 200px;
+
+    &__circle {
+      height: 10px;
+      width: 10px;
+    }
+
+    &__left-circle {
+      top: 28%;
+      left: 14%;
+    }
+
+    &__right-circle {
+      top: -24%;
+      left: 52%;
+    }
+
+    &__eyes {
+      top: -70%;
+      left: 46%;
+      width: 30px;
+      height: 20px;
+    }
+
+    &__eye {
+      height: 3px;
+      width: 3px;
+    }
+
+    &__left-eye {
+      top: 36%;
+      left: 46%;
+    }
+
+    &__right-eye {
+      top: 50%;
+      left: 40%;
+    }
   }
 }

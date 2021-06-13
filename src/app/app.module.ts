@@ -41,7 +41,6 @@ import { StripHtmlModule } from './pipes/strip-html.module';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CalendarComponent } from './components/schedule/calendar/calendar.component';
 import { ListViewComponent } from './components/schedule/list-view/list-view.component';
-import { MobileViewComponent } from './components/schedule/mobile-view/mobile-view.component';
 import { CalendarPopupComponent } from './components/schedule/calendar/calendar-popup/calendar-popup.component';
 import { CalendarService } from './components/schedule/calendar.service';
 import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
@@ -79,7 +78,6 @@ import { ListViewMobileItemComponent } from './components/schedule/list-view/lis
     ScheduleComponent,
     CalendarComponent,
     ListViewComponent,
-    MobileViewComponent,
     ListViewItemComponent,
     ListViewMobileItemComponent,
     CalendarPopupComponent,
