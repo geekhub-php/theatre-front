@@ -84,7 +84,7 @@
         <p class="info">{{ performance.type }}</p>
       </div>
 
-      <div class="details">
+      <div *ngIf="performance.producer" class="details">
         <p><span class="bold">Режисер:</span>
           <a class="link"
              routerLink="/persons/{{ performance.producer?.slug }}">{{ performance.producer?.first_name + ' ' + performance.producer?.last_name }}</a>
@@ -96,7 +96,7 @@
         <p [innerHtml]="performance.description"></p>
       </div>
 
-      <div class="details">
+      <div *ngIf="role" class="details">
         <h4 class="details_title">Дійові особи та виконавці</h4>
         <div *ngFor="let role of roles">
           <span>{{ role.title }} – </span>
