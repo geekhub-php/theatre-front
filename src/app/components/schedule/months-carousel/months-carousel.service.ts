@@ -206,7 +206,8 @@ export class MonthsCarouselService implements OnDestroy {
 
   setDefaultData() {
     const { amountOfYears } = this.month;
-    const newDate = new Date();
+    const storedDate = JSON.parse(localStorage.getItem('selectedMonth'));
+    const newDate = (storedDate && new Date(storedDate)) || new Date();
     const half = 2;
     this.month.activeMonth = `${newDate.getUTCMonth()}/${newDate.getUTCFullYear()}/${
       amountOfYears / half
@@ -297,6 +298,7 @@ export class MonthsCarouselService implements OnDestroy {
     this.monthList.forEach((month) => {
       if (month.id === id) {
         this.month.currentFullDate = month.date;
+        localStorage.setItem('selectedMonth', JSON.stringify(month.date));
         this.activeSpinner();
         this.month$.next(this.month);
       }
@@ -345,6 +347,11 @@ export class MonthsCarouselService implements OnDestroy {
       :
       fromEvent<any>(document, 'touchend');
 
+    const scrollParams = {
+      desktop: { speed: 2, count: 50 },
+      device: { speed: 5, count: 10 }
+    };
+
     let startPos = 0;
     const tagData = { name: '', id: '' };
 
@@ -368,8 +375,8 @@ export class MonthsCarouselService implements OnDestroy {
         if (tagData.name !== 'span') {
           return;
         }
-        // 50 - reserve value if user hand shuddered when he wanted to click
-        const minCountForClick = 50;
+        // reserve value if user hand shuddered when he wanted to click
+        const minCountForClick = desktop ? scrollParams.desktop.count : scrollParams.device.count;
 
         if (Math.abs(leftPosition) < minCountForClick) {
           this.queryMonthList.forEach((el) => {
@@ -391,7 +398,7 @@ export class MonthsCarouselService implements OnDestroy {
           });
         } else {
           // scrollSpeed for increasing scroll speed
-          const scrollSpeed = 2;
+          const scrollSpeed = desktop ? scrollParams.desktop.speed : scrollParams.device.speed;
           const { scrollStep } = this.screen;
 
           leftPosition *= scrollSpeed;
