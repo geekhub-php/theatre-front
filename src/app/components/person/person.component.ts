@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { plainToClass } from 'class-transformer';
@@ -13,7 +13,7 @@ import { LoaderService } from '../partials/spinner/loader.service';
   templateUrl: './person.component.html',
   styleUrls: ['./person.component.scss']
 })
-export class PersonComponent implements AfterViewInit {
+export class PersonComponent implements OnInit {
   @Input() person: Employee;
   galleryOptions: Array<NgxGalleryOptions> = [
     {
@@ -31,7 +31,6 @@ export class PersonComponent implements AfterViewInit {
     }
   ];
 
-
   constructor(
     private router: ActivatedRoute,
     private gatewayService: GatewayService,
@@ -43,21 +42,20 @@ export class PersonComponent implements AfterViewInit {
     this.gatewayService.updateCanonicalURL();
     if (this.person) {
       this.person = plainToClass(Employee, this.person);
+
       return;
     }
     const slug = this.router.snapshot.paramMap.get('personId');
     this.getPerson(slug);
   }
 
-  ngAfterViewInit(){
-  }
-
   getPerson(slug) {
+
     this.loaderService.start('person');
+
     this.gatewayService.getEmployeeBySlug(slug).subscribe(
       res => {
         this.person = plainToClass(Employee, res);
-        console.log(this.person);
         this.loaderService.stop('person');
         this.gatewayService.updateMeta(`${this.person.first_name} ${this.person.last_name}`,
           this.person.biography, this.person.avatar.employee_small.url);
