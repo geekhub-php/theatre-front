@@ -30,7 +30,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   changeDetection: ChangeDetectionStrategy.Default
 })
 
-export class MonthsCarouselComponent implements OnInit, AfterViewInit {
+export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @Output() selectedMonth = new EventEmitter();
 
   @ViewChild('activeBox') activeBox: TNativeDivElement;

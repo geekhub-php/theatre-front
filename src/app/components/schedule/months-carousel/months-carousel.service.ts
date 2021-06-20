@@ -430,7 +430,7 @@ export class MonthsCarouselService implements OnDestroy {
 
   unSubscriber(subscription: Subscription) {
     if (subscription) {
-      subscription.unsubscribe()
+      subscription.unsubscribe();
     }
   }
 
