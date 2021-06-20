@@ -9,6 +9,8 @@ import {
 } from 'app/store/schedule/MonthsSliderItem';
 import { LoaderService } from 'app/components/partials/spinner/loader.service';
 
+import { DeviceDetectorService } from 'ngx-device-detector';
+
 export enum screenSize {
   xs = 'xs',
   md = 'md',
@@ -53,13 +55,15 @@ export class MonthsCarouselService implements OnDestroy {
     narrowScreen: 950
   };
 
+  private desktop = null;
+
   private month: TMonthProperty = {
     activeMonth: null,
     currentFullDate: new Date(),
     amountOfYears: 10
   };
 
-  constructor(private spinner: LoaderService) {
+  constructor(private spinner: LoaderService, private deviceService: DeviceDetectorService) {
     this.monthsSlider$.subscribe((carousel) => {
       this.monthsSlider = carousel;
     });
@@ -68,6 +72,11 @@ export class MonthsCarouselService implements OnDestroy {
       this.isSpinnerActive = data.load;
     });
 
+    this.getDeviceType();
+  }
+
+  getDeviceType() {
+    this.desktop = this.deviceService.getDeviceInfo().deviceType === 'desktop';
   }
 
   getActiveMonth() {
@@ -126,6 +135,7 @@ export class MonthsCarouselService implements OnDestroy {
       this.screen.screenWidth = screenWidth;
       this.screen.startPoint = startPoint;
       this.screen.scrollAmount = scrollAmount;
+      this.getDeviceType();
       this.scrollToCurrentMonth();
     };
 
@@ -324,24 +334,33 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   onDrag() {
-    const mousedown$ = fromEvent<any>(
-      this.monthsSlider.nativeElement,
-      'mousedown'
-    );
-    const mouseup$ = fromEvent<any>(document, 'mouseup');
+    const { desktop } = this;
+    const onStart$ = desktop ?
+      fromEvent<any>(this.monthsSlider.nativeElement, 'mousedown')
+      :
+      fromEvent<any>(this.monthsSlider.nativeElement, 'touchstart');
+
+    const mouEnd$ = desktop ?
+      fromEvent<any>(document, 'mouseup')
+      :
+      fromEvent<any>(document, 'touchend');
 
     let startPos = 0;
     const tagData = { name: '', id: '' };
 
-    const onEnd = () => mouseup$.pipe(map((event) => startPos - event.clientX));
+    const onEnd = () => {
+      return mouEnd$.pipe(map((event) => {
+        return startPos - (desktop ? event.clientX : event.changedTouches[0].clientX);
+      }));
+    };
 
-    this.onDragSubscription = mousedown$
+    this.onDragSubscription = onStart$
       .pipe(
         map((event) => {
           event.stopPropagation();
           tagData.name = event.target.localName;
           tagData.id = event.target.id;
-          startPos = event.clientX;
+          startPos = desktop ? event.clientX : event.changedTouches[0].clientX;
         }),
         switchMap(onEnd)
       )
@@ -409,8 +428,14 @@ export class MonthsCarouselService implements OnDestroy {
     });
   }
 
+  unSubscriber(subscription: Subscription) {
+    if (subscription) {
+      subscription.unsubscribe()
+    }
+  }
+
   ngOnDestroy() {
-    this.scrollSubscription.unsubscribe();
-    this.onDragSubscription.unsubscribe();
+    this.unSubscriber(this.scrollSubscription);
+    this.unSubscriber(this.onDragSubscription);
   }
 }

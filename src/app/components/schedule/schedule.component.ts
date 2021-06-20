@@ -1,4 +1,11 @@
-import { Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Inject,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 import { GatewayService } from '../../services/gateway.service';
@@ -40,16 +47,13 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     private calendar: CalendarService,
     private slider: MonthsCarouselService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    this.onResize();
-  }
+  ) {}
 
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     const innerWidth = window.innerWidth;
     const calendarBreakpointWidth = 1200;
     const listBreakpointWidth = 1200;
-
     switch (this.viewMode) {
       case ScheduleViewModes.CALENDAR:
         if (innerWidth < calendarBreakpointWidth) {

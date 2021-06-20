@@ -13,7 +13,7 @@ import {
   HostListener,
   EventEmitter,
   Inject,
-  LOCALE_ID
+  LOCALE_ID, OnChanges, AfterViewChecked, AfterContentChecked
 } from '@angular/core';
 import {
   TSliderMonth,
@@ -21,6 +21,7 @@ import {
   TNativeDivElement
 } from 'app/store/schedule/MonthsSliderItem';
 import { MonthsCarouselService } from './months-carousel.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-months-carousel',
@@ -29,7 +30,7 @@ import { MonthsCarouselService } from './months-carousel.service';
   changeDetection: ChangeDetectionStrategy.Default
 })
 
-export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
+export class MonthsCarouselComponent implements OnInit, AfterViewInit {
   @Output() selectedMonth = new EventEmitter();
 
   @ViewChild('activeBox') activeBox: TNativeDivElement;
@@ -45,6 +46,8 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   isSpinnerActive = false;
   month: TMonthProperty;
   activeMonth = {id: ''};
+
+  deviceType: string | null = null;
 
   monthsNameList = {
     uk: [
@@ -80,6 +83,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   constructor(
     private cd: ChangeDetectorRef,
     private carousel: MonthsCarouselService,
+    private deviceService: DeviceDetectorService,
     @Inject(LOCALE_ID) private localeId: string,
   ) {
       const idLength = 2;
@@ -108,6 +112,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.getMonth();
     this.getActiveMonth();
     this.carousel.setDefaultData();
+    this.setDeviceType();
   }
 
   onPrev(event) {
@@ -129,6 +134,22 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.carousel.onDrag();
     this.cd.detectChanges();
   }
+
+  setDeviceType() {
+    this.deviceType = this.deviceService.getDeviceInfo().deviceType;
+  }
+
+  // ngAfterContentChecked() {
+  //   if (this.deviceType) {
+  //     const { deviceType } = this.deviceService.getDeviceInfo();
+  //     console.log(this.deviceType, this.deviceService.getDeviceInfo().deviceType);
+  //     if (this.deviceType !== deviceType) {
+  //       this.carousel.onResize()
+  //       this.carousel.onDrag();
+  //       this.setDeviceType();
+  //     }
+  //   }
+  // }
 
   unSubscribe() {
     this.monthSubscription.unsubscribe();
