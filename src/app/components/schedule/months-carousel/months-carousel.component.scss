@@ -1,0 +1,110 @@
+@import "~assets/styles/variables";
+
+.slider__months__container {
+  user-select: none;
+  position: relative;
+  width: $container-width;
+  margin: 10px auto 40px;
+  z-index: 4;
+  transition: ease-out .3s;
+
+  .slider__months {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    &__active-box {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      top: 0;
+      left: 600px;
+      transition: ease-out .3s;
+    }
+
+
+    &__item {
+      position: relative;
+      display: flex;
+      user-select: none;
+      min-height: 70px;
+      min-width: 300px;
+
+      &__active span {
+        font-weight: 800;
+        color: #fff;
+      }
+
+      &__month__name {
+        overflow: visible;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        cursor: pointer;
+        font-family: $body-font-family;
+        font-size: 40px;
+        line-height: 1.5;
+        color: #323232;
+        font-weight: 400;
+      }
+    }
+
+    &__btn {
+      user-select: none;
+      position: absolute;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      top: 6px;
+      z-index: 1;
+      flex-grow: 0;
+      object-fit: contain;
+      padding: 0;
+      margin: 0;
+
+      & img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    &__btn__left {
+      left: 0;
+    }
+
+    &__btn__right {
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 1499px) {
+
+  .slider__months__container {
+    width: 900px;
+
+    .slider__months__active-box {
+      left: 300px;
+    }
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  .slider__months__container {
+    max-width: 1200px;
+
+    .slider__months {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+
+      &__item {
+        max-width: 300px;
+      }
+    }
+  }
+}

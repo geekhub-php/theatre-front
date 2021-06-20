@@ -35,6 +35,7 @@ export class GatewayService {
   readonly historiesListUrl = 'histories';
   readonly performanceEventsListUrl = 'performanceevents';
   readonly employeesListUrl = 'employees';
+  readonly employeesListGroupe = 'groups';
 
   constructor(private http: HttpClient,
               @Inject(LOCALE_ID) private localeId: string,
@@ -111,8 +112,36 @@ export class GatewayService {
   getEmployeesList(locale: string = this.localeId): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
       `${this.baseUrl}/${this.employeesListUrl}`, {params: {locale}}
+    ).pipe(// http://apistaging.theatre.pp.ua/api/employees?limit=all&random=0&seed=0&page=1&locale=uk&group=actors
+      catchError(this.handleError('get Employees list arr', new EmployeesListResponse()))
+    );
+  }
+
+  getEmployeesGroupes(locale: string = this.localeId): Observable<EmployeesListResponse> {
+    return this.http.get<EmployeesListResponse>(
+      `${this.baseUrl}/${this.employeesListUrl}/${this.employeesListGroupe}`, {params: {locale}}
     ).pipe(
-      catchError(this.handleError('get Employees list', new EmployeesListResponse()))
+      catchError(this.handleError('get Employees groupe list', new EmployeesListResponse()))
+    );
+  }
+
+  getEmployeesListByGroupe(slug, locale: string = this.localeId, page: string = 'middle'): Observable<EmployeesListResponse> {
+    return this.http.get<EmployeesListResponse>(
+      `${this.baseUrl}/${this.employeesListUrl}?group=${slug}`, {params: {locale}}
+    ).pipe(
+      catchError(this.handleError('get Employees list by groupe', new EmployeesListResponse()))
+    );
+  }
+
+  getRandomEmployees(
+    limit: string = '10',
+    page: string = 'middle',
+    locale: string = this.localeId
+  ): Observable<Employee> {
+    return this.http.get<Employee>(
+      `${this.baseUrl}/${this.employeesListUrl}?random=1`, {params: {limit: `${limit}`, page: `${page}`, locale}}
+    ).pipe(
+      catchError(this.handleError('get random Employee', new Employee()))
     );
   }
 
@@ -228,7 +257,9 @@ export class GatewayService {
       property: 'og:description',
       content: description
     });
-    this.meta.updateTag({ property: 'og:image', content: image });
+    if (image) {
+      this.meta.updateTag({ property: 'og:image', content: image });
+    }
     this.meta.updateTag({ property: 'og:url', content: `${this.canonicalUrl}${this.localeId}${this.router.url}` });
   }
 

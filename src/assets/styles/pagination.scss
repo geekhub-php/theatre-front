@@ -1,0 +1,32 @@
+@import "~assets/styles/variables";
+
+.pagination li:not(.active) a {
+  background-color: $background-color-black !important;
+  border: none;
+  width: 40px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+
+  @include font($body-font-family, $font-size-medium, $font-color-disablend, $font-weight-normal, 18px, normal)
+}
+
+.pagination ul > li.active > a {
+  background-color: $background-color-black !important;
+  border-radius: 2px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 18px, normal);
+  @include border(2, solid, $border-color-disablend !important, 2px)
+}
+
+.disabled {
+  opacity: .5;
+}

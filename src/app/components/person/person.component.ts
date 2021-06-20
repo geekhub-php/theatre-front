@@ -39,6 +39,7 @@ export class PersonComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.gatewayService.updateCanonicalURL();
 
     if (this.person) {
@@ -47,7 +48,7 @@ export class PersonComponent implements OnInit {
       return;
     }
 
-    const slug = this.router.snapshot.paramMap.get('slug');
+    const slug = this.router.snapshot.paramMap.get('personId');
     this.getPerson(slug);
   }
 

@@ -16,7 +16,7 @@ export class EpochComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loaderService.start('about-history');
+    this.loaderService.start('about-epoch');
     this.gateway.updateCanonicalURL();
   }
 }

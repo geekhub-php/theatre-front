@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { HomePageComponent } from './home-page.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
-import { SliderComponent } from './slider/slider.component';
+import { PerformanceSliderComponent } from './performance-slider/performance-slider.component';
 import { NewsListItemComponent } from '../partials/news-list-item/news-list-item.component';
 import { SpinnerModule } from '../partials/spinner/spinner.module';
 
@@ -16,13 +16,12 @@ describe('HomePageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HomePageComponent,
         SideMenuComponent,
-        SliderComponent,
+        PerformanceSliderComponent,
         NewsListItemComponent
       ],
       imports: [
         SpinnerModule,
         HttpClientModule,
-        SpinnerModule,
         RouterTestingModule
       ]
     })

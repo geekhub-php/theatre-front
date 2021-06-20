@@ -7,10 +7,10 @@ $dots-color: #868583;
 $position: absolute;
 
 @mixin opacity {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
   opacity: 1;
 }
 
@@ -18,7 +18,7 @@ $position: absolute;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
-  opacity: 0.6;
+  opacity: .6;
 }
 
 @mixin display {
@@ -27,7 +27,7 @@ $position: absolute;
 }
 
 @mixin gradient {
-  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, 0.5), rgba(14, 12, 8, 0.75), #0e0c08);
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
 }
 
 @mixin myPoint {
@@ -51,8 +51,8 @@ $position: absolute;
   height: 12px;
   padding: 4px;
   margin: 0 10px;
-  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  transition: 0.4s;
+  transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+  transition: .4s;
   cursor: pointer;
 }
 

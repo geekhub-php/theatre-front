@@ -1,10 +1,11 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RepertoireComponent } from './components/repertoire/repertoire.component';
@@ -58,6 +59,7 @@ describe('AppComponent', () => {
         NgbModule,
         AppRoutingModule,
         CoreModule,
+        HttpClientTestingModule,
         RouterTestingModule,
         StripHtmlModule,
         InfiniteScrollModule,
