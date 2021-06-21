@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-persons-header',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./persons-header.component.scss']
 })
 export class PersonsHeaderComponent implements OnInit {
+  @Input() PersonType;
 
   constructor() { }
 
   ngOnInit(): void {
+    if(this.PersonType){
+      console.log(this.PersonType);
+    }
   }
 
 }

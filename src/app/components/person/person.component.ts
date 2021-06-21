@@ -15,6 +15,9 @@ import { LoaderService } from '../partials/spinner/loader.service';
 })
 export class PersonComponent implements OnInit {
   @Input() person: Employee;
+  public personPosition: string;
+  perHeaderVis = 'none';
+  aboutHeaderVis = 'none';
   galleryOptions: Array<NgxGalleryOptions> = [
     {
       image: false,
@@ -56,12 +59,23 @@ export class PersonComponent implements OnInit {
     this.gatewayService.getEmployeeBySlug(slug).subscribe(
       res => {
         this.person = plainToClass(Employee, res);
+        this.personPosition = this.person.staff; // get person type for header
+        this.hideFakeHeader();
         this.loaderService.stop('person');
         this.gatewayService.updateMeta(`${this.person.first_name} ${this.person.last_name}`,
           this.person.biography, this.person.avatar.employee_small.url);
         },
       err => this.loaderService.stop('person')
     );
+  }
+
+  hideFakeHeader(){
+    if(this.personPosition !== 'epoch'){
+      this.perHeaderVis = 'block';
+    }
+    else{
+      this.aboutHeaderVis = 'block';
+    }
   }
 
 }

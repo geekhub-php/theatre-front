@@ -4,8 +4,6 @@
 
 .myContainer {
   @include _container;
-
-  margin-top: 33px;
 }
 
 .page-title {
@@ -13,8 +11,7 @@
 }
 
 .page-title {
-  padding-top: 10px;
-
+  padding-top: 50px;
   @include about-title;
 }
 

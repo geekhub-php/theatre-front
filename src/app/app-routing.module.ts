@@ -54,9 +54,11 @@ const appRoutes: Routes = [
       {path: 'festivals', component: FestivalsComponent},
       {path: 'visit', component: VisitComponent},
       {path: 'festivals/:slug', component: AboutMoreComponent},
-      {path: ':personId', component: PersonComponent}
+      // {path: ':personId', component: PersonComponent}
     ]
   },
+  {path: 'about/:personId', component: PersonComponent},
+
   {
     path: 'persons', component: TeamComponent,
     children: [
@@ -67,9 +69,11 @@ const appRoutes: Routes = [
       {path: 'administration/:slug', component: PersoneShowmoreComponent},
       {path: 'creative/:slug', component: PersoneShowmoreComponent},
       {path: 'artistic/:slug', component: PersoneShowmoreComponent},
-      {path: ':personId', component: PersonComponent}
+      // {path: ':personId', component: PersonComponent}
     ]
   },
+  {path: 'persons/:personId', component: PersonComponent},
+
   {path: 'contacts', component: ContactsComponent},
   {path: 'board-trustees', component: BoardTrusteesComponent},
   {path: 'donate', component: DonateComponent},
