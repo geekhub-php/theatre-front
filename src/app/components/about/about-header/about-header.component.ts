@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-about-header',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-header.component.scss']
 })
 export class AboutHeaderComponent implements OnInit {
+  @Input() PersonType;
+  selectedClass = 'selected';
+  selectedEpoch;
 
   constructor() { }
 
   ngOnInit(): void {
+    if (this.PersonType) {
+      if (this.PersonType === 'epoch') {
+        this.selectedEpoch = this.selectedClass;
+      }
+    }
   }
-
 }

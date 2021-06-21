@@ -15,7 +15,7 @@ import { LoaderService } from '../partials/spinner/loader.service';
 })
 export class PersonComponent implements OnInit {
   @Input() person: Employee;
-  public personPosition: string;
+  personPosition: string;
   perHeaderVis = 'none';
   aboutHeaderVis = 'none';
   galleryOptions: Array<NgxGalleryOptions> = [
@@ -69,11 +69,10 @@ export class PersonComponent implements OnInit {
     );
   }
 
-  hideFakeHeader(){
-    if(this.personPosition !== 'epoch'){
+  hideFakeHeader() {
+    if (this.personPosition !== 'epoch') {
       this.perHeaderVis = 'block';
-    }
-    else{
+    } else {
       this.aboutHeaderVis = 'block';
     }
   }

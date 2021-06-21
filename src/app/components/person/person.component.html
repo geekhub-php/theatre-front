@@ -3,7 +3,7 @@
   <!-- for fake route -->
   <div *ngIf="personPosition">
     <app-persons-header [style.display]="perHeaderVis" [PersonType]="personPosition"></app-persons-header>
-    <app-about-header [style.display]="aboutHeaderVis"></app-about-header>
+    <app-about-header [style.display]="aboutHeaderVis" [PersonType]="personPosition"></app-about-header>
   </div>
   <!-- for fake route -->
   <div class="person_" *ngIf="person">

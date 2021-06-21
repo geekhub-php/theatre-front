@@ -1,4 +1,5 @@
 @import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
 
 .about_seconHeader_container {
   background-color: $font-color-accent;
@@ -19,11 +20,7 @@
     align-self: center;
 
     &.active {
-      height: 56px;
-      line-height: 1.39;
-      padding-top: 16px;
-      background-color: $background-on-hover;
-      font-weight: $font-weight-semi-bold;
+      @include selectedI;
     }
   }
 
@@ -33,4 +30,8 @@
     padding-top: 16px;
     background-color: $background-on-hover;
   }
+}
+
+.selected{
+  @include selectedI;
 }
