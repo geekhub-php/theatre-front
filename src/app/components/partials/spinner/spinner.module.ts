@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SpinnerComponent } from './spinner.component';
+import { playerFactory, SpinnerComponent } from './spinner.component';
 import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
@@ -9,7 +9,8 @@ import { LottieModule } from 'ngx-lottie';
   ],
   imports: [
     CommonModule,
-    LottieModule
+    LottieModule,
+    LottieModule.forRoot({ player: playerFactory })
   ],
   exports: [
     SpinnerComponent

@@ -110,7 +110,6 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     CoreModule,
     GalleryModule,
     NguCarouselModule,
-    LottieModule.forRoot({ player: playerFactory }),
   ],
   providers: [
     CalendarPopupComponent,
