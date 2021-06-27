@@ -15,9 +15,9 @@ import { AnimationOptions } from 'ngx-lottie';
   `
 })
 export class SpinnerComponent implements OnInit {
-  options :AnimationOptions = {
+  options: AnimationOptions = {
     path: 'assets/json/theatre_loading.json'
-  }
+  };
   visible = false;
   @Input() name: string;
 
