@@ -32,12 +32,13 @@
     }
 
     &__info {
+      align-items: center;
       gap: 0;
 
       &__item-wrapper {
         display: flex;
         flex-direction: row;
-        margin-bottom: 5px;
+        align-items: center;
       }
 
       &__item {
@@ -48,8 +49,13 @@
           box-sizing: border-box;
         }
 
+        &__icon {
+          padding: 0;
+        }
+
         &__text {
           min-width: 135px;
+          padding: 0;
         }
 
         &__venue {
@@ -58,12 +64,18 @@
           white-space: nowrap;
           width: 100%;
           color: $secondary-background-color;
-          padding-bottom: 4px;
         }
       }
 
       &__item:first-child {
         min-width: 110px;
+      }
+
+      &__item:last-child {
+
+        & > .icon__venue {
+          padding-bottom: 4px;
+        }
       }
     }
   }
@@ -157,10 +169,19 @@
           &__text {
             padding-bottom: 0;
           }
+
+          &__venue {
+            white-space: normal;
+            overflow: visible;
+          }
         }
 
         &__item:first-child {
           min-width: 80px;
+        }
+
+        &__item:last-child {
+          align-items: flex-start;
         }
       }
     }
