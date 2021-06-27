@@ -18,7 +18,7 @@ export class SpinnerComponent implements OnInit {
   visible = false;
   @Input() name: string;
   options: AnimationOptions = {
-    path: '../../../../assets/images/theatre_loading/theatre_loading.json'
+    path: '../../../../assets/images/theatre_loading.json'
   };
 
   constructor(private loaderService: LoaderService) {}
