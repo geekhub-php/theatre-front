@@ -1,11 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LoaderService } from './loader.service';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-spinner',
+  styleUrls: ['./spinner.component.scss'],
   template: `
-    <div class="d-flex justify-content-center">
-      <div class="spinner-grow text-center" [style.display]='visible ? "block" : "none"' role="status">
+    <div class="d-flex justify-content-center" [class.spinner]="visible">
+      <div class="text-center spinner__content" [style.display]='visible ? "block" : "none"' role="status">
+        <ng-lottie [options]="options" ></ng-lottie>
         <span class="sr-only">Loading...</span>
       </div>
     </div>
@@ -14,6 +17,10 @@ import { LoaderService } from './loader.service';
 export class SpinnerComponent implements OnInit {
   visible = false;
   @Input() name: string;
+  options: AnimationOptions = {
+    path: '../../../../assets/images/theatre_loading/theatre_loading.json'
+  }
+
 
   constructor(private loaderService: LoaderService) {}
 
@@ -23,4 +30,8 @@ export class SpinnerComponent implements OnInit {
       this.visible = value.load;
     });
   }
+}
+
+export function playerFactory() {
+  return import(/* webpackChunkName: 'lottie-web' */ 'lottie-web');
 }
