@@ -15,11 +15,11 @@ import { AnimationOptions } from 'ngx-lottie';
   `
 })
 export class SpinnerComponent implements OnInit {
+  options :AnimationOptions = {
+    path: 'assets/json/theatre_loading.json'
+  }
   visible = false;
   @Input() name: string;
-  options: AnimationOptions = {
-    path: '../../../../assets/images/theatre_loading.json'
-  };
 
   constructor(private loaderService: LoaderService) {}
 
