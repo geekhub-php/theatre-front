@@ -17,9 +17,7 @@ import { VisuallyImpairedComponent } from './components/visually-impaired/visual
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
 import { FormsModule } from '@angular/forms';
 
-export function playerFactory() {
-  return player;
-}
+export const playerFactory = () => player;
 
 @NgModule({
   declarations: [
