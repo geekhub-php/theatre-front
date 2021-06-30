@@ -15,6 +15,7 @@ import { SpinnerModule } from '../../components/partials/spinner/spinner.module'
 
 import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
+import { FormsModule } from '@angular/forms';
 
 export function playerFactory() {
   return player;
@@ -27,20 +28,25 @@ export function playerFactory() {
     FooterComponent,
     PageNotFoundComponent,
     VisuallyImpairedComponent,
-    FooterNavComponent
+    FooterNavComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     SpinnerModule,
     NgbCollapseModule,
+    FormsModule,
+    NgbCollapseModule,
     LottieModule.forRoot({player: playerFactory})
   ],
   exports: [
     HeaderComponent,
+    MainNavComponent,
     FooterComponent,
-    FooterNavComponent
+    FooterNavComponent,
+    VisuallyImpairedComponent,
   ]
 })
+
 export class CoreModule {
 }

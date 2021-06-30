@@ -1,53 +1,93 @@
-<table class="calendar">
+<table *ngIf="!!weeks" class="calendar">
   <thead>
-    <tr>
-      <th class="day-of-week" i18n="@@monday">Monday</th>
-      <th class="day-of-week" i18n="@@tuesday">Tuesday</th>
-      <th class="day-of-week" i18n="@@wednesday">Wednesday</th>
-      <th class="day-of-week" i18n="@@thursday">Thursday</th>
-      <th class="day-of-week" i18n="@@friday">Friday</th>
-      <th class="day-of-week" i18n="@@saturday">Saturday</th>
-      <th class="day-of-week" i18n="@@sunday">Sunday</th>
-    </tr>
+  <tr>
+    <th class="day__of__week" i18n="@@monday">Monday</th>
+    <th class="day__of__week" i18n="@@tuesday">Tuesday</th>
+    <th class="day__of__week" i18n="@@wednesday">Wednesday</th>
+    <th class="day__of__week" i18n="@@thursday">Thursday</th>
+    <th class="day__of__week" i18n="@@friday">Friday</th>
+    <th class="day__of__week" i18n="@@saturday">Saturday</th>
+    <th class="day__of__week" i18n="@@sunday">Sunday</th>
+  </tr>
   </thead>
 
   <tbody>
     <tr *ngFor="let week of weeks">
-      <td *ngFor="let day of week" class="day-of-month">
-        <span class="day-number">{{ day | date: 'd' }}</span>
-        <div class="calendar-img">
-          <img *ngIf="hasPerformanceByDate(day) && dayPerformances.length === 1"
-               [src]=dayPerformances[0].performance.mainPicture.performance_big.url
-               [alt]="dayPerformances[0].performance.title"
-               [title]="dayPerformances[0].performance.title"
-               class="calendar-photo">
-        </div>
+      <td *ngFor="let day of week"
+          class="day__of__month"
+          [class.another__month] = "(day | date: 'MM') !== (selectedDate | date: 'MM')">
+        <span class="day__number">{{ day | date: 'dd' }}</span>
         <div class="more" *ngIf="hasPerformanceByDate(day)">
-          <div class="contain"></div>
-          <a triggers="mouseenter:mouseleave"
-             [ngbPopover]="popContent" [popoverTitle]="popTitle"
-             popoverClass="popover-poster" container="body"
-             class="events"
-             [routerLink]="['', 'performance', event.performance.slug]"
-             *ngFor="let event of dayPerformances"
-             [class.events_double]="dayPerformances.length === 2"
-             [class.events_triple]="dayPerformances.length === 3">
+          <div class="more__items">
+            <ng-container *ngFor="let event of dayPerformances; let eventIndex = index">
 
-            <p *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 1">{{ event.performance.title | striphtml:[40, '...'] }}</p>
+              <ng-template #popContent>
+                <app-calendar-popup
+                  [event]="event"
+                ></app-calendar-popup>
+              </ng-template>
 
-            <ng-template #popTitle>{{ event.performance.title }}</ng-template>
+              <ng-container *ngIf="dayPerformances.length <= 3 || (dayPerformances.length > 3 && eventIndex < 2)">
+                <div class="day__performances">
+                  <a
+                    class="events"
+                    [routerLink]="['', 'performance', event.performance.slug]">
+                    <p
+                      class="events__performance__title"
+                      triggers="mouseenter:mouseleave"
+                      animation="{{true}}"
+                      [ngbPopover]="popContent"
+                      placement="top"
+                      popoverClass="popover__poster"
+                      *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">
+                      {{ event.performance.title | striphtml:['40', '...'] }}
+                    </p>
+                  </a>
+                </div>
+              </ng-container>
 
-            <ng-template #popContent>
-              <img src="{{ event.performance.mainPicture.performance_big.url }}"
-                   [title]="event.performance.mainPicture.performance_big.properties.title" class="popover-img">
-              <p class="popover-time">{{ event.time }}</p>
-              <p class="popover-date">
-                <span>{{ event.date_time | date: 'd MMMM' }}</span>,
-                <span>{{ event.date_time | date: 'EEEE' }}</span>
-              </p>
-              <p class="popover-venue">{{ event.venue }}</p>
-            </ng-template>
-          </a>
+            </ng-container>
+            <div *ngIf="dayPerformances.length > 3" class="day__performances calendar__show__more">
+              <button (click)="onShowMore(day)">
+                <span i18n="@@showMore">Show more</span> (+{{ dayPerformances.length - 2 }})
+              </button>
+            </div>
+            <div
+              *ngIf="showMore && day === activeDay"
+              class="more__items calendar__popup__show__more">
+              <div class="popup__day__number ">
+                <span>{{ day | date: 'dd' }}</span>
+              </div>
+              <ng-container *ngFor="let event of dayPerformances">
+
+                <ng-template #popContent>
+                  <app-calendar-popup
+                    [event]="event"
+                  ></app-calendar-popup>
+                </ng-template>
+
+                <div class="popup__day__performances">
+                  <a
+                    class="events"
+                    [routerLink]="['', 'performance', event.performance.slug]">
+                    <p
+                      class="popup__events__performance__title"
+                      triggers="mouseenter:mouseleave"
+                      [ngbPopover]="popContent"
+                      placement="top"
+                      popoverClass="popover__poster"
+                      *ngIf="hasPerformanceByDate(day) && dayPerformances.length > 0">
+                      {{ event.performance.title | striphtml:['40', '...'] }}
+                    </p>
+                  </a>
+                </div>
+              </ng-container>
+
+              <div class="popup__day__performances">
+                <button (click)="onShowMore(null)" i18n="@@showLess">Show less</button>
+              </div>
+            </div>
+          </div>
         </div>
       </td>
     </tr>

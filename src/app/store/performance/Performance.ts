@@ -3,6 +3,7 @@ import { PerformanceGallery } from './PerformanceGallery';
 import { Season } from '../season/Season';
 
 export class Performance {
+  age_limit: number;
   title: string;
   slug: string;
   description: string;
@@ -11,4 +12,5 @@ export class Performance {
   gallery?: Array<PerformanceGallery>;
   seasons: Array<Season>;
   type?: string;
+  duration_in_min: number;
 }
