@@ -36,15 +36,14 @@
 
 .item__wrapper {
   transition: ease .2s;
-
-  @include box(350, 500);
+  height: 500px;
+  width: 350px;
 }
 
 .image-performance {
   cursor: pointer;
-  width: 100%;
-  max-height: 500px;
-  height: 100%;
+  height: 500px;
+  width: 350px;
   object-fit: cover;
 }
 
@@ -107,7 +106,6 @@
 @media (max-width: 768px) {
 
   .wrapped {
-    max-width: 320px;
 
     &__title {
       margin-bottom: 20px;
@@ -130,7 +128,55 @@
     @include container(24px, 24, 0, 0);
   }
 
+  .image-performance {
+    height: 426px;
+    width: 300px;
+  }
+
   .item__wrapper {
-    @include box(136, 192);
+    width: auto;
+    height: auto;
+    min-width: 136px;
+    min-height: 192px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .image-performance {
+    height: 355px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .image-performance {
+    height: 284px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .image-performance {
+    height: 213px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .image-performance {
+    height: 242px;
+    width: 170px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .image-performance {
+    height: 192px;
+    width: 136px;
   }
 }

@@ -16,6 +16,11 @@ export class FooterComponent {
     cancelAnimationFrame(this.scrollAnimation);
   }
 
+  @HostListener('document:touchmove')
+  onTouchMove() {
+    cancelAnimationFrame(this.scrollAnimation);
+  }
+
   scrollToTop() {
     const that = this;
     //   tslint:disable-next-line:only-arrow-functions

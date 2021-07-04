@@ -64,7 +64,7 @@ export class RepertoireComponent implements OnInit, OnDestroy {
 
   livePageAtBottom(e) {
     this.scrollToBottomDuePagination = setTimeout(() => {
-      window.scrollTo({ top: Number(e.pageY) + Number(e.clientY), behavior: 'auto' });
+      window.scrollTo({ top: Number(e.pageY) + Number(e.clientY), behavior: 'smooth' });
     });
   }
 
