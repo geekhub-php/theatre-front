@@ -36,6 +36,7 @@
                     [collectionSize]="collectionSize"
                     [pageSize]="pageSize"
                     class="pagination"
+                    (click)="livePageAtBottom($event)"
                     [class.pagination__mobile-view]="viewMode === views.MOBILE"
     >
       <ng-template ngbPaginationPrevious>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { GatewayService } from '../../services/gateway.service';
@@ -18,11 +18,12 @@ enum RepertoireViewModes {
   styleUrls: [ './repertoire.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RepertoireComponent implements OnInit {
+export class RepertoireComponent implements OnInit, OnDestroy {
 
   pageSize = 16;
   page = 1;
   collectionSize: number;
+  scrollToBottomDuePagination = null;
 
   response: PerformanceListResponse;
   performances: Array<Performance>;
@@ -47,8 +48,8 @@ export class RepertoireComponent implements OnInit {
     const { innerWidth } = window;
     this.viewMode = innerWidth >= desktop ?
       RepertoireViewModes.DESKTOP : innerWidth < desktop && innerWidth > mobile ?
-      RepertoireViewModes.TABLET :
-      RepertoireViewModes.MOBILE;
+        RepertoireViewModes.TABLET :
+        RepertoireViewModes.MOBILE;
   }
 
   ngOnInit() {
@@ -59,6 +60,12 @@ export class RepertoireComponent implements OnInit {
       this.getPerformances(this.seasonNumber, this.audience);
     });
     this.onResize();
+  }
+
+  livePageAtBottom(e) {
+    this.scrollToBottomDuePagination = setTimeout(() => {
+      window.scrollTo({ top: Number(e.pageY) + Number(e.clientY), behavior: 'auto' });
+    });
   }
 
   getPerformances(seasonNumber: number, audience: 'kids' | 'adults' | null) {
@@ -78,5 +85,11 @@ export class RepertoireComponent implements OnInit {
         },
         error1 => this.loaderService.stop('repertoire')
       );
+  }
+
+  ngOnDestroy() {
+    if (this.scrollToBottomDuePagination) {
+      clearTimeout(this.scrollToBottomDuePagination);
+    }
   }
 }

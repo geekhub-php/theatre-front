@@ -7,6 +7,7 @@
 }
 
 .wrapped__title {
+  cursor: default;
   margin-top: 30px;
   margin-bottom: 50px;
   text-align: center;
@@ -16,6 +17,7 @@
 }
 
 .wrapped__active-nav {
+  cursor: default;
   text-align: center;
   transition: ease .2s;
 
@@ -54,6 +56,7 @@
 }
 
 .age-restrictions {
+  cursor: default;
   position: absolute;
   left: 0;
   display: flex;
