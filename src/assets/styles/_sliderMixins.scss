@@ -1,0 +1,64 @@
+@import "~assets/styles/_variables";
+
+
+$background-colors: #0e0c08;
+$dots-active-color: #b49864;
+$dots-color: #868583;
+$position: absolute;
+
+@mixin opacity {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  opacity: 1;
+}
+
+@mixin hover_opacity {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: .6;
+}
+
+@mixin display {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin gradient {
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+}
+
+@mixin myPoint {
+  list-style-type: none;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin myPoint-li {
+  background-color: $dots-color;
+  display: inline-block;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  padding: 4px;
+  margin: 0 10px;
+  transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+  transition: .4s;
+  cursor: pointer;
+}
+
+@mixin myPoint-li__active {
+  background-color: $dots-active-color;
+  transform: scale(1.2);
+  width: 16px;
+  height: 16px;
+}

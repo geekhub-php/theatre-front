@@ -1,6 +1,5 @@
-/*Previously created variables that need to be replaced with the new ones (the intention of not deleting them yet is not to
-brake the code)*/
-
+$background-main-color: #0e0c08;
+$font-color-gold: #b49864;
 $main-font: "Source Sans Pro", sans-serif;
 $white-color: #fff;
 $black-color: #000;
@@ -10,7 +9,7 @@ $main-color-darker: #9a0004;
 $secondary-color: #2a2a2a;
 $secondary-color-lighter: #777;
 $border-color: #e7e7e7;
-$typical-box-shadow: 0 0 9px 0 rgba(126, 126, 126, .16);
+$typical-box-shadow: 0 0 9px 0 rgba(126,126,126,.16);
 
 //______________________________________________________________________________________________________________________
 
@@ -62,17 +61,18 @@ $container-margin: 0 auto;
   font-style: normal;
 }
 
-$body-font-family: "Monteserrat", "Arial", "Helvetica", sans-serif;
+$body-font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
 $creative-font: "KobzarKS", "Brush Script MT", "Brush Script Std", cursive;
 
 $font-size-x-small: 10px;
 $font-size-xx-small: 12px;
 $font-size-small: 14px;
-$font-size-medium: 18px;
+$font-size-medium: 1.125rem;
 $font-size-large: 24px;
 $font-size-x-large: 32px;
 $font-size-xxx-large: 40px;
 $font-largest: 72px;
+$font-largest-x: 100px;
 
 $font-color-gray: #868583;
 $font-color-white: #fff;
@@ -118,3 +118,14 @@ $background-color-disabled: #868583;
 $secondary-background-color: #b6b6b4;
 $background-on-hover: #c7b28b;
 $box-shadow: 0 8px 18px 0 rgba(0, 0, 0, .25);
+
+/*Gradient*/
+
+@mixin gradient {
+  background: linear-gradient($background-color-light, $background-color-gray, $background-color-dark, $background-color-black);
+}
+
+$background-color-light: rgba(14, 12, 8, 0);
+$background-color-gray: rgba(14, 12, 8, .5);
+$background-color-dark: rgba(14, 12, 8, .75);
+$background-color-black: #0e0c08;

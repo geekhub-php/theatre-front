@@ -1,0 +1,120 @@
+<!-- TODO: breadcrumbs -->
+
+
+<div class="mContainer">
+  <div class="creative-navigation">
+
+      <!-- TODO: update after adding secondary parshion  -->
+
+      <!-- <h3 i18n="@@mainPage">Main page</h3> <h3>&nbsp;/&nbsp;</h3>
+      <h3 i18n="@@persons">Persons</h3> <h3>&nbsp;/&nbsp;</h3>
+      <h3 class="persons-navigation-bold" i18n="@@creative">Creative Composition</h3> -->
+  </div>
+  <div class="page-title">
+      <h1 i18n="@@creative" class="page-title-name">Creative Composition</h1>
+  </div>
+  <div class="actors">
+    <div class="title">
+      <h2 class="actors-title" i18n="@@theatreActors">Theater actors</h2>
+    </div>
+    <div class="images-l">
+      <div *ngIf="actorsEmployees.length > 0">
+        <div class="wrapped">
+          <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="actorsEmployees" class="slider">
+            <ngu-tile *nguCarouselDef="let item">
+              <div class="image" [routerLink]="['../', item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
+            </ngu-tile>
+            <ul class="myPoint" NguCarouselPoint>
+              <li *ngFor="let j of myCarousel.pointNumbers; let i = index"
+                [class.active]="j===myCarousel.activePoint"
+                (click)="myCarousel.moveTo(i)"
+              >
+              </li>
+            </ul>
+            <div NguCarouselPrev class="left">
+              <img alt="chevron-left" src="assets/images/slider/chevron-left.svg">
+            </div>
+            <div NguCarouselNext class="right">
+              <img alt="chevron-rigth" src="assets/images/slider/chevron-right.svg">
+            </div>
+          </ngu-carousel>
+        </div>
+      </div>
+    </div>
+    <div class="all-persons">
+      <!-- routs -->
+      <a routerLink="actors" class="link-persons" i18n="@@showMore">Show more</a>
+    </div>
+  </div>
+  <div class="ballet">
+    <div class="title">
+      <h2 class="deputies-title" i18n="@@ballet">Ballet</h2>
+    </div>
+    <div class="images">
+            <!-- <section class="list-item" *ngFor="let person of directorArr">
+          <span class="histories__list-text">
+              <img src="{{ person.avatar.employee_big.url }}" alt="photo"
+                  [title]="person.avatar.employee_big.properties.title">
+              <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+          </span>
+      </section> -->
+      <div *ngIf="balletEmployees.length > 0">
+        <div class="wrapped">
+          <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="balletEmployees" class="slider">
+            <ngu-tile *nguCarouselDef="let item">
+              <div class="image" [routerLink]="['../', item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
+            </ngu-tile>
+            <ul class="myPoint" NguCarouselPoint>
+              <li *ngFor="let j of myCarousel.pointNumbers; let i = index"
+                [class.active]="j===myCarousel.activePoint"
+                (click)="myCarousel.moveTo(i)"
+              >
+              </li>
+            </ul>
+            <div NguCarouselPrev class="left">
+              <img alt="chevron-left" src="assets/images/slider/chevron-left.svg">
+            </div>
+            <div NguCarouselNext class="right">
+              <img alt="chevron-rigth" src="assets/images/slider/chevron-right.svg">
+            </div>
+          </ngu-carousel>
+        </div>
+      </div>
+      <div class="all-persons">
+        <!-- routs -->
+        <a routerLink="ballet" class="link-persons" i18n="@@showMore">Show more</a>
+      </div>
+    </div>
+  </div>
+  <div class="orchestra">
+    <div class="title">
+      <h2 class="orchestra-title" i18n="@@orchestra">Orchestra</h2>
+    </div>
+      <div *ngIf="orchestraEmployees.length > 0">
+        <div class="wrapped">
+          <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="orchestraEmployees" class="slider">
+            <ngu-tile *nguCarouselDef="let item">
+              <div class="image" [routerLink]="['../', item.slug]" [style.background]="'url(' + item.avatar.employee_big.url + ')'"></div>
+            </ngu-tile>
+            <ul class="myPoint" NguCarouselPoint>
+              <li *ngFor="let j of myCarousel.pointNumbers; let i = index"
+                [class.active]="j===myCarousel.activePoint"
+                (click)="myCarousel.moveTo(i)"
+              >
+              </li>
+            </ul>
+            <div NguCarouselPrev class="left">
+              <img alt="chevron-left" src="assets/images/slider/chevron-left.svg">
+            </div>
+            <div NguCarouselNext class="right">
+              <img alt="chevron-rigth" src="assets/images/slider/chevron-right.svg">
+            </div>
+          </ngu-carousel>
+        </div>
+      </div>
+      <div class="all-persons">
+        <!-- routs -->
+        <a routerLink="orchestra" class="link-persons" i18n="@@showMore">Show more</a>
+      </div>
+  </div>
+</div>

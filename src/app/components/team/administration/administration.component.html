@@ -1,0 +1,60 @@
+<!-- TODO: breadcrumbs -->
+
+<div class="mContainer">
+    <div class="administration-navigation">
+
+        <!-- TODO: update after adding secondary parshion  -->
+    
+        <!-- <h3 i18n="@@mainPage">Main page</h3> <h3>&nbsp;/&nbsp;</h3>
+        <h3 i18n="@@persons">Persons</h3> <h3>&nbsp;/&nbsp;</h3>
+        <h3 class="persons-navigation-bold" i18n="@@administration">Administration</h3> -->
+    </div>
+    <div class="page-title">
+        <h1 i18n="@@administration" class="page-title-name">Administration</h1>
+    </div>
+        <!-- delete after director added -->
+    <div class="director" *ngIf="directorEmployees.length > 0">
+        <!-- delete after director added -->
+        <div class="title">
+            <h2 class="director-title" i18n="@@director">Director</h2>
+        </div>
+        <div class="images-l">
+            <section class="list-item" *ngFor="let person of directorEmployees" [routerLink]="['../', person.slug]">
+                <a class="histories__list-text">
+                    <img class="img" src="{{ person.avatar.employee_big.url }}" alt="photo"
+                        [title]="person.avatar.employee_big.properties.title">
+                    <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+                </a>
+            </section>
+        </div>
+    </div>
+    <div class="deputies">
+        <div class="title">
+            <h2 class="deputies-title" i18n="@@deputies">Deputies</h2>
+        </div>
+        <div class="images">
+            <section class="list-item" *ngFor="let person of deputiesEmployees" [routerLink]="['../', person.slug]">
+                <a class="histories__list-text">
+                    <img src="{{ person.avatar.employee_big.url }}" alt="photo"
+                        [title]="person.avatar.employee_big.properties.title">
+                     <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+                </a>
+            </section>
+        </div>
+    </div>
+    <div class="administrative-accounting">
+        <div class="title">
+            <h2 class="administrative-accounting-title" i18n="@@administrativeAccounting">Administrative-accounting</h2>
+        </div>
+        <div class="images-l">
+            <section class="list-item" *ngFor="let person of adminAccountingEmployees" [routerLink]="['../', person.slug]">
+                <a class="histories__list-text">
+                    <img src="{{ person.avatar.employee_big.url }}" alt="photo"
+                        [title]="person.avatar.employee_big.properties.title">
+                    <h4>{{ person.first_name }}<br>{{ person.last_name }}</h4>
+                </a>
+            </section>
+        </div>
+        
+    </div>
+</div>

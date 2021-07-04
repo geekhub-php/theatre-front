@@ -41,13 +41,18 @@
       margin: 0;
       padding: 0;
       list-style: none;
+      justify-content: space-between;
+    }
+
+    &__list::after {
+      content: "";
+      flex: auto;
     }
 
     &__item {
       display: flex;
       flex-direction: column;
       width: 224px;
-      margin: 12px;
       overflow: hidden;
     }
 

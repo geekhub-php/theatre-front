@@ -1,35 +1,67 @@
 @import "~assets/styles/variables";
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.myContainer {
+  @include _container;
+
+  margin-top: 33px;
+}
 
 .page-title {
   margin-top: 0;
 }
 
-.person {
-  display: flex;
-  flex-direction: column;
+.page-title {
+  padding-top: 10px;
 
-  section {
-    margin-top: 45px;
-
-    img {
-      width: 300px;
-      margin-right: 42px;
-      float: left;
-    }
-
-    .about {
-      font-size: 1rem;
-    }
-  }
+  @include about-title;
 }
 
-:host ::ng-deep .biography {
-  color: $secondary-color-lighter;
+.main-content {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 12%;
+  margin-right: 12%;
 
-  p {
-    margin-bottom: 5px;
-    font-size: 1rem;
+  .person-face {
+    padding-left: 30px;
   }
+
+  .about-text {
+    margin-left: 5%;
+    font-family: $body-font-family;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    color: $secondary-background-color;
+  }
+
+  a {
+    text-decoration: none;
+    color: $secondary-background-color;
+  }
+
+  a:hover {
+    color: $secondary-background-color;
+  }
+
+  margin-bottom: 150px;
+}
+
+.position {
+  text-transform: capitalize;
+  font-family: $body-font-family;
+  font-size: $font-size-medium;
+  margin-bottom: 30px;
+}
+
+.biography {
+  font-family: $body-font-family;
+  font-size: $font-size-medium;
+  color: $font-color-accent;
 }
 
 ngx-gallery ::ng-deep {
@@ -73,107 +105,5 @@ ngx-gallery ::ng-deep {
     background-size: 40px 40px;
     background-repeat: no-repeat;
     margin: 10px 10px 0 0;
-  }
-}
-
-@media screen and (max-width: 1120px) {
-
-  .container .person {
-
-    ngx-gallery ::ng-deep {
-
-      .ngx-gallery-preview-img-wrapper img {
-        max-width: 480px;
-      }
-
-      .ngx-gallery-arrow-left .ngx-gallery-arrow {
-        margin-left: 90px;
-      }
-
-      .ngx-gallery-arrow-right .ngx-gallery-arrow {
-        margin-right: 90px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-
-  .container {
-    width: 490px;
-    text-align: center;
-
-    .person {
-      align-items: center;
-
-      section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-
-        img {
-          width: 170px;
-          height: 265px;
-          margin-right: 0;
-        }
-
-        .about h2 {
-          margin: 10px 0;
-        }
-      }
-
-      ngx-gallery ::ng-deep {
-        width: 150px !important;
-        margin-top: 10px;
-
-        .ngx-gallery-thumbnails a {
-          border: 2px solid $main-color;
-        }
-
-        .ngx-gallery-preview-img-wrapper img {
-          max-width: 380px !important;
-          border: 7px solid $white-color;
-        }
-
-        .ngx-gallery-arrow-left .ngx-gallery-arrow {
-          margin-left: 0;
-        }
-
-        .ngx-gallery-arrow-right .ngx-gallery-arrow {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 479px) {
-
-  .container {
-    width: 320px !important;
-
-    .person {
-
-      section img {
-        width: 150px;
-        height: 225px;
-      }
-
-      ngx-gallery ::ng-deep {
-
-        .ngx-gallery-preview-img-wrapper img {
-          max-width: 250px !important;
-        }
-
-        .ngx-gallery-arrow-left .ngx-gallery-arrow {
-          margin-left: -12px;
-        }
-
-        .ngx-gallery-arrow-right .ngx-gallery-arrow {
-          margin-right: -12px;
-        }
-      }
-    }
   }
 }

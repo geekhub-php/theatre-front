@@ -1,27 +1,63 @@
 <div class="list-view">
-  <div class="list-view__item" *ngFor="let event of events">
-    <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
-      <div class="list-view__date-wrapper">
-        <div class="list-view__date">
-          <div class="list-view__day">{{ event.date_time | date: 'dd.MM' }}</div>
-          <div class="list-view__day-type">{{ event.date_time | date: 'EEEE' }}</div>
+    <div class="list-view__item" *ngFor="let event of events">
+      <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
+        <div  class="list-view__link__age-limit">
+          <span>{{ event.performance.age_limit }}+</span>
+        </div>
+        <div class="list-view__date-wrapper">
+          <div class="list-view__date">
+            <div class="list-view__date__day">{{ event.date_time | date: 'dd' }}</div>
+            <div class="list-view__date__day-type">{{ event.date_time | date: 'EEEE' }}</div>
+          </div>
+        </div>
+        <div class="list-view__content">
+          <div>
+            <div class="list-view__content__title">{{ event.performance.title }}</div>
+            <div class="list-view__content__type">{{ event.performance.type }}</div>
+          </div>
+          <div class="list-view__content__info">
+            <div class="list-view__content__info__item">
+              <img
+                class="list-view__content__info__item__clock"
+                src="assets/images/list-view/time-fill.svg" alt="">
+              <span class="list-view__content__info__item__time">{{ event.time }}</span>
+            </div>
+            <div *ngIf='!!event.performance.duration_in_min' class="list-view__content__info__item">
+              <img
+                class="list-view__content__info__item__icon"
+                src="assets/images/list-view/bx-hourglass.svg" alt="">
+              <span class="list-view__content__info__item__text">
+                {{ event.performance.duration_in_min | performanceDuration: localeId }}
+              </span>
+            </div>
+            <div class="list-view__content__info__item">
+              <img
+                class="list-view__content__info__item__icon"
+                src="assets/images/list-view/map-pin-2-fill.svg" alt="">
+              <span class="list-view__content__info__item__text">{{ event.venue }}</span>
+            </div>
+          </div>
+        </div>
+          <a
+            class="list-view__button"
+            *ngIf="event.buy_ticket_link"
+            [href]="event.buy_ticket_link"
+            target="_blank"
+            (click)="$event.stopPropagation()"
+            i18n="@@buyTicket">
+            Buy ticket
+          </a>
+        <div class="list-view__arrow-right">
+          <img alt="arrow" src="assets/images/news/arrow-right.svg">
         </div>
       </div>
-      <div class="list-view__content">
-        <div class="list-view__title">{{ event.performance.title }}</div>
-        <div class="list-view__description" [innerHtml]="event.performance.description"></div>
-      </div>
-      <div class="list-view__info">
-        <div class="list-view__time">{{ event.time }}</div>
-        <div class="list-view__place">{{ event.venue }}</div>
-        <div class="list-view__type">{{ event.performance.type }}</div>
-        <a *ngIf="event.buy_ticket_link" [href]="event.buy_ticket_link" target="_blank"
-           class="list-view__button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
-      </div>
       <img [src]="event.performance.sliderImage.slider_slider.url"
-           [alt]="event.performance.title"
-           [title]="event.performance.title"
-           class="list-view__img">
+          [alt]="event.performance.title"
+          [title]="event.performance.title"
+          class="list-view__img">
     </div>
+  <div class="list-view__cat" *ngIf="!events.length && !loader" >
+    <img src="assets/images/calendar/animation_cat.svg" alt="">
+    <p i18n="@@noPerformances">No performances for now</p>
   </div>
 </div>
