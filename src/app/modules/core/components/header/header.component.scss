@@ -9,7 +9,7 @@
   z-index: 20;
 
   .navbar {
-    width: $container-width;
+    max-width: $container-width;
     margin: $container-margin;
   }
 

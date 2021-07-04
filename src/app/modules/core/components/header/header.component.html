@@ -18,22 +18,22 @@
     </button>
 
     <app-main-nav></app-main-nav>
+<!--    button doesn't work on responsive-->
+<!--    <button class="u-unstyled-btn search-icon-button" aria-controls="collapseExample" type="submit"-->
+<!--            (click)="collapseMenu()"-->
+<!--            [attr.aria-expanded]="!isCollapsed">-->
+<!--      <svg class="u-svg-icon" width="20" height="20">-->
+<!--        <use href="assets/images/sprite.svg#search"></use>-->
+<!--      </svg>-->
+<!--    </button>-->
 
-    <button class="u-unstyled-btn search-icon-button" aria-controls="collapseExample" type="submit"
-            (click)="collapseMenu()"
-            [attr.aria-expanded]="!isCollapsed">
-      <svg class="u-svg-icon" width="20" height="20">
-        <use href="assets/images/sprite.svg#search"></use>
-      </svg>
-    </button>
-
-    <div class="search-box" [ngbCollapse]="!isCollapsed">
-      <input type="submit" class="search-input" placeholder="{{search_text}}" name="search">
-      <img src="assets/images/Union.svg" class="search-button" alt="Search button" title="Search"
-           i18n-title="@@search" (click)="searchSubmit()">
-      <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Close"
-           i18n-title="@@ngb.alert.close" (click)="clearSubmit()">
-    </div>
+<!--    <div class="search-box" [ngbCollapse]="!isCollapsed">-->
+<!--      <input type="submit" class="search-input" placeholder="{{search_text}}" name="search">-->
+<!--      <img src="assets/images/Union.svg" class="search-button" alt="Search button" title="Search"-->
+<!--           i18n-title="@@search" (click)="searchSubmit()">-->
+<!--      <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Close"-->
+<!--           i18n-title="@@ngb.alert.close" (click)="clearSubmit()">-->
+<!--    </div>-->
 
     <a class="language d-none d-lg-block ukr"
        [href]="langRedirectUrl" i18n="@@lang">Укр&nbsp;</a> <span class="separation">|</span>

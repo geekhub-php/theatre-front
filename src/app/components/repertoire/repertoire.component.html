@@ -22,7 +22,7 @@
 
   <div class="wrapped__performances">
     <div *ngFor="let item of perfomances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
-         class="perfomance__item">
+         class="performance__item">
       <div class="item__container" [routerLink]="['', 'performance', item.slug]">
         <img class="image-performance" [src]="item.mainPicture.performance_big.url"
              [alt]="item.mainPicture.performance_small.properties.alt">
