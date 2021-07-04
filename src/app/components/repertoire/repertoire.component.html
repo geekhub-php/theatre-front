@@ -7,7 +7,7 @@
   </symbol>
 </svg>
 
-<app-repertoire-nav-header></app-repertoire-nav-header>
+<app-repertoire-nav-header *ngIf="viewMode === views.DESKTOP"></app-repertoire-nav-header>
 
 <div class="wrapped">
   <h1 class="wrapped__title" i18n="@@repertoire">Repertoire</h1>
@@ -21,8 +21,8 @@
   <p class="wrapped__active-nav" *ngIf="seasonNumber" i18n="@@archive">Archive</p>
 
   <div class="wrapped__performances">
-    <div *ngFor="let item of perfomances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
-         class="performance__item">
+    <div *ngFor="let item of performances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
+         class="item__wrapper">
       <div class="item__container" [routerLink]="['', 'performance', item.slug]">
         <img class="image-performance" [src]="item.mainPicture.performance_big.url"
              [alt]="item.mainPicture.performance_small.properties.alt">
@@ -31,11 +31,12 @@
     </div>
   </div>
 
-  <div *ngIf="collectionSize > pageSize" class="pagination_wrapper">
+  <div *ngIf="collectionSize > pageSize" class="pagination__wrapper">
     <ngb-pagination [(page)]="page"
                     [collectionSize]="collectionSize"
                     [pageSize]="pageSize"
                     class="pagination"
+                    [class.pagination__mobile-view]="viewMode === views.MOBILE"
     >
       <ng-template ngbPaginationPrevious>
         <svg>

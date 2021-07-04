@@ -10,42 +10,44 @@
   margin-top: 30px;
   margin-bottom: 50px;
   text-align: center;
+  transition: ease .2s;
 
   @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
 }
 
 .wrapped__active-nav {
   text-align: center;
+  transition: ease .2s;
 
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8);
 }
 
 .wrapped__performances {
-  margin: 0 5px;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   grid-gap: 30px;
-  transition: ease 0.2s
+  transition: ease .2s
   //grid-template-rows: 490px;
 }
 
-.performance__item {
-  max-width: 350px;
-}
+.item__wrapper {
+  transition: ease .2s;
 
-.item__wraper {
   @include box(350, 500);
 }
 
 .image-performance {
   cursor: pointer;
-
-  @include box(350, 500);
+  width: 100%;
+  max-height: 500px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .item__container {
-  width: 350px;
+  max-width: 350px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -63,37 +65,60 @@
   color: $font-color-white;
   font-family: $body-font-family;
   background-color: $background-color-accent;
+  transition: ease .2s;
 
   @include container(56px, 56, 0, 0);
 }
 
-.pagination_wrapper {
+.pagination__wrapper {
   margin-top: 30px;
   float: right;
 }
 
+:host ::ng-deep .pagination__mobile-view {
+
+  .pagination > .page-item > .page-link {
+    font-size: $font-size-xx-small;
+  }
+}
+
 @media (max-width: 1550px) {
+
   .wrapped__performances {
     grid-gap: 16px;
   }
 }
+
 @media (max-width: 1480px) {
+
   .wrapped {
-    max-width: $container-width;
-    padding-bottom: 140px;
+    max-width: 800px;
+    padding: 0 14px 140px;
   }
+
   .wrapped__performances {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+
   .wrapped {
-    max-width: $container-width;
-    padding-bottom: 140px;
-  }
-  .wrapped__performances {
-    grid-template-columns: repeat(2, 1fr);
+    max-width: 320px;
+
+    &__title {
+      margin-bottom: 20px;
+
+      @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1, normal);
+    }
+
+    &__active-nav {
+      @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8);
+    }
+
+    &__performances {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .age-restrictions {
@@ -102,4 +127,7 @@
     @include container(24px, 24, 0, 0);
   }
 
+  .item__wrapper {
+    @include box(136, 192);
+  }
 }
