@@ -1,0 +1,19 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.myContainer {
+  @include _container;
+}
+
+.epoch-navigation {
+  @include breadcrumbs-nav;
+  margin-top: -40px;
+
+  h3 {
+    font-size: $font-size-small;
+  }
+
+  .epoch-navigation-bold {
+    @include breadcrumbs-nav-bold;
+  }
+}

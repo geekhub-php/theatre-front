@@ -1,0 +1,29 @@
+<div class="myContainer">
+  <div class="history-navigation">
+
+<!-- TODO: update after adding secondary parshion  -->
+
+    <!-- <h3 i18n="@@mainPage">Main page</h3> <h3>&nbsp;/&nbsp;</h3>
+    <h3 i18n="@@aboutTitle">About</h3> <h3>&nbsp;/&nbsp;</h3>
+    <h3 class="history-navigation-bold" i18n="@@theatreHistory">History of theatre</h3> -->
+  </div>
+
+  <h2 class="historyTitle" i18n="@@theatreHistory">History of theatre</h2>
+
+  <app-spinner name="about"></app-spinner>
+  <div class="list">
+    <section class="list-item" *ngFor="let item of listHistories | slice: 3:4; index as i">
+
+      <span class="histories__list-text">
+
+        <img class="histories__list-main_img" [src]="item.mainPicture.history_big.url" alt="picture" [title]="item.mainPicture.history_big.properties.title"/>
+
+        {{ item.text }}
+
+      </span>
+
+    </section>
+
+  </div>
+  <img class="botTheatreImage" src="assets/images/theater_history_illustration 4.png" alt="image">
+</div>

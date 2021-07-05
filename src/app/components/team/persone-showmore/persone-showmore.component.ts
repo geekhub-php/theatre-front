@@ -28,7 +28,11 @@ export class PersoneShowmoreComponent implements OnInit {
   ngOnInit() {
     this.loaderService.start('persons-showmore');
 
-    const slug = this.route.snapshot.params.slug;
+    let slug = this.route.snapshot.params.slug;
+
+    if (!slug) {
+      slug = 'epoch';
+    }
 
     this.httpGatewayService.getEmployeesGroupes(slug).subscribe((groupeTitle) => {
       this.titleArr = this.titleArr.concat(groupeTitle);

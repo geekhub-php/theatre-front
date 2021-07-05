@@ -1,0 +1,22 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.myContainer {
+  @include _container;
+}
+
+.visit-navigation { 
+  @include breadcrumbs-nav;
+
+  h3 {
+    font-size: $font-size-small;
+  }
+
+  .visit-navigation-bold {
+    @include breadcrumbs-nav-bold;
+  }
+}
+
+.visitTitle {
+  @include about-title;
+}

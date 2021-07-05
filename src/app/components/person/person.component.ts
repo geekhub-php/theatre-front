@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { plainToClass } from 'class-transformer';
@@ -15,6 +15,9 @@ import { LoaderService } from '../partials/spinner/loader.service';
 })
 export class PersonComponent implements OnInit {
   @Input() person: Employee;
+  personPosition: string;
+  perHeaderVis = 'none';
+  aboutHeaderVis = 'none';
   galleryOptions: Array<NgxGalleryOptions> = [
     {
       image: false,
@@ -39,29 +42,39 @@ export class PersonComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.gatewayService.updateCanonicalURL();
-
     if (this.person) {
       this.person = plainToClass(Employee, this.person);
 
       return;
     }
-
     const slug = this.router.snapshot.paramMap.get('personId');
     this.getPerson(slug);
   }
 
   getPerson(slug) {
+
     this.loaderService.start('person');
+
     this.gatewayService.getEmployeeBySlug(slug).subscribe(
       res => {
         this.person = plainToClass(Employee, res);
+        this.personPosition = this.person.staff; // get person type for header
+        this.hideFakeHeader();
         this.loaderService.stop('person');
         this.gatewayService.updateMeta(`${this.person.first_name} ${this.person.last_name}`,
           this.person.biography, this.person.avatar.employee_small.url);
-      },
+        },
       err => this.loaderService.stop('person')
     );
   }
+
+  hideFakeHeader() {
+    if (this.personPosition !== 'epoch') {
+      this.perHeaderVis = 'block';
+    } else {
+      this.aboutHeaderVis = 'block';
+    }
+  }
+
 }

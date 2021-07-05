@@ -1,0 +1,61 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.myContainer {
+  @include _container;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.history-navigation {
+  @include breadcrumbs-nav;
+
+  h3 {
+    font-size: $font-size-small;
+  }
+
+  .history-navigation-bold {
+    @include breadcrumbs-nav-bold;
+  }
+}
+
+.historyTitle {
+  @include about-title;
+}
+
+.botTheatreImage{
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  padding-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+
+  .list-item {
+    width: 100%;
+    max-width: 1500px;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+
+    .histories__list-main_img {
+      width: auto;
+      margin: 7px 7px 7px 0;
+      object-fit: contain;
+      float: left;
+      padding-right: 20px;
+    }
+
+    .histories__list-text {
+      color: $font-color-primary;
+      font-family: $body-font-family;
+      font-size: $font-size-medium;
+      line-height: 1.5;
+    }
+  }
+}
