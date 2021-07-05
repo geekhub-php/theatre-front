@@ -20,3 +20,37 @@
 .visitTitle {
   @include about-title;
 }
+
+.text-rules{
+  margin-left: 10%;
+  margin-right: 10%;
+  color: $font-color-primary;
+  font-family: $body-font-family;
+  font-size: $font-size-medium;
+  line-height: 1.5;
+
+  .head-center{
+    margin-top: -30px;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+
+    .head-center-text{
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.pandemia-rules{
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+ul, ol{
+  margin-bottom: 15px;
+}
+
+li, ul{
+  margin-bottom: 10px;
+}
