@@ -59,3 +59,49 @@
     }
   }
 }
+
+@media (max-width: $max-width-tablet) {
+
+  .historyTitle{
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  .histories__list-text, span{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    margin-left: 34px;
+    margin-right: 34px;
+    font-size: $font-size-x-medium;
+
+    img{
+      width:120%;
+      margin-bottom: 16px; 
+    }
+  }
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .historyTitle{
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .histories__list-text, span{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    margin-left: 12px;
+    margin-right: 16px;
+    .history-text{
+      font-size: 14px;
+    }
+
+    img{
+      width:120%;
+    }
+  }
+  
+}

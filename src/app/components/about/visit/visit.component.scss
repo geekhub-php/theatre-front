@@ -55,7 +55,7 @@ li, ul{
   margin-bottom: 10px;
 }
 
-@media (max-width: $max-width-tablet){
+@media (max-width: $max-width-tablet) {
 
   .visitTitle{
     font-size: $font-largest;
@@ -70,6 +70,7 @@ li, ul{
 }
 
 @media (max-width: $max-width-mobile) {
+
   .visitTitle{
     font-size: $font-size-xx-large;
     text-align: center;
@@ -80,5 +81,4 @@ li, ul{
     margin-right: 16px;
     font-size: $font-size-small;
   } 
-  
 }
