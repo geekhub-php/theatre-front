@@ -54,3 +54,31 @@ ul, ol{
 li, ul{
   margin-bottom: 10px;
 }
+
+@media (max-width: $max-width-tablet){
+
+  .visitTitle{
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  .text-rules{
+    margin-left: 32px;
+    margin-right: 32px;
+    font-size: $font-size-medium;
+  }  
+}
+
+@media (max-width: $max-width-mobile) {
+  .visitTitle{
+    font-size: $font-size-xx-large;
+    text-align: center;
+  }
+
+  .text-rules{
+    margin-left: 12px;
+    margin-right: 16px;
+    font-size: $font-size-small;
+  } 
+  
+}

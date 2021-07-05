@@ -69,6 +69,7 @@ $font-size-small: 14px;
 $font-size-medium: 1.125rem;
 $font-size-large: 24px;
 $font-size-x-large: 32px;
+$font-size-xx-large: 36px;
 $font-size-xxx-large: 40px;
 $font-largest: 72px;
 $font-largest-x: 100px;
@@ -128,3 +129,8 @@ $background-color-light: rgba(14, 12, 8, 0);
 $background-color-gray: rgba(14, 12, 8, .5);
 $background-color-dark: rgba(14, 12, 8, .75);
 $background-color-black: #0e0c08;
+
+/*Width sizes for tablet and mobile*/
+
+$max-width-tablet: 768px;
+$max-width-mobile: 320px;
