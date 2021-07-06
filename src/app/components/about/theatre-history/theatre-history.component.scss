@@ -67,6 +67,11 @@
     text-align: center;
   }
 
+  img{
+    width:120%;
+    margin-bottom: 16px; 
+  }
+
   .histories__list-text, span{
     display: flex;
     flex-direction: column;
@@ -74,11 +79,6 @@
     margin-left: 10px;
     margin-right: 10px;
     font-size: $font-size-x-medium;
-
-    img{
-      width:120%;
-      margin-bottom: 16px; 
-    }
   }
 }
 
@@ -89,19 +89,20 @@
     text-align: center;
   }
 
+  .history-text{
+    font-size: 14px;
+  }
+  
+  img{
+    width:120%;
+  }
+
   .histories__list-text, span{
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
     margin-left: 5px;
     margin-right: 5px;
-    .history-text{
-      font-size: 14px;
-    }
-
-    img{
-      width:120%;
-    }
   }
   
 }
