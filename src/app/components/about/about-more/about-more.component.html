@@ -1,31 +1,23 @@
 <div class="myContainer">
   <app-spinner name="about-more"></app-spinner>
 
-<!-- TODO: update after adding secondary parshion  -->
-
-
-  <!-- <div class="fest-navigation">
-    <h3 i18n="@@mainPage">Main page</h3> <h3>&nbsp;/&nbsp;</h3>
-    <h3 i18n="@@aboutTitle">About</h3> <h3>&nbsp;/&nbsp;</h3>
-    <h3 i18n="@@festivals">Festivals</h3><h3>&nbsp;/&nbsp;</h3>
-    <h3 class="fest-navigation-bold" i18n="@@festival">Festival</h3>
-  </div> -->
-
   <h2 class="festTitle" i18n="@@festival">Festival</h2>
 
   <div class="history" *ngIf="history">
     <div class="history-title">
       <h2 class="page-title history-heading">{{ history.title }}</h2>
     </div>
+
     <div class="history-fest-contain">
+
       <div class="history-main_img">
         <img class="img" [src]="history.mainPicture.reference.url" [alt]="history.mainPicture.reference.properties.alt"
              [title]="history.mainPicture.reference.properties.title"/>
       </div>
-      <div class="post-text" [innerHtml]="history.text"></div>
 
-
+      <div class="post-text" ><p>{{history.text}}</p></div>
     </div>
+
     <div *ngIf="history.performances.length > 0">
 
       <div class="wrapped">
@@ -65,6 +57,20 @@
 
       </div>
 
+    </div>    
+    
+    <div class="mobile_performances">
+      <div *ngIf="history.performances.length > 0">
+        <h2 class="performansesListTitle" i18n="@@performances">Performance</h2>
+        <div class="performance-list">
+          <ng-template ngFor let-item [ngForOf]="history.performances">
+            <a class="performance-route" [routerLink]="['/performance', item.slug]">
+              <img src="{{ item.mainPicture.performance_big.url }}" alt="performances">
+            </a>
+          </ng-template>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
