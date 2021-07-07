@@ -23,7 +23,7 @@ $typical-box-shadow: 0 0 9px 0 rgba(126,126,126,.16);
 }
 
 @mixin container($container-width, $height, $container-padding, $container-margin) {
-  width: $container-width;
+  max-width: $container-width;
   height: $height * 1px;
   padding: $container-padding;
   margin: $container-margin;
@@ -128,3 +128,12 @@ $background-color-light: rgba(14, 12, 8, 0);
 $background-color-gray: rgba(14, 12, 8, .5);
 $background-color-dark: rgba(14, 12, 8, .75);
 $background-color-black: #0e0c08;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

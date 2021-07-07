@@ -1,11 +1,10 @@
 @import "~assets/styles/variables";
 
 .footer-nav-block {
+  padding: 48px 10px 22px;
+  background-color: $background-main-color-darker;
   max-width: $container-width;
   margin: $container-margin;
-  padding-top: 48px;
-  padding-bottom: 20px;
-  background-color: $background-main-color-darker;
 
   @include flex-space-between;
 
@@ -35,6 +34,46 @@
     &.active {
       text-decoration: none;
     }
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 992px) {
+
+  .footer-nav-block {
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 860px) {
+
+  .footer-nav-block {
+    margin-right: 20px;
+  }
+
+  .footer-nav-block {
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 860px) {
+
+  .footer-nav-block {
+    margin-right: 20px;
+  }
+
+  .footer__logo {
+    display: none;
+  }
+
+  .footer-nav-block {
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+
+  .footer-nav-block {
+    display: none;
   }
 }
 

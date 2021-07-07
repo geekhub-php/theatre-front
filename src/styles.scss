@@ -50,6 +50,7 @@ html {
 body, html {
   height: 100%;
   width: 100%;
+  margin: $container-margin;
   font-family: $body-font-family;
   color: $font-color-primary;
   background-color: $background-color-black;

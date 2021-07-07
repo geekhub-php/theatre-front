@@ -16,11 +16,15 @@
     right: 0;
     bottom: 0;
     width: 336px;
-    padding-top: 2%;
+    padding-top: 4%;
     background-color: $background-color-accent;
 
+    @media only screen and (max-height: 740px) {
+      padding-top: 2%;
+    }
+
     .donate-title {
-      margin: 0 40px 14px;
+      margin: 20px 30px 24px;
       text-align: center;
 
       @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
@@ -30,7 +34,6 @@
       position: absolute;
       top: 8px;
       right: 8px;
-      transition: .3s ease;
 
       @include box(48, 48);
 
@@ -50,9 +53,17 @@
 
       @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1px, normal);
 
+      @media only screen and (max-height: 740px) {
+        padding-top: 2%;
+      }
+
       .qr-code {
         width: 42%;
-        margin: 20px 0 auto;
+        margin: 30px 0 auto;
+
+        @media only screen and (max-height: 740px) {
+          width: 38%;
+        }
 
         &:hover {
           @include border(2, solid, $border-color-active, 2px);
@@ -60,7 +71,21 @@
       }
     }
   }
+
+  @media only screen and (max-height: 740px) {
+
+    .donate-title {
+      margin: 0 30px 14px;
+    }
+
+    .donate-wallet-image {
+      width: 46%;
+      margin-left: 27%;
+    }
+  }
 }
+
+/*Properties of the "Donate" button that is reproduced on all pages*/
 
 .donate-button {
   z-index: 40;
@@ -81,5 +106,14 @@
     top: 82px;
 
     @include box(50, 50);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+
+  .donate-button {
+    position: absolute;
+    top: 8px;
+    z-index: 100;
   }
 }

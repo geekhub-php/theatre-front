@@ -3,15 +3,13 @@
 /* Block with "what we offer" */
 
 .we-offer-block {
-  margin: $container-margin;
   background-color: $background-main-color-darker;
 }
 
 .we-offer {
-  width: $container-width;
+  width: min(90%, 58rem);
   margin: $container-margin;
-  background-color: $background-main-color-darker;
-  padding: 80px 310px;
+  padding: 80px 0;
   text-align: center;
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
@@ -22,14 +20,13 @@
 
   .we-offer__text {
     padding: 18px 0;
-    display: block;
-    text-align: justify-all;
   }
 }
 
 /* Block with the advantages of using the mobile version */
 
 .home-page-text__advantages {
+  width: min(90%, 58rem);
   padding-top: 95px;
   padding-bottom: 55px;
 

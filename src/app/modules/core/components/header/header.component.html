@@ -1,6 +1,9 @@
-<div class="header-wrapper">
-  <header class="header">
-    <nav class="navbar navbar-expand-lg">
+<header class="header-wrapper">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid" style="padding: 0">
+
+      <!--Header Logo (Taras Shevchenko)-->
+
       <h1 class="header-logo" aria-label="Cherkasy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
         <a routerLink="/">
           <img src="assets/images/logo theatre@3x.png"
@@ -8,37 +11,69 @@
         </a>
       </h1>
 
-      <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu" type="button" (click)="toggleMenu()">
-        <span class="navbar-toggler-icon"></span>
+      <!--Toggle Menu-->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Menu" i18n-aria-label="@@menu"
+              (click)="toggleMenu()">
+        <span class="navbar-toggler-icon" style="border: 1px solid yellow"></span>
       </button>
 
-      <app-main-nav></app-main-nav>
+      <!--Navigation-->
 
-      <button class="u-unstyled-btn search-icon-button" aria-controls="collapseExample" type="submit"
-              (click)="collapseMenu()"
-              [attr.aria-expanded]="!isCollapsed">
-        <svg class="u-svg-icon" width="20" height="20">
-          <use href="assets/images/sprite.svg#search"></use>
-        </svg>
-      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li><a class="header-nav__link action-link" [routerLink]="['/']" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{ exact: true }" i18n="@@mainPage">Main</a></li>
+          <li><a class="header-nav__link" routerLink="/poster" routerLinkActive="active" i18n="@@poster">Poster</a></li>
+          <li><a class="header-nav__link" routerLink="/repertoire" routerLinkActive="active" i18n="@@repertoire">Repertoire</a>
+          </li>
+          <li><a class="header-nav__link" routerLink="/persons" routerLinkActive="active" i18n="@@personalities">Personalities</a>
+          </li>
+          <li><a class="header-nav__link" routerLink="/about" routerLinkActive="active" i18n="@@aboutTitle">About</a>
+          </li>
+          <li><a class="header-nav__link" i18n="@@cooperation" routerLink="/cooperation"
+                 routerLinkActive="active">Cooperation</a></li>
+          <li><a class="header-nav__link" routerLink="/contacts" routerLinkActive="active"
+                 i18n="@@contacts">Contacts</a>
+          </li>
+        </ul>
 
-      <div class="search-box" [ngbCollapse]="!isCollapsed">
-        <input [(ngModel)]="textValue" (keydown.enter)="sendRequestOnEnter();false" class="search-input"
-               placeholder="{{search_text}}" type="text"/>
-        <img src="assets/images/Union@3x.png" class="search-button" alt="Search button" title="Search"
-             i18n-title="@@search" (click)="sendRequestOnIconClick()">
-        <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Close"
-             i18n-title="@@ngb.alert.close" (click)="clearSubmit()">
+        <!--Search field-->
+
+        <form class="d-flex">
+          <button class="u-unstyled-btn search-icon-button" aria-controls="collapseExample" type="submit"
+                  (click)="collapseMenu()"
+                  [attr.aria-expanded]="!isCollapsed">
+            <svg class="u-svg-icon" width="20" height="20">
+              <use href="assets/images/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </form>
+
+        <div class="search-box" [ngbCollapse]="!isCollapsed">
+          <input [(ngModel)]="textValue" (keydown.enter)="sendRequestOnEnter();false" class="search-input"
+                 placeholder="{{search_text}}" type="text"/>
+          <img src="assets/images/Union@3x.png" class="search-button" alt="Search button" title="Search"
+               i18n-title="@@search" (click)="sendRequestOnIconClick()">
+          <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Close"
+               i18n-title="@@ngb.alert.close" (click)="clearSubmit()">
+        </div>
+
+        <!--Languages-->
+
+        <div class="languages">
+          <a class="language d-none d-lg-block ukr"
+             [href]="langRedirectUrl">Укр&nbsp;</a> <span class="separation">|</span>
+          <a class="language d-none d-lg-block eng" [href]="langRedirectUrl">&nbsp;Eng</a>
+        </div>
+
+        <!--'Buy ticket' Button-->
+
+        <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
+           class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
+
       </div>
-
-      <a class="language d-none d-lg-block ukr"
-         [href]="langRedirectUrl">Укр&nbsp;</a> <span class="separation">|</span>
-      <a class="language d-none d-lg-block eng" [href]="langRedirectUrl">&nbsp;Eng</a>
-      <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
-         class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
-    </nav>
-  </header>
-</div>
-
-
-
+    </div>
+  </nav>
+</header>

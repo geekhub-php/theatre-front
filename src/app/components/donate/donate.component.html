@@ -7,13 +7,11 @@
        *ngIf="donateBlockVisible" (click)="donateBlockVisible = false">
 </button>
 
-<!--TODO: the correct QR-code needs to be provided-->
-
 <div *ngIf="donateBlockVisible" (click)="donateBlockVisible = false" class="donate-block">
   <div class="donate-block__information" (click)="$event.stopPropagation()">
-    <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close"
+    <img src="assets/images/close 1.svg" class="closing-button" alt="Close button" title="Close"
          i18n-title="@@ngb.alert.close" (click)="donateBlockVisible = false">
-    <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
+    <img src="assets/images/theatre_finance.gif" class="donate-wallet-image" alt="Hat with coins">
     <p class="donate-title">Are you ready to help the Theater?</p>
     <div class="donate-requisites">
       <p><b>Р/р</b> UA883052990000026007021609497</p>
@@ -21,7 +19,8 @@
       <p>АТ КБ «ПРИВАТБАНК»</p>
       <b>МФО</b> 305299<br>
       <a href='/assets/images/QR.pdf' download>
-        <img src="assets/images/qr-code.png" class="qr-code" alt="QR Code">
+        <img src="assets/images/qr-code.png" (click)="openFile()" class="qr-code" alt="QR Code"
+         title='Click to open the “Banking Details” file' i18n-title="@@bankingDetails">
       </a>
     </div>
   </div>

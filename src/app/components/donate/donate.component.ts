@@ -18,4 +18,9 @@ export class DonateComponent implements OnInit {
       'Підтримка Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
       'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
   }
+
+  openFile() {
+    const URL = 'https://d2m6zqv2ffku71.cloudfront.net/support-theatre.png';
+    window.open(URL, '_blank');
+  }
 }
