@@ -1,4 +1,4 @@
-<div class="myContainer">
+<div class="container">
   <app-spinner name="about-more"></app-spinner>
 
   <h2 class="festTitle" i18n="@@festival">Festival</h2>
@@ -40,8 +40,7 @@
           </ngu-tile>
           <ul class="myPoint" NguCarouselPoint>
             <li
-              *ngFor="let j of myCarousel.pointNumbers;
-            let i = index"
+              *ngFor="let j of myCarousel.pointNumbers; let i = index"
               [class.active]="j===myCarousel.activePoint"
               (click)="myCarousel.moveTo(i)"
             >

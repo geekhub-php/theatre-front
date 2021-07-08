@@ -1,30 +1,18 @@
 @import "~assets/styles/_variables";
 @import "~assets/styles/aboutStyles";
 
-.myContainer {
+.container {
   @include _container;
 }
 
-.fest-navigation {
-  @include breadcrumbs-nav;
-
-  h3 {
-    font-size: $font-size-small;
-  }
-
-  .fest-navigation-bold {
-    @include breadcrumbs-nav-bold;
-  }
-}
-
 .festTitle {
+  margin-top: 50px;
   @include about-title;
 }
 
 .histories__list-body,
 .histories__list-footer {
   display: flex;
-  display: table-cell;
   vertical-align: middle;
 }
 
@@ -88,7 +76,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -100;
+    z-index: -100; 
     filter: saturate(300%);   
     filter: brightness(40%); 
   }

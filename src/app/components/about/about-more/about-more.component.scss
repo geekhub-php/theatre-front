@@ -2,7 +2,7 @@
 @import "~assets/styles/aboutStyles";
 @import "~assets/styles/_sliderMixins";
 
-.myContainer {
+.container {
   @include _container;
 }
 
@@ -65,7 +65,7 @@ a {
   margin-top: 30px;
 }
 
-// ________________ slider _________
+// _________this is slider _________
 
 
 .wrapped {
@@ -103,8 +103,8 @@ a {
 .image {
   background-size: cover !important;
   height: 470px;
-  margin-left: 17px;
-  margin-right: 17px;
+  margin-left: 16px;
+  margin-right: 16px;
   cursor: pointer;
 }
 
@@ -162,37 +162,37 @@ a {
 
 @media (max-width: $max-width-tablet) {
 
-  .festTitle{
+  .festTitle {
     font-size: $font-largest;
     text-align: center;
   }
 
-  .history-title{
+  .history-title {
     font-size: $font-size-xxx-large;
     text-align: center;
   }
 
-  .history-fest-contain{
+  .history-fest-contain {
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
   }
 
-  .post-text{
+  .post-text {
     margin-left: -10px;
     margin-right: -10px;
     font-size: $font-size-medium;
   }  
 
-  img{
+  img {
     margin-bottom: 16px;
   }
 
-  .wrapped{
+  .wrapped {
     display: none;
   }
 
-  .mobile_performances{
+  .mobile_performances {
     display: block;;
     flex-wrap: wrap;
     overflow: hidden; 
@@ -201,7 +201,7 @@ a {
       font-size: $font-size-xxx-large;
     }
 
-    .performance-list{
+    .performance-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -212,7 +212,7 @@ a {
     .performance-route {
       margin-left: 10px; 
 
-      img{
+      img {
         width: 155px;
         height: 211px;
         margin-right: 8px; 
@@ -225,16 +225,16 @@ a {
 
 @media (max-width: $max-width-mobile) {
 
-  .festTitle{
+  .festTitle {
     font-size: $font-size-xx-large;
     text-align: center;
   }
 
-  .history-title, h2{
+  .history-title, h2 {
     font-size: $font-size-large;
   }
 
-  .mobile_performances{
+  .mobile_performances {
     display: block;;
     flex-wrap: wrap;
     overflow: hidden; 
@@ -244,15 +244,15 @@ a {
     }
   }
 
-  .history-main_img, img{
+  .history-main_img, img {
     margin-top: 20px;
   }
 
-  .post-text, p{
+  .post-text, p {
     font-size: $font-size-small;
   }
 
-  .wrapped{
+  .wrapped {
     display: none;
   }
 

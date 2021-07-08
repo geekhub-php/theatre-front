@@ -13,10 +13,8 @@ export class AboutHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.PersonType) {
-      if (this.PersonType === 'epoch') {
-        this.selectedEpoch = this.selectedClass;
-      }
+    if (this.PersonType && this.PersonType === 'epoch') {
+      this.selectedEpoch = this.selectedClass;
     }
   }
 }

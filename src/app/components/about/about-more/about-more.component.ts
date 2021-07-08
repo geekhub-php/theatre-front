@@ -46,7 +46,7 @@ export class AboutMoreComponent implements OnInit, AfterContentChecked  {
     this._cdr.detectChanges();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const slug = this.route.snapshot.params.slug;
     this.loaderService.start('about-more');
     this.gateway

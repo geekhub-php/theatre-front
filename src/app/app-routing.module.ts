@@ -53,8 +53,7 @@ const appRoutes: Routes = [
       {path: 'epoch/persons', component: EpochComponent},
       {path: 'festivals', component: FestivalsComponent},
       {path: 'visit', component: VisitComponent},
-      {path: 'festivals/:slug', component: AboutMoreComponent},
-      // {path: ':personId', component: PersonComponent}
+      {path: 'festivals/:slug', component: AboutMoreComponent}
     ]
   },
   {path: 'about/:personId', component: PersonComponent},
@@ -68,8 +67,7 @@ const appRoutes: Routes = [
       {path: 'administration', component: AdministrationComponent},
       {path: 'administration/:slug', component: PersoneShowmoreComponent},
       {path: 'creative/:slug', component: PersoneShowmoreComponent},
-      {path: 'artistic/:slug', component: PersoneShowmoreComponent},
-      // {path: ':personId', component: PersonComponent}
+      {path: 'artistic/:slug', component: PersoneShowmoreComponent}
     ]
   },
   {path: 'persons/:personId', component: PersonComponent},
