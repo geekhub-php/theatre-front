@@ -1,10 +1,6 @@
 @import "~assets/styles/_variables";
 @import "~assets/styles/aboutStyles";
 
-.container {
-  @include _container;
-}
-
 .festTitle {
   margin-top: 50px;
   @include about-title;
@@ -22,8 +18,7 @@
     width: 100%;
     max-width: 1200px;
     margin-bottom: 24px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-top: 55px;
     height: 215px;
     background-color: $background-main-color-lighter;
     color: $font-color-white;
@@ -56,7 +51,7 @@
     }
   }
 
-  .histories__list-footer { 
+  .histories__list-footer {
     width: 18%;
     outline: none;
     padding-left: 50px;
@@ -76,14 +71,93 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -100; 
-    filter: saturate(300%);   
-    filter: brightness(40%); 
+    z-index: -100;
+    filter: saturate(300%);
+    filter: brightness(40%);
   }
 
   .list-item:hover {
     .histories__list-main_img {
       display: block;
+    }
+  }
+}
+
+@media (max-width: $max-width-tablet) {
+
+  .festTitle {
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  .mobile_version {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .list {
+
+    .list-item {
+      padding: 0px 0px 0px 0px;
+    }
+
+    .year {
+      margin-left: 10px;
+    }
+
+    .histories__list-body {
+      padding: 0px 0px 0px 0px;
+
+      .histories__list-heading,
+      h2 {
+        margin-top: 6px;
+        margin-left: 10px;
+        font-size: $font-size-x-large;
+      }
+    }
+
+    .histories__list-footer {
+      padding: 0px 0px 0px 0px;
+    }
+
+  }
+
+  .histories__list-heading {
+
+    font-size: $font-size-x-large;
+  }
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .festTitle {
+    font-size: $font-size-xx-large;
+    text-align: center;
+  }
+
+  .list {
+
+    .list-item {
+
+      min-height: 50px;
+      max-height: 100px;
+
+      .year {
+        font-size: $font-size-xxx-large;
+        margin-left: 10px;
+      }
+
+      .histories__list-body {
+        padding: 0px 0px 0px 0px;
+
+        .histories__list-heading, h2 {
+          margin-top: 6px;
+          margin-left: 10px;
+          font-size: $font-size-medium;
+          font-size: 18px;
+        }
+      }
     }
   }
 }

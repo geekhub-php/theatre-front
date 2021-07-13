@@ -6,17 +6,21 @@
   <div class="list">
     <section class="list-item" *ngFor="let item of listHistories | slice: 0:3; index as i">
 
-      <div class="histories__list-footer">
-        <span class="year">{{ item.year }}</span>
-      </div>
+      <div class="mobile_version">
 
-      <div class="histories__list-body" [routerLink]="[item.slug]">
-        <h2 class="histories__list-heading">{{ item.title }}</h2>
-        <div class="histories__list-main">
-
-          <img class="histories__list-main_img" [src]="item.mainPicture.history_big.url" alt="picture" [title]="item.title"/>
-
+        <div class="histories__list-footer">
+          <span class="year">{{ item.year }}</span>
         </div>
+  
+        <div class="histories__list-body" [routerLink]="[item.slug]">
+          <h2 class="histories__list-heading">{{ item.title }}</h2>
+          <div class="histories__list-main">
+  
+            <img class="histories__list-main_img" [src]="item.mainPicture.history_big.url" alt="picture" [title]="item.title"/>
+  
+          </div>
+        </div>
+
       </div>
 
     </section>
