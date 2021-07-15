@@ -38,3 +38,53 @@ h4 {
   color: $font-color-white;
   font-size: $font-size-medium;
 }
+
+@media (max-width: $max-width-tablet) {
+
+  .page-title {
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  .persons-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .emplo {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .page-title {
+    font-size: $font-size-xx-large;
+    text-align: center;
+  }
+
+  img {
+    width: 100px;
+    height: 156px;
+  }
+
+  .persons-list {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .emplo {
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-bottom: 32px;
+  }
+
+  h4 {
+    margin-top: 10px;
+    font-size: $font-size-small;
+  }
+}
