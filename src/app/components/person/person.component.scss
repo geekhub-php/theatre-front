@@ -129,19 +129,19 @@ ngx-gallery ::ng-deep {
       flex-wrap: wrap;
     }
 
-    .person-face_mobile {
-      display: block;
-      width: 224px;
-      height: 336px;
-      margin-bottom: 30px;
-    }
-
     .main-header, p {
       display: flex;
 
       p {
         flex-direction: column;
       }
+    }
+
+    .person-face_mobile {
+      display: block;
+      width: 224px;
+      height: 336px;
+      margin-bottom: 30px;
     }
   }
 }
