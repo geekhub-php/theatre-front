@@ -113,6 +113,14 @@ ngx-gallery ::ng-deep {
     text-align: center;
   }
 
+  .main-header, p {
+    display: flex;
+
+    p {
+      flex-direction: column;
+    }
+  }
+  
   .main-content {
     margin-left: 32px;
     margin-right: 32px;
@@ -127,14 +135,6 @@ ngx-gallery ::ng-deep {
       color: $secondary-background-color;
       display: flex;
       flex-wrap: wrap;
-    }
-
-    .main-header, p {
-      display: flex;
-
-      p {
-        flex-direction: column;
-      }
     }
 
     .person-face_mobile {
