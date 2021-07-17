@@ -12,7 +12,12 @@
     width: 190px;
     height: 200px;
     margin: auto;
+    display: none;
   }
+}
+
+.displaySpinner {
+  display: block;
 }
 
 @media (max-width: 650px) {

@@ -7,7 +7,7 @@ import { AnimationOptions } from 'ngx-lottie';
   styleUrls: [ './spinner.component.scss' ],
   template: `
     <div class="d-flex justify-content-center" [class.spinner]="visible">
-      <div class="text-center spinner__content" [style.display]='visible ? "block" : "none"' role="status">
+      <div class="text-center spinner__content" [class.displaySpinner]="visible" role="status">
         <ng-lottie [options]="options"></ng-lottie>
         <span class="sr-only">Loading...</span>
       </div>
