@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { GatewayService } from '../../services/gateway.service';
 import { PerformanceListResponse } from '../../store/performance/PerformanceListResponse';
@@ -18,12 +18,11 @@ enum RepertoireViewModes {
   styleUrls: [ './repertoire.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RepertoireComponent implements OnInit, OnDestroy {
+export class RepertoireComponent implements OnInit {
 
   pageSize = 16;
-  page = 1;
+  page = 2;
   collectionSize: number;
-  scrollToBottomDuePagination = null;
 
   response: PerformanceListResponse;
   performances: Array<Performance>;
@@ -36,6 +35,7 @@ export class RepertoireComponent implements OnInit, OnDestroy {
   views = RepertoireViewModes;
 
   constructor(
+    private router: Router,
     private changeDetector: ChangeDetectorRef,
     private gateway: GatewayService,
     private loaderService: LoaderService,
@@ -53,6 +53,7 @@ export class RepertoireComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.page = +this.activatedRoute.snapshot.queryParamMap.get('page') || 1;
     this.seasonNumber = +this.activatedRoute.snapshot.paramMap.get('season') || this.CURRENT_SEASON;
     this.activatedRoute.queryParams.subscribe(params => {
       this.seasonNumber = params['season'] || this.CURRENT_SEASON;
@@ -62,9 +63,20 @@ export class RepertoireComponent implements OnInit, OnDestroy {
     this.onResize();
   }
 
-  livePageAtBottom(e) {
-    this.scrollToBottomDuePagination = setTimeout(() => {
-      window.scrollTo({ top: Number(e.pageY) + Number(e.clientY), behavior: 'smooth' });
+  setFirstPage(firstPage: number) {
+    this.page = firstPage;
+  }
+
+  goToPage(page: number) {
+    const paramsWithAudience = !!this.audience ? { audience: this.audience, page } : { page };
+    const paramsWithSeasonNumber = !!this.seasonNumber
+      ? { season: this.seasonNumber, ...paramsWithAudience }
+      : paramsWithAudience;
+
+    this.page = page;
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: paramsWithSeasonNumber
     });
   }
 
@@ -83,13 +95,10 @@ export class RepertoireComponent implements OnInit, OnDestroy {
           this.changeDetector.markForCheck();
           this.loaderService.stop('repertoire');
         },
-        error1 => this.loaderService.stop('repertoire')
+        error => {
+          this.loaderService.stop('repertoire');
+          this.changeDetector.markForCheck();
+        }
       );
-  }
-
-  ngOnDestroy() {
-    if (this.scrollToBottomDuePagination) {
-      clearTimeout(this.scrollToBottomDuePagination);
-    }
   }
 }

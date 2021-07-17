@@ -73,8 +73,9 @@
 }
 
 .pagination__wrapper {
-  margin-top: 30px;
-  float: right;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: center;
 }
 
 :host ::ng-deep .pagination__mobile-view {
