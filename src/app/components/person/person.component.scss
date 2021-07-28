@@ -2,19 +2,13 @@
 @import "~assets/styles/_variables";
 @import "~assets/styles/aboutStyles";
 
-.myContainer {
+.container {
   @include _container;
-
-  margin-top: 33px;
 }
 
 .page-title {
   margin-top: 0;
-}
-
-.page-title {
-  padding-top: 10px;
-
+  padding-top: 50px;
   @include about-title;
 }
 
@@ -37,6 +31,10 @@
     line-height: 1.5;
     text-align: left;
     color: $secondary-background-color;
+  }
+
+  .person-face_mobile {
+    display: none;
   }
 
   a {
@@ -105,5 +103,72 @@ ngx-gallery ::ng-deep {
     background-size: 40px 40px;
     background-repeat: no-repeat;
     margin: 10px 10px 0 0;
+  }
+}
+
+@media (max-width: $max-width-tablet) {
+
+  .page-title {
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  .main-content {
+    margin-left: 32px;
+    margin-right: 32px;
+
+    .person-face {
+      display: none;
+    }
+
+    .about-text {
+      margin-left: 0px;
+      font-family: $body-font-family;
+      color: $secondary-background-color;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .person-face_mobile {
+      display: block;
+      width: 224px;
+      height: 336px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .page-title {
+    font-size: $font-size-xx-large;
+    text-align: center;
+  }
+  
+  .main-content {
+    margin-left: 5px;
+    margin-right: 5px;
+
+    .person-face {
+      display: none;
+    }
+
+    .about-text {
+      margin-left: 0px;
+      font-size: $font-size-small;
+    }
+
+    .person-face_mobile {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    .main-header, p {
+      display: flex;
+      flex-direction: column;
+      font-size: $font-size-small;
+    }
   }
 }

@@ -1,100 +1,260 @@
-@import "~assets/styles/variables";
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+@import "~assets/styles/_sliderMixins";
 
-:host ::ng-deep .post-text p {
-  margin-bottom: 5px;
-  font-size: 1.143rem;
+.container {
+  @include _container;
 }
 
-.history {
+.festTitle {
+  margin-top: 40px;
+  @include about-title;
+}
+
+.history-title {
+  height: $font-size-xxx-large;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: $background-color-white;
+}
+
+.history-fest-contain {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 100px;
+
+  .post-text {
+    margin-left: 5%;
+    font-family: $body-font-family;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    color: $secondary-background-color;
+  }
+}
+
+a {
+  color: $font-color-accent;
+  text-decoration: none;
+}
+
+.title {
+  height: 60px;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: $background-color-white;
+}
+
+.performansesListTitle {
+  @include flex-center;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  font-weight: $font-weight-semi-bold;
+  margin-top: 30px;
+}
+
+// _________this is slider _________
+
+
+.wrapped {
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: $background-colors;
+}
+
+a {
+  color: $dots-active-color;
+  text-decoration: none;
+}
+
+.title {
+  height: 60px;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  @include flex-center;
+  color: $background-color-white;
+}
+
+.all-prersons {
+  @include display;
+}
+
+.link-persons {
+  width: 170px;
+  height: 25px;
+  line-height: 1.39;
+}
+
+.image {
+  background-size: cover !important;
+  height: 470px;
+  margin-left: 16px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.left {
+  @include display;
+  @include gradient;
+  @include opacity;
+  position: $position;
+  align-items: center;
+  cursor: pointer;
+  bottom: 0;
+  width: 70px;
+  z-index: 1;
+  height: 100%;
+}
+
+.left:hover {
+  @include hover_opacity;
+}
+
+.right {
+  @include display;
+  @include opacity;
+  @include gradient;
+  position: $position;
+  align-items: center;
+  bottom: 0;
+  width: 70px;
+  height: 100%;
+  right: 5px;
+  z-index: 1;
+}
+
+.right:hover {
+  @include hover_opacity;
+}
+
+.myPoint {
+  @include myPoint;
+}
+
+.myPoint li {
+  @include myPoint-li;
+}
+
+.myPoint li.active {
+  @include myPoint-li__active;
+}
+
+.mobile_performances{
+  display: none;
+}
+
+// ________________ slider _________
+
+@media (max-width: $max-width-tablet) {
+
+  .festTitle {
+    font-size: $font-largest;
+    text-align: center;
+  }
 
   .history-title {
-    margin: 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-    .history-heading {
-      margin: 0;
-    }
-
-    .history-date {
-      color: $secondary-color-lighter;
-      margin: 0;
-      font-size: 1.286rem;
-      font-weight: 500;
-    }
+    font-size: $font-size-xxx-large;
+    text-align: center;
   }
 
-  .history-main_img .img {
-    display: block;
-    margin: 0 auto 10px 0;
-    max-height: 446px;
-  }
-}
-
-.performance-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 0;
-  list-style: none;
-
-  .list-item {
-    cursor: pointer;
-    height: 15.571rem;
-    width: 7.571rem;
+  .history-fest-contain {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-right: 2px;
+    word-wrap: break-word;
+  }
 
-    &:last-child {
-      margin-right: 0;
+  .post-text {
+    margin-left: -10px;
+    margin-right: -10px;
+    font-size: $font-size-medium;
+  }  
+
+  img {
+    margin-bottom: 16px;
+  }
+
+  .wrapped {
+    display: none;
+  }
+
+  .mobile_performances {
+    display: block;;
+    flex-wrap: wrap;
+    overflow: hidden; 
+    width: auto;
+    h2{
+      font-size: $font-size-xxx-large;
+    }
+
+    .performance-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-right: 30px; 
+      margin-bottom: 30px;
+    }
+
+    .performance-route {
+      margin-left: 10px; 
+
+      img {
+        width: 155px;
+        height: 211px;
+        margin-right: 8px; 
+        margin-left: 8px; 
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .festTitle {
+    font-size: $font-size-xx-large;
+    text-align: center;
+  }
+
+  .history-title, h2 {
+    font-size: $font-size-large;
+  }
+
+  .mobile_performances {
+    display: block;;
+    flex-wrap: wrap;
+    overflow: hidden; 
+    width: auto;
+    h2{
+      font-size: $font-size-large;
     }
   }
 
-  .list-item .img {
-    width: 100%;
+  .history-main_img, img {
+    margin-top: 20px;
   }
 
-  .list-item .title {
-    font-size: .857rem;
-    background-color: $secondary-color;
-    display: flex;
-    height: 4.286rem;
-    margin-bottom: 0;
+  .post-text, p {
+    font-size: $font-size-small;
   }
 
-  .list-item .title .span {
-    text-align: center;
-    color: $white-color;
-    margin: auto;
-  }
-}
-
-@media screen and (max-width: 767px) {
-
-  .history .history-main_img {
-    flex-wrap: wrap;
+  .wrapped {
+    display: none;
   }
 
-  .performance {
-    margin: 0 auto;
-    width: 23.143rem;
-  }
-}
 
-@media screen and (max-width: 576px) {
-
-  .history .history-main_img .img {
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 349px) {
-
-  .performance {
-    width: 15.429rem;
-  }
 }

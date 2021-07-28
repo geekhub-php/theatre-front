@@ -1,0 +1,73 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.container {
+  @include _container;
+}
+
+.visitTitle {
+  margin-top: 50px;
+  @include about-title;
+}
+
+.text-rules {
+  margin-left: 10%;
+  margin-right: 10%;
+  color: $font-color-primary;
+  font-family: $body-font-family;
+  font-size: $font-size-medium;
+  line-height: 1.5;
+
+  .head-center {
+    margin-top: -30px;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+
+    .head-center-text {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.pandemia-rules {
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+ul, ol {
+  margin-bottom: 15px;
+}
+
+li, ul {
+  margin-bottom: 10px;
+}
+
+@media (max-width: $max-width-tablet) {
+
+  .visitTitle {
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  .text-rules {
+    margin-left: 32px;
+    margin-right: 32px;
+    font-size: $font-size-x-medium;
+  }  
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .visitTitle {
+    font-size: $font-size-xx-large;
+    text-align: center;
+  }
+
+  .text-rules {
+    margin-left: 12px;
+    margin-right: 16px;
+    font-size: $font-size-small;
+  } 
+}

@@ -1,0 +1,97 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.container {
+  @include _container;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.historyTitle {
+  margin-top: 50px;
+  @include about-title;
+}
+
+.botTheatreImage {
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  padding-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+
+  .list-item {
+    width: 100%;
+    max-width: 1500px;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+
+    .histories__list-main_img {
+      width: auto;
+      margin: 7px 7px 7px 0;
+      object-fit: contain;
+      float: left;
+      padding-right: 20px;
+    }
+
+    .histories__list-text {
+      color: $font-color-primary;
+      font-family: $body-font-family;
+      font-size: $font-size-medium;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media (max-width: $max-width-tablet) {
+
+  .historyTitle {
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  img {
+    width:100%;
+    margin-bottom: 16px; 
+  }
+
+  .histories__list-text, span {
+    display: flex; 
+    flex-direction: column;
+    word-wrap: break-word;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: $font-size-x-medium;
+  }
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .historyTitle {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .history-text {
+    font-size: 14px;
+  }
+  
+  img {
+    width:100%;
+  }
+
+  .histories__list-text, span {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+}

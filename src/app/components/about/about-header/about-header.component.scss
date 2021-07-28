@@ -33,17 +33,17 @@
   }
 }
 
-.selected{
+.selected {
   @include selectedI;
 }
 
-@media (max-width: $max-width-tablet){
+@media (max-width: $max-width-tablet) {
   .about_seconHeader_container{
     display: none;
   }
 }
 
-@media (max-width: $max-width-mobile){
+@media (max-width: $max-width-mobile) {
   .about_seconHeader_container{
     display: none;
   }

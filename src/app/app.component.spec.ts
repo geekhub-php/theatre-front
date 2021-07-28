@@ -26,6 +26,8 @@ import { SpinnerModule } from './components/partials/spinner/spinner.module';
 import { AboutMoreComponent } from './components/about/about-more/about-more.component';
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
+import { FestivalsComponent } from './components/about/festivals/festivals.component';
+import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
@@ -47,6 +49,8 @@ describe('AppComponent', () => {
         BoardTrusteesComponent,
         AboutMoreComponent,
         DevTeamComponent,
+        FestivalsComponent,
+        AboutHeaderComponent
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue: '/'}
