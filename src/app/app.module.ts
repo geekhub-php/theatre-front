@@ -55,6 +55,8 @@ import { SeasonsComponent } from './components/performance/seasons/seasons.compo
 import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
+import { LottieModule } from 'ngx-lottie';
+import { playerFactory } from './components/partials/spinner/spinner.component';
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
 import { ListViewItemComponent } from './components/schedule/list-view/list-view-item/list-view-item.component';
 import { ListViewMobileItemComponent } from './components/schedule/list-view/list-view-mobile-item/list-view-mobile-item.component';
@@ -115,7 +117,7 @@ import { ListViewMobileItemComponent } from './components/schedule/list-view/lis
     SpinnerModule,
     CoreModule,
     GalleryModule,
-    NguCarouselModule
+    NguCarouselModule,
   ],
   providers: [
     CalendarPopupComponent,
