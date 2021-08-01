@@ -216,3 +216,68 @@ a {
 
   margin-bottom: 60px;
 }
+
+
+@media (max-width: $max-width-tablet) {
+
+  .page-title {
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  .title {
+    font-size: $font-size-xxx-large;
+  }
+
+  .image{
+    width: 256px;
+    height: 400px;
+  }
+
+  .all-persons {
+    a{
+      font-size: $font-size-x-medium;
+    }
+  }
+
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .page-title {
+    h1{
+      font-size: $font-size-xx-large;
+      text-align: center;
+    }
+  }
+
+  .actors, .ballet, .orchestra {
+    margin-bottom: 10px;
+    padding-top: 0px;
+  }
+  
+  .title {
+    h2{
+      font-size: $font-size-large;
+    }
+  }
+
+  .image{
+    width: 126px;
+    height: 190px;
+  }
+
+  .left, .right {
+    display: none;
+  }
+
+  .all-persons {
+    padding-top: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+
+    a{
+      font-size: $font-size-x-small;
+    }
+  }
+
+}

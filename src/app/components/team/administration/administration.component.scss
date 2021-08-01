@@ -94,3 +94,57 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+
+@media (max-width: $max-width-tablet) {
+
+  .page-title {
+    font-size: $font-largest;
+    text-align: center;
+  }
+
+  .title {
+    font-size: $font-size-xxx-large;
+  }
+
+  .images-l{
+    .list-item {
+      margin: 0px 0px 0px 0px;
+        img, .img {
+         width: 224px;
+         height: fit-content;
+        }
+      }
+    }
+
+}
+
+@media (max-width: $max-width-mobile) {
+
+  .page-title {
+    h1{
+      font-size: $font-size-xx-large;
+      text-align: center;
+    }
+  }
+
+  .director, .deputies, .administrative-accounting {
+    margin-bottom: 10px;
+    padding-top: 0px;
+  }
+  
+  .title {
+    h2{
+      text-align: center;
+      font-size: $font-size-large;
+    }
+  }
+
+  .images-l{
+    .list-item {
+        img, .img {
+          width: 126px;
+          height: 190px;
+        }
+      }
+    }
+}
