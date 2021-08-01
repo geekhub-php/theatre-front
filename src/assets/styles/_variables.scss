@@ -9,7 +9,7 @@ $main-color-darker: #9a0004;
 $secondary-color: #2a2a2a;
 $secondary-color-lighter: #777;
 $border-color: #e7e7e7;
-$typical-box-shadow: 0 0 9px 0 rgba(126, 126, 126, .16);
+$typical-box-shadow: 0 0 9px 0 rgba(126,126,126,.16);
 
 //______________________________________________________________________________________________________________________
 
@@ -23,7 +23,7 @@ $typical-box-shadow: 0 0 9px 0 rgba(126, 126, 126, .16);
 }
 
 @mixin container($container-width, $height, $container-padding, $container-margin) {
-  width: $container-width;
+  max-width: $container-width;
   height: $height * 1px;
   padding: $container-padding;
   margin: $container-margin;
