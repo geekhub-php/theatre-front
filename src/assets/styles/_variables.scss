@@ -132,3 +132,12 @@ $background-color-light: rgba(14, 12, 8, 0);
 $background-color-gray: rgba(14, 12, 8, .5);
 $background-color-dark: rgba(14, 12, 8, .75);
 $background-color-black: #0e0c08;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1500px
+  );
