@@ -13,6 +13,7 @@ import { SpinnerModule } from '../../components/partials/spinner/spinner.module'
 import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
 import { FormsModule } from '@angular/forms';
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     SpinnerModule,
     NgbCollapseModule,
     FormsModule,
+    LottieModule,
   ],
   exports: [
     HeaderComponent,

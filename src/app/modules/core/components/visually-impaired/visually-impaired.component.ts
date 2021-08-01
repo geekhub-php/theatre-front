@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-visually-impaired',
@@ -8,8 +9,17 @@ import { VisuallyImpairedService } from '../../../../services/visually-impaired.
 })
 export class VisuallyImpairedComponent implements OnInit {
   trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
+  options: AnimationOptions = {
+    path: 'assets/animations/theatre_eye_settings.json',
+  };
+  styles: Partial<CSSStyleDeclaration> = {
+    maxWidth: '220px',
+    margin: '0 auto',
+    paddingBottom: '10px'
+  };
 
-  constructor(private visuallyImpairedService: VisuallyImpairedService) { }
+  constructor(private visuallyImpairedService: VisuallyImpairedService) {
+  }
 
   ngOnInit() {
   }

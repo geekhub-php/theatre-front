@@ -17,20 +17,32 @@
     right: 0;
     bottom: 0;
     width: 336px;
-    padding-top: 2%;
+    padding-top: 4%;
     background-color: $background-color-accent;
+
+    @media only screen and (max-height: 740px) {
+      padding-top: 2%;
+    }
 
     .opera-glasses {
       width: 46%;
+
+      @media only screen and (max-height: 740px) {
+        width: 38%;
+      }
     }
 
     text-align: center;
 
     .scheme {
-      @include box(48, 30);
+      @include box(48, 32);
 
       &:hover {
         @include border(1, solid, $background-color-active, 3px);
+      }
+
+      @media only screen and (max-height: 740px) {
+        @include box(38, 24);
       }
     }
   }
@@ -38,12 +50,14 @@
   .color-schemes {
 
     &__text {
-      @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal)
+      margin: 34px 0 24px;
+
+      @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal);
     }
 
     &__button {
       position: relative;
-      margin-top: 6px;
+      margin-top: 10px;
       margin-left: auto;
       margin-right: auto;
       display: flex;
@@ -86,16 +100,32 @@
       }
     }
   }
+
+  @media only screen and (max-height: 680px) {
+
+    .color-schemes {
+
+      &__text {
+        margin: 20px 0;
+      }
+
+      &__button {
+        margin-top: 6px;
+      }
+    }
+  }
 }
 
 .size-fonts {
 
   &__text {
-    @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal)
+    margin: 22px 0;
+
+    @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal);
   }
 
   &__button {
-    margin-top: 6px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -138,13 +168,26 @@
       }
     }
   }
+
+  @media only screen and (max-height: 680px) {
+
+    .size-fonts {
+
+      &__text {
+        margin: 20px 0;
+      }
+
+      &__button {
+        margin-top: 6px;
+      }
+    }
+  }
 }
 
 .close-button {
   position: absolute;
   top: 8px;
   right: 8px;
-  transition: .3s ease;
 
   @include box(48, 48);
 
@@ -155,8 +198,7 @@
 
 .reset-button {
   position: relative;
-  padding-top: 14px;
-  margin-bottom: 24px;
+  margin: 22px 0;
   color: $font-color-white;
   text-align: center;
 
@@ -165,7 +207,13 @@
   &:hover {
     color: $font-color-dark;
   }
+
+  @media only screen and (max-height: 680px) {
+    margin: 12px 0;
+  }
 }
+
+/*Properties of the "Visual-Aid" button that is reproduced on all pages*/
 
 .visual-aid-button {
   z-index: 40;
@@ -188,3 +236,4 @@
     @include box(50, 50);
   }
 }
+
