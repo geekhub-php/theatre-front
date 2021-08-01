@@ -1,19 +1,29 @@
 <button class="u-unstyled-btn d-none d-lg-block">
-  <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
-       *ngIf="!donateBlockVisible" (click)="donateBlockVisible = true">
-</button>
-<button class="u-unstyled-btn d-none d-lg-block">
-  <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
-       *ngIf="donateBlockVisible" (click)="donateBlockVisible = false">
+  <img src="assets/images/wallet@3x.png"
+       class="donate-button"
+       alt="Donate"
+       title="Donate"
+       i18n-title="@@donate"
+       *ngIf="!donateBlockVisible"
+       (click)="donateBlockVisible = !donateBlockVisible">
 </button>
 
-<!--TODO: the correct QR-code needs to be provided-->
-
-<div *ngIf="donateBlockVisible" (click)="donateBlockVisible = false" class="donate-block">
+<div *ngIf="donateBlockVisible"
+     class="donate-block"
+     (click)="donateBlockVisible = false">
   <div class="donate-block__information" (click)="$event.stopPropagation()">
-    <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close"
-         i18n-title="@@ngb.alert.close" (click)="donateBlockVisible = false">
-    <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
+    <img src="assets/images/close.svg"
+         class="closing-button"
+         alt="Close button"
+         title="Close"
+         i18n-title="@@ngb.alert.close"
+         (click)="donateBlockVisible = false">
+    <ng-lottie class="theatre_finance_gif"
+               [options]="options"
+               [styles]="styles"
+               width="200px"
+               height="200px">
+    </ng-lottie>
     <p class="donate-title">Are you ready to help the Theater?</p>
     <div class="donate-requisites">
       <p><b>Р/р</b> UA883052990000026007021609497</p>
@@ -21,9 +31,21 @@
       <p>АТ КБ «ПРИВАТБАНК»</p>
       <b>МФО</b> 305299<br>
       <a href='/assets/images/QR.pdf' download>
-        <img src="assets/images/qr-code.png" class="qr-code" alt="QR Code">
+
+        <!--TODO: the new link for openFile-function needs to be provided. When the updated link is given, uncomment 'click' method and move it into the image tag-->
+
+        <img src="assets/images/qr-code.png"
+             class="qr-code"
+             alt="QR Code"
+             title='Click to open the “Banking Details” file'
+             i18n-title="@@bankingDetails">
+
+        <!--(click)="openFile('https://d2m6zqv2ffku71.cloudfront.net/support-theatre.png')"-->
+
       </a>
     </div>
   </div>
 </div>
+
+
 

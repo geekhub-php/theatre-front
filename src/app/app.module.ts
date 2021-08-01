@@ -93,7 +93,7 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     SeasonsComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -110,6 +110,7 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     CoreModule,
     GalleryModule,
     NguCarouselModule,
+    LottieModule,
   ],
   providers: [
     CalendarPopupComponent,
