@@ -23,7 +23,7 @@ $typical-box-shadow: 0 0 9px 0 rgba(126, 126, 126, .16);
 }
 
 @mixin container($container-width, $height, $container-padding, $container-margin) {
-  width: $container-width;
+  max-width: $container-width;
   height: $height * 1px;
   padding: $container-padding;
   margin: $container-margin;
@@ -83,7 +83,7 @@ $font-color-dark: #323232;
 $font-color-accent: #b49864;
 $font-color-alert: #eb5757;
 $font-color-black: #0e0c08;
-$font-color-disablend: #868583;
+$font-color-disabled: #868583;
 
 $font-weight-normal: 400;
 $font-weight-semi-bold: 600;
@@ -107,7 +107,7 @@ $border-color-dark: #0e0c08;
 $border-color-lighter: #323232;
 $border-color-accent: #b49864;
 $border-color-active: #8e7444;
-$border-color-disablend: #868583;
+$border-color-disabled: #868583;
 
 /*Backgrounds*/
 
@@ -135,9 +135,14 @@ $background-color-black: #0e0c08;
 
 $grid-breakpoints: (
     xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1500px
+    sm-min: 575px,
+    sm-max: 576px,
+    md-min: 767px,
+    md-max: 768px,
+    lg-min: 991px,
+    lg-max: 992px,
+    xl-min: 1199px,
+    xl-max: 1200px,
+    xxl-min: 1499px,
+    xxl-max: 1500px,
   );

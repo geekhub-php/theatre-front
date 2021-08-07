@@ -50,9 +50,9 @@ export class MonthsCarouselService implements OnDestroy {
     currentPosition: 0,
     scrollStep: 300,
     wideScrollStep: 600,
-    wideScreen: 1500,
-    middleScreen: 1200,
-    narrowScreen: 950
+    wideScreen: 1499,
+    middleScreen: 1199,
+    narrowScreen: 991
   };
 
   private desktop = null;

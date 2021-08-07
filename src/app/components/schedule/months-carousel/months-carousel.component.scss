@@ -89,7 +89,7 @@
   }
 }
 
-@media (max-width: 1499px) {
+@media (max-width: map-get($grid-breakpoints, xxl-min)) {
 
   .slider__months-carousel {
 
@@ -111,7 +111,7 @@
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
 
   .slider__months-carousel {
 
@@ -137,7 +137,7 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
 
   .slider__months-carousel {
 
@@ -162,19 +162,3 @@
     }
   }
 }
-
-//@media (hover: none) and (pointer: coarse) {
-//
-//  .slider__months__container {
-//    max-width: 1200px;
-//
-//    .slider__months {
-//      overflow-x: auto;
-//      scroll-behavior: smooth;
-//
-//      &__item {
-//        max-width: 300px;
-//      }
-//    }
-//  }
-//}

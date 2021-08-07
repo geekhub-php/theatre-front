@@ -52,17 +52,10 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     const innerWidth = window.innerWidth;
-    const calendarBreakpointWidth = 1200;
-    const listBreakpointWidth = 1200;
+    const calendarBreakpointWidth = 1199;
     switch (this.viewMode) {
       case ScheduleViewModes.CALENDAR:
         if (innerWidth < calendarBreakpointWidth) {
-          this.viewMode = ScheduleViewModes.MOBILE;
-        }
-        break;
-
-      case ScheduleViewModes.LIST:
-        if (innerWidth < listBreakpointWidth) {
           this.viewMode = ScheduleViewModes.MOBILE;
         }
         break;
@@ -75,7 +68,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
           break;
         }
 
-        if (savedMode === ScheduleViewModes.LIST && innerWidth >= listBreakpointWidth) {
+        if (savedMode === ScheduleViewModes.LIST && innerWidth >= calendarBreakpointWidth) {
           this.viewMode = ScheduleViewModes.LIST;
         }
         break;
