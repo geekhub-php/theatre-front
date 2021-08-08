@@ -1,0 +1,33 @@
+.spinner {
+  z-index: 50;
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  transition: .3s;
+
+  &__content {
+    width: 190px;
+    height: 200px;
+    margin: auto;
+    display: none;
+  }
+}
+
+.displaySpinner {
+  display: block;
+}
+
+@media (max-width: 650px) {
+
+  .spinner {
+
+    &__content {
+      width: 95px;
+      height: 100px;
+      margin: auto;
+    }
+  }
+}

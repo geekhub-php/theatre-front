@@ -9,7 +9,7 @@ $main-color-darker: #9a0004;
 $secondary-color: #2a2a2a;
 $secondary-color-lighter: #777;
 $border-color: #e7e7e7;
-$typical-box-shadow: 0 0 9px 0 rgba(126,126,126,.16);
+$typical-box-shadow: 0 0 9px 0 rgba(126, 126, 126, .16);
 
 //______________________________________________________________________________________________________________________
 
@@ -130,3 +130,12 @@ $background-color-light: rgba(14, 12, 8, 0);
 $background-color-gray: rgba(14, 12, 8, .5);
 $background-color-dark: rgba(14, 12, 8, .75);
 $background-color-black: #0e0c08;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1500px
+  );

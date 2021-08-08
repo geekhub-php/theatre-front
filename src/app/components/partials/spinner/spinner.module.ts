@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SpinnerComponent } from './spinner.component';
+import { playerFactory, SpinnerComponent } from './spinner.component';
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   declarations: [
     SpinnerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LottieModule,
+    LottieModule.forRoot({ player: playerFactory })
   ],
   exports: [
     SpinnerComponent
