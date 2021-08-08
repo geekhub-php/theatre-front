@@ -56,8 +56,7 @@ export class ListViewComponent implements OnInit, OnDestroy {
         if (resDate && this.currentDate) {
           const monthsEqual = resDate.getMonth() === this.currentDate.getMonth();
 
-          // return (resDate >= new Date()) && monthsEqual;
-          return true;
+          return (resDate >= new Date()) && monthsEqual;
         }
       });
       this.events = this.events.map((event, i) => {

@@ -34,8 +34,7 @@ import { PartnersComponent } from './components/partners/partners.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
 
 const appRoutes: Routes = [
-  // disabled for developing poster page
-  // {path: '', component: HomePageComponent},
+  {path: '', component: HomePageComponent},
   {path: 'poster', component: ScheduleComponent},
   {path: 'repertoire', component: RepertoireComponent},
   {path: 'repertoire/:slug', component: RepertoireComponent},

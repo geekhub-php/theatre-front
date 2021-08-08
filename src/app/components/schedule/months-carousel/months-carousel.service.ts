@@ -206,7 +206,7 @@ export class MonthsCarouselService implements OnDestroy {
 
   setDefaultData() {
     const { amountOfYears } = this.month;
-    const storedDate = JSON.parse(localStorage.getItem('selectedMonth'));
+    const storedDate = JSON.parse(sessionStorage.getItem('selectedMonth'));
     const newDate = (storedDate && new Date(storedDate)) || new Date();
     const half = 2;
     this.month.activeMonth = `${newDate.getUTCMonth()}/${newDate.getUTCFullYear()}/${
@@ -298,7 +298,7 @@ export class MonthsCarouselService implements OnDestroy {
     this.monthList.forEach((month) => {
       if (month.id === id) {
         this.month.currentFullDate = month.date;
-        localStorage.setItem('selectedMonth', JSON.stringify(month.date));
+        sessionStorage.setItem('selectedMonth', JSON.stringify(month.date));
         this.activeSpinner();
         this.month$.next(this.month);
       }
