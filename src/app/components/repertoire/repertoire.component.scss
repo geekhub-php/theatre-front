@@ -1,16 +1,16 @@
 @import "~assets/styles/variables";
 
 .wrapped {
-  max-width: $container-width;
-  padding-bottom: 140px;
   margin: 0 auto;
+  padding-bottom: 140px;
+  max-width: $container-width;
 }
 
 .wrapped__title {
   cursor: default;
   margin-top: 30px;
-  margin-bottom: 50px;
   text-align: center;
+  margin-bottom: 50px;
   transition: ease .2s;
 
   @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
@@ -27,54 +27,56 @@
 .wrapped__performances {
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
   grid-gap: 30px;
-  transition: ease .2s
-  //grid-template-rows: 490px;
+  transition: ease .2s;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .item__wrapper {
-  transition: ease .2s;
-  height: 500px;
   width: 350px;
+  height: 500px;
+  transition: ease .2s;
 }
 
 .image-performance {
-  cursor: pointer;
-  height: 500px;
   width: 350px;
+  height: 500px;
+  cursor: pointer;
   object-fit: cover;
+  text-align: center;
+  line-height: 150px;
 }
 
 .item__container {
+  height: 100%;
+  display: flex;
   max-width: 350px;
   position: relative;
-  display: flex;
   justify-content: center;
 }
 
 .age-restrictions {
-  cursor: default;
-  position: absolute;
   left: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: $font-weight-bold;
+  cursor: default;
+  position: absolute;
   text-align: center;
-  font-size: $font-size-large;
+  align-items: center;
+  transition: ease .2s;
+  justify-content: center;
   color: $font-color-white;
+  font-size: $font-size-large;
+  font-weight: $font-weight-bold;
   font-family: $body-font-family;
   background-color: $background-color-accent;
-  transition: ease .2s;
 
   @include container(56px, 56, 0, 0);
 }
 
 .pagination__wrapper {
-  margin: 30px auto 0;
   display: flex;
+  margin: 30px auto 0;
   justify-content: center;
 }
 
@@ -85,14 +87,20 @@
   }
 }
 
-@media (max-width: 1550px) {
+@media (max-width: map-get($grid-breakpoints, xxl-min)) {
+
+  .wrapped {
+    max-width: 1200px;
+    padding: 0 14px 140px;
+  }
 
   .wrapped__performances {
     grid-gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 1480px) {
+@media (max-width: map-get($grid-breakpoints, xl-min)) {
 
   .wrapped {
     max-width: 800px;
@@ -100,13 +108,46 @@
   }
 
   .wrapped__performances {
+    grid-gap: 16px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: map-get($grid-breakpoints, md-min)) {
 
   .wrapped {
+
+    &__performances {
+      grid-gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .age-restrictions {
+    font-size: $font-size-medium-px;
+
+    @include container(36px, 36, 0, 0);
+  }
+
+  .image-performance {
+    width: 300px;
+    height: 426px;
+  }
+
+  .item__wrapper {
+    width: auto;
+    height: auto;
+    min-width: 136px;
+    min-height: 192px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .wrapped {
+    padding: 0 12% 140px;
+
 
     &__title {
       margin-bottom: 20px;
@@ -119,7 +160,9 @@
     }
 
     &__performances {
-      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
     }
   }
 
@@ -129,55 +172,17 @@
     @include container(24px, 24, 0, 0);
   }
 
-  .image-performance {
-    height: 426px;
-    width: 300px;
-  }
-
   .item__wrapper {
-    width: auto;
+    width: 100%;
+  }
+
+  .item__container {
+    max-width: 500px;
+  }
+
+  .image-performance {
     height: auto;
-    min-width: 136px;
-    min-height: 192px;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .image-performance {
-    height: 355px;
-    width: 250px;
-  }
-}
-
-@media (max-width: 500px) {
-
-  .image-performance {
-    height: 284px;
-    width: 200px;
-  }
-}
-
-@media (max-width: 400px) {
-
-  .image-performance {
-    height: 213px;
-    width: 150px;
-  }
-}
-
-@media (max-width: 400px) {
-
-  .image-performance {
-    height: 242px;
-    width: 170px;
-  }
-}
-
-@media (max-width: 360px) {
-
-  .image-performance {
-    height: 192px;
-    width: 136px;
+    width: 500px;
+    min-height: 100%;
   }
 }

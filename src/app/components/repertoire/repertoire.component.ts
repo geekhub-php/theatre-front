@@ -7,9 +7,10 @@ import { Performance } from '../../store/performance/Performance';
 import { LoaderService } from '../partials/spinner/loader.service';
 
 enum RepertoireViewModes {
-  DESKTOP = 'Desktop',
-  TABLET = 'Tablet',
-  MOBILE = 'Mobile'
+  xxl = 'xxl',
+  xl = 'xl',
+  md = 'md',
+  sm = 'sm'
 }
 
 @Component({
@@ -20,7 +21,7 @@ enum RepertoireViewModes {
 })
 export class RepertoireComponent implements OnInit {
 
-  pageSize = 16;
+  pageSize = 18;
   page = 2;
   collectionSize: number;
 
@@ -43,13 +44,23 @@ export class RepertoireComponent implements OnInit {
   ) {}
 
   @HostListener('window:resize', [ '$event' ]) onResize() {
-    const desktop = 1480;
-    const mobile = 768;
+    const xxlPageAmount = 16;
+    const xlPageAmount = 15;
+    const mdPageAmount = 14;
+    const xxl_min = 1499;
+    const xl_min = 1199;
+    const sm_min = 575;
+
     const { innerWidth } = window;
-    this.viewMode = innerWidth >= desktop ?
-      RepertoireViewModes.DESKTOP : innerWidth < desktop && innerWidth > mobile ?
-        RepertoireViewModes.TABLET :
-        RepertoireViewModes.MOBILE;
+
+    this.viewMode = innerWidth > xxl_min
+      ? RepertoireViewModes.xxl : innerWidth > xl_min
+        ? RepertoireViewModes.xl : innerWidth > sm_min
+          ? RepertoireViewModes.md : RepertoireViewModes.sm;
+
+    this.pageSize = this.views.xxl === this.viewMode
+      ? xxlPageAmount : this.views.xl === this.viewMode
+        ? xlPageAmount : mdPageAmount;
   }
 
   ngOnInit() {

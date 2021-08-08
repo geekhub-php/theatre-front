@@ -7,7 +7,7 @@
   </symbol>
 </svg>
 
-<app-repertoire-nav-header (setFirstPage)="setFirstPage($event)" *ngIf="viewMode === views.DESKTOP"></app-repertoire-nav-header>
+<app-repertoire-nav-header (setFirstPage)="setFirstPage($event)" *ngIf="viewMode !== views.sm"></app-repertoire-nav-header>
 
 <div class="wrapped">
   <h1 class="wrapped__title" i18n="@@repertoire">Repertoire</h1>
@@ -25,7 +25,7 @@
          class="item__wrapper">
       <div class="item__container" [routerLink]="['', 'performance', item.slug]">
         <img class="image-performance" [src]="item.mainPicture.performance_big.url"
-             [alt]="item.mainPicture.performance_small.properties.alt">
+             [alt]="item.title">
         <span class="age-restrictions">{{ item.age_limit }}+</span>
       </div>
     </div>
@@ -37,7 +37,7 @@
                     [collectionSize]="collectionSize"
                     [pageSize]="pageSize"
                     class="pagination"
-                    [class.pagination__mobile-view]="viewMode === views.MOBILE"
+                    [class.pagination__mobile-view]="viewMode === views.sm"
     >
       <ng-template ngbPaginationPrevious>
         <svg>
