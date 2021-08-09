@@ -140,13 +140,13 @@
   }
 }
 
-.link {
+::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
+  border: none !important;
+}
+
+.details::ng-deep a {
   text-decoration: underline;
   text-underline-offset: 3px;
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
-}
-
-::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
-  border: none !important;
 }
