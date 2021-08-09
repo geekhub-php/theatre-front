@@ -58,7 +58,7 @@ const appRoutes: Routes = [
   },
   {path: 'contacts', component: ContactsComponent},
   {path: 'board-trustees', component: BoardTrusteesComponent},
-  {path: 'donate', component: DonateComponent},
+  {path: 'donate', component: HomePageComponent},
   {path: 'developers-team', component: DevTeamComponent},
   {path: 'partners', component: PartnersComponent},
   {path: 'cooperation', component: CooperationComponent}
@@ -72,8 +72,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {
       relativeLinkResolution: 'legacy',
       scrollPositionRestoration: 'top',
-      onSameUrlNavigation: 'reload'
-    })
+      onSameUrlNavigation: 'reload',
+      anchorScrolling: 'enabled',
+    }),
   ],
   exports: [
     RouterModule,

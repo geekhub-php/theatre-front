@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../../services/gateway.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-donate',
@@ -9,7 +10,12 @@ import { GatewayService } from '../../services/gateway.service';
 export class DonateComponent implements OnInit {
   donateBlockVisible = false;
 
-  constructor(private gatewayService: GatewayService) {
+  constructor(private gatewayService: GatewayService, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(({ donate }) => {
+      if (donate) {
+        this.donateBlockVisible = true;
+      }
+    });
   }
 
   ngOnInit() {
