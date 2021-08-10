@@ -8,7 +8,7 @@ import { LoaderService } from '../../partials/spinner/loader.service';
   styleUrls: ['./theatre-history.component.scss'],
 })
 export class TheatreHistoryComponent implements OnInit {
-  
+
   constructor(
     private getway: GatewayService,
     private loaderService: LoaderService
