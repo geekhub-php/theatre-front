@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { GatewayService } from '../../services/gateway.service';
-import { History } from '../../store/history/History';
-import { LoaderService } from '../partials/spinner/loader.service';
+import { GatewayService } from '../../../services/gateway.service';
+import { LoaderService } from '../../partials/spinner/loader.service';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'],
+  selector: 'app-theatre-history',
+  templateUrl: './theatre-history.component.html',
+  styleUrls: ['./theatre-history.component.scss'],
 })
-export class AboutComponent implements OnInit {
-  listHistories: Array<History>;
-
+export class TheatreHistoryComponent implements OnInit {
+  
   constructor(
     private getway: GatewayService,
     private loaderService: LoaderService
@@ -22,8 +20,8 @@ export class AboutComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    this.loaderService.start('about');
+  ngOnInit(): void {
+    this.loaderService.start('about-history');
     this.getway.updateCanonicalURL();
   }
 }
