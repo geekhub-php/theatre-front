@@ -131,9 +131,14 @@ $background-color-black: #0e0c08;
 
 $grid-breakpoints: (
     xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1500px
+    sm-min: 575px,
+    sm-max: 576px,
+    md-min: 767px,
+    md-max: 768px,
+    lg-min: 991px,
+    lg-max: 992px,
+    xl-min: 1199px,
+    xl-max: 1200px,
+    xxl-min: 1499px,
+    xxl-max: 1500px,
   );
