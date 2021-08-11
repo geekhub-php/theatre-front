@@ -1,18 +1,18 @@
 <button class="u-unstyled-btn d-none d-lg-block">
   <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
-       *ngIf="!donateBlockVisible" (click)="donateBlockVisible = true">
+       *ngIf="!donateBlockVisible" (click)="activePage()">
 </button>
 <button class="u-unstyled-btn d-none d-lg-block">
   <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
-       *ngIf="donateBlockVisible" (click)="donateBlockVisible = false">
+       *ngIf="donateBlockVisible" (click)="disablePage()">
 </button>
 
 <!--TODO: the correct QR-code needs to be provided-->
 
-<div *ngIf="donateBlockVisible" (click)="donateBlockVisible = false" class="donate-block">
+<div *ngIf="donateBlockVisible" (click)="disablePage()" class="donate-block">
   <div class="donate-block__information" (click)="$event.stopPropagation()">
     <img src="assets/images/close@3x.png" class="closing-button" alt="Close button" title="Close"
-         i18n-title="@@ngb.alert.close" (click)="donateBlockVisible = false">
+         i18n-title="@@ngb.alert.close" (click)="disablePage()">
     <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
     <p class="donate-title">Are you ready to help the Theater?</p>
     <div class="donate-requisites">
