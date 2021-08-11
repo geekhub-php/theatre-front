@@ -5,13 +5,7 @@ import { GatewayService } from '../../services/gateway.service';
 import { PerformanceListResponse } from '../../store/performance/PerformanceListResponse';
 import { Performance } from '../../store/performance/Performance';
 import { LoaderService } from '../partials/spinner/loader.service';
-
-enum RepertoireViewModes {
-  xxl = 'xxl',
-  xl = 'xl',
-  md = 'md',
-  sm = 'sm'
-}
+import { Breakpoints } from 'app/constants';
 
 @Component({
   selector: 'app-repertoire',
@@ -32,8 +26,8 @@ export class RepertoireComponent implements OnInit {
   CURRENT_SEASON = 0; // api conventions to get recent season
   CURRENT_AUDIENCE = null;
 
-  viewMode: null | RepertoireViewModes = null;
-  views = RepertoireViewModes;
+  viewMode: null | Breakpoints = null;
+  views = Breakpoints;
 
   constructor(
     private router: Router,
@@ -47,19 +41,16 @@ export class RepertoireComponent implements OnInit {
     const xxlPageAmount = 16;
     const xlPageAmount = 15;
     const mdPageAmount = 14;
-    const xxl_min = 1499;
-    const xl_min = 1199;
-    const sm_min = 575;
 
     const { innerWidth } = window;
 
-    this.viewMode = innerWidth > xxl_min
-      ? RepertoireViewModes.xxl : innerWidth > xl_min
-        ? RepertoireViewModes.xl : innerWidth > sm_min
-          ? RepertoireViewModes.md : RepertoireViewModes.sm;
+    this.viewMode = innerWidth > Breakpoints.xxl_min
+      ? Breakpoints.xxl_min : innerWidth > Breakpoints.xl_min
+        ? Breakpoints.xl_min : innerWidth > Breakpoints.sm_min
+          ? Breakpoints.md_min : Breakpoints.sm_min;
 
-    this.pageSize = this.views.xxl === this.viewMode
-      ? xxlPageAmount : this.views.xl === this.viewMode
+    this.pageSize = this.views.xxl_min === this.viewMode
+      ? xxlPageAmount : this.views.xl_min === this.viewMode
         ? xlPageAmount : mdPageAmount;
   }
 

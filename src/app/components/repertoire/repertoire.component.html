@@ -7,7 +7,7 @@
   </symbol>
 </svg>
 
-<app-repertoire-nav-header (setFirstPage)="setFirstPage($event)" *ngIf="viewMode !== views.sm"></app-repertoire-nav-header>
+<app-repertoire-nav-header (setFirstPage)="setFirstPage($event)" *ngIf="viewMode !== views.sm_min"></app-repertoire-nav-header>
 
 <div class="wrapped">
   <h1 class="wrapped__title" i18n="@@repertoire">Repertoire</h1>
@@ -37,7 +37,7 @@
                     [collectionSize]="collectionSize"
                     [pageSize]="pageSize"
                     class="pagination"
-                    [class.pagination__mobile-view]="viewMode === views.sm"
+                    [class.pagination__mobile-view]="viewMode === views.sm_min"
     >
       <ng-template ngbPaginationPrevious>
         <svg>
