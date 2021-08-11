@@ -1,22 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: [ './footer.component.scss' ]
 })
 export class FooterComponent {
 
-  constructor() {
+  scrollAnimation = null;
+
+  constructor() {}
+
+  @HostListener('document:wheel')
+  onWheel() {
+    cancelAnimationFrame(this.scrollAnimation);
+  }
+
+  @HostListener('document:touchmove')
+  onTouchMove() {
+    cancelAnimationFrame(this.scrollAnimation);
   }
 
   scrollToTop() {
-    // tslint:disable-next-line:only-arrow-functions
+    const that = this;
+    //   tslint:disable-next-line:only-arrow-functions
     (function smoothscroll() {
       const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
       const temp = 10;
       if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothscroll);
+        that.scrollAnimation = window.requestAnimationFrame(smoothscroll);
         window.scrollTo(0, currentScroll - (currentScroll / temp));
       }
     })();
