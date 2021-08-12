@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentChecked, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GatewayService } from '../../../services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';
