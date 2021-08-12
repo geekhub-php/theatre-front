@@ -30,7 +30,6 @@ import { NewsComponent } from './components/news/news.component';
 import { ArticleComponent } from './components/article/article.component';
 
 import { BoardTrusteesComponent } from './components/board-trustees/board-trustees.component';
-import { DonateComponent } from './components/donate/donate.component';
 
 import { PageNotFoundComponent } from './modules/core/components/page-not-found/page-not-found.component';
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
@@ -72,7 +71,6 @@ const appRoutes: Routes = [
   {path: 'persons/:personId', component: PersonComponent},
   {path: 'contacts', component: ContactsComponent},
   {path: 'board-trustees', component: BoardTrusteesComponent},
-  {path: 'donate', component: DonateComponent},
   {path: 'developers-team', component: DevTeamComponent},
   {path: 'partners', component: PartnersComponent},
   {path: 'cooperation', component: CooperationComponent}
@@ -86,8 +84,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {
       relativeLinkResolution: 'legacy',
       scrollPositionRestoration: 'top',
-      onSameUrlNavigation: 'reload'
-    })
+      onSameUrlNavigation: 'reload',
+      anchorScrolling: 'enabled',
+    }),
   ],
   exports: [
     RouterModule,

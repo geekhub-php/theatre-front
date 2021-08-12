@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DonateService } from 'app/components/donate/donate.service';
 
 @Component({
   selector: 'app-footer-nav',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private donateService: DonateService) { }
 
   ngOnInit(): void { }
+
+  activeDonateMenu() {
+    this.donateService.activeDonateMenu();
+  }
 
 }
