@@ -1120,7 +1120,39 @@
         <target>Сторінка 404</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/page-not-found/page-not-found.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="somethingWentWrong" datatype="html">
+        <source>Something went wrong. But we are working on it.</source>
+        <target>Щось пішло не так. Але ми працюємо над цим.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="youCan" datatype="html">
+        <source>You can go to the </source>
+        <target>Ви можете перейти до </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="toMain" datatype="html">
+        <source>Main Page </source>
+        <target>Головної </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="findUs" datatype="html">
+        <source>or find us in </source>
+        <target>або знайти нас у </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="pageNotFound" datatype="html">
