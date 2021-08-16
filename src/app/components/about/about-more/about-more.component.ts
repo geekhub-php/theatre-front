@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { GatewayService } from '../../../services/gateway.service';
-import { History } from '../../../store/history/History';
 import { LoaderService } from '../../partials/spinner/loader.service';
 
 @Component({
@@ -10,8 +8,7 @@ import { LoaderService } from '../../partials/spinner/loader.service';
   templateUrl: './about-more.component.html',
   styleUrls: ['./about-more.component.scss']
 })
-export class AboutMoreComponent implements OnInit {
-  history: History;
+export class AboutMoreComponent implements OnInit  {
 
   constructor(
     private route: ActivatedRoute,
@@ -19,19 +16,8 @@ export class AboutMoreComponent implements OnInit {
     private loaderService: LoaderService
   ) { }
 
-  ngOnInit() {
-    const slug = this.route.snapshot.params.slug;
+  ngOnInit(): void {
     this.loaderService.start('about-more');
-    this.gateway.getHistoryBySlug(slug).subscribe(
-      (res) => {
-        this.history = res;
-        this.loaderService.stop('about-more');
-        this.gateway.updateMeta(this.history.title,
-          this.history.text,
-          this.history.mainPicture.history_small.url);
-        },
-      err => this.loaderService.stop('about-more')
-    );
     this.gateway.updateCanonicalURL();
   }
 }

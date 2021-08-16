@@ -1,22 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { RepertoireNavHeaderComponent } from './repertoire-nav-header.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('RepertoireNavHeaderComponent', () => {
-  let component: RepertoireNavHeaderComponent;
-  let fixture: ComponentFixture<RepertoireNavHeaderComponent>;
+import { EpochComponent } from './epoch.component';
+
+describe('EpochComponent', () => {
+  let component: EpochComponent;
+  let fixture: ComponentFixture<EpochComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RepertoireNavHeaderComponent ],
-      imports: [ RouterTestingModule ],
+      declarations: [ EpochComponent ],
+      imports: [HttpClientTestingModule, RouterTestingModule]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RepertoireNavHeaderComponent);
+    fixture = TestBed.createComponent(EpochComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

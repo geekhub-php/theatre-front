@@ -1,13 +1,14 @@
 <div class="nav-header-container" >
   <a class="item"
-    routerLink="/repertoire/"
-    routerLinkActive="active"
-    [routerLinkActiveOptions]="{exact: true}"
-     i18n="@@allPerformances"
+    (click)="setPage()"
+    routerLink="/repertoire"
+    [class.active]="isLinkActive('/repertoire')"
+    i18n="@@allPerformances"
   >
     All performances
   </a>
   <a class="item"
+     (click)="setPage()"
      routerLink="/repertoire/for-adults"
      [queryParams]="{ audience: 'adults'}"
      routerLinkActive="active"
@@ -16,6 +17,7 @@
     For adults
   </a>
   <a class="item"
+     (click)="setPage()"
      routerLink="/repertoire/kids"
      [queryParams]="{ audience: 'kids'}"
      routerLinkActive="active"
@@ -24,6 +26,7 @@
     For kids
   </a>
   <a class="item"
+     (click)="setPage()"
      routerLink="/repertoire/archive"
      [queryParams]="{ season: -2 }"
      routerLinkActive="active"
