@@ -96,7 +96,7 @@
         <p [innerHtml]="performance.description"></p>
       </div>
 
-      <div *ngIf="role" class="details">
+      <div *ngIf="roles.length" class="details">
         <h4 class="details_title">Дійові особи та виконавці</h4>
         <div *ngFor="let role of roles">
           <span>{{ role.title }} – </span>
