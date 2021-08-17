@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-repertoire-nav-header',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repertoire-nav-header.component.scss']
 })
 
-export class RepertoireNavHeaderComponent implements OnInit {
-  constructor() { }
+export class RepertoireNavHeaderComponent {
+  @Output() setFirstPage: EventEmitter<number> = new EventEmitter();
 
-  ngOnInit(): void {
+  constructor(private activatedRoute: ActivatedRoute) { }
+
+  setPage() {
+    this.setFirstPage.emit(1);
+  }
+
+  isLinkActive(url: string): boolean {
+    return ('/' + this.activatedRoute.snapshot.url.join('/')) === url;
   }
 
 }

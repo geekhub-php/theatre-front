@@ -204,7 +204,7 @@
         <source>For adults</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repertoire/repertoire-nav-header/repertoire-nav-header.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repertoire/repertoire.component.html</context>
@@ -215,7 +215,7 @@
         <source>For kids</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repertoire/repertoire-nav-header/repertoire-nav-header.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repertoire/repertoire.component.html</context>
@@ -226,7 +226,7 @@
         <source>Archive</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repertoire/repertoire-nav-header/repertoire-nav-header.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">33</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repertoire/repertoire.component.html</context>
@@ -352,6 +352,86 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
           <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="theatreHistory" datatype="html">
+        <source>History of theatre</source>
+        <target>Історія театру</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/about-header/about-header.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/theatre-history/theatre-history.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/theatre-history/theatre-history.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="theatreVisit" datatype="html">
+        <source>Visit to the theatre</source>
+        <target>Візит до театру</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/about-header/about-header.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/visit/visit.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/visit/visit.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="festivals" datatype="html">
+        <source>Festivals</source>
+        <target>Фестивалі</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/about-header/about-header.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/festivals/festivals.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/festivals/festivals.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/about-more/about-more.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="festival" datatype="html">
+        <source>Festival</source>
+        <target>Фестиваль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/about-more/about-more.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/about-more/about-more.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="epoch" datatype="html">
+        <source>Epoch</source>
+        <target>Епоха</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/about-header/about-header.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/epoch/epoch.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/about/epoch/epoch.component.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsWorkingHours" datatype="html">
