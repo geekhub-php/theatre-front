@@ -1,7 +1,7 @@
 @import "~assets/styles/variables";
 
 h2 {
-  padding-top: 80px;
+  margin-top: 30px;
   margin-bottom: 60px;
   text-align: center;
 
@@ -9,7 +9,7 @@ h2 {
 }
 
 .news_container {
-  max-width: 1500px;
+  max-width: $container-width;
   margin: 0 auto;
   padding-bottom: 140px;
 }
@@ -23,3 +23,24 @@ h2 {
   float: right;
 }
 
+@media screen and (max-width: 768px) {
+
+  .news_container {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  h2 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+
+    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
+  }
+
+  .news_container {
+    padding: 15px;
+  }
+}
