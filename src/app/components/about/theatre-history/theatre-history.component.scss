@@ -3,12 +3,9 @@
 
 .container {
   @include _container;
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
-.historyTitle {
+.histories__main-title {
   margin-top: 50px;
   @include about-title;
 }
