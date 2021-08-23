@@ -49,7 +49,7 @@ img {
   object-fit: contain;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: map-get($grid-breakpoints, md-max)) {
 
   .news-item {
     grid-template-columns: 1fr 2fr;
@@ -61,7 +61,7 @@ img {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media (max-width: map-get($grid-breakpoints, sm-max)) {
 
   .news-item {
     display: block;
