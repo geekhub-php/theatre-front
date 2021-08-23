@@ -25,17 +25,18 @@
     </div>
   </section>
 
-  <div class="actors-carousel">
+  <section class="actors-carousel">
     <div class="actors-carousel__component">
       <!--Background for the "Poster slider", can be modified-->
     </div>
-  </div>
+  </section>
 
-  <div class="latest-news">
-    <div class="latest-news__component">
-      <!--Background for the "3 latest news", can be modified-->
-    </div>
-  </div>
+  <section class="news_wrapper">
+    <h3 class="section_title" i18n="@@news">News</h3>
+    <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
+    <a class="link" i18n="@@more" routerLink="../news">More</a>
+  </section>
+
   <app-actors-slider [randomEmployees]="randomEmployees"></app-actors-slider>
 
   <section class="home-page-text__advantages">
