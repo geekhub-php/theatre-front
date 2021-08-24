@@ -325,7 +325,7 @@
         <source>Contacts</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html
@@ -337,21 +337,21 @@
         <source>Director, secretary:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsAdmin" datatype="html">
         <source>Administrator:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsTicketOffice" datatype="html">
         <source>Ticket office:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="theatreHistory" datatype="html">
@@ -438,28 +438,28 @@
         <source>Ticket office working hours:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsMonFri" datatype="html">
         <source>Mon-Fri: 09.00 - 18.00</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsSatSun" datatype="html">
         <source>Sat-Sun: 09.00 - 18.00</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsBankDetails" datatype="html">
         <source>Bank Details</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsEmail" datatype="html">
@@ -480,7 +480,7 @@
         <source>Cherkasy, Shevchenko, 234</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/contacts/contacts.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">90</context>
         </context-group>
       </trans-unit>
       <trans-unit id="position" datatype="html">

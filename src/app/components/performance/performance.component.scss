@@ -211,8 +211,13 @@
   @include font($body-font-family, $font-size-medium-px, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 
-::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
+:host ::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
   border: none !important;
+}
+
+:host .details::ng-deep a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: map-get($grid-breakpoints, lg-min)) {
