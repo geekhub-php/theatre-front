@@ -3,6 +3,7 @@
 .map_wrapper {
   max-width: 735px;
   height: 423px;
+  grid-area: map;
 }
 
 .map {
@@ -13,14 +14,16 @@
 .container {
   max-width: 1250px;
   margin: 0 auto;
+  transition: all .2s;
 }
 
 .main {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(200px, 480px) minmax(400px, 735px);
+  grid-template-columns: minmax(355px, 480px) minmax(300px, 735px);
   grid-gap: 30px;
   padding-bottom: 100px;
+  grid-template-areas: "contacts map";
 }
 
 .page_title {
@@ -33,17 +36,33 @@
 
 .info_item {
   display: flex;
+  margin-bottom: 16px;
+
+  &_text-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &_text-column {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.info_wrapper {
+  grid-area: contacts;
 }
 
 .icon {
   width: 24px;
+  min-width: 24px;
   height: 24px;
   margin-right: 16px;
 }
 
 .text {
   margin-right: 7px;
-  margin-bottom: 18px;
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
@@ -59,4 +78,58 @@
 
 .near {
   margin-bottom: 4px;
+}
+
+@media (max-width: 1400px) {
+
+  .container {
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .page_title {
+    text-align: center;
+    padding-top: 32px;
+    margin-bottom: 16px;
+
+    @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 40px, normal)
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .icon {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+  }
+
+  .text {
+    margin-right: 7px;
+
+    @include font($body-font-family, $font-size-small-rem, $font-color-primary, $font-weight-normal, 21px, normal)
+  }
+
+  .info {
+    @include font($body-font-family, $font-size-small-rem, $font-color-white, $font-weight-bold, 21px, normal)
+  }
+
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(270px, 768px);
+    grid-template-rows: 430px auto;
+    grid-gap: 24px;
+    padding-bottom: 100px;
+    grid-template-areas: "map"
+      "contacts";
+  }
+
+  .near {
+    font-size: $font-size-small-rem;
+    line-height: 21px;
+  }
 }
