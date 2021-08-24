@@ -19,12 +19,10 @@
 }
 
 .ticket_button {
-  position: absolute;
-  top: 0;
-  line-height: 44px;
-  right: 15px;
-  text-decoration: none;
   transition: .2s;
+  line-height: 44px;
+  white-space: nowrap;
+  text-decoration: none;
 
   & a {
     padding: 10px 50px;
@@ -33,21 +31,21 @@
     @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
 
     &:hover {
-      background-color: $background-main-color-lighter;
       text-decoration: none;
       color: $font-color-white;
+      background-color: $background-main-color-lighter;
     }
 
     &:active {
-      background-color: $background-color-white;
       color: $font-color-black;
+      background-color: $background-color-white;
     }
   }
 }
 
 .details {
-  font-size: $font-size-medium-px;
   text-align: justify;
+  font-size: $font-size-medium-px;
 
   & .description > p {
     text-align: justify;
@@ -73,7 +71,6 @@
   .role_item {
     display: flex;
     flex-direction: column;
-    //margin-bottom: 32px;
 
     & > span {
       line-height: 2;
@@ -83,18 +80,18 @@
 
 .performance_body {
   display: grid;
-  grid-template-areas: "poster info info" "poster details details";
   grid-gap: 32px;
-  max-width: $container-width;
-  margin: 30px auto 0;
   position: relative;
   padding: 0 5px 85px;
+  margin: 30px auto 0;
+  max-width: $container-width;
+  grid-template-areas: "poster info info" "poster details details";
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
 
   .performance_poster {
-    grid-area: poster;
     display: flex;
+    grid-area: poster;
     justify-content: center;
 
     .poster-container {
@@ -104,8 +101,9 @@
 
   .performance_info {
     grid-area: info;
+    display: flex;
 
-    & div:last-child {
+    .main-info-block div:last-child {
       margin-bottom: 0;
 
       & p {
@@ -120,9 +118,9 @@
 }
 
 .link {
+  transition: .2s;
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: .2s;
 
   @include font($body-font-family, $font-size-medium-px, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
 
@@ -132,14 +130,14 @@
 }
 
 .main-info {
-  margin: 0 0 20px;
   display: flex;
+  margin: 0 16px 20px 0;
 }
 
 .icon {
-  margin-right: 16px;
   width: 24px;
   height: 24px;
+  margin-right: 16px;
   object-fit: contain;
 }
 
@@ -153,23 +151,23 @@
 }
 
 .gallery {
-  background-color: $background-main-color-darker;
-  padding: 0 10px;
   display: flex;
+  padding: 0 10px;
   flex-direction: column;
   justify-content: center;
   border-bottom: 1px solid $border-color-lighter;
+  background-color: $background-main-color-darker;
 }
 
 .ngx-gallery {
-  display: inline-block;
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .more {
-  text-decoration: none;
   text-align: center;
   margin: 30px 0 80px;
+  text-decoration: none;
 
   @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
 }
@@ -179,15 +177,15 @@
 }
 
 .limit {
-  position: absolute;
   top: 0;
   left: 0;
   width: 56px;
   height: 56px;
-  background-color: $background-color-accent;
   display: flex;
+  position: absolute;
   align-items: center;
   justify-content: center;
+  background-color: $background-color-accent;
 
   @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, $line-height-basic, .48px)
 }
@@ -200,9 +198,9 @@
 }
 
 .gallery_container {
-  width: $container-width;
-  max-width: 100%;
   margin: 0 auto;
+  max-width: 100%;
+  width: $container-width;
 }
 
 .info {
@@ -232,6 +230,11 @@
     position: static;
     margin-bottom: 32px;
   }
+
+  .performance_info {
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+  }
 }
 
 @media (max-width: map-get($grid-breakpoints, md-min)) {
@@ -246,8 +249,11 @@
   }
 
   .ticket_button {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+  }
+
+  .main-info {
+    margin-right: 0;
   }
 }
 
@@ -276,11 +282,6 @@
     height: 24px;
 
     @include font($body-font-family, $font-size-xx-small, $font-color-white, $font-weight-bold, 1.5, .48px)
-  }
-
-  .ticket_button {
-    display: flex;
-    justify-content: center;
   }
 
   .info {
