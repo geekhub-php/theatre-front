@@ -31,8 +31,8 @@
 <div class="container">
   <app-spinner name="performance-page"></app-spinner>
 
-  <h1 class="page_title" i18n="@@performanceItem">Performance</h1>
-  <h2 class="performance_title"> {{ performance?.title | titlecase }} </h2>
+  <h2 class="page_title" i18n="@@performanceItem">Performance</h2>
+  <h1 class="performance_title"> {{ performance?.title | titlecase }} </h1>
 
   <section *ngIf="performance" class="performance_body">
 
@@ -84,7 +84,7 @@
         <p class="info">{{ performance.type }}</p>
       </div>
 
-      <div class="details">
+      <div *ngIf="performance.producer" class="details">
         <p><span class="bold">Режисер:</span>
           <a class="link"
              routerLink="/persons/{{ performance.producer?.slug }}">{{ performance.producer?.first_name + ' ' + performance.producer?.last_name }}</a>
@@ -96,15 +96,15 @@
         <p [innerHtml]="performance.description"></p>
       </div>
 
-      <!--      TODO actors and roles-->
-
-      <!--      <div class="details">-->
-      <!--        <h4 class="details_title">Дійові особи та виконавці</h4>-->
-      <!--        <span></span><a class="link"></a>-->
-      <!--        <span></span><a class="link"></a>-->
-      <!--        <span></span><a class="link"></a>-->
-      <!--        <span></span><a class="link"></a>-->
-      <!--      </div>-->
+      <div *ngIf="roles.length" class="details">
+        <h4 class="details_title">Дійові особи та виконавці</h4>
+        <div *ngFor="let role of roles">
+          <span>{{ role.title }} – </span>
+          <a class="link" routerLink="/persons/{{ role.employee.slug }}">
+            {{ role.employee.first_name + ' ' + role.employee.last_name }}
+          </a>
+        </div>
+      </div>
 
       <div class="details flex">
         <span class="bold" i18n="@@seasons">Seasons:</span>
@@ -112,6 +112,7 @@
       </div>
     </div>
   </section>
+</div>
 
   <section *ngIf="galleryImages.length" class="gallery">
     <h2 class="section_title" i18n="@@photogallery">Photo Gallery</h2>
@@ -139,4 +140,4 @@
   <!--    <h2 class="section_title">Також вас може зацікавити</h2>-->
 
   <!--  </section>-->
-</div>
+

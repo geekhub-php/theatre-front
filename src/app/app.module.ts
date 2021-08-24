@@ -27,6 +27,11 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { BoardTrusteesComponent } from './components/board-trustees/board-trustees.component';
 import { SpinnerModule } from './components/partials/spinner/spinner.module';
 import { AboutMoreComponent } from './components/about/about-more/about-more.component';
+import { FestivalsComponent } from './components/about/festivals/festivals.component';
+import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component';
+import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
+import { EpochComponent } from './components/about/epoch/epoch.component';
+import { VisitComponent } from './components/about/visit/visit.component';
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
@@ -56,6 +61,8 @@ import { SeasonsComponent } from './components/performance/seasons/seasons.compo
 import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
+import { LottieModule } from 'ngx-lottie';
+import { playerFactory } from './components/partials/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +95,12 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     CreativeComponent,
     PersoneShowmoreComponent,
     ActorsSliderComponent,
-    SeasonsComponent
+    SeasonsComponent,
+    FestivalsComponent,
+    TheatreHistoryComponent,
+    AboutHeaderComponent,
+    EpochComponent,
+    VisitComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -107,7 +119,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
     SpinnerModule,
     CoreModule,
     GalleryModule,
-    NguCarouselModule
+    NguCarouselModule,
   ],
   providers: [
     CalendarPopupComponent,

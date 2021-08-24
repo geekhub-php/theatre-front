@@ -28,6 +28,7 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
+              "src/assets/json",
               "src/favicon.png"
             ],
             "styles": [

@@ -5,16 +5,16 @@
     <div class="artisitic-navigation">
 
         <!-- TODO: update after adding secondary parshion  -->
-    
+
         <!-- <h3 i18n="@@mainPage">Main page</h3> <h3>&nbsp;/&nbsp;</h3>
         <h3 i18n="@@persons">Persons</h3> <h3>&nbsp;/&nbsp;</h3>
         <h3 class="persons-navigation-bold" i18n="@@artisticComposition">Artistic Composition</h3> -->
-    </div> 
+    </div>
     <div class="page-title">
         <h1 i18n="@@artisticComposition" class="page-title-name">Artistic Composition</h1>
     </div>
     <div class="art-core">
-      <div class="title">
+      <div id="art-persons" class="title">
           <h2 class="art-core-title" i18n="@@artCore">Art core</h2>
       </div>
           <div *ngIf="artCoreEmployees.length > 0">
@@ -45,7 +45,7 @@
           </div>
     </div>
     <div class="art-prod">
-        <div class="title">
+          <div id="art-production-persons" class="title">
             <h2 class="art-prod-title" i18n="@@artProd">Art-production</h2>
           </div>
             <div *ngIf="artProductionEmployees.length > 0">

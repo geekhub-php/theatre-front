@@ -1,0 +1,47 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+
+.container {
+  @include _container;
+}
+
+.histories__main-title {
+  margin-top: 50px;
+  @include about-title;
+}
+
+.botTheatreImage {
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  padding-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+
+  .list-item {
+    width: 100%;
+    max-width: 1500px;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+
+    .histories__list-main_img {
+      width: auto;
+      margin: 7px 7px 7px 0;
+      object-fit: contain;
+      float: left;
+      padding-right: 20px;
+    }
+
+    .histories__list-text {
+      color: $font-color-primary;
+      font-family: $body-font-family;
+      font-size: $font-size-medium;
+      line-height: 1.5;
+    }
+  }
+}
