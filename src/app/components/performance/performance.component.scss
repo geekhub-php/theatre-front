@@ -1,5 +1,9 @@
 @import "~assets/styles/variables";
 
+.container {
+  padding: 0 32px;
+}
+
 .page_title {
   text-align: center;
   padding-top: 30px;
@@ -14,20 +18,121 @@
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
 }
 
+.ticket_button {
+  position: absolute;
+  top: 0;
+  line-height: 44px;
+  right: 15px;
+  text-decoration: none;
+  transition: .2s;
+
+  & a {
+    padding: 10px 50px;
+
+    @include border(1, solid, $border-color-light, 2px);
+    @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
+
+    &:hover {
+      background-color: $background-main-color-lighter;
+      text-decoration: none;
+      color: $font-color-white;
+    }
+
+    &:active {
+      background-color: $background-color-white;
+      color: $font-color-black;
+    }
+  }
+}
+
+.details {
+  font-size: $font-size-medium-px;
+  text-align: justify;
+
+  & .description > p {
+    text-align: justify;
+
+    & > a {
+      @extend .link
+    }
+  }
+
+  .performance_seasons {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > span {
+      margin-right: 16px;
+    }
+  }
+
+  .performance_roles {
+    margin: 36px 0;
+  }
+
+  .role_item {
+    display: flex;
+    flex-direction: column;
+    //margin-bottom: 32px;
+
+    & > span {
+      line-height: 2;
+    }
+  }
+}
+
 .performance_body {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 30px;
+  grid-template-areas: "poster info info" "poster details details";
+  grid-gap: 32px;
   max-width: $container-width;
   margin: 30px auto 0;
   position: relative;
   padding: 0 5px 85px;
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
+
+  .performance_poster {
+    grid-area: poster;
+    display: flex;
+    justify-content: center;
+
+    .poster-container {
+      position: relative;
+    }
+  }
+
+  .performance_info {
+    grid-area: info;
+
+    & div:last-child {
+      margin-bottom: 0;
+
+      & p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .performance_details {
+    grid-area: details;
+  }
+}
+
+.link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: .2s;
+
+  @include font($body-font-family, $font-size-medium-px, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
+
+  &:hover {
+    color: $font-color-white;
+  }
 }
 
 .main-info {
-  margin: 0 20px 25px 0;
+  margin: 0 0 20px;
   display: flex;
 }
 
@@ -38,23 +143,13 @@
   object-fit: contain;
 }
 
-.details {
-  margin-top: 40px;
-}
-
 .details_title {
-  line-height: 25px;
-
-  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 25px, normal)
+  @include font($body-font-family, $font-size-medium-px, $font-color-accent, $font-weight-bold, 25px, normal)
 }
 
 .bold {
   font-weight: $font-weight-bold;
   margin-right: 16px;
-}
-
-.flex {
-  display: flex;
 }
 
 .gallery {
@@ -81,10 +176,6 @@
 
 .more:hover {
   cursor: pointer;
-}
-
-.performance_poster {
-  position: relative;
 }
 
 .limit {
@@ -117,36 +208,99 @@
 .info {
   margin: 0;
 
-  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
-}
-
-.ticket_button {
-  position: absolute;
-  top: 0;
-  right: 15px;
-  padding: 10px 50px;
-  text-decoration: none;
-
-  @include border(1, solid, $border-color-light, 2px);
-  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
-
-  &:hover {
-    background-color: $background-main-color-lighter;
-  }
-
-  &:active {
-    background-color: $background-color-white;
-    color: $font-color-black;
-  }
-}
-
-.link {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-
-  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
+  @include font($body-font-family, $font-size-medium-px, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 
 ::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
   border: none !important;
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
+
+  .performance_body {
+    grid-gap: 20px 16px;
+    grid-auto-columns: 1fr;
+    grid-template-areas: "poster info" "details details";
+  }
+
+  .ticket_button {
+    position: static;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md-min)) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .performance_body {
+    grid-gap: 24px;
+    grid-template-areas: "poster" " info" "details";
+  }
+
+  .ticket_button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .page_title {
+    margin-bottom: 16px;
+
+    @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.11, normal)
+  }
+
+  .performance_title {
+    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px)
+  }
+
+  .main-info {
+    margin-bottom: 16px;
+  }
+
+  .performance_body {
+    margin: 0 auto;
+  }
+
+  .limit {
+    width: 24px;
+    height: 24px;
+
+    @include font($body-font-family, $font-size-xx-small, $font-color-white, $font-weight-bold, 1.5, .48px)
+  }
+
+  .ticket_button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info {
+    @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal)
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+  }
+
+  .link {
+    @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
+  }
+
+  .details {
+    font-size: $font-size-small;
+
+    .performance_roles {
+      margin: 24px 0;
+    }
+  }
+
+  .details_title {
+    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, normal)
+  }
 }

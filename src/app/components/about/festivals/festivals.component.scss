@@ -3,6 +3,7 @@
 
 .histories_main-title {
   margin-top: 50px;
+
   @include about-title;
 }
 
@@ -77,6 +78,7 @@
   }
 
   .list-item:hover {
+
     .histories__list-main_img {
       display: block;
     }

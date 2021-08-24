@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { forkJoin } from 'rxjs';
@@ -14,7 +14,10 @@ import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrde
 @Component({
   selector: 'app-performance',
   templateUrl: './performance.component.html',
-  styleUrls: ['./performance.component.scss']
+  styleUrls: [ './performance.component.scss' ],
+  // disabled for styling innerHTML code
+  // tslint:disable-next-line:use-component-view-encapsulation
+  encapsulation: ViewEncapsulation.None
 })
 export class PerformanceComponent implements OnInit {
   performance: Performance;
@@ -46,13 +49,16 @@ export class PerformanceComponent implements OnInit {
       arrowPrevIcon: 'fa fa-chevron-left',
       arrowNextIcon: 'fa fa-chevron-right',
       closeIcon: 'fas fa-times'
-    },
+    }
   ];
 
-  constructor(private gateway: GatewayService,
+  constructor(@Inject(LOCALE_ID) private localeId: string,
+              private gateway: GatewayService,
               private router: ActivatedRoute,
               private loaderService: LoaderService) {
     this.activeId = 'actors';
+    const idLength = 2;
+    this.localeId = this.localeId.slice(0, idLength);
   }
 
   ngOnInit() {
@@ -62,7 +68,7 @@ export class PerformanceComponent implements OnInit {
     forkJoin([
       this.gateway.getPerformanceBySlug(slug),
       this.gateway.getPerformanceRoles(slug)
-    ]).subscribe(([performance, roles]) => {
+    ]).subscribe(([ performance, roles ]) => {
       this.performance = performance.body;
       this.roles = roles;
       if (this.performance.gallery) {
@@ -71,7 +77,7 @@ export class PerformanceComponent implements OnInit {
             {
               small: item.images.performance_big.url,
               medium: item.images.performance_big.url,
-              big: item.images.performance_big.url,
+              big: item.images.performance_big.url
             }
           );
         });
