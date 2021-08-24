@@ -38,12 +38,6 @@ export class ArticleComponent implements OnInit {
       arrowPrevIcon: 'fa fa-chevron-left',
       arrowNextIcon: 'fa fa-chevron-right',
       closeIcon: 'fas fa-times'
-    },
-    {
-      breakpoint: 770,
-      width: '100%',
-      thumbnailsColumns: 1,
-      imageSize: 'cover'
     }
   ];
 
