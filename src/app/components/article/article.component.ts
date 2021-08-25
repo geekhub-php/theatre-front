@@ -22,25 +22,7 @@ export class ArticleComponent implements OnInit {
   galleryColumns = 4;
   galleryRows = null;
   thumbnailHeight = 240;
-  galleryOptions: Array<NgxGalleryOptions> = [
-    {
-      image: false,
-      width: '100%',
-      thumbnailsColumns: this.galleryColumns,
-      thumbnailsRows: this.galleryRows,
-      thumbnailMargin: 32,
-      thumbnailSize: NgxGalleryImageSize.Cover,
-      previewCloseOnEsc: true,
-      previewAnimation: false,
-      previewBullets: true,
-      thumbnailsOrder: NgxGalleryOrder.Page,
-      startIndex: null,
-      arrowPrevIcon: 'fa fa-chevron-left',
-      arrowNextIcon: 'fa fa-chevron-right',
-      closeIcon: 'fas fa-times'
-    }
-  ];
-
+  galleryOptions: Array<NgxGalleryOptions>;
   galleryImages: Array<NgxGalleryImage> = [];
 
   constructor(private router: ActivatedRoute,
@@ -49,7 +31,9 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getGalleryColumns();
     this.getArticle();
+    this.getGalleryOptions();
   }
 
   getArticle() {
@@ -58,14 +42,12 @@ export class ArticleComponent implements OnInit {
     this.gateAway.getNewsBySlug(slug).subscribe((res) => {
         this.item = plainToClass(NewsItem, res);
         this.gallery = res.gallery;
+        this.updateGalleryOptions();
 
         if (res.gallery) {
           this.gallery = res.gallery;
 
           if (this.gallery.length) {
-            this.galleryOptions[0].thumbnailsRows = Math.ceil(this.gallery.length / this.galleryColumns);
-            this.galleryRows = this.galleryOptions[0].thumbnailsRows;
-            this.galleryOptions[0].height = `${this.galleryRows * this.thumbnailHeight}px`;
             this.gallery.map(item => {
               this.galleryImages.push(
                 {
@@ -84,5 +66,44 @@ export class ArticleComponent implements OnInit {
       err => this.loaderService.stop('article')
     );
     this.gateAway.updateCanonicalURL();
+  }
+
+  getGalleryOptions() {
+    this.galleryOptions = [
+      {
+        image: false,
+        width: '100%',
+        thumbnailsColumns: this.galleryColumns,
+        thumbnailsRows: this.galleryRows,
+        thumbnailMargin: 32,
+        thumbnailSize: NgxGalleryImageSize.Cover,
+        previewCloseOnEsc: true,
+        previewAnimation: false,
+        previewBullets: true,
+        thumbnailsOrder: NgxGalleryOrder.Page,
+        startIndex: null,
+        arrowPrevIcon: 'fa fa-chevron-left',
+        arrowNextIcon: 'fa fa-chevron-right',
+        closeIcon: 'fas fa-times'
+      }
+    ];
+  }
+
+  updateGalleryOptions() {
+    if (this.gallery?.length) {
+      this.galleryOptions[0].thumbnailsRows = Math.ceil(this.gallery.length / this.galleryColumns);
+      this.galleryRows = this.galleryOptions[0].thumbnailsRows;
+      this.galleryOptions[0].height = `${this.galleryRows * this.thumbnailHeight}px`;
+    }
+  }
+
+  getGalleryColumns() {
+    if (window.screen.width > 768) {
+      this.galleryColumns = 4;
+    } else if (window.screen.width > 375) {
+      this.galleryColumns = 2;
+    } else {
+      this.galleryColumns = 1;
+    }
   }
 }
