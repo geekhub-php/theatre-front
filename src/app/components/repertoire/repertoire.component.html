@@ -7,7 +7,7 @@
   </symbol>
 </svg>
 
-<app-repertoire-nav-header></app-repertoire-nav-header>
+<app-repertoire-nav-header (setFirstPage)="setFirstPage($event)" *ngIf="viewMode !== views.sm_min"></app-repertoire-nav-header>
 
 <div class="wrapped">
   <h1 class="wrapped__title" i18n="@@repertoire">Repertoire</h1>
@@ -21,21 +21,23 @@
   <p class="wrapped__active-nav" *ngIf="seasonNumber" i18n="@@archive">Archive</p>
 
   <div class="wrapped__performances">
-    <div *ngFor="let item of perfomances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
-         class="perfomance__item">
+    <div *ngFor="let item of performances | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
+         class="item__wrapper">
       <div class="item__container" [routerLink]="['', 'performance', item.slug]">
         <img class="image-performance" [src]="item.mainPicture.performance_big.url"
-             [alt]="item.mainPicture.performance_small.properties.alt">
+             [alt]="item.title">
         <span class="age-restrictions">{{ item.age_limit }}+</span>
       </div>
     </div>
   </div>
 
-  <div *ngIf="collectionSize > pageSize" class="pagination_wrapper">
+  <div *ngIf="collectionSize > pageSize" class="pagination__wrapper">
     <ngb-pagination [(page)]="page"
+                    (pageChange)="goToPage($event)"
                     [collectionSize]="collectionSize"
                     [pageSize]="pageSize"
                     class="pagination"
+                    [class.pagination__mobile-view]="viewMode === views.sm_min"
     >
       <ng-template ngbPaginationPrevious>
         <svg>

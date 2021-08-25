@@ -14,7 +14,6 @@
 
   color: $font-color-accent;
   margin-bottom: 60px;
-  margin-top: -10px;
   font-family: $creative-font;
 }
 
@@ -32,4 +31,12 @@
 @mixin breadcrumbs-nav-bold {
   font-weight: $font-weight-semi-bold;
   color: $font-color-white;
+}
+
+@mixin selectedI {
+  height: 56px;
+  line-height: 1.39;
+  padding-top: 16px;
+  background-color: $background-on-hover;
+  font-weight: $font-weight-semi-bold;
 }
