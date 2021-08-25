@@ -1,14 +1,13 @@
 @import "~assets/styles/variables";
 
 .footer-nav-block {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
   padding: 48px 10px 22px;
   background-color: $background-main-color-darker;
   max-width: $container-width;
   margin: $container-margin;
-
-  @include flex-space-between;
-
-  display: flex;
 
   .footer-nav__header {
     @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 27px, normal);
@@ -19,8 +18,12 @@
     }
   }
 
+  .footer-nav__col + .footer-nav__col {
+    padding-left: 10px;
+  }
+
   .footer-nav__item {
-    display: flex;
+    display: block;
     margin-top: 10px;
 
     @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
@@ -43,40 +46,14 @@
   background-color: transparent;
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 992px) {
-
-  .footer-nav-block {
-    gap: 20px;
-  }
-}
-
-@media only screen and (max-width: 992px) and (min-width: 860px) {
-
-  .footer-nav-block {
-    margin-right: 20px;
-  }
-
-  .footer-nav-block {
-    gap: 20px;
-  }
-}
-
-@media only screen and (max-width: 992px) and (min-width: 860px) {
-
-  .footer-nav-block {
-    margin-right: 20px;
-  }
+@media (max-width: map-get($grid-breakpoints, xl-max)) {
 
   .footer__logo {
     display: none;
   }
-
-  .footer-nav-block {
-    gap: 20px;
-  }
 }
 
-@media only screen and (max-width: 860px) {
+@media (max-width: map-get($grid-breakpoints, lg-max)) {
 
   .footer-nav-block {
     display: none;
