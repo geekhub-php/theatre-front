@@ -6,11 +6,14 @@
   .footer {
     max-width: $container-width;
     margin: $container-margin;
-    background-color: $background-main-color-darker;
+
+    ul {
+      margin: 0;
+    }
 
     .footer__links {
       padding: 22px 0;
-      flex-direction: row;
+      flex-direction: row-reverse;
       list-style: none;
       gap: 40px;
       font-size: $font-size-small;
@@ -73,6 +76,15 @@
     bottom: 10%;
 
     @include box(50, 50);
+  }
+}
+
+@media only screen and (max-width: 860px) {
+
+  .social {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
