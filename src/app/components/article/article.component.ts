@@ -32,8 +32,8 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     this.getGalleryColumns();
-    this.getArticle();
     this.getGalleryOptions();
+    this.getArticle();
   }
 
   getArticle() {
@@ -98,12 +98,12 @@ export class ArticleComponent implements OnInit {
   }
 
   getGalleryColumns() {
-    if (window.screen.width > 768) {
-      this.galleryColumns = 4;
-    } else if (window.screen.width > 375) {
-      this.galleryColumns = 2;
-    } else {
-      this.galleryColumns = 1;
-    }
+    const wideScreenSize = 768;
+    const mediumScreenSize = 450;
+    const wideScreenColumns = 4;
+    const mediumScreenColumns = 2;
+    this.galleryColumns =
+      window.screen.width > wideScreenSize ? wideScreenColumns :
+        window.screen.width > mediumScreenSize ? mediumScreenColumns : 1;
   }
 }
