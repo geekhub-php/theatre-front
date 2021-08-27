@@ -1,7 +1,6 @@
 @import "~assets/styles/variables";
 
 .cooperation_wrapper {
-  background-color: $background-color-black;
   display: grid;
   justify-content: center;
 }
@@ -34,7 +33,6 @@
   max-width: $container-width;
   display: grid;
   grid-template-columns: repeat(4, minmax(200px, 352px));
-  grid-template-rows: repeat(3, 352px);
   grid-gap: 32px;
   padding-left: 5px;
   padding-right: 5px;
@@ -194,3 +192,93 @@
   @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
 }
 
+@media (max-width: map-get($grid-breakpoints, xl-max)) {
+
+  .cooperation_wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .docs_section {
+    grid-template-columns: repeat(3, minmax(200px, 330px));
+    grid-auto-rows: 300px;
+    grid-gap: 16px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .logo_section {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    margin-bottom: 50px;
+    padding: 0;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-max)) {
+
+  .docs_section {
+    grid-template-columns: repeat(2, minmax(200px, 330px));
+  }
+
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-max)) {
+
+  .docs_section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .card_title {
+    height: 78px;
+    margin: 30px 0 25px 60px;
+    text-align: left;
+
+    @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 25px, normal)
+  }
+
+  .load {
+    text-align: right;
+
+    @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
+  }
+
+  .icon {
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    width: 45px;
+    height: 48px;
+  }
+
+  .card_title {
+    height: 50px;
+    margin-bottom: 5px;
+
+    @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-bold, 21px, normal)
+  }
+
+  .load {
+    margin: 0;
+
+    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 21px, normal)
+  }
+
+  .logo_section {
+    display: block;
+    margin-bottom: 50px;
+    padding: 0;
+  }
+
+  .logo_card {
+    margin-bottom: 16px;
+  }
+}
