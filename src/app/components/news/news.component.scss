@@ -2,7 +2,7 @@
 
 h2 {
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   text-align: center;
 
   @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
@@ -23,21 +23,18 @@ h2 {
   float: right;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: map-get($grid-breakpoints, md-max)) {
 
   .news_container {
     padding: 30px;
   }
 }
 
-@media screen and (max-width: 576px) {
+@media (max-width: map-get($grid-breakpoints, sm-max)) {
 
   h2 {
-    margin-top: 15px;
+    margin-top: 20px;
     margin-bottom: 5px;
-    text-align: center;
-
-    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
   }
 
   .news_container {
