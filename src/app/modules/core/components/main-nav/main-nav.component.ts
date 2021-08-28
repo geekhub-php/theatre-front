@@ -18,31 +18,24 @@ export class MainNavComponent implements OnInit {
   constructor(private langService: LangService) {
   }
 
-
   ngOnInit() {
     this.getWindowSize();
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    if (event.target.innerWidth > 1200) {
-      this.showWideNav = true;
-      this.showSmallNav = false;
-    } else if (event.target.innerWidth > 768) {
-      this.showWideNav = false;
-      this.showSmallNav = true;
-    } else {
-      this.showWideNav = false;
-      this.showSmallNav = false;
-    }
+  onResize() {
+    this.getWindowSize();
   }
 
   getWindowSize() {
     const screenWidth = window.innerWidth;
-    if (screenWidth > 1200) {
+    const wideScreen = 1200;
+    const mediumScreen = 768;
+
+    if (screenWidth > wideScreen) {
       this.showWideNav = true;
       this.showSmallNav = false;
-    } else if (screenWidth > 768) {
+    } else if (screenWidth > mediumScreen) {
       this.showWideNav = false;
       this.showSmallNav = true;
     } else {

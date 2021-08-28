@@ -1,42 +1,62 @@
+<svg display="none">
+  <symbol id="search" viewBox="0 0 20 20">
+    <path clip-rule="evenodd"
+          d="M2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9C16 10.8873 15.2531 12.6002 14.0388 13.8591C14.0056 13.8848 13.9737 13.9129 13.9433 13.9433C13.9129 13.9737 13.8848 14.0056 13.8591 14.0388C12.6002 15.2531 10.8873 16 9 16C5.13401 16 2 12.866 2 9ZM14.6177 16.0319C13.078 17.2635 11.125 18 9 18C4.02944 18 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 11.125 17.2635 13.078 16.0319 14.6177L19.7075 18.2933C20.098 18.6838 20.098 19.317 19.7075 19.7075C19.317 20.098 18.6838 20.098 18.2933 19.7075L14.6177 16.0319Z"
+          fill="#B6B6B4"
+          fill-rule="evenodd"/>
+  </symbol>
+</svg>
+
 <div class="header-wrapper">
   <header class="header">
-    <nav class="navbar navbar-expand-lg">
-      <h1 class="header-logo" aria-label="Cherkasy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
-        <a routerLink="/">
-          <img src="assets/images/logo theatre@3x.png"
-               alt="Theatre logo" title="Cherkasy Theatre of Taras Shevchenko" width="130" height="48">
-        </a>
-      </h1>
 
-      <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu" type="button" (click)="toggleMenu()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <h1 aria-label="Cherkasy Theatre of Taras Shevchenko" class="header-logo" i18n-aria-label="@@theatreName">
+      <a routerLink="/">
+        <img alt="Theatre logo"
+             height="48" src="assets/images/logo theatre@3x.png" title="Cherkasy Theatre of Taras Shevchenko"
+             width="130">
+      </a>
+    </h1>
 
-    <app-main-nav></app-main-nav>
+    <!--    <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu" type="button" (click)="toggleMenu()">-->
+    <!--      <span class="navbar-toggler-icon"></span>-->
+    <!--    </button>-->
 
-      <button class="u-unstyled-btn search-icon-button" aria-controls="collapseExample" type="submit"
-              (click)="collapseMenu()"
-              [attr.aria-expanded]="!isCollapsed">
-        <svg class="u-svg-icon" width="20" height="20">
-          <use href="assets/images/sprite.svg#search"></use>
-        </svg>
-      </button>
+    <nav>
+      <app-main-nav></app-main-nav>
+    </nav>
 
-      <div class="search-box" [ngbCollapse]="!isCollapsed">
-        <input [(ngModel)]="textValue" (keydown.enter)="sendRequestOnEnter();false" class="search-input"
+
+    <div class="header-buttons">
+      <!--    <button class="search-button" aria-controls="collapseExample"-->
+      <!--            (click)="collapseMenu()">-->
+      <!--            [attr.aria-expanded]="!isCollapsed">-->
+      <!--      <svg class="icon" width="30" height="30">-->
+      <!--        <use href="#search"></use>-->
+      <!--      </svg>-->
+      <!--    </button>-->
+
+      <svg (click)="collapseMenu()" class="icon" height="20" width="20">
+        <use href="#search"></use>
+      </svg>
+
+      <div [ngbCollapse]="!isCollapsed" class="search-box">
+        <input (keydown.enter)="sendRequestOnEnter();false" [(ngModel)]="textValue" class="search-input"
                placeholder="{{search_text}}" type="text"/>
-        <img src="assets/images/Union@3x.png" class="search-button" alt="Search button" title="Search"
-             i18n-title="@@search" (click)="sendRequestOnIconClick()">
-        <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Close"
-             i18n-title="@@ngb.alert.close" (click)="clearSubmit()">
+        <img (click)="sendRequestOnIconClick()" alt="Search button" class="search-button" i18n-title="@@search"
+             src="assets/images/Union@3x.png" title="Search">
+        <img (click)="clearSubmit()" alt="Delete button" class="delete-button" i18n-title="@@ngb.alert.close"
+             src="assets/images/close@3x.png" title="Close">
       </div>
 
-      <a class="language d-none d-lg-block ukr"
-         [href]="langRedirectUrl">Укр&nbsp;</a> <span class="separation">|</span>
-      <a class="language d-none d-lg-block eng" [href]="langRedirectUrl">&nbsp;Eng</a>
-      <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
-         class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
-    </nav>
+      <a [href]="langRedirectUrl"
+         class="language ukr">Укр&nbsp;</a> <span class="separation">|</span>
+      <a [href]="langRedirectUrl" class="language eng">&nbsp;Eng</a>
+      <a class="header-button btn tickets-button"
+         href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
+         i18n="@@buyTicket" target="_blank">Buy ticket</a>
+    </div>
+
   </header>
 </div>
 

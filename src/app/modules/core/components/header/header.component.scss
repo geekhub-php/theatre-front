@@ -1,35 +1,24 @@
 @import "~assets/styles/variables";
 
-
 .header-wrapper {
+  width: 100%;
   background-color: $background-main-color-darker;
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  box-shadow: none;
   max-width: $container-width;
-  margin: $container-margin;
-  z-index: 8;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 5px;
+  font-size: $font-size-medium-px;
 
-  .navbar {
-    padding: 8px 0;
-
-    & .header-logo {
-      flex: 0 0 120px;
-    }
-  }
 
   .language {
     text-decoration: none;
     transition: .3s ease;
     color: $font-color-primary;
-    font-size: $font-size-medium;
-
-    &.eng {
-      margin-right: 20px;
-    }
 
     &:hover {
       color: $font-color-white;
@@ -39,6 +28,12 @@
   .separation {
     font-size: 20px;
   }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
 }
 
 .search-box {
@@ -80,10 +75,8 @@
 
   .search-button {
     transition: .3s ease;
-    margin-left: -86px;
-    margin-right: 10px;
-
-    @include box(30, 30);
+    background-color: $background-color-black;
+    margin-right: 20px;
 
     &:hover {
       outline: none;
@@ -92,42 +85,7 @@
 }
 
 .tickets-button {
-  width: 200px;
-  flex: 0 0 200px;
-  padding: 10px 0;
-}
-
-@media only screen and (max-width: 1460px) {
-
-  .search-box {
-    left: 44px;
-    width: 78%;
-  }
-}
-
-.search-icon-button {
-  padding: 8px;
-  margin-left: auto;
-  margin-right: 10px;
-  transition: .3s ease;
-  color: $font-color-primary;
-
-  &:hover {
-    background-color: rgba($background-on-hover, .2);
-  }
-}
-
-:host ::ng-deep {
-
-  .header-nav {
-
-    .header-nav__link {
-      padding: 20px 8px;
-
-      &.active {
-        color: $font-color-white;
-        font-weight: $font-weight-bold;
-      }
-    }
-  }
+  padding: 12px 24px;
+  margin-left: 20px;
+  font-size: $font-size-medium-px;
 }
