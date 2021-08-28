@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
-import { Router, NavigationStart } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { LangService } from '../../../../services/lang.service';
 
 @Component({
@@ -9,11 +9,12 @@ import { LangService } from '../../../../services/lang.service';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   collapse = false;
   isCollapsed = false;
   search_text = 'Enter your search key word/words';
   textValue = '';
+  wideScreen;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -26,6 +27,22 @@ export class HeaderComponent {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
       .subscribe(() => this.collapse = true);
+  }
+
+  ngOnInit(): void {
+    this.getWindowSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.getWindowSize();
+  }
+
+  getWindowSize() {
+    const screenWidth = window.innerWidth;
+    const wideScreen = 1200;
+
+    this.wideScreen = screenWidth > wideScreen;
   }
 
   toggleMenu(): void {

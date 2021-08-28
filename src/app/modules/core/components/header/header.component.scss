@@ -1,17 +1,17 @@
 @import "~assets/styles/variables";
 
-.header-wrapper {
+.header {
   width: 100%;
   background-color: $background-main-color-darker;
 }
 
-.header {
+.header-container {
   max-width: $container-width;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 5px;
+  padding: 10px 5px;
   font-size: $font-size-medium-px;
 
 
@@ -30,7 +30,7 @@
   }
 }
 
-.icon {
+.icon-search {
   width: 20px;
   height: 20px;
   margin-right: 20px;
@@ -88,4 +88,34 @@
   padding: 12px 24px;
   margin-left: 20px;
   font-size: $font-size-medium-px;
+}
+
+.icons-group {
+  display: flex;
+  gap: 25px;
+  justify-content: right;
+}
+
+@media (max-width: map-get($grid-breakpoints, xl-max)) {
+
+  .header-container {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md-max)) {
+
+  .header, .header-container {
+    height: 64px;
+  }
+
+  .header-logo {
+    width: 86px;
+    height: 32px;
+  }
+
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
 }
