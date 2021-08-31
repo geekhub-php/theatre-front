@@ -114,11 +114,11 @@
     </div>
 
     <div *ngIf="!wideScreen" class="icons-group">
-      <svg class="icon" height="36" width="36">
+      <svg (click)="this.donateService.activeDonateMenu()" class="icon" height="36" width="36">
         <use href="#wallet"></use>
       </svg>
 
-      <svg class="icon" height="36" width="36">
+      <svg (click)="trigger.next(true)" class="icon" height="36" width="36">
         <use href="#eye"></use>
       </svg>
 

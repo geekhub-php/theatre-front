@@ -2,6 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import { NavigationStart, Router } from '@angular/router';
 import { LangService } from '../../../../services/lang.service';
+import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
+import { DonateService } from '../../../../components/donate/donate.service';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +17,7 @@ export class HeaderComponent implements OnInit {
   search_text = 'Enter your search key word/words';
   textValue = '';
   wideScreen;
+  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -22,7 +25,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private langService: LangService
+    private langService: LangService,
+    private visuallyImpairedService: VisuallyImpairedService,
+    private donateService: DonateService
   ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
