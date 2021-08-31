@@ -29,7 +29,7 @@ export class MainNavComponent implements OnInit {
 
   getWindowSize() {
     const screenWidth = window.innerWidth;
-    const wideScreen = 1200;
+    const wideScreen = 1240;
     const mediumScreen = 768;
 
     if (screenWidth > wideScreen) {
