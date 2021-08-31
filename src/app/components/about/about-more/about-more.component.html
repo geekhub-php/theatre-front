@@ -1,0 +1,80 @@
+<app-spinner name="about-more"></app-spinner>
+
+<h2 class="festTitle" i18n="@@festival">Festival</h2>
+
+<div class="history" *ngIf="history">
+  <div class="history-title">
+    <h2 class="page-title history-heading">{{ history.title }}</h2>
+  </div>
+
+  <div class="history-fest-contain">
+    <div class="history-main_img">
+      <img
+        class="img"
+        [src]="history.mainPicture.reference.url"
+        [alt]="history.mainPicture.reference.properties.alt"
+        [title]="history.mainPicture.reference.properties.title"
+      />
+    </div>
+
+    <div class="post-text"><p [innerHTML]="history.text"></p></div>
+  </div>
+
+  <div *ngIf="history.performances.length > 0">
+    <div class="wrapped">
+      <h2 class="performansesListTitle" i18n="@@performances">Performance</h2>
+
+      <ngu-carousel
+        #myCarousel
+        [inputs]="carouselTile"
+        [dataSource]="history.performances"
+        class="slider"
+      >
+        <ngu-tile *nguCarouselDef="let item">
+          <div
+            class="image"
+            [routerLink]="['/performance', item.slug]"
+            [style.background]="
+              'url(' + item.mainPicture.performance_big.url + ')'
+            "
+          ></div>
+        </ngu-tile>
+        <ul class="myPoint" NguCarouselPoint>
+          <li
+            *ngFor="let j of myCarousel.pointNumbers; let i = index"
+            [class.active]="j === myCarousel.activePoint"
+            (click)="myCarousel.moveTo(i)"
+          ></li>
+        </ul>
+        <div NguCarouselPrev class="left">
+          <img alt="chevron-left" src="assets/images/slider/chevron-left.svg" />
+        </div>
+        <div NguCarouselNext class="right">
+          <img
+            alt="chevron-rigth"
+            src="assets/images/slider/chevron-right.svg"
+          />
+        </div>
+      </ngu-carousel>
+    </div>
+  </div>
+
+  <div class="mobile_performances">
+    <div *ngIf="history.performances.length > 0">
+      <h2 class="performansesListTitle" i18n="@@performances">Performance</h2>
+      <div class="performance-list">
+        <ng-template ngFor let-item [ngForOf]="history.performances">
+          <a
+            class="performance-route"
+            [routerLink]="['/performance', item.slug]"
+          >
+            <img
+              src="{{ item.mainPicture.performance_big.url }}"
+              alt="performances"
+            />
+          </a>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
