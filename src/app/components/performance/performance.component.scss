@@ -2,6 +2,7 @@
 
 .container {
   padding: 0 32px;
+  max-width: $container-width;
 }
 
 .page_title {
@@ -20,6 +21,7 @@
 
 .ticket_button {
   transition: .2s;
+  margin-left: auto;
   line-height: 44px;
   white-space: nowrap;
   text-decoration: none;
@@ -84,6 +86,7 @@
   position: relative;
   padding: 0 5px 85px;
   margin: 30px auto 0;
+  grid-auto-columns: 1fr;
   max-width: $container-width;
   grid-template-areas: "poster info info" "poster details details";
 
@@ -151,8 +154,9 @@
 }
 
 .gallery {
+  width: 100%;
   display: flex;
-  padding: 0 10px;
+  padding: 40px 10px;
   flex-direction: column;
   justify-content: center;
   border-bottom: 1px solid $border-color-lighter;
@@ -165,15 +169,18 @@
 }
 
 .more {
+  transition: .3s;
+  margin-top: 16px;
   text-align: center;
-  margin: 30px 0 80px;
   text-decoration: none;
 
-  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
-}
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5, .36px);
 
-.more:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: $font-color-white;
+  }
 }
 
 .limit {
@@ -192,9 +199,9 @@
 
 .section_title {
   text-align: center;
-  margin: 80px 0 30px;
+  margin-bottom: 16px;
 
-  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, $line-height-basic, .8px)
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px)
 }
 
 .gallery_container {
@@ -227,8 +234,8 @@
   }
 
   .ticket_button {
+    margin: 0 0 32px;
     position: static;
-    margin-bottom: 32px;
   }
 
   .performance_info {
@@ -308,5 +315,17 @@
 
   .details_title {
     @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, normal)
+  }
+
+  .gallery {
+    padding: 24px 10px;
+  }
+
+  .section_title {
+    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px)
+  }
+
+  .more {
+    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, .36px);
   }
 }
