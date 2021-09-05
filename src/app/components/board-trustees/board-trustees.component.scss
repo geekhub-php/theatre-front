@@ -1,27 +1,63 @@
 @import "~assets/styles/variables";
 
 .trustees-container {
-  width: $container-width;
+  max-width: $container-width;
+  padding: 0 30px;
   margin: $container-margin;
   background-color: $background-color-black;
 
   .page-title {
     margin-top: 80px;
-    margin-bottom: 65px;
+    margin-bottom: 60px;
 
     @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
   }
 
   .trustees-text {
-    margin-bottom: 78px;
+    margin-bottom: 10px;
 
     @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, normal);
 
     img {
       float: left;
-      margin-right: 34px;
+      margin-right: 30px;
+      margin-bottom: 20px;
 
       @include box(733, 489);
+    }
+
+    @media only screen and (max-width: 760px) {
+
+      img {
+        @include box(700, 420);
+      }
+    }
+
+    @media only screen and (max-width: 560px) {
+
+      img {
+        @include box(540, 300);
+      }
+    }
+
+    @media only screen and (max-width: 430px) {
+
+      img {
+        @include box(430, 280);
+      }
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+    .page-title {
+      margin-bottom: 20px;
+
+      @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1, normal);
+    }
+
+    .trustees-text {
+      @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-normal, 1.5, normal);
     }
   }
 
@@ -35,6 +71,13 @@
       @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
     }
 
+    @media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+      .personalities-title {
+        @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+      }
+    }
+
     &__list {
       display: flex;
       flex-wrap: wrap;
@@ -42,6 +85,34 @@
       padding: 0;
       list-style: none;
       justify-content: space-between;
+    }
+
+    @media (max-width: 750px) {
+
+      &__list {
+        padding: 0 10%;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      &__list {
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 410px) {
+
+      &__list {
+        padding: 0 2px;
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      &__list {
+        padding: 0 18%;
+      }
     }
 
     &__list::after {
@@ -52,8 +123,29 @@
     &__item {
       display: flex;
       flex-direction: column;
-      width: 224px;
+      width: 230px;
       overflow: hidden;
+    }
+
+    @media (max-width: 550px) {
+
+      &__item {
+        width: 180px;
+      }
+    }
+
+    @media (max-width: 460px) {
+
+      &__item {
+        width: 160px;
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      &__item {
+        width: 230px;
+      }
     }
 
     &__img-wrapper {
@@ -79,6 +171,18 @@
 
     &__item-subtitle {
       @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, normal);
+    }
+
+
+    @media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+      &__item-title {
+        @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+      }
+
+      &__item-subtitle {
+        @include font($body-font-family, $font-size-xx-small, $font-color-accent, $font-weight-bold, 1.5, normal);
+      }
     }
   }
 }
