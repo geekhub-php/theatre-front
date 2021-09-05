@@ -1,0 +1,58 @@
+@import "~assets/styles/variables";
+
+.page-container {
+  z-index: 100;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: rgba($background-color-black, .7);
+}
+
+.burger-wrapper {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $background-color-accent;
+  z-index: 20;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+
+.logo {
+  fill: #0e0c08;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  align-self: center;
+}
+
+.nav-link {
+  padding-bottom: 15px;
+  padding-top: 12px;
+  border-bottom: 1px solid #c7b28b;
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $font-color-black;
+}

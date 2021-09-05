@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   textValue = '';
   wideScreen;
   trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
+  burgerMenuIsOpened = false;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -64,11 +65,15 @@ export class HeaderComponent implements OnInit {
   }
 
   sendRequestOnEnter() {
-/*    console.log(this.textValue);*/
+    /*    console.log(this.textValue);*/
     this.textValue = '';
   }
 
   clearSubmit(): void {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  receiveChildData(data): void {
+    this.burgerMenuIsOpened = data;
   }
 }

@@ -16,6 +16,7 @@ import { SpinnerModule } from '../../components/partials/spinner/spinner.module'
 import { VisuallyImpairedComponent } from './components/visually-impaired/visually-impaired.component';
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
 import { FormsModule } from '@angular/forms';
+import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 
 export const playerFactory = () => player;
 
@@ -27,6 +28,7 @@ export const playerFactory = () => player;
     PageNotFoundComponent,
     VisuallyImpairedComponent,
     FooterNavComponent,
+    BurgerMenuComponent
   ],
   imports: [
     CommonModule,

@@ -122,12 +122,14 @@
         <use href="#eye"></use>
       </svg>
 
-      <svg class="icon" height="36" width="36">
+      <svg (click)="burgerMenuIsOpened = !burgerMenuIsOpened" class="icon" height="36" width="36">
         <use href="#burger"></use>
       </svg>
     </div>
 
   </div>
+
+  <app-burger-menu (outputFromChild)="receiveChildData($event)" *ngIf="burgerMenuIsOpened"></app-burger-menu>
 </header>
 
 

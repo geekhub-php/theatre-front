@@ -61,8 +61,6 @@ import { SeasonsComponent } from './components/performance/seasons/seasons.compo
 import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
-import { LottieModule } from 'ngx-lottie';
-import { playerFactory } from './components/partials/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +101,7 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     VisitComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -129,4 +127,3 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
