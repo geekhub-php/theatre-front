@@ -73,8 +73,8 @@ const appRoutes: Routes = [
   {path: 'board-trustees', component: BoardTrusteesComponent},
   {path: 'developers-team', component: DevTeamComponent},
   {path: 'partners', component: PartnersComponent},
-  {path: 'cooperation', component: CooperationComponent}
-/*  // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup*/
+  {path: 'cooperation', component: CooperationComponent},
+  {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup*/
 ];
 
 @NgModule({
