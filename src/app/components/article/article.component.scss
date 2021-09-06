@@ -1,60 +1,51 @@
 @import "~assets/styles/variables";
 
-:host ::ng-deep .post-text p {
-  margin-bottom: 5px;
-  font-size: 1.143rem;
+.page_title {
+  margin-bottom: 30px;
+  text-align: center;
+  padding-top: 30px;
 
-  .page_title {
-    margin-bottom: 60px;
-    text-align: center;
-    padding-top: 30px;
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
+}
 
-    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
-  }
+.ngx-gallery {
+  display: inline-block;
+  margin-bottom: 20px;
+}
 
-  .ngx-gallery {
-    display: inline-block;
-    margin-bottom: 20px;
-  }
+.article {
+  width: 100%;
+  margin-bottom: 80px;
+  min-height: 470px;
+}
 
-  .article {
-    width: 100%;
-    margin-bottom: 80px;
-    min-height: 470px;
-  }
+.img {
+  float: left;
+  margin: 15px 30px 5px 0;
+  width: 50%;
+  overflow: hidden;
 
-  .container {
-    margin-bottom: -30px;
-
-    .img {
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    .post-date {
-      margin-top: 1rem;
-      text-align: right;
-      color: $secondary-color-lighter;
-    }
-
-    .section_title {
-      margin-bottom: 16px;
-
-      @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px);
-    }
+  img {
+    max-height: 470px;
+    margin: 0 auto;
+    display: block;
   }
 }
 
-@media (max-width: 576px) {
+.section_title {
+  margin-bottom: 16px;
 
-  .container {
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
+}
 
-    .img {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
+.date {
+  margin-bottom: 16px;
+
+  @include font($body-font-family, $font-size-medium-px, $font-color-accent, $font-weight-bold, 25px, normal)
+}
+
+.text {
+  @include font($body-font-family, $font-size-medium-px, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 
 .article_container {
@@ -71,9 +62,68 @@
 }
 
 .gallery {
-  padding-bottom: 160px;
+  padding-bottom: 50px;
 }
 
-::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
+:host ::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
   border: none !important;
+}
+
+:host ::ng-deep .text a {
+  color: $font-color-primary;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: map-get($grid-breakpoints, md-max)) {
+
+  .article_container {
+    padding: 30px;
+  }
+
+  .article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img {
+    width: 100%;
+    margin-bottom: 10px;
+
+    img {
+      height: 350px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-max)) {
+
+  .img {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      height: 180px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .section_title {
+    margin-bottom: 8px;
+
+    @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, 25px, .8px)
+  }
+
+  .date {
+    margin-bottom: 8px;
+
+    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 21px, normal)
+  }
+
+  .text {
+    @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 21px, normal)
+  }
 }
