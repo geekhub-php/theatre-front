@@ -15,6 +15,7 @@
 
 <ng-template #itemTemplate let-data="data">
   <div [@slideAnimation] class="carousel-caption">
+    <div class="linear-gradient"></div>
     <h3 class="performance-title">{{ data.title }}</h3>
     <div class="container">
       <div class="container__performance">
@@ -34,16 +35,18 @@
     <div class="container__button">
       <a [href]="data.ticket" class="button-ticket tickets-button" i18n="@@buyTicket">Buy ticket</a>
     </div>
-    <span class="age-restrictions">12+</span>
+    <span class="age-restrictions">{{ data.ageLimit }}+</span>
   </div>
 </ng-template>
 
 <ng-template #noPerformance>
-  <div class="container-no-performance">
-    <img src="assets/images/home-slider/no-performances.png" alt="No performance"
-         class="no-performance__image">
-    <div class="no-performance__container-text">
+  <div class="slider">
+    <div class="no-performance">
+      <img src="assets/images/home-slider/no-performances.png" alt="No performance"
+           class="no-performance__image">
+      <div class="no-performance__linear-gradient"></div>
       <p class="no-performance__text" i18n="@@noPerformances">There are currently no events scheduled</p>
     </div>
   </div>
 </ng-template>
+

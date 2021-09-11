@@ -8,6 +8,7 @@ export class PerformanceEvent {
   date_time: string;
   time: string;
   venue: string;
+  ageLimit: number;
   buy_ticket_link: string;
   performance: Performance;
 }

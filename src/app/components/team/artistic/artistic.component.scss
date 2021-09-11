@@ -189,15 +189,15 @@ a {
   cursor: pointer;
 }
 
-.myPoint {
+.slider-points {
   @include myPoint;
 }
 
-.myPoint li {
+.slider-points li {
   @include myPoint-li;
 }
 
-.myPoint li.active {
+.slider-points li.active {
   @include myPoint-li__active;
 }
 

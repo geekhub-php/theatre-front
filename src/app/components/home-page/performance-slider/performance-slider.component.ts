@@ -38,7 +38,8 @@ export class PerformanceSliderComponent implements OnInit {
           type: item.performance.type,
           date: item.date_time,
           venuePerformance: item.venue,
-          ticket: item.buy_ticket_link
+          ticket: item.buy_ticket_link,
+          ageLimit: item.performance.age_limit
         }));
     });
   }

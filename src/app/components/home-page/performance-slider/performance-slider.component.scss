@@ -6,37 +6,43 @@
 }
 
 .slider {
-  height: 864px;
   display: flex;
   justify-content: center;
   background-color: $background-color-black;
 }
 
 gallery {
-  margin-top: 64px;
-  margin-bottom: 112px;
+  margin: 64px 32px ;
+  background-color: transparent;
 }
 
 .gallery-container {
   height: 688px;
-  width: $container-width;
+  width: 100% ;
+  position: relative;
+  max-width: $container-width;
 }
 
 :host ::ng-deep gallery gallery-nav .ng-star-inserted {
-  @include box(48, 48);
+  @include box(28, 28);
+}
+
+:host ::ng-deep gallery[fluid] {
+  left: 0;
+  transform: none;
 }
 
 .carousel-caption {
-  padding: 0;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 64%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0 52px;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
   background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
-}
-
-:host ::ng-deep gallery gallery-dots {
-  z-index: 1;
 }
 
 :host ::ng-deep gallery gallery-dots .g-dot-inner {
@@ -48,48 +54,46 @@ gallery {
 :host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
   background-color: $background-color-accent;
 
-  @include box(10, 10);
+  @include box(12, 12);
 }
 
 .age-restrictions {
-  padding: 10px 8px 10px 9px;
-  position: absolute;
-  top: -250px;
+  top: 0;
   left: 0;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
   background-color: $background-color-accent;
 
-  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-normal, 1.5, .8px);
+  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 1.5, .8px);
   @include box(56, 56);
 }
 
 .container {
+  width: auto;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  position: absolute;
-  bottom: 126px;
-  right: 0;
-  left: 0;
-  width: 100%;
 }
 
 .performance-title {
-  position: absolute;
-  bottom: 170px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  display: block;
   text-align: center;
+  justify-content: center;
 
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
 }
 
 .container__performance {
   display: flex;
-  flex-direction: row;
   margin-right: 20px;
 
   @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, .8px);
+
+  & > p {
+    text-align: center;
+  }
 }
 
 .image {
@@ -99,9 +103,10 @@ gallery {
 }
 
 .container__button {
-  position: absolute;
-  bottom: 80px;
-  width: 100%;
+  display: flex;
+  line-height: 1.5;
+  margin-bottom: 80px;
+  justify-content: center;
 }
 
 .tickets-button {
@@ -133,86 +138,179 @@ gallery {
   height: 864px;
   display: flex;
   justify-content: center;
-  background-color: $background-color-black;
 }
 
-.no-performance__image {
-  width: $container-width;
-  height: 688px;
-  margin-top: 64px;
-  margin-bottom: 112px;
-}
-
-.no-performance__container-text {
-  position: absolute;
-  width: 100%;
-  height: 408px;
-  top: 430px;
+.no-performance {
+  width: 100% ;
   display: flex;
+  height: 688px;
+  margin: 64px 32px;
+  position: relative;
+  align-items: flex-end;
   justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+  max-width: $container-width;
+
+  &__image {
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 688px;
+    object-fit: cover;
+    position: absolute;
+    width: $container-width;
+  }
+
+  &__text {
+    z-index: 1;
+    bottom: 120px;
+    margin: 0 32px;
+    text-align: center;
+    position: relative;
+
+    @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-bold, 1.5, normal);
+  }
+
+  &__linear-gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+  }
 }
 
-.no-performance__text {
-  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-bold, 1.5, normal);
-}
-
-@media (max-width: 1560px) {
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
 
   .gallery-container {
-    width: 1400px;
+    height: 350px;
   }
 
-  .no-performance__image {
-    width: 1400px;
-  }
-}
-
-@media (max-width: 1430px) {
-
-  .gallery-container {
-    width: 1300px;
+  .carousel-caption {
+    background: none;
   }
 
-  .no-performance__image {
-    width: 1300px;
-  }
-}
-
-@media (max-width: 1330px) {
-
-  .gallery-container {
-    width: 1200px;
+  gallery {
+    margin: 40px 32px 32px;
   }
 
-  .no-performance__image {
-    width: 1200px;
+  .image {
+    margin: 0 8px 0 0;
+
+    @include box(16, 16);
   }
-}
 
-@media (max-width: 1230px) {
+  .linear-gradient {
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+  }
 
-  .gallery-container {
-    width: 1100px;
+  :host ::ng-deep gallery gallery-dots .g-dot-inner {
+    background-color: #868583;
+
+    @include box(12, 12);
+  }
+
+  :host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
+    background-color: $background-color-accent;
+
+    @include box(10, 10);
+  }
+
+  :host ::ng-deep gallery gallery-image {
+    height: 90%;
+  }
+
+  .age-restrictions {
+    @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, 1.5, .8px);
+    @include box(36, 36);
   }
 
   .performance-title {
-    font-weight: $font-weight-normal;
+    margin-bottom: 16px;
+
+    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
   }
 
-  .no-performance__image {
-    width: 1100px;
+  .container__performance {
+    @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-normal, 1.5, .8px);
+
+    & > p {
+      margin-bottom: 8px;
+    }
+  }
+
+  .container__button {
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 60px;
+
+    .tickets-button {
+      @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-bold, 1.5, .8px);
+    }
+  }
+
+  .no-performance {
+    height: 350px;
+
+    &__image {
+      height: 350px;
+    }
+
+    &__text {
+      bottom: 64px;
+
+      @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 1.5, normal);
+    }
   }
 }
 
-@media (max-width: 1130px) {
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
 
-  .gallery-container {
-    width: 1000px;
+  .carousel-caption {
+    padding: 0 32px;
   }
 
-  .no-performance__image {
-    width: 1000px;
+  .linear-gradient {
+    height: 55%;
+  }
+
+  :host ::ng-deep gallery gallery-image {
+    height: 55%;
+  }
+
+  .gallery-container {
+    height: 600px;
+  }
+
+  gallery {
+    margin: 24px 16px 8px;
+  }
+
+  .age-restrictions {
+    @include font($body-font-family, $font-size-xx-small, $font-color-white, $font-weight-bold, 1.5, .8px);
+    @include box(24, 24);
+  }
+
+  :host ::ng-deep gallery gallery-nav .ng-star-inserted {
+    @include box(14, 14);
+  }
+
+  .no-performance {
+    height: 300px;
+    margin: 24px 16px 8px;
+
+    &__image {
+      height: 300px;
+    }
+
+    &__text {
+      bottom: 32px;
+    }
   }
 }

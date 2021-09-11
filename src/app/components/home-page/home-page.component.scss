@@ -7,81 +7,69 @@
 }
 
 .we-offer {
-  width: min(90%, 58rem);
-  margin: $container-margin;
-  padding: 80px 0;
+  max-width: 992px;
+  padding: 80px 32px;
   text-align: center;
+  margin: $container-margin;
 
-  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 27px, normal);
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
 
   .we-offer__title {
-    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1.5, normal);
-  }
+    margin-bottom: 28px;
 
-  .we-offer__text {
-    padding: 18px 0;
+    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
   }
 }
 
 /* Block with the advantages of using the mobile version */
 
-.home-page-text__advantages {
-  padding-top: 95px;
-  padding-bottom: 55px;
+.advantages {
+  padding: 0 32px 56px;
+  margin: $container-margin;
+  max-width: $container-width;
+  background-color: $background-color-black;
 
-  .advantages-content {
-    max-width: $container-width;
-    margin: $container-margin;
-    background-color: $background-color-black;
+  &-title {
+    margin-bottom: 56px;
 
-    .advantages-title {
-      padding: 0 400px;
-      text-align: center;
+    @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+  }
 
-      @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+  &-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-image {
+    bottom: 64px;
+    display: flex;
+    min-width: 290px;
+    position: relative;
+    margin-bottom: -64px;
+    align-items: center;
+
+    img {
+      width: 290px;
     }
   }
 
-  .advantages {
-    overflow: hidden;
-    margin: 0;
-    list-style: none;
+  &-text {
+    margin-right: 64px;
 
-    &__item-number {
-      justify-content: center;
-      display: inline-block;
-      vertical-align: middle;
-    }
+    @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
 
-    span {
-      display: table-cell;
-      vertical-align: middle;
-    }
-
-    .advantage-text {
-      padding: 72px 250px 0 30px;
+    p > a {
+      text-decoration: underline;
 
       @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
     }
   }
+}
 
-  .advantage-number {
-    padding-top: 72px;
-
-    @include font($body-font-family, 100px, $font-color-dark, $font-weight-semi-bold, 100px, normal);
-  }
-
-  .clearfix::after {
-    content: "";
-    clear: both;
-  }
-
-  .phone-image {
-    float: right;
-    margin-top: -80px;
-
-    @include box(384, 746);
-  }
+.link-buttons {
+  margin: auto;
+  display: block;
+  width: fit-content;
 }
 
 .news_wrapper {
@@ -106,5 +94,99 @@
   margin-bottom: 30px;
 
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
+}
+
+@media (max-width: map-get($grid-breakpoints, xl-min)) {
+
+  .advantages {
+
+    &-image {
+      bottom: 32px;
+      margin-bottom: -32px;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
+
+  .advantages {
+
+    &-content {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &-title {
+      text-align: center;
+    }
+
+    &-text {
+      margin-right: 0;
+      margin-bottom: 54px;
+    }
+
+    &-image {
+      bottom: 0;
+      display: flex;
+      min-width: 290px;
+      margin-bottom: 0;
+      align-items: center;
+
+      img {
+        width: 290px;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md-min)) {
+
+  .we-offer {
+    padding: 40px 32px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .we-offer {
+    padding: 26px 16px 40px;
+
+    @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
+
+    .we-offer__title {
+      margin-bottom: 16px;
+
+      @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.28, normal);
+    }
+
+    .link-buttons {
+      line-height: 1.5;
+      font-size: $font-size-small;
+    }
+  }
+
+  .advantages {
+    padding: 0 16px 56px;
+
+    &-title {
+      margin-bottom: 16px;
+
+      @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+    }
+
+    &-text {
+      margin-bottom: 8px;
+
+      @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
+
+      p {
+        margin-bottom: 16px;
+
+        a {
+          @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
+        }
+      }
+    }
+  }
 }
 
