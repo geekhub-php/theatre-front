@@ -77,6 +77,10 @@
   flex-direction: column;
   align-items: center;
   background-color: $background-main-color-darker;
+
+  .news {
+    margin: 0 32px;
+  }
 }
 
 .link {
