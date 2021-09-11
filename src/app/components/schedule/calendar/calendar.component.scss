@@ -12,6 +12,65 @@ $popup-border-color: #b6b6b4;
   justify-content: center;
 }
 
+:host ::ng-deep .popover__poster {
+  position: relative;
+
+  & .popover-body {
+    right: 100px;
+    display: flex;
+    width: 480px;
+    height: 290px;
+    background-color: $font-color-gold;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+    overflow: hidden;
+
+    & .popover__img {
+      width: 180px;
+      height: 260px;
+    }
+
+    & .popover__content {
+      width: 100%;
+      padding-left: 16px;
+      text-align: left;
+      font-family: $body-font-family;
+      font-size: 18px;
+
+      & img {
+        margin-top: 4px;
+        width: 18px;
+        height: 18px;
+      }
+
+      & p {
+        margin: auto 0;
+        padding-left: 8px;
+      }
+
+      & .popover__title {
+        padding-left: 0;
+        font-weight: $font-weight-bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $white-color;
+        margin-bottom: 22px;
+      }
+
+      & .popover__info {
+        display: flex;
+        flex-direction: row;
+        line-height: 1.5;
+        color: $background-main-color;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
 .calendar {
   margin-bottom: 160px;
 
@@ -138,65 +197,6 @@ $popup-border-color: #b6b6b4;
 
       & button:hover {
         color: $white-color;
-      }
-    }
-  }
-
-  ::ng-deep .popover__poster {
-    position: relative;
-
-    & .popover-body {
-      right: 100px;
-      display: flex;
-      width: 480px;
-      height: 290px;
-      background-color: $font-color-gold;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
-      overflow: hidden;
-
-      & .popover__img {
-        width: 180px;
-        height: 260px;
-      }
-
-      & .popover__content {
-        width: 100%;
-        padding-left: 16px;
-        text-align: left;
-        font-family: $body-font-family;
-        font-size: 18px;
-
-        & img {
-          margin-top: 4px;
-          width: 18px;
-          height: 18px;
-        }
-
-        & p {
-          margin: auto 0;
-          padding-left: 8px;
-        }
-
-        & .popover__title {
-          padding-left: 0;
-          font-weight: $font-weight-bold;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.5;
-          letter-spacing: normal;
-          color: $white-color;
-          margin-bottom: 22px;
-        }
-
-        & .popover__info {
-          display: flex;
-          flex-direction: row;
-          line-height: 1.5;
-          color: $background-main-color;
-          margin-bottom: 12px;
-        }
       }
     }
   }
