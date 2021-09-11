@@ -8,6 +8,10 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 
 import { AboutComponent } from './components/about/about.component';
 import { AboutMoreComponent } from './components/about/about-more/about-more.component';
+import { FestivalsComponent } from './components/about/festivals/festivals.component';
+import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component';
+import { EpochComponent } from './components/about/epoch/epoch.component';
+import { VisitComponent } from './components/about/visit/visit.component';
 
 import { AdministrationComponent } from './components/team/administration/administration.component';
 import { ArtisticComponent } from './components/team/artistic/artistic.component';
@@ -40,8 +44,18 @@ const appRoutes: Routes = [
   {path: 'performance/:slug', component: PerformanceComponent},
   {path: 'news', component: NewsComponent},
   {path: 'news/:slug', component: ArticleComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'about/:slug', component: AboutMoreComponent},
+  {
+    path: 'about', component: AboutComponent,
+    children: [
+      {path: '', redirectTo: 'theatre-history', pathMatch: 'full'},
+      {path: 'theatre-history', component: TheatreHistoryComponent},
+      {path: 'epoch/persons', component: EpochComponent},
+      {path: 'festivals', component: FestivalsComponent},
+      {path: 'visit', component: VisitComponent},
+      {path: 'festivals/:slug', component: AboutMoreComponent}
+    ]
+  },
+  {path: 'about/:personId', component: PersonComponent},
   {
     path: 'persons', component: TeamComponent,
     children: [
@@ -51,16 +65,16 @@ const appRoutes: Routes = [
       {path: 'administration', component: AdministrationComponent},
       {path: 'administration/:slug', component: PersoneShowmoreComponent},
       {path: 'creative/:slug', component: PersoneShowmoreComponent},
-      {path: 'artistic/:slug', component: PersoneShowmoreComponent},
-      {path: ':personId', component: PersonComponent}
+      {path: 'artistic/:slug', component: PersoneShowmoreComponent}
     ]
   },
+  {path: 'persons/:personId', component: PersonComponent},
   {path: 'contacts', component: ContactsComponent},
   {path: 'board-trustees', component: BoardTrusteesComponent},
   {path: 'developers-team', component: DevTeamComponent},
   {path: 'partners', component: PartnersComponent},
-  {path: 'cooperation', component: CooperationComponent}
-/*  // {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup*/
+  {path: 'cooperation', component: CooperationComponent},
+  {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup*/
 ];
 
 @NgModule({

@@ -1,8 +1,22 @@
 <div class="container">
-  <div class="center">
-    <p class="page-title" i18n="@@pageNotFound">Sorry, page not found</p>
-    <div class="col-xl-6">
-      <img src="assets/images/cats.gif" alt="We care of you" title="We care of you">
-    </div>
+
+  <h1 class="title" i18n="@@page404">Page 404</h1>
+
+  <div class="animation">
+    <ng-lottie [options]="options"></ng-lottie>
+  </div>
+
+  <div class="text">
+    <p i18n="@@somethingWentWrong">Something went wrong. But we are working on it.</p>
+    <p>
+      <ng-container i18n="@@youCan">You can go to the&nbsp;</ng-container>
+      <a routerLink="">
+        <ng-container i18n="@@toMain">Main Page</ng-container>
+      </a>
+      <ng-container i18n="@@findUs">&nbsp;or find us on&nbsp;</ng-container>
+      <a
+        href="https://www.facebook.com/%D0%A7%D0%B5%D1%80%D0%BA%D0%B0%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D1%96%D1%87%D0%BD%D0%B8%D0%B9-%D0%BC%D1%83%D0%B7%D0%B8%D1%87%D0%BD%D0%BE-%D0%B4%D1%80%D0%B0%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9-%D1%82%D0%B5%D0%B0%D1%82%D1%80-%D1%96%D0%BC%D0%B5%D0%BD%D1%96-%D0%A2%D0%B0%D1%80%D0%B0%D1%81%D0%B0-%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%B0-1672281213013382/"
+        target="_blank">Facebook</a>.
+    </p>
   </div>
 </div>

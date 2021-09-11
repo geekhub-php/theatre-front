@@ -27,6 +27,11 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { BoardTrusteesComponent } from './components/board-trustees/board-trustees.component';
 import { SpinnerModule } from './components/partials/spinner/spinner.module';
 import { AboutMoreComponent } from './components/about/about-more/about-more.component';
+import { FestivalsComponent } from './components/about/festivals/festivals.component';
+import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component';
+import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
+import { EpochComponent } from './components/about/epoch/epoch.component';
+import { VisitComponent } from './components/about/visit/visit.component';
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
@@ -94,7 +99,12 @@ import { CatInteractiveComponent } from './components/schedule/list-view/cat-int
     PersoneShowmoreComponent,
     ActorsSliderComponent,
     SeasonsComponent,
-    CatInteractiveComponent
+    CatInteractiveComponent,
+    FestivalsComponent,
+    TheatreHistoryComponent,
+    AboutHeaderComponent,
+    EpochComponent,
+    VisitComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

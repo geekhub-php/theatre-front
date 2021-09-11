@@ -1,0 +1,21 @@
+<div class="container">
+
+    <h2 class="histories__main-title" i18n="@@theatreHistory">History of theatre</h2>
+  
+    <app-spinner name="about"></app-spinner>
+    <div class="list">
+      <section class="list-item" *ngFor="let item of listHistories | slice: 3:4; index as i">
+  
+        <span class="histories__list-text">
+  
+          <img class="histories__list-main_img" [src]="item.mainPicture.history_big.url" alt="picture" [title]="item.mainPicture.history_big.properties.title"/>
+  
+          <div class="history-text" [innerHTML]="item.text"></div>
+  
+        </span>
+  
+      </section>
+  
+    </div>
+    <img class="botTheatreImage" src="assets/images/theater_history_illustration.png" alt="image">
+  </div>
