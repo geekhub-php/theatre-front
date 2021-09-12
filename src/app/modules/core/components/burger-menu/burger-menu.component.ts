@@ -8,6 +8,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class BurgerMenuComponent implements OnInit {
   @Output() outputFromChild: EventEmitter<boolean> = new EventEmitter();
   burgerMenuIsOpened = false;
+  showSubMenuPersons = false;
+  showSubMenuAbout = false;
 
   constructor() {
   }

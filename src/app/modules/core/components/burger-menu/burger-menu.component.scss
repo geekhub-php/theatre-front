@@ -37,18 +37,52 @@
 }
 
 .logo {
-  fill: #0e0c08;
+  //fill: #0e0c08;
   margin-top: 32px;
   margin-bottom: 24px;
   align-self: center;
 }
 
-.nav-link {
-  padding-bottom: 15px;
-  padding-top: 12px;
+.menu-item {
   border-bottom: 1px solid #c7b28b;
+  padding-top: 12px;
+  padding-bottom: 16px;
+
+  @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.5, normal);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .li-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.nav-link {
+  padding: 0;
   font-family: Montserrat;
   font-size: 14px;
   line-height: 1.5;
   color: $font-color-black;
+  display: block;
+}
+
+.sub-link {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $font-color-white;
+  padding-left: 32px;
+
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+.opened {
+  transform: rotate(180deg);
+  transition: transform .5s linear;
+  //fill: $font-color-white;
 }

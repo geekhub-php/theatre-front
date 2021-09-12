@@ -25,34 +25,89 @@
       d="M13.54 16.201c.383 0 .766-.383 1.15-.766.383-.384-.767-.384-1.15-.384-.384 0-1.04-.264-1.15 0-.208.502.766 1.15 1.15 1.15z"
       fill="#0E0C08"/>
   </symbol>
+
+  <symbol fill="none" id="arrow-down" viewBox="0 0 24 24">
+    <path clip-rule="evenodd" d="M6 9.293l6 6 6-6 .707.707L12 16.707 5.293 10 6 9.293z" fill="#0E0C08"
+          fill-rule="evenodd"/>
+  </symbol>
 </svg>
 
 <div (click)="closeBurgerMenu()" class="page-container">
   <div (click)="$event.stopPropagation()" class="burger-wrapper">
 
     <svg (click)="closeBurgerMenu()" class="close" height="24" width="24">
-      <use xlink:href="#close"></use>
+      <use href="#close"></use>
     </svg>
 
     <svg class="logo" height="32" width="86">
-      <use xlink:href="#logo"></use>
+      <use href="#logo"></use>
     </svg>
 
     <ul>
 
-      <li><a [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']" class="nav-link"
-             i18n="@@mainPage" routerLinkActive="active">Main</a></li>
-      <li><a class="nav-link" i18n="@@poster" routerLink="/poster" routerLinkActive="active">Poster</a></li>
-      <li><a class="nav-link" i18n="@@repertoire" routerLink="/repertoire" routerLinkActive="active">Repertoire</a>
+      <li class="menu-item"><a [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']" class="nav-link"
+                               i18n="@@mainPage" routerLinkActive="active">Main</a></li>
+      <li class="menu-item"><a class="nav-link" i18n="@@poster" routerLink="/poster"
+                               routerLinkActive="active">Poster</a></li>
+      <li class="menu-item"><a class="nav-link" i18n="@@repertoire" routerLink="/repertoire" routerLinkActive="active">Repertoire</a>
       </li>
-      <li><a class="nav-link" i18n="@@personalities" routerLink="/persons"
-             routerLinkActive="active">Personalities</a></li>
-      <li><a class="nav-link" i18n="@@aboutTitle" routerLink="/about" routerLinkActive="active">About</a></li>
-      <li><a class="nav-link" i18n="@@cooperation" routerLink="/cooperation"
-             routerLinkActive="active">Cooperation</a></li>
-      <li><a class="nav-link" i18n="@@news" routerLink="/news"
-             routerLinkActive="active">News</a></li>
-      <li><a class="nav-link" i18n="@@contacts" routerLink="/contacts" routerLinkActive="active">Contacts</a></li>
+
+      <li (click)="showSubMenuPersons = !showSubMenuPersons" class="menu-item">
+        <div class="li-container">Personalities
+          <svg [class.opened]="showSubMenuPersons" height="24" width="24">
+            <use href="#arrow-down"></use>
+          </svg>
+        </div>
+        <ul *ngIf="showSubMenuPersons" class="sub-menu">
+          <li>
+            <a class="sub-link" routerLink="/persons/creative">
+              Creative Composition
+            </a>
+          </li>
+          <li><a class="sub-link" routerLink="/persons/artistic">
+            Artistic Composition
+          </a>
+          </li>
+          <li><a class="sub-link" routerLink="/persons/administration">
+            Administration
+          </a>
+          </li>
+        </ul>
+      </li>
+
+      <li (click)="showSubMenuAbout = !showSubMenuAbout" class="menu-item">
+        <div class="li-container">About
+          <svg [class.opened]="showSubMenuAbout" height="24" width="24">
+            <use href="#arrow-down"></use>
+          </svg>
+        </div>
+        <ul *ngIf="showSubMenuAbout" class="sub-menu">
+          <li>
+            <a class="sub-link" routerLink="/about/theatre-history">
+              History
+            </a>
+          </li>
+          <li><a class="sub-link" routerLink="/about/festivals">
+            Festivals
+          </a>
+          </li>
+          <li><a class="sub-link" routerLink="/about/epoch/persons">
+            Epoch
+          </a>
+          </li>
+          <li><a class="sub-link" routerLink="/about/visit">
+            Visit
+          </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu-item"><a class="nav-link" i18n="@@cooperation" routerLink="/cooperation"
+                               routerLinkActive="active">Cooperation</a></li>
+      <li class="menu-item"><a class="nav-link" i18n="@@news" routerLink="/news"
+                               routerLinkActive="active">News</a></li>
+      <li class="menu-item"><a class="nav-link" i18n="@@contacts" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+      </li>
 
     </ul>
   </div>
