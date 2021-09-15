@@ -117,7 +117,9 @@
 
     &-content {
       align-items: center;
-      flex-direction: column;
+      .advantages-image {
+        display: none;
+      }
     }
 
     &-title {
@@ -126,7 +128,7 @@
 
     &-text {
       margin-right: 0;
-      margin-bottom: 54px;
+      margin-bottom: 0;
     }
 
     &-image {
