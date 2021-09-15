@@ -9,7 +9,7 @@
 
   <section class="we-offer-block">
     <div class="we-offer">
-      <h1 class="we-offer__title" i18n="@@offerForYou">Offer for you</h1>
+      <h2 class="we-offer__title" i18n="@@offerForYou">Offer for you</h2>
       <div class="we-offer__text">
 
         <!--TODO: The appropriate "Offer for you" text needs to be added here; the translation of it should be executed in "locale" files-->
@@ -32,60 +32,36 @@
   </section>
 
   <section class="news_wrapper">
-    <h3 class="section_title" i18n="@@news">News</h3>
-    <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
-    <a class="link" i18n="@@more" routerLink="../news">More</a>
+<!--    Wait on merge request "DT-5" -->
+<!--    <h3 class="section_title" i18n="@@news">News</h3>-->
+<!--    <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>-->
+<!--    <a class="link" i18n="@@more" routerLink="../news">More</a>-->
   </section>
 
   <app-actors-slider [randomEmployees]="randomEmployees"></app-actors-slider>
 
-  <section class="home-page-text__advantages">
+  <section class="advantages">
     <div class="advantages-content">
-      <div class="advantages-title">Theatre is always with you</div>
-      <div class="clearfix">
-        <img src="assets/images/Group%20305/Group 305@3x.png" alt="Phone with invitation to the theatre on the screen"
-             title="Cherkasy Theatre of Taras Shevchenko welcomes you!" class="phone-image"
+      <div class="advantages-text">
+        <h3 class="advantages-title" i18n="@@TheatreIsAlwaysWithYou">Theatre is always with you</h3>
+        <!--TODO: The translation of text below should be executed in "locale" files-->
+
+        <p>Ми дуже раді розпочати новий театральний сезон.</p>
+        <p>Для того, щоб забезпечити якомога більший рівень безпеки для всіх причетних, запрошуємо вас придбати квитки
+          онлайн.</p>
+        <p>Ви можете зробити це щодня цілодобово за <a
+          target="_blank"
+          href="https://ck.kontramarka.ua/ru/theatre/cerkaskij-akademicnij-oblasnij-ukrainskij-muzicnodramaticnij-teatr-imeni-t-g-sevcenka-1072.html">цим
+          активним посиланням.</a></p>
+        <p>На сайті ви також можете дізнатися більше про персоналіями театру, ознайомитися зі змістом вистав, отримати
+          актуальний розклад та поринути у атмосферу мистецтва. Відтепер театр на відстані кліку в будь-який зручний
+          для вас час!</p>
+
+      </div>
+      <div class="advantages-image">
+        <img src="assets/images/Group%20305/Group%20305.png" alt="Phone with invitation to the theatre on the screen"
+             title="Cherkasy Theatre of Taras Shevchenko welcomes you!"
              i18n-title="@@theatreWelcomesYou">
-        <ul class="advantages">
-          <li class="advantages__item">
-            <div class="advantage__item-number">
-              <span class="advantage-number">1</span>
-
-              <!--TODO: New "advantage text" should be created-->
-
-              <span class="advantage-text">
-            Ви завжди зможете купити квитки we denounce with righteous indignation
-            and dislike men who are so beguiled and demoralized by the charms of the pleasure of the moment, so blinded by desire.
-            </span>
-            </div>
-          </li>
-          <li class="advantages__item">
-            <div class="advantage__item-number">
-              <span class="advantage-number">2</span>
-
-              <!--TODO: New "advantage text" should be created-->
-
-              <span class="advantage-text">
-            Ми викладуємо актуальну інформацію the other hand, we denounce with righteous indignation
-            and dislike men who are so beguiled and demoralized by the charms of the pleasure of the moment, so blinded by desire,
-            that they cannot foresee the pain and trouble that are bound to ensue.
-            </span>
-            </div>
-          </li>
-
-          <li class="advantages__item">
-            <div class="advantage__item-number">
-              <span class="advantage-number">3</span>
-
-              <!--TODO: New "advantage text" should be created-->
-
-              <span class="advantage-text">
-            Чекаємо вас на наших виставах n the other hand, we denounce with righteous indignation
-            and dislike men.
-            </span>
-            </div>
-          </li>
-        </ul>
       </div>
     </div>
   </section>

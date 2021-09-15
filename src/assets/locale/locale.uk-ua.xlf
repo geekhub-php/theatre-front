@@ -114,7 +114,7 @@
         <target>Показати більше</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/partials/actors-slider/actors-slider.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="actors" datatype="html">
@@ -142,7 +142,7 @@
         <target>Купити квиток</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home-page/performance-slider/performance-slider.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="noPerformances" datatype="html">
@@ -150,7 +150,15 @@
         <target>Наразі вистав немає</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home-page/performance-slider/performance-slider.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="theatrePersonalities" datatype="html">
+        <source>Theatre personalities</source>
+        <target>Персоналії театру</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/partials/actors-slider/actors-slider.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="orchestra" datatype="html">
@@ -749,7 +757,7 @@
         <target>До співпраці</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="partners" datatype="html">
@@ -1109,6 +1117,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
           <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="TheatreIsAlwaysWithYou" datatype="html">
+        <source>Theatre is always with you</source>
+        <target>Театр завжди з тобою</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="theatreWithYou" datatype="html">

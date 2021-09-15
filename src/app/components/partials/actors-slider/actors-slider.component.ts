@@ -1,8 +1,11 @@
 import { Component, AfterContentChecked, ChangeDetectorRef, Input } from '@angular/core';
 
 import { NguCarouselConfig } from '@ngu/carousel';
-import { GatewayService } from '../../../services/gateway.service';
+
+import { Breakpoints } from '../../../constants';
 import { Employee } from '../../../store/employee/Employee';
+import { GatewayService } from '../../../services/gateway.service';
+
 
 @Component({
   selector: 'app-actors-slider',
@@ -13,12 +16,12 @@ export class ActorsSliderComponent implements AfterContentChecked {
   @Input() randomEmployees: Array<Employee>;
 
   carouselTile: NguCarouselConfig = {
-    grid: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6, all: 0 },
+    grid: { xs: 2, sm: 3, md: 2, lg: 3, xl: 4, all: 0 },
     gridBreakpoints: {
-      sm: 1100,
-      md: 1500,
-      lg: 1800,
-      xl: 2200,
+      sm: Breakpoints.sm_min,
+      md: Breakpoints.lg_min,
+      lg: Breakpoints.xl_min,
+      xl: Breakpoints.xxl_min,
     },
     slide: 1,
     speed: 250,
@@ -28,7 +31,7 @@ export class ActorsSliderComponent implements AfterContentChecked {
     loop: true,
     load: 2,
     velocity: 0,
-    touch: false,
+    touch: true,
     easing: 'cubic-bezier(0, 0, 0.2, 1)'
   };
 

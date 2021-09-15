@@ -10,12 +10,12 @@
 </svg>
 
 <div class="wrapped">
-  <h3 class="title" i18n="@@theaterActors">Theater actors</h3>
+  <h3 class="title" i18n="@@theatrePersonalities">Theatre personalities</h3>
   <ngu-carousel
-    #myCarousel
+    #actorsSlider
+    class="slider"
     [inputs]="carouselTile"
     [dataSource]="randomEmployees"
-    class="slider"
     *ngIf="randomEmployees?.length > 0"
   >
     <ngu-tile *nguCarouselDef="let item">
@@ -26,11 +26,11 @@
       >
       </div>
     </ngu-tile>
-    <ul class="myPoint" NguCarouselPoint>
+    <ul class="slider-points" NguCarouselPoint>
       <li
-        *ngFor="let j of myCarousel.pointNumbers; let i = index"
-        [class.active]="j === myCarousel.activePoint"
-        (click)="myCarousel.moveTo(i)"
+        *ngFor="let j of actorsSlider.pointNumbers; let i = index"
+        [class.active]="j === actorsSlider.activePoint"
+        (click)="actorsSlider.moveTo(i)"
       >
       </li>
     </ul>
@@ -41,8 +41,9 @@
       </svg>
     </div>
     <div NguCarouselNext class="right">
-      <svg class="chevron" height="48" width="48">
-        <use xlink:href="#chevron-right"></use>
+      <svg class="chevron" height="48" width="48" viewBox="0 0 48 48">
+        <path clip-rule="evenodd" d="M20 10.586L33.414 24 20 37.414 18.586 36l12-12-12-12L20 10.586z" fill="#868583"
+              fill-rule="evenodd"/>
       </svg>
     </div>
   </ngu-carousel>
