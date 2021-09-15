@@ -11,4 +11,5 @@ export class PerformanceEvent {
   ageLimit: number;
   buy_ticket_link: string;
   performance: Performance;
+  dateExist: boolean;
 }

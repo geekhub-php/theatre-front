@@ -1,15 +1,15 @@
 @import "~assets/styles/variables";
 
 h2 {
-  padding-top: 80px;
-  margin-bottom: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   text-align: center;
 
   @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
 }
 
 .news_container {
-  max-width: 1500px;
+  max-width: $container-width;
   margin: 0 auto;
   padding-bottom: 140px;
 }
@@ -23,3 +23,21 @@ h2 {
   float: right;
 }
 
+@media (max-width: map-get($grid-breakpoints, md-max)) {
+
+  .news_container {
+    padding: 30px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-max)) {
+
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  .news_container {
+    padding: 15px;
+  }
+}

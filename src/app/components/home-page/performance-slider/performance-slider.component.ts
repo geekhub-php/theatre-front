@@ -8,7 +8,7 @@ import { GatewayService } from '../../../services/gateway.service';
 @Component({
   selector: 'app-performance-slider',
   templateUrl: './performance-slider.component.html',
-  styleUrls: ['./performance-slider.component.scss'],
+  styleUrls: [ './performance-slider.component.scss' ],
   animations: [
     trigger('slideAnimation', [])
   ]
@@ -41,7 +41,7 @@ export class PerformanceSliderComponent implements OnInit {
           ticket: item.buy_ticket_link,
           ageLimit: item.performance.age_limit
         }));
-    });
+      });
   }
 }
 

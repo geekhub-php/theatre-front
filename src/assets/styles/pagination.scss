@@ -10,7 +10,7 @@
   align-items: center;
   box-shadow: none;
 
-  @include font($body-font-family, $font-size-medium, $font-color-disablend, $font-weight-normal, 18px, normal)
+  @include font($body-font-family, $font-size-medium, $font-color-disabled, $font-weight-normal, 18px, normal)
 }
 
 .pagination ul > li.active > a {
@@ -24,7 +24,7 @@
   box-shadow: none;
 
   @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 18px, normal);
-  @include border(2, solid, $border-color-disablend !important, 2px)
+  @include border(2, solid, $border-color-disabled !important, 2px)
 }
 
 .disabled {

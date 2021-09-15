@@ -13,14 +13,15 @@ import {
   HostListener,
   EventEmitter,
   Inject,
-  LOCALE_ID
+  LOCALE_ID, OnChanges, AfterViewChecked, AfterContentChecked
 } from '@angular/core';
 import {
   TSliderMonth,
   TMonthProperty,
-  TMonthsSliderElement
-} from '../../../store/schedule/MonthsSliderItem';
+  TNativeDivElement
+} from 'app/store/schedule/MonthsSliderItem';
 import { MonthsCarouselService } from './months-carousel.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-months-carousel',
@@ -32,9 +33,9 @@ import { MonthsCarouselService } from './months-carousel.service';
 export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @Output() selectedMonth = new EventEmitter();
 
-  @ViewChild('activeBox') activeBox: TMonthsSliderElement;
-  @ViewChild('monthsSlider') monthsSlider: TMonthsSliderElement;
-  @ViewChildren('monthItem') monthItems: QueryList<TMonthsSliderElement>;
+  @ViewChild('activeBox') activeBox: TNativeDivElement;
+  @ViewChild('monthsSlider') monthsSlider: TNativeDivElement;
+  @ViewChildren('monthItem') monthItems: QueryList<TNativeDivElement>;
 
   monthsList: Array<TSliderMonth> = [];
 
@@ -45,6 +46,8 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   isSpinnerActive = false;
   month: TMonthProperty;
   activeMonth = {id: ''};
+
+  deviceType: string | null = null;
 
   monthsNameList = {
     uk: [
@@ -80,6 +83,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
   constructor(
     private cd: ChangeDetectorRef,
     private carousel: MonthsCarouselService,
+    private deviceService: DeviceDetectorService,
     @Inject(LOCALE_ID) private localeId: string,
   ) {
       const idLength = 2;
@@ -108,6 +112,7 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.getMonth();
     this.getActiveMonth();
     this.carousel.setDefaultData();
+    this.setDeviceType();
   }
 
   onPrev(event) {
@@ -128,6 +133,10 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.carousel.scrollToCurrentMonth();
     this.carousel.onDrag();
     this.cd.detectChanges();
+  }
+
+  setDeviceType() {
+    this.deviceType = this.deviceService.getDeviceInfo().deviceType;
   }
 
   unSubscribe() {
