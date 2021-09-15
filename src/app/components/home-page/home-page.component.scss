@@ -115,8 +115,21 @@
 
   .advantages {
 
+    &-image {
+      bottom: 0;
+      display: flex;
+      min-width: 290px;
+      margin-bottom: 0;
+      align-items: center;
+
+      img {
+        width: 290px;
+      }
+    }
+
     &-content {
       align-items: center;
+
       .advantages-image {
         display: none;
       }
@@ -129,18 +142,6 @@
     &-text {
       margin-right: 0;
       margin-bottom: 0;
-    }
-
-    &-image {
-      bottom: 0;
-      display: flex;
-      min-width: 290px;
-      margin-bottom: 0;
-      align-items: center;
-
-      img {
-        width: 290px;
-      }
     }
   }
 }
