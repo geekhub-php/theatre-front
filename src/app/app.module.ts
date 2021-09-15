@@ -46,7 +46,6 @@ import { StripHtmlModule } from './pipes/strip-html.module';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CalendarComponent } from './components/schedule/calendar/calendar.component';
 import { ListViewComponent } from './components/schedule/list-view/list-view.component';
-import { MobileViewComponent } from './components/schedule/mobile-view/mobile-view.component';
 import { CalendarPopupComponent } from './components/schedule/calendar/calendar-popup/calendar-popup.component';
 import { CalendarService } from './components/schedule/calendar.service';
 import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
@@ -63,6 +62,7 @@ import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 import { LottieModule } from 'ngx-lottie';
 import { playerFactory } from './components/partials/spinner/spinner.component';
+import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +80,10 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    ScheduleComponent, CalendarComponent, ListViewComponent, MobileViewComponent, CalendarPopupComponent,
+    ScheduleComponent,
+    CalendarComponent,
+    ListViewComponent,
+    CalendarPopupComponent,
     DonateComponent,
     ScheduleComponent,
     SideMenuComponent,
@@ -96,6 +99,7 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     PersoneShowmoreComponent,
     ActorsSliderComponent,
     SeasonsComponent,
+    CatInteractiveComponent,
     FestivalsComponent,
     TheatreHistoryComponent,
     AboutHeaderComponent,

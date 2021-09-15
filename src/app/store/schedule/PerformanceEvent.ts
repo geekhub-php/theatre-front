@@ -10,4 +10,5 @@ export class PerformanceEvent {
   venue: string;
   buy_ticket_link: string;
   performance: Performance;
+  dateExist: boolean;
 }
