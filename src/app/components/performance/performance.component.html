@@ -119,28 +119,28 @@
     <!--    End performance details-->
   </section>
 
-  <section *ngIf="galleryImages.length" class="gallery">
-    <h2 class="section_title" i18n="@@photogallery">Photo Gallery</h2>
-
-    <div class="gallery_container">
-
-      <ngx-gallery *ngIf="!loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
-      </ngx-gallery>
-
-      <ngx-gallery *ngIf="!loadingFull" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
-      </ngx-gallery>
-
-    </div>
-
-    <a (click)="openGallery()" *ngIf="!loading && galleryImages.length > 4" class="more" i18n="@@morePhotos">
-      More Photos ({{ '+' + amount }})
-    </a>
-    <a (click)="closeGallery()" *ngIf="!loadingFull" class="more" i18n="@@collapse">Collapse</a>
-
-  </section>
-
   <!--   TODO section Recommendation-->
   <!--  <section class="recommendation">-->
   <!--    <h2 class="section_title">Також вас може зацікавити</h2>-->
   <!--  </section>-->
 </div>
+
+<section *ngIf="galleryImages.length" class="gallery">
+  <h2 class="section_title" i18n="@@photogallery">Photo Gallery</h2>
+
+  <div class="gallery_container">
+
+    <ngx-gallery *ngIf="!loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
+    </ngx-gallery>
+
+    <ngx-gallery *ngIf="!loadingFull" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
+    </ngx-gallery>
+
+  </div>
+
+  <a (click)="openGallery()" *ngIf="!loading && galleryImages.length > 4" class="more" i18n="@@morePhotos">
+    More Photos ({{ '+' + imageAmount }})
+  </a>
+  <a (click)="closeGallery()" *ngIf="!loadingFull" class="more" i18n="@@collapse">Collapse</a>
+
+</section>

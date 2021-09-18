@@ -58,6 +58,8 @@
 
 .age-restrictions {
   left: 0;
+  width: 56px;
+  height: 56px;
   display: flex;
   cursor: default;
   position: absolute;
@@ -70,8 +72,6 @@
   font-weight: $font-weight-bold;
   font-family: $body-font-family;
   background-color: $background-color-accent;
-
-  @include container(56px, 56, 0, 0);
 }
 
 .pagination__wrapper {
@@ -125,9 +125,9 @@
   }
 
   .age-restrictions {
+    width: 36px;
+    height: 36px;
     font-size: $font-size-medium-px;
-
-    @include container(36px, 36, 0, 0);
   }
 
   .image-performance {
@@ -168,8 +168,8 @@
 
   .age-restrictions {
     font-size: $font-size-xx-small;
-
-    @include container(24px, 24, 0, 0);
+    width: 24px;
+    height: 24px;
   }
 
   .item__wrapper {

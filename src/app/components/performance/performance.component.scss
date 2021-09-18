@@ -46,11 +46,9 @@
 }
 
 .details {
-  text-align: justify;
   font-size: $font-size-medium-px;
 
   & .description > p {
-    text-align: justify;
 
     & > a {
       @extend .link
@@ -84,8 +82,7 @@
   display: grid;
   grid-gap: 32px;
   position: relative;
-  padding: 0 5px 85px;
-  margin: 30px auto 0;
+  margin: 30px auto 80px;
   grid-auto-columns: 1fr;
   max-width: $container-width;
   grid-template-areas: "poster info info" "poster details details";
@@ -157,6 +154,7 @@
   width: 100%;
   display: flex;
   padding: 40px 10px;
+  margin-bottom: 80px;
   flex-direction: column;
   justify-content: center;
   border-bottom: 1px solid $border-color-lighter;
@@ -281,7 +279,7 @@
   }
 
   .performance_body {
-    margin: 0 auto;
+    margin: 24px auto 40px;
   }
 
   .limit {
@@ -319,6 +317,7 @@
 
   .gallery {
     padding: 24px 10px;
+    margin-bottom: 40px;
   }
 
   .section_title {

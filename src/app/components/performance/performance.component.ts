@@ -11,44 +11,70 @@ import { GatewayService } from '../../services/gateway.service';
 import { Performance } from '../../store/performance/Performance';
 import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
 
+enum galleryColumns {
+  xs = 1,
+  md = 2,
+  xl = 3,
+  xxl = 4,
+}
+
 @Component({
   selector: 'app-performance',
   templateUrl: './performance.component.html',
   styleUrls: [ './performance.component.scss' ],
   // disabled for styling innerHTML code
   // tslint:disable-next-line:use-component-view-encapsulation
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class PerformanceComponent implements OnInit {
-  performance: Performance;
   slug: string;
-  roles: Array<Role>;
-  activeId: string;
   loading = true;
+  imageAmount = 0;
+  activeId: string;
+  roles: Array<Role>;
   loadingFull = true;
-  galleryRows = 1;
-  galleryColumns = 4;
-  amount = 0;
+  xsBreakPoint = 468;
   thumbnailHeight = 240;
+  performance: Performance;
+
+  commonGalleryOptions = {
+    image: false,
+    width: '100%',
+    startIndex: null,
+    thumbnailsRows: 1,
+    thumbnailMargin: 30,
+    previewBullets: true,
+    previewAnimation: false,
+    thumbnailsArrows: false,
+    previewCloseOnEsc: true,
+    closeIcon: 'fas fa-times',
+    height: `${this.thumbnailHeight}px`,
+    arrowPrevIcon: 'fa fa-chevron-left',
+    arrowNextIcon: 'fa fa-chevron-right',
+    thumbnailsOrder: NgxGalleryOrder.Page,
+    thumbnailSize: NgxGalleryImageSize.Cover
+  };
+
   galleryImages: Array<NgxGalleryImage> = [];
   galleryOptions: Array<NgxGalleryOptions> = [
     {
-      image: false,
-      width: '100%',
-      height: '240px',
-      thumbnailsColumns: this.galleryColumns,
-      thumbnailsRows: this.galleryRows,
-      thumbnailMargin: 30,
-      thumbnailSize: NgxGalleryImageSize.Cover,
-      previewCloseOnEsc: true,
-      previewAnimation: false,
-      previewBullets: true,
-      thumbnailsArrows: false,
-      thumbnailsOrder: NgxGalleryOrder.Page,
-      startIndex: null,
-      arrowPrevIcon: 'fa fa-chevron-left',
-      arrowNextIcon: 'fa fa-chevron-right',
-      closeIcon: 'fas fa-times'
+      thumbnailsColumns: galleryColumns.xs,
+      breakpoint: this.xsBreakPoint,
+      ...this.commonGalleryOptions
+    },
+    {
+      thumbnailsColumns: galleryColumns.md,
+      breakpoint: Breakpoints.md_min,
+      ...this.commonGalleryOptions
+    },
+    {
+      thumbnailsColumns: galleryColumns.xl,
+      breakpoint: Breakpoints.xl_min,
+      ...this.commonGalleryOptions
+    },
+    {
+      thumbnailsColumns: galleryColumns.xxl,
+      ...this.commonGalleryOptions
     }
   ];
 
@@ -61,22 +87,15 @@ export class PerformanceComponent implements OnInit {
     this.localeId = this.localeId.slice(0, idLength);
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize', [ '$event' ])
   onResize(e?) {
     const { innerWidth } = window;
-    const lgGallery = 4;
-    const mdGallery = 3;
-    const smGallery = 2;
-    const xsGallery = 1;
+    const columnAmount = innerWidth > Breakpoints.xl_min
+      ? galleryColumns.xxl : innerWidth > Breakpoints.md_min
+        ? galleryColumns.xl : innerWidth > Breakpoints.sm_min
+          ? galleryColumns.md : galleryColumns.xs;
 
-    this.galleryOptions[0].thumbnailsColumns = innerWidth > Breakpoints.xl_min
-      ? lgGallery : innerWidth > Breakpoints.md_min
-        ? mdGallery : innerWidth > Breakpoints.sm_min
-          ? smGallery : xsGallery;
-
-    this.galleryOptions[0].thumbnailsRows = 1;
-    this.galleryOptions[0].height = `${this.thumbnailHeight}px`;
-    this.amount = this.galleryImages.length - this.galleryOptions[0].thumbnailsColumns;
+    this.imageAmount = this.galleryImages.length - columnAmount;
   }
 
   ngOnInit() {
@@ -114,15 +133,19 @@ export class PerformanceComponent implements OnInit {
 
   openGallery() {
     this.loading = true;
-    this.galleryOptions[0].thumbnailsRows = Math.ceil(this.galleryImages.length / this.galleryOptions[0].thumbnailsColumns);
-    this.galleryOptions[0].height = `${this.galleryOptions[0].thumbnailsRows * this.thumbnailHeight}px`;
+    this.galleryOptions.forEach((options, index) => {
+      options.thumbnailsRows = Math.ceil(this.galleryImages.length / this.galleryOptions[index].thumbnailsColumns);
+      options.height = `${this.galleryOptions[index].thumbnailsRows * this.thumbnailHeight}px`;
+    });
     this.loadingFull = false;
   }
 
   closeGallery() {
     this.loadingFull = true;
-    this.galleryOptions[0].thumbnailsRows = 1;
-    this.galleryOptions[0].height = `${this.thumbnailHeight}px`;
+    this.galleryOptions.forEach((options, index) => {
+      options.thumbnailsRows = 1;
+      options.height = `${this.thumbnailHeight}px`;
+    });
     this.loading = false;
   }
 }
