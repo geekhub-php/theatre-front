@@ -1,4 +1,11 @@
-import { Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Inject,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 import { GatewayService } from '../../services/gateway.service';
@@ -7,7 +14,7 @@ import { CalendarService } from './calendar.service';
 import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 import { Subscription } from 'rxjs';
 
-enum ScheduleViewModes {
+export enum ScheduleViewModes {
   CALENDAR = 'Calendar',
   LIST = 'List',
   MOBILE = 'Mobile'
@@ -40,25 +47,15 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     private calendar: CalendarService,
     private slider: MonthsCarouselService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    this.onResize();
-  }
+  ) {}
 
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     const innerWidth = window.innerWidth;
-    const calendarBreakpointWidth = 1020;
-    const listBreakpointWidth = 975;
-
+    const calendarBreakpointWidth = 1199;
     switch (this.viewMode) {
       case ScheduleViewModes.CALENDAR:
         if (innerWidth < calendarBreakpointWidth) {
-          this.viewMode = ScheduleViewModes.MOBILE;
-        }
-        break;
-
-      case ScheduleViewModes.LIST:
-        if (innerWidth < listBreakpointWidth) {
           this.viewMode = ScheduleViewModes.MOBILE;
         }
         break;
@@ -71,7 +68,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
           break;
         }
 
-        if (savedMode === ScheduleViewModes.LIST && innerWidth >= listBreakpointWidth) {
+        if (savedMode === ScheduleViewModes.LIST && innerWidth >= calendarBreakpointWidth) {
           this.viewMode = ScheduleViewModes.LIST;
         }
         break;

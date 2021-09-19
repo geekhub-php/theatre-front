@@ -29,7 +29,7 @@
         <source>Show more</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/partials/actors-slider/actors-slider.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="actors" datatype="html">
@@ -55,7 +55,14 @@
         <source>There are currently no events scheduled</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home-page/performance-slider/performance-slider.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="theatrePersonalities" datatype="html">
+        <source>Theatre personalities</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/partials/actors-slider/actors-slider.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="performanceDetails" datatype="html">
@@ -572,6 +579,13 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="TheatreIsAlwaysWithYou" datatype="html">
+        <source>Theatre is always with you</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="theatreWithYou" datatype="html">
         <source>Cherkasy Theatre of Taras Shevchenko welcomes you!</source>
         <context-group purpose="location">
@@ -806,8 +820,8 @@
           <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home-page/slider/slider.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="sourcefile">src/app/components/home-page/performance-slider/performance-slider.component.html</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/header/header.component.html</context>
@@ -1191,7 +1205,7 @@
         <source>Contacts</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="pageNotFound" datatype="html">
