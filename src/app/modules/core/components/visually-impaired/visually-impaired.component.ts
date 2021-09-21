@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
+import { VisuallyImpairedService } from 'app/services/visually-impaired.service';
+
+import { sideBarAnimation } from 'app/utilities/side-bar-animation';
 
 @Component({
   selector: 'app-visually-impaired',
   templateUrl: './visually-impaired.component.html',
-  styleUrls: ['./visually-impaired.component.scss']
+  styleUrls: ['./visually-impaired.component.scss'],
+  animations: sideBarAnimation({ sideBlock: 'sideBlock' , closeArea: 'closeArea'})
 })
 export class VisuallyImpairedComponent implements OnInit {
   trigger = this.visuallyImpairedService.triggerVisuallyImpaired;

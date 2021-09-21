@@ -1,53 +1,50 @@
-<ng-container *ngIf="trigger | async">
-  <div class="visual-aid-container" (click)="trigger.next(false)">
-    <div class="visually-impaired" (click)="$event.stopPropagation()">
-      <div class="visually-impaired__color-schemas color-schemes">
-        <img src="assets/images/animation_eye_settings @3x.png" class="opera-glasses" alt="Opera glasses">
-        <p class="color-schemes__text" i18n="@@color-schemes">Color schemes</p>
+<div *ngIf="trigger | async" @closeArea class="visual" (click)="trigger.next(false)"></div>
+<div *ngIf="trigger | async" @sideBlock class="visual-impaired">
+  <img src="assets/images/animation_eye_settings @3x.png" class="opera-glasses" alt="Opera glasses">
+  <p class="color-schemes__text" i18n="@@color-schemes">Color schemes</p>
 
-        <div class="color-schemes__buttons">
-          <button class="color-schemes__button --sepia" (click)="setSepia()">
-            <img src="assets/images/Group 460@3x.png" class="sepia-button scheme" alt="Sepia filter">
-            <span class="hover" i18n="@@sepia">Sepia</span>
-          </button>
-          <button class="color-schemes__button --inversion" (click)="inverseColor()">
-            <img src="assets/images/Group 461@3x.png" class="inversion-button scheme" alt="Color inversion">
-            <span class="hover" i18n="@@inversion">Inversion</span>
-          </button>
-          <button class="color-schemes__button --white-black" (click)="setBlackWhite()">
-            <img src="assets/images/Group 520@3x.png" class="black-on-white-button scheme" alt="Black on white filter">
-            <span class="hover" i18n="@@black-on-white">Black on White</span>
-          </button>
-          <button class="color-schemes__button --black-white" (click)="setWhiteBlack()">
-            <img src="assets/images/Group 521@3x.png" class="white-on-black-button scheme" alt="White on black filter">
-            <span class="hover" i18n="@@white-on-black">White on Black</span>
-          </button>
-          <button class="close-disable__button  reset-button" (click)="resetSettings()" title="Reset settings" i18n-title="@@resetSettings">
-            <svg class="u-svg-icon" width="24" height="24">
-              <use href="assets/images/sprite.svg#eye-off"></use>
-            </svg>
-          </button>
-        </div>
+  <div class="color-schemes__buttons">
+    <button class="color-schemes__button --sepia" (click)="setSepia()">
+      <img src="assets/images/Group 460@3x.png" class="sepia-button scheme" alt="Sepia filter">
+      <span class="hover" i18n="@@sepia">Sepia</span>
+    </button>
+    <button class="color-schemes__button --inversion" (click)="inverseColor()">
+      <img src="assets/images/Group 461@3x.png" class="inversion-button scheme" alt="Color inversion">
+      <span class="hover" i18n="@@inversion">Inversion</span>
+    </button>
+    <button class="color-schemes__button --white-black" (click)="setBlackWhite()">
+      <img src="assets/images/Group 520@3x.png" class="black-on-white-button scheme" alt="Black on white filter">
+      <span class="hover" i18n="@@black-on-white">Black on White</span>
+    </button>
+    <button class="color-schemes__button --black-white" (click)="setWhiteBlack()">
+      <img src="assets/images/Group 521@3x.png" class="white-on-black-button scheme" alt="White on black filter">
+      <span class="hover" i18n="@@white-on-black">White on Black</span>
+    </button>
+    <button class="close-disable__button  reset-button" (click)="resetSettings()" title="Reset settings"
+            i18n-title="@@resetSettings">
+      <svg class="u-svg-icon" width="24" height="24">
+        <use href="assets/images/sprite.svg#eye-off"></use>
+      </svg>
+    </button>
+  </div>
 
-        <div class="visually-impaired__size-fonts size-fonts">
-          <p class="size-fonts__text" i18n="@@font-size">Font size</p>
-          <div class="size-fonts__buttons">
-            <button class="size-fonts__button" (click)="reduceFont()">
-              <img src="assets/images/Group 518@3x.png" class="reduce-font-button scheme" alt="Reduce font">
-              <span  class="hover-font" i18n="@@reduce-font">Reduce Font</span>
-            </button>
-            <button class="size-fonts__button" (click)="zoomFont()">
-              <img src="assets/images/Group 519@3x.png" class="increase-font-button scheme" alt="Zoom font size">
-              <span class="hover-font" i18n="@@zoom-font">Zoom Font</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <img src="assets/images/close@3x.png" class="close-button" alt="Closing button" title="Close" i18n-title="@@ngb.alert.close"
-           (click)="trigger.next(false)">
+  <div class="size-fonts">
+    <p class="size-fonts__text" i18n="@@font-size">Font size</p>
+    <div class="size-fonts__buttons">
+      <button class="size-fonts__button" (click)="reduceFont()">
+        <img src="assets/images/Group 518@3x.png" class="reduce-font-button scheme" alt="Reduce font">
+        <span class="hover-font" i18n="@@reduce-font">Reduce Font</span>
+      </button>
+      <button class="size-fonts__button" (click)="zoomFont()">
+        <img src="assets/images/Group 519@3x.png" class="increase-font-button scheme" alt="Zoom font size">
+        <span class="hover-font" i18n="@@zoom-font">Zoom Font</span>
+      </button>
     </div>
   </div>
-</ng-container>
+  <img src="assets/images/icons/ic_cross_black.svg" class="close close-button" alt="Closing button" title="Close"
+       i18n-title="@@ngb.alert.close"
+       (click)="trigger.next(false)">
+</div>
 
 <button class="u-unstyled-btn d-none d-lg-block">
   <img src="assets/images/eye_settings@3x.png" class="visual-aid-button" alt="Color schemes" title="Color schemes"

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../../services/gateway.service';
 import { DonateService } from './donate.service';
+import { sideBarAnimation } from 'app/utilities/side-bar-animation';
 
 @Component({
   selector: 'app-donate',
   templateUrl: './donate.component.html',
-  styleUrls: [ './donate.component.scss' ]
+  styleUrls: [ './donate.component.scss' ],
+  animations: sideBarAnimation({ sideBlock: 'sideBlock' , closeArea: 'closeArea'})
 })
 export class DonateComponent implements OnInit {
   donateBlockVisible = false;

@@ -3,119 +3,155 @@
 .header {
   width: 100%;
   background-color: $background-main-color-darker;
-}
 
-.header-container {
-  max-width: $container-width;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 5px;
-  font-size: $font-size-medium-px;
+  //TODO: refactor main btn component
 
+  .btn {
 
-  .language {
-    text-decoration: none;
-    transition: .3s ease;
-    color: $font-color-primary;
+    &.--btn-reset {
+      padding: 0;
+      border: none;
+      font: inherit;
+      color: inherit;
+      outline: inherit;
+      background: none;
+    }
 
-    &:hover {
-      color: $font-color-white;
+    &.--btn-close {
+      padding: 4px;
+      border-radius: 5px;
+      background-color: $border-color-accent;
     }
   }
-
-  .separation {
-    font-size: 20px;
-  }
-}
-
-.icon-search {
-  width: 20px;
-  height: 20px;
-  margin-right: 20px;
-}
-
-.search-box {
-  position: absolute;
-  align-items: center;
-  left: 152px;
-  width: 68%;
-
-  &.show {
-    display: flex;
-  }
-
-  .search-input {
-    flex: 1;
-    height: 58px;
-    padding: 2px 2px 2px 16px;
-    border-radius: 2px;
-    transition: .3s;
-    color: $font-color-black;
-    font-size: $font-size-medium;
-
-    &:focus,
-    &:active {
-      outline: none;
-
-      @include border(2, solid, $border-color-accent, 2px);
-    }
-  }
-
-  .delete-button {
-    transition: .3s ease;
-
-    @include box(39, 39);
-
-    &:hover {
-      @include border(1, solid, $border-color-accent, 2px);
-    }
-  }
-
-  .search-button {
-    transition: .3s ease;
-    background-color: $background-color-black;
-    margin-right: 20px;
-
-    &:hover {
-      outline: none;
-    }
-  }
-}
-
-.tickets-button {
-  padding: 12px 24px;
-  margin-left: 20px;
-  font-size: $font-size-medium-px;
-}
-
-.icons-group {
-  display: flex;
-  gap: 25px;
-  justify-content: right;
-}
-
-@media (max-width: map-get($grid-breakpoints, xl-max)) {
 
   .header-container {
-    padding: 10px 20px;
+
+    //TODO: need add padding to main class 'container'
+
+    .logo-wrapper {
+      margin: 0;
+
+      @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-normal, 1, normal);
+    }
+
+    margin: 0 auto;
+    display: flex;
+    padding: 16px 32px;
+    align-items: center;
+    max-width: $container-width + 64px;
+    justify-content: space-between;
+    font-size: $font-size-medium-px;
+
+
+    .language {
+      text-decoration: none;
+      transition: .3s ease;
+      color: $font-color-primary;
+
+      &:hover {
+        color: $font-color-white;
+      }
+    }
+
+    .separation {
+      font-size: 20px;
+    }
+  }
+
+  .icon-search {
+    margin-right: 20px;
+  }
+
+  .search-box {
+    position: absolute;
+    align-items: center;
+    left: 152px;
+    width: 68%;
+
+    &.show {
+      display: flex;
+    }
+
+    .search-input {
+      flex: 1;
+      height: 58px;
+      padding: 2px 2px 2px 16px;
+      border-radius: 2px;
+      transition: .3s;
+      color: $font-color-black;
+      font-size: $font-size-medium;
+
+      &:focus,
+      &:active {
+        outline: none;
+
+        @include border(2, solid, $border-color-accent, 2px);
+      }
+    }
+
+    .btn-cancel, .btn-search {
+      width: 58px;
+      height: 58px;
+    }
+
+    .btn-search {
+      right: 74px;
+      position: absolute;
+    }
+  }
+
+  .tickets-button {
+    padding: 12px 24px;
+    margin-left: 20px;
+    font-size: $font-size-medium-px;
+  }
+
+  .icons-group {
+    gap: 32px;
+    display: flex;
+    justify-content: right;
+
+    .icon {
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+    }
   }
 }
 
-@media (max-width: map-get($grid-breakpoints, md-max)) {
+@media (max-width: map-get($grid-breakpoints, md-min)) {
 
-  .header, .header-container {
-    height: 64px;
-  }
+  .header {
 
-  .header-logo {
-    width: 86px;
-    height: 32px;
-  }
+    .header-logo {
+      width: 86px;
+    }
 
-  .icon {
-    width: 25px;
-    height: 25px;
+    .icons-group {
+      gap: 24px;
+      display: flex;
+      justify-content: right;
+
+      .icon {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+  //
+  //.header {
+  //
+  //  .header-logo {
+  //    width: 86px;
+  //  }
+  //
+  //  .icons-group .icon {
+  //    width: 24px;
+  //    height: 24px;
+  //  }
+  //}
 }

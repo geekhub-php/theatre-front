@@ -17,7 +17,6 @@ import { Subscription } from 'rxjs';
 export enum ScheduleViewModes {
   CALENDAR = 'Calendar',
   LIST = 'List',
-  MOBILE = 'Mobile'
 }
 
 @Component({
@@ -29,7 +28,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   date: Date;
   isToday: boolean;
-
+  isSwitcherActive = false;
   viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
   views = ScheduleViewModes;
   sliderSubscription: Subscription;
@@ -53,29 +52,9 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   onResize(event?) {
     const innerWidth = window.innerWidth;
     const calendarBreakpointWidth = 1199;
-    switch (this.viewMode) {
-      case ScheduleViewModes.CALENDAR:
-        if (innerWidth < calendarBreakpointWidth) {
-          this.viewMode = ScheduleViewModes.MOBILE;
-        }
-        break;
 
-      case ScheduleViewModes.MOBILE:
-        const savedMode = this.savedLocale;
-        if (savedMode === ScheduleViewModes.CALENDAR && innerWidth >= calendarBreakpointWidth) {
-          this.viewMode = ScheduleViewModes.CALENDAR;
-
-          break;
-        }
-
-        if (savedMode === ScheduleViewModes.LIST && innerWidth >= calendarBreakpointWidth) {
-          this.viewMode = ScheduleViewModes.LIST;
-        }
-        break;
-
-      default:
-        break;
-    }
+    this.isSwitcherActive = innerWidth > calendarBreakpointWidth;
+    this.viewMode = this.isSwitcherActive ? ScheduleViewModes.CALENDAR : ScheduleViewModes.LIST;
   }
 
   ngOnInit() {
@@ -84,7 +63,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
     this.viewMode = this.savedLocale;
     this.onResize();
-
     this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
       'Афіша Черкаського академічного музично-драматичного театру імені Тараса Григоровича Шевченка',
       'http://theatre-shevchenko.ck.ua/assets/images/logo.png');

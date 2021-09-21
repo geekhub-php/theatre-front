@@ -60,8 +60,6 @@ import { SeasonsComponent } from './components/performance/seasons/seasons.compo
 import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
-import { LottieModule } from 'ngx-lottie';
-import { playerFactory } from './components/partials/spinner/spinner.component';
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
 
 @NgModule({

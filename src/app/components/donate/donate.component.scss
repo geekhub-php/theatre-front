@@ -1,5 +1,13 @@
 @import "~assets/styles/variables";
 
+:host {
+  top: 0;
+  right: 0;
+  z-index: 100;
+  height: 100%;
+  position: fixed;
+}
+
 .donate-block {
   z-index: 100;
   position: fixed;
@@ -11,32 +19,31 @@
   background-color: rgba($background-color-black, .7);
 
   &__information {
-    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 336px;
-    padding-top: 2%;
+    width: 300px;
+    z-index: 200;
+    padding: 16px;
+    overflow: scroll;
+    position: absolute;
     background-color: $background-color-accent;
 
     .donate-title {
       margin: 0 40px 14px;
       text-align: center;
 
-      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
+      @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic);
     }
 
     .closing-button {
+      top: 12px;
+      right: 16px;
+      transition: .3s;
+      cursor: pointer;
       position: absolute;
-      top: 8px;
-      right: 8px;
-      transition: .3s ease;
 
-      @include box(48, 48);
-
-      &:hover {
-        @include border(2, solid, $border-color-light, 2px);
-      }
+      @include flex-center()
     }
 
     .donate-wallet-image {
@@ -48,7 +55,11 @@
     .donate-requisites {
       text-align: center;
 
-      @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1px, normal);
+      @include font($body-font-family, $font-size-xx-small, $font-color-black, $font-weight-normal, 1.5, normal);
+
+      p {
+        margin-bottom: 0;
+      }
 
       .qr-code {
         width: 42%;

@@ -220,7 +220,6 @@
   .docs_section {
     grid-template-columns: repeat(2, minmax(200px, 330px));
   }
-
 }
 
 @media (max-width: map-get($grid-breakpoints, sm-max)) {

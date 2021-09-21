@@ -4,11 +4,14 @@ import { NavigationStart, Router } from '@angular/router';
 import { LangService } from '../../../../services/lang.service';
 import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
 import { DonateService } from '../../../../components/donate/donate.service';
+import { BehaviorSubject } from 'rxjs';
+
+export type TSideBar = 'in' | 'out';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: [ './header.component.scss' ],
 })
 
 export class HeaderComponent implements OnInit {
@@ -18,7 +21,8 @@ export class HeaderComponent implements OnInit {
   textValue = '';
   wideScreen;
   trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
-  burgerMenuIsOpened = false;
+  sideBarVisibility$ = new BehaviorSubject<TSideBar>('out');
+  sideBarState: TSideBar = 'out';
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -28,7 +32,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private langService: LangService,
     private visuallyImpairedService: VisuallyImpairedService,
-    private donateService: DonateService
+    public donateService: DonateService
   ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
@@ -37,9 +41,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWindowSize();
+    this.sideBarVisibility$.subscribe(newState => {
+      this.sideBarState = newState;
+    });
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize', [ '$event' ])
   onResize() {
     this.getWindowSize();
   }
@@ -71,9 +78,5 @@ export class HeaderComponent implements OnInit {
 
   clearSubmit(): void {
     this.isCollapsed = !this.isCollapsed;
-  }
-
-  receiveChildData(data): void {
-    this.burgerMenuIsOpened = data;
   }
 }
