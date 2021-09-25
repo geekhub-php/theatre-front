@@ -124,6 +124,33 @@
       height: 32px;
     }
   }
+
+  .side-buttons {
+    top: 30%;
+    z-index: 8;
+    right: 16px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+
+    .btn-donate {
+      margin-bottom: 8px;
+    }
+
+    .btn-donate, .btn-settings {
+      padding: 16px;
+      transition: .3s;
+      background-color: $border-color-accent;
+
+      img {
+        width: 36px;
+      }
+
+      &:hover {
+        background-color: $background-on-hover;
+      }
+    }
+  }
 }
 
 @media (max-width: map-get($grid-breakpoints, md-min)) {

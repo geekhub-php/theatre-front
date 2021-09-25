@@ -1,12 +1,3 @@
-<button class="u-unstyled-btn d-none d-lg-block">
-  <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
-       *ngIf="!donateBlockVisible" (click)="activePage()">
-</button>
-<button class="u-unstyled-btn d-none d-lg-block">
-  <img src="assets/images/wallet@3x.png" class="donate-button" alt="Donate" i18n-title="@@donate" title="Donate"
-       *ngIf="donateBlockVisible" (click)="disablePage()">
-</button>
-
 <!--TODO: the correct QR-code needs to be provided-->
 
 <div *ngIf="donateBlockVisible" @closeArea (click)="disablePage()" class="donate-block"></div>

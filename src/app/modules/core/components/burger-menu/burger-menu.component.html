@@ -16,11 +16,12 @@
     <li class="menu-item"><a class="nav-link" i18n="@@repertoire" routerLink="/repertoire" routerLinkActive="active">Repertoire</a>
     </li>
 
-    <li (click)="showSubMenuPersons = !showSubMenuPersons" routerLink="/persons" class="menu-item">
-      <div class="li-container">Personalities
-        <img [class.opened]="showSubMenuPersons" src="assets/images/icons/ic_arrow_down.svg" alt="">
+    <li class="menu-item">
+      <a routerLink="/persons" class="menu-item__link" routerLinkActive="active-link">
+      <div class="li-container li-arrow">Personalities
+          <img src="assets/images/icons/ic_arrow_down.svg" alt="">
       </div>
-      <ul *ngIf="showSubMenuPersons" class="sub-menu">
+      <ul class="sub-menu">
         <li>
           <a class="sub-link" routerLink="/persons/creative">
             Creative Composition
@@ -37,31 +38,34 @@
           </a>
         </li>
       </ul>
+      </a>
     </li>
 
-    <li (click)="showSubMenuAbout = !showSubMenuAbout" routerLink="/about" class="menu-item">
-      <div class="li-container">About
-        <img [class.opened]="showSubMenuAbout" src="assets/images/icons/ic_arrow_down.svg" alt="arrow down">
-      </div>
-      <ul *ngIf="showSubMenuAbout" class="sub-menu">
-        <li>
-          <a class="sub-link" routerLink="/about/theatre-history">
-            History
+    <li routerLink="/about" class="menu-item">
+      <a routerLink="/about" class="menu-item__link" routerLinkActive="active-link">
+        <div class="li-container li-arrow">About
+          <img src="assets/images/icons/ic_arrow_down.svg" alt="arrow down">
+        </div>
+        <ul class="sub-menu">
+          <li>
+            <a class="sub-link" routerLink="/about/theatre-history">
+              History
+            </a>
+          </li>
+          <li><a class="sub-link" routerLink="/about/festivals">
+            Festivals
           </a>
-        </li>
-        <li><a class="sub-link" routerLink="/about/festivals">
-          Festivals
-        </a>
-        </li>
-        <li><a class="sub-link" routerLink="/about/epoch/persons">
-          Epoch
-        </a>
-        </li>
-        <li><a class="sub-link" routerLink="/about/visit">
-          Visit
-        </a>
-        </li>
-      </ul>
+          </li>
+          <li><a class="sub-link" routerLink="/about/epoch/persons">
+            Epoch
+          </a>
+          </li>
+          <li><a class="sub-link" routerLink="/about/visit">
+            Visit
+          </a>
+          </li>
+        </ul>
+      </a>
     </li>
 
     <li class="menu-item"><a class="nav-link" i18n="@@cooperation" routerLink="/cooperation"

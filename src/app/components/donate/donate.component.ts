@@ -27,10 +27,6 @@ export class DonateComponent implements OnInit {
       'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
   }
 
-  activePage() {
-    this.sidebarService.open(ESidebar.donate);
-  }
-
   disablePage() {
     this.sidebarService.close(ESidebar.donate);
   }

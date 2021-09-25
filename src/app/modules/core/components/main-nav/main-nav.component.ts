@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { LangService } from '../../../../services/lang.service';
+import { LangService } from 'app/services/lang.service';
+import { Breakpoints } from 'app/constants';
 
 @Component({
   selector: 'app-main-nav',
@@ -29,8 +30,8 @@ export class MainNavComponent implements OnInit {
 
   getWindowSize() {
     const screenWidth = window.innerWidth;
-    const wideScreen = 1240;
-    const mediumScreen = 768;
+    const wideScreen = Breakpoints.xl_min;
+    const mediumScreen = Breakpoints.md_min;
 
     if (screenWidth > wideScreen) {
       this.showWideNav = true;

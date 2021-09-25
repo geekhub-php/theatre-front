@@ -13,6 +13,7 @@ import { LoaderService } from '../partials/spinner/loader.service';
 import { CalendarService } from './calendar.service';
 import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 import { Subscription } from 'rxjs';
+import { Breakpoints } from 'app/constants';
 
 export enum ScheduleViewModes {
   CALENDAR = 'Calendar',
@@ -51,7 +52,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     const innerWidth = window.innerWidth;
-    const calendarBreakpointWidth = 1199;
+    const calendarBreakpointWidth = Breakpoints.xl_min;
 
     this.isSwitcherActive = innerWidth > calendarBreakpointWidth;
     this.viewMode = this.isSwitcherActive ? ScheduleViewModes.CALENDAR : ScheduleViewModes.LIST;
@@ -101,7 +102,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
-    this.onResize();
   }
 
   changeViewToList() {
@@ -112,7 +112,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
-    this.onResize();
   }
 
   getMonth() {

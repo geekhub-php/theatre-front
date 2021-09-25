@@ -3,6 +3,7 @@ import { NavigationStart, Router } from '@angular/router';
 
 import { filter } from 'rxjs/operators';
 
+import { Breakpoints } from 'app/constants';
 import { LangService } from 'app/services/lang.service';
 import { ESidebar, SidebarService } from 'app/services/sidebar.service';
 import { VisuallyImpairedService } from 'app/services/visually-impaired.service';
@@ -46,7 +47,7 @@ export class HeaderComponent implements OnInit {
 
   getWindowSize() {
     const screenWidth = window.innerWidth;
-    const wideScreen = 1240;
+    const wideScreen = Breakpoints.xl_min;
 
     this.wideScreen = screenWidth > wideScreen;
   }

@@ -72,6 +72,12 @@
     display: flex;
     justify-content: space-between;
   }
+
+  &__link {
+    text-decoration: none;
+
+    @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.5, normal);
+  }
 }
 
 .nav-link {
@@ -80,6 +86,10 @@
   margin-bottom: 0;
 
   @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.5, normal);
+}
+
+.sub-menu {
+  display: none;
 }
 
 .sub-link {
@@ -99,4 +109,17 @@
 .opened {
   transform: rotate(180deg);
   transition: transform .5s linear;
+}
+
+.active-link {
+  color: $font-color-white;
+
+  .li-arrow img {
+    transition: transform .5s linear;
+    transform: rotate(180deg);
+  }
+
+  .sub-menu {
+    display: block;
+  }
 }

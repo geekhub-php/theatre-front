@@ -11,8 +11,6 @@ import { ESidebar, SidebarService } from 'app/services/sidebar.service';
 
 export class BurgerMenuComponent {
   isNavbarActive = false;
-  showSubMenuPersons = false;
-  showSubMenuAbout = false;
 
   constructor(private sidebarService: SidebarService) {
     this.sidebarService.subject.subscribe(({ isActive, barName })  => {

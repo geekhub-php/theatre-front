@@ -23,15 +23,15 @@
       <!--      <img class="icon-search" src="assets/images/icons/ic_magnifying_glass.svg" alt="">-->
       <!--    </button>-->
 
-      <button class="btn --btn-reset icon-search">
-        <img (click)="collapseMenu()" src="assets/images/icons/ic_magnifying_glass.svg" alt="">
+      <button (click)="collapseMenu()"  class="btn --btn-reset icon-search">
+        <img src="assets/images/icons/ic_magnifying_glass.svg" alt="">
       </button>
 
       <div [ngbCollapse]="!isCollapsed" class="search-box">
         <input (keydown.enter)="sendRequestOnEnter();false" [(ngModel)]="textValue" class="search-input"
                placeholder="{{search_text}}" type="text"/>
-        <button class="btn --btn-reset btn-search">
-          <img (click)="sendRequestOnIconClick()" alt="Search button" i18n-title="@@search"
+        <button (click)="sendRequestOnIconClick()" class="btn --btn-reset btn-search">
+          <img alt="Search button" i18n-title="@@search"
                src="assets/images/icons/ic_magnifying_glass_gold.svg" title="Search">
         </button>
         <button (click)="clearSubmit()" class="btn --btn-reset --btn-close btn-cancel">
@@ -65,6 +65,18 @@
   </div>
 
   <app-burger-menu></app-burger-menu>
+
+  <div class="side-buttons d-none d-xl-min-flex">
+    <button (click)="openDonate()" class="btn --btn-reset btn-donate">
+      <img src="assets/images/icons/ic_wallet_black.svg" alt="Donate" i18n-title="@@donate" title="Donate">
+    </button>
+
+    <button (click)="openSettings() " class="btn --btn-reset btn-settings">
+      <img src="assets/images/icons/ic_eye_settings_black.svg" alt="Color schemes" title="Color schemes"
+           i18n-title="@@color-schemes">
+    </button>
+  </div>
+
 </header>
 
 

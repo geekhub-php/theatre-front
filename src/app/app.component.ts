@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SidebarService } from './services/sidebar.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,11 @@ export class AppComponent {
   constructor(
     private meta: Meta,
     private titleService: Title,
-    private sidebarService: SidebarService
+    private sidebarService: SidebarService,
+    private deviceService: DeviceDetectorService
   ) {
     this.sidebarService.subject.subscribe(({ isActive }) => {
-      this.isSidebarActive = isActive;
+      this.isSidebarActive = isActive && deviceService.getDeviceInfo().deviceType !== 'desktop';
     });
   }
 
