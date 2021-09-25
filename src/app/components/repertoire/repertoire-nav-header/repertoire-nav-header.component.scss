@@ -2,26 +2,33 @@
 
 .nav-header-container {
   background-color: $background-color-accent;
-  height: 56px;
+  flex-wrap: wrap;
 
   @include flex-center;
-}
 
-.item {
-  padding: 0 15px;
-  height: 56px;
-  transition: .3s;
+  .item {
+    transition: .3s;
+    padding: 12px 16px;
 
-  @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-normal, 1.5, normal);
-  @include flex-center;
+    @include flex-center;
+    @include font($body-font-family, $font-size-medium-px, $font-color-black, $font-weight-normal, 1.5, normal);
 
-  &.active {
-    line-height: 1.39;
-    background-color: $background-on-hover;
-    font-weight: 700;
+    &.active {
+      font-weight: 700;
+      background-color: $background-on-hover;
+    }
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
-.nav-header-container a {
-  text-decoration: none;
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .nav-header-container .item {
+    padding: 8px 12px;
+
+    @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.5, normal);
+  }
 }
