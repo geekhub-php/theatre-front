@@ -53,7 +53,7 @@ export class ArticleComponent implements OnInit {
                 {
                   small: item.images.post_main.url,
                   medium: item.images.post_main.url,
-                  big: item.images.post_big.url,
+                  big: item.images?.post_big.url,
                 }
               );
             });

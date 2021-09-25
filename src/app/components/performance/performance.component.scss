@@ -1,5 +1,10 @@
 @import "~assets/styles/variables";
 
+.container {
+  padding: 0 32px;
+  max-width: $container-width;
+}
+
 .page_title {
   text-align: center;
   padding-top: 30px;
@@ -14,38 +19,130 @@
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
 }
 
-.performance_body {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 30px;
-  max-width: $container-width;
-  margin: 30px auto 0;
-  position: relative;
-  padding: 0 5px 85px;
+.ticket_button {
+  transition: .2s;
+  margin-left: auto;
+  line-height: 44px;
+  white-space: nowrap;
+  text-decoration: none;
 
-  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
-}
+  & a {
+    padding: 10px 50px;
 
-.main-info {
-  margin: 0 20px 25px 0;
-  display: flex;
-}
+    @include border(1, solid, $border-color-light, 2px);
+    @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
 
-.icon {
-  margin-right: 16px;
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+    &:hover {
+      text-decoration: none;
+      color: $font-color-white;
+      background-color: $background-main-color-lighter;
+    }
+
+    &:active {
+      color: $font-color-black;
+      background-color: $background-color-white;
+    }
+  }
 }
 
 .details {
-  margin-top: 40px;
+  font-size: $font-size-medium-px;
+
+  & .description > p {
+
+    & > a {
+      @extend .link
+    }
+  }
+
+  .performance_seasons {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > span {
+      margin-right: 16px;
+    }
+  }
+
+  .performance_roles {
+    margin: 36px 0;
+  }
+
+  .role_item {
+    display: flex;
+    flex-direction: column;
+
+    & > span {
+      line-height: 2;
+    }
+  }
+}
+
+.performance_body {
+  display: grid;
+  grid-gap: 32px;
+  position: relative;
+  margin: 30px auto 80px;
+  grid-auto-columns: 1fr;
+  max-width: $container-width;
+  grid-template-areas: "poster info info" "poster details details";
+
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
+
+  .performance_poster {
+    display: flex;
+    grid-area: poster;
+    justify-content: center;
+
+    .poster-container {
+      position: relative;
+    }
+  }
+
+  .performance_info {
+    grid-area: info;
+    display: flex;
+
+    .main-info-block div:last-child {
+      margin-bottom: 0;
+
+      & p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .performance_details {
+    grid-area: details;
+  }
+}
+
+.link {
+  transition: .2s;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  @include font($body-font-family, $font-size-medium-px, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
+
+  &:hover {
+    color: $font-color-white;
+  }
+}
+
+.main-info {
+  display: flex;
+  margin: 0 16px 20px 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+  object-fit: contain;
 }
 
 .details_title {
-  line-height: 25px;
-
-  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 25px, normal)
+  @include font($body-font-family, $font-size-medium-px, $font-color-accent, $font-weight-bold, 25px, normal)
 }
 
 .bold {
@@ -53,91 +150,68 @@
   margin-right: 16px;
 }
 
-.flex {
-  display: flex;
-}
-
 .gallery {
-  background-color: $background-main-color-darker;
-  padding: 0 10px;
+  width: 100%;
   display: flex;
+  padding: 40px 10px;
+  margin-bottom: 80px;
   flex-direction: column;
   justify-content: center;
   border-bottom: 1px solid $border-color-lighter;
+  background-color: $background-main-color-darker;
 }
 
 .ngx-gallery {
-  display: inline-block;
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .more {
-  text-decoration: none;
+  transition: .3s;
+  margin-top: 16px;
   text-align: center;
-  margin: 30px 0 80px;
+  text-decoration: none;
 
-  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
-}
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5, .36px);
 
-.more:hover {
-  cursor: pointer;
-}
-
-.performance_poster {
-  position: relative;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: $font-color-white;
+  }
 }
 
 .limit {
-  position: absolute;
   top: 0;
   left: 0;
   width: 56px;
   height: 56px;
-  background-color: $background-color-accent;
   display: flex;
+  position: absolute;
   align-items: center;
   justify-content: center;
+  background-color: $background-color-accent;
 
   @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, $line-height-basic, .48px)
 }
 
 .section_title {
   text-align: center;
-  margin: 80px 0 30px;
+  margin-bottom: 16px;
 
-  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, $line-height-basic, .8px)
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px)
 }
 
 .gallery_container {
-  width: $container-width;
-  max-width: 100%;
   margin: 0 auto;
+  max-width: 100%;
+  width: $container-width;
 }
 
 .info {
   margin: 0;
 
-  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
-}
-
-.ticket_button {
-  position: absolute;
-  top: 0;
-  right: 15px;
-  padding: 10px 50px;
-  text-decoration: none;
-
-  @include border(1, solid, $border-color-light, 2px);
-  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
-
-  &:hover {
-    background-color: $background-main-color-lighter;
-  }
-
-  &:active {
-    background-color: $background-color-white;
-    color: $font-color-black;
-  }
+  @include font($body-font-family, $font-size-medium-px, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 
 :host ::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
@@ -147,6 +221,110 @@
 :host .details::ng-deep a {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
 
-  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
+
+  .performance_body {
+    grid-gap: 20px 16px;
+    grid-auto-columns: 1fr;
+    grid-template-areas: "poster info" "details details";
+  }
+
+  .ticket_button {
+    margin: 0 0 32px;
+    position: static;
+  }
+
+  .performance_info {
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md-min)) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .performance_body {
+    grid-gap: 24px;
+    grid-template-areas: "poster" " info" "details";
+  }
+
+  .ticket_button {
+    text-align: center;
+  }
+
+  .main-info {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .page_title {
+    margin-bottom: 16px;
+
+    @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.11, normal)
+  }
+
+  .performance_title {
+    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px)
+  }
+
+  .main-info {
+    margin-bottom: 16px;
+  }
+
+  .performance_body {
+    margin: 24px auto 40px;
+  }
+
+  .limit {
+    width: 24px;
+    height: 24px;
+
+    @include font($body-font-family, $font-size-xx-small, $font-color-white, $font-weight-bold, 1.5, .48px)
+  }
+
+  .info {
+    @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal)
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+  }
+
+  .link {
+    @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, $line-height-basic, normal);
+  }
+
+  .details {
+    font-size: $font-size-small;
+
+    .performance_roles {
+      margin: 24px 0;
+    }
+  }
+
+  .details_title {
+    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, normal)
+  }
+
+  .gallery {
+    padding: 24px 10px;
+    margin-bottom: 40px;
+  }
+
+  .section_title {
+    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px)
+  }
+
+  .more {
+    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, .36px);
+  }
 }

@@ -1,58 +1,101 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, LOCALE_ID, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { forkJoin } from 'rxjs';
 
 import { LoaderService } from '../partials/spinner/loader.service';
 
+import { Role } from '../../store/Role';
+import { Breakpoints } from '../../constants';
 import { GatewayService } from '../../services/gateway.service';
 import { Performance } from '../../store/performance/Performance';
-import { Role } from '../../store/Role';
 import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
 
+enum galleryColumns {
+  xs = 1,
+  md = 2,
+  xl = 3,
+  xxl = 4,
+}
 
 @Component({
   selector: 'app-performance',
   templateUrl: './performance.component.html',
-  styleUrls: ['./performance.component.scss']
+  styleUrls: [ './performance.component.scss' ],
+  // disabled for styling innerHTML code
+  // tslint:disable-next-line:use-component-view-encapsulation
+  encapsulation: ViewEncapsulation.None
 })
 export class PerformanceComponent implements OnInit {
-  performance: Performance;
   slug: string;
-  roles: Array<Role>;
-  activeId: string;
   loading = true;
+  imageAmount = 0;
+  activeId: string;
+  roles: Array<Role>;
   loadingFull = true;
-  galleryRows = 1;
-  galleryColumns = 4;
-  amount = 0;
+  xsBreakPoint = 468;
   thumbnailHeight = 240;
+  performance: Performance;
+
+  commonGalleryOptions = {
+    image: false,
+    width: '100%',
+    startIndex: null,
+    thumbnailsRows: 1,
+    thumbnailMargin: 30,
+    previewBullets: true,
+    previewAnimation: false,
+    thumbnailsArrows: false,
+    previewCloseOnEsc: true,
+    closeIcon: 'fas fa-times',
+    height: `${this.thumbnailHeight}px`,
+    arrowPrevIcon: 'fa fa-chevron-left',
+    arrowNextIcon: 'fa fa-chevron-right',
+    thumbnailsOrder: NgxGalleryOrder.Page,
+    thumbnailSize: NgxGalleryImageSize.Cover
+  };
+
   galleryImages: Array<NgxGalleryImage> = [];
   galleryOptions: Array<NgxGalleryOptions> = [
     {
-      image: false,
-      width: '100%',
-      height: '240px',
-      thumbnailsColumns: this.galleryColumns,
-      thumbnailsRows: this.galleryRows,
-      thumbnailMargin: 30,
-      thumbnailSize: NgxGalleryImageSize.Cover,
-      previewCloseOnEsc: true,
-      previewAnimation: false,
-      previewBullets: true,
-      thumbnailsArrows: false,
-      thumbnailsOrder: NgxGalleryOrder.Page,
-      startIndex: null,
-      arrowPrevIcon: 'fa fa-chevron-left',
-      arrowNextIcon: 'fa fa-chevron-right',
-      closeIcon: 'fas fa-times'
+      thumbnailsColumns: galleryColumns.xs,
+      breakpoint: this.xsBreakPoint,
+      ...this.commonGalleryOptions
     },
+    {
+      thumbnailsColumns: galleryColumns.md,
+      breakpoint: Breakpoints.md_min,
+      ...this.commonGalleryOptions
+    },
+    {
+      thumbnailsColumns: galleryColumns.xl,
+      breakpoint: Breakpoints.xl_min,
+      ...this.commonGalleryOptions
+    },
+    {
+      thumbnailsColumns: galleryColumns.xxl,
+      ...this.commonGalleryOptions
+    }
   ];
 
-  constructor(private gateway: GatewayService,
+  constructor(@Inject(LOCALE_ID) private localeId: string,
+              private gateway: GatewayService,
               private router: ActivatedRoute,
               private loaderService: LoaderService) {
     this.activeId = 'actors';
+    const idLength = 2;
+    this.localeId = this.localeId.slice(0, idLength);
+  }
+
+  @HostListener('window:resize', [ '$event' ])
+  onResize(e?) {
+    const { innerWidth } = window;
+    const columnAmount = innerWidth > Breakpoints.xl_min
+      ? galleryColumns.xxl : innerWidth > Breakpoints.md_min
+        ? galleryColumns.xl : innerWidth > Breakpoints.sm_min
+          ? galleryColumns.md : galleryColumns.xs;
+
+    this.imageAmount = this.galleryImages.length - columnAmount;
   }
 
   ngOnInit() {
@@ -62,7 +105,7 @@ export class PerformanceComponent implements OnInit {
     forkJoin([
       this.gateway.getPerformanceBySlug(slug),
       this.gateway.getPerformanceRoles(slug)
-    ]).subscribe(([performance, roles]) => {
+    ]).subscribe(([ performance, roles ]) => {
       this.performance = performance.body;
       this.roles = roles;
       if (this.performance.gallery) {
@@ -71,11 +114,10 @@ export class PerformanceComponent implements OnInit {
             {
               small: item.images.performance_big.url,
               medium: item.images.performance_big.url,
-              big: item.images.performance_big.url,
+              big: item.images.performance_big.url
             }
           );
         });
-        this.amount = this.galleryImages.length - this.galleryColumns;
         this.loading = false;
       }
       this.gateway.updateMeta(this.performance.title,
@@ -83,25 +125,27 @@ export class PerformanceComponent implements OnInit {
         this.performance.mainPicture.performance_big.url);
 
       this.activeId = this.roles.length ? 'actors' : 'performance';
-
       this.loaderService.stop('performance-page');
+      this.onResize();
     }, err => this.loaderService.stop('performance-page'));
-
     this.gateway.updateCanonicalURL();
   }
 
   openGallery() {
     this.loading = true;
-    this.galleryOptions[0].thumbnailsRows = Math.ceil(this.galleryImages.length / this.galleryColumns);
-    this.galleryRows = this.galleryOptions[0].thumbnailsRows;
-    this.galleryOptions[0].height = `${this.galleryRows * this.thumbnailHeight}px`;
+    this.galleryOptions.forEach((options, index) => {
+      options.thumbnailsRows = Math.ceil(this.galleryImages.length / this.galleryOptions[index].thumbnailsColumns);
+      options.height = `${this.galleryOptions[index].thumbnailsRows * this.thumbnailHeight}px`;
+    });
     this.loadingFull = false;
   }
 
   closeGallery() {
     this.loadingFull = true;
-    this.galleryOptions[0].thumbnailsRows = 1;
-    this.galleryOptions[0].height = `${this.thumbnailHeight}px`;
+    this.galleryOptions.forEach((options, index) => {
+      options.thumbnailsRows = 1;
+      options.height = `${this.thumbnailHeight}px`;
+    });
     this.loading = false;
   }
 }

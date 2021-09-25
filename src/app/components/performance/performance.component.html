@@ -35,109 +35,112 @@
   <h1 class="performance_title"> {{ performance?.title | titlecase }} </h1>
 
   <section *ngIf="performance" class="performance_body">
-
-    <!--    TODO change ticket button-->
-
-    <a class="ticket_button" href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
-       i18n="@@buyTicket" target="_blank">Buy ticket</a>
-
+    <!--  Start performance image-->
     <div class="performance_poster">
-      <img [alt]="performance.mainPicture.performance_big.alt" [src]="performance.mainPicture.performance_big.url"
-           [title]="performance.mainPicture.performance_big.properties.title">
-      <div class="limit">
-        {{ performance.age_limit + '+' }}
-      </div>
-    </div>
-
-    <div class="performance_info">
-
-      <!--      TODO add info-->
-
-      <!--      <div class="main-info">-->
-      <!--        <svg class="icon">-->
-      <!--          <use xlink:href="#calendar"></use>-->
-      <!--        </svg>-->
-      <!--        <p class="info"></p>-->
-      <!--      </div>-->
-      <!--      <div class="main-info">-->
-      <!--        <svg class="icon">-->
-      <!--          <use xlink:href="#time"></use>-->
-      <!--        </svg>-->
-      <!--        <p class="info"></p>-->
-      <!--      </div>-->
-      <div class="main-info">
-        <svg class="icon">
-          <use xlink:href="#hourglass"></use>
-        </svg>
-        <p class="info">{{ performance.duration_in_min + ' хвилин' }}</p>
-      </div>
-      <!--      <div class="main-info">-->
-      <!--        <svg class="icon">-->
-      <!--          <use xlink:href="#pin"></use>-->
-      <!--        </svg>-->
-      <!--        <p class="info"></p>-->
-      <!--      </div>-->
-      <div class="main-info">
-        <svg class="icon">
-          <use xlink:href="#book"></use>
-        </svg>
-        <p class="info">{{ performance.type }}</p>
-      </div>
-
-      <div *ngIf="performance.producer" class="details">
-        <p><span class="bold">Режисер:</span>
-          <a class="link"
-             routerLink="/persons/{{ performance.producer?.slug }}">{{ performance.producer?.first_name + ' ' + performance.producer?.last_name }}</a>
-        </p>
-      </div>
-
-      <div class="details">
-        <h4 class="details_title">Короткий зміст вистави</h4>
-        <p [innerHtml]="performance.description"></p>
-      </div>
-
-      <div *ngIf="roles.length" class="details">
-        <h4 class="details_title">Дійові особи та виконавці</h4>
-        <div *ngFor="let role of roles">
-          <span>{{ role.title }} – </span>
-          <a class="link" routerLink="/persons/{{ role.employee.slug }}">
-            {{ role.employee.first_name + ' ' + role.employee.last_name }}
-          </a>
+      <div class="poster-container">
+        <img [alt]="performance.mainPicture.performance_big.alt" [src]="performance.mainPicture.performance_big.url"
+             [title]="performance.mainPicture.performance_big.properties.title">
+        <div class="limit">
+          {{ performance.age_limit + '+' }}
         </div>
       </div>
+    </div>
+    <!--  End performance image -->
 
-      <div class="details flex">
-        <span class="bold" i18n="@@seasons">Seasons:</span>
+    <!--   Start Performance info -->
+    <div class="performance_info">
+      <div class="main-info-block">
+        <div class="main-info" *ngIf="performance.date_time">
+          <svg class="icon">
+            <use xlink:href="#calendar"></use>
+          </svg>
+          <p class="info">{{ performance.date_time }}</p>
+        </div>
+        <div class="main-info" *ngIf="performance.time">
+          <svg class="icon">
+            <use xlink:href="#time"></use>
+          </svg>
+          <p class="info"></p>
+        </div>
+        <div class="main-info" *ngIf="!!performance.duration_in_min">
+          <svg class="icon">
+            <use xlink:href="#hourglass"></use>
+          </svg>
+          <p class="info">{{ performance.duration_in_min | performanceDuration: localeId }}</p>
+        </div>
+        <div class="main-info" *ngIf="performance.venue">
+          <svg class="icon">
+            <use xlink:href="#pin"></use>
+          </svg>
+          <p class="info">{{ performance.venue }}</p>
+        </div>
+        <div class="main-info">
+          <svg class="icon">
+            <use xlink:href="#book"></use>
+          </svg>
+          <p class="info">{{ performance.type }}</p>
+        </div>
+        <div class="details" *ngIf="performance.producer">
+          <p><span class="bold"><span i18n="@@producer">Producer</span>:</span>
+            <a class="link"
+               routerLink="/persons/{{ performance.producer?.slug }}">{{ performance.producer?.first_name + ' ' + performance.producer?.last_name }}</a>
+          </p>
+        </div>
+      </div>
+      <div class="ticket_button">
+        <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
+           i18n="@@buyTicket" target="_blank">Buy ticket</a>
+      </div>
+    </div>
+    <!--    End performance info-->
+
+    <!--    Start performance details-->
+    <div class="details performance_details">
+      <div>
+        <!--        TODO add i18n for "Summary of the performance" -->
+        <h4 class="details_title" i18n="@@performanceSummary">Summary of the performance</h4>
+        <div class="description" [innerHtml]="performance.description"></div>
+      </div>
+      <!--      TODO actors and roles-->
+      <div *ngIf="roles.length" class="performance_roles">
+        <h4 class="details_title" i18n="@@actorsAndPerformers">Actors and performers</h4>
+        <div class="role_item" *ngFor="let role of roles">
+          <span>{{ role.title }} &#8212; <a
+            class="link"
+            routerLink="/persons/{{ role.employee.slug }}"
+          >{{ role.employee.first_name }} {{ role.employee.last_name }}</a></span>
+        </div>
+      </div>
+      <div class="performance_seasons">
+        <span class="bold"><span i18n="@@seasons">Seasons</span>:</span>
         <app-seasons *ngIf="performance" [performance]="performance"></app-seasons>
       </div>
     </div>
-  </section>
-</div>
-
-  <section *ngIf="galleryImages.length" class="gallery">
-    <h2 class="section_title" i18n="@@photogallery">Photo Gallery</h2>
-
-    <div class="gallery_container">
-
-      <ngx-gallery *ngIf="!loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
-      </ngx-gallery>
-
-      <ngx-gallery *ngIf="!loadingFull" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
-      </ngx-gallery>
-
-    </div>
-
-    <a (click)="openGallery()" *ngIf="!loading && galleryImages.length > 4" class="more" i18n="@@morePhotos">
-      More Photos ({{ '+' + amount }})
-    </a>
-    <a (click)="closeGallery()" *ngIf="!loadingFull" class="more" i18n="@@collapse">Collapse</a>
-
+    <!--    End performance details-->
   </section>
 
   <!--   TODO section Recommendation-->
-
   <!--  <section class="recommendation">-->
   <!--    <h2 class="section_title">Також вас може зацікавити</h2>-->
-
   <!--  </section>-->
+</div>
 
+<section *ngIf="galleryImages.length" class="gallery">
+  <h2 class="section_title" i18n="@@photogallery">Photo Gallery</h2>
+
+  <div class="gallery_container">
+
+    <ngx-gallery *ngIf="!loading" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
+    </ngx-gallery>
+
+    <ngx-gallery *ngIf="!loadingFull" [images]="galleryImages" [options]="galleryOptions" class="ngx-gallery">
+    </ngx-gallery>
+
+  </div>
+
+  <a (click)="openGallery()" *ngIf="!loading && galleryImages.length > 4" class="more" i18n="@@morePhotos">
+    More Photos ({{ '+' + imageAmount }})
+  </a>
+  <a (click)="closeGallery()" *ngIf="!loadingFull" class="more" i18n="@@collapse">Collapse</a>
+
+</section>
