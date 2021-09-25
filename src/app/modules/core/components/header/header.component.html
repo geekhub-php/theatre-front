@@ -49,22 +49,22 @@
     </div>
 
     <div *ngIf="!wideScreen" class="icons-group">
-      <button class="btn --btn-reset">
-        <img (click)="donateService.activeDonateMenu()" class="icon" src="assets/images/icons/ic_wallet.svg"
+      <button (click)="openDonate()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_wallet.svg"
              alt="wallet">
       </button>
-      <button class="btn --btn-reset">
-        <img (click)="trigger.next(true)" class="icon" src="assets/images/icons/ic_settings.svg" alt="">
+      <button (click)="openSettings()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_settings.svg" alt="">
       </button>
-      <button class="btn --btn-reset">
-        <img (click)="sideBarVisibility$.next('in')" class="icon" src="assets/images/icons/ic_burger.svg"
+      <button (click)="openNavbar()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_burger.svg"
              alt="Side navigation">
       </button>
     </div>
 
   </div>
 
-  <app-burger-menu [sideBarVisibility$]="sideBarVisibility$"></app-burger-menu>
+  <app-burger-menu></app-burger-menu>
 </header>
 
 

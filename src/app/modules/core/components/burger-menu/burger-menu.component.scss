@@ -1,11 +1,14 @@
 @import "~assets/styles/variables";
 
 :host {
-  z-index: 100;
-  position: fixed;
   top: 0;
   right: 0;
-  height: 100%;
+  z-index: 100;
+  /* stylelint-disable */
+  height: 100vh;
+  /* stylelint-enable */
+
+  position: fixed;
 }
 
 .close-area {
@@ -27,7 +30,7 @@
   width: 300px;
   height: 100%;
   display: flex;
-  overflow: scroll;
+  overflow: auto;
   position: absolute;
   padding-left: 16px;
   padding-right: 16px;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GatewayService } from '../../services/gateway.service';
-import { DonateService } from './donate.service';
 import { sideBarAnimation } from 'app/utilities/side-bar-animation';
+import { ESidebar, SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-donate',
@@ -12,9 +12,11 @@ import { sideBarAnimation } from 'app/utilities/side-bar-animation';
 export class DonateComponent implements OnInit {
   donateBlockVisible = false;
 
-  constructor(private gatewayService: GatewayService, private donateService: DonateService) {
-    this.donateService.donateVisibility.subscribe(({ active }) => {
-      this.donateBlockVisible = active;
+  constructor(
+    private gatewayService: GatewayService,
+    private sidebarService: SidebarService) {
+    this.sidebarService.subject.subscribe(state => {
+      this.donateBlockVisible = state.isActive && state.barName === ESidebar.donate;
     });
   }
 
@@ -26,10 +28,10 @@ export class DonateComponent implements OnInit {
   }
 
   activePage() {
-    this.donateService.activeDonateMenu();
+    this.sidebarService.open(ESidebar.donate);
   }
 
   disablePage() {
-    this.donateService.disableDonateMenu();
+    this.sidebarService.close(ESidebar.donate);
   }
 }

@@ -10,3 +10,10 @@ app-footer {
   display: block;
   margin-top: auto;
 }
+
+.navbar-active {
+  /* stylelint-disable */
+  height: 100vh;
+  overflow-y: hidden;
+  /* stylelint-enable */
+}

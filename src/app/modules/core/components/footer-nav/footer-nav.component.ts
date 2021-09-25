@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DonateService } from 'app/components/donate/donate.service';
+import { ESidebar, SidebarService } from 'app/services/sidebar.service';
 
 @Component({
   selector: 'app-footer-nav',
@@ -8,12 +8,11 @@ import { DonateService } from 'app/components/donate/donate.service';
 })
 export class FooterNavComponent implements OnInit {
 
-  constructor(private donateService: DonateService) { }
+  constructor(private sidebarService: SidebarService) { }
 
   ngOnInit(): void { }
 
   activeDonateMenu() {
-    this.donateService.activeDonateMenu();
+    this.sidebarService.open(ESidebar.donate);
   }
-
 }

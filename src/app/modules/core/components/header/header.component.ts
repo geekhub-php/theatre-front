@@ -1,12 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { filter } from 'rxjs/operators';
 import { NavigationStart, Router } from '@angular/router';
-import { LangService } from '../../../../services/lang.service';
-import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
-import { DonateService } from '../../../../components/donate/donate.service';
-import { BehaviorSubject } from 'rxjs';
 
-export type TSideBar = 'in' | 'out';
+import { filter } from 'rxjs/operators';
+
+import { LangService } from 'app/services/lang.service';
+import { ESidebar, SidebarService } from 'app/services/sidebar.service';
+import { VisuallyImpairedService } from 'app/services/visually-impaired.service';
 
 @Component({
   selector: 'app-header',
@@ -20,9 +19,6 @@ export class HeaderComponent implements OnInit {
   search_text = 'Enter your search key word/words';
   textValue = '';
   wideScreen;
-  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
-  sideBarVisibility$ = new BehaviorSubject<TSideBar>('out');
-  sideBarState: TSideBar = 'out';
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -32,7 +28,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private langService: LangService,
     private visuallyImpairedService: VisuallyImpairedService,
-    public donateService: DonateService
+    private sidebarService: SidebarService
   ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
@@ -41,9 +37,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWindowSize();
-    this.sideBarVisibility$.subscribe(newState => {
-      this.sideBarState = newState;
-    });
   }
 
   @HostListener('window:resize', [ '$event' ])
@@ -58,25 +51,31 @@ export class HeaderComponent implements OnInit {
     this.wideScreen = screenWidth > wideScreen;
   }
 
-  toggleMenu(): void {
-    this.collapse = !this.collapse;
-  }
-
   collapseMenu(): void {
     this.isCollapsed = !this.isCollapsed;
   }
 
   sendRequestOnIconClick(): void {
-    /*console.log(this.textValue);*/
     this.textValue = '';
   }
 
-  sendRequestOnEnter() {
-    /*    console.log(this.textValue);*/
+  sendRequestOnEnter(): void {
     this.textValue = '';
   }
 
   clearSubmit(): void {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  openDonate(): void {
+    this.sidebarService.open(ESidebar.donate);
+  }
+
+  openSettings(): void {
+    this.sidebarService.open(ESidebar.settings);
+  }
+
+  openNavbar(): void {
+    this.sidebarService.open(ESidebar.navbar);
   }
 }

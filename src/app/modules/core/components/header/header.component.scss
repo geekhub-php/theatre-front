@@ -107,9 +107,16 @@
   }
 
   .icons-group {
-    gap: 32px;
     display: flex;
     justify-content: right;
+
+    button {
+      margin-right: 32px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
 
     .icon {
       cursor: pointer;
@@ -128,9 +135,16 @@
     }
 
     .icons-group {
-      gap: 24px;
       display: flex;
       justify-content: right;
+
+      button {
+        margin-right: 24px;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
 
       .icon {
         cursor: pointer;
@@ -139,19 +153,4 @@
       }
     }
   }
-}
-
-@media (max-width: map-get($grid-breakpoints, sm-min)) {
-  //
-  //.header {
-  //
-  //  .header-logo {
-  //    width: 86px;
-  //  }
-  //
-  //  .icons-group .icon {
-  //    width: 24px;
-  //    height: 24px;
-  //  }
-  //}
 }

@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { TSideBar } from '../header/header.component';
+import { Component } from '@angular/core';
 import { sideBarAnimation } from 'app/utilities/side-bar-animation';
+import { ESidebar, SidebarService } from 'app/services/sidebar.service';
 
 @Component({
   selector: 'app-burger-menu',
@@ -10,23 +9,18 @@ import { sideBarAnimation } from 'app/utilities/side-bar-animation';
   animations: sideBarAnimation({ sideBlock: 'sideBlock' , closeArea: 'closeArea'})
 })
 
-export class BurgerMenuComponent implements OnInit {
-  @Input() sideBarVisibility$: BehaviorSubject<TSideBar>;
-  sideBarState: TSideBar = 'out';
+export class BurgerMenuComponent {
+  isNavbarActive = false;
   showSubMenuPersons = false;
   showSubMenuAbout = false;
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-    this.sideBarVisibility$?.subscribe(newState => {
-      this.sideBarState = newState;
+  constructor(private sidebarService: SidebarService) {
+    this.sidebarService.subject.subscribe(({ isActive, barName })  => {
+      this.isNavbarActive = isActive && barName === ESidebar.navbar;
     });
   }
 
   closeBurgerMenu() {
-    this.sideBarVisibility$.next('out');
-    // this.burgerMenuIsOpened = this.burgerMenuIsOpened === 'out' ? 'in' : 'out';
+    this.sidebarService.close(ESidebar.navbar);
   }
 }

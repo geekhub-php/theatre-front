@@ -1,5 +1,5 @@
-<div *ngIf="sideBarState === 'in'" @closeArea (click)="closeBurgerMenu()" class="close-area" ></div>
-<div *ngIf="sideBarState === 'in'" @sideBlock class="burger-wrapper">
+<div *ngIf="isNavbarActive" @closeArea (click)="closeBurgerMenu()" class="close-area"></div>
+<div *ngIf="isNavbarActive" @sideBlock class="burger-wrapper">
 
   <img src="assets/images/logos/logo_black.svg" class="logo" alt="theatre logo">
 

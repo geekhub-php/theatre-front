@@ -1,6 +1,5 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { BehaviorSubject } from 'rxjs';
 
 interface IVisuallyImpaired {
   fontSize: '18px' | '24px';
@@ -13,8 +12,6 @@ const DEFAULT_FONT_SIZE = '18px';
   providedIn: 'root'
 })
 export class VisuallyImpairedService {
-  triggerVisuallyImpaired: BehaviorSubject<Boolean> = new BehaviorSubject(false);
-
   localStorageVI: IVisuallyImpaired = { colorSchema: 'none', fontSize: DEFAULT_FONT_SIZE };
 
   private readonly htmlDomEl: HTMLElement;
