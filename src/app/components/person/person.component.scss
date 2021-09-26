@@ -7,7 +7,7 @@
   margin: 64px auto 124px;
   max-width: $container-width + 64px;
 
-  p {
+  p:last-of-type {
     margin-bottom: 0;
   }
 
@@ -44,6 +44,11 @@
       margin-bottom: 16px;
       color: $font-color-accent;
       font-weight: $font-weight-bold;
+    }
+
+    a {
+      color: $font-color-primary;
+      text-decoration: underline;
     }
   }
 
