@@ -2,108 +2,138 @@
 @import "~assets/styles/_variables";
 @import "~assets/styles/aboutStyles";
 
-.myContainer {
-  @include _container;
+.person {
+  padding: 0 32px;
+  margin: 64px auto 124px;
+  max-width: $container-width + 64px;
 
-  margin-top: 33px;
-}
-
-.page-title {
-  margin-top: 0;
-}
-
-.page-title {
-  padding-top: 10px;
-
-  @include about-title;
-}
-
-.main-content {
-  display: flex;
-  align-items: stretch;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: 12%;
-  margin-right: 12%;
-
-  .person-face {
-    padding-left: 30px;
+  p {
+    margin-bottom: 0;
   }
 
-  .about-text {
-    margin-left: 5%;
-    font-family: $body-font-family;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: left;
-    color: $secondary-background-color;
+  &__name {
+    text-align: center;
+
+    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
   }
 
-  a {
-    text-decoration: none;
-    color: $secondary-background-color;
+  &__about {
+    display: grid;
+    grid-gap: 32px;
+    margin-top: 54px;
+    grid-template-columns: 480px 1fr;
+    grid-template-rows: max-content;
+    grid-template-areas: "face position" "face biography" "face roles";
   }
 
-  a:hover {
-    color: $secondary-background-color;
+  &__face {
+    grid-area: face;
+    max-width: 480px;
   }
 
-  margin-bottom: 150px;
-}
-
-.position {
-  text-transform: capitalize;
-  font-family: $body-font-family;
-  font-size: $font-size-medium;
-  margin-bottom: 30px;
-}
-
-.biography {
-  font-family: $body-font-family;
-  font-size: $font-size-medium;
-  color: $font-color-accent;
-}
-
-ngx-gallery ::ng-deep {
-
-  .ngx-gallery-preview-img-wrapper img {
-    max-width: 600px;
-    max-height: 550px;
-    border: 10px solid $white-color;
-    border-radius: 3px;
+  &__position {
+    grid-area: position;
+    text-transform: capitalize;
+    font-weight: $font-weight-bold;
   }
 
-  .ngx-gallery-arrow-left .ngx-gallery-arrow {
-    width: 40px;
-    height: 40px;
-    background-image: url("~assets/images/gallery/left-icon.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 40px 40px;
-    margin-left: 230px;
+  &__biography {
+    grid-area: biography;
+
+    p:first-child {
+      margin-bottom: 16px;
+      color: $font-color-accent;
+      font-weight: $font-weight-bold;
+    }
   }
 
-  .ngx-gallery-arrow-right .ngx-gallery-arrow {
-    width: 40px;
-    height: 40px;
-    background-image: url("~assets/images/gallery/right-icon.png");
-    background-position: center;
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
-    margin-right: 230px;
-  }
-
-  .ngx-gallery-active {
-    background-color: rgba($secondary-color, .9);
-  }
-
-  ngx-gallery-action i {
-    width: 40px;
-    height: 40px;
-    background-image: url("~assets/images/gallery/close-icon.png");
-    background-position: center;
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
-    margin: 10px 10px 0 0;
+  &__roles {
+    grid-area: roles;
   }
 }
+
+@media (max-width: map-get($grid-breakpoints, xl-min)) {
+
+  .person__about {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md-min)) {
+
+  .person {
+    margin: 64px auto 112px;
+
+    &__about {
+      margin-top: 32px;
+      grid-template-columns: 224px 1fr;
+      grid-template-areas: "face position" "biography biography" "roles roles";
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .person {
+    padding: 0 16px;
+    margin: 32px auto 40px;
+
+    &__name {
+      @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.11, normal);
+    }
+
+    &__about {
+      grid-gap: 16px;
+      margin-top: 16px;
+      grid-template-columns: 1fr;
+      grid-template-areas: "face" "position" "biography" "roles";
+      font-size: $font-size-small;
+    }
+  }
+}
+
+// TODO: resolve issues with code below
+
+//ngx-gallery ::ng-deep {
+//
+//  .ngx-gallery-preview-img-wrapper img {
+//    max-width: 600px;
+//    max-height: 550px;
+//    border: 10px solid $white-color;
+//    border-radius: 3px;
+//  }
+//
+//  .ngx-gallery-arrow-left .ngx-gallery-arrow {
+//    width: 40px;
+//    height: 40px;
+//    background-image: url("~assets/images/gallery/left-icon.png");
+//    background-position: center;
+//    background-repeat: no-repeat;
+//    background-size: 40px 40px;
+//    margin-left: 230px;
+//  }
+//
+//  .ngx-gallery-arrow-right .ngx-gallery-arrow {
+//    width: 40px;
+//    height: 40px;
+//    background-image: url("~assets/images/gallery/right-icon.png");
+//    background-position: center;
+//    background-size: 40px 40px;
+//    background-repeat: no-repeat;
+//    margin-right: 230px;
+//  }
+//
+//  .ngx-gallery-active {
+//    background-color: rgba($secondary-color, .9);
+//  }
+//
+//  ngx-gallery-action i {
+//    width: 40px;
+//    height: 40px;
+//    background-image: url("~assets/images/gallery/close-icon.png");
+//    background-position: center;
+//    background-size: 40px 40px;
+//    background-repeat: no-repeat;
+//    margin: 10px 10px 0 0;
+//  }
+//}
