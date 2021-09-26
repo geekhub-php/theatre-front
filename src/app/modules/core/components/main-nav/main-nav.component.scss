@@ -7,8 +7,8 @@
   align-items: center;
   list-style-type: none;
 
-  li:not(li:last-child) {
-    margin-right: 20px;
+  li + li {
+    margin-left: 20px;
   }
 
   a {

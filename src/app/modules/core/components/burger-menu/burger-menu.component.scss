@@ -3,11 +3,8 @@
 :host {
   top: 0;
   right: 0;
+  height: 100%;
   z-index: 100;
-  /* stylelint-disable */
-  height: 100vh;
-  /* stylelint-enable */
-
   position: fixed;
 }
 

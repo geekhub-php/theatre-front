@@ -9,70 +9,99 @@
 
   <ul>
 
-    <li class="menu-item"><a [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']" class="nav-link"
-                             i18n="@@mainPage" routerLinkActive="active">Main</a></li>
-    <li class="menu-item"><a class="nav-link" i18n="@@poster" routerLink="/poster"
-                             routerLinkActive="active">Poster</a></li>
-    <li class="menu-item"><a class="nav-link" i18n="@@repertoire" routerLink="/repertoire" routerLinkActive="active">Repertoire</a>
+    <li class="menu-item">
+      <a
+        class="nav-link"
+        i18n="@@mainPage"
+        [routerLink]="['/']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Main
+      </a>
+    </li>
+    <li class="menu-item">
+      <a i18n="@@poster" class="nav-link" routerLink="/poster" routerLinkActive="active">
+        Poster
+      </a>
+    </li>
+    <li class="menu-item">
+      <a class="nav-link" i18n="@@repertoire" routerLink="/repertoire" routerLinkActive="active">
+        Repertoire
+      </a>
     </li>
 
     <li class="menu-item">
       <a routerLink="/persons" class="menu-item__link" routerLinkActive="active-link">
-      <div class="li-container li-arrow">Personalities
+        <div class="li-container li-arrow">
+          <span i18n="@@personalities">Personalities</span>
           <img src="assets/images/icons/ic_arrow_down.svg" alt="">
-      </div>
-      <ul class="sub-menu">
-        <li>
-          <a class="sub-link" routerLink="/persons/creative">
-            Creative Composition
-          </a>
-        </li>
-        <li>
-          <a class="sub-link" routerLink="/persons/artistic">
-            Artistic Composition
-          </a>
-        </li>
-        <li>
-          <a class="sub-link" routerLink="/persons/administration">
-            Administration
-          </a>
-        </li>
-      </ul>
-      </a>
-    </li>
-
-    <li routerLink="/about" class="menu-item">
-      <a routerLink="/about" class="menu-item__link" routerLinkActive="active-link">
-        <div class="li-container li-arrow">About
-          <img src="assets/images/icons/ic_arrow_down.svg" alt="arrow down">
         </div>
         <ul class="sub-menu">
           <li>
-            <a class="sub-link" routerLink="/about/theatre-history">
-              History
+            <a class="sub-link" i18n="@@сreativeСomposition" routerLink="/persons/creative">
+              Creative Composition
             </a>
           </li>
-          <li><a class="sub-link" routerLink="/about/festivals">
-            Festivals
-          </a>
+          <li>
+            <a class="sub-link" i18n="@@artisticComposition" routerLink="/persons/artistic">
+              Artistic Composition
+            </a>
           </li>
-          <li><a class="sub-link" routerLink="/about/epoch/persons">
-            Epoch
-          </a>
-          </li>
-          <li><a class="sub-link" routerLink="/about/visit">
-            Visit
-          </a>
+          <li>
+            <a class="sub-link" i18n="@@administration" routerLink="/persons/administration">
+              Administration
+            </a>
           </li>
         </ul>
       </a>
     </li>
 
-    <li class="menu-item"><a class="nav-link" i18n="@@cooperation" routerLink="/cooperation"
-                             routerLinkActive="active">Cooperation</a></li>
-    <li class="menu-item"><a class="nav-link" i18n="@@news" routerLink="/news"
-                             routerLinkActive="active">News</a></li>
-    <li class="menu-item"><a class="nav-link" i18n="@@contacts" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+    <li class="menu-item">
+      <a routerLink="/about" class="menu-item__link" routerLinkActive="active-link">
+        <div class="li-container li-arrow">
+          <span i18n="@@aboutTitle">About</span>
+          <img src="assets/images/icons/ic_arrow_down.svg" alt="arrow down">
+        </div>
+        <ul class="sub-menu">
+          <li>
+            <a class="sub-link" i18n="@@theatreHistory" routerLink="/about/theatre-history">
+              History
+            </a>
+          </li>
+          <li>
+            <a class="sub-link" i18n="@@festivals" routerLink="/about/festivals">
+              Festivals
+            </a>
+          </li>
+          <li>
+            <a class="sub-link" i18n="@@epoch" routerLink="/about/epoch/persons">
+              Epoch
+            </a>
+          </li>
+          <li>
+            <a class="sub-link" i18n="@@visit" routerLink="/about/visit">
+              Visit
+            </a>
+          </li>
+        </ul>
+      </a>
+    </li>
+
+    <li class="menu-item">
+      <a class="nav-link" i18n="@@cooperation" routerLink="/cooperation" routerLinkActive="active">
+        Cooperation
+      </a>
+    </li>
+    <li class="menu-item">
+      <a class="nav-link" i18n="@@news" routerLink="/news" routerLinkActive="active">
+        News
+      </a>
+    </li>
+    <li class="menu-item">
+      <a class="nav-link" i18n="@@contacts" routerLink="/contacts" routerLinkActive="active">
+        Contacts
+      </a>
     </li>
 
   </ul>

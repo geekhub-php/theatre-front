@@ -108,20 +108,16 @@
 
   .icons-group {
     display: flex;
-    justify-content: right;
 
-    button {
-      margin-right: 32px;
-
-      &:last-of-type {
-        margin-right: 0;
-      }
+    button + button {
+      margin-left: 32px;
     }
 
     .icon {
-      cursor: pointer;
+      margin: 0;
       width: 32px;
       height: 32px;
+      cursor: pointer;
     }
   }
 
@@ -165,18 +161,14 @@
       display: flex;
       justify-content: right;
 
-      button {
+      button:not(button:last-child) {
         margin-right: 24px;
-
-        &:last-of-type {
-          margin-right: 0;
-        }
       }
 
       .icon {
-        cursor: pointer;
         width: 24px;
         height: 24px;
+        cursor: pointer;
       }
     }
   }
