@@ -161,8 +161,8 @@
       display: flex;
       justify-content: right;
 
-      button:not(button:last-child) {
-        margin-right: 24px;
+      button + button {
+        margin-left: 24px;
       }
 
       .icon {
