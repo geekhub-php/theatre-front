@@ -7,53 +7,47 @@
   margin: 64px auto 124px;
   max-width: $container-width + 64px;
 
-  p:last-of-type {
-    margin-bottom: 0;
+  a {
+    color: $font-color-primary;
+    text-decoration: underline;
   }
 
   &__name {
+    cursor: default;
     text-align: center;
 
     @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
   }
 
   &__about {
-    display: grid;
-    grid-gap: 32px;
     margin-top: 54px;
-    grid-template-columns: 480px 1fr;
-    grid-template-rows: max-content;
-    grid-template-areas: "face position" "face biography" "face roles";
   }
 
-  &__face {
-    grid-area: face;
+  &__image {
+    flex-shrink: 0;
     max-width: 480px;
+    margin: 0 32px 32px 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
   }
 
   &__position {
-    grid-area: position;
+    margin-bottom: 36px;
     text-transform: capitalize;
     font-weight: $font-weight-bold;
   }
 
-  &__biography {
-    grid-area: biography;
-
-    p:first-child {
-      margin-bottom: 16px;
-      color: $font-color-accent;
-      font-weight: $font-weight-bold;
-    }
-
-    a {
-      color: $font-color-primary;
-      text-decoration: underline;
-    }
+  &__biography-title {
+    margin-bottom: 16px;
+    color: $font-color-accent;
+    font-weight: $font-weight-bold;
   }
 
-  &__roles {
-    grid-area: roles;
+  &__biography {
+    margin-bottom: 36px;
   }
 }
 
@@ -69,10 +63,13 @@
   .person {
     margin: 64px auto 112px;
 
+    &__image {
+      margin: 0 auto 32px;
+      flex-shrink: inherit;
+    }
+
     &__about {
       margin-top: 32px;
-      grid-template-columns: 224px 1fr;
-      grid-template-areas: "face position" "biography biography" "roles roles";
     }
   }
 }
@@ -88,11 +85,12 @@
     }
 
     &__about {
-      grid-gap: 16px;
       margin-top: 16px;
-      grid-template-columns: 1fr;
-      grid-template-areas: "face" "position" "biography" "roles";
       font-size: $font-size-small;
+    }
+
+    &__image, &__position, &__biography {
+      margin-bottom: 16px;
     }
   }
 }
