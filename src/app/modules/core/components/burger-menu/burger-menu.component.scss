@@ -110,6 +110,7 @@
 
 .active-link {
   color: $font-color-white;
+  font-weight: $font-weight-semi-bold;
 
   .li-arrow img {
     transition: transform .5s linear;
@@ -118,5 +119,9 @@
 
   .sub-menu {
     display: block;
+  }
+
+  .sub-link-active {
+    font-weight: $font-weight-semi-bold;
   }
 }
