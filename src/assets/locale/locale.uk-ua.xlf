@@ -822,11 +822,11 @@
         </context-group>
       </trans-unit>
       <trans-unit id="biography" datatype="html">
-        <source>Biography:</source>
-        <target>Біографія:</target>
+        <source>Biography</source>
+        <target>Біографія</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/person/person.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="trustees" datatype="html">
