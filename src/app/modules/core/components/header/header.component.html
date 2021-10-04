@@ -1,44 +1,83 @@
-<div class="header-wrapper">
-  <header class="header">
-    <nav class="navbar navbar-expand-lg">
-      <h1 class="header-logo" aria-label="Cherkasy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
-        <a routerLink="/">
-          <img src="assets/images/logo theatre@3x.png"
-               alt="Theatre logo" title="Cherkasy Theatre of Taras Shevchenko" width="130" height="48">
-        </a>
-      </h1>
+<header class="header">
+  <div class="header-container">
 
-      <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu" type="button" (click)="toggleMenu()">
-        <span class="navbar-toggler-icon"></span>
+    <h1 class="logo-wrapper" aria-label="Cherkasy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
+      <a routerLink="/">
+        <img class="header-logo" src="assets/images/logos/logo_white.svg" alt="Cherkasy Theatre of Taras Shevchenko">
+      </a>
+    </h1>
+
+    <!--    <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu" type="button" (click)="toggleMenu()">-->
+    <!--      <span class="navbar-toggler-icon"></span>-->
+    <!--    </button>-->
+
+    <nav>
+      <app-main-nav></app-main-nav>
+    </nav>
+
+
+    <div *ngIf="wideScreen" class="header-buttons">
+      <!--    <button class="search-button" aria-controls="collapseExample"-->
+      <!--            (click)="collapseMenu()">-->
+      <!--            [attr.aria-expanded]="!isCollapsed">-->
+      <!--      <img class="icon-search" src="assets/images/icons/ic_magnifying_glass.svg" alt="">-->
+      <!--    </button>-->
+
+      <button (click)="collapseMenu()"  class="btn --btn-reset icon-search">
+        <img src="assets/images/icons/ic_magnifying_glass.svg" alt="">
       </button>
 
-    <app-main-nav></app-main-nav>
-
-      <button class="u-unstyled-btn search-icon-button" aria-controls="collapseExample" type="submit"
-              (click)="collapseMenu()"
-              [attr.aria-expanded]="!isCollapsed">
-        <svg class="u-svg-icon" width="20" height="20">
-          <use href="assets/images/sprite.svg#search"></use>
-        </svg>
-      </button>
-
-      <div class="search-box" [ngbCollapse]="!isCollapsed">
-        <input [(ngModel)]="textValue" (keydown.enter)="sendRequestOnEnter();false" class="search-input"
+      <div [ngbCollapse]="!isCollapsed" class="search-box">
+        <input (keydown.enter)="sendRequestOnEnter();false" [(ngModel)]="textValue" class="search-input"
                placeholder="{{search_text}}" type="text"/>
-        <img src="assets/images/Union@3x.png" class="search-button" alt="Search button" title="Search"
-             i18n-title="@@search" (click)="sendRequestOnIconClick()">
-        <img src="assets/images/close@3x.png" class="delete-button" alt="Delete button" title="Close"
-             i18n-title="@@ngb.alert.close" (click)="clearSubmit()">
+        <button (click)="sendRequestOnIconClick()" class="btn --btn-reset btn-search">
+          <img alt="Search button" i18n-title="@@search"
+               src="assets/images/icons/ic_magnifying_glass_gold.svg" title="Search">
+        </button>
+        <button (click)="clearSubmit()" class="btn --btn-reset --btn-close btn-cancel">
+          <img src="assets/images/icons/ic_cross_black.svg" alt="cross icon">
+        </button>
       </div>
 
-      <a class="language d-none d-lg-block ukr"
-         [href]="langRedirectUrl">Укр&nbsp;</a> <span class="separation">|</span>
-      <a class="language d-none d-lg-block eng" [href]="langRedirectUrl">&nbsp;Eng</a>
-      <a href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index" target="_blank"
-         class="header-button btn tickets-button" i18n="@@buyTicket">Buy ticket</a>
-    </nav>
-  </header>
-</div>
+      <a [href]="langRedirectUrl"
+         class="language ukr">Укр&nbsp;</a> <span class="separation">|</span>
+      <a [href]="langRedirectUrl" class="language eng">&nbsp;Eng</a>
+
+      <a class="header-button btn tickets-button"
+         href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
+         i18n="@@buyTicket" target="_blank">Buy ticket</a>
+    </div>
+
+    <div *ngIf="!wideScreen" class="icons-group">
+      <button (click)="openDonate()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_wallet.svg"
+             alt="wallet">
+      </button>
+      <button (click)="openSettings()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_settings.svg" alt="">
+      </button>
+      <button (click)="openNavbar()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_burger.svg"
+             alt="Side navigation">
+      </button>
+    </div>
+
+  </div>
+
+  <app-burger-menu></app-burger-menu>
+
+  <div class="side-buttons d-none d-xl-min-flex">
+    <button (click)="openDonate()" class="btn --btn-reset btn-donate">
+      <img src="assets/images/icons/ic_wallet_black.svg" alt="Donate" i18n-title="@@donate" title="Donate">
+    </button>
+
+    <button (click)="openSettings() " class="btn --btn-reset btn-settings">
+      <img src="assets/images/icons/ic_eye_settings_black.svg" alt="Color schemes" title="Color schemes"
+           i18n-title="@@color-schemes">
+    </button>
+  </div>
+
+</header>
 
 
 

@@ -26,6 +26,10 @@
           </context>
           <context context-type="linenumber">33</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="more" datatype="html">
         <source>More</source>
@@ -76,7 +80,8 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html
@@ -89,7 +94,7 @@
         <target>Персоналії</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10,11</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html
@@ -99,6 +104,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/board-trustees/board-trustees.component.html</context>
           <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="theaterActors" datatype="html">
@@ -227,6 +236,14 @@
           <context context-type="sourcefile">src/app/components/cooperation/cooperation.component.html</context>
           <context context-type="linenumber">129</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="documentation" datatype="html">
         <source>Documentation</source>
@@ -341,7 +358,7 @@
         <target>Про театр</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html
@@ -351,6 +368,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/about/about.component.html</context>
           <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aboutTitle" datatype="html">
@@ -392,6 +413,10 @@
           <context context-type="sourcefile">src/app/components/about/theatre-history/theatre-history.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="theatreVisit" datatype="html">
         <source>Visit to the theatre</source>
@@ -428,6 +453,10 @@
           <context context-type="sourcefile">src/app/components/about/about-more/about-more.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="festival" datatype="html">
         <source>Festival</source>
@@ -455,6 +484,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/about/epoch/epoch.component.html</context>
           <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="allPerformances" datatype="html">
@@ -586,6 +619,10 @@
           <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="artisticComposition" datatype="html">
         <source>Artistic Composition</source>
@@ -593,6 +630,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
           <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="creative" datatype="html">
@@ -684,6 +725,10 @@
            <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
            <context context-type="linenumber">4</context>
          </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="accounting" datatype="html">
         <source>Accounting</source>
@@ -965,6 +1010,10 @@
           </context>
           <context context-type="linenumber">31</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="documentation" datatype="html">
         <source>Documentation</source>
@@ -1036,7 +1085,7 @@
         <target>Календар</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="listView" datatype="html">
@@ -1044,7 +1093,7 @@
         <target>Список</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/schedule/schedule.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="prev" datatype="html">
@@ -1092,7 +1141,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/header/header.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/schedule/mobile-view/mobile-view.component.html</context>
@@ -1236,7 +1285,11 @@
         <target>Головна</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="poster" datatype="html">
@@ -1244,7 +1297,12 @@
         <target>Афіша</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="about" datatype="html">
@@ -1260,7 +1318,12 @@
         <target>Контакти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/core/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
+          <context context-type="linenumber">102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="page404" datatype="html">
@@ -1337,7 +1400,7 @@
           <context context-type="sourcefile">
             src/app/modules/core/components/visually-impaired/visually-impaired.component.html
           </context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="white-on-black" datatype="html">
@@ -1347,7 +1410,7 @@
           <context context-type="sourcefile">
             src/app/modules/core/components/visually-impaired/visually-impaired.component.html
           </context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sepia" datatype="html">
@@ -1357,7 +1420,7 @@
           <context context-type="sourcefile">
             src/app/modules/core/components/visually-impaired/visually-impaired.component.html
           </context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="inversion" datatype="html">
@@ -1367,7 +1430,7 @@
           <context context-type="sourcefile">
             src/app/modules/core/components/visually-impaired/visually-impaired.component.html
           </context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="resetSettings" datatype="html">
@@ -1387,7 +1450,7 @@
           <context context-type="sourcefile">
             src/app/modules/core/components/visually-impaired/visually-impaired.component.html
           </context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="reduce-font" datatype="html">
@@ -1397,7 +1460,7 @@
           <context context-type="sourcefile">
             src/app/modules/core/components/visually-impaired/visually-impaired.component.html
           </context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="zoom-font" datatype="html">
@@ -1407,7 +1470,7 @@
           <context context-type="sourcefile">
             src/app/modules/core/components/visually-impaired/visually-impaired.component.html
           </context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="monday" datatype="html">
@@ -1484,6 +1547,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/src/alert/alert.ts</context>
           <context context-type="linenumber">70,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="donateQuestion" datatype="html">
+        <source>Are you ready to help the Theater?</source>
+        <target>Готові допомогти нашому театру?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/donate/donate.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ngb.carousel.slide-number" datatype="html">

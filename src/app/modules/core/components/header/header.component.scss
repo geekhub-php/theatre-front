@@ -1,132 +1,175 @@
 @import "~assets/styles/variables";
 
-
-.header-wrapper {
-  background-color: $background-main-color-darker;
-}
-
 .header {
-  position: sticky;
-  top: 0;
-  box-shadow: none;
-  max-width: $container-width;
-  margin: $container-margin;
-  z-index: 8;
+  width: 100%;
+  background-color: $background-main-color-darker;
 
-  .navbar {
-    padding: 8px 0;
+  //TODO: refactor main btn component
 
-    & .header-logo {
-      flex: 0 0 120px;
+  .btn {
+
+    &.--btn-reset {
+      padding: 0;
+      border: none;
+      font: inherit;
+      color: inherit;
+      outline: inherit;
+      background: none;
+      box-shadow: none;
+    }
+
+    &.--btn-close {
+      padding: 4px;
+      border-radius: 5px;
+      background-color: $border-color-accent;
     }
   }
 
-  .language {
-    text-decoration: none;
-    transition: .3s ease;
-    color: $font-color-primary;
-    font-size: $font-size-medium;
+  .header-container {
 
-    &.eng {
-      margin-right: 20px;
+    //TODO: need add padding to main class 'container'
+
+    .logo-wrapper {
+      margin: 0;
+
+      @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-normal, 1, normal);
     }
 
-    &:hover {
-      color: $font-color-white;
-    }
-  }
-
-  .separation {
-    font-size: 20px;
-  }
-}
-
-.search-box {
-  position: absolute;
-  align-items: center;
-  left: 152px;
-  width: 68%;
-
-  &.show {
+    margin: 0 auto;
     display: flex;
-  }
+    padding: 16px 32px;
+    align-items: center;
+    max-width: $container-width + 64px;
+    justify-content: space-between;
+    font-size: $font-size-medium-px;
 
-  .search-input {
-    flex: 1;
-    height: 58px;
-    padding: 2px 2px 2px 16px;
-    border-radius: 2px;
-    transition: .3s;
-    color: $font-color-black;
-    font-size: $font-size-medium;
 
-    &:focus,
-    &:active {
-      outline: none;
+    .language {
+      text-decoration: none;
+      transition: .3s ease;
+      color: $font-color-primary;
 
-      @include border(2, solid, $border-color-accent, 2px);
+      &:hover {
+        color: $font-color-white;
+      }
+    }
+
+    .separation {
+      font-size: 20px;
     }
   }
 
-  .delete-button {
-    transition: .3s ease;
-
-    @include box(39, 39);
-
-    &:hover {
-      @include border(1, solid, $border-color-accent, 2px);
-    }
+  .icon-search {
+    margin-right: 20px;
   }
-
-  .search-button {
-    transition: .3s ease;
-    margin-left: -86px;
-    margin-right: 10px;
-
-    @include box(30, 30);
-
-    &:hover {
-      outline: none;
-    }
-  }
-}
-
-.tickets-button {
-  width: 200px;
-  flex: 0 0 200px;
-  padding: 10px 0;
-}
-
-@media only screen and (max-width: 1460px) {
 
   .search-box {
-    left: 44px;
-    width: 78%;
+    position: absolute;
+    align-items: center;
+    left: 152px;
+    width: 68%;
+
+    &.show {
+      display: flex;
+    }
+
+    .search-input {
+      flex: 1;
+      height: 58px;
+      padding: 2px 2px 2px 16px;
+      border-radius: 2px;
+      transition: .3s;
+      color: $font-color-black;
+      font-size: $font-size-medium;
+
+      &:focus,
+      &:active {
+        outline: none;
+
+        @include border(2, solid, $border-color-accent, 2px);
+      }
+    }
+
+    .btn-cancel, .btn-search {
+      width: 58px;
+      height: 58px;
+    }
+
+    .btn-search {
+      right: 74px;
+      position: absolute;
+    }
+  }
+
+  .tickets-button {
+    padding: 12px 24px;
+    margin-left: 20px;
+    font-size: $font-size-medium-px;
+  }
+
+  .icons-group {
+    display: flex;
+
+    button + button {
+      margin-left: 32px;
+    }
+
+    .icon {
+      margin: 0;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+  }
+
+  .side-buttons {
+    top: 30%;
+    z-index: 8;
+    right: 16px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+
+    .btn-donate {
+      margin-bottom: 8px;
+    }
+
+    .btn-donate, .btn-settings {
+      padding: 16px;
+      transition: .3s;
+      background-color: $border-color-accent;
+
+      img {
+        width: 36px;
+      }
+
+      &:hover {
+        background-color: $background-on-hover;
+      }
+    }
   }
 }
 
-.search-icon-button {
-  padding: 8px;
-  margin-left: auto;
-  margin-right: 10px;
-  transition: .3s ease;
-  color: $font-color-primary;
+@media (max-width: map-get($grid-breakpoints, md-min)) {
 
-  &:hover {
-    background-color: rgba($background-on-hover, .2);
-  }
-}
+  .header {
 
-:host ::ng-deep {
+    .header-logo {
+      width: 86px;
+    }
 
-  .header-nav {
+    .icons-group {
+      display: flex;
+      justify-content: right;
 
-    .header-nav__link {
-      padding: 20px 8px;
+      button + button {
+        margin-left: 24px;
+      }
 
-      &.active {
-        color: $font-color-white;
-        font-weight: $font-weight-bold;
+      .icon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
       }
     }
   }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { LangService } from '../../../../services/lang.service';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { LangService } from 'app/services/lang.service';
+import { Breakpoints } from 'app/constants';
 
 @Component({
   selector: 'app-main-nav',
@@ -8,6 +9,8 @@ import { LangService } from '../../../../services/lang.service';
 })
 
 export class MainNavComponent implements OnInit {
+  showWideNav: boolean;
+  showSmallNav: boolean;
 
   get langRedirectUrl() {
     return this.langService.getLangRedirectUrl();
@@ -16,8 +19,29 @@ export class MainNavComponent implements OnInit {
   constructor(private langService: LangService) {
   }
 
-
   ngOnInit() {
+    this.getWindowSize();
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.getWindowSize();
+  }
+
+  getWindowSize() {
+    const screenWidth = window.innerWidth;
+    const wideScreen = Breakpoints.xl_min;
+    const mediumScreen = Breakpoints.md_min;
+
+    if (screenWidth > wideScreen) {
+      this.showWideNav = true;
+      this.showSmallNav = false;
+    } else if (screenWidth > mediumScreen) {
+      this.showWideNav = false;
+      this.showSmallNav = true;
+    } else {
+      this.showWideNav = false;
+      this.showSmallNav = false;
+    }
+  }
 }

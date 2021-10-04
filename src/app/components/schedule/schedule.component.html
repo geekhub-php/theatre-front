@@ -2,7 +2,8 @@
   <h2 class="page-title">
     <ng-container i18n="@@posterFor">Poster</ng-container>
   </h2>
-  <div *ngIf="viewMode !== views.MOBILE" class="poster__toggle">
+
+  <div *ngIf="isSwitcherActive" class="poster__toggle">
     <div class="poster__toggle__item">
       <button
         (click)="changeViewToCalendar()"
@@ -27,4 +28,4 @@
 
 <app-calendar *ngIf="viewMode === views.CALENDAR"></app-calendar>
 
-<app-list-view [viewMode]="viewMode" *ngIf="viewMode === views.LIST || viewMode === views.MOBILE"></app-list-view>
+<app-list-view [viewMode]="viewMode" *ngIf="viewMode === views.LIST"></app-list-view>

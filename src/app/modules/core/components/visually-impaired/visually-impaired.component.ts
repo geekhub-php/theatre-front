@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { VisuallyImpairedService } from '../../../../services/visually-impaired.service';
+import { VisuallyImpairedService } from 'app/services/visually-impaired.service';
+
+import { sideBarAnimation } from 'app/utilities/side-bar-animation';
+import { ESidebar, SidebarService } from 'app/services/sidebar.service';
 
 @Component({
   selector: 'app-visually-impaired',
   templateUrl: './visually-impaired.component.html',
-  styleUrls: ['./visually-impaired.component.scss']
+  styleUrls: ['./visually-impaired.component.scss'],
+  animations: sideBarAnimation({ sideBlock: 'sideBlock' , closeArea: 'closeArea'})
 })
 export class VisuallyImpairedComponent implements OnInit {
-  trigger = this.visuallyImpairedService.triggerVisuallyImpaired;
+  isVisuallyImpairedActive = false;
 
-  constructor(private visuallyImpairedService: VisuallyImpairedService) { }
+  constructor(
+    private visuallyImpairedService: VisuallyImpairedService,
+    private sidebarService: SidebarService) {
+    this.sidebarService.subject.subscribe(state => {
+      this.isVisuallyImpairedActive = state.isActive && state.barName === ESidebar.settings;
+    });
+  }
 
   ngOnInit() {
   }
@@ -40,5 +50,13 @@ export class VisuallyImpairedComponent implements OnInit {
 
   resetSettings() {
     this.visuallyImpairedService.resetSettings();
+  }
+
+  openVisuallyImpaired() {
+    this.sidebarService.open(ESidebar.settings);
+  }
+
+  closeVisuallyImpaired() {
+    this.sidebarService.close(ESidebar.settings);
   }
 }
