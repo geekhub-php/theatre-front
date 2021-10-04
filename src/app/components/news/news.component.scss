@@ -1,5 +1,9 @@
 @import "~assets/styles/variables";
 
+:host {
+  flex: 1;
+}
+
 h2 {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -9,9 +13,9 @@ h2 {
 }
 
 .news_container {
-  max-width: $container-width;
+  max-width: $container-width + 64px;
   margin: 0 auto;
-  padding-bottom: 140px;
+  padding: 0 32px 120px;
 }
 
 .news_wrapper {
@@ -19,25 +23,21 @@ h2 {
   margin: 0 5px 35px;
 }
 
-.pagination_wrapper {
-  float: right;
+:host ::ng-deep .pagination {
+  margin: 0 auto;
 }
 
-@media (max-width: map-get($grid-breakpoints, md-max)) {
-
-  .news_container {
-    padding: 30px;
-  }
-}
 
 @media (max-width: map-get($grid-breakpoints, sm-max)) {
 
   h2 {
     margin-top: 20px;
     margin-bottom: 5px;
+
+    @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.5, normal);
   }
 
   .news_container {
-    padding: 15px;
+    padding: 32px 16px 120px;
   }
 }

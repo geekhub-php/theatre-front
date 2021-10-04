@@ -658,6 +658,55 @@
           <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
+
+      <!--   Home page/ Theatre is always with you   -->
+      <trans-unit id="we-are-very-excited" datatype="html">
+        <source>We are very excited to begin a new theatrical season.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="we-encourage-you" datatype="html">
+        <source>We encourage you to purchase tickets online in order to ensure the highest level of security for all parties involved.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="you-can-do-this" datatype="html">
+        <source>You can do this at </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="this-active-link" datatype="html">
+        <source>this active link</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">55, 59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="24-hours-a-day" datatype="html">
+        <source> 24 hours a day, seven days a week.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="on-this-website" datatype="html">
+        <source>On the website, you can also learn more about the theatre’s personalities, read the content of the
+          performances, get an up-to-date schedule, and immerse yourself in the artistic atmosphere. The theatre is now
+          just a click away at any time that is convenient for you!
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <!--  END Home page/ Theatre is always with you   -->
+
       <trans-unit id="personalities" datatype="html">
         <source>Personalities</source>
         <context-group purpose="location">

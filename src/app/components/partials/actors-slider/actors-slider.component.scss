@@ -1,9 +1,8 @@
 @import "~assets/styles/variables";
 
 .wrapped {
-  margin: auto;
   display: flex;
-  padding: 80px 0 90px;
+  margin: 80px auto 90px;
   flex-direction: column;
   max-width: $container-width;
   background-color: $background-color-black;
@@ -127,6 +126,10 @@ a {
 
 @media (max-width: map-get($grid-breakpoints, md-max)) {
 
+  .wrapped {
+    margin: 40px 8px;
+  }
+
   .right, .left {
     display: none;
   }
@@ -144,10 +147,6 @@ a {
 }
 
 @media (max-width: map-get($grid-breakpoints, sm-max)) {
-
-  .wrapped {
-    padding: 40px 8px;
-  }
 
   .title {
     text-align: center;

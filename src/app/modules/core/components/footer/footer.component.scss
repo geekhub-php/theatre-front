@@ -9,13 +9,23 @@
 
     ul {
       margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+    }
+
+    li {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    li + li {
+      margin-right: 16px;
     }
 
     .footer__links {
-      padding: 22px 0;
-      flex-direction: row-reverse;
       list-style: none;
-      gap: 40px;
+      padding: 16px 32px 0;
       font-size: $font-size-small;
       color: $font-color-primary;
       border-top: .05px solid $font-color-dark;
@@ -45,6 +55,7 @@
 
 .ucf-text {
   color: $font-color-white;
+  font-weight: $font-weight-semi-bold;
 }
 
 .footer__link {
@@ -52,14 +63,14 @@
 }
 
 .scrollToTop {
-  z-index: 20;
-  position: fixed;
-  bottom: 20%;
   right: 1%;
-  border-radius: 50%;
+  z-index: 20;
+  bottom: 10%;
   border: none;
   outline: none;
+  position: fixed;
   cursor: pointer;
+  border-radius: 50%;
   object-fit: contain;
   background-color: $background-color-accent;
 
@@ -70,21 +81,25 @@
   }
 }
 
-@media only screen and (max-height: 660px) {
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
 
-  .scrollToTop {
-    bottom: 10%;
+  .footer-wrapper {
 
-    @include box(50, 50);
+    .footer {
+
+      .footer__links {
+        padding: 16px 16px 8px;
+        font-size: $font-size-xx-small;
+
+        li {
+          margin-right: 8px;
+          margin-bottom: 8px;
+        }
+
+        .facebook, .ucf-text, .text {
+          font-size: $font-size-xx-small;
+        }
+      }
+    }
   }
 }
-
-@media only screen and (max-width: 860px) {
-
-  .social {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
