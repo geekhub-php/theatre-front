@@ -1,0 +1,129 @@
+@import "~assets/styles/variables";
+
+:host {
+  top: 0;
+  right: 0;
+  z-index: 100;
+  position: fixed;
+  /* stylelint-disable */
+  height: 100vh;
+  /* stylelint-enable */
+}
+
+.close-area {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba($background-color-black, .7);
+}
+
+.burger-wrapper {
+  top: 0;
+  right: 0;
+  z-index: 20;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  overflow: auto;
+  position: absolute;
+  padding-left: 16px;
+  padding-right: 16px;
+  flex-direction: column;
+  background-color: $background-color-accent;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.close {
+  top: 12px;
+  right: 16px;
+  transition: .3s;
+  cursor: pointer;
+  position: absolute;
+
+  @include flex-center()
+}
+
+.logo {
+  margin: 32px auto;
+  align-self: center;
+}
+
+.menu-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #c7b28b;
+
+  @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.5, normal);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .li-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.5, normal);
+  }
+}
+
+.nav-link {
+  padding: 0;
+  display: block;
+  margin-bottom: 0;
+
+  @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.5, normal);
+}
+
+.sub-menu {
+  display: none;
+}
+
+.sub-link {
+  transition: .3s;
+  padding-left: 32px;
+  margin: 8px 0;
+  display: block;
+  text-decoration: none;
+
+  @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-normal, 1.5, normal);
+
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+.opened {
+  transform: rotate(180deg);
+  transition: transform .5s linear;
+}
+
+.active-link {
+  color: $font-color-white;
+  font-weight: $font-weight-semi-bold;
+
+  .li-arrow img {
+    transition: transform .5s linear;
+    transform: rotate(180deg);
+  }
+
+  .sub-menu {
+    display: block;
+  }
+
+  .sub-link-active {
+    font-weight: $font-weight-semi-bold;
+  }
+}

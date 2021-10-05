@@ -1,9 +1,6 @@
 # TheatreFront
 
-[![Build Status](https://travis-ci.org/geekhub-php/theatre-front.svg?branch=master)](https://travis-ci.org/geekhub-php/theatre-front)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/geekhub-php/theatre-front/?branch=master)
-
+![TheatreCodeStatus](https://github.com/geekhub-php/theatre-front/actions/workflows/test-and-deploy.yml/badge.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
 
@@ -16,11 +13,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
-
+ 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Running unit tests
-
+ 
 Unit tests run via [Karma](https://karma-runner.github.io).
 
 ### Run on Linux

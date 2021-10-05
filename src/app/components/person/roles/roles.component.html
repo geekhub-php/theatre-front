@@ -1,0 +1,11 @@
+<app-spinner name="person-roles"></app-spinner>
+<div *ngIf="roles?.length" class="roles">
+  <p class="roles__title" i18n="@@roles">Roles</p>
+  <ul class="roles__list">
+    <li *ngFor="let role of roles" class="roles__item role">
+      <a class="role__link" [routerLink]="['', 'performance', role.performance.slug]">
+          {{ role.title }} <ng-container i18n="@@atPerformance">at the performance</ng-container> {{ role.performance.title }}
+      </a>
+    </li>
+  </ul>
+</div>

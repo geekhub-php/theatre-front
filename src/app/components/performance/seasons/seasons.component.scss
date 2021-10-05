@@ -1,0 +1,46 @@
+@import "~assets/styles/variables";
+
+.season_item {
+  padding: 2px 8px;
+  border-radius: 2px;
+  background-color: rgba(180, 152, 100, .2);
+  margin-right: 10px;
+  text-decoration: none;
+  color: #b49864;
+  transition: .2s;
+}
+
+.season_item:hover {
+  cursor: pointer;
+  background-color: #615236;
+}
+
+//:host {
+//  display: block;
+//}
+//
+//.seasons {
+//  display: flex;
+//  flex-wrap: wrap;
+//  justify-content: center;
+//  align-items: center;
+//}
+//
+//.season-badge {
+//  padding: .25rem .5rem .15rem;
+//  margin: 3px;
+//  background-color: $main-color;
+//  transition: .3s ease;
+//}
+//
+//.seasons:not(.view-mode) .season-badge {
+//  cursor: pointer;
+//
+//  &:hover, &.active {
+//    background-color: $main-color-darker;
+//  }
+//
+//  &.active {
+//    cursor: default;
+//  }
+//}

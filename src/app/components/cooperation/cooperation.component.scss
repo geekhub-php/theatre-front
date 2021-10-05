@@ -1,0 +1,283 @@
+@import "~assets/styles/variables";
+
+.cooperation_wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.page_title {
+  text-align: center;
+  padding-top: 32px;
+  margin-bottom: 32px;
+
+  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
+}
+
+.description {
+  max-width: 990px;
+  margin: 0 auto;
+  text-align: center;
+
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
+}
+
+.section_title {
+  padding-bottom: 32px;
+  padding-top: 80px;
+  text-align: center;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, normal)
+}
+
+.docs_section {
+  max-width: $container-width;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 352px));
+  grid-gap: 32px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px 24px 0;
+  background-color: $background-main-color-darker;
+  text-decoration: none;
+}
+
+.card_title {
+  height: 78px;
+  margin-bottom: 25px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 25px, normal)
+}
+
+.load {
+  margin-top: 67px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
+}
+
+.icon {
+  width: 96px;
+  height: 104px;
+  align-self: center;
+}
+
+.logo_section {
+  display: grid;
+  max-width: $container-width;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+  padding-bottom: 104px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.logo_card {
+  height: 216px;
+  background-color: $background-main-color-darker;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  text-decoration: none;
+}
+
+.logo {
+  width: 225px;
+  height: 82px;
+  margin-bottom: 30px;
+}
+
+.white {
+  background-color: $background-color-white;
+}
+
+.logo_card:hover {
+  cursor: pointer;
+}
+
+.popup_wrapper {
+  background-color: rgba($background-color-black, .9);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.popup_container {
+  max-width: 735px;
+  height: 440px;
+  background-color: $background-main-color-lighter;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.close {
+  width: 24px;
+  height: 24px;
+  margin-top: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.popup_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.icons_container {
+  display: flex;
+  max-width: 345px;
+  justify-content: space-between;
+}
+
+.popup_title_file {
+  padding-top: 60px;
+  margin: 0;
+
+  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 36px, .48px)
+}
+
+.popup_title_format {
+  padding-bottom: 40px;
+  margin: 0;
+
+  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 36px, .48px)
+}
+
+.size {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 32px;
+
+  @include font($body-font-family, $font-size-x-small, $font-color-primary, $font-weight-normal, 21px, normal)
+}
+
+.download_button {
+  padding: 11px 24px;
+  background-color: $background-main-color-lighter;
+  text-decoration: none;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
+  @include border(1, solid, $border-color-light, 2px);
+
+  &:hover {
+    background-color: $background-color-disabled;
+  }
+
+  &:active {
+    background-color: $background-color-white;
+
+    @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-bold, $line-height-basic, .36px);
+  }
+}
+
+.load_as {
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
+}
+
+@media (max-width: map-get($grid-breakpoints, xl-max)) {
+
+  .cooperation_wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .docs_section {
+    grid-template-columns: repeat(3, minmax(200px, 330px));
+    grid-auto-rows: 300px;
+    grid-gap: 16px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .logo_section {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    margin-bottom: 50px;
+    padding: 0;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-max)) {
+
+  .docs_section {
+    grid-template-columns: repeat(2, minmax(200px, 330px));
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-max)) {
+
+  .docs_section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .card_title {
+    height: 78px;
+    margin: 30px 0 25px 60px;
+    text-align: left;
+
+    @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-bold, 25px, normal)
+  }
+
+  .load {
+    text-align: right;
+
+    @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, $line-height-basic, .36px)
+  }
+
+  .icon {
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    width: 45px;
+    height: 48px;
+  }
+
+  .card_title {
+    height: 50px;
+    margin-bottom: 5px;
+
+    @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-bold, 21px, normal)
+  }
+
+  .load {
+    margin: 0;
+
+    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 21px, normal)
+  }
+
+  .logo_section {
+    display: block;
+    margin-bottom: 50px;
+    padding: 0;
+  }
+
+  .logo_card {
+    margin-bottom: 16px;
+  }
+}

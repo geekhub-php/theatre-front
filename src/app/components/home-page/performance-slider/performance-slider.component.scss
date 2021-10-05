@@ -1,0 +1,316 @@
+@import "~assets/styles/variables";
+
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  background-color: $background-color-black;
+}
+
+gallery {
+  margin: 64px 32px ;
+  background-color: transparent;
+}
+
+.gallery-container {
+  height: 688px;
+  width: 100% ;
+  position: relative;
+  max-width: $container-width;
+}
+
+:host ::ng-deep gallery gallery-nav .ng-star-inserted {
+  @include box(28, 28);
+}
+
+:host ::ng-deep gallery[fluid] {
+  left: 0;
+  transform: none;
+}
+
+.carousel-caption {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0 52px;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+}
+
+:host ::ng-deep gallery gallery-dots .g-dot-inner {
+  background-color: #868583;
+
+  @include box(12, 12);
+}
+
+:host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
+  background-color: $background-color-accent;
+
+  @include box(12, 12);
+}
+
+.age-restrictions {
+  top: 0;
+  left: 0;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-color-accent;
+
+  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 1.5, .8px);
+  @include box(56, 56);
+}
+
+.container {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.performance-title {
+  display: block;
+  text-align: center;
+  justify-content: center;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+}
+
+.container__performance {
+  display: flex;
+  margin-right: 20px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, .8px);
+
+  & > p {
+    text-align: center;
+  }
+}
+
+.image {
+  margin: 0 10px 0 0;
+
+  @include box(24, 24);
+}
+
+.container__button {
+  display: flex;
+  line-height: 1.5;
+  margin-bottom: 80px;
+  justify-content: center;
+}
+
+.tickets-button {
+  color: $font-color-white;
+  background: transparent;
+
+  @include border(2, solid, $border-color-light, 2px);
+}
+
+.tickets-button:hover {
+  background-color: rgba(255, 255, 255, .2);
+  text-decoration: none;
+}
+
+.tickets-button:active {
+  color: $font-color-black;
+  background-color: $border-color-light;
+}
+
+.performance__venue, .performance__type, .tickets-day {
+  text-align: left;
+}
+
+.tickets-month {
+  margin-left: 4px;
+}
+
+.container-no-performance {
+  height: 864px;
+  display: flex;
+  justify-content: center;
+}
+
+.no-performance {
+  width: 100% ;
+  display: flex;
+  height: 688px;
+  margin: 64px 32px;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+  max-width: $container-width;
+
+  &__image {
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 688px;
+    object-fit: cover;
+    position: absolute;
+    width: $container-width;
+  }
+
+  &__text {
+    z-index: 1;
+    bottom: 120px;
+    margin: 0 32px;
+    text-align: center;
+    position: relative;
+
+    @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-bold, 1.5, normal);
+  }
+
+  &__linear-gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
+
+  .gallery-container {
+    height: 350px;
+  }
+
+  .carousel-caption {
+    background: none;
+  }
+
+  gallery {
+    margin: 40px 32px 32px;
+  }
+
+  .image {
+    margin: 0 8px 0 0;
+
+    @include box(16, 16);
+  }
+
+  .linear-gradient {
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+  }
+
+  :host ::ng-deep gallery gallery-dots .g-dot-inner {
+    background-color: #868583;
+
+    @include box(12, 12);
+  }
+
+  :host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
+    background-color: $background-color-accent;
+
+    @include box(10, 10);
+  }
+
+  :host ::ng-deep gallery gallery-image {
+    height: 90%;
+  }
+
+  .age-restrictions {
+    @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, 1.5, .8px);
+    @include box(36, 36);
+  }
+
+  .performance-title {
+    margin-bottom: 16px;
+
+    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+  }
+
+  .container__performance {
+    @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-normal, 1.5, .8px);
+
+    & > p {
+      margin-bottom: 8px;
+    }
+  }
+
+  .container__button {
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 60px;
+
+    .tickets-button {
+      @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-bold, 1.5, .8px);
+    }
+  }
+
+  .no-performance {
+    height: 350px;
+
+    &__image {
+      height: 350px;
+    }
+
+    &__text {
+      bottom: 64px;
+
+      @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 1.5, normal);
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .carousel-caption {
+    padding: 0 32px;
+  }
+
+  .linear-gradient {
+    height: 55%;
+  }
+
+  :host ::ng-deep gallery gallery-image {
+    height: 55%;
+  }
+
+  .gallery-container {
+    height: 600px;
+  }
+
+  gallery {
+    margin: 24px 16px 8px;
+  }
+
+  .age-restrictions {
+    @include font($body-font-family, $font-size-xx-small, $font-color-white, $font-weight-bold, 1.5, .8px);
+    @include box(24, 24);
+  }
+
+  :host ::ng-deep gallery gallery-nav .ng-star-inserted {
+    @include box(14, 14);
+  }
+
+  .no-performance {
+    height: 300px;
+    margin: 24px 16px 8px;
+
+    &__image {
+      height: 300px;
+    }
+
+    &__text {
+      bottom: 32px;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+<div class="home-page">
+  <app-spinner name="home"></app-spinner>
+
+  <section class="poster-slider">
+    <div class="poster-slider__component">
+      <app-performance-slider></app-performance-slider>
+    </div>
+  </section>
+
+  <section class="we-offer-block">
+    <div class="we-offer">
+      <h2 class="we-offer__title" i18n="@@offerForYou">Offer for you</h2>
+      <div class="we-offer__text">
+
+        <!--TODO: The appropriate "Offer for you" text needs to be added here; the translation of it should be executed in "locale" files-->
+
+        <p>Щоб ви не пропустили жодного концерту від улюблених зірок, змогли потрапити на важливу
+          театральну прем'єру і встигли купити квитки на краще дійство для дітей ми створили цей сайт.
+          Тож, кожен глядач, який чекає від нас якості та приємних емоцій зможе обрати для себе захід.
+        </p>
+<!--        <p>Також запрошуємо до співпраці колективи, організації, виставки.</p>-->
+      </div>
+<!--      <a class="link-buttons" routerLink="/donate" routerLinkActive="active"-->
+<!--         i18n="@@cooperationBtn">Cooperation</a>-->
+    </div>
+  </section>
+
+  <section class="actors-carousel">
+    <div class="actors-carousel__component">
+      <!--Background for the "Poster slider", can be modified-->
+    </div>
+  </section>
+
+  <app-actors-slider [randomEmployees]="randomEmployees"></app-actors-slider>
+
+  <section class="news_wrapper">
+    <div class="news">
+      <h3 class="section_title" i18n="@@news">News</h3>
+      <app-news-list-item class="item" *ngFor="let item of listPost" [item]="item"></app-news-list-item>
+      <a class="link" i18n="@@more" routerLink="../news">More</a>
+    </div>
+  </section>
+
+  <section class="advantages">
+    <div class="advantages-content">
+      <div class="advantages-text">
+        <h3 class="advantages-title" i18n="@@TheatreIsAlwaysWithYou">Theatre is always with you</h3>
+        <p i18n="@@we-are-very-excited">We are very excited to begin a new theatrical season.</p>
+        <p i18n="@@we-encourage-you">Для того, щоб забезпечити якомога більший рівень безпеки для всіх причетних, запрошуємо вас придбати квитки
+          онлайн.</p>
+        <div class="mb-3">
+          <p i18n="@@you-can-do-this" class="d-inline">You can do this at </p>
+          <a
+          target="_blank"
+          i18n="@@this-active-link"
+          href="https://ck.kontramarka.ua/ru/theatre/cerkaskij-akademicnij-oblasnij-ukrainskij-muzicnodramaticnij-teatr-imeni-t-g-sevcenka-1072.html">
+            this active link</a>
+          <p i18n="@@24-hours-a-day" class="d-inline"> 24 hours a day, seven days a week.</p>
+        </div>
+        <p i18n="@@on-this-website">On the website, you can also learn more about the theatre’s personalities, read the content of the
+          performances, get an up-to-date schedule, and immerse yourself in the artistic atmosphere. The theatre is now
+          just a click away at any time that is convenient for you!
+        </p>
+
+      </div>
+      <div class="advantages-image">
+        <img src="assets/images/Group%20305/Group%20305.png" alt="Phone with invitation to the theatre on the screen"
+             title="Cherkasy Theatre of Taras Shevchenko welcomes you!"
+             i18n-title="@@theatreWelcomesYou">
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+

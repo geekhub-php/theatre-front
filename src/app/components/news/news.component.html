@@ -1,0 +1,46 @@
+<svg display="none">
+  <symbol id="arrow-left" viewBox="0 0 19 8">
+    <path d="M0 4L4 0V3H19V5H4V8L0 4Z" fill="#868583"/>
+  </symbol>
+  <symbol id="arrow-right" viewBox="0 0 19 8">
+    <path d="M19 4l-4-4v3H0v2h15v3l4-4z" fill="#868583"/>
+  </symbol>
+</svg>
+
+<div>
+  <h2 i18n="@@news">News</h2>
+
+  <app-spinner name="news"></app-spinner>
+
+  <div class="news_container">
+
+    <div *ngIf="listPost" class="news_wrapper">
+      <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
+    </div>
+
+    <div class="pagination_wrapper">
+      <ngb-pagination (pageChange)="goToPage($event)"
+                      [(page)]="page"
+                      [boundaryLinks]="false" [collectionSize]="collectionSize"
+                      [pageSize]="5"
+                      [maxSize]="5"
+                      class="pagination"
+      >
+        <ng-template ngbPaginationPrevious>
+          <svg>
+            <use xlink:href="#arrow-left"></use>
+          </svg>
+        </ng-template>
+        <ng-template ngbPaginationNext>
+          <svg>
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+        </ng-template>
+
+      </ngb-pagination>
+    </div>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,42 @@
+@import "~assets/styles/_variables";
+
+@mixin _container {
+  background-color: $font-color-black;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  min-height: 700px;
+}
+
+@mixin about-title {
+  font-size: $font-largest;
+
+  @include flex-center;
+
+  color: $font-color-accent;
+  margin-bottom: 60px;
+  font-family: $creative-font;
+}
+
+@mixin breadcrumbs-nav {
+  margin-left: 10%;
+  margin-top: 20px;
+  color: $font-color-primary;
+  font-family: $body-font-family;
+  width: 310px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin breadcrumbs-nav-bold {
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-white;
+}
+
+@mixin selectedI {
+  height: 56px;
+  line-height: 1.39;
+  padding-top: 16px;
+  background-color: $background-on-hover;
+  font-weight: $font-weight-semi-bold;
+}

@@ -1,0 +1,199 @@
+@import "~assets/styles/variables";
+@import "~assets/styles/utilities";
+
+:host {
+  top: 0;
+  right: 0;
+  z-index: 100;
+  position: fixed;
+  /* stylelint-disable */
+  height: 100vh;
+  /* stylelint-enable */
+}
+
+.visual {
+  z-index: 100;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: rgba($background-color-black, .7);
+
+  &-impaired {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 200;
+    padding: 16px;
+    overflow: auto;
+    position: absolute;
+    background-color: $background-color-accent;
+
+    .opera-glasses {
+      width: 46%;
+    }
+
+    text-align: center;
+
+    .scheme {
+      @include box(48, 30);
+
+      &:hover {
+        @include border(1, solid, $background-color-active, 3px);
+      }
+    }
+  }
+}
+
+.color-schemes {
+
+  &__text {
+    @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal)
+  }
+
+  &__button {
+    position: relative;
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    outline: none;
+    border: none;
+
+    & > .hover {
+      z-index: 99;
+      position: absolute;
+      top: 1.8rem;
+      left: -2.58rem;
+      min-width: 9rem;
+      max-width: 11.2rem;
+      display: none;
+      color: $font-color-white;
+      background-color: $background-color-active;
+
+      @include border(.5, solid, $background-main-color-lighter, 5px)
+    }
+
+    &:hover > .hover {
+      display: block;
+
+      &::before {
+        z-index: -1;
+        width: .714rem;
+        height: .714rem;
+        top: -.376rem;
+        left: 3.851rem;
+        display: block;
+        content: "";
+        position: absolute;
+        transform: rotate(135deg);
+        background-color: $background-color-active;
+        border-bottom: .5px solid $background-main-color-lighter;
+        border-left: .5px solid $background-main-color-lighter;
+      }
+    }
+  }
+}
+
+.size-fonts {
+
+  &__text {
+    @include font($body-font-family, .875rem, $font-color-white, $font-weight-bold, 0, normal)
+  }
+
+  &__button {
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: none;
+    outline: none;
+    border: none;
+
+    & > .hover-font {
+      z-index: 99;
+      position: absolute;
+      top: 1.8rem;
+      left: -2.58rem;
+      min-width: 9rem;
+      max-width: 11.2rem;
+      display: none;
+      color: $font-color-white;
+      background-color: $background-color-active;
+
+      @include border(.5, solid, $background-main-color-lighter, 5px);
+    }
+
+    &:hover > .hover-font {
+      display: block;
+
+      &::before {
+        z-index: -1;
+        width: .714rem;
+        height: .714rem;
+        top: -.376rem;
+        left: 3.851rem;
+        display: block;
+        content: "";
+        position: absolute;
+        transform: rotate(135deg);
+        background-color: $background-color-active;
+        border-bottom: .5px solid $background-main-color-lighter;
+        border-left: .5px solid $background-main-color-lighter;
+      }
+    }
+  }
+}
+
+.close-button {
+  top: 12px;
+  right: 16px;
+  transition: .3s;
+  cursor: pointer;
+  position: absolute;
+
+  @include flex-center()
+}
+
+.reset-button {
+  position: relative;
+  padding-top: 14px;
+  margin-bottom: 24px;
+  color: $font-color-white;
+  text-align: center;
+
+  @extend .u-unstyled-btn;
+
+  &:hover {
+    color: $font-color-dark;
+  }
+}
+
+.visual-aid-button {
+  z-index: 8;
+  position: fixed;
+  margin-top: 26px;
+  right: 1%;
+
+  @include box(64, 64);
+
+  &:hover {
+    @include border(2, solid, $border-color-light, 2px);
+  }
+}
+
+@media only screen and (max-height: 720px) {
+
+  .visual-aid-button {
+    top: 100px;
+
+    @include box(50, 50);
+  }
+}

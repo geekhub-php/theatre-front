@@ -3,79 +3,131 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CoreModule } from './core/core.module';
-import { HomePageModule } from './home-page/home-page.module';
+import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { NguCarouselModule } from '@ngu/carousel';
+import { GalleryModule } from 'ng-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
-import { PerformanceListComponent } from './performance-list/performance-list.component';
-import { PerformanceComponent } from './performance/performance.component';
+import { RepertoireComponent } from './components/repertoire/repertoire.component';
+import { PerformanceComponent } from './components/performance/performance.component';
 
-import { AboutComponent } from './about/about.component';
-import { TeamComponent } from './team/team.component';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ArticleComponent } from './article/article.component';
-import { PersonComponent } from './person/person.component';
-import { NewsComponent } from './news/news.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
-import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-import { SpinnerModule } from './shared/spinner/spinner.module';
-import { ScheduleModule } from './schedule/schedule.module';
-import { WidgetModule } from './widget/widget.module';
-import { AboutMoreComponent } from './about/about-more/about-more.component';
-import { DevTeamComponent } from './dev-team/dev-team.component';
-import { SeasonsComponent } from './seasons/seasons.component';
-import { PersonRolesComponent } from './person-roles/person-roles.component';
-import { DonateComponent } from './donate/donate.component';
-import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { AboutComponent } from './components/about/about.component';
+import { TeamComponent } from './components/team/team.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { ArticleComponent } from './components/article/article.component';
+import { PersonComponent } from './components/person/person.component';
+import { NewsComponent } from './components/news/news.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { BoardTrusteesComponent } from './components/board-trustees/board-trustees.component';
+import { SpinnerModule } from './components/partials/spinner/spinner.module';
+import { AboutMoreComponent } from './components/about/about-more/about-more.component';
+import { FestivalsComponent } from './components/about/festivals/festivals.component';
+import { TheatreHistoryComponent } from './components/about/theatre-history/theatre-history.component';
+import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
+import { EpochComponent } from './components/about/epoch/epoch.component';
+import { VisitComponent } from './components/about/visit/visit.component';
+import { DevTeamComponent } from './components/dev-team/dev-team.component';
+import { RolesComponent } from './components/person/roles/roles.component';
+import { DonateComponent } from './components/donate/donate.component';
+import { PersonsHeaderComponent } from './components/team/persons-header/persons-header.component';
+import { AdministrationComponent } from './components/team/administration/administration.component';
+import { ArtisticComponent } from './components/team/artistic/artistic.component';
+import { CreativeComponent } from './components/team/creative/creative.component';
+import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
+
+import { StripHtmlModule } from './pipes/strip-html.module';
+
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { CalendarComponent } from './components/schedule/calendar/calendar.component';
+import { ListViewComponent } from './components/schedule/list-view/list-view.component';
+import { CalendarPopupComponent } from './components/schedule/calendar/calendar-popup/calendar-popup.component';
+import { CalendarService } from './components/schedule/calendar.service';
+import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
+
+import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
+import { PerformanceSliderComponent } from './components/home-page/performance-slider/performance-slider.component';
+import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
+import { CooperationComponent } from './components/cooperation/cooperation.component';
+import { ActorsSliderComponent } from './components/partials/actors-slider/actors-slider.component';
+import { SeasonsComponent } from './components/performance/seasons/seasons.component';
+
 import { environment } from '../environments/environment';
+import { CoreModule } from './modules/core/core.module';
+import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
+import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PerformanceListComponent,
+    RepertoireComponent,
     PerformanceComponent,
     AboutComponent,
     TeamComponent,
     ContactsComponent,
     ArticleComponent,
     PersonComponent,
-    PersonRolesComponent,
+    RolesComponent,
     NewsComponent,
     HomePageComponent,
     BoardTrusteesComponent,
     AboutMoreComponent,
     DevTeamComponent,
-    SeasonsComponent,
+    ScheduleComponent,
+    CalendarComponent,
+    ListViewComponent,
+    CalendarPopupComponent,
     DonateComponent,
+    ScheduleComponent,
+    SideMenuComponent,
+    PerformanceSliderComponent,
+    NewsListItemComponent,
+    MonthsCarouselComponent,
+    RepertoireNavHeaderComponent,
+    CooperationComponent,
+    PersonsHeaderComponent,
+    AdministrationComponent,
+    ArtisticComponent,
+    CreativeComponent,
+    PersoneShowmoreComponent,
+    ActorsSliderComponent,
+    SeasonsComponent,
+    CatInteractiveComponent,
+    FestivalsComponent,
+    TheatreHistoryComponent,
+    AboutHeaderComponent,
+    EpochComponent,
+    VisitComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     HttpClientModule,
-    CoreModule,
     BrowserAnimationsModule,
-    HomePageModule,
     NgbModule,
     StripHtmlModule,
     InfiniteScrollModule,
     NgxGalleryModule,
-    SpinnerModule,
-    ScheduleModule,
     NgbPaginationModule,
-    WidgetModule,
     NgbPaginationModule,
     NgbCollapseModule,
     NgxGoogleAnalyticsModule.forRoot(environment.ga),
-    NgxGoogleAnalyticsRouterModule
- ],
-  providers: [GoogleAnalyticsService],
+    NgxGoogleAnalyticsRouterModule,
+    SpinnerModule,
+    CoreModule,
+    GalleryModule,
+    NguCarouselModule,
+  ],
+  providers: [
+    CalendarPopupComponent,
+    CalendarService,
+    GoogleAnalyticsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

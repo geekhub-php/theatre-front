@@ -1,0 +1,236 @@
+@import "~assets/styles/variables";
+
+/* Block with "what we offer" */
+
+.we-offer-block {
+  background-color: $background-main-color-darker;
+}
+
+.we-offer {
+  max-width: 992px;
+  padding: 80px 32px;
+  text-align: center;
+  margin: $container-margin;
+
+  @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
+
+  .we-offer__title {
+    margin-bottom: 28px;
+
+    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
+  }
+
+  &__text {
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Block with the advantages of using the mobile version */
+
+.advantages {
+  padding: 0 32px 56px;
+  margin: $container-margin;
+  max-width: $container-width;
+  background-color: $background-color-black;
+
+  &-title {
+    margin-bottom: 56px;
+
+    @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-image {
+    bottom: 64px;
+    display: flex;
+    min-width: 290px;
+    position: relative;
+    margin-bottom: -64px;
+    align-items: center;
+
+    img {
+      width: 290px;
+    }
+  }
+
+  &-text {
+    margin-right: 64px;
+
+    @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
+
+    a {
+      text-decoration: underline;
+
+      @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
+    }
+  }
+}
+
+.link-buttons {
+  margin: auto;
+  display: block;
+  width: fit-content;
+}
+
+.news_wrapper {
+  display: flex;
+  margin: 64px auto 80px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $background-main-color-darker;
+
+  .news {
+    display: flex;
+    margin: 0 32px;
+    align-items: center;
+    flex-direction: column;
+    max-width: $container-width + 64px;
+  }
+
+  .item:last-of-type {
+    border-bottom: .5px solid $border-color-lighter;
+  }
+}
+
+.link {
+  padding: 32px 0;
+  text-align: center;
+  text-decoration: none;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 25px, normal)
+}
+
+.section_title {
+  padding: 32px;
+  margin-bottom: 0;
+  text-align: center;
+
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
+}
+
+@media (max-width: map-get($grid-breakpoints, xl-min)) {
+
+  .advantages {
+
+    &-image {
+      bottom: 32px;
+      margin-bottom: -32px;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
+
+  .advantages {
+
+    &-image {
+      bottom: 0;
+      display: flex;
+      min-width: 290px;
+      margin-bottom: 0;
+      align-items: center;
+
+      img {
+        width: 290px;
+      }
+    }
+
+    &-content {
+      align-items: center;
+
+      .advantages-image {
+        display: none;
+      }
+    }
+
+    &-title {
+      text-align: center;
+    }
+
+    &-text {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md-min)) {
+
+  .we-offer {
+    padding: 40px 32px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .news_wrapper {
+    margin: 32px auto 40px;
+
+    .news {
+      margin: 0 16px;
+    }
+  }
+
+  .section_title {
+    padding: 16px;
+
+    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px)
+  }
+
+  .link {
+    padding: 16px;
+
+    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, normal)
+  }
+
+  .we-offer {
+    padding: 26px 16px 40px;
+
+    @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
+
+    .we-offer__title {
+      margin-bottom: 16px;
+
+      @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.28, normal);
+    }
+
+    .link-buttons {
+      line-height: 1.5;
+      font-size: $font-size-small;
+    }
+  }
+
+  .advantages {
+    padding: 0 16px 56px;
+
+    &-title {
+      margin-bottom: 16px;
+
+      @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
+    }
+
+    &-text {
+      margin-bottom: 8px;
+
+      @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
+
+      p {
+        margin-bottom: 16px;
+      }
+
+      a {
+        @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
+      }
+    }
+  }
+}
+

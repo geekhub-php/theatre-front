@@ -1,0 +1,25 @@
+<a class="news-item" routerLink="../news/{{item.slug}}">
+
+  <div class="image">
+    <img *ngIf="item.mainPicture && item.mainPicture.post_main; else elseImg" [src]="item.mainPicture.post_main.url"
+         alt="{{ item.title }}">
+    <ng-template #elseImg>
+      <img [src]="defaultImg" alt="default image">
+    </ng-template>
+  </div>
+
+  <div class="content">
+    <div>
+      <h3>{{ item.title }}</h3>
+      <div class="date">{{ item.created_at | date: 'd.MM.yyyy' }}</div>
+      <div class="text">{{ item.short_description }}</div>
+    </div>
+
+    <div class="arrow-right">
+      <img alt="arrow" class="arrow-right" src="assets/images/news/arrow-right.svg">
+    </div>
+  </div>
+
+</a>
+
+

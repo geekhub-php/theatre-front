@@ -1,0 +1,35 @@
+<div *ngIf="person" class="person">
+  <section>
+    <h2 class="person__name">{{ person?.first_name }} {{ person?.last_name }}</h2>
+    <div class="person__about d-flex">
+      <div class="person__image">
+        <img
+          draggable="false"
+          [src]="person?.avatar.employee_big.url"
+          [alt]="person?.first_name + ' ' + person?.last_name"
+          [title]="person?.first_name + ' ' + person?.last_name">
+      </div>
+      <div class="person__info">
+        <p class="d-none d-md-max-block person__position">{{ person?.position }}</p>
+        <div class="d-none d-xl-max-flex flex-column">
+          <p class="person__biography-title" i18n="@@biography">Biography</p>
+          <p class="person__biography" [innerHtml]="person?.biography"></p>
+          <app-person-roles *ngIf="person && person?.slug" actorSlug="{{ person?.slug }}"></app-person-roles>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-column d-xl-max-none">
+      <p class="d-block d-md-max-none person__position">{{ person?.position }}</p>
+      <p class="person__biography-title" i18n="@@biography">Biography</p>
+      <p class="person__biography" [innerHtml]="person?.biography"></p>
+      <app-person-roles actorSlug="{{ person?.slug }}"></app-person-roles>
+    </div>
+  </section>
+  <ngx-gallery
+    *ngIf="person?.gallery"
+    [options]="galleryOptions"
+    [images]="person?.gallery">
+  </ngx-gallery>
+  <br>
+</div>
+<app-spinner name="person"></app-spinner>

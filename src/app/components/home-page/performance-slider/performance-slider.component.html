@@ -1,0 +1,51 @@
+<div *ngIf="sliderList.length > 0; else noPerformance" class="slider">
+  <gallery
+    id="slider"
+    class="gallery-container"
+    [imageSize]='cover'
+    [itemTemplate]="itemTemplate"
+    fluid
+    [dots]='true'
+    [counter]='false'
+    [thumb]='false'
+    [gestures]='false'
+  >
+  </gallery>
+</div>
+
+<ng-template #itemTemplate let-data="data">
+  <div [@slideAnimation] class="carousel-caption">
+    <div class="linear-gradient"></div>
+    <h3 class="performance-title">{{ data.title }}</h3>
+    <div class="container">
+      <div class="container__performance">
+        <img src="assets/images/home-slider/performance-type.svg" alt="performance type image" class="image">
+        <p class="performance__type">{{ data.type }}</p>
+      </div>
+      <div class="container__performance">
+        <img src="assets/images/home-slider/performance-data.svg" alt="due date image" class="image">
+        <p class="tickets-day">{{ data.date | date: 'EEE, dd' }}</p>
+        <p class="tickets-month">{{ data.date | date: 'MMMM' | lowercase }}</p>
+      </div>
+      <div class="container__performance">
+        <img src="assets/images/home-slider/performance.venue.svg" alt="performance venue image" class="image">
+        <p class="performance__venue">{{ data.venuePerformance }}</p>
+      </div>
+    </div>
+    <div class="container__button">
+      <a [href]="data.ticket" class="button-ticket tickets-button" i18n="@@buyTicket">Buy ticket</a>
+    </div>
+    <span class="age-restrictions">{{ data.ageLimit }}+</span>
+  </div>
+</ng-template>
+
+<ng-template #noPerformance>
+  <div class="slider">
+    <div class="no-performance">
+      <img src="assets/images/home-slider/no-performance.png" alt="No performance"
+           class="no-performance__image">
+      <div class="no-performance__linear-gradient"></div>
+      <p class="no-performance__text" i18n="@@noPerformances">There are currently no events scheduled</p>
+    </div>
+  </div>
+</ng-template>

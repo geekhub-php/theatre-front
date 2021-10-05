@@ -1,0 +1,19 @@
+<!--TODO: the correct QR-code needs to be provided-->
+
+<div *ngIf="donateBlockVisible" @closeArea (click)="disablePage()" class="donate-block"></div>
+<div *ngIf="donateBlockVisible" @sideBlock class="donate-block__information">
+  <img src="assets/images/icons/ic_cross_black.svg" class="close closing-button" alt="Close button" title="Close"
+       i18n-title="@@ngb.alert.close" (click)="disablePage()">
+  <img src="assets/images/animation_wallet.svg" class="donate-wallet-image" alt="Hat with coins">
+  <p class="donate-title" i18n="@@donateQuestion">Are you ready to help the Theater?</p>
+  <div class="donate-requisites">
+    <p><b>Р/р</b> UA883052990000026007021609497</p>
+    <p><b>ЄДРПОУ</b> 02225915</p>
+    <p>АТ КБ «ПРИВАТБАНК»</p>
+    <b>МФО</b> 305299<br>
+    <a href='/assets/images/QR.pdf' download>
+      <img src="assets/images/qr-code.png" class="qr-code" alt="QR Code">
+    </a>
+  </div>
+</div>
+

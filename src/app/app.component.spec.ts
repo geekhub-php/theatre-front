@@ -1,46 +1,45 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { PerformanceListComponent } from './performance-list/performance-list.component';
-import { ContactsComponent } from './contacts/contacts.component';
-import { TeamComponent } from './team/team.component';
-import { PersonComponent } from './person/person.component';
-import { PerformanceComponent } from './performance/performance.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { NewsComponent } from './news/news.component';
-import { AboutComponent } from './about/about.component';
-import { ScheduleComponent } from './schedule/schedule.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { ArticleComponent } from './article/article.component';
-import { HomePageModule } from './home-page/home-page.module';
 import { RouterTestingModule } from '@angular/router/testing';
-import { DonateComponent } from './donate/donate.component';
-import { BoardTrusteesComponent } from './board-trustees/board-trustees.component';
-import { StripHtmlModule } from './shared/pipes/strip-html/strip-html.module';
-import { CoreModule } from './core/core.module';
-import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-import { SpinnerModule } from './shared/spinner/spinner.module';
-import { AboutMoreComponent } from './about/about-more/about-more.component';
-import { DevTeamComponent } from './dev-team/dev-team.component';
-import { WidgetModule } from './widget/widget.module';
-import { SeasonsComponent } from './seasons/seasons.component';
-import { PersonRolesComponent } from './person-roles/person-roles.component';
+
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RepertoireComponent } from './components/repertoire/repertoire.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { TeamComponent } from './components/team/team.component';
+import { PersonComponent } from './components/person/person.component';
+import { PerformanceComponent } from './components/performance/performance.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { NewsComponent } from './components/news/news.component';
+import { AboutComponent } from './components/about/about.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { ArticleComponent } from './components/article/article.component';
+import { DonateComponent } from './components/donate/donate.component';
+import { BoardTrusteesComponent } from './components/board-trustees/board-trustees.component';
+import { StripHtmlModule } from './pipes/strip-html.module';
+import { CoreModule } from './modules/core/core.module';
+import { SpinnerModule } from './components/partials/spinner/spinner.module';
+import { AboutMoreComponent } from './components/about/about-more/about-more.component';
+import { DevTeamComponent } from './components/dev-team/dev-team.component';
+import { RolesComponent } from './components/person/roles/roles.component';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        PerformanceListComponent,
+        RepertoireComponent,
         HomePageComponent,
         PerformanceComponent,
         ScheduleComponent,
         NewsComponent,
         AboutComponent,
         PersonComponent,
-        PersonRolesComponent,
+        RolesComponent,
         ArticleComponent,
         TeamComponent,
         ContactsComponent,
@@ -48,7 +47,6 @@ describe('AppComponent', () => {
         BoardTrusteesComponent,
         AboutMoreComponent,
         DevTeamComponent,
-        SeasonsComponent
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue: '/'}
@@ -57,14 +55,13 @@ describe('AppComponent', () => {
         NgbModule,
         AppRoutingModule,
         CoreModule,
-        HomePageModule,
+        HttpClientTestingModule,
         RouterTestingModule,
         StripHtmlModule,
         InfiniteScrollModule,
         NgxGalleryModule,
         SpinnerModule,
         NgbPaginationModule,
-        WidgetModule
       ]
     }).compileComponents();
   }));

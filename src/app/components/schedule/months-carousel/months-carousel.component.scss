@@ -1,0 +1,164 @@
+@import "~assets/styles/variables";
+
+.slider__months-carousel {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  max-width: $container-width;
+
+  &__btn {
+    user-select: none;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    top: 11px;
+    z-index: 5;
+    flex-grow: 0;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+
+    & img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__btn__left {
+    left: 0;
+  }
+
+  &__btn__right {
+    right: 0;
+  }
+}
+
+.slider__months__container {
+  user-select: none;
+  position: relative;
+  width: $container-width;
+  margin: 10px auto 40px;
+  z-index: 4;
+  transition: ease-out .3s;
+
+  .slider__months {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    &__active-box {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      top: 0;
+      left: 600px;
+      transition: ease-out .3s;
+    }
+
+    &__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      min-height: 70px;
+      min-width: 300px;
+
+      &__active span {
+        font-weight: $font-weight-extra-bold;
+        color: #fff;
+      }
+
+      &__month__name {
+        overflow: visible;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        cursor: pointer;
+        font-family: $body-font-family;
+        font-size: $font-size-xxx-large;
+        line-height: 1.5;
+        color: #323232;
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, xxl-min)) {
+
+  .slider__months-carousel {
+
+    &__btn__left {
+      left: 20px;
+    }
+
+    &__btn__right {
+      right: 20px;
+    }
+  }
+
+  .slider__months__container {
+    width: 900px;
+
+    .slider__months__active-box {
+      left: 300px;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
+
+  .slider__months-carousel {
+
+    &__btn__left {
+      left: 20px;
+    }
+
+    &__btn__right {
+      right: 20px;
+    }
+  }
+
+  .slider__months__container {
+    width: 300px;
+
+    .slider__months {
+      width: 100%;
+    }
+
+    .slider__months__active-box {
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .slider__months-carousel {
+
+    &__btn {
+      top: 5px;
+
+      & img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .slider__months__container {
+
+    .slider__months__item {
+      min-height: 40px;
+
+      &__month__name {
+        font-size: $font-size-large;
+      }
+    }
+  }
+}

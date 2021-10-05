@@ -1,0 +1,176 @@
+@import "~assets/styles/variables";
+
+.header {
+  width: 100%;
+  background-color: $background-main-color-darker;
+
+  //TODO: refactor main btn component
+
+  .btn {
+
+    &.--btn-reset {
+      padding: 0;
+      border: none;
+      font: inherit;
+      color: inherit;
+      outline: inherit;
+      background: none;
+      box-shadow: none;
+    }
+
+    &.--btn-close {
+      padding: 4px;
+      border-radius: 5px;
+      background-color: $border-color-accent;
+    }
+  }
+
+  .header-container {
+
+    //TODO: need add padding to main class 'container'
+
+    .logo-wrapper {
+      margin: 0;
+
+      @include font($body-font-family, $font-size-medium, $font-color-black, $font-weight-normal, 1, normal);
+    }
+
+    margin: 0 auto;
+    display: flex;
+    padding: 16px 32px;
+    align-items: center;
+    max-width: $container-width + 64px;
+    justify-content: space-between;
+    font-size: $font-size-medium-px;
+
+
+    .language {
+      text-decoration: none;
+      transition: .3s ease;
+      color: $font-color-primary;
+
+      &:hover {
+        color: $font-color-white;
+      }
+    }
+
+    .separation {
+      font-size: 20px;
+    }
+  }
+
+  .icon-search {
+    margin-right: 20px;
+  }
+
+  .search-box {
+    position: absolute;
+    align-items: center;
+    left: 152px;
+    width: 68%;
+
+    &.show {
+      display: flex;
+    }
+
+    .search-input {
+      flex: 1;
+      height: 58px;
+      padding: 2px 2px 2px 16px;
+      border-radius: 2px;
+      transition: .3s;
+      color: $font-color-black;
+      font-size: $font-size-medium;
+
+      &:focus,
+      &:active {
+        outline: none;
+
+        @include border(2, solid, $border-color-accent, 2px);
+      }
+    }
+
+    .btn-cancel, .btn-search {
+      width: 58px;
+      height: 58px;
+    }
+
+    .btn-search {
+      right: 74px;
+      position: absolute;
+    }
+  }
+
+  .tickets-button {
+    padding: 12px 24px;
+    margin-left: 20px;
+    font-size: $font-size-medium-px;
+  }
+
+  .icons-group {
+    display: flex;
+
+    button + button {
+      margin-left: 32px;
+    }
+
+    .icon {
+      margin: 0;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+  }
+
+  .side-buttons {
+    top: 30%;
+    z-index: 8;
+    right: 16px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+
+    .btn-donate {
+      margin-bottom: 8px;
+    }
+
+    .btn-donate, .btn-settings {
+      padding: 16px;
+      transition: .3s;
+      background-color: $border-color-accent;
+
+      img {
+        width: 36px;
+      }
+
+      &:hover {
+        background-color: $background-on-hover;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md-min)) {
+
+  .header {
+
+    .header-logo {
+      width: 86px;
+    }
+
+    .icons-group {
+      display: flex;
+      justify-content: right;
+
+      button + button {
+        margin-left: 24px;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+    }
+  }
+}

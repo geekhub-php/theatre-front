@@ -1,0 +1,167 @@
+@import "~assets/styles/variables";
+
+.wrapped {
+  display: flex;
+  margin: 80px auto 90px;
+  flex-direction: column;
+  max-width: $container-width;
+  background-color: $background-color-black;
+}
+
+a {
+  color: $background-color-accent;
+  text-decoration: none;
+}
+
+.title {
+  text-align: center;
+
+  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-bold, 1.5, .8);
+}
+
+.all-persons {
+  @include flex-center;
+}
+
+.link-persons {
+  margin-top: 32px;
+
+  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5, 1.39);
+}
+
+.image {
+  margin: 32px;
+  cursor: pointer;
+  min-height: 200px;
+  filter: grayscale(100%);
+  transition: ease-in-out .3s;
+  background-size: cover !important;
+
+  @include box(350, 530);
+
+  &:hover {
+    filter: none;
+  }
+}
+
+.left {
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  z-index: 1;
+  height: 100%;
+  transition: all .3s ease;
+
+  @include flex-center;
+
+  &:hover {
+
+    .chevron path {
+      fill: $background-color-white;
+    }
+
+    transform: scale(1.2);
+    opacity: .6;
+  }
+}
+
+.right {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  height: 100%;
+  right: 5px;
+  z-index: 1;
+  transition: all .3s ease;
+
+  @include flex-center;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.slider-points {
+  list-style-type: none;
+  padding: 12px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: auto;
+  box-sizing: border-box;
+
+  @include flex-center;
+}
+
+.slider-points  li {
+  background-color: $background-color-disabled;
+  display: inline-block;
+  border-radius: 50%;
+  transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+  transition: .4s;
+  cursor: pointer;
+  width: 12px;
+
+  @include container(12px, 12, 4px, 0 10px);
+}
+
+.slider-points li.active {
+  background-color: $background-color-accent;
+  transform: scale(1.4);
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-max)) {
+
+  .image {
+    margin: 16px;
+    min-height: 200px;
+
+    @include box(250, 375);
+
+    &:hover {
+      filter: none;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md-max)) {
+
+  .wrapped {
+    margin: 40px 8px;
+  }
+
+  .right, .left {
+    display: none;
+  }
+
+  .image {
+    margin: 0;
+    min-height: 200px;
+
+    @include box(140, 200);
+
+    &:hover {
+      filter: none;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-max)) {
+
+  .title {
+    text-align: center;
+    margin-bottom: 16px;
+
+    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 1.5, .8);
+  }
+
+  .link-persons {
+    margin-top: 16px;
+
+    @include font($body-font-family, $font-size-xx-small, $font-color-accent, $font-weight-bold, 1.5, 1.39);
+  }
+
+  .slider-points {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+<ul *ngIf="showWideNav" class="header-nav">
+
+  <li><a class="header-nav__link action-link" [routerLink]="['/']" routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }" i18n="@@mainPage">Main</a></li>
+  <li><a class="header-nav__link" routerLink="/poster" routerLinkActive="active" i18n="@@poster">Poster</a></li>
+  <li><a class="header-nav__link" routerLink="/repertoire" routerLinkActive="active" i18n="@@repertoire">Repertoire</a>
+  </li>
+<!--  <li><a class="header-nav__link" routerLink="/persons" routerLinkActive="active"-->
+<!--         i18n="@@personalities">Personalities</a></li>-->
+<!--  <li><a class="header-nav__link" routerLink="/about" routerLinkActive="active" i18n="@@aboutTitle">About</a></li>-->
+<!--  <li><a class="header-nav__link" i18n="@@cooperation" routerLink="/cooperation"-->
+<!--         routerLinkActive="active">Cooperation</a></li>-->
+  <li><a class="header-nav__link" routerLink="/news" routerLinkActive="active" i18n="@@news">News</a></li>
+  <li><a class="header-nav__link" routerLink="/contacts" routerLinkActive="active" i18n="@@contacts">Contacts</a></li>
+
+</ul>
+
+<ul *ngIf="showSmallNav" class="header-nav">
+  <li><a class="header-nav__link" i18n="@@poster" routerLink="/poster" routerLinkActive="active">Poster</a></li>
+  <li><a class="header-nav__link" i18n="@@repertoire" routerLink="/repertoire" routerLinkActive="active">Repertoire</a>
+  </li>
+  <li><a class="header-nav__link" i18n="@@contacts" routerLink="/contacts" routerLinkActive="active">Contacts</a></li>
+</ul>

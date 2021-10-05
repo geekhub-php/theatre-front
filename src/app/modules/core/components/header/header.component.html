@@ -1,0 +1,83 @@
+<header class="header">
+  <div class="header-container">
+
+    <h1 class="logo-wrapper" aria-label="Cherkasy Theatre of Taras Shevchenko" i18n-aria-label="@@theatreName">
+      <a routerLink="/">
+        <img class="header-logo" src="assets/images/logos/logo_white.svg" alt="Cherkasy Theatre of Taras Shevchenko">
+      </a>
+    </h1>
+
+    <!--    <button class="navbar-toggler" aria-label="Menu" i18n-aria-label="@@menu" type="button" (click)="toggleMenu()">-->
+    <!--      <span class="navbar-toggler-icon"></span>-->
+    <!--    </button>-->
+
+    <nav>
+      <app-main-nav></app-main-nav>
+    </nav>
+
+
+    <div *ngIf="wideScreen" class="header-buttons">
+      <!--    <button class="search-button" aria-controls="collapseExample"-->
+      <!--            (click)="collapseMenu()">-->
+      <!--            [attr.aria-expanded]="!isCollapsed">-->
+      <!--      <img class="icon-search" src="assets/images/icons/ic_magnifying_glass.svg" alt="">-->
+      <!--    </button>-->
+
+<!--      <button (click)="collapseMenu()"  class="btn &#45;&#45;btn-reset icon-search">-->
+<!--        <img src="assets/images/icons/ic_magnifying_glass.svg" alt="">-->
+<!--      </button>-->
+
+      <div [ngbCollapse]="!isCollapsed" class="search-box">
+        <input (keydown.enter)="sendRequestOnEnter();false" [(ngModel)]="textValue" class="search-input"
+               placeholder="{{search_text}}" type="text"/>
+        <button (click)="sendRequestOnIconClick()" class="btn --btn-reset btn-search">
+          <img alt="Search button" i18n-title="@@search"
+               src="assets/images/icons/ic_magnifying_glass_gold.svg" title="Search">
+        </button>
+        <button (click)="clearSubmit()" class="btn --btn-reset --btn-close btn-cancel">
+          <img src="assets/images/icons/ic_cross_black.svg" alt="cross icon">
+        </button>
+      </div>
+
+      <a [href]="langRedirectUrl"
+         class="language ukr">Укр&nbsp;</a> <span class="separation">|</span>
+      <a [href]="langRedirectUrl" class="language eng">&nbsp;Eng</a>
+
+      <a class="header-button btn tickets-button"
+         href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
+         i18n="@@buyTicket" target="_blank">Buy ticket</a>
+    </div>
+
+    <div *ngIf="!wideScreen" class="icons-group">
+      <button (click)="openDonate()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_wallet.svg"
+             alt="wallet">
+      </button>
+      <button (click)="openSettings()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_settings.svg" alt="">
+      </button>
+      <button (click)="openNavbar()" class="btn --btn-reset">
+        <img class="icon" src="assets/images/icons/ic_burger.svg"
+             alt="Side navigation">
+      </button>
+    </div>
+
+  </div>
+
+  <app-burger-menu></app-burger-menu>
+
+  <div class="side-buttons d-none d-lg-min-flex">
+    <button (click)="openDonate()" class="btn --btn-reset btn-donate">
+      <img src="assets/images/icons/ic_wallet_black.svg" alt="Donate" i18n-title="@@donate" title="Donate">
+    </button>
+
+    <button (click)="openSettings() " class="btn --btn-reset btn-settings">
+      <img src="assets/images/icons/ic_eye_settings_black.svg" alt="Color schemes" title="Color schemes"
+           i18n-title="@@color-schemes">
+    </button>
+  </div>
+
+</header>
+
+
+

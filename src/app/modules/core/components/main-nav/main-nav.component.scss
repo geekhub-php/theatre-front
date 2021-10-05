@@ -1,0 +1,28 @@
+@import "~assets/styles/variables";
+
+.header-nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+
+  li + li {
+    margin-left: 20px;
+  }
+
+  a {
+    color: $font-color-primary;
+
+    &:hover {
+      color: $font-color-white;
+      text-decoration: none;
+      background-color: rgba($background-on-hover, .05);
+    }
+  }
+
+  .active {
+    color: $font-color-white;
+    font-weight: $font-weight-semi-bold;
+  }
+}

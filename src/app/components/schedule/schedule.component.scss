@@ -1,0 +1,143 @@
+@import "~assets/styles/variables";
+
+:host {
+  flex: 1;
+}
+
+.title {
+  margin: 80px auto 0;
+  text-align: center;
+}
+
+.btn-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .btn {
+    margin: 0 5px;
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    background-color: $white-color;
+    box-shadow: none !important;
+
+    &:hover {
+      color: $main-color-darker;
+      border: 1px solid $main-color-darker;
+    }
+  }
+}
+
+.poster__title {
+  margin: 60px auto 0;
+  max-width: 1500px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  h2 {
+    user-select: none;
+    color: $border-color-accent;
+    font-family: $creative-font;
+    font-size: 80px;
+  }
+}
+
+.poster__toggle {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin-right: 8px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    & img {
+      user-select: none;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__text {
+    user-select: none;
+    font-family: $body-font-family;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $secondary-background-color;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &__active span {
+      color: $white-color;
+    }
+  }
+}
+
+.poster-view {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: $secondary-color;
+  transition: .3s ease;
+
+  &:hover {
+    color: $main-color-darker;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.poster__spinner {
+  top: 210px;
+  position: absolute;
+}
+
+@media (max-width: map-get($grid-breakpoints, xl-min)) {
+
+  .poster-view {
+    display: none;
+  }
+
+  .poster__spinner {
+    top: 230px;
+    position: absolute;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+  .poster__title {
+    margin: 0 auto;
+
+    h2 {
+      font-size: $font-size-xx-large;
+    }
+  }
+
+  .poster__spinner {
+    top: 130px;
+    position: absolute;
+  }
+}

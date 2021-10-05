@@ -1,4 +1,10 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer class="footer"></app-footer>
+<div class="theatre-frontend" [class.sidebar-active]="isSidebarActive">
+  <app-header></app-header>
+  <app-donate></app-donate>
+  <app-visually-impaired></app-visually-impaired>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
+
+
 
