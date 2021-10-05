@@ -23,9 +23,9 @@
       <!--      <img class="icon-search" src="assets/images/icons/ic_magnifying_glass.svg" alt="">-->
       <!--    </button>-->
 
-      <button (click)="collapseMenu()"  class="btn --btn-reset icon-search">
-        <img src="assets/images/icons/ic_magnifying_glass.svg" alt="">
-      </button>
+<!--      <button (click)="collapseMenu()"  class="btn &#45;&#45;btn-reset icon-search">-->
+<!--        <img src="assets/images/icons/ic_magnifying_glass.svg" alt="">-->
+<!--      </button>-->
 
       <div [ngbCollapse]="!isCollapsed" class="search-box">
         <input (keydown.enter)="sendRequestOnEnter();false" [(ngModel)]="textValue" class="search-input"
@@ -66,7 +66,7 @@
 
   <app-burger-menu></app-burger-menu>
 
-  <div class="side-buttons d-none d-xl-min-flex">
+  <div class="side-buttons d-none d-lg-min-flex">
     <button (click)="openDonate()" class="btn --btn-reset btn-donate">
       <img src="assets/images/icons/ic_wallet_black.svg" alt="Donate" i18n-title="@@donate" title="Donate">
     </button>

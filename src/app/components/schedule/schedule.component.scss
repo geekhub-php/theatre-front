@@ -1,5 +1,9 @@
 @import "~assets/styles/variables";
 
+:host {
+  flex: 1;
+}
+
 .title {
   margin: 80px auto 0;
   text-align: center;
@@ -125,6 +129,7 @@
 @media (max-width: map-get($grid-breakpoints, sm-min)) {
 
   .poster__title {
+    margin: 0 auto;
 
     h2 {
       font-size: $font-size-xx-large;

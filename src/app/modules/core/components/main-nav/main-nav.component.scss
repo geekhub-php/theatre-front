@@ -20,4 +20,9 @@
       background-color: rgba($background-on-hover, .05);
     }
   }
+
+  .active {
+    color: $font-color-white;
+    font-weight: $font-weight-semi-bold;
+  }
 }

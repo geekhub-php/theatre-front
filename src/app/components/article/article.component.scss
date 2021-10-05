@@ -1,9 +1,13 @@
 @import "~assets/styles/variables";
 
+:host {
+  flex: 1;
+}
+
 .page_title {
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 32px;
 
   @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
 }
@@ -51,7 +55,7 @@
 .article_container {
   max-width: $container-width;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 32px;
 }
 
 .gallery_title {
@@ -78,7 +82,11 @@
 @media (max-width: map-get($grid-breakpoints, md-max)) {
 
   .article_container {
-    padding: 30px;
+    padding: 0 32px;
+  }
+
+  .page_title {
+    margin-bottom: 0;
   }
 
   .article {
@@ -109,6 +117,13 @@
       margin: 0 auto;
       display: block;
     }
+  }
+
+  .page_title {
+    margin-bottom: 0;
+    padding-top: 16px;
+
+    @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.5, normal)
   }
 
   .section_title {

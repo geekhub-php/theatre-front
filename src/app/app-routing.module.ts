@@ -44,18 +44,18 @@ const appRoutes: Routes = [
   {path: 'performance/:slug', component: PerformanceComponent},
   {path: 'news', component: NewsComponent},
   {path: 'news/:slug', component: ArticleComponent},
-  {
-    path: 'about', component: AboutComponent,
-    children: [
-      {path: '', redirectTo: 'theatre-history', pathMatch: 'full'},
-      {path: 'theatre-history', component: TheatreHistoryComponent},
-      {path: 'epoch/persons', component: EpochComponent},
-      {path: 'festivals', component: FestivalsComponent},
-      {path: 'visit', component: VisitComponent},
-      {path: 'festivals/:slug', component: AboutMoreComponent}
-    ]
-  },
-  {path: 'about/:personId', component: PersonComponent},
+  // {
+  //   path: 'about', component: AboutComponent,
+  //   children: [
+  //     {path: '', redirectTo: 'theatre-history', pathMatch: 'full'},
+  //     {path: 'theatre-history', component: TheatreHistoryComponent},
+  //     {path: 'epoch/persons', component: EpochComponent},
+  //     {path: 'festivals', component: FestivalsComponent},
+  //     {path: 'visit', component: VisitComponent},
+  //     {path: 'festivals/:slug', component: AboutMoreComponent}
+  //   ]
+  // },
+  // {path: 'about/:personId', component: PersonComponent},
   {
     path: 'persons', component: TeamComponent,
     children: [
@@ -70,10 +70,10 @@ const appRoutes: Routes = [
   },
   {path: 'persons/:personId', component: PersonComponent},
   {path: 'contacts', component: ContactsComponent},
-  {path: 'board-trustees', component: BoardTrusteesComponent},
-  {path: 'developers-team', component: DevTeamComponent},
-  {path: 'partners', component: PartnersComponent},
-  {path: 'cooperation', component: CooperationComponent},
+  // {path: 'board-trustees', component: BoardTrusteesComponent},
+  // {path: 'developers-team', component: DevTeamComponent},
+  // {path: 'partners', component: PartnersComponent},
+  // {path: 'cooperation', component: CooperationComponent},
   {path: '**', component: PageNotFoundComponent} // remove for now, due to strange behaviour in ssr setup*/
 ];
 

@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
 
   getWindowSize() {
     const screenWidth = window.innerWidth;
-    const wideScreen = Breakpoints.xl_min;
+    const wideScreen = Breakpoints.lg_min;
 
     this.wideScreen = screenWidth > wideScreen;
   }

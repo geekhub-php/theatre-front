@@ -1,5 +1,9 @@
 @import "~assets/styles/variables";
 
+:host {
+  flex: 1;
+}
+
 .container {
   padding: 0 32px;
   max-width: $container-width;
@@ -26,8 +30,9 @@
   white-space: nowrap;
   text-decoration: none;
 
-  & a {
+  .ticket_link {
     padding: 10px 50px;
+    transition: .3s;
 
     @include border(1, solid, $border-color-light, 2px);
     @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
@@ -45,15 +50,12 @@
   }
 }
 
+:host::ng-deep p > a {
+  @extend .link
+}
+
 .details {
   font-size: $font-size-medium-px;
-
-  & .description > p {
-
-    & > a {
-      @extend .link
-    }
-  }
 
   .performance_seasons {
     display: flex;
@@ -214,14 +216,14 @@
   @include font($body-font-family, $font-size-medium-px, $font-color-primary, $font-weight-normal, $line-height-basic, normal)
 }
 
-:host ::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
-  border: none !important;
-}
-
-:host .details::ng-deep a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+//:host ::ng-deep .ngx-gallery-thumbnail.ngx-gallery-active {
+//  border: none !important;
+//}
+//
+//:host .details::ng-deep a {
+//  text-decoration: underline;
+//  text-underline-offset: 3px;
+//}
 
 @media (max-width: map-get($grid-breakpoints, lg-min)) {
 

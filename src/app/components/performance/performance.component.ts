@@ -22,9 +22,6 @@ enum galleryColumns {
   selector: 'app-performance',
   templateUrl: './performance.component.html',
   styleUrls: [ './performance.component.scss' ],
-  // disabled for styling innerHTML code
-  // tslint:disable-next-line:use-component-view-encapsulation
-  encapsulation: ViewEncapsulation.None
 })
 export class PerformanceComponent implements OnInit {
   slug: string;
