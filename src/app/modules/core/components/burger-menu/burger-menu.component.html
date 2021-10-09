@@ -3,6 +3,12 @@
 
   <img src="assets/images/logos/logo_black.svg" class="logo" alt="theatre logo">
 
+  <div class="language-switcher">
+    <a [href]="isEn ? langRedirectUrl : ''" [class.active-locale]="!isEn">Укр</a>
+    <span class="separation">|</span>
+    <a [href]="!isEn ? langRedirectUrl : ''" [class.active-locale]="isEn">Eng</a>
+  </div>
+
   <button (click)="closeBurgerMenu()" class="btn --btn-reset close">
     <img src="assets/images/icons/ic_cross_black.svg" alt="cross icon">
   </button>

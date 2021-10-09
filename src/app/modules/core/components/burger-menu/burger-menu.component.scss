@@ -52,8 +52,30 @@
   @include flex-center()
 }
 
+.language-switcher {
+  top: 12px;
+  left: 16px;
+  transition: .3s;
+  position: absolute;
+
+  a {
+    text-decoration: none;
+
+    @include font($body-font-family, $font-size-small, $background-main-color, $font-weight-normal, 1.5, normal);
+  }
+
+  .separation {
+    padding: 0 8px;
+  }
+
+  .active-locale {
+    color: $white-color;
+    font-weight: $font-weight-bold;
+  }
+}
+
 .logo {
-  margin: 32px auto;
+  margin: 48px auto 32px;
   align-self: center;
 }
 

@@ -52,9 +52,15 @@
       &:hover {
         color: $font-color-white;
       }
+
+      &.active-language {
+        color: $font-color-white;
+        font-weight: $font-weight-bold;
+      }
     }
 
     .separation {
+      padding: 0 8px;
       font-size: 20px;
     }
   }
