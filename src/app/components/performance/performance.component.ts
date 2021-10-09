@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, LOCALE_ID, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { forkJoin } from 'rxjs';
@@ -7,6 +7,7 @@ import { LoaderService } from '../partials/spinner/loader.service';
 
 import { Role } from '../../store/Role';
 import { Breakpoints } from '../../constants';
+import { LangService, Locales } from 'app/services/lang.service';
 import { GatewayService } from '../../services/gateway.service';
 import { Performance } from '../../store/performance/Performance';
 import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
@@ -27,12 +28,13 @@ export class PerformanceComponent implements OnInit {
   slug: string;
   loading = true;
   imageAmount = 0;
-  activeId: string;
+  activeId = 'actors';
   roles: Array<Role>;
   loadingFull = true;
   xsBreakPoint = 468;
   thumbnailHeight = 240;
   performance: Performance;
+  localeId: Locales = Locales.en;
 
   commonGalleryOptions = {
     image: false,
@@ -75,13 +77,13 @@ export class PerformanceComponent implements OnInit {
     }
   ];
 
-  constructor(@Inject(LOCALE_ID) private localeId: string,
+  constructor(private router: ActivatedRoute,
               private gateway: GatewayService,
-              private router: ActivatedRoute,
+              private langService: LangService,
               private loaderService: LoaderService) {
-    this.activeId = 'actors';
-    const idLength = 2;
-    this.localeId = this.localeId.slice(0, idLength);
+    this.langService.localeId$.subscribe(localeId => {
+      this.localeId = localeId;
+    });
   }
 
   @HostListener('window:resize', [ '$event' ])

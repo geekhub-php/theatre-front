@@ -12,8 +12,6 @@ import {
   Component,
   HostListener,
   EventEmitter,
-  Inject,
-  LOCALE_ID, OnChanges, AfterViewChecked, AfterContentChecked
 } from '@angular/core';
 import {
   TSliderMonth,
@@ -22,6 +20,7 @@ import {
 } from 'app/store/schedule/MonthsSliderItem';
 import { MonthsCarouselService } from './months-carousel.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { LangService } from '../../../services/lang.service';
 
 @Component({
   selector: 'app-months-carousel',
@@ -82,13 +81,13 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
 
   constructor(
     private cd: ChangeDetectorRef,
+    private langService: LangService,
     private carousel: MonthsCarouselService,
     private deviceService: DeviceDetectorService,
-    @Inject(LOCALE_ID) private localeId: string,
   ) {
-      const idLength = 2;
-      this.localeId = this.localeId.slice(0, idLength);
-      this.monthsList = this.carousel.createMonthList(this.monthsNameList[this.localeId]);
+    this.langService.localeId$.subscribe(localeId => {
+      this.monthsList = this.carousel.createMonthList(this.monthsNameList[localeId]);
+    });
   }
 
   @HostListener('window:resize') onResize() {

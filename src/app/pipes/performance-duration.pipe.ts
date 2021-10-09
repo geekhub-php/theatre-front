@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Locales } from '../services/lang.service';
 
 interface IPerformanceDuration {
   min: number;
@@ -14,11 +15,11 @@ export class PerformanceDurationPipe implements PipeTransform {
     h: 0
   };
 
-  transform(value: number, language: 'uk' | 'en'): string {
+  transform(value: number, language: Locales): string {
     this.setTime(value);
     const { min, h } = this.time;
 
-    return language === 'en' ? `${h} h. ${min} min.` : `${h} год. ${min} хв.`;
+    return language === Locales.en ? `${h} h. ${min} min.` : `${h} год. ${min} хв.`;
   }
 
   setTime(minutes: number) {

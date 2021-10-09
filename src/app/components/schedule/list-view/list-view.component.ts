@@ -1,10 +1,11 @@
-import { Component, Inject, Input, LOCALE_ID, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
 import { LoaderService } from '../../partials/spinner/loader.service';
 import { CalendarService } from '../calendar.service';
 import { MonthsCarouselService } from '../months-carousel/months-carousel.service';
 import { Subscription } from 'rxjs';
 import { ScheduleViewModes } from '../schedule.component';
+import { LangService, Locales } from '../../../services/lang.service';
 
 @Component({
   selector: 'app-list-view',
@@ -22,13 +23,15 @@ export class ListViewComponent implements OnInit, OnDestroy {
   calendarSubscription: Subscription;
   loaderSubscription: Subscription;
   loader: boolean;
+  localeId: Locales = Locales.en;
 
   constructor(private slider: MonthsCarouselService,
               private loaderService: LoaderService,
               private calendar: CalendarService,
-              @Inject(LOCALE_ID) private localeId: string) {
-    const idLength = 2;
-    this.localeId = this.localeId.slice(0, idLength);
+              private langService: LangService) {
+    this.langService.localeId$.subscribe(localeId => {
+      this.localeId = localeId;
+    });
     this.loaderSubscription = this.loaderService.subject.subscribe(spinner => {
       this.loader = spinner.load;
     });

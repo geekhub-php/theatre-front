@@ -1,12 +1,11 @@
-import { Component, HostListener, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 
 import { filter } from 'rxjs/operators';
 
 import { Breakpoints } from 'app/constants';
-import { LangService } from 'app/services/lang.service';
+import { LangService, Locales } from 'app/services/lang.service';
 import { ESidebar, SidebarService } from 'app/services/sidebar.service';
-import { VisuallyImpairedService } from 'app/services/visually-impaired.service';
 
 @Component({
   selector: 'app-header',
@@ -15,30 +14,33 @@ import { VisuallyImpairedService } from 'app/services/visually-impaired.service'
 })
 
 export class HeaderComponent implements OnInit {
+  wideScreen;
+  textValue = '';
   collapse = false;
   isCollapsed = false;
+  localeId: Locales = Locales.en;
   search_text = 'Enter your search key word/words';
-  textValue = '';
-  wideScreen;
-  isEn = false;
 
-  get langRedirectUrl() {
-    return this.langService.getLangRedirectUrl();
+  get ukLangUrl() {
+    return this.langService.getLangRedirectUrl(Locales.uk);
+  }
+
+  get enLangUrl() {
+    return this.langService.getLangRedirectUrl(Locales.uk);
   }
 
   constructor(
     private router: Router,
     private langService: LangService,
-    private visuallyImpairedService: VisuallyImpairedService,
     private sidebarService: SidebarService,
-    @Inject(LOCALE_ID) private localeId: string
   ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
       .subscribe(() => this.collapse = true);
 
-    const idLength = 2;
-    this.isEn = this.localeId.slice(0, idLength) === 'en';
+    this.langService.localeId$.subscribe(localeId => {
+      this.localeId = localeId;
+    });
   }
 
   ngOnInit(): void {

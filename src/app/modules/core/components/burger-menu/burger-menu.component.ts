@@ -1,7 +1,8 @@
-import { Component, Inject, LOCALE_ID } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { LangService, Locales } from 'app/services/lang.service';
 import { sideBarAnimation } from 'app/utilities/side-bar-animation';
 import { ESidebar, SidebarService } from 'app/services/sidebar.service';
-import { LangService } from 'app/services/lang.service';
 
 @Component({
   selector: 'app-burger-menu',
@@ -12,21 +13,27 @@ import { LangService } from 'app/services/lang.service';
 
 export class BurgerMenuComponent {
   isNavbarActive = false;
-  isEn = false;
+  localeId: Locales = Locales.en;
 
   constructor(
-    private sidebarService: SidebarService,
     private langService: LangService,
-    @Inject(LOCALE_ID) private localeId: string) {
+    private sidebarService: SidebarService,
+  ) {
     this.sidebarService.subject.subscribe(({ isActive, barName })  => {
       this.isNavbarActive = isActive && barName === ESidebar.navbar;
     });
-    const idLength = 2;
-    this.isEn = this.localeId.slice(0, idLength) === 'en';
+
+    this.langService.localeId$.subscribe(localeId => {
+      this.localeId = localeId;
+    });
   }
 
-  get langRedirectUrl() {
-    return this.langService.getLangRedirectUrl();
+  get ukLangUrl() {
+    return this.langService.getLangRedirectUrl(Locales.uk);
+  }
+
+  get enLangUrl() {
+    return this.langService.getLangRedirectUrl(Locales.en);
   }
 
   closeBurgerMenu() {
