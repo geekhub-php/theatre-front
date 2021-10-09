@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   }
 
   get enLangUrl() {
-    return this.langService.getLangRedirectUrl(Locales.uk);
+    return this.langService.getLangRedirectUrl(Locales.en);
   }
 
   constructor(
