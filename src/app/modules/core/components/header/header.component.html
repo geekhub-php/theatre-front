@@ -39,9 +39,9 @@
         </button>
       </div>
 
-      <a [href]="langRedirectUrl"
-         class="language ukr">Укр&nbsp;</a> <span class="separation">|</span>
-      <a [href]="langRedirectUrl" class="language eng">&nbsp;Eng</a>
+      <a [href]="ukLangUrl" [class.active-language]="localeId === 'uk'" class="language ukr">Укр</a>
+      <span class="separation">|</span>
+      <a [href]="enLangUrl" [class.active-language]="localeId === 'en'" class="language eng">Eng</a>
 
       <a class="header-button btn tickets-button"
          href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"

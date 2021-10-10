@@ -1,5 +1,6 @@
-import { Component, Inject, Input, LOCALE_ID } from '@angular/core';
-import { PerformanceEvent } from '../../../../store/schedule/PerformanceEvent';
+import { Component, Input } from '@angular/core';
+import { LangService, Locales } from 'app/services/lang.service';
+import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
 
 @Component({
   selector: 'app-calendar-popup',
@@ -8,9 +9,11 @@ import { PerformanceEvent } from '../../../../store/schedule/PerformanceEvent';
 })
 export class CalendarPopupComponent {
   @Input() event: PerformanceEvent;
+  localeId: Locales = Locales.en;
 
-  constructor(@Inject(LOCALE_ID) private localeId: string) {
-    const idLength = 2;
-    this.localeId = this.localeId.slice(0, idLength);
+  constructor(private langService: LangService) {
+    this.langService.localeId$.subscribe(localeId => {
+      this.localeId = localeId;
+    });
   }
 }

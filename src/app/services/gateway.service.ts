@@ -1,4 +1,4 @@
-import { Injectable, Inject, LOCALE_ID } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
@@ -22,11 +22,14 @@ import { WidgetResType } from '../store/widget/WidgetResType';
 import { Season } from '../store/season/Season';
 
 import { environment } from '../../environments/environment';
+import { LangService, Locales } from './lang.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatewayService {
+  localeId: Locales = Locales.en;
+
   readonly baseUrl = environment.baseUrl;
   readonly canonicalUrl = environment.canonicalUrl;
   readonly performanceListUrl = 'performances';
@@ -37,13 +40,15 @@ export class GatewayService {
   readonly employeesListUrl = 'employees';
   readonly employeesListGroupe = 'groups';
 
+
   constructor(private http: HttpClient,
-              @Inject(LOCALE_ID) private localeId: string,
+              private langService: LangService,
               @Inject(DOCUMENT) private doc,
               private router: Router,
               private meta: Meta) {
-    const idLength = 2;
-    this.localeId = this.localeId.slice(0, idLength);
+    this.langService.localeId$.subscribe(localeId => {
+      this.localeId = localeId;
+    });
   }
 
   getSeasons(): Observable<Array<Season>> {

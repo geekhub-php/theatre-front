@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+import { LangService, Locales } from 'app/services/lang.service';
 import { sideBarAnimation } from 'app/utilities/side-bar-animation';
 import { ESidebar, SidebarService } from 'app/services/sidebar.service';
 
@@ -11,11 +13,27 @@ import { ESidebar, SidebarService } from 'app/services/sidebar.service';
 
 export class BurgerMenuComponent {
   isNavbarActive = false;
+  localeId: Locales = Locales.en;
 
-  constructor(private sidebarService: SidebarService) {
+  constructor(
+    private langService: LangService,
+    private sidebarService: SidebarService,
+  ) {
     this.sidebarService.subject.subscribe(({ isActive, barName })  => {
       this.isNavbarActive = isActive && barName === ESidebar.navbar;
     });
+
+    this.langService.localeId$.subscribe(localeId => {
+      this.localeId = localeId;
+    });
+  }
+
+  get ukLangUrl() {
+    return this.langService.getLangRedirectUrl(Locales.uk);
+  }
+
+  get enLangUrl() {
+    return this.langService.getLangRedirectUrl(Locales.en);
   }
 
   closeBurgerMenu() {
