@@ -26,21 +26,21 @@
   </symbol>
 </svg>
 
-<app-repertoire-nav-header class="d-none d-xl-max-block"></app-repertoire-nav-header>
+<app-repertoire-nav-header class="d-none d-lg-max-block"></app-repertoire-nav-header>
 
 <div class="container">
   <app-spinner name="performance-page"></app-spinner>
 
-  <h2 class="page_title" i18n="@@performanceItem">Performance</h2>
+  <div><h2 class="kobzar-title" i18n="@@performanceItem">Performance</h2></div>
   <h1 class="performance_title"> {{ performance?.title | titlecase }} </h1>
 
   <section *ngIf="performance" class="performance_body">
     <!--  Start performance image-->
     <div class="performance_poster">
       <div class="poster-container">
-        <img [alt]="performance.mainPicture.performance_big.alt" [src]="performance.mainPicture.performance_big.url"
-             [title]="performance.mainPicture.performance_big.properties.title">
-        <div class="limit">
+        <img [alt]="performance.mainPicture?.performance_big?.alt" [src]="performance.mainPicture?.performance_big?.url"
+             [title]="performance.mainPicture?.performance_big?.properties.title">
+        <div *ngIf="performance && performance.age_limit + 1" class="limit">
           {{ performance.age_limit + '+' }}
         </div>
       </div>

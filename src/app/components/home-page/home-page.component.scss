@@ -14,12 +14,6 @@
 
   @include font($body-font-family, $font-size-medium, $font-color-primary, $font-weight-normal, 1.5, normal);
 
-  .we-offer__title {
-    margin-bottom: 28px;
-
-    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
-  }
-
   &__text {
 
     p:last-child {
@@ -81,7 +75,7 @@
 
 .news_wrapper {
   display: flex;
-  margin: 64px auto 80px;
+  margin: 0 auto 80px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -196,12 +190,6 @@
     padding: 26px 16px 40px;
 
     @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
-
-    .we-offer__title {
-      margin-bottom: 16px;
-
-      @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.28, normal);
-    }
 
     .link-buttons {
       line-height: 1.5;

@@ -1,4 +1,4 @@
-<div class="list-view">
+<div class="list-view" [class.without-padding]="!events.length && !loader">
   <div *ngFor="let event of events" class="list-view__block" [class.list-view__block__with-date]="event && !event.dateExist">
       <div *ngIf="event && !event.dateExist" class="list-view__date d-flex d-xl-max-none">
         <div class="list-view__date__day">{{ event.date_time | date: 'dd' }}</div>

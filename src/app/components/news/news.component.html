@@ -8,11 +8,8 @@
 </svg>
 
 <div>
-  <h2 i18n="@@news">News</h2>
-
-  <app-spinner name="news"></app-spinner>
-
   <div class="news_container">
+    <div class="mb-2 mb-sm-max-3"><h2 class="kobzar-title" i18n="@@news">News</h2></div>
 
     <div *ngIf="listPost" class="news_wrapper">
       <app-news-list-item *ngFor="let item of listPost" [item]="item"></app-news-list-item>
@@ -41,6 +38,7 @@
     </div>
 
   </div>
+  <app-spinner name="news"></app-spinner>
 </div>
 
 

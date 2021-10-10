@@ -12,13 +12,6 @@
     text-decoration: underline;
   }
 
-  &__name {
-    cursor: default;
-    text-align: center;
-
-    @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
-  }
-
   &__about {
     margin-top: 54px;
   }
@@ -79,10 +72,6 @@
   .person {
     padding: 0 16px;
     margin: 32px auto 40px;
-
-    &__name {
-      @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.11, normal);
-    }
 
     &__about {
       margin-top: 16px;

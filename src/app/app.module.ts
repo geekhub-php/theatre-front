@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LottieModule } from 'ngx-lottie';
 
 import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -61,6 +62,7 @@ import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
+import { playerFactory } from './components/partials/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -122,6 +124,7 @@ import { CatInteractiveComponent } from './components/schedule/list-view/cat-int
     CoreModule,
     GalleryModule,
     NguCarouselModule,
+    LottieModule.forRoot({ player: playerFactory })
   ],
   providers: [
     CalendarPopupComponent,

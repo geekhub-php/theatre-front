@@ -9,40 +9,14 @@
   text-align: center;
 }
 
-.btn-switch {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  .btn {
-    margin: 0 5px;
-    color: $secondary-color;
-    border: 1px solid $secondary-color;
-    background-color: $white-color;
-    box-shadow: none !important;
-
-    &:hover {
-      color: $main-color-darker;
-      border: 1px solid $main-color-darker;
-    }
-  }
-}
-
 .poster__title {
-  margin: 60px auto 0;
+  margin: 32px auto 0;
   max-width: 1500px;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: row;
   position: relative;
-
-  h2 {
-    user-select: none;
-    color: $border-color-accent;
-    font-family: $creative-font;
-    font-size: 80px;
-  }
 }
 
 .poster__toggle {
@@ -127,14 +101,6 @@
 }
 
 @media (max-width: map-get($grid-breakpoints, sm-min)) {
-
-  .poster__title {
-    margin: 0 auto;
-
-    h2 {
-      font-size: $font-size-xx-large;
-    }
-  }
 
   .poster__spinner {
     top: 130px;

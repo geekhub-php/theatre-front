@@ -60,6 +60,7 @@ export class PersonComponent implements OnInit {
     this.gatewayService.getEmployeeBySlug(slug).subscribe(
       res => {
         this.person = plainToClass(Employee, res);
+        this.person.biography = this.person?.biography?.replace(/&nbsp;/gm, ' ');
         this.loaderService.stop('person');
         this.gatewayService.updateMeta(`${this.person.first_name} ${this.person.last_name}`,
           this.person.biography, this.person.avatar.employee_small.url);
