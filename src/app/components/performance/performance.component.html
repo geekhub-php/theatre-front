@@ -40,7 +40,7 @@
       <div class="poster-container">
         <img [alt]="performance.mainPicture?.performance_big?.alt" [src]="performance.mainPicture?.performance_big?.url"
              [title]="performance.mainPicture?.performance_big?.properties.title">
-        <div *ngIf="performance && performance.age_limit + 1" class="limit">
+        <div *ngIf="performance && (performance.age_limit || performance.age_limit === 0)" class="limit">
           {{ performance.age_limit + '+' }}
         </div>
       </div>

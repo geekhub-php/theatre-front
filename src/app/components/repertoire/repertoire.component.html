@@ -26,7 +26,7 @@
       <div class="item__container" [routerLink]="['', 'performance', item.slug]">
         <img class="image-performance" [src]="item.mainPicture.performance_big.url"
              [alt]="item.title">
-        <span *ngIf="item && item.age_limit + 1" class="age-restrictions">{{ item.age_limit }}+</span>
+        <span *ngIf="item && (item.age_limit || item.age_limit === 0)" class="age-restrictions">{{ item.age_limit }}+</span>
       </div>
     </div>
   </div>
