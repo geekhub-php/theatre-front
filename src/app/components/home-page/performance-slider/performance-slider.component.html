@@ -35,7 +35,7 @@
     <div class="container__button">
       <a [href]="data.ticket" class="button-ticket tickets-button" i18n="@@buyTicket">Buy ticket</a>
     </div>
-    <span class="age-restrictions">{{ data.ageLimit }}+</span>
+    <span *ngIf="data && (data.ageLimit || data.ageLimit === 0)" class="age-restrictions">{{ data.ageLimit }}+</span>
   </div>
 </ng-template>
 

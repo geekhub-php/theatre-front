@@ -57,15 +57,25 @@ const appRoutes: Routes = [
   // },
   // {path: 'about/:personId', component: PersonComponent},
   {
-    path: 'persons', component: TeamComponent,
+    // path: 'persons', component: TeamComponent,
+    path: 'persons', component: PageNotFoundComponent,
+    // children: [
+    //   {path: '', redirectTo: 'creative', pathMatch: 'full'},
+    //   {path: 'creative', component: CreativeComponent},
+    //   {path: 'artistic', component: ArtisticComponent},
+    //   {path: 'administration', component: AdministrationComponent},
+    //   {path: 'administration/:slug', component: PersoneShowmoreComponent},
+    //   {path: 'creative/:slug', component: PersoneShowmoreComponent},
+    //   {path: 'artistic/:slug', component: PersoneShowmoreComponent}
+    // ]
     children: [
       {path: '', redirectTo: 'creative', pathMatch: 'full'},
-      {path: 'creative', component: CreativeComponent},
-      {path: 'artistic', component: ArtisticComponent},
-      {path: 'administration', component: AdministrationComponent},
-      {path: 'administration/:slug', component: PersoneShowmoreComponent},
-      {path: 'creative/:slug', component: PersoneShowmoreComponent},
-      {path: 'artistic/:slug', component: PersoneShowmoreComponent}
+      {path: 'creative', component: PageNotFoundComponent},
+      {path: 'artistic', component: PageNotFoundComponent},
+      {path: 'administration', component: PageNotFoundComponent},
+      {path: 'administration/:slug', component: PageNotFoundComponent},
+      {path: 'creative/:slug', component: PageNotFoundComponent},
+      {path: 'artistic/:slug', component: PageNotFoundComponent}
     ]
   },
   {path: 'persons/:personId', component: PersonComponent},

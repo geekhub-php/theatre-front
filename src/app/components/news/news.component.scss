@@ -4,17 +4,9 @@
   flex: 1;
 }
 
-h2 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-
-  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal);
-}
-
 .news_container {
   max-width: $container-width + 64px;
-  margin: 0 auto;
+  margin: 32px auto 0;
   padding: 0 32px 120px;
 }
 
@@ -29,13 +21,6 @@ h2 {
 
 
 @media (max-width: map-get($grid-breakpoints, sm-max)) {
-
-  h2 {
-    margin-top: 20px;
-    margin-bottom: 5px;
-
-    @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 1.5, normal);
-  }
 
   .news_container {
     padding: 32px 16px 120px;

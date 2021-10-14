@@ -9,14 +9,13 @@
   </symbol>
 </svg>
 
-<div class="wrapped">
+<div class="wrapped" *ngIf="randomEmployees?.length > 0">
   <h3 class="title" i18n="@@theatrePersonalities">Theatre personalities</h3>
   <ngu-carousel
     #actorsSlider
     class="slider"
     [inputs]="carouselTile"
     [dataSource]="randomEmployees"
-    *ngIf="randomEmployees?.length > 0"
   >
     <ngu-tile *nguCarouselDef="let item">
       <div

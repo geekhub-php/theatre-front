@@ -7,17 +7,17 @@
   </symbol>
 </svg>
 
-<app-repertoire-nav-header class="d-none d-xl-max-block" (setFirstPage)="setFirstPage($event)"></app-repertoire-nav-header>
+<app-repertoire-nav-header class="d-none d-lg-max-block" (setFirstPage)="setFirstPage($event)"></app-repertoire-nav-header>
 
 <div class="wrapped">
-  <h1 class="wrapped__title" i18n="@@repertoire">Repertoire</h1>
+  <div class="mb-2 mb-sm-max-3"><h1 class="kobzar-title" i18n="@@repertoire">Repertoire</h1></div>
 
   <app-spinner name="repertoire"></app-spinner>
 
   <p *ngIf="audience === null && !seasonNumber" class="wrapped__active-nav" i18n="@@allPerformances">All
     performances</p>
-  <p class="wrapped__active-nav" *ngIf="audience=== 'adults'" i18n="@@adults">For adults</p>
-  <p class="wrapped__active-nav" *ngIf="audience=== 'kids'" i18n="@@kids">For kids</p>
+  <p class="wrapped__active-nav" *ngIf="audience === 'adults'" i18n="@@adults">For adults</p>
+  <p class="wrapped__active-nav" *ngIf="audience === 'kids'" i18n="@@kids">For kids</p>
   <p class="wrapped__active-nav" *ngIf="seasonNumber" i18n="@@archive">Archive</p>
 
   <div class="wrapped__performances">
@@ -26,7 +26,7 @@
       <div class="item__container" [routerLink]="['', 'performance', item.slug]">
         <img class="image-performance" [src]="item.mainPicture.performance_big.url"
              [alt]="item.title">
-        <span class="age-restrictions">{{ item.age_limit }}+</span>
+        <span *ngIf="item && (item.age_limit || item.age_limit === 0)" class="age-restrictions">{{ item.age_limit }}+</span>
       </div>
     </div>
   </div>

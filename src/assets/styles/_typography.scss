@@ -10,3 +10,22 @@
     font-size: 1.429rem;
   }
 }
+// Title with font KobzarKS should be in the div tag
+
+.kobzar-title {
+  top: 10px;
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.4;
+  position: relative;
+  text-align: center;
+  color: $font-color-accent;
+  font-family: $creative-font;
+
+  @media (min-width: map-get($grid-breakpoints, sm-max)) {
+    top: 24px;
+    font-size: 72px;
+    line-height: 1.3;
+  }
+}
+

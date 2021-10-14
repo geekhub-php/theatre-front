@@ -9,7 +9,6 @@ import { LottieModule } from 'ngx-lottie';
   ],
   imports: [
     CommonModule,
-    LottieModule,
     LottieModule.forRoot({ player: playerFactory })
   ],
   exports: [

@@ -254,7 +254,11 @@ export class GatewayService {
    */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
+      const notFoundStatus = 404;
 
+      if (error.status === notFoundStatus) {
+        this.router.navigate(['/not-found']);
+      }
       // TODO: send the error to remote logging infrastructure
       console.log(error); // log to console instead
 

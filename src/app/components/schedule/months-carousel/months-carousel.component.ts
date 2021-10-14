@@ -138,12 +138,14 @@ export class MonthsCarouselComponent implements OnInit, AfterViewInit, OnDestroy
     this.deviceType = this.deviceService.getDeviceInfo().deviceType;
   }
 
-  unSubscribe() {
-    this.monthSubscription.unsubscribe();
-    this.activeMonthSubscription.unsubscribe();
+  delSubscription(subscription: Subscription) {
+    if (subscription) {
+      subscription.unsubscribe();
+    }
   }
 
   ngOnDestroy() {
-    this.unSubscribe();
+    this.delSubscription(this.monthSubscription);
+    this.delSubscription(this.activeMonthSubscription);
   }
 }

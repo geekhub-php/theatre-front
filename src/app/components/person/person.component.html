@@ -1,11 +1,11 @@
 <div *ngIf="person" class="person">
   <section>
-    <h2 class="person__name">{{ person?.first_name }} {{ person?.last_name }}</h2>
+    <div><h2 class="kobzar-title">{{ person?.first_name }} {{ person?.last_name }}</h2></div>
     <div class="person__about d-flex">
       <div class="person__image">
         <img
           draggable="false"
-          [src]="person?.avatar.employee_big.url"
+          [src]="person?.avatar?.employee_big.url"
           [alt]="person?.first_name + ' ' + person?.last_name"
           [title]="person?.first_name + ' ' + person?.last_name">
       </div>
