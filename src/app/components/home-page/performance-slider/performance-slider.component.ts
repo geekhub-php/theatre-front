@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger } from '@angular/animations';
 import { Gallery, GalleryRef } from 'ng-gallery';
 
 import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
@@ -9,16 +8,14 @@ import { GatewayService } from '../../../services/gateway.service';
   selector: 'app-performance-slider',
   templateUrl: './performance-slider.component.html',
   styleUrls: [ './performance-slider.component.scss' ],
-  animations: [
-    trigger('slideAnimation', [])
-  ]
 })
 
 export class PerformanceSliderComponent implements OnInit {
 
-  sliderList: Array<PerformanceEvent> = [];
-  galleryId = 'slider';
   cover: any;
+  isLoading = true;
+  galleryId = 'slider';
+  sliderList: Array<PerformanceEvent> = [];
 
   constructor(
     private gateway: GatewayService,
@@ -31,6 +28,7 @@ export class PerformanceSliderComponent implements OnInit {
     this.gateway
       .getPerformanceEventList()
       .subscribe(res => {
+        this.isLoading = false;
         this.sliderList = res.performance_events;
         this.sliderList.map(item => galleryRef.addImage({
           src: item.performance.sliderImage.slider_slider.url,
@@ -39,7 +37,8 @@ export class PerformanceSliderComponent implements OnInit {
           date: item.date_time,
           venuePerformance: item.venue,
           ticket: item.buy_ticket_link,
-          ageLimit: item.performance.age_limit
+          ageLimit: item.performance.age_limit,
+          slug: item.performance.slug
         }));
       });
   }
