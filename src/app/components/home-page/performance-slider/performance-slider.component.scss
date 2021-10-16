@@ -200,11 +200,12 @@ gallery {
   display: flex;
   margin: 64px auto;
   flex-direction: column;
+  max-width: $container-width;
   justify-content: space-between;
 
   &__picture {
-    width: 95%;
-    height: 60%;
+    width: 100%;
+    height: 62%;
     margin: 0 auto;
   }
 
@@ -243,6 +244,12 @@ gallery {
     }
   }
 
+  @media (max-width: map-get($grid-breakpoints, xxl-min)) {
+
+    &__picture {
+      width: 95%;
+    }
+  }
 
   @media (max-width: map-get($grid-breakpoints, lg-min)) {
     height: 350px;
