@@ -1,0 +1,43 @@
+<div class="persons-slider d-flex flex-column">
+  <ngu-carousel
+    *ngIf="!isLoading"
+    #personsSlider
+    [inputs]="sliderOptions"
+    [dataSource]="persons"
+  >
+    <ngu-tile *nguCarouselDef="let person" class="d-flex justify-content-center">
+      <a
+        class="person-image"
+        [routerLink]="['', 'persons', person.slug]"
+        [style.background]="'url(' + person.avatar.employee_big.url + ')'"
+      >
+      </a>
+    </ngu-tile>
+    <ul class="slider-points" NguCarouselPoint>
+      <li
+        *ngFor="let j of personsSlider.pointNumbers; let i = index"
+        [class.active]="j === personsSlider.activePoint"
+        (click)="personsSlider.moveTo(i)"
+      >
+      </li>
+    </ul>
+
+    <button NguCarouselPrev class="btn-left">
+      <img src="assets/images/icons/ic_arrow_left.svg" alt="arrow left">
+    </button>
+    <button NguCarouselNext class="btn-right">
+      <img src="assets/images/icons/ic_arrow_right.svg" alt="arrow right">
+    </button>
+  </ngu-carousel>
+
+  <div *ngIf="isLoading" class="persons-slider-skeleton">
+    <div><ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader></div>
+    <div><ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader></div>
+    <div class="d-none d-sm-min-block d-lg-min-none d-xl-min-block">
+      <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+    </div>
+    <div class="d-none d-xxl-min-block">
+      <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+    </div>
+  </div>
+</div>

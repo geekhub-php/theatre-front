@@ -1,234 +1,56 @@
 @import "~assets/styles/_variables";
-@import "~assets/styles/aboutStyles";
-@import "~assets/styles/_sliderMixins";
 
-a {
-  cursor: pointer;
-  text-decoration: none;
+:host {
+  flex: 1;
 }
 
-.myContainer {
-  @include _container;
-}
+.artistic-persons-container {
+  margin: 32px auto 64px;
 
-.artisitic-navigation {
-  @include breadcrumbs-nav;
+  .slider-container {
+    max-width: $container-width;
+    margin: 0 auto;
 
-  h3 {
-    font-size: $font-size-small;
-  }
-
-  .persons-navigation-bold {
-    @include breadcrumbs-nav-bold;
-  }
-}
-
-.page-title-name {
-  padding-top: 10px;
-
-  @include about-title;
-}
-
-.art-core-title,
-.epoch-title {
-  @include flex-center;
-}
-
-h4 {
-  margin-top: 10px;
-  font-size: $font-size-medium;
-  font-family: $body-font-family;
-  font-weight: $font-weight-semi-bold;
-  color: $font-color-white;
-}
-
-h2 {
-  color: $font-color-white;
-}
-
-.list-item {
-  @include flex-center;
-
-  flex-direction: row;
-  margin-bottom: 80px;
-}
-
-img {
-  width: 352px;
-  height: 528px;
-  filter: grayscale(100%);
-}
-
-img:hover {
-  filter: none;
-}
-
-.images-l {
-  @include flex-center;
-
-  .histories__list-text {
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-}
-
-.art-core {
-  background-color: $background-main-color-darker;
-  margin-bottom: 80px;
-  padding-top: 80px;
-
-  h4 {
-    margin-bottom: 80px;
-  }
-
-  .images {
-    @include flex-center;
-
-    .histories__list-text {
-      margin-top: 30px;
-      margin-left: 30px;
-      margin-right: 30px;
+    .h2 {
+      margin-bottom: 32px;
     }
   }
-}
 
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-
-.image {
-  filter: grayscale(100%);
-  background-size: cover !important;
-  height: 470px;
-  cursor: pointer;
-}
-
-.image:hover {
-  filter: none;
-}
-
-.art-prod {
-  margin-bottom: 80px;
-  padding-top: 80px;
-
-  h4 {
-    margin-bottom: 80px;
-  }
-}
-
-
-.wrapped {
-  justify-content: center;
-}
-
-a {
-  color: $dots-active-color;
-  text-decoration: none;
-}
-
-.title {
-  height: 60px;
-  font-family: $body-font-family;
-  font-size: $font-size-xxx-large;
-  line-height: 1.5;
-  letter-spacing: .8px;
-
-  @include flex-center;
-
-  color: $background-color-white;
-}
-
-.all-prersons {
-  @include display;
-}
-
-.link-persons {
-  width: 170px;
-  height: 25px;
-  line-height: 1.39;
-}
-
-.left {
-  @include display;
-  @include gradient;
-  @include opacity;
-
-  position: $position;
-  align-items: center;
-  cursor: pointer;
-  bottom: 0;
-  width: 70px;
-  z-index: 1;
-  height: 100%;
-}
-
-.left:hover {
-  @include hover_opacity;
-}
-
-.right {
-  @include display;
-  @include opacity;
-  @include gradient;
-
-  position: $position;
-  align-items: center;
-  bottom: 0;
-  width: 70px;
-  height: 100%;
-  right: 5px;
-  z-index: 1;
-}
-
-.right:hover {
-  @include hover_opacity;
-
-  cursor: pointer;
-}
-
-.slider-points {
-  @include myPoint;
-}
-
-.slider-points li {
-  @include myPoint-li;
-}
-
-.slider-points li.active {
-  @include myPoint-li__active;
-}
-
-.art-prod {
-  margin-bottom: 40px;
-  padding-top: 80px;
-
-  h4 {
-    margin-bottom: 80px;
+  .art-core, .art-production {
+    margin: 32px 0;
   }
 
-  .images {
-    @include flex-center;
+  .art-core {
+    padding: 32px 0;
+    background-color: $background-main-color-darker;
+  }
 
-    .histories__list-text {
-      margin-top: 30px;
-      margin-left: 30px;
-      margin-right: 30px;
-      cursor: pointer;
+  .link-persons {
+    margin-top: 24px;
+
+    a {
+      text-decoration: none;
+
+      @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5);
     }
   }
-}
 
-.all-persons {
-  padding-top: 40px;
+  @media (max-width: map-get($grid-breakpoints, sm-max)) {
 
-  @include flex-center;
+    .slider-container .h2 {
+      margin-bottom: 16px;
+    }
 
-  padding-bottom: 50px;
+    .art-core {
+      padding: 24px 0;
+    }
 
-  a {
-    @include flex-center;
+    .link-persons {
+      margin-top: 16px;
+
+      a {
+        @include font($body-font-family, $font-size-xx-small, $font-color-accent, $font-weight-bold, 1.5);
+      }
+    }
   }
 }

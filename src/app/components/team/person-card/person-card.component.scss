@@ -1,0 +1,33 @@
+@import "~assets/styles/_variables";
+
+.person-card {
+  padding: 16px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .person-image {
+    width: 230px;
+    height: 340px;
+    filter: grayscale(100%);
+    transition: all .3s ease;
+  }
+
+  .h4 {
+    margin-top: 16px;
+  }
+
+  &:hover .person-image {
+    filter: none;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm-min)) {
+    padding: 8px;
+
+    .person-image {
+      width: 140px;
+      height: 200px;
+    }
+  }
+}

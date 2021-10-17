@@ -13,6 +13,7 @@ import { environment } from '../../../environments/environment';
 })
 export class HomePageComponent implements OnInit, AfterViewChecked {
   randomEmployees: Array<Employee>;
+  isRandomEmployeesLoading = true;
 
   limit = '3';
   listPost: Array<NewsItem> = [];
@@ -33,6 +34,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
     this.gatewayService.getRandomEmployees()
       .subscribe((data: any) => {
         this.randomEmployees = data.employees;
+        this.isRandomEmployeesLoading = false;
       });
   }
 

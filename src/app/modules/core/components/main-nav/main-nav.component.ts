@@ -24,7 +24,7 @@ export class MainNavComponent implements OnInit {
 
   getWindowSize() {
     const screenWidth = window.innerWidth;
-    const wideScreen = Breakpoints.lg_min;
+    const wideScreen = Breakpoints.xl_min;
     const mediumScreen = Breakpoints.md_min;
 
     if (screenWidth > wideScreen) {

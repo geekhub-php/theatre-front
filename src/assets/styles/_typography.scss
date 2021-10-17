@@ -10,22 +10,68 @@
     font-size: 1.429rem;
   }
 }
+
+.h1, .h2, .h3, .h4 {
+  margin: 0;
+  color: $font-color-white;
+  font-family: $body-font-family;
+  font-weight: $font-weight-semi-bold;
+}
+
+.h1 {
+  font-size: 36px;
+  line-height: 1.28;
+
+  @media (min-width: map-get($grid-breakpoints, sm-max)) {
+    line-height: 1;
+    font-size: 72px;
+  }
+}
+
+.h2 {
+  font-size: 24px;
+  line-height: 1.5;
+
+  @media (min-width: map-get($grid-breakpoints, sm-max)) {
+    font-size: 40px;
+  }
+}
+
+.h3 {
+  font-size: 18px;
+  line-height: 1.39;
+
+  @media (min-width: map-get($grid-breakpoints, sm-max)) {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+}
+
+.h4 {
+  font-size: 14px;
+  line-height: 1.5;
+
+  @media (min-width: map-get($grid-breakpoints, sm-max)) {
+    font-size: 18px;
+  }
+}
+
 // Title with font KobzarKS should be in the div tag
 
 .kobzar-title {
+  @extend .h1;
+
   top: 10px;
   margin: 0;
-  font-size: 36px;
   line-height: 1.4;
   position: relative;
   text-align: center;
   color: $font-color-accent;
   font-family: $creative-font;
+  font-weight: $font-weight-normal;
 
   @media (min-width: map-get($grid-breakpoints, sm-max)) {
     top: 24px;
-    font-size: 72px;
     line-height: 1.3;
   }
 }
-

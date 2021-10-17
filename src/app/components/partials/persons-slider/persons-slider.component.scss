@@ -1,0 +1,153 @@
+@import "~assets/styles/variables";
+
+:host::ng-deep ngx-skeleton-loader {
+  width: 100%;
+  height: 100%;
+
+  .loader {
+    height: 100%;
+    border: none;
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: $background-main-color-lighter;
+  }
+}
+
+.persons-slider {
+  position: relative;
+
+  .person-image {
+    cursor: pointer;
+    display: block;
+    min-height: 200px;
+    filter: grayscale(100%);
+    transition: ease-in-out .3s;
+    background-size: cover !important;
+
+    @include box(350, 530);
+
+    &:hover {
+      filter: none;
+    }
+  }
+
+  .btn-left, .btn-right {
+    top: 0;
+    z-index: 1;
+    width: 70px;
+    border: none;
+    height: 100%;
+    display: flex;
+    background: none;
+    position: absolute;
+    align-items: center;
+
+
+    &:hover img {
+      transform: scale(1.2);
+      transition: all .3s ease;
+    }
+  }
+
+  .btn-left {
+    left: 0;
+  }
+
+  .btn-right {
+    right: 0;
+  }
+
+  .slider-points {
+    list-style-type: none;
+    padding: 12px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: auto;
+    box-sizing: border-box;
+
+    @include flex-center;
+  }
+
+  .slider-points  li {
+    width: 12px;
+    cursor: pointer;
+    transition: .4s;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: $background-color-disabled;
+    transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+
+    @include container(12px, 12, 4px, 0 10px);
+  }
+
+  .slider-points li.active {
+    background-color: $background-color-accent;
+    transform: scale(1.4);
+  }
+
+  .persons-slider-skeleton {
+    display: flex;
+    margin-bottom: 36px;
+    justify-content: space-around;
+
+    & > div {
+      margin: 10px 0;
+      width: 350px;
+      height: 530px;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, lg-max)) {
+
+    .person-image {
+      min-height: 200px;
+
+      @include box(250, 375);
+    }
+
+    .persons-slider-skeleton div {
+      @include box(250, 375);
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, md-max)) {
+
+    .btn-right, .btn-left {
+      display: none;
+    }
+
+    .person-image {
+      margin: 0;
+      min-height: 200px;
+
+      @include box(140, 200);
+    }
+
+    .persons-slider-skeleton div {
+      margin: 0;
+
+      @include box(140, 200);
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm-max)) {
+
+    .link-persons {
+      margin-top: 16px;
+
+      @include font($body-font-family, $font-size-xx-small, $font-color-accent, $font-weight-bold, 1.5, 1.39);
+    }
+
+    .slider-points {
+      display: none;
+    }
+
+    .persons-slider-skeleton {
+      margin-bottom: 0;
+
+      div {
+        margin: 10px;
+      }
+    }
+  }
+}
