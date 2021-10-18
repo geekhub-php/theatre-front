@@ -696,7 +696,7 @@
       </trans-unit>
       <trans-unit id="сreativeСomposition" datatype="html">
         <source>Creative composition</source>
-        <target>Художній склад</target>
+        <target>Творчий склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
           <context context-type="linenumber">2</context>
@@ -708,7 +708,7 @@
       </trans-unit>
       <trans-unit id="artisticComposition" datatype="html">
         <source>Artistic Composition</source>
-        <target>Творчий склад</target>
+        <target>Художній склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
           <context context-type="linenumber">3</context>
