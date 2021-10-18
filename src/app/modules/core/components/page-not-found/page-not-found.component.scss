@@ -11,7 +11,7 @@
 }
 
 .text {
-  margin: 0;
+  margin: 0 auto;
 
   @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, $line-height-basic, normal);
 
