@@ -659,6 +659,26 @@
         </context-group>
       </trans-unit>
 
+      <!--   Home page/ Offer for you   -->
+      <trans-unit id="we-created-this-site" datatype="html">
+        <source>We created this site so that you don't miss a single concert by your favorite stars, that you can get to
+          an important theatrical premiere, and that you have time to buy tickets for the best action for children. As a
+          result, any spectator who expects quality and pleasant emotions from us will be able to select an event.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">14, 18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="we-also-invite" datatype="html">
+        <source>We also invite collaboration from teams, organizations, and exhibitions.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <!--   END Home page/ Offer for you   -->
+
       <!--   Home page/ Theatre is always with you   -->
       <trans-unit id="we-are-very-excited" datatype="html">
         <source>We are very excited to begin a new theatrical season.</source>
