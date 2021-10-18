@@ -111,6 +111,25 @@
   @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 60px, .8px)
 }
 
+.persons-slider-container {
+  margin: 32px auto;
+  max-width: $container-width;
+
+  .h2 {
+    margin-bottom: 32px;
+  }
+
+  .link-persons {
+    margin-top: 24px;
+
+    a {
+      text-decoration: none;
+
+      @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5);
+    }
+  }
+}
+
 @media (max-width: map-get($grid-breakpoints, xl-min)) {
 
   .advantages {
@@ -218,6 +237,14 @@
       a {
         @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
       }
+    }
+  }
+
+  .persons-slider-container .link-persons {
+    margin-top: 16px;
+
+    a {
+      @include font($body-font-family, $font-size-xx-small, $font-color-accent, $font-weight-bold, 1.5);
     }
   }
 }
