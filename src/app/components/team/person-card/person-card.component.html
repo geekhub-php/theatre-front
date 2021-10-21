@@ -1,0 +1,9 @@
+<div class="person-card">
+  <a [routerLink]="['', 'persons', person?.slug]">
+    <img
+      class="person-image"
+      [title]="person?.avatar.employee_big.properties.title"
+      src="{{ person?.avatar.employee_big.url }}" alt="{{ person?.first_name + ' ' + person?.last_name }}">
+    <h4 class="h4">{{ person?.first_name }}<br>{{ person?.last_name }}</h4>
+  </a>
+</div>

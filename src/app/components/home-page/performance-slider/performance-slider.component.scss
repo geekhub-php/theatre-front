@@ -9,6 +9,12 @@
   display: flex;
   justify-content: center;
   background-color: $background-color-black;
+
+  .slide-wrapper {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 gallery {
@@ -21,10 +27,6 @@ gallery {
   width: 100% ;
   position: relative;
   max-width: $container-width;
-}
-
-:host ::ng-deep gallery gallery-nav .ng-star-inserted {
-  @include box(28, 28);
 }
 
 :host ::ng-deep gallery[fluid] {
@@ -42,7 +44,7 @@ gallery {
   position: relative;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+  background: linear-gradient(transparent 40%, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
 }
 
 :host ::ng-deep gallery gallery-dots .g-dot-inner {
@@ -180,6 +182,122 @@ gallery {
   }
 }
 
+:host::ng-deep ngx-skeleton-loader {
+  width: 100%;
+  height: 100%;
+
+  .loader {
+    height: 100%;
+    border: none;
+    margin-bottom: 0;
+    background-color: $background-main-color-lighter;
+  }
+}
+
+.slider-skeleton {
+  width: 100%;
+  height: 688px;
+  display: flex;
+  margin: 64px auto;
+  flex-direction: column;
+  max-width: $container-width;
+  justify-content: space-between;
+
+  &__picture {
+    width: 100%;
+    height: 62%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    width: 70%;
+    height: 50px;
+    margin: 16px auto 0;
+  }
+
+  &__description {
+    width: 50%;
+    display: grid;
+    grid-gap: 16px;
+    margin: 16px auto 0;
+    grid-template-rows: 30px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__button {
+    height: 54px;
+    width: 180px;
+    margin: 16px auto;
+  }
+
+  &__circles {
+    grid-gap: 16px;
+    display: grid;
+    margin: 32px auto 16px;
+    grid-template-columns: repeat(5, 1fr);
+
+    & > div {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $background-main-color-lighter;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, xxl-min)) {
+
+    &__picture {
+      width: 95%;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, lg-min)) {
+    height: 350px;
+    margin: 32px auto;
+
+    &__picture {
+      height: 38%;
+    }
+
+    &__title {
+      height: 36px;
+    }
+
+    &__description {
+      margin-bottom: 8px;
+      grid-template-rows: 20px;
+    }
+
+    &__circles {
+      margin: 16px auto;
+    }
+
+    &__button {
+      height: 45px;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm-min)) {
+    height: 600px;
+    margin: 32px auto 16px;
+
+    &__picture {
+      height: 52%;
+    }
+
+    &__description {
+      grid-gap: 12px;
+      margin-bottom: 0;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 20px);
+    }
+
+    &__circles {
+      grid-gap: 16px;
+    }
+  }
+}
+
 @media (max-width: map-get($grid-breakpoints, lg-min)) {
 
   .gallery-container {
@@ -191,7 +309,7 @@ gallery {
   }
 
   gallery {
-    margin: 40px 32px 32px;
+    margin: 32px;
   }
 
   .image {
@@ -278,6 +396,7 @@ gallery {
 
   .linear-gradient {
     height: 55%;
+    background: linear-gradient(to bottom, transparent 70%, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
   }
 
   :host ::ng-deep gallery gallery-image {
@@ -289,7 +408,7 @@ gallery {
   }
 
   gallery {
-    margin: 24px 16px 8px;
+    margin: 32px 16px 16px;
   }
 
   .age-restrictions {
@@ -297,13 +416,9 @@ gallery {
     @include box(24, 24);
   }
 
-  :host ::ng-deep gallery gallery-nav .ng-star-inserted {
-    @include box(14, 14);
-  }
-
   .no-performance {
     height: 300px;
-    margin: 24px 16px 8px;
+    margin: 32px 16px 16px;
 
     &__image {
       height: 300px;

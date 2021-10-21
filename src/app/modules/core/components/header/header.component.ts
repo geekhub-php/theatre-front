@@ -4,9 +4,8 @@ import { NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 import { Breakpoints } from 'app/constants';
-import { LangService } from 'app/services/lang.service';
+import { LangService, Locales } from 'app/services/lang.service';
 import { ESidebar, SidebarService } from 'app/services/sidebar.service';
-import { VisuallyImpairedService } from 'app/services/visually-impaired.service';
 
 @Component({
   selector: 'app-header',
@@ -15,25 +14,33 @@ import { VisuallyImpairedService } from 'app/services/visually-impaired.service'
 })
 
 export class HeaderComponent implements OnInit {
+  wideScreen;
+  textValue = '';
   collapse = false;
   isCollapsed = false;
+  localeId: Locales = Locales.en;
   search_text = 'Enter your search key word/words';
-  textValue = '';
-  wideScreen;
 
-  get langRedirectUrl() {
-    return this.langService.getLangRedirectUrl();
+  get ukLangUrl() {
+    return this.langService.getLangRedirectUrl(Locales.uk);
+  }
+
+  get enLangUrl() {
+    return this.langService.getLangRedirectUrl(Locales.en);
   }
 
   constructor(
     private router: Router,
     private langService: LangService,
-    private visuallyImpairedService: VisuallyImpairedService,
-    private sidebarService: SidebarService
+    private sidebarService: SidebarService,
   ) {
     router.events
       .pipe(filter(event => event instanceof NavigationStart))
       .subscribe(() => this.collapse = true);
+
+    this.langService.localeId$.subscribe(localeId => {
+      this.localeId = localeId;
+    });
   }
 
   ngOnInit(): void {

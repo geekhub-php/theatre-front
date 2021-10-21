@@ -12,4 +12,5 @@ export class PerformanceEvent {
   buy_ticket_link: string;
   performance: Performance;
   dateExist: boolean;
+  slug: string;
 }

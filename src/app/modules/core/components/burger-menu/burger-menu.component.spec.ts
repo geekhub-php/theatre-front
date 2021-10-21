@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BurgerMenuComponent } from './burger-menu.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BurgerMenuComponent', () => {
   let component: BurgerMenuComponent;
@@ -8,7 +9,7 @@ describe('BurgerMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BurgerMenuComponent]
+      declarations: [BurgerMenuComponent], imports: [RouterTestingModule],
     })
       .compileComponents();
   });

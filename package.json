@@ -56,6 +56,7 @@
     "ngx-google-analytics": "^11.1.0",
     "ngx-infinite-scroll": "^7.1.1",
     "ngx-lottie": "^7.0.1",
+    "ngx-skeleton-loader": "^4.0.0",
     "popper.js": "^1.16.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.6.3",

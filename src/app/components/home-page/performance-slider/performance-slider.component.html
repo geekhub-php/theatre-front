@@ -1,51 +1,82 @@
-<div *ngIf="sliderList.length > 0; else noPerformance" class="slider">
+<div *ngIf="!isLoading && sliderList.length" class="slider">
   <gallery
     id="slider"
     class="gallery-container"
-    [imageSize]='cover'
-    [itemTemplate]="itemTemplate"
     fluid
+    [nav]="false"
+    [loop]="true"
     [dots]='true'
-    [counter]='false'
     [thumb]='false'
+    [counter]='false'
+    [autoPlay]="true"
     [gestures]='false'
+    [imageSize]='cover'
+    [disableThumb]="true"
+    [playerInterval]="5000"
+    [itemTemplate]="itemTemplate"
   >
   </gallery>
 </div>
 
 <ng-template #itemTemplate let-data="data">
-  <div [@slideAnimation] class="carousel-caption">
-    <div class="linear-gradient"></div>
-    <h3 class="performance-title">{{ data.title }}</h3>
-    <div class="container">
-      <div class="container__performance">
-        <img src="assets/images/home-slider/performance-type.svg" alt="performance type image" class="image">
-        <p class="performance__type">{{ data.type }}</p>
+  <a [routerLink]="['', 'performance', data.slug]" class="slide-wrapper">
+    <div class="carousel-caption">
+      <div class="linear-gradient"></div>
+      <h3 class="performance-title">{{ data.title }}</h3>
+      <div class="container">
+        <div class="container__performance">
+          <img src="assets/images/home-slider/performance-type.svg" alt="performance type image" class="image">
+          <p class="performance__type">{{ data.type }}</p>
+        </div>
+        <div class="container__performance">
+          <img src="assets/images/home-slider/performance-data.svg" alt="due date image" class="image">
+          <p class="tickets-day">{{ data.date | date: 'EEE, dd' }}</p>
+          <p class="tickets-month">{{ data.date | date: 'MMMM' | lowercase }}</p>
+        </div>
+        <div class="container__performance">
+          <img src="assets/images/home-slider/performance.venue.svg" alt="performance venue image" class="image">
+          <p class="performance__venue">{{ data.venuePerformance }}</p>
+        </div>
       </div>
-      <div class="container__performance">
-        <img src="assets/images/home-slider/performance-data.svg" alt="due date image" class="image">
-        <p class="tickets-day">{{ data.date | date: 'EEE, dd' }}</p>
-        <p class="tickets-month">{{ data.date | date: 'MMMM' | lowercase }}</p>
+      <div class="container__button" (click)="$event.stopPropagation()">
+        <a [href]="data.ticket" class="button-ticket tickets-button" i18n="@@buyTicket">Buy ticket</a>
       </div>
-      <div class="container__performance">
-        <img src="assets/images/home-slider/performance.venue.svg" alt="performance venue image" class="image">
-        <p class="performance__venue">{{ data.venuePerformance }}</p>
-      </div>
+      <span *ngIf="data && (data.ageLimit || data.ageLimit === 0)" class="age-restrictions">{{ data.ageLimit }}+</span>
     </div>
-    <div class="container__button">
-      <a [href]="data.ticket" class="button-ticket tickets-button" i18n="@@buyTicket">Buy ticket</a>
-    </div>
-    <span class="age-restrictions">{{ data.ageLimit }}+</span>
-  </div>
+  </a>
 </ng-template>
 
-<ng-template #noPerformance>
-  <div class="slider">
-    <div class="no-performance">
-      <img src="assets/images/home-slider/no-performance.png" alt="No performance"
-           class="no-performance__image">
-      <div class="no-performance__linear-gradient"></div>
-      <p class="no-performance__text" i18n="@@noPerformances">There are currently no events scheduled</p>
-    </div>
+<div *ngIf="!isLoading && !sliderList.length" class="slider">
+  <div class="no-performance">
+    <img src="assets/images/home-slider/no-performance.png" alt="No performance"
+         class="no-performance__image">
+    <div class="no-performance__linear-gradient"></div>
+    <p class="no-performance__text" i18n="@@noPerformances">There are currently no events scheduled</p>
   </div>
-</ng-template>
+</div>
+
+
+<div *ngIf="isLoading && !sliderList.length" class="slider-skeleton">
+  <div class=slider-skeleton__picture>
+    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+  </div>
+  <div class="slider-skeleton__title">
+    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+  </div>
+  <div class="slider-skeleton__description">
+    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+  </div>
+  <div class="slider-skeleton__button">
+    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+  </div>
+  <div class=slider-skeleton__circles>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+

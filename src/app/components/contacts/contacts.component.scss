@@ -1,5 +1,9 @@
 @import "~assets/styles/variables";
 
+:host {
+  flex: 1;
+}
+
 .map_wrapper {
   max-width: 735px;
   height: 423px;
@@ -13,7 +17,7 @@
 
 .container {
   max-width: 1250px;
-  margin: 0 auto;
+  margin: 32px auto 0;
   transition: all .2s;
 }
 
@@ -24,14 +28,6 @@
   grid-gap: 30px;
   padding-bottom: 100px;
   grid-template-areas: "contacts map";
-}
-
-.page_title {
-  text-align: center;
-  padding-top: 32px;
-  margin-bottom: 70px;
-
-  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 72px, normal)
 }
 
 .info_item {
@@ -87,15 +83,7 @@
   }
 }
 
-@media (max-width: 768px) {
-
-  .page_title {
-    text-align: center;
-    padding-top: 32px;
-    margin-bottom: 16px;
-
-    @include font($creative-font, $font-size-xx-large, $font-color-accent, $font-weight-normal, 40px, normal)
-  }
+@media (max-width: map-get($grid-breakpoints, md-min)) {
 
   .container {
     padding: 0 16px;

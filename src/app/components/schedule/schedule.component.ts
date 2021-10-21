@@ -55,7 +55,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     const calendarBreakpointWidth = Breakpoints.xl_min;
 
     this.isSwitcherActive = innerWidth > calendarBreakpointWidth;
-    this.viewMode = this.isSwitcherActive ? ScheduleViewModes.CALENDAR : ScheduleViewModes.LIST;
+    this.isSwitcherActive && this.viewMode === ScheduleViewModes.CALENDAR ? this.changeViewToCalendar() : this.changeViewToList();
   }
 
   ngOnInit() {

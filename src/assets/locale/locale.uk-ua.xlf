@@ -163,6 +163,31 @@
         </context-group>
       </trans-unit>
 
+<!--   Home page/ Offer for you   -->
+      <trans-unit id="we-created-this-site" datatype="html">
+        <source>We created this site so that you don't miss a single concert by your favorite stars, that you can get to
+          an important theatrical premiere, and that you have time to buy tickets for the best action for children. As a
+          result, any spectator who expects quality and pleasant emotions from us will be able to select an event.
+        </source>
+        <target>Щоб ви не пропустили жодного концерту від улюблених зірок, змогли потрапити на важливу
+          театральну прем`єру і встигли купити квитки на краще дійство для дітей ми створили цей сайт.
+          Тож, кожен глядач, який чекає від нас якості та приємних емоцій зможе обрати для себе захід.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">14, 18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="we-also-invite" datatype="html">
+        <source>We also invite collaboration from teams, organizations, and exhibitions.</source>
+        <target>Також запрошуємо до співпраці колективи, організації, виставки.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home-page/home-page.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+  <!--   END Home page/ Offer for you   -->
+
 <!--   Home page/ Theatre is always with you   -->
       <trans-unit id="we-are-very-excited" datatype="html">
         <source>We are very excited to begin a new theatrical season.</source>
@@ -671,7 +696,7 @@
       </trans-unit>
       <trans-unit id="сreativeСomposition" datatype="html">
         <source>Creative composition</source>
-        <target>Художній склад</target>
+        <target>Творчий склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
           <context context-type="linenumber">2</context>
@@ -683,7 +708,7 @@
       </trans-unit>
       <trans-unit id="artisticComposition" datatype="html">
         <source>Artistic Composition</source>
-        <target>Творчий склад</target>
+        <target>Художній склад</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
           <context context-type="linenumber">3</context>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LottieModule } from 'ngx-lottie';
 
 import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -9,6 +10,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { NguCarouselModule } from '@ngu/carousel';
 import { GalleryModule } from 'ng-gallery';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -40,6 +42,8 @@ import { AdministrationComponent } from './components/team/administration/admini
 import { ArtisticComponent } from './components/team/artistic/artistic.component';
 import { CreativeComponent } from './components/team/creative/creative.component';
 import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
+import { PersonsSliderComponent } from './components/partials/persons-slider/persons-slider.component';
+import { PersonCardComponent } from './components/team/person-card/person-card.component';
 
 import { StripHtmlModule } from './pipes/strip-html.module';
 
@@ -54,13 +58,13 @@ import { SideMenuComponent } from './components/home-page/side-menu/side-menu.co
 import { PerformanceSliderComponent } from './components/home-page/performance-slider/performance-slider.component';
 import { NewsListItemComponent } from './components/partials/news-list-item/news-list-item.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
-import { ActorsSliderComponent } from './components/partials/actors-slider/actors-slider.component';
 import { SeasonsComponent } from './components/performance/seasons/seasons.component';
 
 import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
+import { playerFactory } from './components/partials/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -95,14 +99,15 @@ import { CatInteractiveComponent } from './components/schedule/list-view/cat-int
     ArtisticComponent,
     CreativeComponent,
     PersoneShowmoreComponent,
-    ActorsSliderComponent,
     SeasonsComponent,
     CatInteractiveComponent,
     FestivalsComponent,
     TheatreHistoryComponent,
     AboutHeaderComponent,
     EpochComponent,
-    VisitComponent
+    VisitComponent,
+    PersonsSliderComponent,
+    PersonCardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -122,6 +127,8 @@ import { CatInteractiveComponent } from './components/schedule/list-view/cat-int
     CoreModule,
     GalleryModule,
     NguCarouselModule,
+    LottieModule.forRoot({ player: playerFactory }),
+    NgxSkeletonLoaderModule.forRoot()
   ],
   providers: [
     CalendarPopupComponent,

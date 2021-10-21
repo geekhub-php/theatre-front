@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GatewayService } from '../../../services/gateway.service';
+
+import { GatewayService } from 'app/services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';
-import { Employee } from '../../../store/employee/Employee';
+import { Employee } from 'app/store/employee/Employee';
 
 @Component({
   selector: 'app-persone-showmore',
@@ -11,7 +12,6 @@ import { Employee } from '../../../store/employee/Employee';
 })
 export class PersoneShowmoreComponent implements OnInit {
   employees: Array<Employee> = [];
-  titleArr = [];
   title: string;
 
   constructor(
@@ -30,9 +30,10 @@ export class PersoneShowmoreComponent implements OnInit {
 
     const slug = this.route.snapshot.params.slug;
 
-    this.httpGatewayService.getEmployeesGroupes(slug).subscribe((groupeTitle) => {
-      this.titleArr = this.titleArr.concat(groupeTitle);
-      this.getTitle(this.titleArr, slug);
+    this.httpGatewayService.getEmployeesGroupes().subscribe((groupeTitle) => {
+      // TODO: add correct response type for the getEmployeesGroupes
+      const groupList = [].concat(groupeTitle);
+      this.title = groupList.filter(group => group.slug === slug)[0].title;
       this.loaderService.stop('load-team');
     });
 
@@ -43,9 +44,4 @@ export class PersoneShowmoreComponent implements OnInit {
 
     this.gateway.updateCanonicalURL();
   }
-
-  getTitle(arr, slug) {
-    this.title = arr.filter(group => group.slug === slug);
-  }
-
 }

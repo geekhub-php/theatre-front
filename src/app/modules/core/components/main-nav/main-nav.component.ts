@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { LangService } from 'app/services/lang.service';
 import { Breakpoints } from 'app/constants';
 
 @Component({
@@ -12,12 +11,7 @@ export class MainNavComponent implements OnInit {
   showWideNav: boolean;
   showSmallNav: boolean;
 
-  get langRedirectUrl() {
-    return this.langService.getLangRedirectUrl();
-  }
-
-  constructor(private langService: LangService) {
-  }
+  constructor() { }
 
   ngOnInit() {
     this.getWindowSize();
@@ -30,7 +24,7 @@ export class MainNavComponent implements OnInit {
 
   getWindowSize() {
     const screenWidth = window.innerWidth;
-    const wideScreen = Breakpoints.lg_min;
+    const wideScreen = Breakpoints.xl_min;
     const mediumScreen = Breakpoints.md_min;
 
     if (screenWidth > wideScreen) {

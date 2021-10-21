@@ -282,6 +282,11 @@
 
   .list-view {
     grid-gap: 16px;
+    padding: 0 16px;
+
+    &.without-padding {
+      padding: 0;
+    }
 
     &__item {
       height: auto;

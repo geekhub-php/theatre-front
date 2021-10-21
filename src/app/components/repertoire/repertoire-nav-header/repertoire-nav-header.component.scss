@@ -9,6 +9,7 @@
   .item {
     transition: .3s;
     padding: 12px 16px;
+    text-decoration: none;
 
     @include flex-center;
     @include font($body-font-family, $font-size-medium-px, $font-color-black, $font-weight-normal, 1.5, normal);
@@ -17,10 +18,10 @@
       font-weight: 700;
       background-color: $background-on-hover;
     }
-  }
 
-  a {
-    text-decoration: none;
+    &:hover {
+      background-color: $background-on-hover;
+    }
   }
 }
 

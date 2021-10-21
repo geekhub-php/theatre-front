@@ -1,17 +1,17 @@
 @import "~assets/styles/variables";
 
-.container {
-  margin: 0 auto;
-  text-align: center;
-  padding: 80px 5px 90px;
+:host {
+  flex: 1;
 }
 
-.title {
-  @include font($creative-font, $font-largest, $font-color-accent, $font-weight-normal, 1, normal);
+.container {
+  margin: 32px auto;
+  text-align: center;
+  padding: 0 16px;
 }
 
 .text {
-  margin: 0;
+  margin: 0 auto;
 
   @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, $line-height-basic, normal);
 
@@ -37,10 +37,6 @@
     height: 208px;
   }
 
-  .title {
-    @include font($creative-font, $font-size-xxx-large, $font-color-accent, $font-weight-normal, 1.11, normal);
-  }
-
   .text {
     @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-normal, $line-height-basic, normal);
 
@@ -50,15 +46,11 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: map-get($grid-breakpoints, sm-min)) {
 
   .animation {
     width: 288px;
     height: 174px;
-  }
-
-  .title {
-    @include font($creative-font, 36px, $font-color-accent, $font-weight-normal, 1.11, normal);
   }
 
   .text {

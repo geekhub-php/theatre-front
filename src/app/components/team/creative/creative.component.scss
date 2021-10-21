@@ -1,218 +1,56 @@
 @import "~assets/styles/_variables";
-@import "~assets/styles/aboutStyles";
-@import "~assets/styles/_sliderMixins";
 
-.myContainer {
-  @include _container;
+:host {
+  flex: 1;
 }
 
-.creative-navigation {
-  @include breadcrumbs-nav;
+.creative-persons-container {
+  margin: 32px auto 64px;
 
-  h3 {
-    font-size: $font-size-small;
-  }
+  .slider-container {
+    max-width: $container-width;
+    margin: 0 auto;
 
-  .persons-navigation-bold {
-    @include breadcrumbs-nav-bold;
-  }
-}
-
-.page-title-name {
-  padding-top: 10px;
-
-  @include about-title;
-}
-
-.actors-title,
-.orchestra-title {
-  @include flex-center;
-}
-
-h2 {
-  color: $font-color-white;
-}
-
-h4 {
-  margin-top: 10px;
-  font-size: $font-size-medium;
-  font-family: $body-font-family;
-  font-weight: $font-weight-semi-bold;
-  color: $font-color-white;
-}
-
-.list-item {
-  @include flex-center;
-
-  margin-bottom: 80px;
-}
-
-.image {
-  filter: grayscale(100%);
-  background-size: cover !important;
-  height: 470px;
-  cursor: pointer;
-}
-
-.image:hover {
-  filter: none;
-}
-
-.ballet {
-  background-color: $background-main-color-darker;
-  margin-bottom: 80px;
-  padding-top: 80px;
-
-  h4 {
-    margin-bottom: 80px;
-  }
-}
-
-.wrapped {
-  justify-content: center;
-}
-
-a {
-  color: $dots-active-color;
-  text-decoration: none;
-}
-
-.title {
-  height: 60px;
-  font-family: $body-font-family;
-  font-size: $font-size-xxx-large;
-  line-height: 1.5;
-  letter-spacing: .8px;
-
-  @include flex-center;
-
-  color: $background-color-white;
-}
-
-.all-prersons {
-  @include display;
-}
-
-.link-persons {
-  width: 170px;
-  height: 25px;
-  line-height: 1.39;
-}
-
-.left {
-  @include display;
-  @include gradient;
-  @include opacity;
-
-  position: $position;
-  align-items: center;
-  cursor: pointer;
-  bottom: 0;
-  width: 70px;
-  z-index: 1;
-  height: 100%;
-}
-
-.left:hover {
-  @include hover_opacity;
-}
-
-.right {
-  @include display;
-  @include opacity;
-  @include gradient;
-
-  position: $position;
-  align-items: center;
-  bottom: 0;
-  width: 70px;
-  height: 100%;
-  right: 5px;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.right:hover {
-  @include hover_opacity;
-}
-
-.myPoint {
-  @include myPoint;
-}
-
-.myPoint li {
-  @include myPoint-li;
-}
-
-.myPoint li.active {
-  @include myPoint-li__active;
-}
-
-.images-l {
-
-  .histories__list-text {
-    margin-top: 30px;
-  }
-}
-
-.ballet {
-  background-color: $background-main-color-darker;
-  margin-bottom: 40px;
-  padding-top: 80px;
-
-  h4 {
-    margin-bottom: 80px;
-  }
-
-  .images {
-
-    .histories__list-text {
-      margin-top: 30px;
+    .h2 {
+      margin-bottom: 32px;
     }
   }
-}
 
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
+  .actors, .ballet, .orchestra {
+    margin: 32px 0;
+  }
 
-.orchestra {
-  padding-top: 80px;
+  .ballet {
+    padding: 32px 0;
+    background-color: $background-main-color-darker;
+  }
 
-  .images-l {
-    @include flex-center;
+  .link-persons {
+    margin-top: 24px;
 
-    .histories__list-text {
-      margin-left: 30px;
-      margin-right: 30px;
-      cursor: pointer;
-    }
+    a {
+      text-decoration: none;
 
-    img {
-      width: 332px;
-      height: 508px;
-      filter: grayscale(100%);
-    }
-
-    img:hover {
-      filter: none;
+      @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5);
     }
   }
-}
 
-.all-persons {
-  @include flex-center;
+  @media (max-width: map-get($grid-breakpoints, sm-max)) {
 
-  a {
-    @include flex-center;
+    .slider-container .h2 {
+      margin-bottom: 16px;
+    }
+
+    .ballet {
+      padding: 24px 0;
+    }
+
+    .link-persons {
+      margin-top: 16px;
+
+      a {
+        @include font($body-font-family, $font-size-xx-small, $font-color-accent, $font-weight-bold, 1.5);
+      }
+    }
   }
-}
-
-.link-persons {
-  margin-top: 30px;
-
-  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-normal, 1.5, 1.39);
-
-  margin-bottom: 60px;
 }
