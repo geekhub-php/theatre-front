@@ -6,6 +6,7 @@ import { PerformanceListResponse } from '../../store/performance/PerformanceList
 import { Performance } from '../../store/performance/Performance';
 import { LoaderService } from '../partials/spinner/loader.service';
 import { Breakpoints } from 'app/constants';
+import { WindowRefService } from '../../services/window-ref.service';
 
 @Component({
   selector: 'app-repertoire',
@@ -31,18 +32,20 @@ export class RepertoireComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private changeDetector: ChangeDetectorRef,
     private gateway: GatewayService,
+    private windowRef: WindowRefService,
     private loaderService: LoaderService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private changeDetector: ChangeDetectorRef,
   ) {}
 
   @HostListener('window:resize', [ '$event' ]) onResize() {
+    if (this.windowRef.isPlatformBrowser) return;
     const xxlPageAmount = 16;
     const xlPageAmount = 15;
     const mdPageAmount = 14;
 
-    const { innerWidth } = window;
+    const innerWidth = this.windowRef.nativeWindow.innerWidth;
 
     this.viewMode = innerWidth > Breakpoints.xxl_min
       ? Breakpoints.xxl_min : innerWidth > Breakpoints.xl_min

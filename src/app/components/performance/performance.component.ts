@@ -11,6 +11,7 @@ import { LangService, Locales } from 'app/services/lang.service';
 import { GatewayService } from '../../services/gateway.service';
 import { Performance } from '../../store/performance/Performance';
 import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
+import { WindowRefService } from 'app/services/window-ref.service';
 
 enum galleryColumns {
   xs = 1,
@@ -80,6 +81,7 @@ export class PerformanceComponent implements OnInit {
   constructor(private router: ActivatedRoute,
               private gateway: GatewayService,
               private langService: LangService,
+              private windowRef: WindowRefService,
               private loaderService: LoaderService) {
     this.langService.localeId$.subscribe(localeId => {
       this.localeId = localeId;
@@ -87,8 +89,10 @@ export class PerformanceComponent implements OnInit {
   }
 
   @HostListener('window:resize', [ '$event' ])
-  onResize(e?) {
-    const { innerWidth } = window;
+  onResize() {
+    if (!this.windowRef.isPlatformBrowser) return;
+
+    const innerWidth = this.windowRef.nativeWindow.innerWidth;
     const columnAmount = innerWidth > Breakpoints.xl_min
       ? galleryColumns.xxl : innerWidth > Breakpoints.md_min
         ? galleryColumns.xl : innerWidth > Breakpoints.sm_min
