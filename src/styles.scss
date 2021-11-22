@@ -39,20 +39,24 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import "assets/styles/utilities";
 @import "assets/styles/typography";
-@import "assets/styles/buttons";
 @import "assets/styles/themes";
 @import "assets/styles/pagination";
 
-html {
-  font-size: $font-size-medium;
-}
+// Components
+@import "assets/styles/components/buttons";
+@import "assets/styles/components/age_limit";
 
 body, html {
-  height: 100%;
   width: 100%;
-  font-family: $body-font-family;
+  height: 100%;
   color: $font-color-primary;
+  font-size: $font-size-small;
+  font-family: $body-font-family;
   background-color: $background-color-black;
+
+  @media (min-width: map-get($grid-breakpoints, sm-max)) {
+    font-size: $font-size-medium;
+  }
 }
 
 .spinner-grow {

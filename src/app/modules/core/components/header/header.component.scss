@@ -4,27 +4,6 @@
   width: 100%;
   background-color: $background-main-color-darker;
 
-  //TODO: refactor main btn component
-
-  .btn {
-
-    &.--btn-reset {
-      padding: 0;
-      border: none;
-      font: inherit;
-      color: inherit;
-      outline: inherit;
-      background: none;
-      box-shadow: none;
-    }
-
-    &.--btn-close {
-      padding: 4px;
-      border-radius: 5px;
-      background-color: $border-color-accent;
-    }
-  }
-
   .header-container {
 
     //TODO: need add padding to main class 'container'
@@ -105,12 +84,6 @@
       right: 74px;
       position: absolute;
     }
-  }
-
-  .tickets-button {
-    padding: 12px 24px;
-    margin-left: 20px;
-    font-size: $font-size-medium-px;
   }
 
   .icons-group {

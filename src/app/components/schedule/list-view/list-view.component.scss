@@ -120,23 +120,6 @@
     }
   }
 
-  &__button {
-    width: 200px;
-    height: 50px;
-    display: flex;
-    margin-top: 12px;
-    border-radius: 2px;
-    white-space: nowrap;
-    align-items: center;
-    text-decoration: none;
-    justify-content: center;
-    color: $border-color-light;
-    font-size: $font-size-medium;
-    background-color: transparent;
-    font-weight: $font-weight-semi-bold;
-    border: solid 1px $border-color-light;
-  }
-
   &__arrow-right {
     right: 34px;
     bottom: 24px;
@@ -159,29 +142,13 @@
     grid-template-columns: 220px auto 200px;
     background-color: $background-main-color-lighter;
 
-    &__age-limit {
-      top: 0;
-      left: 0;
-      padding: 0;
-      z-index: 2;
-      width: 56px;
-      height: 56px;
-      display: flex;
-      position: absolute;
-      align-items: center;
-      transition: .3s ease;
-      justify-content: center;
-      background-color: $background-color-accent;
-
-      & span {
-        font-size: 24px;
-        color: $border-color-light;
-        font-weight: $font-weight-semi-bold;
-      }
-    }
-
     &:hover {
       background-color: transparent;
+
+      .age-limit {
+        transition: .3s;
+        background-color: $background-on-hover;
+      }
 
       .list-view {
 
@@ -193,12 +160,9 @@
           color: $white-color;
         }
 
-        &__link__age-limit {
-          background-color: $background-on-hover !important;
-        }
 
-        &__button {
-          background-color: rgba(255, 255, 255, .2);
+        &__button .btn {
+          background-color: rgba($white-color, .2);
         }
       }
     }
@@ -313,15 +277,6 @@
     &__link {
       min-height: 230px;
       padding: 16px 42px 24px 40px;
-
-      &__age-limit {
-        width: 24px;
-        height: 24px;
-
-        & span {
-          font-size: 12px;
-        }
-      }
     }
 
     &__content {
@@ -356,13 +311,6 @@
           }
         }
       }
-    }
-
-    &__button {
-      width: 150px;
-      height: 38px;
-      margin-top: auto;
-      font-size: $font-size-small;
     }
 
     &__arrow-right {

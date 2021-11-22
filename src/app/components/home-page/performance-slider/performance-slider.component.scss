@@ -1,187 +1,5 @@
 @import "~assets/styles/variables";
 
-.carousel {
-  display: flex;
-  justify-content: center;
-}
-
-.slider {
-  display: flex;
-  justify-content: center;
-  background-color: $background-color-black;
-
-  .slide-wrapper {
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-gallery {
-  margin: 64px 32px ;
-  background-color: transparent;
-}
-
-.gallery-container {
-  height: 688px;
-  width: 100% ;
-  position: relative;
-  max-width: $container-width;
-}
-
-:host ::ng-deep gallery[fluid] {
-  left: 0;
-  transform: none;
-}
-
-.carousel-caption {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  padding: 0 52px;
-  position: relative;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(transparent 40%, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
-}
-
-:host ::ng-deep gallery gallery-dots .g-dot-inner {
-  background-color: #868583;
-
-  @include box(12, 12);
-}
-
-:host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
-  background-color: $background-color-accent;
-
-  @include box(12, 12);
-}
-
-.age-restrictions {
-  top: 0;
-  left: 0;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  background-color: $background-color-accent;
-
-  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 1.5, .8px);
-  @include box(56, 56);
-}
-
-.container {
-  width: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.performance-title {
-  display: block;
-  text-align: center;
-  justify-content: center;
-
-  @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
-}
-
-.container__performance {
-  display: flex;
-  margin-right: 20px;
-
-  @include font($body-font-family, $font-size-medium, $font-color-white, $font-weight-normal, 1.5, .8px);
-
-  & > p {
-    text-align: center;
-  }
-}
-
-.image {
-  margin: 0 10px 0 0;
-
-  @include box(24, 24);
-}
-
-.container__button {
-  display: flex;
-  line-height: 1.5;
-  margin-bottom: 80px;
-  justify-content: center;
-}
-
-.tickets-button {
-  color: $font-color-white;
-  background: transparent;
-
-  @include border(2, solid, $border-color-light, 2px);
-}
-
-.tickets-button:hover {
-  background-color: rgba(255, 255, 255, .2);
-  text-decoration: none;
-}
-
-.tickets-button:active {
-  color: $font-color-black;
-  background-color: $border-color-light;
-}
-
-.performance__venue, .performance__type, .tickets-day {
-  text-align: left;
-}
-
-.tickets-month {
-  margin-left: 4px;
-}
-
-.container-no-performance {
-  height: 864px;
-  display: flex;
-  justify-content: center;
-}
-
-.no-performance {
-  width: 100% ;
-  display: flex;
-  height: 688px;
-  margin: 64px 32px;
-  position: relative;
-  align-items: flex-end;
-  justify-content: center;
-  max-width: $container-width;
-
-  &__image {
-    top: 0;
-    left: 0;
-    z-index: 0;
-    height: 688px;
-    object-fit: cover;
-    position: absolute;
-    width: $container-width;
-  }
-
-  &__text {
-    z-index: 1;
-    bottom: 120px;
-    margin: 0 32px;
-    text-align: center;
-    position: relative;
-
-    @include font($body-font-family, $font-size-xxx-large, $font-color-white, $font-weight-bold, 1.5, normal);
-  }
-
-  &__linear-gradient {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
-  }
-}
-
 :host::ng-deep ngx-skeleton-loader {
   width: 100%;
   height: 100%;
@@ -194,238 +12,249 @@ gallery {
   }
 }
 
-.slider-skeleton {
+.performance-slider {
   width: 100%;
-  height: 688px;
-  display: flex;
-  margin: 64px auto;
-  flex-direction: column;
-  max-width: $container-width;
-  justify-content: space-between;
+  height: 780px;
+  overflow: hidden;
+  position: relative;
 
-  &__picture {
-    width: 100%;
-    height: 62%;
-    margin: 0 auto;
-  }
-
-  &__title {
-    width: 70%;
-    height: 50px;
-    margin: 16px auto 0;
-  }
-
-  &__description {
-    width: 50%;
-    display: grid;
-    grid-gap: 16px;
-    margin: 16px auto 0;
-    grid-template-rows: 30px;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  &__button {
-    height: 54px;
-    width: 180px;
-    margin: 16px auto;
-  }
-
-  &__circles {
-    grid-gap: 16px;
-    display: grid;
-    margin: 32px auto 16px;
-    grid-template-columns: repeat(5, 1fr);
-
-    & > div {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: $background-main-color-lighter;
-    }
-  }
-
-  @media (max-width: map-get($grid-breakpoints, xxl-min)) {
-
-    &__picture {
-      width: 95%;
-    }
-  }
 
   @media (max-width: map-get($grid-breakpoints, lg-min)) {
-    height: 350px;
-    margin: 32px auto;
-
-    &__picture {
-      height: 38%;
-    }
-
-    &__title {
-      height: 36px;
-    }
-
-    &__description {
-      margin-bottom: 8px;
-      grid-template-rows: 20px;
-    }
-
-    &__circles {
-      margin: 16px auto;
-    }
-
-    &__button {
-      height: 45px;
-    }
+    height: 440px;
   }
 
   @media (max-width: map-get($grid-breakpoints, sm-min)) {
-    height: 600px;
-    margin: 32px auto 16px;
+    height: 448px;
+  }
+
+  .slider {
+
+    &__item, &__image {
+      width: 100%;
+      height: 780px;
+
+      @media (max-width: map-get($grid-breakpoints, lg-min)) {
+        height: 440px;
+      }
+    }
+
+    &__image {
+      object-fit: cover;
+      position: absolute;
+
+      @media (max-width: map-get($grid-breakpoints, sm-min)) {
+        height: 180px;
+        position: sticky;
+      }
+    }
+
+    &__item {
+      color: $white-color;
+      text-decoration: none;
+
+      @media (max-width: map-get($grid-breakpoints, sm-min)) {
+        height: 448px;
+      }
+    }
+
+    &__content {
+      padding-top: 16px;
+      margin-bottom: 54px;
+
+      @media (min-width: map-get($grid-breakpoints, sm-max)) {
+        padding: 16px 80px 32px;
+        border-radius: 4px;
+        margin-bottom: 64px;
+        background-color: rgba($background-main-color-darker, .7);
+      }
+    }
+
+    &__points {
+      z-index: 10;
+      padding: 2px;
+      overflow: auto;
+      margin: -40px auto;
+      white-space: nowrap;
+      list-style-type: none;
+      box-sizing: border-box;
+
+      @media (max-width: map-get($grid-breakpoints, sm-min)) {
+        margin: -32px auto;
+      }
+    }
+
+    &__points li {
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
+      transition: .3s;
+      border-radius: 50%;
+      display: inline-block;
+      background-color: $background-color-disabled;
+      transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+
+      @media (max-width: map-get($grid-breakpoints, sm-min)) {
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    &__points li + li {
+      margin-left: 20px;
+
+      @media (max-width: map-get($grid-breakpoints, sm-min)) {
+        margin-left: 16px;
+      }
+    }
+
+    &__points li.active {
+      transform: scale(1.3);
+      background-color: $background-color-accent;
+    }
+  }
+
+  .no-performance {
+    width: 100%;
+    height: 100%;
+
+    &__image {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__text {
+      margin: 0 32px 64px;
+
+      @media (max-width: map-get($grid-breakpoints, sm-min)) {
+        margin: 0 16px 32px;
+      }
+    }
+
+    &__linear-gradient {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
+    }
+  }
+
+  .slider-skeleton {
+    width: 100%;
+    height: 100%;
 
     &__picture {
-      height: 52%;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    &__age-limit {
+      top: 0;
+      width: 56px;
+      height: 56px;
+      background-color: rgba($background-main-color-darker, .7);
+    }
+
+    &__content {
+      width: 60%;
+      padding: 16px 80px 32px;
+      border-radius: 4px;
+      background-color: rgba($background-main-color-darker, .7);
+    }
+
+    &__title {
+      width: 50%;
+      height: 40px;
+      margin: 0 auto 16px;
     }
 
     &__description {
-      grid-gap: 12px;
-      margin-bottom: 0;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(3, 20px);
+      display: grid;
+      grid-gap: 16px;
+      margin: 0 auto 24px;
+      grid-template-rows: 24px;
+      grid-template-columns: 30% 22% 1fr;
+    }
+
+    &__button {
+      height: 48px;
+      width: 200px;
+      margin: 0 auto;
     }
 
     &__circles {
       grid-gap: 16px;
-    }
-  }
-}
+      display: grid;
+      margin: 26px auto;
+      grid-template-columns: repeat(4, 1fr);
 
-@media (max-width: map-get($grid-breakpoints, lg-min)) {
-
-  .gallery-container {
-    height: 350px;
-  }
-
-  .carousel-caption {
-    background: none;
-  }
-
-  gallery {
-    margin: 32px;
-  }
-
-  .image {
-    margin: 0 8px 0 0;
-
-    @include box(16, 16);
-  }
-
-  .linear-gradient {
-    top: 0;
-    left: 0;
-    height: 90%;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    background: linear-gradient(to bottom, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
-  }
-
-  :host ::ng-deep gallery gallery-dots .g-dot-inner {
-    background-color: #868583;
-
-    @include box(12, 12);
-  }
-
-  :host ::ng-deep gallery gallery-dots .g-dot-active .g-dot-inner {
-    background-color: $background-color-accent;
-
-    @include box(10, 10);
-  }
-
-  :host ::ng-deep gallery gallery-image {
-    height: 90%;
-  }
-
-  .age-restrictions {
-    @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, 1.5, .8px);
-    @include box(36, 36);
-  }
-
-  .performance-title {
-    margin-bottom: 16px;
-
-    @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px);
-  }
-
-  .container__performance {
-    @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-normal, 1.5, .8px);
-
-    & > p {
-      margin-bottom: 8px;
-    }
-  }
-
-  .container__button {
-    line-height: 1.5;
-    margin-top: 20px;
-    margin-bottom: 60px;
-
-    .tickets-button {
-      @include font($body-font-family, $font-size-small, $font-color-white, $font-weight-bold, 1.5, .8px);
-    }
-  }
-
-  .no-performance {
-    height: 350px;
-
-    &__image {
-      height: 350px;
+      & > div {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba($background-main-color-darker, .7);
+      }
     }
 
-    &__text {
-      bottom: 64px;
+    @media (max-width: map-get($grid-breakpoints, lg-min)) {
 
-      @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, 1.5, normal);
-    }
-  }
-}
+      &__age-limit {
+        width: 36px;
+        height: 36px;
+      }
 
-@media (max-width: map-get($grid-breakpoints, sm-min)) {
-
-  .carousel-caption {
-    padding: 0 32px;
-  }
-
-  .linear-gradient {
-    height: 55%;
-    background: linear-gradient(to bottom, transparent 70%, rgba(14, 12, 8, 0), rgba(14, 12, 8, .5), rgba(14, 12, 8, .75), #0e0c08);
-  }
-
-  :host ::ng-deep gallery gallery-image {
-    height: 55%;
-  }
-
-  .gallery-container {
-    height: 600px;
-  }
-
-  gallery {
-    margin: 32px 16px 16px;
-  }
-
-  .age-restrictions {
-    @include font($body-font-family, $font-size-xx-small, $font-color-white, $font-weight-bold, 1.5, .8px);
-    @include box(24, 24);
-  }
-
-  .no-performance {
-    height: 300px;
-    margin: 32px 16px 16px;
-
-    &__image {
-      height: 300px;
+      &__content {
+        width: calc(100% - 32px);
+      }
     }
 
-    &__text {
-      bottom: 32px;
+    @media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+      &__picture {
+        height: 180px;
+        position: sticky;
+      }
+
+      &__age-limit {
+        width: 24px;
+        height: 24px;
+      }
+
+      &__content {
+        padding: 16px;
+        background-color: transparent;
+      }
+
+      &__title {
+        height: 30px;
+      }
+
+      &__description {
+        grid-gap: 8px;
+        margin: 0 auto 32px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 18px);
+
+        & > *:first-child, *:last-child {
+          width: 70%;
+          margin: 0 auto;
+        }
+      }
+
+      &__button {
+        height: 40px;
+        width: 144px;
+      }
+
+      &__circles {
+        grid-gap: 12px;
+        margin: 20px auto;
+
+        & > div {
+          width: 10px;
+          height: 10px;
+          background-color: $background-main-color-lighter;
+        }
+      }
     }
   }
 }

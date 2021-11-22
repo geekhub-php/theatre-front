@@ -67,12 +67,6 @@
   }
 }
 
-.link-buttons {
-  margin: auto;
-  display: block;
-  width: fit-content;
-}
-
 .news_wrapper {
   display: flex;
   margin: 0 auto 80px;
@@ -209,11 +203,6 @@
     padding: 26px 16px 40px;
 
     @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
-
-    .link-buttons {
-      line-height: 1.5;
-      font-size: $font-size-small;
-    }
   }
 
   .advantages {

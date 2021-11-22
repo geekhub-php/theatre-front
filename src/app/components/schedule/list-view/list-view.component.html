@@ -6,7 +6,7 @@
       </div>
     <section *ngIf="event" class="list-view__item">
       <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
-        <div class="list-view__link__age-limit">
+        <div class="age-limit">
           <span>{{ event.performance.age_limit }}+</span>
         </div>
         <div class="list-view__date d-none d-xl-max-flex">
@@ -45,15 +45,18 @@
           </div>
 
         </div>
-        <a
-          class="list-view__button"
-          *ngIf="event.buy_ticket_link"
-          [href]="event.buy_ticket_link"
-          target="_blank"
-          (click)="$event.stopPropagation()"
-          i18n="@@buyTicket">
-          Buy ticket
-        </a>
+        <div class="list-view__button text-lg-min-right">
+          <a
+            class="btn --btn-with-border"
+            *ngIf="event.buy_ticket_link"
+            [href]="event.buy_ticket_link"
+            target="_blank"
+            (click)="$event.stopPropagation()"
+            i18n="@@buyTicket">
+            Buy ticket
+          </a>
+        </div>
+
         <div class="list-view__arrow-right">
           <img alt="arrow" src="assets/images/news/arrow-right.svg">
         </div>

@@ -40,7 +40,7 @@
       <div class="poster-container">
         <img [alt]="performance.mainPicture?.performance_big?.alt" [src]="performance.mainPicture?.performance_big?.url"
              [title]="performance.mainPicture?.performance_big?.properties.title">
-        <div *ngIf="performance && (performance.age_limit || performance.age_limit === 0)" class="limit">
+        <div *ngIf="performance && (performance.age_limit || performance.age_limit === 0)" class="age-limit">
           {{ performance.age_limit + '+' }}
         </div>
       </div>
@@ -87,8 +87,8 @@
           </p>
         </div>
       </div>
-      <div class="ticket_button">
-        <a class="ticket_link" href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
+      <div class="ticket_button text-center text-md-min-left">
+        <a class="btn --btn-with-border" href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
            i18n="@@buyTicket" target="_blank">Buy ticket</a>
       </div>
     </div>

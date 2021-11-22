@@ -51,7 +51,6 @@
     "hammerjs": "^2.0.8",
     "jquery": "^3.6.0",
     "lottie-web": "^5.7.11",
-    "ng-gallery": "^5.0.0",
     "ngx-device-detector": "^2.1.1",
     "ngx-google-analytics": "^11.1.0",
     "ngx-infinite-scroll": "^7.1.1",

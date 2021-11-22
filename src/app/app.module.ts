@@ -9,7 +9,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { NguCarouselModule } from '@ngu/carousel';
-import { GalleryModule } from 'ng-gallery';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -125,7 +124,6 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     NgxGoogleAnalyticsRouterModule,
     SpinnerModule,
     CoreModule,
-    GalleryModule,
     NguCarouselModule,
     LottieModule.forRoot({ player: playerFactory }),
     NgxSkeletonLoaderModule.forRoot()
