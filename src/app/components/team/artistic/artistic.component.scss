@@ -5,7 +5,7 @@
 }
 
 .artistic-persons-container {
-  margin: 32px auto 64px;
+  margin: 82px auto 64px;
 
   .slider-container {
     max-width: $container-width;
@@ -35,7 +35,11 @@
     }
   }
 
-  @media (max-width: map-get($grid-breakpoints, sm-max)) {
+  @media (max-width: map-get($grid-breakpoints, lg-min)) {
+    margin: 32px auto 64px;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm-min)) {
 
     .slider-container .h2 {
       margin-bottom: 16px;

@@ -5,7 +5,7 @@
 }
 
 .wrapped {
-  margin: 32px auto 0;
+  margin: 82px auto 0;
   padding-bottom: 140px;
   max-width: $container-width;
 }
@@ -114,6 +114,13 @@
   .wrapped__performances {
     grid-gap: 16px;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg-min)) {
+
+  .wrapped {
+    margin: 32px auto 0;
   }
 }
 

@@ -1,8 +1,13 @@
 @import "~assets/styles/variables";
 
 .header {
+  top: 0;
+  left: 0;
+  z-index: 6;
   width: 100%;
+  position: fixed;
   background-color: $background-main-color-darker;
+  box-shadow: 0 8px 18px 0 rgba($black-color, .25);
 
   //TODO: refactor main btn component
 
@@ -37,7 +42,7 @@
 
     margin: 0 auto;
     display: flex;
-    padding: 16px 32px;
+    padding: 8px 32px;
     align-items: center;
     max-width: $container-width + 64px;
     justify-content: space-between;

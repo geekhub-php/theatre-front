@@ -5,7 +5,7 @@
 }
 
 .administration-container {
-  margin: 32px auto 64px;
+  margin: 82px auto 64px;
 
   .persons-list {
     margin: 0 auto;
@@ -27,7 +27,11 @@
     background-color: $background-main-color-darker;
   }
 
-  @media (max-width: map-get($grid-breakpoints, sm-max)) {
+  @media (max-width: map-get($grid-breakpoints, lg-min)) {
+    margin: 32px auto 64px;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm-min)) {
 
     .persons-list {
       min-height: 240px;
