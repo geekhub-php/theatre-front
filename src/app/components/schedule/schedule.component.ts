@@ -1,12 +1,9 @@
 import {
   Component,
   HostListener,
-  Inject,
   OnDestroy,
   OnInit,
-  PLATFORM_ID
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 
 import { GatewayService } from '../../services/gateway.service';
 import { LoaderService } from '../partials/spinner/loader.service';
@@ -14,6 +11,7 @@ import { CalendarService } from './calendar.service';
 import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 import { Subscription } from 'rxjs';
 import { Breakpoints } from 'app/constants';
+import { WindowRefService } from 'app/services/window-ref.service';
 
 export enum ScheduleViewModes {
   CALENDAR = 'Calendar',
@@ -43,19 +41,21 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   constructor(
     private gateway: GatewayService,
-    private loaderService: LoaderService,
     private calendar: CalendarService,
+    private windowRef: WindowRefService,
+    private loaderService: LoaderService,
     private slider: MonthsCarouselService,
-    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   @HostListener('window:resize', ['$event'])
-  onResize(event?) {
-    const innerWidth = window.innerWidth;
-    const calendarBreakpointWidth = Breakpoints.xl_min;
+  onResize() {
+    if (this.windowRef.isPlatformBrowser) {
+      const innerWidth = this.windowRef.nativeWindow.innerWidth;
+      const calendarBreakpointWidth = Breakpoints.xl_min;
 
-    this.isSwitcherActive = innerWidth > calendarBreakpointWidth;
-    this.isSwitcherActive && this.viewMode === ScheduleViewModes.CALENDAR ? this.changeViewToCalendar() : this.changeViewToList();
+      this.isSwitcherActive = innerWidth > calendarBreakpointWidth;
+      this.isSwitcherActive && this.viewMode === ScheduleViewModes.CALENDAR ? this.changeViewToCalendar() : this.changeViewToList();
+    }
   }
 
   ngOnInit() {
@@ -99,7 +99,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     this.viewMode = ScheduleViewModes.CALENDAR;
     if (this.activeComp.listActive) this.activeComp.listActive = false;
     this.activeComp.calendarActive = true;
-    if (isPlatformBrowser(this.platformId)) {
+    if (this.windowRef.isPlatformBrowser) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
   }
@@ -109,7 +109,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     if (this.activeComp.calendarActive) this.activeComp.calendarActive = false;
     this.activeComp.listActive = true;
 
-    if (isPlatformBrowser(this.platformId)) {
+    if (this.windowRef.isPlatformBrowser) {
       localStorage.setItem('viewMode', JSON.stringify(this.viewMode));
     }
   }
@@ -135,7 +135,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   }
 
   get savedLocale() {
-    if (isPlatformBrowser(this.platformId)) {
+    if (this.windowRef.isPlatformBrowser) {
       return JSON.parse(localStorage.getItem('viewMode')) || ScheduleViewModes.LIST;
     }
 

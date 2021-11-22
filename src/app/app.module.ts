@@ -7,7 +7,6 @@ import { LottieModule } from 'ngx-lottie';
 import { NgbCollapseModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-import { GoogleAnalyticsService, NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { NguCarouselModule } from '@ngu/carousel';
 import { GalleryModule } from 'ng-gallery';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -60,7 +59,6 @@ import { NewsListItemComponent } from './components/partials/news-list-item/news
 import { CooperationComponent } from './components/cooperation/cooperation.component';
 import { SeasonsComponent } from './components/performance/seasons/seasons.component';
 
-import { environment } from '../environments/environment';
 import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
@@ -121,8 +119,6 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     NgbPaginationModule,
     NgbPaginationModule,
     NgbCollapseModule,
-    NgxGoogleAnalyticsModule.forRoot(environment.ga),
-    NgxGoogleAnalyticsRouterModule,
     SpinnerModule,
     CoreModule,
     GalleryModule,
@@ -133,7 +129,6 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
   providers: [
     CalendarPopupComponent,
     CalendarService,
-    GoogleAnalyticsService
   ],
   bootstrap: [AppComponent]
 })

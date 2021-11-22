@@ -1,5 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { Breakpoints } from 'app/constants';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-main-nav',
@@ -7,35 +6,6 @@ import { Breakpoints } from 'app/constants';
   styleUrls: ['./main-nav.component.scss']
 })
 
-export class MainNavComponent implements OnInit {
-  showWideNav: boolean;
-  showSmallNav: boolean;
-
+export class MainNavComponent {
   constructor() { }
-
-  ngOnInit() {
-    this.getWindowSize();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.getWindowSize();
-  }
-
-  getWindowSize() {
-    const screenWidth = window.innerWidth;
-    const wideScreen = Breakpoints.xl_min;
-    const mediumScreen = Breakpoints.md_min;
-
-    if (screenWidth > wideScreen) {
-      this.showWideNav = true;
-      this.showSmallNav = false;
-    } else if (screenWidth > mediumScreen) {
-      this.showWideNav = false;
-      this.showSmallNav = true;
-    } else {
-      this.showWideNav = false;
-      this.showSmallNav = false;
-    }
-  }
 }
