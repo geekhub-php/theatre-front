@@ -43,6 +43,7 @@
       position: absolute;
 
       @media (max-width: map-get($grid-breakpoints, sm-min)) {
+        flex-grow: 1;
         height: 180px;
         position: sticky;
       }
