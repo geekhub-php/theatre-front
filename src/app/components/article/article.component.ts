@@ -7,6 +7,7 @@ import { LoaderService } from '../partials/spinner/loader.service';
 import { plainToClass } from 'class-transformer';
 import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
 import { GalleryItem } from '../../store/news/GalleryItem';
+import { WindowRefService } from '../../services/window-ref.service';
 
 @Component({
   selector: 'app-article',
@@ -27,6 +28,7 @@ export class ArticleComponent implements OnInit {
 
   constructor(private router: ActivatedRoute,
               private gateAway: GatewayService,
+              private windowRef: WindowRefService,
               private loaderService: LoaderService) {
   }
 
@@ -98,12 +100,14 @@ export class ArticleComponent implements OnInit {
   }
 
   getGalleryColumns() {
+  if (!this.windowRef.isPlatformBrowser) return;
+
     const wideScreenSize = 768;
     const mediumScreenSize = 450;
     const wideScreenColumns = 4;
     const mediumScreenColumns = 2;
     this.galleryColumns =
-      window.screen.width > wideScreenSize ? wideScreenColumns :
-        window.screen.width > mediumScreenSize ? mediumScreenColumns : 1;
+      this.windowRef.nativeWindow.screen.width > wideScreenSize ? wideScreenColumns :
+        this.windowRef.nativeWindow.screen.width > mediumScreenSize ? mediumScreenColumns : 1;
   }
 }

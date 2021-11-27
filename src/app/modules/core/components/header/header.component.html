@@ -16,7 +16,7 @@
     </nav>
 
 
-    <div *ngIf="wideScreen" class="header-buttons">
+    <div class="header-buttons d-none d-lg-min-block">
       <!--    <button class="search-button" aria-controls="collapseExample"-->
       <!--            (click)="collapseMenu()">-->
       <!--            [attr.aria-expanded]="!isCollapsed">-->
@@ -48,7 +48,7 @@
          i18n="@@buyTicket" target="_blank">Buy ticket</a>
     </div>
 
-    <div *ngIf="!wideScreen" class="icons-group">
+    <div class="icons-group d-block d-lg-min-none">
       <button (click)="openDonate()" class="btn --btn-icon">
         <img class="icon" src="assets/images/icons/ic_wallet.svg"
              alt="wallet">

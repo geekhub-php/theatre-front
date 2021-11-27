@@ -1,30 +1,29 @@
 import {
-  OnInit,
+  Inject,
   OnDestroy,
   ViewChild,
   Component,
-  HostListener,
   AfterViewInit,
   ChangeDetectorRef
 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { fromEvent, Subscription } from 'rxjs';
 import { TInteractiveCat, TNativeDivElement } from 'app/store/schedule/MonthsSliderItem';
-import { screenSize } from '../../months-carousel/months-carousel.service';
 
 @Component({
   selector: 'app-cat-interactive',
   templateUrl: './cat-interactive.component.html',
   styleUrls: [ './cat-interactive.component.scss' ]
 })
-export class CatInteractiveComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CatInteractiveComponent implements AfterViewInit, OnDestroy {
   @ViewChild('catLeftEye') catLeftEye: TNativeDivElement;
   @ViewChild('catRightEye') catRightEye: TNativeDivElement;
 
   catProperty: TInteractiveCat = {
     currentSize: null,
     moveStep: null,
-    wideScreen: 1000,
-    mediumScreen: 500,
+    md: 999,
+    xs: 499,
     wideStep: 25,
     mediumStep: 15,
     shortStep: 10
@@ -32,54 +31,32 @@ export class CatInteractiveComponent implements OnInit, AfterViewInit, OnDestroy
 
   mouseMove: Subscription;
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private doc: Document) {
   }
 
-  @HostListener('window:resize', [ 'event' ]) onResize() {
-    const width = window.innerWidth;
-    const { wideScreen, mediumScreen, currentSize, wideStep, mediumStep, shortStep } = this.catProperty;
+  setCatProperty({ innerWidth }: Window) {
+    const { md, xs, wideStep, mediumStep, shortStep } = this.catProperty;
 
-    const setCatProperty = ({ step, size }: { step: number, size: string }) => {
-      this.catProperty.moveStep = step;
-      this.catProperty.currentSize = size;
-    };
-
-    if (width >= wideScreen && currentSize !== screenSize.lg) {
-      setCatProperty({ step: wideStep, size: screenSize.lg });
-    } else if (width < wideScreen && width >= mediumScreen && currentSize !== screenSize.md) {
-      setCatProperty({ step: mediumStep, size: screenSize.md });
-    } else if (width < mediumScreen && currentSize !== screenSize.xs) {
-      setCatProperty({ step: shortStep, size: screenSize.xs });
-    }
+    this.catProperty.moveStep = innerWidth <= xs ? shortStep : innerWidth <= md ? mediumStep : wideStep;
   }
 
-
-  ngOnInit() {
-    this.onResize();
-  }
-
-  setEyePosition({ moveStep, clientX, clientY }: {
-    moveStep: number, clientX?: number, clientY?: number
-  }) {
+  setEyePosition({ clientX, clientY, view }: MouseEvent) {
     const half = 0.5;
-    const { innerHeight, innerWidth } = window;
-    clientX = !!clientX ? clientX : Math.floor(Math.random() * innerWidth);
-    clientY = !!clientY ? clientY : Math.floor(Math.random() * innerHeight);
+    const { innerWidth, innerHeight } = view;
+
     const relativeX = (clientX) / innerWidth * half;
     const relativeY = (clientY) / innerHeight * half;
 
-    this.catLeftEye.nativeElement.style.left = `${moveStep * relativeX}px`;
-    this.catLeftEye.nativeElement.style.top = `${moveStep * relativeY}px`;
-    this.catRightEye.nativeElement.style.left = `${moveStep * relativeX}px`;
-    this.catRightEye.nativeElement.style.top = `${moveStep * relativeY}px`;
+    this.catLeftEye.nativeElement.style.left = `${this.catProperty.moveStep * relativeX}px`;
+    this.catLeftEye.nativeElement.style.top = `${this.catProperty.moveStep * relativeY}px`;
+    this.catRightEye.nativeElement.style.left = `${this.catProperty.moveStep * relativeX}px`;
+    this.catRightEye.nativeElement.style.top = `${this.catProperty.moveStep * relativeY}px`;
   }
 
   ngAfterViewInit() {
-    this.setEyePosition({ moveStep: this.catProperty.moveStep });
-    this.mouseMove = fromEvent(document, 'mousemove').subscribe((e: MouseEvent) => {
-      const { moveStep } = this.catProperty;
-      const { clientX, clientY } = e;
-      this.setEyePosition({ moveStep, clientX, clientY });
+    this.mouseMove = fromEvent(this.doc, 'mousemove').subscribe((e: MouseEvent) => {
+      this.setCatProperty(e.view);
+      this.setEyePosition(e);
     });
 
     this.cdr.detectChanges();

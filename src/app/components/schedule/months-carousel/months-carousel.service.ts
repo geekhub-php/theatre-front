@@ -1,6 +1,6 @@
 import { fromEvent, Subject, Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { Injectable, OnDestroy, QueryList } from '@angular/core';
+import { Inject, Injectable, OnDestroy, QueryList } from '@angular/core';
 import {
   TMonthProperty,
   TNativeDivElement,
@@ -10,6 +10,8 @@ import {
 import { LoaderService } from 'app/components/partials/spinner/loader.service';
 
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { WindowRefService } from 'app/services/window-ref.service';
+import { DOCUMENT } from '@angular/common';
 
 export enum screenSize {
   xs = 'xs',
@@ -63,7 +65,11 @@ export class MonthsCarouselService implements OnDestroy {
     amountOfYears: 10
   };
 
-  constructor(private spinner: LoaderService, private deviceService: DeviceDetectorService) {
+  constructor(
+    @Inject(DOCUMENT) private doc: Document,
+    private spinner: LoaderService,
+    private windowRef: WindowRefService,
+    private deviceService: DeviceDetectorService) {
     this.monthsSlider$.subscribe((carousel) => {
       this.monthsSlider = carousel;
     });
@@ -121,6 +127,8 @@ export class MonthsCarouselService implements OnDestroy {
   }
 
   onResize() {
+    if (!this.windowRef.isPlatformBrowser) return;
+
     const {
       wideScreen,
       middleScreen,
@@ -129,7 +137,9 @@ export class MonthsCarouselService implements OnDestroy {
       currentScreenSize,
       narrowScreen
     } = this.screen;
-    const width = window.innerWidth;
+
+    const width = this.windowRef.nativeWindow.innerWidth;
+
     const setScreenProperties = ({ currentSize, screenWidth, startPoint, scrollAmount }) => {
       this.screen.currentScreenSize = currentSize;
       this.screen.screenWidth = screenWidth;
@@ -206,7 +216,7 @@ export class MonthsCarouselService implements OnDestroy {
 
   setDefaultData() {
     const { amountOfYears } = this.month;
-    const storedDate = JSON.parse(sessionStorage.getItem('selectedMonth'));
+    const storedDate = JSON.parse(this.windowRef.isPlatformBrowser ? sessionStorage.getItem('selectedMonth') : null);
     const newDate = (storedDate && new Date(storedDate)) || new Date();
     const half = 2;
     this.month.activeMonth = `${newDate.getUTCMonth()}/${newDate.getUTCFullYear()}/${
@@ -298,7 +308,7 @@ export class MonthsCarouselService implements OnDestroy {
     this.monthList.forEach((month) => {
       if (month.id === id) {
         this.month.currentFullDate = month.date;
-        sessionStorage.setItem('selectedMonth', JSON.stringify(month.date));
+        this.windowRef.isPlatformBrowser && sessionStorage.setItem('selectedMonth', JSON.stringify(month.date));
         this.activeSpinner();
         this.month$.next(this.month);
       }
@@ -343,9 +353,9 @@ export class MonthsCarouselService implements OnDestroy {
       fromEvent<any>(this.monthsSlider.nativeElement, 'touchstart');
 
     const mouEnd$ = desktop ?
-      fromEvent<any>(document, 'mouseup')
+      fromEvent<any>(this.doc, 'mouseup')
       :
-      fromEvent<any>(document, 'touchend');
+      fromEvent<any>(this.doc, 'touchend');
 
     const scrollParams = {
       desktop: { speed: 2, count: 50 },

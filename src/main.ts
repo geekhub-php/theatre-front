@@ -3,7 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import 'reflect-metadata';
 import 'hammerjs';
 
-import { AppModule } from './app/app.module';
+import { AppBrowserModule } from './app/app.browser.module';
 import { environment } from './environments/environment';
 
 import localeUk from '@angular/common/locales/uk';
@@ -16,6 +16,6 @@ if (environment.production) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic().bootstrapModule(AppModule)
+  platformBrowserDynamic().bootstrapModule(AppBrowserModule)
   .catch(err => console.error(err));
 });

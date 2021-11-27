@@ -1,4 +1,4 @@
-<ul *ngIf="showWideNav" class="header-nav">
+<ul class="header-nav d-none d-xl-min-flex">
 
   <li><a class="header-nav__link action-link" [routerLink]="['/']" routerLinkActive="active"
          [routerLinkActiveOptions]="{ exact: true }" i18n="@@mainPage">Main</a></li>
@@ -15,7 +15,7 @@
 
 </ul>
 
-<ul *ngIf="showSmallNav" class="header-nav">
+<ul class="header-nav d-none d-lg-min-flex d-xl-min-none">
   <li><a class="header-nav__link" i18n="@@poster" routerLink="/poster" routerLinkActive="active">Poster</a></li>
   <li><a class="header-nav__link" i18n="@@repertoire" routerLink="/repertoire" routerLinkActive="active">Repertoire</a>
   </li>

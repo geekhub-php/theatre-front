@@ -31,8 +31,8 @@ export interface TMonthProperty {
 export interface TInteractiveCat {
   currentSize: string | null;
   moveStep: number | null;
-  wideScreen: 1000;
-  mediumScreen: 500;
+  md: 999;
+  xs: 499;
   wideStep: 25;
   mediumStep: 15;
   shortStep: 10;
