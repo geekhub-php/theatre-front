@@ -70,3 +70,6 @@ Update `protractor.conf.js`:
 ```bash
 chromeDriver: './node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_{{version_of_chrome}}'
 ```
+## Running webpack bundle analyzer
+
+Run `npm run build:stats` and then `npm run analyze`

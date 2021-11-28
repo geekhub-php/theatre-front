@@ -6,6 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build -c production-uk",
+    "build:stats": "ng build --stats-json",
+    "analyze": "webpack-bundle-analyzer dist/theatre-front/browser/stats.json",
     "test": "ng test",
     "lint": "ng lint",
     "lint-css": "stylelint --config .stylelintrc 'src/**/*.scss' --fix",
