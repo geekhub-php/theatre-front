@@ -30,11 +30,11 @@
       <div [ngbCollapse]="!isCollapsed" class="search-box">
         <input (keydown.enter)="sendRequestOnEnter();false" [(ngModel)]="textValue" class="search-input"
                placeholder="{{search_text}}" type="text"/>
-        <button (click)="sendRequestOnIconClick()" class="btn --btn-reset btn-search">
+        <button (click)="sendRequestOnIconClick()" class="btn --btn-icon btn-search">
           <img alt="Search button" i18n-title="@@search"
                src="assets/images/icons/ic_magnifying_glass_gold.svg" title="Search">
         </button>
-        <button (click)="clearSubmit()" class="btn --btn-reset --btn-close btn-cancel">
+        <button (click)="clearSubmit()" class="btn --btn-icon --btn-close btn-cancel">
           <img src="assets/images/icons/ic_cross_black.svg" alt="cross icon">
         </button>
       </div>
@@ -43,20 +43,20 @@
       <span class="separation">|</span>
       <a [href]="enLangUrl" [class.active-language]="localeId === 'en'" class="language eng">Eng</a>
 
-      <a class="header-button btn tickets-button"
+      <a class="btn --btn-teak ml-4"
          href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
          i18n="@@buyTicket" target="_blank">Buy ticket</a>
     </div>
 
     <div class="icons-group d-block d-lg-min-none">
-      <button (click)="openDonate()" class="btn --btn-reset">
+      <button (click)="openDonate()" class="btn --btn-icon">
         <img class="icon" src="assets/images/icons/ic_wallet.svg"
              alt="wallet">
       </button>
-      <button (click)="openSettings()" class="btn --btn-reset">
+      <button (click)="openSettings()" class="btn --btn-icon">
         <img class="icon" src="assets/images/icons/ic_settings.svg" alt="">
       </button>
-      <button (click)="openNavbar()" class="btn --btn-reset">
+      <button (click)="openNavbar()" class="btn --btn-icon">
         <img class="icon" src="assets/images/icons/ic_burger.svg"
              alt="Side navigation">
       </button>
@@ -67,11 +67,11 @@
   <app-burger-menu></app-burger-menu>
 
   <div class="side-buttons d-none d-lg-min-flex">
-    <button (click)="openDonate()" class="btn --btn-reset btn-donate">
+    <button (click)="openDonate()" class="btn --btn-icon btn-donate">
       <img src="assets/images/icons/ic_wallet_black.svg" alt="Donate" i18n-title="@@donate" title="Donate">
     </button>
 
-    <button (click)="openSettings() " class="btn --btn-reset btn-settings">
+    <button (click)="openSettings() " class="btn --btn-icon btn-settings">
       <img src="assets/images/icons/ic_eye_settings_black.svg" alt="Color schemes" title="Color schemes"
            i18n-title="@@color-schemes">
     </button>

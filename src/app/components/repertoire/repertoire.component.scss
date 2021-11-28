@@ -60,23 +60,6 @@
   justify-content: center;
 }
 
-.age-restrictions {
-  left: 0;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  cursor: default;
-  position: absolute;
-  text-align: center;
-  align-items: center;
-  transition: ease .2s;
-  justify-content: center;
-  color: $font-color-white;
-  font-size: $font-size-large;
-  font-weight: $font-weight-bold;
-  font-family: $body-font-family;
-  background-color: $background-color-accent;
-}
 
 .pagination__wrapper {
   display: flex;
@@ -128,12 +111,6 @@
     }
   }
 
-  .age-restrictions {
-    width: 36px;
-    height: 36px;
-    font-size: $font-size-medium-px;
-  }
-
   .image-performance {
     width: 300px;
     height: 426px;
@@ -170,11 +147,6 @@
     }
   }
 
-  .age-restrictions {
-    font-size: $font-size-xx-small;
-    width: 24px;
-    height: 24px;
-  }
 
   .item__wrapper {
     width: 100%;
