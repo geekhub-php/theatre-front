@@ -2,11 +2,16 @@
 
 .theatre-frontend {
   display: flex;
+  margin-top: 64px;
   flex-direction: column;
   justify-content: space-between;
   /* stylelint-disable */
   height: 100vh;
   /* stylelint-enable */
+
+  @media (max-width: map-get($grid-breakpoints, md-min)) {
+    margin-top: 48px;
+  }
 }
 
 .sidebar-active {
