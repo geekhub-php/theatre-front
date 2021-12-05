@@ -15,6 +15,7 @@
     <tr *ngFor="let week of weeks">
       <td *ngFor="let day of week"
           class="day__of__month"
+          [class.current-day] = "(day | date: ('MM dd')) === (today | date: ('MM dd'))"
           [class.another__month] = "(day | date: 'MM') !== (selectedDate | date: 'MM')">
         <span class="day__number">{{ day | date: 'dd' }}</span>
         <div class="more" *ngIf="hasPerformanceByDate(day)">

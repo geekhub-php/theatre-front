@@ -113,7 +113,7 @@ $popup-border-color: #b6b6b4;
     cursor: default;
     position: absolute;
     top: 12px;
-    left: 6px;
+    left: 8px;
     z-index: 5;
     font-size: $font-size-xxx-large;
     color: $font-color-gold;
@@ -121,6 +121,17 @@ $popup-border-color: #b6b6b4;
     line-height: 1;
     padding: 2px 0;
     text-align: center;
+  }
+
+  .current-day::before {
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 4px $teak;
   }
 
   .calendar__show__more {
@@ -241,11 +252,12 @@ $popup-border-color: #b6b6b4;
   }
 
   .more {
-    padding: 0 8px;
     display: flex;
     height: 100%;
     width: 100%;
+    position: relative;
     align-items: flex-end;
+    padding: 56px 8px 12px;
 
     &__items {
       display: flex;

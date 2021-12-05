@@ -18,7 +18,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   showMore = false;
   activeDay: Date | null = null;
   selectedDate: Date;
-  middleOfMonth = 15;
+  today = new Date();
 
   sliderSubscription: Subscription;
   calendarSubscription: Subscription;
@@ -67,7 +67,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
       this.events = value;
       this.weeks = this.calendar.weeks;
       this.loaderService.stop('poster');
-    }, err => this.loaderService.stop('poster'));
+    }, () => this.loaderService.stop('poster'));
   }
 
   delSubscription(subscription: Subscription) {

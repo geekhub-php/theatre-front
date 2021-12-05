@@ -5,7 +5,7 @@
 }
 
 .creative-persons-container {
-  margin: 32px auto 64px;
+  margin: 82px auto 64px;
 
   .slider-container {
     max-width: $container-width;
@@ -33,6 +33,10 @@
 
       @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5);
     }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, lg-min)) {
+    margin: 32px auto 64px;
   }
 
   @media (max-width: map-get($grid-breakpoints, sm-max)) {
