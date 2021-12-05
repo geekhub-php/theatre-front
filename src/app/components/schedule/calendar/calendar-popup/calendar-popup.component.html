@@ -9,22 +9,22 @@
       <p class="popover__title">{{ event && event.performance.title }}</p>
     </div>
     <div class="popover__info">
-      <img src="assets/images/calendar/bx-calendar-event.svg" alt="">
+      <img src="assets/images/icons/ic_calendar_white.svg" alt="calendar">
       <p>
         <span>{{ event && event.date_time | date: 'dd/MM' }}</span>,
         <span>{{ event && event.date_time | date: 'EEEE' }}</span>
       </p>
     </div>
     <div class="popover__info">
-      <img src="assets/images/calendar/time-fill.svg" alt="">
+      <img src="assets/images/icons/ic_clock_white.svg" alt="clock">
       <p>{{ event && event.time }}</p>
     </div>
     <div *ngIf='event && !!event.performance.duration_in_min' class="popover__info">
-      <img src="assets/images/calendar/bx-hourglass.svg" alt="">
+      <img src="assets/images/icons/ic_hourglass_white.svg" alt="">
       <p>{{ event && event.performance.duration_in_min | performanceDuration: localeId }}</p>
     </div>
     <div class="popover__info">
-      <img src="assets/images/calendar/map-pin-2-fill.svg" alt="">
+      <img src="assets/images/icons/ic_map_pin_white.svg" alt="map pin">
       <p>{{ event && event.venue }}</p>
     </div>
   </div>

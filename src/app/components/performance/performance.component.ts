@@ -12,6 +12,7 @@ import { GatewayService } from '../../services/gateway.service';
 import { Performance } from '../../store/performance/Performance';
 import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
 import { WindowRefService } from 'app/services/window-ref.service';
+import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
 
 enum galleryColumns {
   xs = 1,
@@ -36,6 +37,7 @@ export class PerformanceComponent implements OnInit {
   thumbnailHeight = 240;
   performance: Performance;
   localeId: Locales = Locales.en;
+  nearestPerformance: PerformanceEvent;
 
   commonGalleryOptions = {
     image: false,
@@ -107,10 +109,17 @@ export class PerformanceComponent implements OnInit {
 
     forkJoin([
       this.gateway.getPerformanceBySlug(slug),
-      this.gateway.getPerformanceRoles(slug)
-    ]).subscribe(([ performance, roles ]) => {
+      this.gateway.getPerformanceRoles(slug),
+      this.gateway.getPerformanceEventList(new Date(),  '50')
+    ]).subscribe(([ performance, roles, performances]) => {
       this.performance = performance.body;
       this.roles = roles;
+
+      const nearestPerformances = performances.performance_events.filter(event => event.performance.slug === this.performance.slug);
+      if (nearestPerformances.length) {
+        this.nearestPerformance = nearestPerformances[0];
+      }
+
       if (this.performance.gallery) {
         this.performance.gallery.map(item => {
           this.galleryImages.push(
