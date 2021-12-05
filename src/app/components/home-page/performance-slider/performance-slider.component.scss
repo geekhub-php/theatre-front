@@ -63,10 +63,18 @@
       margin-bottom: 54px;
 
       @media (min-width: map-get($grid-breakpoints, sm-max)) {
-        padding: 16px 80px 32px;
+        padding: 16px 24px 32px;
         border-radius: 4px;
         margin-bottom: 64px;
         background-color: rgba($background-main-color-darker, .7);
+      }
+
+      @media (min-width: map-get($grid-breakpoints, md-max)) {
+        padding: 16px 40px 32px;
+      }
+
+      @media (min-width: map-get($grid-breakpoints, lg-max)) {
+        padding: 16px 80px 32px;
       }
     }
 
