@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "lint-css": "stylelint --config .stylelintrc 'src/**/*.scss' --fix",
     "e2e": "ng e2e",
-    "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json",
+    "bundle-report": "ng build -c production-uk --stats-json && webpack-bundle-analyzer dist/theatre-front/browser/uk/stats.json",
     "build:uk-ua": "ng build -c production-uk",
     "build:en-us": "ng build -c production-en",
     "dev:ssr": "ng run theatre-front:serve-ssr",
@@ -87,6 +87,6 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "4.0.5",
-    "webpack-bundle-analyzer": "^3.3.2"
+    "webpack-bundle-analyzer": "^3.9.0"
   }
 }
