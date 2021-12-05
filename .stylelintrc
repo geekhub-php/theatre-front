@@ -98,7 +98,9 @@
           "mixin",
           "content",
           "at-root",
-          "extend"
+          "if",
+          "return",
+          "function"
         ]
       }
     ],
