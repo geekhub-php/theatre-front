@@ -29,7 +29,8 @@
             "assets": [
               "src/assets",
               "src/assets/json",
-              "src/favicon.png"
+              "src/favicon_black.svg",
+              "src/favicon_white.svg"
             ],
             "styles": [
               "src/styles.scss"
