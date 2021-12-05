@@ -62,22 +62,23 @@
   margin-left: 8px;
 }
 
-.scrollToTop {
-  right: 1%;
+.scroll-to-top-btn {
+  right: 2px;
+  padding: 0;
   z-index: 20;
   bottom: 10%;
-  border: none;
-  outline: none;
+  width: 48px;
+  height: 48px;
   position: fixed;
-  cursor: pointer;
   border-radius: 50%;
-  object-fit: contain;
   background-color: $background-color-accent;
-
-  @include box(48, 48);
 
   &:hover {
     background-color: $background-on-hover;
+  }
+
+  &:focus {
+    box-shadow: none;
   }
 }
 
