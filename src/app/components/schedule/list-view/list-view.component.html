@@ -48,8 +48,7 @@
         <div class="list-view__button text-lg-min-right">
           <a
             class="btn --btn-with-border"
-            *ngIf="event.buy_ticket_link"
-            [href]="event.buy_ticket_link"
+            [href]="event.buy_ticket_link || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
             target="_blank"
             (click)="$event.stopPropagation()"
             i18n="@@buyTicket">

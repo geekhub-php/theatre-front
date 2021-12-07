@@ -38,7 +38,11 @@
                 </div>
               </div>
               <div class="" (click)="$event.stopPropagation()">
-                <a [href]="performance.ticket" class="btn --btn-with-border" i18n="@@buyTicket">Buy ticket</a>
+                <a
+                  target="_blank"
+                  class="btn --btn-with-border"
+                  [href]="performance.ticket || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
+                  i18n="@@buyTicket">Buy ticket</a>
               </div>
             </div>
           </div>
