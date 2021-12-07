@@ -23,18 +23,18 @@
                 <div class="d-flex align-items-center mr-sm-min-4 mb-2 mr-2">
                   <img src="assets/images/icons/ic_book.svg" alt="performance type image"
                        class="mr-2 mb-1">
-                  <p class="m-0">{{ performance.type }}</p>
+                  <p class="m-0 text-center">{{ performance.type }}</p>
                 </div>
                 <div class="d-flex align-items-center mr-sm-min-4 mb-2 mr-2">
                   <img src="assets/images/icons/ic_clock.svg" alt="due date image" class="mr-2 mb-1">
-                  <p class="m-0">
+                  <p class="m-0 text-center">
                     {{ performance.date_time | date: 'EEE, dd' }} {{ performance.date_time | date: 'MMMM' | lowercase }}
                   </p>
                 </div>
                 <div class="d-flex align-items-center mb-2 mr-2 mr-sm-min-0">
                   <img src="assets/images/icons/ic_map_pin.svg" alt="performance venue image"
                        class="mr-2 mb-1">
-                  <p class="m-0">{{ performance.venue }}</p>
+                  <p class="m-0 text-center">{{ performance.venue }}</p>
                 </div>
               </div>
               <div class="" (click)="$event.stopPropagation()">
