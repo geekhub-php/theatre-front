@@ -49,7 +49,7 @@
           <a
             class="btn --btn-with-border"
             [href]="event.buy_ticket_link || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
-            target="_blank"
+            [target]="isDesktop ? '_blank' : '_self'"
             (click)="$event.stopPropagation()"
             i18n="@@buyTicket">
             Buy ticket

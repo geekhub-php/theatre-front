@@ -13,6 +13,10 @@
   white-space: nowrap;
   font-weight: $font-weight-bold;
 
+  &:focus {
+    box-shadow: none;
+  }
+
   @media (max-width: map-get($grid-breakpoints, sm-min)) {
     font-size: $font-size-small;
   }

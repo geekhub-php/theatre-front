@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { forkJoin } from 'rxjs';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { LoaderService } from '../partials/spinner/loader.service';
 
@@ -30,6 +31,7 @@ export class PerformanceComponent implements OnInit {
   slug: string;
   loading = true;
   imageAmount = 0;
+  isDesktop = false;
   activeId = 'actors';
   roles: Array<Role>;
   loadingFull = true;
@@ -84,7 +86,8 @@ export class PerformanceComponent implements OnInit {
               private gateway: GatewayService,
               private langService: LangService,
               private windowRef: WindowRefService,
-              private loaderService: LoaderService) {
+              private loaderService: LoaderService,
+              private deviceService: DeviceDetectorService) {
     this.langService.localeId$.subscribe(localeId => {
       this.localeId = localeId;
     });
@@ -141,6 +144,7 @@ export class PerformanceComponent implements OnInit {
       this.onResize();
     }, err => this.loaderService.stop('performance-page'));
     this.gateway.updateCanonicalURL();
+    this.isDesktop = this.deviceService.getDeviceInfo().deviceType === 'desktop';
   }
 
   openGallery() {

@@ -39,7 +39,7 @@
               </div>
               <div class="" (click)="$event.stopPropagation()">
                 <a
-                  target="_blank"
+                  [target]="isDesktop ? '_blank' : '_self'"
                   class="btn --btn-with-border"
                   [href]="performance.ticket || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
                   i18n="@@buyTicket">Buy ticket</a>
