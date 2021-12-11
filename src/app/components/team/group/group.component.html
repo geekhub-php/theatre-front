@@ -1,0 +1,15 @@
+<!-- TODO: breadcrumbs -->
+
+<div class="creative-persons-container text-center" *ngIf="group">
+  <div><h1 i18n="@@creative" class="kobzar-title">{{ group.title }}</h1></div>
+
+  <div *ngFor="let chGroup of childGroups" class="actors">
+    <div class="slider-container">
+      <h2 id="actor-persons" class="h2" i18n="@@theatreActors">{{ chGroup.group.title }}</h2>
+      <app-persons-slider [persons]="chGroup.employees"></app-persons-slider>
+      <div class="link-persons">
+        <a routerLink="{{ chGroup.group.slug }}" i18n="@@showMore">Show more</a>
+      </div>
+    </div>
+  </div>
+</div>

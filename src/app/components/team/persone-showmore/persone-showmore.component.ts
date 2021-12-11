@@ -30,16 +30,13 @@ export class PersoneShowmoreComponent implements OnInit {
 
     const slug = this.route.snapshot.params.slug;
 
-    this.httpGatewayService.getEmployeesGroupes().subscribe((groupeTitle) => {
-      // TODO: add correct response type for the getEmployeesGroupes
-      const groupList = [].concat(groupeTitle);
-      this.title = groupList.filter(group => group.slug === slug)[0].title;
-      this.loaderService.stop('load-team');
+    this.httpGatewayService.getEmployeesGroup(slug).subscribe((Group) => {
+      this.title = Group.title;
     });
 
-    this.httpGatewayService.getEmployeesListByGroupe(slug).subscribe((persons) => {
+    this.httpGatewayService.getEmployeesListByGroup(slug).subscribe((persons) => {
       this.employees = this.employees.concat(persons.employees);
-      this.loaderService.stop('load-team');
+      this.loaderService.stop('persons-showmore');
     });
 
     this.gateway.updateCanonicalURL();

@@ -36,9 +36,6 @@ import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
 import { PersonsHeaderComponent } from './components/team/persons-header/persons-header.component';
-import { AdministrationComponent } from './components/team/administration/administration.component';
-import { ArtisticComponent } from './components/team/artistic/artistic.component';
-import { CreativeComponent } from './components/team/creative/creative.component';
 import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
 import { PersonsSliderComponent } from './components/partials/persons-slider/persons-slider.component';
 import { PersonCardComponent } from './components/team/person-card/person-card.component';
@@ -62,6 +59,8 @@ import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
 import { playerFactory } from './components/partials/spinner/spinner.component';
+import { GroupComponent } from './components/team/group/group.component';
+import { EmployeeSubGroupComponent } from './components/team/employee-sub-group/employee-sub-group.component';
 
 @NgModule({
   declarations: [
@@ -92,9 +91,7 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     RepertoireNavHeaderComponent,
     CooperationComponent,
     PersonsHeaderComponent,
-    AdministrationComponent,
-    ArtisticComponent,
-    CreativeComponent,
+    GroupComponent,
     PersoneShowmoreComponent,
     SeasonsComponent,
     CatInteractiveComponent,
@@ -104,7 +101,8 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     EpochComponent,
     VisitComponent,
     PersonsSliderComponent,
-    PersonCardComponent
+    PersonCardComponent,
+    EmployeeSubGroupComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
