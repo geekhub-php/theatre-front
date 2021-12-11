@@ -24,7 +24,7 @@
   </section>
 
   <div *ngIf="randomEmployees?.length > 0 || isRandomEmployeesLoading" class="persons-slider-container text-center">
-    <h2 id="ballet-persons" class="h2" i18n="@@theatrePersonalities">Theatre personalities</h2>
+    <a id="ballet-persons" class="h2 --link d-block mb-4" i18n="@@theatrePersonalities" routerLink="/persons">Theatre personalities</a>
     <app-persons-slider [persons]="randomEmployees" [isLoading]="isRandomEmployeesLoading"></app-persons-slider>
     <div class="link-persons">
       <a routerLink="/persons" i18n="@@showMore">Show more</a>
