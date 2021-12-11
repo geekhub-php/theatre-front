@@ -1,6 +1,7 @@
 import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 import { NguCarouselConfig } from '@ngu/carousel';
+import { DeviceDetectorService } from 'ngx-device-detector';
 import { GatewayService } from 'app/services/gateway.service';
 import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
 
@@ -12,6 +13,7 @@ import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
 
 export class PerformanceSliderComponent implements OnInit, AfterContentChecked {
   isLoading = true;
+  isDesktop = false;
   sliderList: Array<PerformanceEvent> = [];
 
   sliderOptions: NguCarouselConfig = {
@@ -32,7 +34,7 @@ export class PerformanceSliderComponent implements OnInit, AfterContentChecked {
     easing: 'cubic-bezier(0, 0, 0.2, 1)'
   };
 
-  constructor(private gateway: GatewayService, private cdr: ChangeDetectorRef) {}
+  constructor(private gateway: GatewayService, private cdr: ChangeDetectorRef, private deviceService: DeviceDetectorService) {}
 
   ngOnInit(): void {
     this.gateway
@@ -52,6 +54,8 @@ export class PerformanceSliderComponent implements OnInit, AfterContentChecked {
           });
         });
       });
+
+    this.isDesktop = this.deviceService.getDeviceInfo().deviceType === 'desktop';
   }
 
   ngAfterContentChecked() {

@@ -50,8 +50,10 @@
         </div>
       </div>
       <div class="ticket_button text-center text-md-min-left" *ngIf="nearestPerformance">
-        <a class="btn --btn-with-border" [href]="nearestPerformance.buy_ticket_link || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
-           i18n="@@buyTicket" target="_blank">Buy ticket</a>
+        <a class="btn --btn-with-border"
+           i18n="@@buyTicket"
+           [href]="nearestPerformance.buy_ticket_link || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
+           [target]="isDesktop ? '_blank' : '_self'">Buy ticket</a>
       </div>
     </div>
     <!--    End performance info-->
