@@ -1,9 +1,0 @@
-<div *ngIf="employees.length > 0" class="art-core">
-  <div class="slider-container">
-    <h2 class="h2">{{ group.title }}</h2>
-    <app-persons-slider [persons]="employees"></app-persons-slider>
-    <div class="link-persons">
-      <a routerLink="{{ group.slug }}" i18n="@@showMore">Show more</a>
-    </div>
-  </div>
-</div>

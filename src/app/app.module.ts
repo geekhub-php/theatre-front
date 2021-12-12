@@ -36,7 +36,7 @@ import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
 import { PersonsHeaderComponent } from './components/team/persons-header/persons-header.component';
-import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
+import { PersonsShowMoreComponent } from './components/team/persone-show-more/persons-show-more.component';
 import { PersonsSliderComponent } from './components/partials/persons-slider/persons-slider.component';
 import { PersonCardComponent } from './components/team/person-card/person-card.component';
 
@@ -60,7 +60,6 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
 import { playerFactory } from './components/partials/spinner/spinner.component';
 import { GroupComponent } from './components/team/group/group.component';
-import { EmployeeSubGroupComponent } from './components/team/employee-sub-group/employee-sub-group.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +91,7 @@ import { EmployeeSubGroupComponent } from './components/team/employee-sub-group/
     CooperationComponent,
     PersonsHeaderComponent,
     GroupComponent,
-    PersoneShowmoreComponent,
+    PersonsShowMoreComponent,
     SeasonsComponent,
     CatInteractiveComponent,
     FestivalsComponent,
@@ -102,7 +101,6 @@ import { EmployeeSubGroupComponent } from './components/team/employee-sub-group/
     VisitComponent,
     PersonsSliderComponent,
     PersonCardComponent,
-    EmployeeSubGroupComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

@@ -13,7 +13,7 @@ import { TheatreHistoryComponent } from './components/about/theatre-history/thea
 import { EpochComponent } from './components/about/epoch/epoch.component';
 import { VisitComponent } from './components/about/visit/visit.component';
 
-import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
+import { PersonsShowMoreComponent } from './components/team/persone-show-more/persons-show-more.component';
 
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
@@ -58,7 +58,7 @@ const appRoutes: Routes = [
     path: 'team', component: TeamComponent,
     children: [
       {path: ':group', component: GroupComponent},
-      {path: ':group/:slug', component: PersoneShowmoreComponent},
+      {path: ':group/:slug', component: PersonsShowMoreComponent},
     ]
   },
   {path: 'persons/:personId', component: PersonComponent},
