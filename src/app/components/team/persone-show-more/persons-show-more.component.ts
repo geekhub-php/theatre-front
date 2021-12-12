@@ -6,11 +6,11 @@ import { LoaderService } from '../../partials/spinner/loader.service';
 import { Employee } from 'app/store/employee/Employee';
 
 @Component({
-  selector: 'app-persone-showmore',
-  templateUrl: './persone-showmore.component.html',
-  styleUrls: ['./persone-showmore.component.scss']
+  selector: 'app-persons-show-more',
+  templateUrl: './persons-show-more.component.html',
+  styleUrls: ['./persons-show-more.component.scss']
 })
-export class PersoneShowmoreComponent implements OnInit {
+export class PersonsShowMoreComponent implements OnInit {
   employees: Array<Employee> = [];
   title: string;
 
