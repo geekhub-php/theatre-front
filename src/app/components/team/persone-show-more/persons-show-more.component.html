@@ -1,7 +1,7 @@
 <div class="container --with-subheader">
   <div class="mb-32"><h1 class="kobzar-title">{{ title }}</h1></div>
 
-  <div class="persons-list d-flex flex-wrap justify-content-center">
+  <div class="d-flex flex-wrap justify-content-center">
     <app-person-card *ngFor="let person of employees" [person]="person"></app-person-card>
   </div>
 </div>

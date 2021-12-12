@@ -33,7 +33,7 @@
     }
   }
 
-  div:nth-child(even) {
+  > div:nth-child(even) {
     background-color: $mine-shaft;
   }
 }
