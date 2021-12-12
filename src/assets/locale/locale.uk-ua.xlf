@@ -658,30 +658,6 @@
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="сreativeСomposition" datatype="html">
-        <source>Creative composition</source>
-        <target>Творчий склад</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="artisticComposition" datatype="html">
-        <source>Artistic Composition</source>
-        <target>Художній склад</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
-          <context context-type="linenumber">3</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
-          <context context-type="linenumber">47</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="deputies" datatype="html">
         <source>Deputies</source>
         <target>Заступники</target>
@@ -731,29 +707,8 @@
         <source>Administration</source>
         <target>Адміністрація</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/team/team.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html
-          </context>
+          <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
           <context context-type="linenumber">57</context>
-        </context-group>
-        <context-group purpose="location">
-           <context context-type="sourcefile">src/app/team/team.component.html</context>
-           <context context-type="linenumber">11</context>
-         </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/modules/core/components/footer-nav/footer-nav.component.html</context>
-            <context context-type="linenumber">57</context>
-          </context-group>
-          <context-group purpose="location">
-           <context context-type="sourcefile">src/app/team/persons-header/persons-header.component.html</context>
-           <context context-type="linenumber">4</context>
-         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/core/components/burger-menu/burger-menu.component.html</context>
-          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="accounting" datatype="html">
