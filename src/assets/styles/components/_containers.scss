@@ -1,0 +1,29 @@
+.container {
+  margin: 0 auto;
+  padding: 16px 32px 112px;
+  max-width: calc(1500px + 64px);
+
+  @media (max-width: map-get($grid-breakpoints, sm-min)) {
+    padding: 16px 16px 56px;
+    max-width: calc(1500px + 32px);
+  }
+
+  &.--with-subheader {
+    margin-top: 50px;
+
+    @media (max-width: map-get($grid-breakpoints, lg-min)) {
+      margin-top: 0;
+    }
+  }
+
+  &.--fullwidth {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+
+  &.--fullwidth-padding {
+    padding-left: calc((100% - 1500px) / 2);
+    padding-right: calc((100% - 1500px) / 2);
+  }
+}

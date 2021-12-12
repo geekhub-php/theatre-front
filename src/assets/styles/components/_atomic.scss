@@ -1,0 +1,15 @@
+// TODO: rewrite atomic spacings as functions after removing bootstrap from the project
+
+.mb-16 {
+  margin-bottom: 16px !important;
+}
+
+.mb-32 {
+  margin-bottom: 32px !important;
+}
+
+.mb-md-max-32 {
+  @media (min-width: map-get($grid-breakpoints, md-max)) {
+    margin-bottom: 32px !important;
+  }
+}
