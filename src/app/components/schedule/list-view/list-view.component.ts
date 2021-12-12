@@ -6,6 +6,7 @@ import { MonthsCarouselService } from '../months-carousel/months-carousel.servic
 import { Subscription } from 'rxjs';
 import { ScheduleViewModes } from '../schedule.component';
 import { LangService, Locales } from '../../../services/lang.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-list-view',
@@ -19,6 +20,7 @@ export class ListViewComponent implements OnInit, OnDestroy {
   events: Array<PerformanceEvent> = [];
   date: Date;
   currentDate: Date;
+  isDesktop = false;
   sliderSubscription: Subscription;
   calendarSubscription: Subscription;
   loaderSubscription: Subscription;
@@ -28,7 +30,8 @@ export class ListViewComponent implements OnInit, OnDestroy {
   constructor(private slider: MonthsCarouselService,
               private loaderService: LoaderService,
               private calendar: CalendarService,
-              private langService: LangService) {
+              private langService: LangService,
+              private deviceService: DeviceDetectorService) {
     this.langService.localeId$.subscribe(localeId => {
       this.localeId = localeId;
     });
@@ -43,6 +46,8 @@ export class ListViewComponent implements OnInit, OnDestroy {
     this.calendar.getPerformanceEvents()
       .then(() => this.getPerformanceEvents()
       );
+
+    this.isDesktop = this.deviceService.getDeviceInfo().deviceType === 'desktop';
   }
 
   getMonth() {
