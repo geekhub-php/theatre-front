@@ -1,0 +1,24 @@
+@import "src/assets/styles/variables";
+
+.link {
+  color: $white;
+  transition: .3s;
+  text-decoration: none;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &.--link-bold {
+    font-weight: $font-weight-bold;
+  }
+
+  &.--link-teak {
+    color: $teak;
+
+    &:hover {
+      color: $sorrell-brown;
+    }
+  }
+}

@@ -26,8 +26,8 @@
   <div *ngIf="randomEmployees?.length > 0 || isRandomEmployeesLoading" class="persons-slider-container text-center">
     <a id="ballet-persons" class="h2 --link d-block mb-4" i18n="@@theatrePersonalities" routerLink="/persons">Theatre personalities</a>
     <app-persons-slider [persons]="randomEmployees" [isLoading]="isRandomEmployeesLoading"></app-persons-slider>
-    <div class="link-persons">
-      <a routerLink="/persons" i18n="@@showMore">Show more</a>
+    <div class="mt-16 mt-md-max-32">
+      <a class="link --link-bold --link-teak" routerLink="/persons" i18n="@@showMore">Show more</a>
     </div>
   </div>
 
@@ -35,7 +35,9 @@
     <div class="news">
       <h3 class="section_title" i18n="@@news">News</h3>
       <app-news-list-item class="item" *ngFor="let item of listPost" [item]="item"></app-news-list-item>
-      <a class="link" i18n="@@more" routerLink="../news">More</a>
+      <div class="my-16 my-md-max-32">
+        <a class="link --link-bold --link-teak" i18n="@@more" routerLink="../news">More</a>
+      </div>
     </div>
   </section>
 
