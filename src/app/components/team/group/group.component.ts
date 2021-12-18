@@ -3,14 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from 'app/store/employee/Employee';
 import { GatewayService } from 'app/services/gateway.service';
 import { LoaderService } from '../../partials/spinner/loader.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeGroup } from '../../../store/employee/EmployeeGroup';
 import { EmployeesListResponse } from '../../../store/employee/EmployeesListResponse';
+import { sortHelper } from 'app/utilities/sortHelper';
 
 @Component({
   selector: 'app-group',
   templateUrl: './group.component.html',
-  styleUrls: ['./group.component.scss'],
+  styleUrls: [ './group.component.scss' ]
 })
 
 export class GroupComponent implements OnInit {
@@ -22,10 +23,12 @@ export class GroupComponent implements OnInit {
     group: EmployeeGroup,
     employees: Array<Employee>,
   }> = [];
+  isLoading = false;
 
   constructor(
     private gateway: GatewayService,
     private route: ActivatedRoute,
+    private router: Router,
     private loaderService: LoaderService,
     private httpGatewayService: GatewayService
   ) {
@@ -45,28 +48,43 @@ export class GroupComponent implements OnInit {
   }
 
   private initGroup(groupSlug) {
-    this.httpGatewayService.getEmployeesGroups().subscribe((Groups) => {
-      Groups.forEach((g: EmployeeGroup) => {
-        if (groupSlug !== g.slug) {
+    this.loaderService.start('team');
+    this.httpGatewayService.getEmployeesGroups().subscribe((groups) => {
+      groups.forEach((group: EmployeeGroup) => {
+        if (groupSlug !== group.slug) {
           return;
         }
-        this.group = g;
+
+        this.isLoading = true;
+
+        this.group = group;
         this.childGroups = [];
 
-        if (g.children.length > 0) {
-          g.children.forEach((chG: EmployeeGroup) => {
+        if (group.children?.length > 0) {
+          group.children.sort(sortHelper({ sortKey: 'position' }));
+
+          group.children.forEach((chG: EmployeeGroup) => {
             this.httpGatewayService.getEmployeesListByGroup(chG.slug).subscribe((resp: EmployeesListResponse) => {
-              this.childGroups.push({group: chG, employees: resp.employees});
+              this.childGroups.push({ group: chG, employees: resp.employees });
+              this.isLoading = false;
+              this.loaderService.stop('team');
             });
           });
         } else {
-          this.httpGatewayService.getEmployeesListByGroup(g.slug).subscribe((resp: EmployeesListResponse) => {
-            this.childGroups.push({group: g, employees: resp.employees});
+          this.httpGatewayService.getEmployeesListByGroup(group.slug).subscribe((resp: EmployeesListResponse) => {
+            if (resp.employees?.length === 1) {
+              return this.router.navigate([ 'team', group.slug, 'person', resp.employees[0].slug ]).then(() => {
+                this.isLoading = false;
+                this.loaderService.stop('team');
+              });
+            }
+            this.childGroups.push({ group, employees: resp.employees });
+            this.isLoading = false;
+            this.loaderService.stop('team');
           });
         }
 
       });
-      this.loaderService.stop('personalities');
     });
   }
 }

@@ -7,12 +7,6 @@
   font-weight: $font-weight-bold;
 }
 
-
-a:hover {
-  color: $secondary-background-color;
-}
-
-
 .roles {
   display: flex;
   flex-direction: column;
@@ -30,19 +24,4 @@ a:hover {
 
 .role {
   margin-bottom: 4px;
-
-  &__link {
-    color: $secondary-color-lighter;
-    transition: .3s ease;
-
-    &:hover {
-      text-decoration: none;
-      transition: .3s ease;
-    }
-  }
-}
-
-.roles .role__link {
-  text-decoration: none;
-  color: $secondary-background-color !important;
 }

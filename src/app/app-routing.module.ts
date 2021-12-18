@@ -57,11 +57,12 @@ const appRoutes: Routes = [
   {
     path: 'team', component: TeamComponent,
     children: [
-      {path: ':group', component: GroupComponent},
+      {path: ':group/person/:personId', component: PersonComponent},
       {path: ':group/:slug', component: PersonsShowMoreComponent},
+      {path: ':group', component: GroupComponent},
     ]
   },
-  {path: 'persons/:personId', component: PersonComponent},
+  {path: 'person/:personId', component: PersonComponent},
   {path: 'contacts', component: ContactsComponent},
   // {path: 'board-trustees', component: BoardTrusteesComponent},
   // {path: 'developers-team', component: DevTeamComponent},

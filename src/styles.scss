@@ -94,3 +94,13 @@ ngu-tile {
     }
   }
 }
+
+a {
+  transition: .3s;
+  color: $font-color-primary;
+  text-decoration: underline;
+
+  &:hover, &:hover[visited] {
+    color: $white
+  }
+}
