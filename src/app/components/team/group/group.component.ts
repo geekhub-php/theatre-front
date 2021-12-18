@@ -22,6 +22,7 @@ export class GroupComponent implements OnInit {
   childGroups: Array<{
     group: EmployeeGroup,
     employees: Array<Employee>,
+    position?: number
   }> = [];
   isLoading = false;
 
@@ -61,13 +62,12 @@ export class GroupComponent implements OnInit {
         this.childGroups = [];
 
         if (group.children?.length > 0) {
-          group.children.sort(sortHelper({ sortKey: 'position' }));
-
           group.children.forEach((chG: EmployeeGroup) => {
             this.httpGatewayService.getEmployeesListByGroup(chG.slug).subscribe((resp: EmployeesListResponse) => {
-              this.childGroups.push({ group: chG, employees: resp.employees });
+              this.childGroups.push({ group: chG, employees: resp.employees, position: chG.position });
               this.isLoading = false;
               this.loaderService.stop('team');
+              this.childGroups.sort(sortHelper({sortKey: 'position'}));
             });
           });
         } else {
