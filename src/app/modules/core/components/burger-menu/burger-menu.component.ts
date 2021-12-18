@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { LangService, Locales } from 'app/services/lang.service';
 import { sideBarAnimation } from 'app/utilities/side-bar-animation';
 import { ESidebar, SidebarService } from 'app/services/sidebar.service';
+import { EmployeeGroup } from 'app/store/employee/EmployeeGroup';
+import { GatewayService } from 'app/services/gateway.service';
 
 @Component({
   selector: 'app-burger-menu',
@@ -11,11 +13,13 @@ import { ESidebar, SidebarService } from 'app/services/sidebar.service';
   animations: sideBarAnimation({ sideBlock: 'sideBlock' , closeArea: 'closeArea'})
 })
 
-export class BurgerMenuComponent {
+export class BurgerMenuComponent implements OnInit {
   isNavbarActive = false;
   localeId: Locales = Locales.en;
+  personalitiesGroups: Array<EmployeeGroup> = [];
 
   constructor(
+    private gateway: GatewayService,
     private langService: LangService,
     private sidebarService: SidebarService,
   ) {
@@ -25,6 +29,16 @@ export class BurgerMenuComponent {
 
     this.langService.localeId$.subscribe(localeId => {
       this.localeId = localeId;
+    });
+  }
+
+  ngOnInit() {
+    this.gateway.getEmployeesGroups().subscribe((Groups) => {
+      this.personalitiesGroups = Groups;
+
+      if (this.personalitiesGroups.length === 0) {
+        return;
+      }
     });
   }
 

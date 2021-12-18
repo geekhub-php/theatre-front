@@ -1,0 +1,22 @@
+<!-- TODO: breadcrumbs -->
+
+<div class="container --with-subheader --fullwidth text-center px-0" *ngIf="group">
+  <div *ngIf="!isLoading" class="mb-16 mb-md-max-32 px-16"><h1 class="kobzar-title">{{ group.title }}</h1></div>
+
+  <div class="container --fullwidth p-0 persons-groups">
+      <div *ngFor="let chGroup of childGroups" class="container --fullwidth --fullwidth-padding">
+        <h2 *ngIf="group.title !== chGroup.group.title" id="actor-persons" class="h2 mb-16 mb-md-max-32">{{ chGroup.group.title }}</h2>
+        <div *ngIf="chGroup?.employees?.length > 4; else groupWithoutSlider">
+          <app-persons-slider [persons]="chGroup.employees"></app-persons-slider>
+          <div class="mt-16 mt-md-max-32">
+            <a class="link --link-bold --link-teak" routerLink="{{ chGroup.group.slug }}" i18n="@@showMore">Show more</a>
+          </div>
+        </div>
+        <ng-template #groupWithoutSlider>
+          <div class="d-flex flex-wrap justify-content-center">
+            <app-person-card *ngFor="let person of chGroup.employees" [person]="person"></app-person-card>
+          </div>
+        </ng-template>
+      </div>
+  </div>
+</div>
