@@ -47,7 +47,6 @@ import { CalendarComponent } from './components/schedule/calendar/calendar.compo
 import { ListViewComponent } from './components/schedule/list-view/list-view.component';
 import { CalendarPopupComponent } from './components/schedule/calendar/calendar-popup/calendar-popup.component';
 import { CalendarService } from './components/schedule/calendar.service';
-import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { PerformanceSliderComponent } from './components/home-page/performance-slider/performance-slider.component';
@@ -60,6 +59,7 @@ import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
 import { playerFactory } from './components/partials/spinner/spinner.component';
 import { GroupComponent } from './components/team/group/group.component';
+import { MonthSelectComponent } from './components/schedule/month-select/month-select.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +86,6 @@ import { GroupComponent } from './components/team/group/group.component';
     SideMenuComponent,
     PerformanceSliderComponent,
     NewsListItemComponent,
-    MonthsCarouselComponent,
     RepertoireNavHeaderComponent,
     CooperationComponent,
     PersonsHeaderComponent,
@@ -101,6 +100,7 @@ import { GroupComponent } from './components/team/group/group.component';
     VisitComponent,
     PersonsSliderComponent,
     PersonCardComponent,
+    MonthSelectComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
