@@ -59,6 +59,10 @@ export class CalendarService {
     }
   }
 
+  setDate(date: Date) {
+    this.currentMonth = date;
+  }
+
   weeks(currentDate): Array<Array<Date>> {
     let date: Date = this.dateFrom(currentDate);
     const endDate = this.dateTo(currentDate);
@@ -78,7 +82,7 @@ export class CalendarService {
   }
 
   dateFrom(date) {
-    const from = new Date(date.getFullYear(), date.getMonth(), 1);
+    const from = new Date(date?.getFullYear(), date?.getMonth(), 1);
 
     let day: number;
     day = from.getDay();
@@ -89,7 +93,7 @@ export class CalendarService {
   }
 
   dateTo(date) {
-    let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+    let lastDay = new Date(date?.getFullYear(), +date?.getMonth() + 1, 0);
 
     if (this.Sun === lastDay.getDay()) return lastDay;
 
