@@ -59,8 +59,9 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewInit {
         } else if (this.activeMonth === data.nextMonth) {
           this.events = data.nextEvents;
         }
+
+        this.loaderService.stop('poster');
       }
-      this.loaderService.stop('poster');
     }, () => this.loaderService.stop('poster'));
   }
 

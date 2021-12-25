@@ -59,6 +59,8 @@ export class ListViewComponent implements OnInit, OnDestroy, AfterViewInit {
         } else if (this.activeMonth === data.nextMonth) {
           this.events = data.nextEvents;
         }
+
+        this.loaderService.stop('poster');
       }
 
       if (this.events.length) {
@@ -86,7 +88,6 @@ export class ListViewComponent implements OnInit, OnDestroy, AfterViewInit {
           return event;
         });
       }
-      this.loaderService.stop('poster');
     }, () => this.loaderService.stop('poster'));
   }
 

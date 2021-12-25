@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MonthSelectComponent } from './month-select.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MonthSelectComponent', () => {
   let component: MonthSelectComponent;
@@ -8,6 +9,7 @@ describe('MonthSelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [ MonthSelectComponent ]
     })
     .compileComponents();

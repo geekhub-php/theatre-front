@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MonthSelectService } from './month-select.service';
+import { LangService } from '../../../services/lang.service';
 
 @Component({
   selector: 'app-month-select',
@@ -10,10 +11,11 @@ export class MonthSelectComponent implements OnInit {
   nextMonth: Date;
   activeMonth: Date;
   currentMonth: Date;
+  localeId: string;
 
   isListVisible = false;
 
-  constructor(private monthSelectService: MonthSelectService) {
+  constructor(private monthSelectService: MonthSelectService, private langService: LangService) {
     this.currentMonth = new Date();
     this.nextMonth = this.getNextMonthDate(this.currentMonth);
 
@@ -22,6 +24,8 @@ export class MonthSelectComponent implements OnInit {
       activeMonth: this.currentMonth,
       currentMonth: this.currentMonth
     });
+
+    this.langService.localeId$.subscribe(localeId => this.localeId = localeId);
   }
 
   ngOnInit() {
@@ -35,6 +39,13 @@ export class MonthSelectComponent implements OnInit {
   setActiveMonth(activeMonth) {
     this.monthSelectService.setMonthData({ activeMonth });
     this.isListVisible = false;
+  }
+
+  formatDate(date: Date) {
+    const month =  date.toLocaleString(this.localeId, {month: 'long'});
+    const year = date.getFullYear();
+
+    return `${month}, ${year}`;
   }
 
   getNextMonthDate(date: Date) {

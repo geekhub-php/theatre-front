@@ -1,7 +1,7 @@
 <div class="month-select position-relative">
 
   <div class="select-wrapper px-16 d-flex align-items-center justify-content-between" (click)="isListVisible = !isListVisible">
-    <p class="m-0 pr-16">{{ activeMonth | date: 'MMMM, yyyy' }}</p>
+    <p class="m-0 pr-16 text-capitalize">{{formatDate(activeMonth)}}</p>
     <svg class="select-arrow" [class.active]="isListVisible" xmlns="http://www.w3.org/2000/svg" width="14" height="8" fill="none" viewBox="0 0 14 8">
       <path fill="#b6b6b4" fill-rule="evenodd" d="M1 .293l6 6 6-6 .707.707L7 7.707.293 1 1 .293z" clip-rule="evenodd"/>
     </svg>
@@ -9,7 +9,8 @@
 
   <div *ngIf="isListVisible" class="select-close-area" (click)="isListVisible = false"></div>
   <div *ngIf="isListVisible" class="option-list position-absolute">
-      <div class="w-100" (click)="setActiveMonth(currentMonth)">{{ currentMonth | date: 'MMMM, yyyy' }}</div>
-      <div class="w-100" (click)="setActiveMonth(nextMonth)">{{ nextMonth | date: 'MMMM, yyyy' }}</div>
+<!--    native directive date has wrong ending of the month name in Ukraine language: 'грудня' instead of 'грудень' -->
+      <div class="w-100 text-capitalize" (click)="setActiveMonth(currentMonth)">{{formatDate(currentMonth)}}</div>
+      <div class="w-100 text-capitalize" (click)="setActiveMonth(nextMonth)">{{formatDate(nextMonth)}}</div>
     </div>
 </div>
