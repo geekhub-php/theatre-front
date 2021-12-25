@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
@@ -7,5 +10,11 @@ import { Component } from '@angular/core';
 })
 
 export class MainNavComponent {
-  constructor() { }
+  route: string;
+
+  constructor(private location: Location, private router: Router) {
+    router.events.subscribe(() => {
+      this.route = location.path();
+    });
+  }
 }
