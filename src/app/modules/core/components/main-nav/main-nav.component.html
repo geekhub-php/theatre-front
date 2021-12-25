@@ -5,7 +5,7 @@
   <li><a class="header-nav__link" routerLink="/poster" routerLinkActive="active" i18n="@@poster">Poster</a></li>
   <li><a class="header-nav__link" routerLink="/repertoire" routerLinkActive="active" i18n="@@repertoire">Repertoire</a>
   </li>
-  <li><a class="header-nav__link" routerLink="/team" routerLinkActive="active"
+  <li><a class="header-nav__link" [routerLink]="route?.match('team') ? null : '/team'" routerLinkActive="active"
          i18n="@@personalities">Personalities</a></li>
 <!--  <li><a class="header-nav__link" routerLink="/about" routerLinkActive="active" i18n="@@aboutTitle">About</a></li>-->
 <!--  <li><a class="header-nav__link" i18n="@@cooperation" routerLink="/cooperation"-->

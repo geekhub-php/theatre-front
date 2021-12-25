@@ -65,10 +65,10 @@ export class GroupComponent implements OnInit {
           group.children.forEach((chG: EmployeeGroup) => {
             this.httpGatewayService.getEmployeesListByGroup(chG.slug).subscribe((resp: EmployeesListResponse) => {
               this.childGroups.push({ group: chG, employees: resp.employees, position: chG.position });
-              this.isLoading = false;
               this.childGroups.sort(sortHelper({sortKey: 'position'}));
               if (group.children.length === this.childGroups.length) {
                 this.loaderService.stop('team');
+                this.isLoading = false;
               }
             });
           });
