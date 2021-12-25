@@ -24,7 +24,7 @@
   }
 
   @media (max-width: map-get($grid-breakpoints, sm-min)) {
-    height: 448px;
+    height: 548px;
   }
 
   .slider {
@@ -44,7 +44,7 @@
 
       @media (max-width: map-get($grid-breakpoints, sm-min)) {
         flex-grow: 1;
-        height: 180px;
+        height: 100px;
         position: sticky;
       }
     }
@@ -54,7 +54,7 @@
       text-decoration: none;
 
       @media (max-width: map-get($grid-breakpoints, sm-min)) {
-        height: 448px;
+        height: 548px;
       }
     }
 
@@ -219,7 +219,6 @@
     @media (max-width: map-get($grid-breakpoints, sm-min)) {
 
       &__picture {
-        height: 180px;
         position: sticky;
       }
 

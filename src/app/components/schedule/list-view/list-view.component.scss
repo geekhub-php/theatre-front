@@ -3,7 +3,6 @@
 .list-view {
   display: grid;
   grid-gap: 24px;
-  padding: 0 32px;
   max-width: 1310px;
   min-height: 600px;
   grid-auto-rows: 230px;
@@ -17,7 +16,7 @@
 
   &__item {
     width: 100%;
-    height: 100%;
+    min-height: 230px;
     position: relative;
     background-color: $background-main-color-lighter;
   }
@@ -71,6 +70,7 @@
     }
 
     &__type {
+      margin-bottom: 24px;
       color: $border-color-accent;
       font-size: $font-size-medium;
       font-weight: $font-weight-semi-bold;
@@ -134,6 +134,7 @@
     display: grid;
     cursor: pointer;
     overflow: hidden;
+    min-height: 230px;
     position: relative;
     color: $white-color;
     transition: .3s ease;
@@ -175,10 +176,6 @@
   .list-view {
     grid-auto-rows: auto;
 
-    &__item {
-      height: 230px;
-    }
-
     &__block__with-date {
       min-height: 380px;
     }
@@ -211,17 +208,13 @@
       min-width: 100px;
     }
 
-    &__content__info {
-      margin: 16px 0 0;
+    &__content__info__item {
+      margin-right: 16px;
+      max-width: fit-content;
 
-      &__item {
-        margin-right: 16px;
-        max-width: fit-content;
-
-        &__text {
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+      &__text {
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
@@ -246,7 +239,6 @@
 
   .list-view {
     grid-gap: 16px;
-    padding: 0 16px;
 
     &.without-padding {
       padding: 0;
@@ -276,6 +268,7 @@
 
     &__link {
       min-height: 230px;
+      grid-template-rows: 1fr;
       padding: 16px 42px 24px 40px;
     }
 

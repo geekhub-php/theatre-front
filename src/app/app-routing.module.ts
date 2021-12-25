@@ -13,10 +13,7 @@ import { TheatreHistoryComponent } from './components/about/theatre-history/thea
 import { EpochComponent } from './components/about/epoch/epoch.component';
 import { VisitComponent } from './components/about/visit/visit.component';
 
-import { AdministrationComponent } from './components/team/administration/administration.component';
-import { ArtisticComponent } from './components/team/artistic/artistic.component';
-import { CreativeComponent } from './components/team/creative/creative.component';
-import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
+import { PersonsShowMoreComponent } from './components/team/persone-show-more/persons-show-more.component';
 
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
@@ -35,6 +32,7 @@ import { PageNotFoundComponent } from './modules/core/components/page-not-found/
 import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { PartnersComponent } from './components/partners/partners.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
+import { GroupComponent } from './components/team/group/group.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -57,18 +55,14 @@ const appRoutes: Routes = [
   // },
   // {path: 'about/:personId', component: PersonComponent},
   {
-    path: 'persons', component: TeamComponent,
+    path: 'team', component: TeamComponent,
     children: [
-      {path: '', redirectTo: 'creative', pathMatch: 'full'},
-      {path: 'creative', component: CreativeComponent},
-      {path: 'artistic', component: ArtisticComponent},
-      {path: 'administration', component: AdministrationComponent},
-      {path: 'administration/:slug', component: PersoneShowmoreComponent},
-      {path: 'creative/:slug', component: PersoneShowmoreComponent},
-      {path: 'artistic/:slug', component: PersoneShowmoreComponent}
+      {path: ':group/person/:personId', component: PersonComponent},
+      {path: ':group/:slug', component: PersonsShowMoreComponent},
+      {path: ':group', component: GroupComponent},
     ]
   },
-  {path: 'persons/:personId', component: PersonComponent},
+  {path: 'person/:personId', component: PersonComponent},
   {path: 'contacts', component: ContactsComponent},
   // {path: 'board-trustees', component: BoardTrusteesComponent},
   // {path: 'developers-team', component: DevTeamComponent},

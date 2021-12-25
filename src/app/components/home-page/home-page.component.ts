@@ -3,7 +3,6 @@ import { LoaderService } from '../partials/spinner/loader.service';
 import { GatewayService } from '../../services/gateway.service';
 import { NewsItem } from '../../store/news/NewsItem';
 import { Employee } from '../../store/employee/Employee';
-import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -17,7 +16,6 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   limit = '3';
   listPost: Array<NewsItem> = [];
-  readonly canonicalUrl = environment.canonicalUrl;
 
   constructor(private gatewayService: GatewayService,
               private loaderService: LoaderService) { }

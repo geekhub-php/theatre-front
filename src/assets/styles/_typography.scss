@@ -16,6 +16,14 @@
   color: $font-color-white;
   font-family: $body-font-family;
   font-weight: $font-weight-semi-bold;
+
+  &.--link {
+
+    &, &:hover, &:active {
+      text-decoration: none;
+      color: $font-color-white;
+    }
+  }
 }
 
 .h1 {

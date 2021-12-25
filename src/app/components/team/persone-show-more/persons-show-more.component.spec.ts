@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { CreativeComponent } from './creative.component';
+import { PersonsShowMoreComponent } from './persons-show-more.component';
 
-describe('EpochComponent', () => {
-  let component: CreativeComponent;
-  let fixture: ComponentFixture<CreativeComponent>;
+describe('PersoneShowmoreComponent', () => {
+  let component: PersonsShowMoreComponent;
+  let fixture: ComponentFixture<PersonsShowMoreComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreativeComponent ],
+      declarations: [PersonsShowMoreComponent],
       imports: [HttpClientTestingModule, RouterTestingModule]
-    })
-    .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreativeComponent);
+    fixture = TestBed.createComponent(PersonsShowMoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

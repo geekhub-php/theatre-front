@@ -36,10 +36,7 @@ import { DevTeamComponent } from './components/dev-team/dev-team.component';
 import { RolesComponent } from './components/person/roles/roles.component';
 import { DonateComponent } from './components/donate/donate.component';
 import { PersonsHeaderComponent } from './components/team/persons-header/persons-header.component';
-import { AdministrationComponent } from './components/team/administration/administration.component';
-import { ArtisticComponent } from './components/team/artistic/artistic.component';
-import { CreativeComponent } from './components/team/creative/creative.component';
-import { PersoneShowmoreComponent } from './components/team/persone-showmore/persone-showmore.component';
+import { PersonsShowMoreComponent } from './components/team/persone-show-more/persons-show-more.component';
 import { PersonsSliderComponent } from './components/partials/persons-slider/persons-slider.component';
 import { PersonCardComponent } from './components/team/person-card/person-card.component';
 
@@ -50,7 +47,6 @@ import { CalendarComponent } from './components/schedule/calendar/calendar.compo
 import { ListViewComponent } from './components/schedule/list-view/list-view.component';
 import { CalendarPopupComponent } from './components/schedule/calendar/calendar-popup/calendar-popup.component';
 import { CalendarService } from './components/schedule/calendar.service';
-import { MonthsCarouselComponent } from './components/schedule/months-carousel/months-carousel.component';
 
 import { SideMenuComponent } from './components/home-page/side-menu/side-menu.component';
 import { PerformanceSliderComponent } from './components/home-page/performance-slider/performance-slider.component';
@@ -62,6 +58,8 @@ import { CoreModule } from './modules/core/core.module';
 import { RepertoireNavHeaderComponent } from './components/repertoire/repertoire-nav-header/repertoire-nav-header.component';
 import { CatInteractiveComponent } from './components/schedule/list-view/cat-interactive/cat-interactive.component';
 import { playerFactory } from './components/partials/spinner/spinner.component';
+import { GroupComponent } from './components/team/group/group.component';
+import { MonthSelectComponent } from './components/schedule/month-select/month-select.component';
 
 @NgModule({
   declarations: [
@@ -88,14 +86,11 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     SideMenuComponent,
     PerformanceSliderComponent,
     NewsListItemComponent,
-    MonthsCarouselComponent,
     RepertoireNavHeaderComponent,
     CooperationComponent,
     PersonsHeaderComponent,
-    AdministrationComponent,
-    ArtisticComponent,
-    CreativeComponent,
-    PersoneShowmoreComponent,
+    GroupComponent,
+    PersonsShowMoreComponent,
     SeasonsComponent,
     CatInteractiveComponent,
     FestivalsComponent,
@@ -104,7 +99,8 @@ import { playerFactory } from './components/partials/spinner/spinner.component';
     EpochComponent,
     VisitComponent,
     PersonsSliderComponent,
-    PersonCardComponent
+    PersonCardComponent,
+    MonthSelectComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

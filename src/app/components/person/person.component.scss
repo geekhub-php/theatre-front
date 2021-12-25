@@ -2,15 +2,11 @@
 @import "~assets/styles/_variables";
 @import "~assets/styles/aboutStyles";
 
-.person {
-  padding: 0 32px;
-  margin: 64px auto 124px;
-  max-width: $container-width + 64px;
+:host {
+  flex: 1;
+}
 
-  a {
-    color: $font-color-primary;
-    text-decoration: underline;
-  }
+.person {
 
   &__about {
     margin-top: 54px;
@@ -54,7 +50,6 @@
 @media (max-width: map-get($grid-breakpoints, md-min)) {
 
   .person {
-    margin: 64px auto 112px;
 
     &__image {
       margin: 0 auto 32px;

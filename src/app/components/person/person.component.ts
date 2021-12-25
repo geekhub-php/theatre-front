@@ -12,9 +12,6 @@ import { LoaderService } from '../partials/spinner/loader.service';
   selector: 'app-person',
   templateUrl: './person.component.html',
   styleUrls: ['./person.component.scss'],
-  // disabled for styling innerHTML code
-  // tslint:disable-next-line:use-component-view-encapsulation
-  encapsulation: ViewEncapsulation.None
 })
 export class PersonComponent implements OnInit {
   @Input() person: Employee;

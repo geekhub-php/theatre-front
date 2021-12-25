@@ -1,0 +1,39 @@
+@import "~assets/styles/_variables";
+
+:host {
+  flex: 1;
+}
+
+.persons-groups {
+
+  & > div {
+
+    &:not(:first-child) {
+      padding-top: 80px;
+    }
+
+    padding-bottom: 80px;
+
+    @media (max-width: map-get($grid-breakpoints, md-min)) {
+
+      &:not(&:first-child) {
+        padding-top: 40px;
+      }
+
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+      &:not(&:first-child) {
+        padding-top: 24px;
+      }
+
+      padding-bottom: 24px;
+    }
+  }
+
+  > div:nth-child(even) {
+    background-color: $mine-shaft;
+  }
+}

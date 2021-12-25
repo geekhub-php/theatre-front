@@ -1,4 +1,4 @@
-<div class="list-view" [class.without-padding]="!events.length && !loader">
+<div class="list-view" [class.without-padding]="!events.length && !isLoading">
   <div *ngFor="let event of events" class="list-view__block" [class.list-view__block__with-date]="event && !event.dateExist">
       <div *ngIf="event && !event.dateExist" class="list-view__date d-flex d-xl-max-none">
         <div class="list-view__date__day">{{ event.date_time | date: 'dd' }}</div>
@@ -48,9 +48,8 @@
         <div class="list-view__button text-lg-min-right">
           <a
             class="btn --btn-with-border"
-            *ngIf="event.buy_ticket_link"
-            [href]="event.buy_ticket_link"
-            target="_blank"
+            [href]="event.buy_ticket_link || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
+            [target]="isDesktop ? '_blank' : '_self'"
             (click)="$event.stopPropagation()"
             i18n="@@buyTicket">
             Buy ticket
@@ -69,5 +68,5 @@
       >
     </section>
   </div>
-  <app-cat-interactive *ngIf="!events.length && !loader"></app-cat-interactive>
+  <app-cat-interactive *ngIf="!events.length && !isLoading"></app-cat-interactive>
 </div>

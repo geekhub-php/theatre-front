@@ -6,11 +6,11 @@ import { LoaderService } from '../../partials/spinner/loader.service';
 import { Employee } from 'app/store/employee/Employee';
 
 @Component({
-  selector: 'app-persone-showmore',
-  templateUrl: './persone-showmore.component.html',
-  styleUrls: ['./persone-showmore.component.scss']
+  selector: 'app-persons-show-more',
+  templateUrl: './persons-show-more.component.html',
+  styleUrls: ['./persons-show-more.component.scss']
 })
-export class PersoneShowmoreComponent implements OnInit {
+export class PersonsShowMoreComponent implements OnInit {
   employees: Array<Employee> = [];
   title: string;
 
@@ -30,16 +30,13 @@ export class PersoneShowmoreComponent implements OnInit {
 
     const slug = this.route.snapshot.params.slug;
 
-    this.httpGatewayService.getEmployeesGroupes().subscribe((groupeTitle) => {
-      // TODO: add correct response type for the getEmployeesGroupes
-      const groupList = [].concat(groupeTitle);
-      this.title = groupList.filter(group => group.slug === slug)[0].title;
-      this.loaderService.stop('load-team');
+    this.httpGatewayService.getEmployeesGroup(slug).subscribe((Group) => {
+      this.title = Group.title;
     });
 
-    this.httpGatewayService.getEmployeesListByGroupe(slug).subscribe((persons) => {
+    this.httpGatewayService.getEmployeesListByGroup(slug).subscribe((persons) => {
       this.employees = this.employees.concat(persons.employees);
-      this.loaderService.stop('load-team');
+      this.loaderService.stop('persons-showmore');
     });
 
     this.gateway.updateCanonicalURL();
