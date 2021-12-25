@@ -26,7 +26,7 @@ describe('CalendarService', () => {
     const service: CalendarService = TestBed.get(CalendarService);
     service.setDate(new Date(2019, 4, 20));
 
-    const weeks = service.weeks;
+    const weeks = service.weeks(service.currentMonth);
     const firstDay = weeks.shift().shift();
     const lastDay = weeks.pop().pop();
 
@@ -39,7 +39,7 @@ describe('CalendarService', () => {
     const service: CalendarService = TestBed.get(CalendarService);
     service.setDate(new Date(2019, 5, 20));
 
-    const weeks = service.weeks;
+    const weeks = service.weeks(service.currentMonth);
     const firstDay = weeks.shift().shift();
     const lastDay = weeks.pop().pop();
 
@@ -52,7 +52,7 @@ describe('CalendarService', () => {
     const service: CalendarService = TestBed.get(CalendarService);
     service.setDate(new Date(2019, 6, 20));
 
-    const weeks = service.weeks;
+    const weeks = service.weeks(service.currentMonth);
     const firstDay = weeks.shift().shift();
     const lastDay = weeks.pop().pop();
 

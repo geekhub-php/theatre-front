@@ -1,29 +1,32 @@
-<div class="poster__title" draggable="false">
-  <div><h2 class="kobzar-title" i18n="@@posterFor">Poster</h2></div>
-
-  <div *ngIf="isSwitcherActive" class="poster__toggle">
-    <div class="poster__toggle__item">
-      <button
-        (click)="changeViewToCalendar()"
-        class="poster__toggle__btn"
-        [class.poster__toggle__item__active]="activeComp.calendarActive"
-      >
-        <img src="assets/images/calendar/calendar-2-line.svg" alt="">
-        <span class="poster__toggle__text" i18n="@@calendarView">Calendar view</span>
-      </button>
+<div class="container schedule">
+  <div class="d-flex align-items-center justify-content-center flex-column-reverse flex-lg-max-row w-100 mb-16 my-md-max-32 position-relative">
+    <div class="select">
+      <app-month-select></app-month-select>
     </div>
-    <div class="poster__toggle__item" [class.poster__toggle__item__active]="activeComp.listActive">
-      <button (click)="changeViewToList()" class="poster__toggle__btn">
-        <img src="assets/images/calendar/bxs-grid.svg" alt="">
-        <span class="poster__toggle__text"  i18n="@@listView">List view</span>
-      </button>
+    <h2 class="kobzar-title" i18n="@@posterFor">Poster</h2>
+    <div *ngIf="isSwitcherActive && isDesktop" class="poster__toggle position-absolute">
+      <div class="poster__toggle__item">
+        <button
+          (click)="changeViewToCalendar()"
+          class="poster__toggle__btn"
+          [class.poster__toggle__item__active]="activeComp.calendarActive"
+        >
+          <img src="assets/images/calendar/calendar-2-line.svg" alt="">
+          <span class="poster__toggle__text" i18n="@@calendarView">Calendar view</span>
+        </button>
+      </div>
+      <div class="poster__toggle__item" [class.poster__toggle__item__active]="activeComp.listActive">
+        <button (click)="changeViewToList()" class="poster__toggle__btn">
+          <img src="assets/images/calendar/bxs-grid.svg" alt="">
+          <span class="poster__toggle__text"  i18n="@@listView">List view</span>
+        </button>
+      </div>
     </div>
   </div>
-  <app-spinner name="poster" class="poster__spinner"></app-spinner>
+
+  <app-calendar *ngIf="viewMode === views.CALENDAR"></app-calendar>
+
+  <app-list-view [viewMode]="viewMode" *ngIf="viewMode === views.LIST"></app-list-view>
 </div>
 
-<app-months-carousel (selectedMonth)="selectMonth()"></app-months-carousel>
-
-<app-calendar *ngIf="viewMode === views.CALENDAR"></app-calendar>
-
-<app-list-view [viewMode]="viewMode" *ngIf="viewMode === views.LIST"></app-list-view>
+<app-spinner name="poster" class="poster__spinner"></app-spinner>

@@ -19,7 +19,7 @@ $popup-border-color: #b6b6b4;
     right: 100px;
     display: flex;
     width: 480px;
-    height: 290px;
+    min-height: 290px;
     background-color: $font-color-gold;
     padding: 16px;
     border-radius: 8px;
@@ -296,7 +296,7 @@ $popup-border-color: #b6b6b4;
 :host ::ng-deep .popover {
   background-color: transparent;
   max-width: 480px;
-  height: 290px;
+  min-height: 290px;
 }
 
 :host ::ng-deep .bs-popover-top {

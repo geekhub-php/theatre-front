@@ -1,98 +1,98 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
-import { LoaderService } from '../../partials/spinner/loader.service';
-import { CalendarService } from '../calendar.service';
-import { MonthsCarouselService } from '../months-carousel/months-carousel.service';
+import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
+
 import { Subscription } from 'rxjs';
-import { ScheduleViewModes } from '../schedule.component';
-import { LangService, Locales } from '../../../services/lang.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
+
+import { CalendarService } from '../calendar.service';
+import { ScheduleViewModes } from '../schedule.component';
+import { LangService, Locales } from 'app/services/lang.service';
+import { LoaderService } from '../../partials/spinner/loader.service';
+import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
 
 @Component({
   selector: 'app-list-view',
   templateUrl: './list-view.component.html',
   styleUrls: [ './list-view.component.scss' ]
 })
-export class ListViewComponent implements OnInit, OnDestroy {
+export class ListViewComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() viewMode: ScheduleViewModes;
   views = ScheduleViewModes;
 
-  events: Array<PerformanceEvent> = [];
-  date: Date;
-  currentDate: Date;
+  activeMonth: Date;
   isDesktop = false;
-  sliderSubscription: Subscription;
-  calendarSubscription: Subscription;
-  loaderSubscription: Subscription;
-  loader: boolean;
+  isLoading: boolean;
   localeId: Locales = Locales.en;
+  loaderSubscription: Subscription;
+  calendarSubscription: Subscription;
+  events: Array<PerformanceEvent> = [];
 
-  constructor(private slider: MonthsCarouselService,
-              private loaderService: LoaderService,
+  constructor(private langService: LangService,
               private calendar: CalendarService,
-              private langService: LangService,
+              private loaderService: LoaderService,
               private deviceService: DeviceDetectorService) {
     this.langService.localeId$.subscribe(localeId => {
       this.localeId = localeId;
     });
+
     this.loaderSubscription = this.loaderService.subject.subscribe(spinner => {
-      this.loader = spinner.load;
+      this.isLoading = spinner.load;
     });
   }
 
   ngOnInit() {
-    this.getMonth();
-    this.slider.setActiveMonth();
-    this.calendar.getPerformanceEvents()
-      .then(() => this.getPerformanceEvents()
-      );
-
+    this.getPerformanceEvents();
     this.isDesktop = this.deviceService.getDeviceInfo().deviceType === 'desktop';
   }
 
-  getMonth() {
-    this.sliderSubscription = this.slider.getMonth().subscribe(month => {
-      this.currentDate = month.currentFullDate;
-    });
+  ngAfterViewInit() {
+    this.calendar.getPerformanceEvents();
   }
 
   getPerformanceEvents() {
     this.loaderService.start('poster');
-    this.calendarSubscription = this.calendar.events.subscribe((value) => {
-      this.events = value.filter(({ date_time }) => {
-        const resDate = new Date(date_time);
-        if (resDate && this.currentDate) {
-          const monthsEqual = resDate.getMonth() === this.currentDate.getMonth();
+    this.calendarSubscription = this.calendar.eventsData.subscribe((data) => {
+      if (data.activeMonth && data.currentEvents && data.nextEvents) {
+        this.activeMonth = data.activeMonth;
 
-          return (resDate >= new Date()) && monthsEqual;
+        if (this.activeMonth === data.currentMonth) {
+          this.events = data.currentEvents;
+        } else if (this.activeMonth === data.nextMonth) {
+          this.events = data.nextEvents;
         }
-      });
-      this.events = this.events.map((event, i) => {
-        const { day, month } = event;
-        const prevEvent = this.events[i - 1];
-        event.dateExist = false;
-        if (prevEvent) {
-          const { day: prevDay, month: prevMonth } = prevEvent;
-          if (day === prevDay && month === prevMonth) {
-            event.dateExist = true;
+
+        this.loaderService.stop('poster');
+      }
+
+      if (this.events.length) {
+        this.events = this.events.filter(({ date_time }) => {
+          const resDate = new Date(date_time);
+
+          if (resDate && this.activeMonth) {
+            const monthsEqual = resDate.getMonth() === this.activeMonth.getMonth();
+
+            return (resDate >= new Date()) && monthsEqual;
           }
-        }
+        });
 
-        return event;
-      });
-      this.loaderService.stop('poster');
-    }, err => this.loaderService.stop('poster'));
-  }
+        this.events = this.events.map((event, i) => {
+          const { day, month } = event;
+          const prevEvent = this.events[i - 1];
+          event.dateExist = false;
+          if (prevEvent) {
+            const { day: prevDay, month: prevMonth } = prevEvent;
+            if (day === prevDay && month === prevMonth) {
+              event.dateExist = true;
+            }
+          }
 
-  delSubscription(subscription: Subscription) {
-    if (subscription) {
-      subscription.unsubscribe();
-    }
+          return event;
+        });
+      }
+    }, () => this.loaderService.stop('poster'));
   }
 
   ngOnDestroy() {
-    this.delSubscription(this.sliderSubscription);
-    this.delSubscription(this.calendarSubscription);
-    this.delSubscription(this.loaderSubscription);
+    this.loaderSubscription?.unsubscribe();
+    this.calendarSubscription?.unsubscribe();
   }
 }

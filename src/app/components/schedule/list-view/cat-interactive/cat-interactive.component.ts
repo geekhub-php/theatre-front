@@ -8,7 +8,10 @@ import {
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { fromEvent, Subscription } from 'rxjs';
-import { TInteractiveCat, TNativeDivElement } from 'app/store/schedule/MonthsSliderItem';
+
+interface TNativeDivElement {
+  nativeElement: HTMLDivElement;
+}
 
 @Component({
   selector: 'app-cat-interactive',
@@ -19,7 +22,7 @@ export class CatInteractiveComponent implements AfterViewInit, OnDestroy {
   @ViewChild('catLeftEye') catLeftEye: TNativeDivElement;
   @ViewChild('catRightEye') catRightEye: TNativeDivElement;
 
-  catProperty: TInteractiveCat = {
+  catProperty = {
     currentSize: null,
     moveStep: null,
     md: 999,

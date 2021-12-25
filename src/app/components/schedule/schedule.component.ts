@@ -1,21 +1,23 @@
 import {
+  OnInit,
+  OnDestroy,
   Component,
   HostListener,
-  OnDestroy,
-  OnInit,
 } from '@angular/core';
 
-import { GatewayService } from '../../services/gateway.service';
-import { LoaderService } from '../partials/spinner/loader.service';
-import { CalendarService } from './calendar.service';
-import { MonthsCarouselService } from './months-carousel/months-carousel.service';
 import { Subscription } from 'rxjs';
+
 import { Breakpoints } from 'app/constants';
+import { CalendarService } from './calendar.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import { GatewayService } from 'app/services/gateway.service';
 import { WindowRefService } from 'app/services/window-ref.service';
+import { LoaderService } from '../partials/spinner/loader.service';
+
 
 export enum ScheduleViewModes {
-  CALENDAR = 'Calendar',
   LIST = 'List',
+  CALENDAR = 'Calendar',
 }
 
 @Component({
@@ -26,42 +28,45 @@ export enum ScheduleViewModes {
 export class ScheduleComponent implements OnInit, OnDestroy {
 
   date: Date;
+  isDesktop = true;
   isToday: boolean;
   isSwitcherActive = false;
-  viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
   views = ScheduleViewModes;
   sliderSubscription: Subscription;
+  viewMode: ScheduleViewModes = ScheduleViewModes.LIST;
 
   activeComp = {
-    calendarActive: false,
-    listActive: true
+    listActive: true,
+    calendarActive: false
   };
-
-  private timeout;
 
   constructor(
     private gateway: GatewayService,
     private calendar: CalendarService,
     private windowRef: WindowRefService,
     private loaderService: LoaderService,
-    private slider: MonthsCarouselService,
+    private deviceService: DeviceDetectorService
   ) {}
 
   @HostListener('window:resize', ['$event'])
   onResize() {
     if (this.windowRef.isPlatformBrowser) {
-      const innerWidth = this.windowRef.nativeWindow.innerWidth;
       const calendarBreakpointWidth = Breakpoints.xl_min;
+      const innerWidth = this.windowRef.nativeWindow.innerWidth;
 
       this.isSwitcherActive = innerWidth > calendarBreakpointWidth;
       this.isSwitcherActive && this.viewMode === ScheduleViewModes.CALENDAR ? this.changeViewToCalendar() : this.changeViewToList();
+
+      this.isDesktop = this.deviceService.getDeviceInfo().deviceType === 'desktop';
+
+      if (!this.isDesktop) {
+        this.viewMode = ScheduleViewModes.LIST;
+      }
     }
   }
 
   ngOnInit() {
     this.loaderService.start('poster');
-    this.getMonth();
-
     this.viewMode = this.savedLocale;
     this.onResize();
     this.gateway.updateMeta('Черкаський драматичний театр імені Т. Г. Шевченка',
@@ -69,22 +74,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
       'http://theatre-shevchenko.ck.ua/assets/images/logo.png');
     this.gateway.updateCanonicalURL();
     this.setViewMode();
-  }
-
-  delTimeout() {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
-  }
-
-  selectMonth() {
-    const requestDelay = 300;
-    this.delTimeout();
-    // setTimeout used to prevent requests if user switches months too frequently
-    this.timeout = setTimeout(() => {
-      this.calendar.getPerformanceByDate(this.date);
-      this.isToday = this.calendar.isToday(this.date);
-    }, requestDelay);
   }
 
   setViewMode() {
@@ -114,15 +103,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     }
   }
 
-  getMonth() {
-    this.sliderSubscription = this.slider.getMonth().subscribe(month => {
-      if (month && month.currentFullDate) {
-        this.date = month.currentFullDate;
-        this.isToday = this.calendar.isToday(this.date);
-      }
-    });
-  }
-
   delSubscription(subscription: Subscription) {
     if (subscription) {
       subscription.unsubscribe();
@@ -131,7 +111,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.delSubscription(this.sliderSubscription);
-    this.delTimeout();
   }
 
   get savedLocale() {

@@ -1,0 +1,84 @@
+@import "~assets/styles/variables";
+
+.month-select {
+  color: $gray-nickel;
+  font-weight: 500;
+  user-select: none;
+
+  .select-close-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+  }
+
+  .select-wrapper {
+    cursor: pointer;
+    max-width: 300px;
+    min-width: 240px;
+    padding: 4px 16px;
+    border-radius: 2px;
+    transition: all .3s;
+    border: $background-main-color-darker 1px solid;
+
+    &:hover {
+      color: $white;
+      border-color: $gray-nickel;
+
+      path {
+        fill: $white;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, sm-min)) {
+      min-width: 180px;
+    }
+  }
+
+  .select-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .option-list {
+    left: 0;
+    top: 40px;
+    z-index: 100;
+    cursor: pointer;
+    min-width: 240px;
+    color: $gray-nickel;
+    box-shadow: 0 8px 18px 0 rgb($oil, .25);
+    background-color: $background-main-color-darker;
+
+    @media (max-width: map-get($grid-breakpoints, sm-min)) {
+      min-width: 180px;
+    }
+
+    > div {
+      padding: 4px 16px;
+
+      &:first-child {
+        border-bottom: $font-color-dark 1px solid;
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, sm-max)) {
+      top: 30px;
+    }
+  }
+
+  .select-arrow {
+    transition: .3s;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+}
