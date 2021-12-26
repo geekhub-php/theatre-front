@@ -5,7 +5,6 @@
   grid-gap: 24px;
   max-width: 1310px;
   min-height: 600px;
-  grid-auto-rows: 230px;
   margin: 20px auto 160px;
   grid-auto-columns: auto;
   font-family: $body-font-family;
@@ -174,7 +173,6 @@
 @media (max-width: map-get($grid-breakpoints, xl-min)) {
 
   .list-view {
-    grid-auto-rows: auto;
 
     &__block__with-date {
       min-height: 380px;
