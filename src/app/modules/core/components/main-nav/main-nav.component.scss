@@ -12,16 +12,15 @@
   }
 
   a {
+    text-decoration: none;
     color: $font-color-primary;
 
     &:hover {
       color: $font-color-white;
-      text-decoration: none;
-      background-color: rgba($background-on-hover, .05);
     }
   }
 
-  .active {
+  a.active {
     color: $font-color-white;
     font-weight: $font-weight-semi-bold;
   }

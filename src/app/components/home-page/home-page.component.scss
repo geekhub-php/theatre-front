@@ -67,12 +67,6 @@
   }
 }
 
-.link-buttons {
-  margin: auto;
-  display: block;
-  width: fit-content;
-}
-
 .news_wrapper {
   display: flex;
   margin: 0 auto 80px;
@@ -94,14 +88,6 @@
   }
 }
 
-.link {
-  padding: 32px 0;
-  text-align: center;
-  text-decoration: none;
-
-  @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 25px, normal)
-}
-
 .section_title {
   padding: 32px;
   margin-bottom: 0;
@@ -117,16 +103,6 @@
 
   .h2 {
     margin-bottom: 32px;
-  }
-
-  .link-persons {
-    margin-top: 24px;
-
-    a {
-      text-decoration: none;
-
-      @include font($body-font-family, $font-size-medium, $font-color-accent, $font-weight-bold, 1.5);
-    }
   }
 }
 
@@ -199,21 +175,10 @@
     @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-semi-bold, 1.5, .8px)
   }
 
-  .link {
-    padding: 16px;
-
-    @include font($body-font-family, $font-size-small, $font-color-accent, $font-weight-bold, 1.5, normal)
-  }
-
   .we-offer {
     padding: 26px 16px 40px;
 
     @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
-
-    .link-buttons {
-      line-height: 1.5;
-      font-size: $font-size-small;
-    }
   }
 
   .advantages {
@@ -237,14 +202,6 @@
       a {
         @include font($body-font-family, $font-size-small, $font-color-primary, $font-weight-normal, 1.5, normal);
       }
-    }
-  }
-
-  .persons-slider-container .link-persons {
-    margin-top: 16px;
-
-    a {
-      @include font($body-font-family, $font-size-xx-small, $font-color-accent, $font-weight-bold, 1.5);
     }
   }
 }

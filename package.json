@@ -4,13 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
     "build": "ng build -c production-uk",
     "test": "ng test",
     "lint": "ng lint",
     "lint-css": "stylelint --config .stylelintrc 'src/**/*.scss' --fix",
     "e2e": "ng e2e",
-    "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json",
+    "bundle-report": "ng build -c production-uk --stats-json && webpack-bundle-analyzer dist/theatre-front/browser/uk/stats.json",
     "build:uk-ua": "ng build -c production-uk",
     "build:en-us": "ng build -c production-en",
     "dev:ssr": "ng run theatre-front:serve-ssr",
@@ -51,7 +51,6 @@
     "hammerjs": "^2.0.8",
     "jquery": "^3.6.0",
     "lottie-web": "^5.7.11",
-    "ng-gallery": "^5.0.0",
     "ngx-device-detector": "^2.1.1",
     "ngx-google-analytics": "^11.1.0",
     "ngx-infinite-scroll": "^7.1.1",
@@ -88,6 +87,6 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "4.0.5",
-    "webpack-bundle-analyzer": "^3.3.2"
+    "webpack-bundle-analyzer": "^3.9.0"
   }
 }

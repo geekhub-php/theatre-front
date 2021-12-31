@@ -19,7 +19,7 @@ $popup-border-color: #b6b6b4;
     right: 100px;
     display: flex;
     width: 480px;
-    height: 290px;
+    min-height: 290px;
     background-color: $font-color-gold;
     padding: 16px;
     border-radius: 8px;
@@ -113,7 +113,7 @@ $popup-border-color: #b6b6b4;
     cursor: default;
     position: absolute;
     top: 12px;
-    left: 6px;
+    left: 8px;
     z-index: 5;
     font-size: $font-size-xxx-large;
     color: $font-color-gold;
@@ -121,6 +121,17 @@ $popup-border-color: #b6b6b4;
     line-height: 1;
     padding: 2px 0;
     text-align: center;
+  }
+
+  .current-day::before {
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 4px $teak;
   }
 
   .calendar__show__more {
@@ -146,7 +157,7 @@ $popup-border-color: #b6b6b4;
     bottom: 10px;
     width: 210px;
     background-color: $popup-bg-color;
-    z-index: 8;
+    z-index: 13;
     overflow: visible;
     transition: ease-in .2s;
 
@@ -241,11 +252,12 @@ $popup-border-color: #b6b6b4;
   }
 
   .more {
-    padding: 0 8px;
     display: flex;
     height: 100%;
     width: 100%;
+    position: relative;
     align-items: flex-end;
+    padding: 56px 8px 12px;
 
     &__items {
       display: flex;
@@ -284,7 +296,7 @@ $popup-border-color: #b6b6b4;
 :host ::ng-deep .popover {
   background-color: transparent;
   max-width: 480px;
-  height: 290px;
+  min-height: 290px;
 }
 
 :host ::ng-deep .bs-popover-top {

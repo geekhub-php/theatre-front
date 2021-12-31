@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { forkJoin } from 'rxjs';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { LoaderService } from '../partials/spinner/loader.service';
 
@@ -11,6 +12,8 @@ import { LangService, Locales } from 'app/services/lang.service';
 import { GatewayService } from '../../services/gateway.service';
 import { Performance } from '../../store/performance/Performance';
 import { NgxGalleryImage, NgxGalleryImageSize, NgxGalleryOptions, NgxGalleryOrder } from '@kolkov/ngx-gallery';
+import { WindowRefService } from 'app/services/window-ref.service';
+import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
 
 enum galleryColumns {
   xs = 1,
@@ -28,6 +31,7 @@ export class PerformanceComponent implements OnInit {
   slug: string;
   loading = true;
   imageAmount = 0;
+  isDesktop = false;
   activeId = 'actors';
   roles: Array<Role>;
   loadingFull = true;
@@ -35,6 +39,7 @@ export class PerformanceComponent implements OnInit {
   thumbnailHeight = 240;
   performance: Performance;
   localeId: Locales = Locales.en;
+  nearestPerformance: PerformanceEvent;
 
   commonGalleryOptions = {
     image: false,
@@ -80,15 +85,19 @@ export class PerformanceComponent implements OnInit {
   constructor(private router: ActivatedRoute,
               private gateway: GatewayService,
               private langService: LangService,
-              private loaderService: LoaderService) {
+              private windowRef: WindowRefService,
+              private loaderService: LoaderService,
+              private deviceService: DeviceDetectorService) {
     this.langService.localeId$.subscribe(localeId => {
       this.localeId = localeId;
     });
   }
 
   @HostListener('window:resize', [ '$event' ])
-  onResize(e?) {
-    const { innerWidth } = window;
+  onResize() {
+    if (!this.windowRef.isPlatformBrowser) return;
+
+    const innerWidth = this.windowRef.nativeWindow.innerWidth;
     const columnAmount = innerWidth > Breakpoints.xl_min
       ? galleryColumns.xxl : innerWidth > Breakpoints.md_min
         ? galleryColumns.xl : innerWidth > Breakpoints.sm_min
@@ -103,10 +112,17 @@ export class PerformanceComponent implements OnInit {
 
     forkJoin([
       this.gateway.getPerformanceBySlug(slug),
-      this.gateway.getPerformanceRoles(slug)
-    ]).subscribe(([ performance, roles ]) => {
+      this.gateway.getPerformanceRoles(slug),
+      this.gateway.getPerformanceEventList(new Date(),  '50')
+    ]).subscribe(([ performance, roles, performances]) => {
       this.performance = performance.body;
       this.roles = roles;
+
+      const nearestPerformances = performances.performance_events.filter(event => event.performance.slug === this.performance.slug);
+      if (nearestPerformances.length) {
+        this.nearestPerformance = nearestPerformances[0];
+      }
+
       if (this.performance.gallery) {
         this.performance.gallery.map(item => {
           this.galleryImages.push(
@@ -128,6 +144,7 @@ export class PerformanceComponent implements OnInit {
       this.onResize();
     }, err => this.loaderService.stop('performance-page'));
     this.gateway.updateCanonicalURL();
+    this.isDesktop = this.deviceService.getDeviceInfo().deviceType === 'desktop';
   }
 
   openGallery() {

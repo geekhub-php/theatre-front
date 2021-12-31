@@ -1,0 +1,52 @@
+@import "src/assets/styles/variables";
+
+.btn {
+  border: none;
+  font: inherit;
+  outline: none;
+  color: inherit;
+  transition: .3s;
+  background: none;
+  box-shadow: none;
+  padding: 10px 24px;
+  border-radius: 2px;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: $font-weight-bold;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm-min)) {
+    font-size: $font-size-small;
+  }
+
+  &.--btn-with-border {
+    color: $white;
+    border: 1px solid $white;
+
+    &:hover {
+      background-color: rgba($white, .1);
+    }
+  }
+
+  &.--btn-teak {
+    color: $oil;
+    background-color: $teak;
+
+    &:hover {
+      background-color: $sorrell-brown;
+    }
+  }
+
+  &.--btn-icon {
+    padding: 0;
+  }
+
+  &.--btn-close {
+    padding: 4px;
+    border-radius: 5px;
+    background-color: $teak;
+  }
+}

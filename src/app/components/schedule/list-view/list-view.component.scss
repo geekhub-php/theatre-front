@@ -3,10 +3,8 @@
 .list-view {
   display: grid;
   grid-gap: 24px;
-  padding: 0 32px;
   max-width: 1310px;
   min-height: 600px;
-  grid-auto-rows: 230px;
   margin: 20px auto 160px;
   grid-auto-columns: auto;
   font-family: $body-font-family;
@@ -17,7 +15,7 @@
 
   &__item {
     width: 100%;
-    height: 100%;
+    min-height: 230px;
     position: relative;
     background-color: $background-main-color-lighter;
   }
@@ -71,6 +69,7 @@
     }
 
     &__type {
+      margin-bottom: 24px;
       color: $border-color-accent;
       font-size: $font-size-medium;
       font-weight: $font-weight-semi-bold;
@@ -120,23 +119,6 @@
     }
   }
 
-  &__button {
-    width: 200px;
-    height: 50px;
-    display: flex;
-    margin-top: 12px;
-    border-radius: 2px;
-    white-space: nowrap;
-    align-items: center;
-    text-decoration: none;
-    justify-content: center;
-    color: $border-color-light;
-    font-size: $font-size-medium;
-    background-color: transparent;
-    font-weight: $font-weight-semi-bold;
-    border: solid 1px $border-color-light;
-  }
-
   &__arrow-right {
     right: 34px;
     bottom: 24px;
@@ -151,6 +133,7 @@
     display: grid;
     cursor: pointer;
     overflow: hidden;
+    min-height: 230px;
     position: relative;
     color: $white-color;
     transition: .3s ease;
@@ -159,29 +142,13 @@
     grid-template-columns: 220px auto 200px;
     background-color: $background-main-color-lighter;
 
-    &__age-limit {
-      top: 0;
-      left: 0;
-      padding: 0;
-      z-index: 2;
-      width: 56px;
-      height: 56px;
-      display: flex;
-      position: absolute;
-      align-items: center;
-      transition: .3s ease;
-      justify-content: center;
-      background-color: $background-color-accent;
-
-      & span {
-        font-size: 24px;
-        color: $border-color-light;
-        font-weight: $font-weight-semi-bold;
-      }
-    }
-
     &:hover {
       background-color: transparent;
+
+      .age-limit {
+        transition: .3s;
+        background-color: $background-on-hover;
+      }
 
       .list-view {
 
@@ -193,12 +160,9 @@
           color: $white-color;
         }
 
-        &__link__age-limit {
-          background-color: $background-on-hover !important;
-        }
 
-        &__button {
-          background-color: rgba(255, 255, 255, .2);
+        &__button .btn {
+          background-color: rgba($white-color, .2);
         }
       }
     }
@@ -209,11 +173,6 @@
 @media (max-width: map-get($grid-breakpoints, xl-min)) {
 
   .list-view {
-    grid-auto-rows: auto;
-
-    &__item {
-      height: 230px;
-    }
 
     &__block__with-date {
       min-height: 380px;
@@ -247,17 +206,13 @@
       min-width: 100px;
     }
 
-    &__content__info {
-      margin: 16px 0 0;
+    &__content__info__item {
+      margin-right: 16px;
+      max-width: fit-content;
 
-      &__item {
-        margin-right: 16px;
-        max-width: fit-content;
-
-        &__text {
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+      &__text {
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
@@ -282,7 +237,6 @@
 
   .list-view {
     grid-gap: 16px;
-    padding: 0 16px;
 
     &.without-padding {
       padding: 0;
@@ -312,16 +266,8 @@
 
     &__link {
       min-height: 230px;
+      grid-template-rows: 1fr;
       padding: 16px 42px 24px 40px;
-
-      &__age-limit {
-        width: 24px;
-        height: 24px;
-
-        & span {
-          font-size: 12px;
-        }
-      }
     }
 
     &__content {
@@ -356,13 +302,6 @@
           }
         }
       }
-    }
-
-    &__button {
-      width: 150px;
-      height: 38px;
-      margin-top: auto;
-      font-size: $font-size-small;
     }
 
     &__arrow-right {

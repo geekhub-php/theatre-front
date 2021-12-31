@@ -1,82 +1,107 @@
-<div *ngIf="!isLoading && sliderList.length" class="slider">
-  <gallery
-    id="slider"
-    class="gallery-container"
-    fluid
-    [nav]="false"
-    [loop]="true"
-    [dots]='true'
-    [thumb]='false'
-    [counter]='false'
-    [autoPlay]="true"
-    [gestures]='false'
-    [imageSize]='cover'
-    [disableThumb]="true"
-    [playerInterval]="5000"
-    [itemTemplate]="itemTemplate"
+<div class="performance-slider">
+  <!-- Performance slider -->
+  <div *ngIf="!isLoading && sliderList.length" class="slider d-flex flex-column">
+    <ngu-carousel
+      #performanceSlider
+      [inputs]="sliderOptions"
+      [dataSource]="sliderList"
+    >
+      <ngu-item *nguCarouselDef="let performance" class="d-flex justify-content-center">
+        <a
+          class="slider__item d-flex flex-column justify-content-between justify-content-sm-min-end position-relative"
+          [routerLink]="['', 'performance', performance.slug]"
+        >
+          <img [src]="performance.src" class="slider__image" [alt]="performance.title">
+          <div class="age-limit">
+            {{ performance.ageLimit }}+
+          </div>
+          <div class="position-relative d-flex justify-content-center mx-3">
+            <div class="slider__content d-flex align-items-center flex-column">
+              <h3 class="h3 mb-2 text-center text-truncate">{{ performance.title }}</h3>
+              <div
+                class="d-flex flex-wrap align-items-center justify-content-center mb-2">
+                <div class="d-flex align-items-center mr-sm-min-4 mb-2 mr-2">
+                  <img src="assets/images/icons/ic_book.svg" alt="performance type image"
+                       class="mr-2 mb-1">
+                  <p class="m-0 text-center">{{ performance.type }}</p>
+                </div>
+                <div class="d-flex align-items-center mr-sm-min-4 mb-2 mr-2">
+                  <img src="assets/images/icons/ic_clock.svg" alt="due date image" class="mr-2 mb-1">
+                  <p class="m-0 text-center">
+                    {{ performance.date_time | date: 'EEE, dd' }} {{ performance.date_time | date: 'MMMM' | lowercase }}
+                  </p>
+                </div>
+                <div class="d-flex align-items-center mb-2 mr-2 mr-sm-min-0">
+                  <img src="assets/images/icons/ic_map_pin.svg" alt="performance venue image"
+                       class="mr-2 mb-1">
+                  <p class="m-0 text-center">{{ performance.venue }}</p>
+                </div>
+              </div>
+              <div class="" (click)="$event.stopPropagation()">
+                <a
+                  [target]="isDesktop ? '_blank' : '_self'"
+                  class="btn --btn-with-border"
+                  [href]="performance.ticket || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
+                  i18n="@@buyTicket">Buy ticket</a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </ngu-item>
+      <ul class="slider__points d-flex justify-content-center position-relative" NguCarouselPoint>
+        <li
+          *ngFor="let j of performanceSlider.pointNumbers; let i = index"
+          [class.active]="j === performanceSlider.activePoint"
+          (click)="performanceSlider.moveTo(i)"
+        >
+        </li>
+      </ul>
+    </ngu-carousel>
+  </div>
+  <!-- END Performance slider -->
+
+  <!-- No performance picture-->
+  <div
+    *ngIf="!isLoading && !sliderList.length"
+    class="no-performance d-flex align-items-end justify-content-center position-relative"
   >
-  </gallery>
-</div>
-
-<ng-template #itemTemplate let-data="data">
-  <a [routerLink]="['', 'performance', data.slug]" class="slide-wrapper">
-    <div class="carousel-caption">
-      <div class="linear-gradient"></div>
-      <h3 class="performance-title">{{ data.title }}</h3>
-      <div class="container">
-        <div class="container__performance">
-          <img src="assets/images/home-slider/performance-type.svg" alt="performance type image" class="image">
-          <p class="performance__type">{{ data.type }}</p>
-        </div>
-        <div class="container__performance">
-          <img src="assets/images/home-slider/performance-data.svg" alt="due date image" class="image">
-          <p class="tickets-day">{{ data.date | date: 'EEE, dd' }}</p>
-          <p class="tickets-month">{{ data.date | date: 'MMMM' | lowercase }}</p>
-        </div>
-        <div class="container__performance">
-          <img src="assets/images/home-slider/performance.venue.svg" alt="performance venue image" class="image">
-          <p class="performance__venue">{{ data.venuePerformance }}</p>
-        </div>
-      </div>
-      <div class="container__button" (click)="$event.stopPropagation()">
-        <a [href]="data.ticket" class="button-ticket tickets-button" i18n="@@buyTicket">Buy ticket</a>
-      </div>
-      <span *ngIf="data && (data.ageLimit || data.ageLimit === 0)" class="age-restrictions">{{ data.ageLimit }}+</span>
-    </div>
-  </a>
-</ng-template>
-
-<div *ngIf="!isLoading && !sliderList.length" class="slider">
-  <div class="no-performance">
     <img src="assets/images/home-slider/no-performance.png" alt="No performance"
-         class="no-performance__image">
-    <div class="no-performance__linear-gradient"></div>
-    <p class="no-performance__text" i18n="@@noPerformances">There are currently no events scheduled</p>
+         class="no-performance__image position-absolute">
+    <div class="no-performance__linear-gradient position-absolute"></div>
+    <p class="no-performance__text h2 position-relative text-center" i18n="@@noPerformances">
+      There are currently no events scheduled
+    </p>
   </div>
-</div>
+  <!-- END of No performance picture-->
 
-
-<div *ngIf="isLoading && !sliderList.length" class="slider-skeleton">
-  <div class=slider-skeleton__picture>
-    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+  <!-- Slider skeleton-->
+  <div *ngIf="isLoading && !sliderList.length" class="slider-skeleton d-flex flex-column justify-content-end">
+    <div class="slider-skeleton__picture">
+      <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+    </div>
+    <div class="slider-skeleton__age-limit position-absolute"></div>
+    <div class="position-relative d-flex flex-column align-items-center justify-content-center">
+      <div class="slider-skeleton__content">
+        <div class="slider-skeleton__title">
+          <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+        </div>
+        <div class="slider-skeleton__description">
+          <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+          <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+          <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+        </div>
+        <div class="slider-skeleton__button">
+          <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+      <div class="slider-skeleton__circles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   </div>
-  <div class="slider-skeleton__title">
-    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
-  </div>
-  <div class="slider-skeleton__description">
-    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
-    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
-    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
-  </div>
-  <div class="slider-skeleton__button">
-    <ngx-skeleton-loader animation="progress-dark" appearance="line"></ngx-skeleton-loader>
-  </div>
-  <div class=slider-skeleton__circles>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <!-- End of Slider skeleton -->
 </div>
 

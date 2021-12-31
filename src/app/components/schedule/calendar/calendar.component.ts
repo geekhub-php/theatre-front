@@ -1,8 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PerformanceEvent } from '../../../store/schedule/PerformanceEvent';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { PerformanceEvent } from 'app/store/schedule/PerformanceEvent';
 import { LoaderService } from '../../partials/spinner/loader.service';
 import { CalendarService } from '../calendar.service';
-import { MonthsCarouselService } from '../months-carousel/months-carousel.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -10,30 +9,23 @@ import { Subscription } from 'rxjs';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
-export class CalendarComponent implements OnInit, OnDestroy {
-
-  events: Array<PerformanceEvent>;
-  dayPerformances: Array<PerformanceEvent>;
-  weeks: Array<Array<Date>> | null = null;
+export class CalendarComponent implements OnInit, OnDestroy, AfterViewInit {
   showMore = false;
-  activeDay: Date | null = null;
-  selectedDate: Date;
-  middleOfMonth = 15;
-
-  sliderSubscription: Subscription;
+  today = new Date();
+  activeMonth: Date;
+  weeks: Array<Array<Date>>;
+  events: Array<PerformanceEvent>;
   calendarSubscription: Subscription;
+  dayPerformances: Array<PerformanceEvent>;
 
-  constructor(private loaderService: LoaderService,
-              private calendar: CalendarService,
-              private slider: MonthsCarouselService) {
-    this.getMonth();
-    this.slider.setActiveMonth();
-  }
+  constructor(private loaderService: LoaderService, private calendar: CalendarService) {}
 
   ngOnInit() {
-    this.calendar.getPerformanceEvents().then(() => {
-      this.getPerformanceEvents();
-    });
+    this.getPerformanceEvents();
+  }
+
+  ngAfterViewInit() {
+    this.calendar.getPerformanceEvents();
   }
 
   hasPerformanceByDate(date: Date): boolean {
@@ -50,34 +42,30 @@ export class CalendarComponent implements OnInit, OnDestroy {
     });
   }
 
-  getMonth() {
-    this.sliderSubscription = this.slider.getMonth().subscribe(month => {
-      this.selectedDate = month.currentFullDate;
-    });
-  }
-
   onShowMore(day: Date) {
     this.showMore = !this.showMore;
-    this.activeDay = day;
+    this.activeMonth = day;
   }
 
   getPerformanceEvents() {
     this.loaderService.start('poster');
-    this.calendarSubscription = this.calendar.events.subscribe((value) => {
-      this.events = value;
-      this.weeks = this.calendar.weeks;
-      this.loaderService.stop('poster');
-    }, err => this.loaderService.stop('poster'));
-  }
+    this.calendarSubscription = this.calendar.eventsData.subscribe((data) => {
+      if (data.activeMonth && data.currentEvents && data.nextEvents) {
+        this.activeMonth = data.activeMonth;
+        this.weeks = this.calendar.weeks(this.activeMonth);
 
-  delSubscription(subscription: Subscription) {
-    if (subscription) {
-      subscription.unsubscribe();
-    }
+        if (this.activeMonth === data.currentMonth) {
+          this.events = data.currentEvents;
+        } else if (this.activeMonth === data.nextMonth) {
+          this.events = data.nextEvents;
+        }
+
+        this.loaderService.stop('poster');
+      }
+    }, () => this.loaderService.stop('poster'));
   }
 
   ngOnDestroy() {
-    this.delSubscription(this.sliderSubscription);
-    this.delSubscription(this.calendarSubscription);
+    this.calendarSubscription?.unsubscribe();
   }
 }

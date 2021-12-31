@@ -1,4 +1,4 @@
-<div class="list-view" [class.without-padding]="!events.length && !loader">
+<div class="list-view" [class.without-padding]="!events.length && !isLoading">
   <div *ngFor="let event of events" class="list-view__block" [class.list-view__block__with-date]="event && !event.dateExist">
       <div *ngIf="event && !event.dateExist" class="list-view__date d-flex d-xl-max-none">
         <div class="list-view__date__day">{{ event.date_time | date: 'dd' }}</div>
@@ -6,7 +6,7 @@
       </div>
     <section *ngIf="event" class="list-view__item">
       <div class="list-view__link" [routerLink]="['', 'performance', event.performance.slug]">
-        <div class="list-view__link__age-limit">
+        <div class="age-limit">
           <span>{{ event.performance.age_limit }}+</span>
         </div>
         <div class="list-view__date d-none d-xl-max-flex">
@@ -24,13 +24,13 @@
             <div class="list-view__content__info__item">
               <img
                 class="list-view__content__info__item__clock"
-                src="assets/images/list-view/time-fill.svg" alt="">
+                src="assets/images/icons/ic_clock.svg" alt="clock">
               <span class="list-view__content__info__item__time">{{ event.time }}</span>
             </div>
             <div *ngIf='!!event.performance.duration_in_min' class="list-view__content__info__item">
               <img
                 class="list-view__content__info__item__icon"
-                src="assets/images/list-view/bx-hourglass.svg" alt="">
+                src="assets/images/icons/ic_hourglass.svg" alt="hourglass">
               <span class="list-view__content__info__item__text">
                   {{ event.performance.duration_in_min | performanceDuration: localeId }}
                 </span>
@@ -39,21 +39,23 @@
             <div class="list-view__content__info__item list-view__venue-item">
               <img
                 class="list-view__content__info__item__icon "
-                src="assets/images/list-view/map-pin-2-fill.svg" alt="">
+                src="assets/images/icons/ic_map_pin.svg" alt="map pin">
               <span class="list-view__content__info__item__text">{{ event.venue }}</span>
             </div>
           </div>
 
         </div>
-        <a
-          class="list-view__button"
-          *ngIf="event.buy_ticket_link"
-          [href]="event.buy_ticket_link"
-          target="_blank"
-          (click)="$event.stopPropagation()"
-          i18n="@@buyTicket">
-          Buy ticket
-        </a>
+        <div class="list-view__button text-lg-min-right">
+          <a
+            class="btn --btn-with-border"
+            [href]="event.buy_ticket_link || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
+            [target]="isDesktop ? '_blank' : '_self'"
+            (click)="$event.stopPropagation()"
+            i18n="@@buyTicket">
+            Buy ticket
+          </a>
+        </div>
+
         <div class="list-view__arrow-right">
           <img alt="arrow" src="assets/images/news/arrow-right.svg">
         </div>
@@ -66,5 +68,5 @@
       >
     </section>
   </div>
-  <app-cat-interactive *ngIf="!events.length && !loader"></app-cat-interactive>
+  <app-cat-interactive *ngIf="!events.length && !isLoading"></app-cat-interactive>
 </div>

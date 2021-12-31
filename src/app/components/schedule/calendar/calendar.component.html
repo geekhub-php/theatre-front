@@ -1,4 +1,4 @@
-<table *ngIf="!!weeks" class="calendar">
+<table *ngIf="!!weeks" class="calendar w-100">
   <thead>
   <tr>
     <th class="day__of__week" i18n="@@monday">Monday</th>
@@ -15,7 +15,8 @@
     <tr *ngFor="let week of weeks">
       <td *ngFor="let day of week"
           class="day__of__month"
-          [class.another__month] = "(day | date: 'MM') !== (selectedDate | date: 'MM')">
+          [class.current-day] = "(day | date: ('MM dd')) === (today | date: ('MM dd'))"
+          [class.another__month] = "(day | date: 'MM') !== (activeMonth | date: 'MM')">
         <span class="day__number">{{ day | date: 'dd' }}</span>
         <div class="more" *ngIf="hasPerformanceByDate(day)">
           <div class="more__items">
@@ -53,7 +54,7 @@
               </button>
             </div>
             <div
-              *ngIf="showMore && day === activeDay"
+              *ngIf="showMore && day === activeMonth"
               class="more__items calendar__popup__show__more">
               <div class="popup__day__number ">
                 <span>{{ day | date: 'dd' }}</span>

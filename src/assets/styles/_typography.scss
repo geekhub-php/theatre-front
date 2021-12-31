@@ -16,6 +16,14 @@
   color: $font-color-white;
   font-family: $body-font-family;
   font-weight: $font-weight-semi-bold;
+
+  &.--link {
+
+    &, &:hover, &:active {
+      text-decoration: none;
+      color: $font-color-white;
+    }
+  }
 }
 
 .h1 {
@@ -73,5 +81,17 @@
   @media (min-width: map-get($grid-breakpoints, sm-max)) {
     top: 24px;
     line-height: 1.3;
+  }
+}
+
+.text-truncate {
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+
+  @supports (-webkit-line-clamp: 3) {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }

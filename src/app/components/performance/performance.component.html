@@ -1,31 +1,3 @@
-<svg display="none">
-  <symbol id="calendar" viewBox="0 0 24 24">
-    <path d="M11 12h6v6h-6v-6z" fill="#B49864"/>
-    <path
-      d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.001 16H5V8h14l.001 12z"
-      fill="#B49864"/>
-  </symbol>
-  <symbol id="time" viewBox="0 0 24 24">
-    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm1-10V7h-2v7h6v-2h-4z"
-          fill="#B49864"/>
-  </symbol>
-  <symbol id="hourglass" viewBox="0 0 24 24">
-    <path
-      d="M19 5c0 2.464-1.315 4.771-3.434 6.021-.354.208-.566.545-.566.9v.158c0 .354.212.691.567.901C17.685 14.229 19 16.536 19 19v1h1v2H4v-2h1v-1c0-2.464 1.315-4.771 3.434-6.021.354-.21.566-.546.566-.9v-.158c0-.355-.212-.692-.566-.9C6.315 9.771 5 7.464 5 5V4H4V2h16v2h-1v1z"
-      fill="#B49864"/>
-  </symbol>
-  <symbol id="pin" viewBox="0 0 24 24">
-    <path
-      d="M18.364 17.364L12 23.728l-6.364-6.364c-1.259-1.259-2.116-2.862-2.463-4.608-.347-1.746-.17-3.556.512-5.2C4.366 5.91 5.52 4.506 7 3.516 8.48 2.529 10.22 2 12 2c1.78 0 3.52.528 5 1.517 1.48.989 2.634 2.394 3.315 4.039.681 1.644.86 3.454.512 5.2-.347 1.746-1.204 3.35-2.463 4.608zM12 13c.53 0 1.04-.21 1.414-.586C13.79 12.04 14 11.53 14 11c0-.53-.21-1.04-.586-1.414C13.04 9.21 12.53 9 12 9c-.53 0-1.04.21-1.414.586C10.21 9.96 10 10.469 10 11c0 .53.21 1.04.586 1.414.375.375.884.586 1.414.586z"
-      fill="#B49864"/>
-  </symbol>
-  <symbol id="book" viewBox="0 0 24 24">
-    <path
-      d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5-1.95 0-4.05.4-5.5 1.5v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"
-      fill="#B49864"/>
-  </symbol>
-</svg>
-
 <app-repertoire-nav-header class="d-none d-lg-max-block"></app-repertoire-nav-header>
 
 <div class="container">
@@ -40,7 +12,7 @@
       <div class="poster-container">
         <img [alt]="performance.mainPicture?.performance_big?.alt" [src]="performance.mainPicture?.performance_big?.url"
              [title]="performance.mainPicture?.performance_big?.properties.title">
-        <div *ngIf="performance && (performance.age_limit || performance.age_limit === 0)" class="limit">
+        <div *ngIf="performance && (performance.age_limit || performance.age_limit === 0)" class="age-limit">
           {{ performance.age_limit + '+' }}
         </div>
       </div>
@@ -50,34 +22,24 @@
     <!--   Start Performance info -->
     <div class="performance_info">
       <div class="main-info-block">
-        <div class="main-info" *ngIf="performance.date_time">
-          <svg class="icon">
-            <use xlink:href="#calendar"></use>
-          </svg>
-          <p class="info">{{ performance.date_time }}</p>
+        <div class="main-info" *ngIf="nearestPerformance">
+          <img class="icon" src="assets/images/icons/ic_calendar.svg" alt="calendar">
+          <p class="info">{{ nearestPerformance.date_time | date: "dd.MM.yyyy, EEEE" }}</p>
         </div>
-        <div class="main-info" *ngIf="performance.time">
-          <svg class="icon">
-            <use xlink:href="#time"></use>
-          </svg>
-          <p class="info"></p>
+        <div class="main-info" *ngIf="nearestPerformance">
+          <img class="icon" src="assets/images/icons/ic_clock.svg" alt="clock">
+          <p class="info">{{ nearestPerformance.time }}</p>
         </div>
         <div class="main-info" *ngIf="!!performance.duration_in_min">
-          <svg class="icon">
-            <use xlink:href="#hourglass"></use>
-          </svg>
+          <img class="icon" src="assets/images/icons/ic_hourglass.svg" alt="hourglass">
           <p class="info">{{ performance.duration_in_min | performanceDuration: localeId }}</p>
         </div>
-        <div class="main-info" *ngIf="performance.venue">
-          <svg class="icon">
-            <use xlink:href="#pin"></use>
-          </svg>
-          <p class="info">{{ performance.venue }}</p>
+        <div class="main-info" *ngIf="nearestPerformance">
+          <img class="icon" src="assets/images/icons/ic_map_pin.svg" alt="map pin">
+          <p class="info">{{ nearestPerformance.venue }}</p>
         </div>
         <div class="main-info">
-          <svg class="icon">
-            <use xlink:href="#book"></use>
-          </svg>
+          <img class="icon" src="assets/images/icons/ic_book.svg" alt="book">
           <p class="info">{{ performance.type }}</p>
         </div>
         <div class="details" *ngIf="performance.producer">
@@ -87,9 +49,11 @@
           </p>
         </div>
       </div>
-      <div class="ticket_button">
-        <a class="ticket_link" href="https://widget.mticket.com.ua/uk/widget332site11795/widget/index"
-           i18n="@@buyTicket" target="_blank">Buy ticket</a>
+      <div class="ticket_button text-center text-md-min-left" *ngIf="nearestPerformance">
+        <a class="btn --btn-with-border"
+           i18n="@@buyTicket"
+           [href]="nearestPerformance.buy_ticket_link || 'https://widget.mticket.com.ua/uk/widget332site11795/widget/index'"
+           [target]="isDesktop ? '_blank' : '_self'">Buy ticket</a>
       </div>
     </div>
     <!--    End performance info-->

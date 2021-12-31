@@ -1,9 +1,8 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 
 import { filter } from 'rxjs/operators';
 
-import { Breakpoints } from 'app/constants';
 import { LangService, Locales } from 'app/services/lang.service';
 import { ESidebar, SidebarService } from 'app/services/sidebar.service';
 
@@ -13,8 +12,7 @@ import { ESidebar, SidebarService } from 'app/services/sidebar.service';
   styleUrls: [ './header.component.scss' ],
 })
 
-export class HeaderComponent implements OnInit {
-  wideScreen;
+export class HeaderComponent {
   textValue = '';
   collapse = false;
   isCollapsed = false;
@@ -41,22 +39,6 @@ export class HeaderComponent implements OnInit {
     this.langService.localeId$.subscribe(localeId => {
       this.localeId = localeId;
     });
-  }
-
-  ngOnInit(): void {
-    this.getWindowSize();
-  }
-
-  @HostListener('window:resize', [ '$event' ])
-  onResize() {
-    this.getWindowSize();
-  }
-
-  getWindowSize() {
-    const screenWidth = window.innerWidth;
-    const wideScreen = Breakpoints.lg_min;
-
-    this.wideScreen = screenWidth > wideScreen;
   }
 
   collapseMenu(): void {

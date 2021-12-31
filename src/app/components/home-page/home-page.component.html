@@ -18,16 +18,16 @@
         </p>
 <!--        <p i18n="@@we-also-invite">We also invite collaboration from teams, organizations, and exhibitions.</p>-->
       </div>
-<!--      <a class="link-buttons mt-3" routerLink="/" routerLinkActive="active"-->
+<!--      <a class="btn mt-3" routerLink="/" routerLinkActive="active"-->
 <!--         i18n="@@cooperationBtn">Cooperation</a>-->
     </div>
   </section>
 
   <div *ngIf="randomEmployees?.length > 0 || isRandomEmployeesLoading" class="persons-slider-container text-center">
-    <h2 id="ballet-persons" class="h2" i18n="@@theatrePersonalities">Theatre personalities</h2>
+    <a id="ballet-persons" class="h2 --link d-block mb-4" i18n="@@theatrePersonalities" routerLink="/team">Theatre personalities</a>
     <app-persons-slider [persons]="randomEmployees" [isLoading]="isRandomEmployeesLoading"></app-persons-slider>
-    <div class="link-persons">
-      <a routerLink="/persons" i18n="@@showMore">Show more</a>
+    <div class="mt-16 mt-md-max-32">
+      <a class="link --link-bold --link-teak" routerLink="/team" i18n="@@showMore">Show more</a>
     </div>
   </div>
 
@@ -35,7 +35,9 @@
     <div class="news">
       <h3 class="section_title" i18n="@@news">News</h3>
       <app-news-list-item class="item" *ngFor="let item of listPost" [item]="item"></app-news-list-item>
-      <a class="link" i18n="@@more" routerLink="../news">More</a>
+      <div class="my-16 my-md-max-32">
+        <a class="link --link-bold --link-teak" i18n="@@more" routerLink="../news">More</a>
+      </div>
     </div>
   </section>
 

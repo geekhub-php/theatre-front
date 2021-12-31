@@ -23,6 +23,7 @@ import { Season } from '../store/season/Season';
 
 import { environment } from '../../environments/environment';
 import { LangService, Locales } from './lang.service';
+import { EmployeeGroup } from '../store/employee/EmployeeGroup';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,7 @@ export class GatewayService {
   readonly historiesListUrl = 'histories';
   readonly performanceEventsListUrl = 'performanceevents';
   readonly employeesListUrl = 'employees';
-  readonly employeesListGroupe = 'groups';
+  readonly employeesListGroups = 'groups';
 
 
   constructor(private http: HttpClient,
@@ -67,7 +68,7 @@ export class GatewayService {
       `${this.baseUrl}/${this.seasonListUrl}/${seasonNumber}/${this.performanceListUrl}`, {params});
   }
 
-  getPerformanceEventList(fromDate: Date = new Date(), limit: string = '5', locale: string = this.localeId): Observable<ScheduleListResponse> {
+  getPerformanceEventList(fromDate: Date = new Date(), limit: string = '2', locale: string = this.localeId): Observable<ScheduleListResponse> {
     return this.http.get<ScheduleListResponse>(`${this.baseUrl}/${this.performanceEventsListUrl}`, {
       params: {fromDate: fromDate.toString(), limit, locale}
     });
@@ -122,15 +123,23 @@ export class GatewayService {
     );
   }
 
-  getEmployeesGroupes(locale: string = this.localeId): Observable<EmployeesListResponse> {
-    return this.http.get<EmployeesListResponse>(
-      `${this.baseUrl}/${this.employeesListUrl}/${this.employeesListGroupe}`, {params: {locale}}
+  getEmployeesGroups(locale: string = this.localeId): Observable<Array<EmployeeGroup>> {
+    return this.http.get<Array<EmployeeGroup>>(
+      `${this.baseUrl}/${this.employeesListUrl}/${this.employeesListGroups}`, {params: {locale}}
     ).pipe(
-      catchError(this.handleError('get Employees groupe list', new EmployeesListResponse()))
+      catchError(this.handleError('get Employees groups list', []))
     );
   }
 
-  getEmployeesListByGroupe(slug, locale: string = this.localeId, page: string = 'middle'): Observable<EmployeesListResponse> {
+  getEmployeesGroup(slug, locale: string = this.localeId, page: string = 'middle'): Observable<EmployeeGroup> {
+    return this.http.get<EmployeeGroup>(
+      `${this.baseUrl}/${this.employeesListUrl}/${this.employeesListGroups}/${slug}`, {params: {locale}}
+    ).pipe(
+      catchError(this.handleError('get Employees group', new EmployeeGroup()))
+    );
+  }
+
+  getEmployeesListByGroup(slug, locale: string = this.localeId, page: string = 'middle'): Observable<EmployeesListResponse> {
     return this.http.get<EmployeesListResponse>(
       `${this.baseUrl}/${this.employeesListUrl}?group=${slug}`, {params: {locale}}
     ).pipe(

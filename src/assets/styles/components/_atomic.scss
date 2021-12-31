@@ -1,0 +1,45 @@
+// TODO: rewrite atomic spacings as functions after removing bootstrap from the project
+
+.pt-4, .py-4 {
+  padding-top: 4px !important;
+}
+
+.pb-4, .py-4 {
+  padding-bottom: 4px !important;
+}
+
+.pl-16, .px-16 {
+  padding-left: 16px !important;
+}
+
+.pr-16, .px-16 {
+  padding-right: 16px !important;
+}
+
+.mt-16, .my-16 {
+  margin-top: 16px !important;
+}
+
+.mb-16, .my-16 {
+  margin-bottom: 16px !important;
+}
+
+.mb-32, .my-16 {
+  margin-bottom: 32px !important;
+}
+
+.mt-md-max-32, .my-md-max-32 {
+  @media (min-width: map-get($grid-breakpoints, md-max)) {
+    margin-top: 32px !important;
+  }
+}
+
+.mb-md-max-32, .my-md-max-32 {
+  @media (min-width: map-get($grid-breakpoints, md-max)) {
+    margin-bottom: 32px !important;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}

@@ -1,45 +1,71 @@
 import { Injectable } from '@angular/core';
 
-import { plainToClass } from 'class-transformer';
-
 import { GatewayService } from '../../services/gateway.service';
 
 import { PerformanceEvent } from '../../store/schedule/PerformanceEvent';
-import { ScheduleListResponse } from '../../store/schedule/ScheduleListResponse';
 
-import { map } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
-import { MonthsCarouselService } from './months-carousel/months-carousel.service';
+import { MonthSelectService } from './month-select/month-select.service';
+
+interface IPerformanceEvents {
+  nextMonth: Date;
+  activeMonth: Date;
+  currentMonth: Date;
+  nextEvents: Array<PerformanceEvent>;
+  currentEvents: Array<PerformanceEvent>;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalendarService {
-  currentDate: Date;
-  daysInWeek = 7;
   Sun = 0;
+  daysInWeek = 7;
+  nextMonth: Date;
+  currentMonth: Date;
 
-  events: BehaviorSubject<Array<PerformanceEvent>> = new BehaviorSubject([]);
+  eventsData = new BehaviorSubject<IPerformanceEvents>({
+    nextEvents: null, currentEvents: null, activeMonth: null, nextMonth: null, currentMonth: null
+  });
 
-  constructor(private gateway: GatewayService, private slider: MonthsCarouselService) {
-    this.currentDate = new Date();
-    this.getMonth();
-  }
-
-  setDate(date: Date) {
-    this.currentDate = date;
+  constructor(private gateway: GatewayService, private monthSelectService: MonthSelectService) {
+    this.monthSelectService.getSelectData().subscribe(({ currentMonth, nextMonth, activeMonth }) => {
+      this.nextMonth = nextMonth;
+      this.currentMonth = currentMonth;
+      this.eventsData.next({ ...this.eventsData.value, currentMonth, nextMonth, activeMonth });
+    });
   }
 
   getPerformanceEvents() {
-    return this.gateway.getSchedulesList(this.dateFrom, this.dateTo)
-      .pipe(map((res: ScheduleListResponse) => {
-        this.events.next(plainToClass(ScheduleListResponse, res).performance_events);
-      })).toPromise();
+    this.gateway.getSchedulesList(this.dateFrom(this.currentMonth), this.dateTo(this.currentMonth)).subscribe(res => {
+      const currentEvents = res.performance_events;
+      this.eventsData.next({ ...this.eventsData.value, currentEvents });
+      this.openNextMonth();
+    });
+    this.gateway.getSchedulesList(this.dateFrom(this.nextMonth), this.dateTo(this.nextMonth)).subscribe(res => {
+      const nextEvents = res.performance_events;
+      this.eventsData.next({ ...this.eventsData.value, nextEvents });
+      this.openNextMonth();
+    });
   }
 
-  get weeks(): Array<Array<Date>> {
-    let date: Date = this.dateFrom;
-    const endDate = this.dateTo;
+  openNextMonth() {
+    const { currentEvents, nextEvents, nextMonth } = this.eventsData.value;
+
+    if (currentEvents && nextEvents && nextMonth) {
+      if (!currentEvents.length && nextEvents.length) {
+        this.monthSelectService.setMonthData({ activeMonth: nextMonth });
+      }
+    }
+  }
+
+  setDate(date: Date) {
+    this.currentMonth = date;
+  }
+
+  weeks(currentDate): Array<Array<Date>> {
+    let date: Date = this.dateFrom(currentDate);
+    const endDate = this.dateTo(currentDate);
 
     const weeks = [];
     while (endDate > date) {
@@ -55,22 +81,8 @@ export class CalendarService {
     return weeks;
   }
 
-  getPerformanceByDate(specialDate: Date) {
-    this.currentDate = new Date(this.currentDate);
-    this.currentDate.setFullYear(specialDate.getFullYear(), specialDate.getMonth());
-    this.getPerformanceEvents();
-  }
-
-  getMonth() {
-    this.slider.getMonth().subscribe(month => {
-      if (month && month.currentFullDate) {
-        this.currentDate = month.currentFullDate;
-      }
-    });
-  }
-
-  get dateFrom() {
-    const from = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
+  dateFrom(date) {
+    const from = new Date(date?.getFullYear(), date?.getMonth(), 1);
 
     let day: number;
     day = from.getDay();
@@ -80,8 +92,8 @@ export class CalendarService {
     return from;
   }
 
-  get dateTo() {
-    let lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
+  dateTo(date) {
+    let lastDay = new Date(date?.getFullYear(), +date?.getMonth() + 1, 0);
 
     if (this.Sun === lastDay.getDay()) return lastDay;
 

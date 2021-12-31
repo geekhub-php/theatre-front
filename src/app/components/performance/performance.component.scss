@@ -6,7 +6,7 @@
 
 .container {
   padding: 0 32px;
-  margin: 32px auto 0;
+  margin: 82px auto 0;
   max-width: $container-width;
 }
 
@@ -25,30 +25,7 @@
 }
 
 .ticket_button {
-  transition: .2s;
   margin-left: auto;
-  line-height: 44px;
-  white-space: nowrap;
-  text-decoration: none;
-
-  .ticket_link {
-    padding: 10px 50px;
-    transition: .3s;
-
-    @include border(1, solid, $border-color-light, 2px);
-    @include font($body-font-family, $font-size-medium-px, $font-color-white, $font-weight-bold, $line-height-basic, .36px);
-
-    &:hover {
-      text-decoration: none;
-      color: $font-color-white;
-      background-color: $background-main-color-lighter;
-    }
-
-    &:active {
-      color: $font-color-black;
-      background-color: $background-color-white;
-    }
-  }
 }
 
 :host::ng-deep p > a {
@@ -184,20 +161,6 @@
   }
 }
 
-.limit {
-  top: 0;
-  left: 0;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  background-color: $background-color-accent;
-
-  @include font($body-font-family, $font-size-large, $font-color-white, $font-weight-bold, $line-height-basic, .48px)
-}
-
 .section_title {
   text-align: center;
   margin-bottom: 16px;
@@ -249,15 +212,12 @@
 
   .container {
     padding: 0 16px;
+    margin: 32px auto 0;
   }
 
   .performance_body {
     grid-gap: 24px;
     grid-template-areas: "poster" " info" "details";
-  }
-
-  .ticket_button {
-    text-align: center;
   }
 
   .main-info {
@@ -283,13 +243,6 @@
 
   .performance_body {
     margin: 24px auto 40px;
-  }
-
-  .limit {
-    width: 24px;
-    height: 24px;
-
-    @include font($body-font-family, $font-size-xx-small, $font-color-white, $font-weight-bold, 1.5, .48px)
   }
 
   .info {

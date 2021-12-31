@@ -1,29 +1,13 @@
 @import "~assets/styles/variables";
 
 .header {
+  top: 0;
+  left: 0;
+  z-index: 11;
   width: 100%;
+  position: fixed;
   background-color: $background-main-color-darker;
-
-  //TODO: refactor main btn component
-
-  .btn {
-
-    &.--btn-reset {
-      padding: 0;
-      border: none;
-      font: inherit;
-      color: inherit;
-      outline: inherit;
-      background: none;
-      box-shadow: none;
-    }
-
-    &.--btn-close {
-      padding: 4px;
-      border-radius: 5px;
-      background-color: $border-color-accent;
-    }
-  }
+  box-shadow: 0 8px 18px 0 rgba($black-color, .25);
 
   .header-container {
 
@@ -37,7 +21,7 @@
 
     margin: 0 auto;
     display: flex;
-    padding: 16px 32px;
+    padding: 8px 32px;
     align-items: center;
     max-width: $container-width + 64px;
     justify-content: space-between;
@@ -107,12 +91,6 @@
     }
   }
 
-  .tickets-button {
-    padding: 12px 24px;
-    margin-left: 20px;
-    font-size: $font-size-medium-px;
-  }
-
   .icons-group {
     display: flex;
 
@@ -130,8 +108,8 @@
 
   .side-buttons {
     top: 40%;
+    right: 2px;
     z-index: 8;
-    right: 16px;
     display: flex;
     position: fixed;
     flex-direction: column;
@@ -141,12 +119,12 @@
     }
 
     .btn-donate, .btn-settings {
-      padding: 16px;
+      padding: 12px;
       transition: .3s;
       background-color: $border-color-accent;
 
       img {
-        width: 36px;
+        width: 32px;
       }
 
       &:hover {

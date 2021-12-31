@@ -105,6 +105,7 @@
   padding: 0;
   display: block;
   margin-bottom: 0;
+  text-decoration: none;
 
   @include font($body-font-family, $font-size-small, $font-color-black, $font-weight-normal, 1.5, normal);
 }

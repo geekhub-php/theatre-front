@@ -1,8 +1,14 @@
 @import "~assets/styles/variables";
 
 .nav-header-container {
-  background-color: $background-color-accent;
+  left: 0;
+  top: 64px;
+  z-index: 12;
+  width: 100%;
+  position: fixed;
   flex-wrap: wrap;
+  background-color: $background-color-accent;
+  box-shadow: 0 8px 18px 0 rgba($black-color, .25);
 
   @include flex-center;
 

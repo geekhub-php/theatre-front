@@ -1,11 +1,11 @@
-<ul *ngIf="showWideNav" class="header-nav">
+<ul class="header-nav d-none d-xl-min-flex">
 
   <li><a class="header-nav__link action-link" [routerLink]="['/']" routerLinkActive="active"
          [routerLinkActiveOptions]="{ exact: true }" i18n="@@mainPage">Main</a></li>
   <li><a class="header-nav__link" routerLink="/poster" routerLinkActive="active" i18n="@@poster">Poster</a></li>
   <li><a class="header-nav__link" routerLink="/repertoire" routerLinkActive="active" i18n="@@repertoire">Repertoire</a>
   </li>
-  <li><a class="header-nav__link" routerLink="/persons" routerLinkActive="active"
+  <li><a class="header-nav__link" [routerLink]="route?.match('team') ? null : '/team'" routerLinkActive="active"
          i18n="@@personalities">Personalities</a></li>
 <!--  <li><a class="header-nav__link" routerLink="/about" routerLinkActive="active" i18n="@@aboutTitle">About</a></li>-->
 <!--  <li><a class="header-nav__link" i18n="@@cooperation" routerLink="/cooperation"-->
@@ -15,7 +15,7 @@
 
 </ul>
 
-<ul *ngIf="showSmallNav" class="header-nav">
+<ul class="header-nav d-none d-lg-min-flex d-xl-min-none">
   <li><a class="header-nav__link" i18n="@@poster" routerLink="/poster" routerLinkActive="active">Poster</a></li>
   <li><a class="header-nav__link" i18n="@@repertoire" routerLink="/repertoire" routerLinkActive="active">Repertoire</a>
   </li>

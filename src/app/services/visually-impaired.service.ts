@@ -17,8 +17,8 @@ export class VisuallyImpairedService {
   private readonly htmlDomEl: HTMLElement;
   private visuallyImpaired: IVisuallyImpaired;
 
-  constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: Object) {
-    this.htmlDomEl = this.document.querySelector('html');
+  constructor(@Inject(DOCUMENT) private doc: Document, @Inject(PLATFORM_ID) private platformId: Object) {
+    this.htmlDomEl = this.doc.querySelector('html');
     this.checkLocalStorage();
   }
 
