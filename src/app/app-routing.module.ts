@@ -57,7 +57,6 @@ const appRoutes: Routes = [
   {
     path: 'team', component: TeamComponent,
     children: [
-      {path: ':group/person/:personId', component: PersonComponent},
       {path: ':group/:slug', component: PersonsShowMoreComponent},
       {path: ':group', component: GroupComponent},
     ]

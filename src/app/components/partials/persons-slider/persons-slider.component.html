@@ -8,7 +8,7 @@
     <ngu-tile *nguCarouselDef="let person" class="d-flex justify-content-center">
       <a
         class="person-image"
-        [routerLink]="['person', person.slug]"
+        [routerLink]="['/person', person.slug]"
         [style.background]="'url(' + person.avatar.employee_big.url + ')'"
       >
       </a>
