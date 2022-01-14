@@ -45,7 +45,7 @@
         <div class="details" *ngIf="performance.producer">
           <p><span class="bold"><span i18n="@@producer">Producer</span>:</span>
             <a class="link"
-               routerLink="/person/{{ performance.producer?.slug }}">{{ performance.producer?.first_name + ' ' + performance.producer?.last_name }}</a>
+               routerLink="/persons/{{ performance.producer?.slug }}">{{ performance.producer?.first_name + ' ' + performance.producer?.last_name }}</a>
           </p>
         </div>
       </div>

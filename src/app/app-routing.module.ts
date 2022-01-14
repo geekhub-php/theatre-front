@@ -61,7 +61,7 @@ const appRoutes: Routes = [
       {path: ':group', component: GroupComponent},
     ]
   },
-  {path: 'person/:personId', component: PersonComponent},
+  {path: 'persons/:personId', component: PersonComponent},
   {path: 'contacts', component: ContactsComponent},
   // {path: 'board-trustees', component: BoardTrusteesComponent},
   // {path: 'developers-team', component: DevTeamComponent},
