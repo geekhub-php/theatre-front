@@ -75,7 +75,7 @@ export class GroupComponent implements OnInit {
         } else {
           this.httpGatewayService.getEmployeesListByGroup(group.slug).subscribe((resp: EmployeesListResponse) => {
             if (resp.employees?.length === 1) {
-              return this.router.navigate([ 'team', group.slug, 'person', resp.employees[0].slug ]).then(() => {
+              return this.router.navigate([ 'persons', resp.employees[0].slug ]).then(() => {
                 this.isLoading = false;
                 this.loaderService.stop('team');
               });
