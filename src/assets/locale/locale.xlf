@@ -458,18 +458,32 @@
           <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="contactsMonFri" datatype="html">
-        <source>Mon-Fri: 09.00 - 18.00</source>
+      <trans-unit id="contactsThu" datatype="html">
+        <source>Thu: 12.00 - 18.45</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
           <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="contactsSatSun" datatype="html">
-        <source>Sat-Sun: 09.00 - 18.00</source>
+      <trans-unit id="contactsWedFri" datatype="html">
+        <source>Wed-Fri: 11.00 - 18.45</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
           <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsSatSun" datatype="html">
+        <source>Sat-Sun: 11.00 - 17.30</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactsMon" datatype="html">
+        <source>Mon: Weekend</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contacts/contacts.component.html</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactsBankDetails" datatype="html">
