@@ -17,6 +17,7 @@
   position: relative;
 
   .slider {
+
     &__image-wrapper {
       padding-top: 40px;
       max-height: 440px;
@@ -26,7 +27,7 @@
       z-index: 0;
       left: 0;
       top: 0;
-      opacity: 0.5;
+      opacity: .5;
       object-fit: cover;
       object-position: center;
       filter: blur(20px);
@@ -37,6 +38,7 @@
     }
 
     @media (max-width: map-get($grid-breakpoints, sm-min)) {
+
       &__image-wrapper {
         padding-top: 32px;
         max-height: 300px;
@@ -45,9 +47,6 @@
 
     &__item, &__image {
       width: 100%;
-
-      @media (max-width: map-get($grid-breakpoints, lg-min)) {
-      }
     }
 
     &__image {
@@ -65,7 +64,7 @@
     }
 
     &__content {
-        padding: 24px 24px 48px;
+      padding: 24px 24px 48px;
 
       @media (min-width: map-get($grid-breakpoints, sm-max)) {
         padding: 32px 80px 80px;
@@ -120,8 +119,10 @@
 
   .no-performance {
     width: 100%;
-    height: calc(100vw / 2.207);
     max-height: 600px;
+    /* stylelint-disable */
+    height: calc(100vw / 2.207);
+    /* stylelint-enable */
 
     &__image {
       width: 100%;
