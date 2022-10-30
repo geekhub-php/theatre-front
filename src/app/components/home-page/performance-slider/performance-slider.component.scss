@@ -2,7 +2,6 @@
 
 :host::ng-deep ngx-skeleton-loader {
   width: 100%;
-  height: 100%;
 
   .loader {
     height: 100%;
@@ -14,87 +13,77 @@
 
 .performance-slider {
   width: 100%;
-  // TODO: uncomment after war in Ukraine
-  //height: 780px;
-  height: calc(100% / 2.296);
   overflow: hidden;
   position: relative;
 
-
-  @media (max-width: map-get($grid-breakpoints, lg-min)) {
-    // TODO: uncomment after war in Ukraine
-    //height: 440px;
-    height: calc(100% / 2.296);
-  }
-
-  @media (max-width: map-get($grid-breakpoints, sm-min)) {
-    // TODO: uncomment after war in Ukraine
-    //height: 548px;
-    height: calc(100% / 2.296);
-  }
-
   .slider {
 
-    &__item, &__image {
-      width: 100%;
-      height: 780px;
+    &__image-wrapper {
+      padding-top: 40px;
+      max-height: 440px;
+    }
 
-      @media (max-width: map-get($grid-breakpoints, lg-min)) {
-        height: 440px;
+    &__blur-image {
+      z-index: 0;
+      left: 0;
+      top: 0;
+      opacity: .5;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(20px);
+    }
+
+    .age-limit {
+      z-index: 5;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, sm-min)) {
+
+      &__image-wrapper {
+        padding-top: 32px;
+        max-height: 300px;
       }
     }
 
+    &__item, &__image {
+      width: 100%;
+    }
+
     &__image {
-      object-fit: cover;
-      position: absolute;
+      z-index: 1;
+      object-fit: contain;
 
       @media (max-width: map-get($grid-breakpoints, sm-min)) {
         flex-grow: 1;
-        height: 100px;
-        position: sticky;
       }
     }
 
     &__item {
       color: $white-color;
       text-decoration: none;
-
-      @media (max-width: map-get($grid-breakpoints, sm-min)) {
-        height: 548px;
-      }
     }
 
     &__content {
-      padding-top: 16px;
-      margin-bottom: 54px;
+      padding: 24px 24px 48px;
 
       @media (min-width: map-get($grid-breakpoints, sm-max)) {
-        padding: 16px 24px 32px;
-        border-radius: 4px;
-        margin-bottom: 64px;
-        background-color: rgba($background-main-color-darker, .7);
-      }
-
-      @media (min-width: map-get($grid-breakpoints, md-max)) {
-        padding: 16px 40px 32px;
-      }
-
-      @media (min-width: map-get($grid-breakpoints, lg-max)) {
-        padding: 16px 80px 32px;
+        padding: 32px 80px 80px;
       }
     }
 
     &__points {
       z-index: 10;
-      padding: 2px;
+      padding: 24px;
       overflow: auto;
-      margin: -40px auto;
+      margin-bottom: 0;
+      left: 0;
+      bottom: 0;
       white-space: nowrap;
       list-style-type: none;
       box-sizing: border-box;
 
       @media (max-width: map-get($grid-breakpoints, sm-min)) {
-        margin: -32px auto;
+        padding: 16px;
       }
     }
 
@@ -130,11 +119,14 @@
 
   .no-performance {
     width: 100%;
-    height: 100%;
+    max-height: 600px;
+    /* stylelint-disable */
+    height: calc(100vw / 2.207);
+    /* stylelint-enable */
 
     &__image {
-      height: 100%;
-      object-fit: cover;
+      width: 100%;
+      object-fit: contain;
     }
 
     &__text {
@@ -270,5 +262,14 @@
         }
       }
     }
+  }
+}
+
+.slider-banner {
+  background-color: $background-main-color-darker;
+  padding: 32px 0;
+
+  @media (min-width: map-get($grid-breakpoints, sm-max)) {
+    padding: 64px 0;
   }
 }
