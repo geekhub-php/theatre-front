@@ -8,33 +8,40 @@
     >
       <ngu-item *nguCarouselDef="let performance" class="d-flex justify-content-center">
         <a
-          class="slider__item d-flex flex-column justify-content-between justify-content-sm-min-end position-relative"
+          class="slider__item d-flex flex-column position-relative"
           [routerLink]="['', 'performance', performance.slug]"
         >
-          <img [src]="performance.src" class="slider__image" [alt]="performance.title">
+          <div class="d-flex overflow-hidden flex-grow-1 slider__image-wrapper">
+            <img
+              [src]="performance.src"
+              class="h-100 w-100 position-absolute slider__blur-image">
+            <img [src]="performance.src" class="slider__image" [alt]="performance.title">
+          </div>
           <div class="age-limit">
             {{ performance.ageLimit }}+
           </div>
-          <div class="position-relative d-flex justify-content-center mx-3">
-            <div class="slider__content d-flex align-items-center flex-column">
-              <h3 class="h3 mb-2 text-center text-truncate">{{ performance.title }}</h3>
-              <div
-                class="d-flex flex-wrap align-items-center justify-content-center mb-2">
-                <div class="d-flex align-items-center mr-sm-min-4 mb-2 mr-2">
-                  <img src="assets/images/icons/ic_book.svg" alt="performance type image"
-                       class="mr-2 mb-1">
-                  <p class="m-0 text-center">{{ performance.type }}</p>
-                </div>
-                <div class="d-flex align-items-center mr-sm-min-4 mb-2 mr-2">
-                  <img src="assets/images/icons/ic_clock.svg" alt="due date image" class="mr-2 mb-1">
-                  <p class="m-0 text-center">
+          <div class="position-relative d-flex justify-content-center flex-grow-1 w-100">
+            <div class="slider__content d-flex align-items-center justify-content-between flex-column w-100">
+              <div class="flex-grow-1 d-flex flex-column justify-content-center">
+                <h3 class="h3 mb-2 text-center text-truncate">{{ performance.title }}</h3>
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-center mb-2">
+                  <div class="mb-2 mx-3 text-center">
+                    <img src="assets/images/icons/ic_book.svg" alt="performance type image"
+                         class="pb-1">
+                    <span class="pl-2">{{ performance.type }}</span>
+                  </div>
+                  <div class="text-center mb-2 mx-3">
+                    <img src="assets/images/icons/ic_clock.svg" alt="due date image" class="pb-1">
+                    <span class="pl-2">
                     {{ performance.date_time | date: 'EEE, dd' }} {{ performance.date_time | date: 'MMMM' | lowercase }}
-                  </p>
-                </div>
-                <div class="d-flex align-items-center mb-2 mr-2 mr-sm-min-0">
-                  <img src="assets/images/icons/ic_map_pin.svg" alt="performance venue image"
-                       class="mr-2 mb-1">
-                  <p class="m-0 text-center">{{ performance.venue }}</p>
+                  </span>
+                  </div>
+                  <div class="text-center mb-2">
+                    <img src="assets/images/icons/ic_map_pin.svg" alt="performance venue image"
+                         class="pb-1">
+                    <span class="pl-2">{{ performance.venue }}</span>
+                  </div>
                 </div>
               </div>
               <div class="" (click)="$event.stopPropagation()">
@@ -48,7 +55,7 @@
           </div>
         </a>
       </ngu-item>
-      <ul class="slider__points d-flex justify-content-center position-relative" NguCarouselPoint>
+      <ul class="slider__points d-flex justify-content-center position-absolute w-100" NguCarouselPoint>
         <li
           *ngFor="let j of performanceSlider.pointNumbers; let i = index"
           [class.active]="j === performanceSlider.activePoint"
@@ -61,19 +68,17 @@
   <!-- END Performance slider -->
 
   <!-- No performance picture-->
-<!--  TODO: Do after war in Ukraine: delete "true" condition, uncomment code and change image-->
   <div
-    *ngIf="!isLoading && !sliderList.length || true"
+    *ngIf="!isLoading && !sliderList.length"
     class="no-performance d-flex align-items-end justify-content-center position-relative"
   >
-<!--    <img src="assets/images/home-slider/no-performance.png" alt="No performance"-->
-<!--         class="no-performance__image position-absolute">-->
-    <img src="assets/images/russian_warship_go_fuck_yourself.jpg" alt="Черкаси - це Україна! Черкаський драматичний театр ім. Т.Г.Шевченка"
-         class="">
-<!--    <div class="no-performance__linear-gradient position-absolute"></div>-->
-<!--    <p class="no-performance__text h2 position-relative text-center" i18n="@@noPerformances">-->
-<!--      There are currently no events scheduled-->
-<!--    </p>-->
+    <img src="assets/images/home-slider/no-performance.png" alt="No performance"
+         class="no-performance__image position-absolute">
+
+    <div class="no-performance__linear-gradient position-absolute"></div>
+    <p class="no-performance__text h2 position-relative text-center" i18n="@@noPerformances">
+      There are currently no events scheduled
+    </p>
   </div>
   <!-- END of No performance picture-->
 
@@ -107,4 +112,3 @@
   </div>
   <!-- End of Slider skeleton -->
 </div>
-
