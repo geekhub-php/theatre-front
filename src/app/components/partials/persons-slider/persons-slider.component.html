@@ -9,7 +9,7 @@
       <a
         class="person-image"
         [routerLink]="['/persons', person.slug]"
-        [style.background]="'url(' + person.avatar.employee_big.url + ')'"
+        [style.background]="'url(' + person?.avatar?.employee_big.url + ')'"
       >
       </a>
     </ngu-tile>
