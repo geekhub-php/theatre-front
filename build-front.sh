@@ -5,7 +5,7 @@ set -euo
 rm -rf dist
 TMPDIR=$(mktemp -d)
 
-ng build --configuration="${ENV}-uk" \
+./node_modules/.bin/ng build --configuration="${ENV}-uk" \
   --deploy-url="${DOMAIN}uk/" \
   --base-href="${BASE_HREF}" \
   --aot true --vendor-chunk true \
@@ -18,7 +18,7 @@ ng build --configuration="${ENV}-uk" \
 
 mv ./dist/uk "${TMPDIR}/"
 
-ng build --configuration="${ENV}-en" \
+./node_modules/.bin/ng build --configuration="${ENV}-en" \
   --deploy-url="${DOMAIN}en/" \
   --base-href="${BASE_HREF}" \
   --aot true \
