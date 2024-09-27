@@ -1,0 +1,152 @@
+@import "~assets/styles/_variables";
+@import "~assets/styles/aboutStyles";
+@import "~assets/styles/_sliderMixins";
+
+.festTitle {
+  margin-top: 40px;
+  @include about-title;
+}
+
+.history-title {
+  height: $font-size-xxx-large;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: $background-color-white;
+}
+
+.history-fest-contain {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 100px;
+
+  .post-text {
+    margin-left: 5%;
+    font-family: $body-font-family;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    color: $secondary-background-color;
+  }
+}
+
+a {
+  color: $font-color-accent;
+  text-decoration: none;
+}
+
+.title {
+  height: 60px;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: $background-color-white;
+}
+
+.performansesListTitle {
+  @include flex-center;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  font-weight: $font-weight-semi-bold;
+  margin-top: 30px;
+}
+
+.wrapped {
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: $background-colors;
+}
+
+a {
+  color: $dots-active-color;
+  text-decoration: none;
+}
+
+.title {
+  height: 60px;
+  font-family: $body-font-family;
+  font-size: $font-size-xxx-large;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  @include flex-center;
+  color: $background-color-white;
+}
+
+.all-prersons {
+  @include display;
+}
+
+.link-persons {
+  width: 170px;
+  height: 25px;
+  line-height: 1.39;
+}
+
+.image {
+  background-size: cover !important;
+  height: 470px;
+  margin-left: 16px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.left {
+  @include display;
+  @include gradient;
+  @include opacity;
+  position: $position;
+  align-items: center;
+  cursor: pointer;
+  bottom: 0;
+  width: 70px;
+  z-index: 1;
+  height: 100%;
+}
+
+.left:hover {
+  @include hover_opacity;
+}
+
+.right {
+  @include display;
+  @include opacity;
+  @include gradient;
+  position: $position;
+  align-items: center;
+  bottom: 0;
+  width: 70px;
+  height: 100%;
+  right: 5px;
+  z-index: 1;
+}
+
+.right:hover {
+  @include hover_opacity;
+}
+
+.myPoint {
+  @include myPoint;
+}
+
+.myPoint li {
+  @include myPoint-li;
+}
+
+.myPoint li.active {
+  @include myPoint-li__active;
+}
+
+.mobile_performances{
+  display: none;
+}
